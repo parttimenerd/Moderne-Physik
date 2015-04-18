@@ -1,0 +1,492 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools} % \coloneqq \eqqcolon
+\usepackage{remreset} % \@removefromreset
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{lmodern}
+\usepackage{xparse}
+%\usepackage{a4wide}
+%\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=black,naturalnames]{hyperref}
+
+\theoremstyle{definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{bemerkung*}{Bemerkung}
+\newtheorem*{beispiel*}{Beispiel}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{folgerung*}{Folgerung}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{satz}[equation]{Satz}
+\newtheorem{folgerung}[equation]{Folgerung}
+
+\newcommand\setN{\mathbb N}
+\newcommand\setZ{\mathbb Z}
+\newcommand\setC{\mathbb C}
+\newcommand\setQ{\mathbb Q}
+\newcommand\setR{\mathbb R}
+\newcommand\setP{\mathbb P}
+\newcommand\bigO{\mathcal O}
+
+\newcommand\norm[1]{\|#1\|}
+\newcommand\starrightarrow{\stackrel{*}{\rightarrow}}
+\newcommand\starleftarrow{\stackrel{*}{\leftarrow}}
+\newcommand\ue{\text{\emph{ü}}}
+\newcommand\Ue{\text{\emph{Ü}}}
+\newcommand{\conseq}{$\rightarrow$~}
+\newcommand{\QM}{Quantenmechanik}
+\newcommand{\SRT}{Spezielle Relativitätstheorie}
+\newcommand{\Dgl}{Differentialgleichung}
+\newcommand{\Dglen}{Differentialgleichungen}
+
+
+\renewcommand{\d}{\mathrm d}
+\newcommand{\dd}[1]{\frac{\d}{\d #1}}
+
+\makeatletter
+\@removefromreset{section}{chapter}
+\makeatother
+
+\makeatletter
+\let\original@algocf@latexcaption\algocf@latexcaption
+\long\def\algocf@latexcaption#1[#2]{%
+	\@ifundefined{NR@gettitle}{%
+		\def\@currentlabelname{#2}%
+	}{%
+	\NR@gettitle{#2}%
+}%
+\original@algocf@latexcaption{#1}[{#2}]%
+}
+\def\namedlabel#1#2{\begingroup
+	\def\@currentlabel{#2}%
+	\label{#1}\endgroup
+}
+\makeatother
+
+
+% arguments: description, short name (without 
+
+\begin{document}
+
+\title{Moderne Physik Mitschrieb}
+
+\author{Johannes Bechberger}
+
+\maketitle
+
+\tableofcontents
+~\\~\\
+	Dies ist ein Skriptartig aufbereiteter Mitschrieb der Vorlesung "`Moderne Physik für Informatiker"', welche von Herrn Gieseke im Sommersemester 2015 am KIT gelesen wurde. Es besteht kein Anspruch auf Richtigkeit oder Vollständigkeit. Fehler, und andere Anmerkungen, können gerne an \textit{me@mostlynerdless.de} gesendet werden.
+
+\chapter{Einführung}
+
+\begin{definition*}[Moderne Physik]
+	Die moderne Physik steht im Gegensatz zur "`Klassischen Physik"', die bis Anfang des 1. Viertel des 20. Jhd. vorherrschend war. Sie besteht im wesentlichen aus
+	\begin{itemize}
+		\item Newtons Mechanik
+		\item Maxwells Elektrodynamik
+	\end{itemize}
+	Das vorherrschende Paradigma ist: Alles ist im Prinzip berechenbar, solange die Anfangsbedingungen bekannt sind und damit ist auch die zeitliche Entwicklung eines Systems vorhersagbar.
+\end{definition*}
+
+\paragraph{Aber:} Experimente zeigten im Laufe der Zeit immer mehr Widersprüche zur klassischen Physik:
+\begin{description}
+	\item[Michelson-Morley] Es wurde gezeigt, dass es keinen "`kein Äther"' gibt, durch den sich das Licht bewegt und dass die Lichtgeschwindigkeit konstant ist.
+	\item[\conseq] \textbf{Spezielle Relativitätstheorie}
+	\item[Diskrete Emmisionsspektren (Spektrallinien)] sind bei Strahlung emmitierenden Objekten messbar.
+	\item[Welleneigenschaft von Teilchen] vgl. Spaltexperimente mit Elektronen \footnote{Aufbau: Elektronen werden auf einen Doppelspalt "`geschossen"'. Dahinter befindet sich in einiger Entfernung ein Detektor. Klassisch würde man erwarten, dass ein Elektron ein Teilchen ist und damit der Detektor nur auf zwei schmalen Streifen Elektronen detektiert. Im Experiment detektiert man dagegen ein Interferenzmuster, dass an Wellen erinnert. Vgl. \href{http://de.wikipedia.org/wiki/Doppelspaltexperiment}{Wikipedia}} \conseq Widerspruch zur klassischen Physik, nur Wahrscheinlichkeiten vorhersagbar
+	\item[Teilcheneigenschaften von Lichtwellen] vgl. \href{http://de.wikipedia.org/wiki/Photoelektrischer_Effekt}{Photoelektrischer-Effekt}
+	\item[Schwarzkörperspektrum] Abhängigkeit des emmitierten Lichtspektrums eines Körpers/Gases von des Temperatur. Das (rein gedankliche) Schwarzkörperspektrum widerspricht Boltzman-Verteilung. Daraus folgerte Plank, dass die untersuchten Teilchen (des Gases oder Körpers) ununterscheidbar oder identisch sind.
+	\item[\conseq] Quantenphysik
+\end{description}
+
+\mainmatter
+\chapter{Klassische Mechanik}
+
+\section{Abriss der Newtonsche Mechanik}
+\paragraph{Problemstellung der Mechanik}
+Für ein System von Massepunkten $1 \leq i \leq N$ sind die jeweiligen Orte $\vec{r}_i$ und Geschwindigkeiten $\vec{v}_i$ zur Zeit $t_o$ gegeben. Es wirken die äußeren Kräfte $\vec{F}$ auf die Teilchen und die Kräfte $\vec{F}_{ij}$ zwischen den Teilchen $i$ und $j$. Wie lauten die \textbf{kinematischen Größen} $\vec{r}_i, \vec{v}_i = \dot\vec{r}_i(t)$ für beliebige Zeiten $t$ unter diesem Voraussetzungen? Die kinematischen Größen $\vec{r}_i(t)$, $\dot\vec{r}_i(t)$ und $\dot\dot\vec{r}_i(t)$ werden als Lösungen ordentlicher/gewöhnlicher \Dgl gefunden \textendash die \textbf{Bewegungsgleichungen}.\\
+
+\subsection{Kraft}
+Eine Kraft ist eine vektorielle, als richtungsbehaftete, Größe $\vec{F}$ welche die Ursache einer Bewegung ist, d.h. sie bewirkt die Änderung des Bewegungszustandes eines Teilchens.
+
+\subsection{Newtonsche Gesetze}
+\paragraph{1. Gesetz \textit{Galileiisches Trägheitsgesetz}} 
+Es gibt \textbf{Inertialsysteme} in welchen ein kräftefreier Körper, ein Massepunkt, ruht oder sich geradlinig und gleichförmig bewegt.
+
+\begin{definition*}[Träge Masse]
+	Jeder Massepunkt setzt der Einwirkung von Kräften einen Trägheitswiderstand entgegen, der unter anderem abhängig von seiner trägen Masse ist.
+\end{definition*}
+
+\begin{definition*}[Impuls]
+	\begin{equation*}
+		\vec{p} = m \vec{v}
+	\end{equation*}
+\end{definition*}
+
+\paragraph{2. Gesetz \textit{Newtonsches Bewegungssgesetz}}
+\begin{equation*}
+	\dot{\vec{p}} = \vec{F}, \dot{\vec{v}} = \vec{a} \rightarrow \vec{F} = m \vec{a}
+\end{equation*}
+
+\paragraph{3. Gesetz \textit{actio = reactio}}
+\begin{equation*}
+	\vec{F}_{ij} = -\vec{F}_{ji}
+\end{equation*}
+Die Definition der trägen Masse ist unabhängig von der Kraft. Beispiel: Das Verhältnis der Geschwindigkeiten von Massen, wenn sie jeweils an die gleiche Feder gehängt werden, ist unabhängig von der auf die Massen ausgeübten Kraft.
+
+\subsubsection{Beispiele für Kräfte}
+
+\paragraph{Gravitationskraft}
+Die Anziehung zwischen zwei Körpern der Masse $M$ und $m$ ist 
+$$\vec{F}_G = - \gamma \frac{M m}{r^2} \hat{r}$$
+ wobei $\hat{r} = \frac{\vec{r}}{|\vec{r}|}$ und $\gamma$ die Newtonsche Gravitationskonstante ist. Sofern der Abstand und eine der Massen, o.b.d.A $M$, konstant ist, kann man die Formel zu $F = m g$ vereinfachen. $g$ ist auf der Erde $\approx 9.81 \frac{\text{m}}{\text{s}^2}$
+\conseq Die träge und die schwere Masse eines Teilchens sind identisch.
+
+\paragraph{Coulombkraft} 
+Die Coulombkraft ist die Kraft zwischen zwei elektrischen Ladungen $Q_1$ und $Q_2$:
+\begin{equation*}
+	\vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{Q_1 Q_2}{r^2} \hat{r}
+\end{equation*}
+
+\paragraph{Lorentzkraft}
+Die Lorentzkraft ist die Kraft, die auf eine bewegte Ladung $q$ wirkt, wenn sie sich in einem magnetischen und einem elektrischen Feld befindet. 
+\begin{equation*}
+	\vec{F} = q (\vec{E} + \vec{v} \times \vec{B})
+\end{equation*}
+Hierbei ist $\vec{E}$ das elektrische Feld, $\vec{B}$ das magnetisches Feld und $\vec{v}$ die Geschwindigkeit der Ladung.
+
+\paragraph{Lineare, stets negative Kraft}
+\textit{Feder um Ruhelage $x = 0$}
+$$F = \alpha |x| < 0$$
+Daraus ergibt sich ein (perfekter) harmonischer Oszillator, welcher ein wichtiges mathematisches Beispiel für gebundene Systeme ist.
+
+
+\subsubsection{Inertialsysteme}
+\paragraph{Inertialsystem} ist ein System, welches kräftefrei ist. Es hat als ganzes eine gleichförmige, geradlinige Bewegung.
+Die Systeme $\Sigma$ und $\Sigma'$ sind gleichwertig, d.h. die Gesetze der Mechanik sind gleich formuliert, wenn sich $\Sigma$ und $\Sigma'$ nur um Galilei-Transformationen unterscheiden.
+\paragraph{Galilei-Transformation}
+$$ \vec{r}' = \vec{r} + \vec{v}_0t$$
+Die Newtonsche Gesetze sind, wie schon angemerkt, unter dieser Transformation immer gleich formuliert oder forminvariant.
+\paragraph{Nichtinertialsysteme} sind zum Beispiele \textit{Beschleunigte Bezugssysteme}. Die Koordinaten werden sind nicht gleichförmig gegeneinander verschoben. Hierbei kommt es zu \textbf{Scheinkräften}. Ein konkretes Beispiel hierfür ist Corioliskraft, deren Wirkung durch das sogenannte \href{https://de.wikipedia.org/wiki/Foucaultsches_Pendel}{Foucaultsche Pendel} \footnote{langes Pendel, dass langsam die Richtung ändert, weil sich die Erde unter ihm "`wegbewegt"'.}. Bei solchen Systemen treten \textbf{Scheinkräfte} auf, z.B. Zentripetal-\footnote{Die \href{http://de.wikipedia.org/wiki/Zentripetalkraft}{Zentripetalkraft} ist die Kraft, die einen Körper zum Mittelpunkt seiner Kreisbahn hinzieht. Natürlich nur, sofern er sich auf einer solchen bewegt.} und die Corioliskraft bei rotierenden Systemen.
+
+
+\subsection{Weitere spezielle Themen}
+\begin{itemize}
+	\item Schwingungen, z.B. gedämpte oder erzwungene
+	\item Mehrere Massepunkte (zum Beispiel durch Federn gekoppelt \conseq Eigenschwingungen) 
+	\item Viel mehr Massepunkte \conseq starre Körper, Bewegung $+$ Rotation \conseq Kreiselbewegung
+\end{itemize}
+
+\subsection{Literatur} Grundkurs Theoretische Physik 2: Analytische Mechanik / von Wolfgang Nolting\footnote{Dieses Buch gibt es in der Bibliothek als PDF}
+
+
+
+\section{Langrange Mechanik}
+
+Die Langrange Mechanik, auch bekannt als Langrange Formalismus, wurde im Jahre 1788 durch \href{http://de.wikipedia.org/wiki/Joseph-Louis_Lagrange}{Joseph-Louis de Langrange} veröffentlicht, welcher hiermit die analaytische Mechanik begründete. 
+
+\subsection{Einführung}
+Der Ausgangspunkt für die Langrange Mechanik ist die Newtonsche Mechanik. In welcher gilt
+$$ m_i \ddot\vec{r}_i = \vec{F}_i + \sum_{i \neq j}^{N} \vec{F}_{ij}, i = 1, \dots, N$$
+Hierbei ist $\vec{F}_i$ die externe Kraft $\vec{F}_i = \vec{F}_i(\vec{r})$, welche zum Beispiel wegen einem Kraftfeld\footnote{Ein \href{http://de.wikipedia.org/wiki/Kraftfeld}{Kraftfeld} wirkt an jedem Punkt eine bestimmte, orts- und ladungsabhängige Kraft auf eine Ladung aus.} herrscht und $\vec{F}_{ij}$ die inneren Kräfte paarweise zwischen den beteiligten Massepunkten.
+
+Mit Hilfe der daraus resultierenden $3N$ Differentialgleichungen kann das Problem\footnote{\dots der Beschreibung des Zustandes der einzelnen Massepunkte im System.} vollständig formuliert werden. Diese \Dgl~ zweiter Ordnung können mit den notwendigerweise gegebenen Anfangsbedingungen gelöst werden.
+
+Beim Versuch des direkten Lösens kann es zu Problemen zu kommen. 
+
+\paragraph{Problem} Die Formulierung in den einfachen (kartesischen) Koordinaten $x, y, z$ ist meist kompliziert und oft hoffnungslos.
+Denn meist haben die Probleme eine eingeschränkte Geometrie. Ein Beispiel hierfür wäre die Beschreibung der Bewegung einer Perle, welche auf einem Draht aufgefädelt ist. Wenn dieser Draht zu einem Kreis gebogen wurde, kann man die Koordinaten einschränken, im Beispiel auf Polarkoordinaten, um die Zwangsbedingungen direkt zu integrieren.
+
+\subsubsection{Zwangsbedingungen} 
+Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in einem (allgemeineren) System auf das vorgegeben System einschränken. Es gibt verschiedene Arten von Zwangsbedingungen:
+
+\paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind unabhäningig von der Zeit, d.h. $$f_\upnu(\vec{r}_1, \dots, \vec{r}_N, t) = 0, \upnu = 1, \dots, p$$ 
+Beispiel: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
+
+Holonome Zwangsbedingungen können in weiter in skeleronome und rheonome Zwangsbedingungen unterteilt werden:
+
+\subparagraph{\textit{A1} holonom-skeleronome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
+$$ \frac{\partial f_\upnu}{\partial t} = 0, \upnu = 1, \dots, p$$
+Beispiele: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
+
+\subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} Sie sind nicht explizit, sondern nur implizit von der Zeit abhängig, d.h.
+$$ \frac{\partial f_\upnu}{\partial t} \neq 0, \upnu = 1, \dots, p$$
+Beispiel: Ebene mit veränderlichem Winkel: $\frac{z}{x} - \tan{\phi(t)} = 0$
+
+
+\paragraph{\textit{B} nicht holonome Zwangsbedingung}
+Nicht holonome Zwangsbedingungen können nur als 
+\begin{itemize}
+	\item \textit{B1} Ungleichungen oder
+	\item \textit{B2} differentielle Einschränkungen
+	$$ \sum_{m = 1}^{3N} f_{im} d_{x_m} + f_{it} \d t = 0$$
+\end{itemize}
+dargestellt werden, was die Arbeit mit ihnen, gegenüber den holonomen erschwert. 
+
+\subsubsection{Verallgemeinerte Koordinaten}
+% % % % % % % %
+Statt die komplizierten Kräfte $\vec{F_ij}$ und $\vec{F}_i$ zu formulieren, welche die Bewegung einschränken, formulieren die Zwangsbedingungen diese \textbf{Zwangskräfte} implizit.
+Die Zwangsbedingungen sind geometrisch viel einfacher zu beschreiben als die Zwangskräfte. Das Ziel der Langrange-Mechanik deeswegen die die Elimination der Zwangskräfte durch die Verwendung verallgemeinerter Koordinaten. Durch die Elimination reduziert man die Anzahl der Koordinaten und damit auch den Aufwand der Lösung der \Dglen der betrachteten Problems.
+
+\paragraph{Holonome Zwangsbedingungen}
+Hier wie im folgenden werden ausschließlich holonome Zwangsbedingen betrachtet. Bei ihnen führt die Verwendung verallgemeinerter Koordinaten zu einer Reduktion der Freiheitsgrade auf $S = 3N - p$. Hierbei ist, wie im folgenden oft, $p$ die Anzahl der holonomen Zwangsbedingungen. 
+
+Die resultierenden, linear unabhängigen, \textbf{generalisierten Koordinaten} sind $q_1, \dots, q_s$. Weiterhin ist $\vec{q} = (q_1, \dots, q_S)$
+% \in \text{Konfigurationsraum}$.
+. Die generalisierten Geschwindigkeiten lassen sich daraus als $\dot{q}_1, \dots, \dot{q}_N$ ableiten. Die alten Koordinaten lassen sich als Funktion der generalisierten Koordinaten beschreiben: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_S, t)$.
+
+\paragraph{Bemerkung}
+Sofern als Anfangsbedingungen $\vec{q}_0, \dot\vec{q}_0$ gegeben sind, ist der Zustand des beschränkten Systems zu jedem zu jedem Zeitpunkt bekannt. Anders ausgedrückt: Damit kann man eine Lösung des ursprünglichen Problems finden. Zwar sind die verallgemeinerten Koordinaten selbst nicht eindeutig, wohl aber die Anzahl $S$ der Koordinaten.
+
+Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufigen bekannten Dimension oder Einheiten besitzen. Damit sind sie zwar einfacher in der Verwendung aber eventuell weniger anschaulich.
+\paragraph{Beispiele}
+
+\subparagraph{Teilchen auf der Kugeloberfläche}
+$p = 1$ Zwangsbedingungen: 
+$$x^2 + y^2 + z^2 - R^2 = 0$$
+Damit gibt es $S = 2$ generalisierte Koordinaten $q_1 = \vartheta; q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.
+
+\subparagraph{Doppelpendel in der Ebene} $p = 4$ holonom-skeleronome Zwangsbedingungen:
+\begin{align*}
+	z_1 = z_2 &= \text{const}\\
+	x^2 + y^2 - l^2_1 &= 0\\
+	(x_1 - x_2)^2 + (y_1 + y_2)^2 - l_2^2 &= 0 
+\end{align*}
+Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Verallgemeinerte Koordinaten könnten zum Beispiel die beiden Winkel $q_1 = \vartheta_1$ und $q_2 = \vartheta_2$ sein. Die usprüngliche Koordinaten können damit als $x_1 = l_1 \cos q_1$, $y_1 = l_1 \sin q_1$, $z_1 = 0$, $x_1 = l_1 \cos q_1 + l_2 \cos q_2$, $y_2 = l_1 \sin q_1 + l_2 \sin q_2$, $z_2 = 0$  dargestellt werden.
+
+
+\subsection{Das d'Alembertsche Prinzip}
+
+\paragraph{Ziel} Das Ziel dieses Prinzips is die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie. Wobei nur ersteres für die Vorlesung interessant ist.
+
+%Vor Elimination der Zwangskräfte \conseq Definition. Dazu
+
+\paragraph{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta = $ die virtuelle und $\d = $, als normales Differential, die tatsächliche/reale Koordinatenänderung.
+
+
+\section{title}
+
+
+
+\chapter{Relativität}
+Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
+Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
+
+\chapter{Quantenmechanik}
+\begin{itemize}
+	\item ein bisschen Historisches
+	\item einfache 1-D Theorie
+	\item[\conseq] Schrödingergleichung, Ortsdarstellung (zeitunabhängige Darstellung?) \conseq "`Wellenmechanik"'
+	\item Postulate der \QM
+	\item Symmetrien und Erhaltungssätze, insbesondere Drehimpuls, Spin
+	\item Wasserstofatom \conseq Periodensystem der Elemente
+	\item Identische Teilchen (Bosonen und Fermionen)
+	\item Mindestens die Hälfte mit Quantenmechanik
+\end{itemize}
+
+%\begin{itemize}
+%	\item ntwicklung der formalen, analytischen Mechanik (Lagrange, Hamilton, Jacobi)
+%	\item erlaubt theoretische Diskussion der Mechanik
+%	\item Symmetrien und weitere wichtige konzepte, die in der \textbf{Quantenmechanik} (Quantenformalismus für einzelne Objekte, formalere Theorie der Quantenphysik)
+%	\item "`Hamiltonoperator"'. Kanonisch konjugierte Variable \conseq Symmetrie und Erhaltungssätze. Symmetrien \conseq Erhaltungsgrößen
+%\end{itemize}
+
+\appendix
+
+\chapter{Organisatorisches}
+
+\section{Literatur}
+
+\begin{itemize}
+	\item Teubner-Taschenbuch der Mathematik \footnote{ehemals Bronstein, Semendjajew, \dots} Teubner Verlag \conseq \textit{Gute und zusammenfassende Formelsammlung und Integraltabellen, gut auf dem Schreibtisch zu haben}
+	\item S. Grossmann, Mathematischer Einführungskurs in die Physik, Teubner Verlag \conseq \textit{Die Wichtigsten Hilfsmittel für die theoretische Physik}
+	\item Schäfer/Georgi/Trippler, Mathematik-Vorkurs, Teubner Verlag \conseq \textit{Abitur-Stoff und etwas mehr}
+	\item L. Papula, Mathematik für Ingenieure und Naturwissenschaftler, Vieweg Verlag
+	\item P. Furlan, Das gelbe Rechenbuch, Verlag Martina Furlan 
+\end{itemize}
+
+\chapter{Mathematische Grundlagen}
+
+\section{Mathematischer Merkzettel}
+
+\subsection{Funktionen}
+\begin{eqnarray}
+\log_e \equiv \ln, \log_10 \equiv \lg, \log_2 \equiv \mathrm{ld}\\
+\log_x(x^a) = a, \log(xy) = \log(x) + \log(y), \log(\frac{x}{y}) = \log(x) - \log(y), \log_b(x^a) = a \log_b(x)\\
+x^a x^b = x^{a + b}, x^a y^a = (x y)^a, (z^a)^b, b^{\log_b x} = x\\
+\log_b \sqrt[n]{x} = \frac{1}{n} \log_b(x), \log_b(1) = 0, \log_b(x) = \frac{\log_a(x)}{\log_a(b)}\\
+\frac{\d}{\d x} \log_b (x) = \frac{1}{x \ln(b)}\\
+\sin^2x + \cos^2 x = 1, \sin(0) = \sin(\pi) = \dots = 0, \\ \cos(0) = 1 = - \cos(\pi), \sin(\frac{\pi}{2}) = 1 = - \sin(\frac{3 \pi}{2}), \cos(\frac{\pi}{2}) = \cos(\frac{3 \pi}{2}) = 0
+\end{eqnarray}
+
+\subsection{Komplexe Zahlen}
+
+\paragraph{$z_k = a_k + i b_k$} Eine Zahl im Raum der komplexen Zahlen $\setC$. $a_k$ ist hierbei der Realteil, $\Re(z_k)$, und $b_k$ der Imaginärteil, $\Im(z_k)$, von $z_k$.
+\paragraph{Komplex konjugierte Zahl} zu $z_k$ ist $\bar{z_k} = a_k - i b_k$.
+\paragraph{Betragsquadrat} von $z_k$ in $\setC$ ist definiert durch $$|z_k|^2 = \bar{z_k} z_k = a_k^2 + b_k^2 \in \setR$$
+\paragraph{Multiplikation} Allgemein gilt für die Multiplikation von komplexen Zahlen mit einem Skalar $$c z_k = c a_k + i c b_k, c \in \setR$$. Für die Multiplikation zweier komplexer Zahlen $$z_1 z_2 = (a_1 a_2-b_1b_2) + i(a_1b_2+a_2b1) \in \setC$$
+\paragraph{Addition} $$z_1 + z_2 = (a_1 + a_2) + i(b_1 + b_2) \in \setC$$
+
+\paragraph{Polardarstellung}
+$$z_k = r_k e^{i \phi_k}, \bar z_k = r_k e^{-i\phi_k}$$
+wobei gilt \textit{Eulersche Formel}
+$$r e^{\pm i \phi} = r \cos\phi \pm i \sin\phi$$
+damit gilt für das Betragsquadrat offensichtlich
+$$|z_k|^2 = r_k^2$$
+und für die Multiplation zweier komplexer Zahlen
+$$z_1 z_2 = r_1 r_2 e^{i (\phi_1 + \phi_2)}$$
+
+$z_k$ ist sozusagen ein "`Vektor"' in der komplexen Zahlenebene, also im zweidimensionalen Raum $\setC$. Die Multiplikation entspricht hierbei einer gemeinsamen Rotation um beide Winkel und einer kombinierten Streckung um beide Beträge.  
+
+\subsection{Matrizen}
+$spur(A) = $ Summe der Diagonaleinträge, weiteres (Addition, Multiplikation und Determinante): siehe Lineare Algebra.
+
+\subsection{Ableitung}
+
+\paragraph{Mehrfache Ableitung}
+$$\dd x (\dd x f(x)) = \d x (\d x f(x)) = \frac{\d^2 f(x)}{\d x^2}$$
+n-te Ableitung: $\frac{\d^n}{\d x^2} f(x)$
+
+\paragraph{Grundlagen}
+$$\dd x f(x) \equiv f'(x) = \d x f(x)$$
+$$\dd x^a = a x^{a-1}, \text{für $a \neq 0$}$$
+
+\paragraph{Linearität}
+$$\dd x (a f(x) + b g(x)) = a \dd x f(x) + b \dd x g(x)$$
+
+\paragraph{Kettenregel}
+$$\dd x f(g(x)) = (\dd y f(y))(\dd x g(x))$$
+
+\paragraph{Quotientenregel}
+$$\dd x \frac{f(x)}{g(x)} = \frac{(\dd x f(x))g(x) - f(x)(\dd x g(x))}{g(x)^2}$$
+
+\paragraph{Eulersches}
+$$\dd x \ln(x) = \frac1x, \dd x e^{ax} = a e^{ax}$$
+
+\paragraph{Trigonometrisches}
+$$\dd x \sin(ax) = a \cos(ax), \dd x \cos(ax) = - a \sin(ax)$$
+$$\dd x \tan(x) = 1 + \tan^2(x) = \frac1{\cos^2(x)}$$
+$$\dd x \mathrm{arctan}(x) = - \dd x \mathrm{arccot}(x) = \frac{1}{1 + x^2}$$
+$$\dd x \arcsin(x) = - \dd x \arccos(x) = \frac1{\sqrt{1 - x^2}}$$
+
+\subsection{Integration}
+$\int f(x) \d x = F_x(x)$ ist die Stammfunktion von $f(x)$ bezüglich der Integration in $x$ \conseq $dd x F_x(x) = f(x)$
+
+\paragraph{Konkret}
+$$ \int_a^b f(x) \d x = [ F_x(x) ]_a^b = F_x(x = b) - F_x(x = a)$$
+
+\paragraph{Linearität}
+$$ \int (a f(x) + b g(x)) \d x = a \int f(x) \d x + b \int g(x) \d x$$
+
+\paragraph{Partielle Integration}
+$$\int_a^b u'(x)v(x) \d x = [u(x) v(x)]_a^b - \int_a^b u(x) v'(x) \d x$$
+
+\paragraph{Variablensubstitution}
+$$\int_{x = a}^{x = b} \d x = \int_{y(x = a)}^{y(x = b)} ( f(y(x))\frac{\d x}{\d y} ) \d y$$
+
+\paragraph{Integration durch Parameterableitung}
+$$\int f(x, a) \d x = \int \dd a F_a(x,a) \d x = \dd a \int F_a(x,a) \d x$$
+wobei $F_a(x,a)$ die Stammfunktion von $f(x,a)$ bezüglich der Integration in $a$ ist.
+
+\paragraph{Bestimmtes Integral}
+$$\int_a^b x^c \d x = [ \frac1{c + 1} x^{c+1}]_a^b$$
+
+\paragraph{Unbestimmtes Integral}
+$$\int x^c \d x = \frac1{c+1} x^{c+1} + \mathrm{const}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Übungsblatt Minschriebe}
+
+\section{Blatt 0}
+\subsection{Aufgabe 12}
+Anfangsauslenkung $\phi(t = 0) = \phi_0$, $\phi_0$ klein und $\phi_0 \ll \frac{\pi}{2}$.
+
+Typisches Problem in der Physik \conseq auch in der \QM ("`harmonischer Oszillator"'.
+ 
+\textit{Mathematisches Pendel} mit der \Dgl
+$$ \frac{\d^2}{\d t^2} \phi(t) + \omega^2 \sin(\phi(t)) = 0$$
+Winkelgeschwindigkeit: $\omega(t) = \dot\phi(t)$. Hier ist $\omega^2 = \frac{g}{l}$, $g$ Schwerebeschleunigung der Erde, $l$ Seillänge.\\
+Kleine Winkel: $sin(\phi) \approxeq \phi$ \conseq $\sin(x) \approxeq x, x \ll 1$, $\ddot{\phi} + \omega^2 \phi = 0$
+
+Welche Funktion $\phi(t)$ gibt 2-mal abgeleitet sich selbst mit $-\omega^2$ als Faktor?\\
+Ansatz: $\phi_A(t) = c e^{\pm i \omega t}$\\
+Test: $\dot{\phi_A(t)} = c (\pm i \omega) e^{\pm i \omega t}$ und $\ddot{\phi_A(t)} = c (\pm i \omega)^2 e^{\pm i \omega t} = - \omega^2 \phi_A(t)$\\
+Allgemein: $\phi(t) = c_1 e^{i \omega t} + c_2 e^{- i \omega t}$. Was sind die Werte von $c_1$ und $c_2$?\\
+Man gewinnt sie aus den Anfangsbedigungen $\phi_0$ und $\dot{\phi(t = 0)}$: $\phi(t = 0) = c_1 + c_2 = \phi_0$ und $\dot{\phi(t = 0)} = i \omega (c_1 - c_2) = \dot{\phi_0} = \omega$\\
+Bemerkung: mit $\phi_a(t) = c e^{\pm i \omega t} = c (\cos(\omega t) \pm i \sin(\omega t))$ sieht man, dass die allgemeine Lösung eine Überlagerung zweier Lösungen ist, Kosinus und Sinus \dots
+
+\section{Blatt 1}
+
+\subsection{Aufgabe 1}
+\#Freiheitsgrade $=$ \#freie Koordinaten.
+
+\paragraph{Allgemein} Ein Freiheitsrad ist ein Parameter, der dass physikalische System beschreibt und frei ist, also keiner Zwangsbedingung unterliegt. Oder, die frei wählbaren und voneinander unabhängigen Bewegungsmöglichkeiten (salopp gesagt).\\
+
+Hat man $s$ Zwangsbedingungen und $N$ Freiheitsgrade pro Dimension, so hat man $f = d N - s$ Freiheitsgrade.
+
+\subsubsection{a}
+Ein Massepunkt in $d$ Dimensionen hat $d$ Freiheitsgrade.
+
+\subsubsection{b}
+Ein starrer Körper, z.B. eine Kugel, mit räumlicher Ausdehnung kann zusätzlich noch rotieren. Damit ist mit $d = 3$: $x(t)$, $y(t)$, $z(t)$ und Rotationsrichtungen $\phi(t), \theta(t), \psi(t)$ \conseq 6 Freiheitsgrade
+
+\subsubsection{c}
+Pendel im 3-Dimensionalen, mit Pendellänge $l$. Im 3-Dimensionalen: $x^2 + y^2 + z^2 = l^2$ \conseq $f = 2$ \textit{Entweder ich wähle 2 Winkel oder angepasst an der Problem wählt man 2 Koordinaten im Koordinatensystem auf der Oberfläche.}
+
+\subsubsection{d}
+Gegeben zwei gekoppelte Pendel, dass eine hängt am anderen, in 2-D. $f = 2$, da man 2 Winkel hat. Der erste zwischen erstem Pendel und Senkrechter, der zweite zwischen dem ersten Pendel und dem zweiten.
+
+\subsection{Aufgabe 2}
+$r(t) = \binom{a \cos(\omega t)}{b\sin(\omega t)}, a, b > 0$
+
+\subsubsection{a}
+\paragraph{i}
+$\omega_2 = \omega_1$, $\vec{r}(t = 0) = \binom{a}{0}, \vec{r}(t = \frac{\pi}{2 \omega_1}) = \binom{0}{b}$
+
+\paragraph{ii}
+Lissajous-Figur: $\omega_2 = 2 \omega_1$
+
+\subsubsection{c}
+\paragraph{i}
+$\vec{r}(t) = r\begin{pmatrix}\cos(\omega t) \\ \sin(\omega t) \\ 0\end{pmatrix} = x(t) \vec{e}_x + y(t)\vec{e}_y$ mit $x(t) = r \cos(\omega t)$, $y(t) = r \sin(\omega t)$ und $\vec{e}_x$, $\vec{e}_y$ sind die Einheitsvektoren.
+
+$$\vec{v}(t) = \dot{\vec{r}}(t) = \begin{pmatrix}\dot{x}(t)\\ \dot{y}(t)\\ \dot{z}(t)\end{pmatrix} = \begin{pmatrix}- \omega y(t) \\ \omega x(t) \\ z(t)\end{pmatrix}$$
+
+$$\vec{a}(t) = \dot \vec v (t) = \dot \dot \vec r (t) = - r \begin{pmatrix}\omega^2 \cos(\omega t) \\ \omega^2 sin(\omega t) \\ 0 \end{pmatrix} = - \omega^2 \vec{r}(t)$$
+
+Beschleunigung senkrecht zu Bewegung und $\vec{r}$ entgegengesetzt. $\vec{F} = m \vec{a}$
+
+\subsection{Aufgabe 3}
+\Dgl \conseq $\vec{r}(t)$?
+$$\vec{F} = - m g \vec{e}_z = m \dot \dot \vec r (t) = \begin{pmatrix}0\\ 0\\ - mg \end{pmatrix}$$
+\conseq $\begin{pmatrix}x(t) \\ y(t) \\ z(t)\end{pmatrix} = $ ?\\
+x: 
+$$\ddot{x}(t) = 0 \rightarrow \dot{x}(t) = c_1 \rightarrow x(t) = c_1 t + c_2$$
+$$\vec{t = 0} = \vec{v}_0 = \begin{pmatrix}v \cos(\alpha) \\ 0 \\ v \sin(\alpha)\end{pmatrix}$$
+$$\rightarrow v_x(0) = v \cos(\alpha) \rightarrow c_1 = v \cos(\alpha), x(0) = 0 \rightarrow c_2 = 0$$
+
+
+\end{document}
