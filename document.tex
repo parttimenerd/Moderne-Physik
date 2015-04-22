@@ -10,9 +10,12 @@
 \usepackage{amssymb}
 \usepackage{upgreek}
 \usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{todo}
+\usepackage{color, soul}
 \usepackage{xparse}
 %\usepackage{a4wide}
-%\usepackage{microtype}
+\usepackage{microtype}
 \usepackage[colorlinks=true,linkcolor=black,naturalnames]{hyperref}
 
 \theoremstyle{definition}
@@ -43,6 +46,8 @@
 \newcommand{\SRT}{Spezielle Relativitätstheorie}
 \newcommand{\Dgl}{Differentialgleichung}
 \newcommand{\Dglen}{Differentialgleichungen}
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 
 \renewcommand{\d}{\mathrm d}
@@ -263,14 +268,130 @@ Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Verallgemeinerte Koordinaten könnt
 
 \subsection{Das d'Alembertsche Prinzip}
 
-\paragraph{Ziel} Das Ziel dieses Prinzips is die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie. Wobei nur ersteres für die Vorlesung interessant ist.
+\subsubsection{Ziel} Das Ziel dieses Prinzips is die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie. Wobei nur ersteres für die Vorlesung interessant ist.
 
 %Vor Elimination der Zwangskräfte \conseq Definition. Dazu
 
-\paragraph{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta = $ die virtuelle und $\d = $, als normales Differential, die tatsächliche/reale Koordinatenänderung.
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta = $ die virtuelle und $\d = $ als normales Differential, die tatsächliche/reale Koordinatenänderung.
 
 
-\section{title}
+\newcommand{\rvec}{\vec{r}}
+
+\paragraph{Beispiel: Teilchen im Aufzug}
+Weil der zurückgelegte Weg auch als $\triangle x = v_0 \cot \triangle t$ dargestellt werden kann gilt
+$$\d \vec{r} = \binom{\d x}{\d z} = \binom{\d x}{ v_0 \d t}$$
+da außerdem gilt $\delta t = 0$ gilt
+$$\delta \vec{r} = (\delta x, \delta z) = (\delta x, v_0 \delta t) = (\delta x, 0)$$
+Man kann die Kraft in zwei Teile zerlegen:
+$$m \ddot\vec{r}_i = \vec{F}_i = \vec{K}_i + \vec{Z}_i$$
+die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z}_i$.
+ \conseq virtuelle Arbeit ($\d W_i = - \vec{F}_i \d \vec{r}_i$)
+$$\delta W_i = - \vec{F}_i \delta \vec{r}$$
+$$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
+\todo{kären, wie es zur Formel kommt}
+Daraus kann man die das Prinzip der virtuellen Arbeit folgern, wenn $\delta W = \sum_i \vec{K}_i \delta \rvec_i$
+
+
+\paragraph{Prinzip der virtuellen Arbeit}
+$$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
+"`Die gedachten Bewegungen, z.B. jene senkrecht zu einer durch die Zwangsbedingungen vorgegebenen Bahn, verrichten keine Arbeit."'
+
+\begin{bemerkung*}
+	Es muss natürlich nur die Summe den Wert 0 haben. Die einzelnen Summanden $\vec{Z}_i \delta \rvec_i$ können auch Werte ungleich 0 besitzen.
+\end{bemerkung*}
+
+\subsubsection{Beispiele für Zwangskräfte}
+
+\paragraph{Teilchen auf Kurve}
+$$\vec{Z} \bot \delta \vec{r} \rightarrow \vec{Z} \delta \vec{r} = 0$$
+
+\paragraph{Hantel}
+$$\delta \vec{r}_i = \delta\vec{s},~~ \delta \vec{r}_2 = \delta \vec{s} + \delta \vec{x}_R$$
+mit $\delta \vec{x}_R = $ "`Rotation von Objekt 2 um Objekt 1"'.
+Mit dem Prinzip der virtuellen Arbeit, $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$, folgt daraus
+$$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delta \vec{s} + \delta \vec{x}_R) 
+= \underbrace{(\vec{Z}_1 + \vec{Z}_2)}_{\vec{Z}_1 = - \vec{Z}_2} \delta \vec{s} + \underbrace{\vec{Z}_2 \delta \vec{x}_R}_{= 0, \vec{Z}_2 \bot \delta \vec{x}_R} = 0$$
+
+\newcommand{\ddv}[1]{\ddot\vec{#1}}
+
+\subsection{Langrange Formalismus}
+Wenn man $\vec{F}_i = m$ wie vorher als $F_i = \vec{K}_i + \vec{Z}_i$ aufteilt kann man mit Hilfe des \textit{Prinzips der virtuellen Arbeit} und $\dot p = m \ddv{r}$ folgern
+$$\sum_i (\underbrace{\vec{K}_i}_{\circled{1}} - \underbrace{\dot{\vec{p}}_i}_{\circled{2}} ) \delta \vec{r}_i = 0$$
+Das heißt, es gelten keine expliziten Zwangskräfte mehr! 
+Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von den ihnen zu formulieren, also als generalisierte Koordinaten! Anders ausgedrückt soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
+
+Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
+$$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_i} \delta q_j$$
+
+Damit kann \circled{1}  wie folgt geschrieben werden
+$$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i = \sum_{i=1}^N \sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_i =  \sum_{j=1}^s \underbrace{(\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j})}_{Q_i} \delta q_j = \sum_{j = 1}^s Q_i \delta q_j$$
+
+$Q_j$ sind hierbei die generalisierten Kräfte. Die Dimension die $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist natürlich die Einheit von $Q_j \cdot q_j$ die Energie.
+
+\newcommand{\fpartial}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\ffpartial}[2]{\frac{\partial #1}{\partial #2}}
+
+\paragraph{Spezialfall konservative Systeme}
+Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ darstellen. Und damit gilt auch
+$$Q_j = \sum_{i = 1}^N - \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j} = - \ffpartial{V}{q_j}$$
+
+\newcommand{\dotvec}[1]{\dot{\vec{#1}}}
+\newcommand{\ddotvec}[1]{\ddot{\vec{#1}}}
+
+Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
+
+$$\sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r_i} = \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i = \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j = \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} ) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \partial q_j \}$$
+
+\todo{Falsch????} eher: 
+\begin{align*}
+\sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r_i} &= \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i = \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j \\
+&\underset{\text{Kettenregel}}{=} \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \}
+\end{align*}
+
+\todo{$q_j$ auch Vektor?!}
+
+$\dd t \ffpartial{\vec{r}_i}{q_j}$ kann man auch wie folgt schreiben 
+$$\dd{t} \ffpartial{\vec{r}_i}{q_j} = \sum_{l=1}^s \frac{\partial^2 \vec{r}_i}{\partial q_l \partial q_j} \frac{\d q_l}{\d t} + \frac{\partial^2 \vec{r}_i}{\partial t \partial q_j} = \fpartial{q_j} \{ \sum_{l=1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l + \ffpartial{\vec{r}_i}{t}\} = \ffpartial{\dot{\vec{r}}_i}{q_j}$$
+mit $\dot{\vec{r}}_i = \frac{\d \vec{r}_i}{\d t} = \sum_{l = 1}^N \dots$
+Außerdem gilt
+$$\ffpartial{\vec{r}_i}{q_j} = \fpartial{\dot q_j} \sum_{l = 1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l = \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j}$$
+Damit gilt zusammenfassend
+\begin{align*}
+\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_i \sum_j m_i \{ \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \} \delta q_j\\ 
+&= \sum_i \sum_j m_i \{  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \} \delta q_j \\
+&= \sum_{j = 1}^s \{ \dd{t} \fpartial{\dot{q}_j} T - \ffpartial{T}{q_j} \} \delta q_j
+\end{align*}
+Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2 = $ die "`Kinetische Energie"'.
+und damit das d'Alembertsches Prinzip
+$$- \sum_{i = 1}^{N} (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = 0$$
+$$\sum_{j = 1}^s( [\dd{t} ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j}] - Q_j ) \delta q_j = 0$$
+
+Die Formel wird in dieser Allgemeinheit eher selten verwendet. Häufiger wird die folgende "`Version"' angewandt. Bei \textbf{holonormen Zwangsbedingungen} sind alle $q_j$ unabhängig voneinander, d.h. die $\delta q_j$  können bis auf eines unabhängig voneinander $\delta q_j = 0$ gesetzt werden. Daher muss jeder Summand 0 sein.
+$$\forall i:  \dd t ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j} - Q_j = 0$$
+
+\paragraph{Konservatives System}
+In einem konservativen System ist die Kraft $Q_j$ auf ein Potential $V_j$ zurückzuführen. Die generalisierte Kraft $Q_j = - \ffpartial{V}{q_j}$, wie auch das Potential $V$, sind unabhängig von der Geschwindigkeit $\dot{q}_j$. Anders ausgedrückt gilt
+$$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \{  \dd{t} \fpartial{\dot{q}_j} (T-V) - \fpartial{q_j} (T -V) \} \delta q_j = 0$$
+
+\subsubsection{Langangefunktion}
+Man kann die Gleichungen auch wie folgt schreiben, wenn man die Langrangefunktion $L$ einführt.
+$$L(q_1, \dots, q_s;\dot{q}_1, \dots, \dot{q}_s, t) = T(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) - V(q_1, \dots, q_s)$$
+
+\subsubsection{Langrangegleichung \textit{1. Art}}
+$$\sum_{j = 1}^s  (  \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j}  ) \delta q_j = 0$$
+
+\subsubsection{Langrangegleichung \textit{2. Art}}
+Gegeben sei wieder ein konservatives System mit holonomen Zwangsbedingungen.
+$$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, \dots, s$$
+
+
+
+
+
+
+
+
+
 
 
 
@@ -308,7 +429,11 @@ Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell et
 	\item S. Grossmann, Mathematischer Einführungskurs in die Physik, Teubner Verlag \conseq \textit{Die Wichtigsten Hilfsmittel für die theoretische Physik}
 	\item Schäfer/Georgi/Trippler, Mathematik-Vorkurs, Teubner Verlag \conseq \textit{Abitur-Stoff und etwas mehr}
 	\item L. Papula, Mathematik für Ingenieure und Naturwissenschaftler, Vieweg Verlag
-	\item P. Furlan, Das gelbe Rechenbuch, Verlag Martina Furlan 
+	\item P. Furlan, Das gelbe Rechenbuch, Verlag Martina Furlan
+	-----------------------
+	\item F. Kuypers, Klassische Mechanik, 5. Auflage, Wiley-VCH
+	\item I. Honerkamp, H. Römer, Klassische theoretische Physik, \href{http://www.freidok.uni-freiburg.de/volltexte/82/}{digitalisierte 3. Auflage}
+	\item F. Hund, Grundbegriffe der Physik, BI Hochschulbücher (sehr alt), gibt's in der Fachbibliothek
 \end{itemize}
 
 \chapter{Mathematische Grundlagen}
@@ -375,6 +500,14 @@ $$\dd x \tan(x) = 1 + \tan^2(x) = \frac1{\cos^2(x)}$$
 $$\dd x \mathrm{arctan}(x) = - \dd x \mathrm{arccot}(x) = \frac{1}{1 + x^2}$$
 $$\dd x \arcsin(x) = - \dd x \arccos(x) = \frac1{\sqrt{1 - x^2}}$$
 
+\paragraph{Totale Ableitung}
+$$\d f(x_1, \dots, x_n) = \sum_{i = 1}^{n} \ffpartial{f}{x_i} \d x_i$$
+Im Speziellen
+$$\frac{\mathrm d}{\mathrm dt} f(t,g(t),h(t)) = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial x} \, \frac{\mathrm dx}{\mathrm dt} + \frac{\partial f}{\partial y} \,\frac{\mathrm dy}{\mathrm dt} $$
+
+\paragraph{Nabla}
+$$\vec{\nabla}_i = (\fpartial{x}, \fpartial{y}, \fpartial{z}) = \fpartial{\vec{r}}$$
+
 \subsection{Integration}
 $\int f(x) \d x = F_x(x)$ ist die Stammfunktion von $f(x)$ bezüglich der Integration in $x$ \conseq $dd x F_x(x) = f(x)$
 
@@ -407,18 +540,7 @@ $$\int x^c \d x = \frac1{c+1} x^{c+1} + \mathrm{const}$$
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Übungsblatt Minschriebe}
+\chapter{Übungsblatt Mitschriebe}
 
 \section{Blatt 0}
 \subsection{Aufgabe 12}
@@ -441,9 +563,9 @@ Bemerkung: mit $\phi_a(t) = c e^{\pm i \omega t} = c (\cos(\omega t) \pm i \sin(
 \section{Blatt 1}
 
 \subsection{Aufgabe 1}
-\#Freiheitsgrade $=$ \#freie Koordinaten.
+Die Anzahl der Freiheitsgrade entspricht der Anzahl der "`freien, unabhängigen Koordinaten"'
 
-\paragraph{Allgemein} Ein Freiheitsrad ist ein Parameter, der dass physikalische System beschreibt und frei ist, also keiner Zwangsbedingung unterliegt. Oder, die frei wählbaren und voneinander unabhängigen Bewegungsmöglichkeiten (salopp gesagt).\\
+\paragraph{Allgemein} Ein Freiheitsrad ist ein Parameter, der dass physikalische System beschreibt und frei ist, also keiner Zwangsbedingung unterliegt. Oder, die frei wählbaren und voneinander unabhängigen Bewegungsmöglichkeiten (salopp gesagt).Jede Symmetrieachse schränkt dies weiter ein.\\
 
 Hat man $s$ Zwangsbedingungen und $N$ Freiheitsgrade pro Dimension, so hat man $f = d N - s$ Freiheitsgrade.
 
@@ -451,42 +573,115 @@ Hat man $s$ Zwangsbedingungen und $N$ Freiheitsgrade pro Dimension, so hat man $
 Ein Massepunkt in $d$ Dimensionen hat $d$ Freiheitsgrade.
 
 \subsubsection{b}
-Ein starrer Körper, z.B. eine Kugel, mit räumlicher Ausdehnung kann zusätzlich noch rotieren. Damit ist mit $d = 3$: $x(t)$, $y(t)$, $z(t)$ und Rotationsrichtungen $\phi(t), \theta(t), \psi(t)$ \conseq 6 Freiheitsgrade
+Ein \href{https://de.wikipedia.org/wiki/Starrer_K\%C3\%B6rper}{starrer Körper}, z.B. eine Kugel, mit räumlicher Ausdehnung kann zusätzlich noch rotieren. Damit ist mit $d = 3$: $x(t)$, $y(t)$, $z(t)$ und Rotationsrichtungen $\phi(t), \theta(t), \psi(t)$ \conseq 6 Freiheitsgrade
 
 \subsubsection{c}
-Pendel im 3-Dimensionalen, mit Pendellänge $l$. Im 3-Dimensionalen: $x^2 + y^2 + z^2 = l^2$ \conseq $f = 2$ \textit{Entweder ich wähle 2 Winkel oder angepasst an der Problem wählt man 2 Koordinaten im Koordinatensystem auf der Oberfläche.}
+\href{http://de.wikipedia.org/wiki/Sph\%C3\%A4risches_Pendel}{Sphärisches Pendel} im 3-Dimensionalen, mit Pendellänge $l$. Im 3-Dimensionalen:
+$$x^2 + y^2 + z^2 = l^2$$
+\conseq $f = 2$ \textit{Entweder ich wähle 2 Winkel oder angepasst an der Problem wählt man 2 Koordinaten im Koordinatensystem auf der Oberfläche.}
 
 \subsubsection{d}
-Gegeben zwei gekoppelte Pendel, dass eine hängt am anderen, in 2-D. $f = 2$, da man 2 Winkel hat. Der erste zwischen erstem Pendel und Senkrechter, der zweite zwischen dem ersten Pendel und dem zweiten.
+Gegeben zwei gekoppelte Pendel\footnote{dass eine hängt am anderen} im zweidimensionalen. Die Pendellängen sind konstant, damit hat man zwei Zwangsbedingungen und 2 Freiheitsgrade. Die Freiheitsgrade sind zum Beispiel die beiden Winkel. Der erste zwischen erstem Pendel und Senkrechter, der zweite zwischen dem ersten Pendel und dem zweiten.
 
 \subsection{Aufgabe 2}
-$r(t) = \binom{a \cos(\omega t)}{b\sin(\omega t)}, a, b > 0$
+$\vec{r}(t) = \binom{a \cos(\omega t)}{b\sin(\omega t)}, a, b > 0$
 
 \subsubsection{a}
 \paragraph{i}
-$\omega_2 = \omega_1$, $\vec{r}(t = 0) = \binom{a}{0}, \vec{r}(t = \frac{\pi}{2 \omega_1}) = \binom{0}{b}$
+$$\omega_2 = \omega_1, \vec{r}(t = 0) = \binom{a}{0}, \vec{r}(t = \frac{\pi}{2 \omega_1}) = \binom{0}{b}$$
+Ellipse.
 
 \paragraph{ii}
-Lissajous-Figur: $\omega_2 = 2 \omega_1$
+"`\href{http://de.wikipedia.org/wiki/Lissajous-Figur}{Lissajous-Figur}"'
+$$\omega_2 = 2 \omega_1$$
+
+\subsubsection{b}
+$$\vec{r}(t) = \begin{pmatrix}
+a \cos(\omega t)\\ b \sin(\omega t) \\ c t
+\end{pmatrix}$$
+Die ersten beiden Teile sind die Rotation in $x$-$y$, lineare Bewegung in $z$ \conseq Schraubbewegung
+
+\paragraph{i}
+Zeichnung
+
+\paragraph{ii}
+
+Periodendauer $T = \frac{2 \pi}{\omega}$ \conseq $h = c T$\\
+$h = z_2 - z_1 = ?$ \conseq $h = c \frac{2 \pi}{\omega}$
 
 \subsubsection{c}
-\paragraph{i}
 $\vec{r}(t) = r\begin{pmatrix}\cos(\omega t) \\ \sin(\omega t) \\ 0\end{pmatrix} = x(t) \vec{e}_x + y(t)\vec{e}_y$ mit $x(t) = r \cos(\omega t)$, $y(t) = r \sin(\omega t)$ und $\vec{e}_x$, $\vec{e}_y$ sind die Einheitsvektoren.
 
-$$\vec{v}(t) = \dot{\vec{r}}(t) = \begin{pmatrix}\dot{x}(t)\\ \dot{y}(t)\\ \dot{z}(t)\end{pmatrix} = \begin{pmatrix}- \omega y(t) \\ \omega x(t) \\ z(t)\end{pmatrix}$$
+\paragraph{i}
 
-$$\vec{a}(t) = \dot \vec v (t) = \dot \dot \vec r (t) = - r \begin{pmatrix}\omega^2 \cos(\omega t) \\ \omega^2 sin(\omega t) \\ 0 \end{pmatrix} = - \omega^2 \vec{r}(t)$$
+$$\vec{v}(t) = \dot{\vec{r}}(t) = \begin{pmatrix}\dot{x}(t)\\ \dot{y}(t)\\ \dot{z}(t)\end{pmatrix} =  \begin{pmatrix}- \omega \sin(\omega t) \\ \omega \cos(\omega t) \\ z(t)\end{pmatrix} = \begin{pmatrix}- \omega y(t) \\ \omega x(t) \\ z(t)\end{pmatrix}$$
 
-Beschleunigung senkrecht zu Bewegung und $\vec{r}$ entgegengesetzt. $\vec{F} = m \vec{a}$
+$$\vec{a}(t) = \dotvec v (t) = \ddotvec r (t) = - r \begin{pmatrix}\omega^2 \cos(\omega t) \\ \omega^2 sin(\omega t) \\ 0 \end{pmatrix} = - \omega^2 \vec{r}(t)$$
+
+\paragraph{ii}
+Beschleunigung senkrecht zu Bewegung und $\vec{r}$ entgegengesetzt. $\vec{F} \alpha \vec{a}$ Zentripetalkraft, $\vec{v} \bot \vec{r} \rightarrow \vec{r} \cdot \vec{v} = 0$, $\vec{a} \parallel - \vec{r} \rightarrow \vec{r} \cdot \vec{a} \neq 0$ $\vec{F} = m \vec{a}$
+
+\paragraph{iii}
+$M = M_E, m = m_S, |\vec{r}| = r_S$.\\
+Gegeben: $\vec{F}_G = - G m_S M_E \frac{\vec{r}}{r^3} = - G \frac{m_S M_E}{r^2} \frac{\vec{r}}{r}$, wobei $\frac{\vec{r}}{r}$ Länge 1 hat und in die Richtung $\vec{r}$ zeigt.\\
+Frage: Geschwindigkeit $v_S$\\
+Aus \textit{ii}: $a_S = | \vec{a}| = \omega^2 r_S$\\
+$|\vec{F}| = m |\vec{a}|$, $|\vec{F}_G| = G \frac{m_S M_E}{r_S^2} = m_S \omega^2 r_S$ \conseq $r_S \omega^2 = G \frac{M_E}{r_S^2} = \frac{r_s^2 \omega^2}{r_S} \overrightarrow{v_s = r_S \omega} v_S = \sqrt{G \frac{M_E}{r_S}}$
 
 \subsection{Aufgabe 3}
 \Dgl \conseq $\vec{r}(t)$?
-$$\vec{F} = - m g \vec{e}_z = m \dot \dot \vec r (t) = \begin{pmatrix}0\\ 0\\ - mg \end{pmatrix}$$
+$$\vec{F} = - m g \vec{e}_z = m \ddotvec{r} (t) = \begin{pmatrix}0\\ 0\\ - mg \end{pmatrix}$$
 \conseq $\begin{pmatrix}x(t) \\ y(t) \\ z(t)\end{pmatrix} = $ ?\\
 x: 
 $$\ddot{x}(t) = 0 \rightarrow \dot{x}(t) = c_1 \rightarrow x(t) = c_1 t + c_2$$
 $$\vec{t = 0} = \vec{v}_0 = \begin{pmatrix}v \cos(\alpha) \\ 0 \\ v \sin(\alpha)\end{pmatrix}$$
 $$\rightarrow v_x(0) = v \cos(\alpha) \rightarrow c_1 = v \cos(\alpha), x(0) = 0 \rightarrow c_2 = 0$$
+-------------------------
+
+\newcommand{\tvector}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+\subsubsection{a}
+Bild von Parabel...
+
+$\vec{r}(t =0) = \begin{pmatrix}0\\0\\0\end{pmatrix}$, $\vec{v}(t = 0)=v \tvector{\cos(\alpha) \\0 \\ \sin(\alpha)}$
+
+$$\vec{F} = - m g \vec{e}_z = m \ddotvec{r} (t) = \begin{pmatrix}0\\ 0\\ - mg \end{pmatrix}$$
+
+\paragraph{$x$?}
+$$\ddot{x}(t) = 0 \rightarrow \dot{x}(t) = c_1 \rightarrow x(t) = \int_0^t c_1 dt' = c_1 t + c_2$$
+Anfangsbedingungen $v_x(0) = v \cos(\alpha) \rightarrow c_1 = v \cos(\alpha)$ und $x(0) = 0 \rightarrow c_2 = 0$ damit folgt $x(t) = v t \cos(\alpha)$
+
+\paragraph{$y$?}
+$$\ddot{y}(t) = 0 \rightarrow \dot{y}(t) = c_3 \rightarrow y(t) = \int_0^t c_3 d t' = c_3 t + c_4$$
+Anfangsbedingungen: $v_y(0) = 0$ und $y(0) = 0$ \conseq $c_3 = c_4 = 0$ \conseq $y(t) = 0$
+
+\paragraph{$z$?}
+$$\ddot{z} = -g \rightarrow \dot{z}(t) = - gt + c_5 \rightarrow z(t) = \frac{1}{2} g t^2 GT^2 + c_5 t +c_6$$
+Anfangsbedingungen: $\dot{z}(0) v \sin(\alpha)$ und $z(0) = 0$ \conseq $c_5 = v \sin(\alpha)$, $c_6 = 0$ \conseq $z(t) = - \frac{1}{2} g t^2 + v t \sin(\alpha)$ \textit{Parabel in t}
+------
+$x(t) = v t \cos(\alpha)$ \conseq $t = \frac{x}{v \cos(\alpha)}$ \conseq $z(t(x)) = - \frac{1}{2} g \frac{x^2}{v^2 \cos^2(\alpha)} + v \frac{x}{v \cos(\alpha)} \sin(\alpha) = x\tan(\alpha) - 1 \frac{1}{2} \frac{g}{v^2 \cos^2(\alpha)} x^2$ \conseq $z(x)$ beschreibt Parabel in $x$
+
+\subsubsection{b}
+\newcommand{\tfin}{t_\text{fin}}
+\paragraph{Maximale Distanz?}
+\begin{itemize}
+	\item $z(\tfin) = (v \sin(\alpha)) \tfin - \frac{1}{2} g \tfin^2 \overset{!}{=} 0$ \conseq $\tfin\pm = \frac{v \sin(\alpha)}{g} \pm \sqrt{(\frac{v \sin(\alpha)}{g})^2 - 0}$ \conseq $\tfin^- = 0$ und $\tfin+ = 2 \frac{v \sin(\alpha)}{g}$
+	\item $x(\tfin^+) = \frac{2 v^2}{g} \cos(\alpha) \sin(\alpha) = \frac{2v^2}{g} \frac{\sin(2\alpha)}{2} = \frac{v^2 \sin(2 \alpha)}{g} = x(\alpha)$ mit $\sin(x + y) = \sin(x)\cos(y) + \sin(y)\cos(x)$, $x(\alpha)$ hat ein maximum $x_\text{max}$ für $\alpha = \frac{\pi}{4}$
+\end{itemize} 
+
+
+\subsection{4}
+
+\subsubsection{a}
+Geschwindigkeiten vor dem Stoß: $\vec{v}_2$ und $\vec{v}_2$ $(\vec{v} \parallel - \vec{2})$\\
+Mit "`Actio = Reactio"': $\vec{F}_1 = m_1 \ddotvec{r}_1$ \conseq $m_2 \ddotvec{r}_2 = \vec{F}_2 = - \vec{F}_1$ \conseq $\dd t (m_1 \dotvec{r}_1 + m_2 \dotvec{r}_2) = 0$ \conseq $m_1 \ddotvec{r}_1 + m_2 \ddotvec{r}_2 = 0$ \conseq $m_1 \ddotvec{r}_1 = -m_2 \ddotvec{r}_2$ \conseq $\vec{F}_1 = -\vec{F}_2$ \conseq $m_1 \vec{v}_1 + m_2 \vec{v}_2 = \vec{p}_1 + \vec{p}_2 = \vec{p} = \text{konstant}$ \conseq Gesamtimpulserhaltung. Absehen von Richtungen: $m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$, $v_1'$ und $v_2'$ Geschwindigkeiten nach dem Stoß
+
+\subsubsection{a}
+Gesamtenergieerhaltung: Nur kinetische Energie $E_\text{kin} = \frac12 m v^2$ \conseq $\underbrace{\frac12 m v^2 + \frac12 m_2 v_2^2=_\text{Energie vor dem Stoß} = \underbrace{\frac12 m_1 v_1'^2 + \frac{1}{2} m_2 v_2'^2}_\text{Energie nach dem Stoß}$ \dots
+
+
+\section{Blatt 2}
+
 
 
 \end{document}
