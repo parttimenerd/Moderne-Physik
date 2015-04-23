@@ -86,7 +86,9 @@
 
 \tableofcontents
 ~\\~\\
-	Dies ist ein Skriptartig aufbereiteter Mitschrieb der Vorlesung "`Moderne Physik für Informatiker"', welche von Herrn Gieseke im Sommersemester 2015 am KIT gelesen wurde. Es besteht kein Anspruch auf Richtigkeit oder Vollständigkeit. Fehler, und andere Anmerkungen, können gerne an \textit{me@mostlynerdless.de} gesendet werden.
+	Dies ist ein Skriptartig aufbereiteter Mitschrieb der Vorlesung "`Moderne Physik für Informatiker"', welche von Herrn Gieseke im Sommersemester 2015 am KIT gelesen wurde. Es besteht kein Anspruch auf Richtigkeit oder Vollständigkeit. Fehler, und andere Anmerkungen, können gerne an \textit{me@mostlynerdless.de} gesendet werden. Die Quellen finden sich auf \href{https://github.com/parttimenerd/Moderne-Physik}{github}.\\
+	~\\
+	\textbf{Es handelt sich um einen Entwurf, der laufend verbessert wird.} 
 
 \chapter{Einführung}
 
@@ -214,9 +216,9 @@ Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in eine
 \paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind unabhäningig von der Zeit, d.h. $$f_\upnu(\vec{r}_1, \dots, \vec{r}_N, t) = 0, \upnu = 1, \dots, p$$ 
 Beispiel: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
 
-Holonome Zwangsbedingungen können in weiter in skeleronome und rheonome Zwangsbedingungen unterteilt werden:
+Holonome Zwangsbedingungen können in weiter in skleronome und rheonome Zwangsbedingungen unterteilt werden:
 
-\subparagraph{\textit{A1} holonom-skeleronome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
+\subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
 $$ \frac{\partial f_\upnu}{\partial t} = 0, \upnu = 1, \dots, p$$
 Beispiele: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
 
@@ -257,7 +259,7 @@ $p = 1$ Zwangsbedingungen:
 $$x^2 + y^2 + z^2 - R^2 = 0$$
 Damit gibt es $S = 2$ generalisierte Koordinaten $q_1 = \vartheta; q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.
 
-\subparagraph{Doppelpendel in der Ebene} $p = 4$ holonom-skeleronome Zwangsbedingungen:
+\subparagraph{Doppelpendel in der Ebene} $p = 4$ holonom-skleronome Zwangsbedingungen:
 \begin{align*}
 	z_1 = z_2 &= \text{const}\\
 	x^2 + y^2 - l^2_1 &= 0\\
@@ -345,7 +347,7 @@ $$\sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r_i} = \sum_{i = 1}^N m_i \ddot{\
 \todo{Falsch????} eher: 
 \begin{align*}
 \sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r_i} &= \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i = \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j \\
-&\underset{\text{Kettenregel}}{=} \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \}
+&\underset{\text{Produktregel}}{=} \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \}
 \end{align*}
 
 \todo{$q_j$ auch Vektor?!}
@@ -384,9 +386,105 @@ $$\sum_{j = 1}^s  (  \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j}  ) \de
 Gegeben sei wieder ein konservatives System mit holonomen Zwangsbedingungen.
 $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, \dots, s$$
 
+\newcommand{\vardots}[2]{#1_1, \dots, #1_#2}
 
+\begin{bemerkung*}[Fazit]~\\
+	Mit den Langrangegleichungen wurden die Zwangskräfte eliminiert. Man hat dafür $s$ gewöhnliche \Dglen 2. Ordnung bekommen, für welche man $2s$ Anfangsbedingungen benötigt um sie zu lösen.
+	Statt Impuls und Kraft, wie bei den Newtonschen Gesetzen, liegen hierbei Energie und Arbeit im Fokus.
+\end{bemerkung*}
 
+\begin{bemerkung*}[Ausblick]
+	$$L = L(\vardots{q}{s}, \vardots{\dot{q}}{s}, t)$$
+	Langrangegleichungen sind invariant gegenüber Punkttransformationen \\
+	$(\vardots{q}{s}) \underset{\text{differenzierbar}}{\leftrightarrow} (\vardots{\bar{q}}{s})$ mit $\bar{q}_i = \bar{q}_i(\vardots{q}{s}, t)$, $q_i = q_i(\vardots{\bar{q}}{s}, t)$
+	Damit hat man bei der Wahl der generalisierten Koordinaten gewisse Freiheiten. Diese kann man zur Vereinfachung des Problems nutzen. Hierbei ist es sinnvoll weitere Symmetrien im Problem auszunutzen.
+\end{bemerkung*}
 
+\newcommand{\vecdotnumsq}[2]{\dot{\vec{#1}}^2_#2}
+
+\begin{beispiel*}[Schwingende Hantel]
+	\textit{Hantel deren eine Masse $m_1$ auf einer Stange gelagert ist und deren andere Masse $m_2$ nach unten an der Hantel hängt.}
+	
+	Die Masse $m_1$ ist frei in $x$-Richtung beweglich und an der Masse $m_2$ zieht die Gravitationskraft.
+	Es gibt die folgenden 4 holonom-skleronomen Zwangsbedingungen
+	\begin{align*}
+	z_1 = z_2 &= 0\\
+	y_1 &= 0\\
+	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0
+	\end{align*}
+	womit es im System $s = 6 -4$ Freiheitsgrade gibt.
+	Als generalisierte Koordinaten kann man zum Beispiel $q_1 = x$ und $q_2 = \phi$ (der Winkel zwischen Lot und Hantelstange) wählen. Damit sind die Koordinaten und Geschwindigkeiten:
+	\begin{align*}
+	x_1 &= q_1 ~~~~ x_2 = q_1 + l \sin q_2\\
+	y_1 &= 0 ~~~~~ y_2 = l \cos q_2\\
+	z_1 &= 0 ~~~~~ z_2 = 0\\
+	\dot{x}_1 &= \dot{q}_1\\
+	\dot{x}_2 & = \dot{q}_1 + \dot{q}_2 l \cos q_2\\
+	\dot{y}_2 &= - l \dot{q}_2 \sin q_2
+	\end{align*}
+	Damit ist die Kinetische Energie
+	\begin{align*}
+	T & = \frac12 m_1 \vecdotnumsq{r}{1} + \frac12 m_2 \vecdotnumsq{r}{2}\\
+	&= \frac12 m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2)\\
+	&= \frac12 m_q \dot{q}_1^2 + \frac12 m_2 ( (\dot{q}_1 + \dot{q}_2 l \cos q_2)^2 l^2 \dot{q}_2^2 \sin^2 q-2)\\
+	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (2 \dot{q}_1 \dot{q}_2 l \cos q_2 + \dot{q}_2^2 l^2)\\
+	V &= 0 - m_2 g l \cos q_2\\
+	&\text{\textit{Konstanten können weggelassen werden, da die Kraft in der Ableitung steckt.}}\\
+	\rightarrow L &= T - V\\
+	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (l^2 \dot{q}_2^2 + 2 l \dot{q}_1 \dot{q}_2 \cos q_2) + m_2 g l \cos q_2
+	\end{align*}
+	\textbf{Interessante Beobachtung} L hängt nicht von $q_1$ ab (nur von $\dot{q}_1$).
+	$$\dd t \ffpartial{L}{\dot{q}_1} - \underbrace{\ffpartial{L}{q_1}}_{= 0} = 0$$
+	$$\rightarrow \dd t \ffpartial{L}{\dot{q}_1} = 0 \rightarrow \ffpartial{L}{\dot{q}_1} = \text{konstant}$$
+\end{beispiel*}
+
+\begin{definition*}[Zyklische Koordinate]
+	Ein Koordinate $q_j$ ist genau dann zyklisch falls gilt
+	$$\ffpartial{L}{q_j} = 0 \Leftrightarrow \ffpartial{L}{\dot{q}_j} = \text{konstant} \equiv p_j$$
+	mit dem verallgemeinerten Impuls 
+	$$p_j = \ffpartial{L}{\dot{q_j}}$$
+	Zyklische Koordinaten führen automatisch zu einem \textit{Erhaltungssatz}. Deswegen sollten möglichst viele generalisierte Koordinaten zyklisch sein.
+\end{definition*}
+
+\begin{beispiel*}[Schwingende Hantel \-- Fortsetzung]
+	\begin{align*}
+		p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 = \text{konstant}\\
+		\rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos q_2 + c\\
+		\overset{\text{Integration}}{\rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)
+	\end{align*}
+	Die Anfangsbedingungen:
+	\begin{align*}
+		q_1(t = 0) &= q_2(t = 0) = 0\\
+		\dot{q}_2(t=0) &= \omega_0\\
+		\dot{q}_1(t=0) &= - \frac{m_2 l}{m_1 + m_2} \omega_0\\
+		\rightarrow c &= 0 \rightarrow q_1(t) = - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)\\
+		\intertext{Damit bereits Rücktransformation}
+	x_1(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t)\\
+	y_1(t) &= 0\\
+	y_2(t) &= l \cos \phi(t)\\
+	x_2(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t) + l \sin \phi(t)\\ 
+	&\text{Mit $l = \frac{m_1 + m_2}{m_1 + m_2} l$}\\
+	&= \frac{m_1}{m_1 m_2} l \sin \phi(t)\\
+	& \frac{x_2^2(t)}{(\frac{m_1 l}{m_1 üm_2})^2} + \frac{y_2^2(t)}{l^2} = 1
+	\end{align*}
+	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 m_2}l < l \text{~und~} l$
+	Dazu die $q_2$-\textit{Langrange}-Gleichung
+	\begin{align*}
+	\ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \dot{q}_2 + l \dot{q}_1 \cos q_2)\\
+	\dd t \ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \ddot{q}_2 + l \ddot{q}_1 \cos q_2 - l \dot{q}_1 \dot{q}_2 \sin q_2)\\
+	\ffpartial{L}{q_2} &= m_2 (- l \dot{q}_1 \dot{q}_2 \sin q_2 - g l \sin q_2)\\
+	0 &= m_2 (l^2 \ddot{q}_2 + l \ddot{q}_1 \cos q_2 + g l \sin q_2)\\
+	\intertext{Jetzt $\ddot{q}_1$ von oben (per Differentation)}
+	\ddot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} (\ddot{q}_2 \cos q_2 - \dot{q}_2^2 \sin q_2)
+	\end{align*}
+	
+	Damit erhält man die $q_2$-Gleichung
+	$$l^2 \ddot{q}_2 - \frac{m_2 l^2}{m_1 + m_2}(\ddot{q_2} \cos q_2 - \dot{q}_2^2 \sin q_2) \cos q_2 + g l \sin q_2 = 0$$
+	und eine \Dgl~ 2. Ordnung für $q_2(t) = \phi(t)$.
+	
+	Im allgemeinen sehr kompliziere Lösung, das Lösen geht dann z.B. numerisch. Man kann das Lösen aber vereinfachen durch weitere Annahmen über das System. Zum Beispiel durch die Beschränkung auf kleine $\phi$:
+	$$\phi(t) = \frac{\omega_0}{\omega} \sin \omega t \text{~und~} \omega = \sqrt{\frac{g}{l} \frac{m_1 + m_2}{m_1}}$$
+\end{beispiel*}
 
 
 
@@ -677,7 +775,7 @@ Geschwindigkeiten vor dem Stoß: $\vec{v}_2$ und $\vec{v}_2$ $(\vec{v} \parallel
 Mit "`Actio = Reactio"': $\vec{F}_1 = m_1 \ddotvec{r}_1$ \conseq $m_2 \ddotvec{r}_2 = \vec{F}_2 = - \vec{F}_1$ \conseq $\dd t (m_1 \dotvec{r}_1 + m_2 \dotvec{r}_2) = 0$ \conseq $m_1 \ddotvec{r}_1 + m_2 \ddotvec{r}_2 = 0$ \conseq $m_1 \ddotvec{r}_1 = -m_2 \ddotvec{r}_2$ \conseq $\vec{F}_1 = -\vec{F}_2$ \conseq $m_1 \vec{v}_1 + m_2 \vec{v}_2 = \vec{p}_1 + \vec{p}_2 = \vec{p} = \text{konstant}$ \conseq Gesamtimpulserhaltung. Absehen von Richtungen: $m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$, $v_1'$ und $v_2'$ Geschwindigkeiten nach dem Stoß
 
 \subsubsection{a}
-Gesamtenergieerhaltung: Nur kinetische Energie $E_\text{kin} = \frac12 m v^2$ \conseq $\underbrace{\frac12 m v^2 + \frac12 m_2 v_2^2=_\text{Energie vor dem Stoß} = \underbrace{\frac12 m_1 v_1'^2 + \frac{1}{2} m_2 v_2'^2}_\text{Energie nach dem Stoß}$ \dots
+Gesamtenergieerhaltung: Nur kinetische Energie $E_\text{kin} = \frac12 m v^2$ \conseq $\underbrace{\frac12 m v^2 + \frac12 m_2 v_2^2}_\text{Energie vor dem Stoß} = \underbrace{\frac12 m_1 v_1'^2 + \frac{1}{2} m_2 v_2'^2}_\text{Energie nach dem Stoß}$ \dots
 
 
 \section{Blatt 2}
