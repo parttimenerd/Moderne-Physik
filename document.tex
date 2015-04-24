@@ -52,6 +52,17 @@
 
 \renewcommand{\d}{\mathrm d}
 \newcommand{\dd}[1]{\frac{\d}{\d #1}}
+\newcommand{\ddd}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\tvector}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\rvec}{\vec{r}}
+\newcommand{\ddv}[1]{\ddot{\vec{#1}}}
+\newcommand{\fpartial}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\ffpartial}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dotvec}[1]{\dot{\vec{#1}}}
+\newcommand{\ddotvec}[1]{\ddot{\vec{#1}}}
+\newcommand{\vardots}[2]{#1_1, \dots, #1_#2}
+\newcommand{\vecdotnumsq}[2]{\dot{\vec{#1}}^2_#2}
+\newcommand{\tfin}{t_\text{fin}}
 
 \makeatletter
 \@removefromreset{section}{chapter}
@@ -175,12 +186,17 @@ Daraus ergibt sich ein (perfekter) harmonischer Oszillator, welcher ein wichtige
 
 
 \subsubsection{Inertialsysteme}
-\paragraph{Inertialsystem} ist ein System, welches kräftefrei ist. Es hat als ganzes eine gleichförmige, geradlinige Bewegung.
+\begin{definition*}[Inertialsystem]
+	Ein Inertialsystem ist ein System, welches kräftefrei ist. Es hat als ganzes eine gleichförmige, geradlinige Bewegung.
 Die Systeme $\Sigma$ und $\Sigma'$ sind gleichwertig, d.h. die Gesetze der Mechanik sind gleich formuliert, wenn sich $\Sigma$ und $\Sigma'$ nur um Galilei-Transformationen unterscheiden.
-\paragraph{Galilei-Transformation}
+\end{definition*}
+\begin{definition*}[Galilei-Transformation]
 $$ \vec{r}' = \vec{r} + \vec{v}_0t$$
 Die Newtonsche Gesetze sind, wie schon angemerkt, unter dieser Transformation immer gleich formuliert oder forminvariant.
-\paragraph{Nichtinertialsysteme} sind zum Beispiele \textit{Beschleunigte Bezugssysteme}. Die Koordinaten werden sind nicht gleichförmig gegeneinander verschoben. Hierbei kommt es zu \textbf{Scheinkräften}. Ein konkretes Beispiel hierfür ist Corioliskraft, deren Wirkung durch das sogenannte \href{https://de.wikipedia.org/wiki/Foucaultsches_Pendel}{Foucaultsche Pendel} \footnote{langes Pendel, dass langsam die Richtung ändert, weil sich die Erde unter ihm "`wegbewegt"'.}. Bei solchen Systemen treten \textbf{Scheinkräfte} auf, z.B. Zentripetal-\footnote{Die \href{http://de.wikipedia.org/wiki/Zentripetalkraft}{Zentripetalkraft} ist die Kraft, die einen Körper zum Mittelpunkt seiner Kreisbahn hinzieht. Natürlich nur, sofern er sich auf einer solchen bewegt.} und die Corioliskraft bei rotierenden Systemen.
+\end{definition*}
+\begin{definition*}[Nichtinertialsysteme]
+	Nichtinertialsysteme sind zum Beispiel \textit{Beschleunigte Bezugssysteme}. Die Koordinaten werden in solchen Systemen nicht gleichförmig gegeneinander verschoben. Hierbei kommt es zu \textbf{Scheinkräften}. Ein konkretes Beispiel hierfür ist die Corioliskraft, deren Wirkung durch das sogenannte \href{https://de.wikipedia.org/wiki/Foucaultsches_Pendel}{Foucaultsche Pendel}\footnote{langes Pendel, welches langsam die Richtung ändert, weil sich die Erde unter ihm "`wegbewegt"'.}. Ein weiteres Beispiel ist die Zentripetalkraft\footnote{Die \href{http://de.wikipedia.org/wiki/Zentripetalkraft}{Zentripetalkraft} ist die Kraft, die einen Körper zum Mittelpunkt seiner Kreisbahn hinzieht. Natürlich nur, sofern er sich auf einer solchen bewegt.}.
+\end{definition*}
 
 
 \subsection{Weitere spezielle Themen}
@@ -194,36 +210,36 @@ Die Newtonsche Gesetze sind, wie schon angemerkt, unter dieser Transformation im
 
 
 
-\section{Langrange Mechanik}
+\section{Lagrange Mechanik}
 
-Die Langrange Mechanik, auch bekannt als Langrange Formalismus, wurde im Jahre 1788 durch \href{http://de.wikipedia.org/wiki/Joseph-Louis_Lagrange}{Joseph-Louis de Langrange} veröffentlicht, welcher hiermit die analaytische Mechanik begründete. 
+Die Lagrange Mechanik, auch bekannt als Lagrange Formalismus, wurde im Jahre 1788 durch \href{http://de.wikipedia.org/wiki/Joseph-Louis_Lagrange}{Joseph-Louis de Lagrange} veröffentlicht, welcher hiermit die analytische Mechanik begründete. 
 
 \subsection{Einführung}
-Der Ausgangspunkt für die Langrange Mechanik ist die Newtonsche Mechanik. In welcher gilt
-$$ m_i \ddot\vec{r}_i = \vec{F}_i + \sum_{i \neq j}^{N} \vec{F}_{ij}, i = 1, \dots, N$$
-Hierbei ist $\vec{F}_i$ die externe Kraft $\vec{F}_i = \vec{F}_i(\vec{r})$, welche zum Beispiel wegen einem Kraftfeld\footnote{Ein \href{http://de.wikipedia.org/wiki/Kraftfeld}{Kraftfeld} wirkt an jedem Punkt eine bestimmte, orts- und ladungsabhängige Kraft auf eine Ladung aus.} herrscht und $\vec{F}_{ij}$ die inneren Kräfte paarweise zwischen den beteiligten Massepunkten.
+Der Ausgangspunkt für die Lagrange Mechanik ist die Newtonsche Mechanik. In welcher gilt
+$$ m_i \ddotvec{r}_i = \vec{F}_i + \sum_{i \neq j}^{N} \vec{F}_{ij}, i = 1, \dots, N$$
+Hierbei ist $\vec{F}_i$ die externe ortsabhängige Kraft, welche zum Beispiel wegen einem Kraftfeld\footnote{Ein \href{http://de.wikipedia.org/wiki/Kraftfeld}{Kraftfeld} wirkt an jedem Punkt eine bestimmte, orts- und ladungsabhängige Kraft auf eine Ladung aus.} herrscht und $\vec{F}_{ij}$ die inneren Kräfte paarweise zwischen den beteiligten Massepunkten.
 
 Mit Hilfe der daraus resultierenden $3N$ Differentialgleichungen kann das Problem\footnote{\dots der Beschreibung des Zustandes der einzelnen Massepunkte im System.} vollständig formuliert werden. Diese \Dgl~ zweiter Ordnung können mit den notwendigerweise gegebenen Anfangsbedingungen gelöst werden.
 
 Beim Versuch des direkten Lösens kann es zu Problemen zu kommen. 
 
 \paragraph{Problem} Die Formulierung in den einfachen (kartesischen) Koordinaten $x, y, z$ ist meist kompliziert und oft hoffnungslos.
-Denn meist haben die Probleme eine eingeschränkte Geometrie. Ein Beispiel hierfür wäre die Beschreibung der Bewegung einer Perle, welche auf einem Draht aufgefädelt ist. Wenn dieser Draht zu einem Kreis gebogen wurde, kann man die Koordinaten einschränken, im Beispiel auf Polarkoordinaten, um die Zwangsbedingungen direkt zu integrieren.
+Denn meist haben die Probleme eine eingeschränkte Geometrie. Ein Beispiel hierfür wäre die Beschreibung der Bewegung einer Perle, welche auf einem Draht aufgefädelt ist. Wenn dieser Draht zu einem Kreis gebogen wurde, kann man die Koordinaten einschränken, zum Beispiel auf Polarkoordinaten\footnote{Polarkoordinaten $\vec{x} = \binom{r}{\phi}$ bestehen aus einem Abstand $r$ zum Mittelpunkt und einem Winkel $\phi$ zu einem festgelegten "`Lot"'.}, um die Zwangsbedingungen direkt zu integrieren.
 
 \subsubsection{Zwangsbedingungen} 
-Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in einem (allgemeineren) System auf das vorgegeben System einschränken. Es gibt verschiedene Arten von Zwangsbedingungen:
+Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in einem (allgemeineren) System auf das vorgegebene System einschränken. Es gibt verschiedene Arten von Zwangsbedingungen:
 
-\paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind unabhäningig von der Zeit, d.h. $$f_\upnu(\vec{r}_1, \dots, \vec{r}_N, t) = 0, \upnu = 1, \dots, p$$ 
+\paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind unabhängig von der Zeit, d.h. $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0, i = 1, \dots, p$$ 
 Beispiel: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
 
-Holonome Zwangsbedingungen können in weiter in skleronome und rheonome Zwangsbedingungen unterteilt werden:
+Holonome Zwangsbedingungen können weiter in skleronome und rheonome Zwangsbedingungen unterteilt werden:
 
 \subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
-$$ \frac{\partial f_\upnu}{\partial t} = 0, \upnu = 1, \dots, p$$
+$$ \frac{\partial f_i}{\partial t} = 0, i = 1, \dots, p$$
 Beispiele: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
 
 \subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} Sie sind nicht explizit, sondern nur implizit von der Zeit abhängig, d.h.
-$$ \frac{\partial f_\upnu}{\partial t} \neq 0, \upnu = 1, \dots, p$$
+$$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
 Beispiel: Ebene mit veränderlichem Winkel: $\frac{z}{x} - \tan{\phi(t)} = 0$
 
 
@@ -238,30 +254,30 @@ dargestellt werden, was die Arbeit mit ihnen, gegenüber den holonomen erschwert
 
 \subsubsection{Verallgemeinerte Koordinaten}
 % % % % % % % %
-Statt die komplizierten Kräfte $\vec{F_ij}$ und $\vec{F}_i$ zu formulieren, welche die Bewegung einschränken, formulieren die Zwangsbedingungen diese \textbf{Zwangskräfte} implizit.
-Die Zwangsbedingungen sind geometrisch viel einfacher zu beschreiben als die Zwangskräfte. Das Ziel der Langrange-Mechanik deeswegen die die Elimination der Zwangskräfte durch die Verwendung verallgemeinerter Koordinaten. Durch die Elimination reduziert man die Anzahl der Koordinaten und damit auch den Aufwand der Lösung der \Dglen der betrachteten Problems.
+Statt die komplizierten Kräfte $\vec{F}_{ij}$ und $\vec{F}_i$ zu formulieren, welche die Bewegung einschränken, formulieren die Zwangsbedingungen diese \textbf{Zwangskräfte} implizit.
+Die Zwangsbedingungen sind geometrisch viel einfacher zu beschreiben als die Zwangskräfte. Das Ziel der Lagrange-Mechanik ist deswegen die Elimination der Zwangskräfte durch die Verwendung verallgemeinerter Koordinaten. Durch die Elimination reduziert man die Anzahl der Koordinaten und damit auch den Aufwand der Lösung der \Dglen~ des betrachteten Problems.
 
 \paragraph{Holonome Zwangsbedingungen}
-Hier wie im folgenden werden ausschließlich holonome Zwangsbedingen betrachtet. Bei ihnen führt die Verwendung verallgemeinerter Koordinaten zu einer Reduktion der Freiheitsgrade auf $S = 3N - p$. Hierbei ist, wie im folgenden oft, $p$ die Anzahl der holonomen Zwangsbedingungen. 
+Hier, wie im folgenden, werden ausschließlich holonome Zwangsbedingen betrachtet. Bei ihnen führt die Verwendung verallgemeinerter Koordinaten zu einer Reduktion der Freiheitsgrade\footnote{Wenn im folgenden von $S$ oder $s$ die Rede ist, ist immer die Anzahl der Freiheitsgrade gemeint.} auf $S = 3N - p$. Hierbei ist, wie im folgenden oft, $p$ die Anzahl der holonomen Zwangsbedingungen. 
 
 Die resultierenden, linear unabhängigen, \textbf{generalisierten Koordinaten} sind $q_1, \dots, q_s$. Weiterhin ist $\vec{q} = (q_1, \dots, q_S)$
 % \in \text{Konfigurationsraum}$.
-. Die generalisierten Geschwindigkeiten lassen sich daraus als $\dot{q}_1, \dots, \dot{q}_N$ ableiten. Die alten Koordinaten lassen sich als Funktion der generalisierten Koordinaten beschreiben: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_S, t)$.
+. Die generalisierten Geschwindigkeiten lassen sich daraus als $\dot{q}_1, \dots, \dot{q}_N$ ableiten. Die alten Koordinaten lassen sich als Funktion der generalisierten Koordinaten beschreiben: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$.
 
 \paragraph{Bemerkung}
-Sofern als Anfangsbedingungen $\vec{q}_0, \dot\vec{q}_0$ gegeben sind, ist der Zustand des beschränkten Systems zu jedem zu jedem Zeitpunkt bekannt. Anders ausgedrückt: Damit kann man eine Lösung des ursprünglichen Problems finden. Zwar sind die verallgemeinerten Koordinaten selbst nicht eindeutig, wohl aber die Anzahl $S$ der Koordinaten.
+Sofern als Anfangsbedingungen $\vec{q}_0, \dot\vec{q}_0$ gegeben sind, ist der Zustand des beschränkten Systems zu jedem zu jedem Zeitpunkt bekannt. Anders ausgedrückt: Damit kann man eine Lösung des ursprünglichen Problems finden. Zwar sind die verallgemeinerten Koordinaten selbst nicht eindeutig, wohl aber ihre Anzahl.
 
-Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufigen bekannten Dimension oder Einheiten besitzen. Damit sind sie zwar einfacher in der Verwendung aber eventuell weniger anschaulich.
+Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufig bekannten Dimensionen oder Einheiten besitzen. Damit sind sie zwar einfacher in der Verwendung aber eventuell weniger anschaulich.
 \paragraph{Beispiele}
 
 \subparagraph{Teilchen auf der Kugeloberfläche}
 $p = 1$ Zwangsbedingungen: 
 $$x^2 + y^2 + z^2 - R^2 = 0$$
-Damit gibt es $S = 2$ generalisierte Koordinaten $q_1 = \vartheta; q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.
+Damit gibt es $S = 2$ generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.
 
 \subparagraph{Doppelpendel in der Ebene} $p = 4$ holonom-skleronome Zwangsbedingungen:
 \begin{align*}
-	z_1 = z_2 &= \text{const}\\
+	z_1 = z_2 &= \text{konstant}\\
 	x^2 + y^2 - l^2_1 &= 0\\
 	(x_1 - x_2)^2 + (y_1 + y_2)^2 - l_2^2 &= 0 
 \end{align*}
@@ -270,28 +286,25 @@ Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Verallgemeinerte Koordinaten könnt
 
 \subsection{Das d'Alembertsche Prinzip}
 
-\subsubsection{Ziel} Das Ziel dieses Prinzips is die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie. Wobei nur ersteres für die Vorlesung interessant ist.
+\subsubsection{Ziel} Das Ziel dieses Prinzips is die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
 
 %Vor Elimination der Zwangskräfte \conseq Definition. Dazu
 
-\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta = $ die virtuelle und $\d = $ als normales Differential, die tatsächliche/reale Koordinatenänderung.
-
-
-\newcommand{\rvec}{\vec{r}}
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta $ das virtuelle und $\d $ das normales Differential, die tatsächliche/reale Koordinatenänderung.
 
 \paragraph{Beispiel: Teilchen im Aufzug}
-Weil der zurückgelegte Weg auch als $\triangle x = v_0 \cot \triangle t$ dargestellt werden kann gilt
+Weil der zurückgelegte Weg auch als $\delta x = v_0 \cot \Delta t$ dargestellt werden kann gilt
 $$\d \vec{r} = \binom{\d x}{\d z} = \binom{\d x}{ v_0 \d t}$$
 da außerdem gilt $\delta t = 0$ gilt
-$$\delta \vec{r} = (\delta x, \delta z) = (\delta x, v_0 \delta t) = (\delta x, 0)$$
+$$\delta \vec{r} = \binom{\delta x}{\delta z} = \binom{\delta x}{v_0 \delta t} = \binom{\delta x}{0}$$
 Man kann die Kraft in zwei Teile zerlegen:
 $$m \ddot\vec{r}_i = \vec{F}_i = \vec{K}_i + \vec{Z}_i$$
 die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z}_i$.
  \conseq virtuelle Arbeit ($\d W_i = - \vec{F}_i \d \vec{r}_i$)
-$$\delta W_i = - \vec{F}_i \delta \vec{r}$$
+$$\delta W = - \vec{F} \delta \vec{r}$$
 $$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
 \todo{kären, wie es zur Formel kommt}
-Daraus kann man die das Prinzip der virtuellen Arbeit folgern, wenn $\delta W = \sum_i \vec{K}_i \delta \rvec_i$
+Daraus kann man die das Prinzip der virtuellen Arbeit folgern, wenn gilt $\delta W = \sum_i \vec{K}_i \delta \rvec_i$.
 
 
 \paragraph{Prinzip der virtuellen Arbeit}
@@ -305,102 +318,89 @@ $$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
 \subsubsection{Beispiele für Zwangskräfte}
 
 \paragraph{Teilchen auf Kurve}
-$$\vec{Z} \bot \delta \vec{r} \rightarrow \vec{Z} \delta \vec{r} = 0$$
+$$\vec{Z} \bot \delta \vec{r} \Rightarrow \vec{Z} \delta \vec{r} = 0$$
 
 \paragraph{Hantel}
 $$\delta \vec{r}_i = \delta\vec{s},~~ \delta \vec{r}_2 = \delta \vec{s} + \delta \vec{x}_R$$
-mit $\delta \vec{x}_R = $ "`Rotation von Objekt 2 um Objekt 1"'.
+Hierbei ist $\vec{x}_R$ die Rotation von Objekt 2 um Objekt 1.
 Mit dem Prinzip der virtuellen Arbeit, $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$, folgt daraus
 $$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delta \vec{s} + \delta \vec{x}_R) 
 = \underbrace{(\vec{Z}_1 + \vec{Z}_2)}_{\vec{Z}_1 = - \vec{Z}_2} \delta \vec{s} + \underbrace{\vec{Z}_2 \delta \vec{x}_R}_{= 0, \vec{Z}_2 \bot \delta \vec{x}_R} = 0$$
 
-\newcommand{\ddv}[1]{\ddot\vec{#1}}
-
-\subsection{Langrange Formalismus}
-Wenn man $\vec{F}_i = m$ wie vorher als $F_i = \vec{K}_i + \vec{Z}_i$ aufteilt kann man mit Hilfe des \textit{Prinzips der virtuellen Arbeit} und $\dot p = m \ddv{r}$ folgern
-$$\sum_i (\underbrace{\vec{K}_i}_{\circled{1}} - \underbrace{\dot{\vec{p}}_i}_{\circled{2}} ) \delta \vec{r}_i = 0$$
-Das heißt, es gelten keine expliziten Zwangskräfte mehr! 
-Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von den ihnen zu formulieren, also als generalisierte Koordinaten! Anders ausgedrückt soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
+\subsection{Lagrange Formalismus}
+Wenn man $\vec{F}_i = m \ddotvec{r}_i = m \ddv{r} = \dot p$ wie vorher als $F_i = \vec{K}_i + \vec{Z}_i$ aufteilt kann man mit Hilfe des \textit{Prinzips der virtuellen Arbeit} folgern.
+$$\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} = 0$$
+Das heißt, es gelten keine expliziten Zwangskräfte mehr.
+Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von den ihnen zu formulieren, also als generalisierte Koordinaten. Anders ausgedrückt soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
 $$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_i} \delta q_j$$
 
 Damit kann \circled{1}  wie folgt geschrieben werden
-$$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i = \sum_{i=1}^N \sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_i =  \sum_{j=1}^s \underbrace{(\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j})}_{Q_i} \delta q_j = \sum_{j = 1}^s Q_i \delta q_j$$
+$$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
+= \sum_{i=1}^N \underbrace{\sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_i} \delta q_i 
+= \sum_{i = 1}^N Q_i \delta q_i$$
 
-$Q_j$ sind hierbei die generalisierten Kräfte. Die Dimension die $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist natürlich die Einheit von $Q_j \cdot q_j$ die Energie.
-
-\newcommand{\fpartial}[1]{\frac{\partial}{\partial #1}}
-\newcommand{\ffpartial}[2]{\frac{\partial #1}{\partial #2}}
+$Q_i$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_i$ ist nicht unbedingt Kraft, weil die Dimension von den $q_i$ selbst unklar ist. Jedoch ist die Einheit von $Q_i \cdot q_i$ natürlich die Energie.
 
 \paragraph{Spezialfall konservative Systeme}
 Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ darstellen. Und damit gilt auch
-$$Q_j = \sum_{i = 1}^N - \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j} = - \ffpartial{V}{q_j}$$
-
-\newcommand{\dotvec}[1]{\dot{\vec{#1}}}
-\newcommand{\ddotvec}[1]{\ddot{\vec{#1}}}
+$$Q_j = \sum_{i = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
 
 Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
 
-$$\sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r_i} = \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i = \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j = \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} ) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \partial q_j \}$$
-
-\todo{Falsch????} eher: 
 \begin{align*}
-\sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r_i} &= \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i = \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j \\
-&\underset{\text{Produktregel}}{=} \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \}
+\sum_{i = 1}^{N} \dot{\vec{p}}_i \delta \vec{r}_i 
+&= \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i 
+= \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j \\
+\intertext{vgl. Produktregel mit $\dd t f \cdot g = \ddd{f}{t} \cdot g + f \cdot \ddd{g}{t} \Leftrightarrow \ddd{f}{t} \cdot g = \dd t f \cdot g - f \cdot \ddd{g}{t}$}
+&= \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \}
 \end{align*}
-
-\todo{$q_j$ auch Vektor?!}
 
 $\dd t \ffpartial{\vec{r}_i}{q_j}$ kann man auch wie folgt schreiben 
 $$\dd{t} \ffpartial{\vec{r}_i}{q_j} = \sum_{l=1}^s \frac{\partial^2 \vec{r}_i}{\partial q_l \partial q_j} \frac{\d q_l}{\d t} + \frac{\partial^2 \vec{r}_i}{\partial t \partial q_j} = \fpartial{q_j} \{ \sum_{l=1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l + \ffpartial{\vec{r}_i}{t}\} = \ffpartial{\dot{\vec{r}}_i}{q_j}$$
-mit $\dot{\vec{r}}_i = \frac{\d \vec{r}_i}{\d t} = \sum_{l = 1}^N \dots$
 Außerdem gilt
 $$\ffpartial{\vec{r}_i}{q_j} = \fpartial{\dot q_j} \sum_{l = 1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l = \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j}$$
 Damit gilt zusammenfassend
 \begin{align*}
-\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_i \sum_j m_i \{ \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \} \delta q_j\\ 
-&= \sum_i \sum_j m_i \{  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \} \delta q_j \\
-&= \sum_{j = 1}^s \{ \dd{t} \fpartial{\dot{q}_j} T - \ffpartial{T}{q_j} \} \delta q_j
+\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^S m_i \{ \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \} \delta q_j\\ 
+&= \sum_{i=1}^N\sum_{j=1}^S m_i \{  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \} \delta q_j \\
+&= \sum_{j = 1}^S \{ \dd{t} \fpartial{\dot{q}_j} T - \ffpartial{T}{q_j} \} \delta q_j
 \end{align*}
-Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2 = $ die "`Kinetische Energie"'.
-und damit das d'Alembertsches Prinzip
+Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2$ die "`Kinetische Energie"'
+und damit gilt mit dem d'Alembertsches Prinzip
 $$- \sum_{i = 1}^{N} (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = 0$$
 $$\sum_{j = 1}^s( [\dd{t} ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j}] - Q_j ) \delta q_j = 0$$
 
-Die Formel wird in dieser Allgemeinheit eher selten verwendet. Häufiger wird die folgende "`Version"' angewandt. Bei \textbf{holonormen Zwangsbedingungen} sind alle $q_j$ unabhängig voneinander, d.h. die $\delta q_j$  können bis auf eines unabhängig voneinander $\delta q_j = 0$ gesetzt werden. Daher muss jeder Summand 0 sein.
+Die Formel wird in dieser Allgemeinheit eher selten verwendet. Häufiger wird die folgende "`Version"' angewandt. Bei \textbf{holonomen Zwangsbedingungen} sind alle $q_j$ unabhängig voneinander, d.h. die $\delta q_j$  können bis auf eines unabhängig voneinander $\delta q_j = 0$ gesetzt werden. Daher muss jeder Summand 0 sein.
 $$\forall i:  \dd t ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j} - Q_j = 0$$
 
 \paragraph{Konservatives System}
-In einem konservativen System ist die Kraft $Q_j$ auf ein Potential $V_j$ zurückzuführen. Die generalisierte Kraft $Q_j = - \ffpartial{V}{q_j}$, wie auch das Potential $V$, sind unabhängig von der Geschwindigkeit $\dot{q}_j$. Anders ausgedrückt gilt
+In einem konservativen System ist die Kraft $Q_j$ auf ein Potential $V_j$ zurückzuführen. Das Potential V, und damit auch die generalisierte Kraft $Q_j = - \ffpartial{V}{q_j}$, ist unabhängig von der Geschwindigkeit $\dot{q}_j$. Anders ausgedrückt gilt
 $$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \{  \dd{t} \fpartial{\dot{q}_j} (T-V) - \fpartial{q_j} (T -V) \} \delta q_j = 0$$
 
 \subsubsection{Langangefunktion}
-Man kann die Gleichungen auch wie folgt schreiben, wenn man die Langrangefunktion $L$ einführt.
-$$L(q_1, \dots, q_s;\dot{q}_1, \dots, \dot{q}_s, t) = T(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) - V(q_1, \dots, q_s)$$
+Man kann die Gleichungen auch wie folgt schreiben, wenn man die Lagrangefunktion $L$ einführt.
+$$L(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) = T(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) - V(q_1, \dots, q_s)$$
 
-\subsubsection{Langrangegleichung \textit{1. Art}}
+\subsubsection{Lagrangegleichung \textit{1. Art}}
 $$\sum_{j = 1}^s  (  \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j}  ) \delta q_j = 0$$
 
-\subsubsection{Langrangegleichung \textit{2. Art}}
+\subsubsection{Lagrangegleichung \textit{2. Art}}
 Gegeben sei wieder ein konservatives System mit holonomen Zwangsbedingungen.
 $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, \dots, s$$
 
-\newcommand{\vardots}[2]{#1_1, \dots, #1_#2}
-
 \begin{bemerkung*}[Fazit]~\\
-	Mit den Langrangegleichungen wurden die Zwangskräfte eliminiert. Man hat dafür $s$ gewöhnliche \Dglen 2. Ordnung bekommen, für welche man $2s$ Anfangsbedingungen benötigt um sie zu lösen.
+	Mit den Lagrangegleichungen wurden die Zwangskräfte eliminiert. Man hat dafür $S$ gewöhnliche \Dglen~ 2. Ordnung bekommen, für welche man $2sS$ Anfangsbedingungen benötigt um sie zu lösen.
 	Statt Impuls und Kraft, wie bei den Newtonschen Gesetzen, liegen hierbei Energie und Arbeit im Fokus.
 \end{bemerkung*}
 
 \begin{bemerkung*}[Ausblick]
 	$$L = L(\vardots{q}{s}, \vardots{\dot{q}}{s}, t)$$
-	Langrangegleichungen sind invariant gegenüber Punkttransformationen \\
+	Lagrangegleichungen sind invariant gegenüber Punkttransformationen \\
 	$(\vardots{q}{s}) \underset{\text{differenzierbar}}{\leftrightarrow} (\vardots{\bar{q}}{s})$ mit $\bar{q}_i = \bar{q}_i(\vardots{q}{s}, t)$, $q_i = q_i(\vardots{\bar{q}}{s}, t)$
 	Damit hat man bei der Wahl der generalisierten Koordinaten gewisse Freiheiten. Diese kann man zur Vereinfachung des Problems nutzen. Hierbei ist es sinnvoll weitere Symmetrien im Problem auszunutzen.
 \end{bemerkung*}
-
-\newcommand{\vecdotnumsq}[2]{\dot{\vec{#1}}^2_#2}
 
 \begin{beispiel*}[Schwingende Hantel]
 	\textit{Hantel deren eine Masse $m_1$ auf einer Stange gelagert ist und deren andere Masse $m_2$ nach unten an der Hantel hängt.}
@@ -415,12 +415,11 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	womit es im System $s = 6 -4$ Freiheitsgrade gibt.
 	Als generalisierte Koordinaten kann man zum Beispiel $q_1 = x$ und $q_2 = \phi$ (der Winkel zwischen Lot und Hantelstange) wählen. Damit sind die Koordinaten und Geschwindigkeiten:
 	\begin{align*}
-	x_1 &= q_1 ~~~~ x_2 = q_1 + l \sin q_2\\
-	y_1 &= 0 ~~~~~ y_2 = l \cos q_2\\
-	z_1 &= 0 ~~~~~ z_2 = 0\\
-	\dot{x}_1 &= \dot{q}_1\\
-	\dot{x}_2 & = \dot{q}_1 + \dot{q}_2 l \cos q_2\\
-	\dot{y}_2 &= - l \dot{q}_2 \sin q_2
+	x_1 &= q_1 & x_2 &= q_1 + l \sin q_2\\
+	y_1 &= 0 & y_2 &= l \cos q_2\\
+	z_1 &= 0 & z_2 &= 0\\
+	\dot{x}_1 &= \dot{q}_1 & \dot{x}_2 &= \dot{q}_1 + \dot{q}_2 l \cos q_2\\
+	&&\dot{y}_2 &= - l \dot{q}_2 \sin q_2
 	\end{align*}
 	Damit ist die Kinetische Energie
 	\begin{align*}
@@ -434,8 +433,12 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (l^2 \dot{q}_2^2 + 2 l \dot{q}_1 \dot{q}_2 \cos q_2) + m_2 g l \cos q_2
 	\end{align*}
 	\textbf{Interessante Beobachtung} L hängt nicht von $q_1$ ab (nur von $\dot{q}_1$).
-	$$\dd t \ffpartial{L}{\dot{q}_1} - \underbrace{\ffpartial{L}{q_1}}_{= 0} = 0$$
-	$$\rightarrow \dd t \ffpartial{L}{\dot{q}_1} = 0 \rightarrow \ffpartial{L}{\dot{q}_1} = \text{konstant}$$
+	\begin{align*}
+	content...
+	\dd t \ffpartial{L}{\dot{q}_1} - \underbrace{\ffpartial{L}{q_1}}_{= 0} &= 0
+	\intertext{Damit muss offensichtlich gelten}
+	\ffpartial{L}{\dot{q}_1} &= \text{konstant}
+		\end{align*}
 \end{beispiel*}
 
 \begin{definition*}[Zyklische Koordinate]
@@ -449,26 +452,31 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 \begin{beispiel*}[Schwingende Hantel \-- Fortsetzung]
 	\begin{align*}
 		p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 = \text{konstant}\\
-		\rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos q_2 + c\\
-		\overset{\text{Integration}}{\rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)
+		\Rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos q_2 + c\\
+		\overset{\text{Integration}}{\Rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)
 	\end{align*}
 	Die Anfangsbedingungen:
 	\begin{align*}
 		q_1(t = 0) &= q_2(t = 0) = 0\\
 		\dot{q}_2(t=0) &= \omega_0\\
 		\dot{q}_1(t=0) &= - \frac{m_2 l}{m_1 + m_2} \omega_0\\
-		\rightarrow c &= 0 \rightarrow q_1(t) = - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)\\
-		\intertext{Damit bereits Rücktransformation}
+		\Rightarrow c &= 0 \Rightarrow q_1(t) = - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)\\
+		\intertext{Damit erfolgt bereits die Rücktransformation}
 	x_1(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t)\\
 	y_1(t) &= 0\\
 	y_2(t) &= l \cos \phi(t)\\
 	x_2(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t) + l \sin \phi(t)\\ 
-	&\text{Mit $l = \frac{m_1 + m_2}{m_1 + m_2} l$}\\
+	\intertext{Mit $l = \frac{m_1 + m_2}{m_1 + m_2} l$}
 	&= \frac{m_1}{m_1 m_2} l \sin \phi(t)\\
-	& \frac{x_2^2(t)}{(\frac{m_1 l}{m_1 üm_2})^2} + \frac{y_2^2(t)}{l^2} = 1
 	\end{align*}
-	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 m_2}l < l \text{~und~} l$
-	Dazu die $q_2$-\textit{Langrange}-Gleichung
+	Nur verwendet man die 3. Zwangsbedingung vom Anfang
+	\begin{align*}
+	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0\\
+	\Leftrightarrow \frac{(x_1 - x_2)^2}{l^2} + \frac{y_2^2}{l^2} &= 1\\ 
+	\Leftrightarrow \frac{x_2^2(t)}{(\frac{m_1 l}{m_1 + m_2})^2} + \frac{y_2^2(t)}{l^2} &= 1
+	\end{align*}
+	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 m_2}l < l \text{~und~} l$.
+	Dazu die $q_2$-\textit{Lagrange}-Gleichung
 	\begin{align*}
 	\ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \dot{q}_2 + l \dot{q}_1 \cos q_2)\\
 	\dd t \ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \ddot{q}_2 + l \ddot{q}_1 \cos q_2 - l \dot{q}_1 \dot{q}_2 \sin q_2)\\
@@ -477,7 +485,6 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\intertext{Jetzt $\ddot{q}_1$ von oben (per Differentation)}
 	\ddot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} (\ddot{q}_2 \cos q_2 - \dot{q}_2^2 \sin q_2)
 	\end{align*}
-	
 	Damit erhält man die $q_2$-Gleichung
 	$$l^2 \ddot{q}_2 - \frac{m_2 l^2}{m_1 + m_2}(\ddot{q_2} \cos q_2 - \dot{q}_2^2 \sin q_2) \cos q_2 + g l \sin q_2 = 0$$
 	und eine \Dgl~ 2. Ordnung für $q_2(t) = \phi(t)$.
@@ -736,8 +743,6 @@ $$\vec{t = 0} = \vec{v}_0 = \begin{pmatrix}v \cos(\alpha) \\ 0 \\ v \sin(\alpha)
 $$\rightarrow v_x(0) = v \cos(\alpha) \rightarrow c_1 = v \cos(\alpha), x(0) = 0 \rightarrow c_2 = 0$$
 -------------------------
 
-\newcommand{\tvector}[1]{\begin{pmatrix}#1\end{pmatrix}}
-
 \subsubsection{a}
 Bild von Parabel...
 
@@ -760,7 +765,7 @@ Anfangsbedingungen: $\dot{z}(0) v \sin(\alpha)$ und $z(0) = 0$ \conseq $c_5 = v 
 $x(t) = v t \cos(\alpha)$ \conseq $t = \frac{x}{v \cos(\alpha)}$ \conseq $z(t(x)) = - \frac{1}{2} g \frac{x^2}{v^2 \cos^2(\alpha)} + v \frac{x}{v \cos(\alpha)} \sin(\alpha) = x\tan(\alpha) - 1 \frac{1}{2} \frac{g}{v^2 \cos^2(\alpha)} x^2$ \conseq $z(x)$ beschreibt Parabel in $x$
 
 \subsubsection{b}
-\newcommand{\tfin}{t_\text{fin}}
+
 \paragraph{Maximale Distanz?}
 \begin{itemize}
 	\item $z(\tfin) = (v \sin(\alpha)) \tfin - \frac{1}{2} g \tfin^2 \overset{!}{=} 0$ \conseq $\tfin\pm = \frac{v \sin(\alpha)}{g} \pm \sqrt{(\frac{v \sin(\alpha)}{g})^2 - 0}$ \conseq $\tfin^- = 0$ und $\tfin+ = 2 \frac{v \sin(\alpha)}{g}$
