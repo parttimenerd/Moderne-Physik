@@ -11,12 +11,13 @@
 \usepackage{upgreek}
 \usepackage{lmodern}
 \usepackage{tikz}
-\usepackage{todo}
 \usepackage{color, soul}
 \usepackage{xparse}
 %\usepackage{a4wide}
 \usepackage{microtype}
 \usepackage[colorlinks=true,linkcolor=black,naturalnames]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\allowdisplaybreaks[3]
 
 \theoremstyle{definition}
 \newtheorem*{definition*}{Definition}
@@ -101,6 +102,8 @@
 	~\\
 	\textbf{Es handelt sich um einen Entwurf, der laufend verbessert wird.} 
 
+\listoftodos
+
 \chapter{Einführung}
 
 \begin{definition*}[Moderne Physik]
@@ -123,7 +126,6 @@
 	\item[\conseq] Quantenphysik
 \end{description}
 
-\mainmatter
 \chapter{Klassische Mechanik}
 
 \section{Abriss der Newtonsche Mechanik}
@@ -494,10 +496,112 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 \end{beispiel*}
 
 
+\subsubsection{Rezept für holonome Zwangsbedingungen}
 
+Für die häufigsten Fälle mit \textbf{holonomen} Zwangsbedingungen und \textbf{konservativen} Kräften gibt es ein Rezept:
+\begin{enumerate}
+\item Zwangsbedingungen formulieren
+\item Generalisierte Koordinaten festlegen
+\item Langrangefunktion hinschreiben (mit generalisierten Koordinaten und Geschwindigkeiten)
+\item Langrangefunktion ableiten und wenn möglich lösen
+\item Eventuell Rücktransformation auf gewöhnliche Koordinaten
+\end{enumerate}
 
+\subsubsection{Nichtholonome Systeme}
+Bei holonomen Systemen gibt es $S = 3N - p$ unabhängige generalisierte Koordinaten. Diese sind bei nicht-holonomen Systemen nicht mehr unabhängig.
 
+Falls die nicht-holonomen Bedingungen differentiell \todo{was bedeutet differentiell???} sind gibt es sogenannte Langrange-Multiplikatoren, welche im folgenden erläutert werden.
 
+Es gibt $\bar{p}$ nicht holonome Zwangsbedingungen und damit gilt $p \leq \bar{p}$: 
+$$i = 1, \dots, p:~~\sum_{m=1}^{3N} f_{im}(x_1, \dots, x_{3N}, t) \d x_m + f_{it}(x_1, \dots, x_{3m}, t) \d t = 0$$ 
+mit $j = 3N - (\bar{p} - p)$ generalisierten Koordinaten.
+
+Die konkreten Koordinaten hängen von den generalisierten ab: $q_1, \dots, q_j \rightarrow \vec{r}_i = \vec{r}_i(\vardots{q}{j}, t)$ aber nicht alle $q_j$ sind unabhängig voneinander, wie anfangs schon erwähnt.
+
+Damit gilt für nicht-holonome Bedingungen in $q_j$
+\begin{align*}
+\sum_{i=1}^j a_{im} \d q_m + b_{it} \d t &= 0, i = 1, \dots, p = 0
+\intertext{für virtuelle Verrückungen, bei denen $\delta t = 0$ gilt, ist die Gleichung wie folgt}
+\sum_{m=1}^j a_{im} \delta q_m &= 0, i = 1, \dots, p
+\intertext{Nun werden die Langrange-Multiplikatoren $\lambda_i = \lambda_i(t)$ eingeführt}
+\sum_{i=1}^{p} \lambda_i \sum_{m=1}^j a_{im} \delta q_m &= 0
+\intertext{bei konservativen Systemen (siehe oben) gilt mit dem Prinzip von d'Alembert}
+\sum_{m=1}^j (\ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m}) \delta q_m = 0
+\intertext{Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht unabhängig sind. Zusammengefasst folgt damit}
+\sum_{m=1}^j { \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} } \delta q_m &= 0
+\intertext{Nur ein Teil der generalisierten Koordinaten ist, wie schon oft erwähnt, unabhängig voneinander: $m=1,\dots,j-p$ unabhängig, $m = j-p+1, \dots j$ abhängig, Wahl der $q_m$ entsprechend}
+\intertext{Wähle für die letzten $p$ Gleichungen die bisher nicht bestimmten $\lambda_i$ so, dass}
+\ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} &= 0, m = j-p+1, \dots, j
+\intertext{Damit hat man nur noch Gleichungen mit unabhängigen $q_m$ \conseq jeder Summand ist 0. Woraus Langrangegleichungen 1. Art entstehen}
+\dd t \ffpartial{L}{\dot{q}_m} - \ffpartial{L}{q_m} &= \sum_{i=1}^p \lambda_i a_{im}, m = 1, \dots, j
+\intertext{Hierbei gilt noch $\sum_{m=1}^j a_{im} \dot{q}_m + b_{it} = 0$. Damit hat man $j + p$ Gleichungen für $j$ generalisierte Koordinaten und $p$ Multiplikatoren $\lambda_i$.}
+\end{align*}
+
+Ein Vergleich mit den generalisierten Kräften zeigt $\bar{Q}_m = \sum_{i=1}^{p} \lambda_i a_{im}$
+Nun hat man generalisierte Zwangskräfte ($\sum_{m=1}^j \bar{Q}_m \delta q_m = 0$) was den $\lambda_i$ entspricht.
+Dieses Wissen ist auch ein Gewinn für Systeme mit holonomen Zangsbedingungen, denn die Kenntnis der Zwangskräfte ist nützlich für das Design des Systems.
+
+\textbf{Anwendung auf holonome Systeme}
+$f_i(\vardots{\vec{r}}{N}, t) = 0, i = 1, \dots, p$ in generalisierten Koordinaten $\bar{f}_i(\vardots{q}{j}, t) = 0$, daraus folgt das totale Differential 
+$$\d \bar{f}_i = \sum_{m=1}^j \ffpartial{\bar{f}_i}{q_m} \d q_m + \ffpartial{\bar{f}_i}{t} \d t$$
+und damit 
+\begin{align*}
+	a_{im} = \ffpartial{\bar{f}_i}{q_m}& &b_{it} = \ffpartial{\bar{f}_i}{t}
+\end{align*}
+Die Zwangskräfte in holonomen Systemen können nun mit Langrangegleichungen 1. Art bestimmt werden.
+
+\begin{beispiel*}[holonome Zwangsbedingungen mit Zwangskräften]
+Es wird ein Pendel mit Winkel $\varphi$ zum Lot, der Länge $l$ und der Masse $m$ betrachtet.
+Zunächst wird $r=l$ variabel gewählt. Die verallgemeinerten Koordinaten sind deswegen offensichtlich $\varphi$ und $r$.
+\begin{align*}
+x &= r \sin \varphi\\
+y &= l - r \cos \varphi\\
+f(x,y,t) &= r - l = 0 \text{~~~~die Zwangsbedingung}\\
+V &= -mg y = -mg (l -r \cos \varphi)\\
+T &= \frac12 m (\dot{x}^2 + \dot{y}^2)\\
+\dot{x} &= \dot{r} \sin \varphi + r \dot{\varphi} \cos \varphi\\
+\dot{y} &= - \dot{r} \cos \varphi + r \dot{\varphi} \cos \varphi\\
+\dot{x}^2 + \dot{y}^2 &= \dot{r}^2 \sin^2 \varphi + 2 r \dot{r} \dot\varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \cos^2 \varphi + \dot{r}^2 \cos^2 \varphi - 2 r \dot r \dot \varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \sin^2 \varphi \\
+&= \dot{r}^2 + r^2 \dot{\varphi}2\\
+L &= T-V = \frac12 m (\dot{r}^2 + r^2 \dot{\varphi}^2) + mg(l - r \cos \varphi)\\
+\ffpartial{L}{r} - \dd t \ffpartial{L}{\dot{r}} &= m r \dot{\varphi}^2 - mg \cos \varphi - \dd t m \dot{r} \\
+&= -m (g \cos \varphi + \ddot{r} - r \dot{\varphi}^2)\\
+\ffpartial{L}{\varphi} - \dd t \ffpartial{L}{\dot{\varphi}} &= mgr \sin \varphi - \dd t m r^2 \dot{q} \\
+&= mgr \sin \varphi - 2mr\dot{r}\dot{\varphi} - mr^2 \ddot{\varphi}\\
+\end{align*}
+Zwangsbedingung $r-l = 0 = \bar{f}(r, \varphi, t)$\\
+$\ffpartial{f}{r} = 1$ alle anderen partiellen Ableitungen $= 0$\\
+\conseq $\lambda_r = \bar{Q}_r$ ist Zwangskraft in $r$-Richtung
+
+Daraus folgen 3 Gleichungen
+\begin{description}
+	\item[$r$-Gleichung] $$\lambda = m \ddot{r} + mg \cos \varphi - m r \dot{\varphi}^2$$
+	\item[$\varphi$-Gleichung] $$\ddot{\varphi} + \frac{2 \dot{r}}{r} \dot{\varphi} + \frac{g}{r} \sin \varphi = 0$$
+	\item[$l$-Gleichung] $$r = l \rightarrow \dot{t} = \ddot{r} = 0 $$
+\end{description}
+Randbemerkung: $\lambda = -m(l \dot{\varphi}^2 - g \cos \varphi)$ ist hier die Fadenspannung.
+
+Das ganze kann man vereinfachen wenn man $\dot{r} = 0$ und $\sin \varphi \approx \varphi$ annimmt (letzteres gilt für klein $\varphi$). Damit gilt dann folgendes
+$$\varphi(t) = \varphi_0 \sin \sqrt{\frac{g}{l} t}$$\todo{falsch???}
+\end{beispiel*}
+
+\subsection{Das Hamiltonische Prinzip}	
+Zeigen, dass die Langrangegleichungen nicht nur aus dem differentiellen Prinzip von d'Alembert folgen: hier momentane virtuelle Verrückungen betrachtet.
+\textbf{Dagegen Hamilton}: \textbf{Integralprinzip}\\
+Variation der gesamten Bahn bei festen Endpunkten
+Dazu Bahnen $\vec{q}(t)$ im Konfigurationsraum
+$$\vec{q}(t) = (q_1(t), \dots, q_s(t))$$
+ein $\vec{q}(t)$ beschreibt einen Zustand des gesamten Systems. Für gegebene $\vec{q}(t)$ und $\dot{\vec{q}}(t)$ wird die Langrangefunktion Funktion der Zeit 
+$$L(\vec{q}(t), \dotvec{q}(t), t) = \tilde{L}(t)$$
+
+\begin{definition*}[Wirkungsintegral]
+$$S{ \vec{q}(t) } = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
+Dimension "`Wirkung"' \conseq Energie: Zeit
+$S$ hängt von $\vec{q}(t)$ und $t_1, t_2$ ab 
+Funktion $\vec{q}(t) \xrightarrow{\text{Abbildung}} S { \vec{q}(t) }$ im allgemeinen Funktional.
+
+Wir betrachten Scharen $\vec{q}(t)$ mit gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$	
+\end{definition*}
 
 
 \chapter{Relativität}
@@ -779,11 +883,76 @@ $x(t) = v t \cos(\alpha)$ \conseq $t = \frac{x}{v \cos(\alpha)}$ \conseq $z(t(x)
 Geschwindigkeiten vor dem Stoß: $\vec{v}_2$ und $\vec{v}_2$ $(\vec{v} \parallel - \vec{2})$\\
 Mit "`Actio = Reactio"': $\vec{F}_1 = m_1 \ddotvec{r}_1$ \conseq $m_2 \ddotvec{r}_2 = \vec{F}_2 = - \vec{F}_1$ \conseq $\dd t (m_1 \dotvec{r}_1 + m_2 \dotvec{r}_2) = 0$ \conseq $m_1 \ddotvec{r}_1 + m_2 \ddotvec{r}_2 = 0$ \conseq $m_1 \ddotvec{r}_1 = -m_2 \ddotvec{r}_2$ \conseq $\vec{F}_1 = -\vec{F}_2$ \conseq $m_1 \vec{v}_1 + m_2 \vec{v}_2 = \vec{p}_1 + \vec{p}_2 = \vec{p} = \text{konstant}$ \conseq Gesamtimpulserhaltung. Absehen von Richtungen: $m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$, $v_1'$ und $v_2'$ Geschwindigkeiten nach dem Stoß
 
-\subsubsection{a}
+\subsubsection{b}
 Gesamtenergieerhaltung: Nur kinetische Energie $E_\text{kin} = \frac12 m v^2$ \conseq $\underbrace{\frac12 m v^2 + \frac12 m_2 v_2^2}_\text{Energie vor dem Stoß} = \underbrace{\frac12 m_1 v_1'^2 + \frac{1}{2} m_2 v_2'^2}_\text{Energie nach dem Stoß}$ \dots
 
+\subsubsection{c}
+Nach dem Stoß $v'_1$ und $v'_2$.
+Impulserhaltung: $m_1v_1 +m_2v_2 = m_1v'_1+m_2v_2'$ \conseq $m_1(v_1 - v'_1) = m_2(v'_2 - v_2)$\\
+Energieerhaltung: $m_1v_1^2 + m_2v_2^2 = m_1{v'}_1^2 + m_2{v'}_2^2 \rightarrow m_1(v_1^2-{v'}_1^2) = m_2({v'}_2^2 - v_2^2)$\\
+\conseq $m_1(v_1-{v'}_1)(v_{21}+{v'}_1) = m_2 ({v'}_2 - v_2) ({v'}_2 + v_2)$
+\conseq $v_1 + {v'}_1 = {v'}_2 + v_2$
+\conseq $v_1 - v_2 = -({v'}_1 - {v'}_2)$ \conseq die Relativgeschwingdigkeiten vor und nach dem Stoß ändern die Richtung\\
+$v_1 - v_2 = {v'}_2-{v'}_1$ und Impulserhealtung\\
+Für ${v'}_1$: ${v'}_1$ = ${v'}_2 + v_2 - v_1$ und ${v'}_1 = \frac{1}{m_1} (-m_2 {v'}_2 + m_2v_2 + m_1v_1)$ \conseq $\frac{m_2}{m_1} {v'}_1 + {v'}_1 = 2\frac{m_2}{m_1} v_2 + v_1 (1-\frac{m_2}{m_1})$\\
+\conseq ${v'}_1 = (m_1 - m_2)v_1 + 2m_2v_2 / (m_1 + m_2)$\\
+Analog: ${v'}_1 = 2m_1v_1 + \frac{(m_2 - m_1)v_2)}{(m_1 + m_2)}$
+Für $m_1 = m_2 = m$ folgt ${v'}_1 = v_2$ und ${v'}_2 = v_1$
+und gilt zu dem $v_2 = 0$ folgt ${v'}_1 = 0$ und ${v'}_2 = v_1$
 
 \section{Blatt 2}
+
+\subsection{4}
+\subsubsection{1}
+\paragraph{a}
+$$m \ddot{x} = -kx$$
+Ansatz $x(t) = c_\lambda e^{\lambda t}$ \conseq $\ddot{x}(t) = c_\lambda \lambda^2 e^{\lambda t} = \lambda^2 x(t)$\\
+$m \ddot{x}(t) = m \lambda^2 x(t)$ \conseq $\lambda^2 = - \frac{k}{m}$
+\conseq $\lambda_{\pm} = \pm \sqrt{- \frac{k}{m}} = \pm i \sqrt{\frac{k}{m}}$, $\lambda_{-} = - \lambda_{+}$
+Gesamt: $x(t) = c_+ e^{\lambda_+ t} + c_- e^{\lambda_- t} = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}$, $\lambda_1 = \lambda_+$, $\lambda_2 = \lambda_- = - \lambda_1$
+Anfangsbedingungen: $x(t = 0) = x_0 = c_1 + c_2$ und $\dot{x}(t = 0) = v_0 = c_1 \lambda_1 + c_2 \lambda_2 = \lambda_1 (c_1 - c_2) $
+\conseq $c_1+c_2 = x_0$ und $c_1 - c_2 = \frac{v_0}{\lambda_1}$
+\conseq $c_1 = \frac12 (x_0 + \frac{v_0}{\lambda_1})$ und $c_2 = \frac12 (x_0 - \frac{v_0}{\lambda_1})$, $\lambda_1 = i \sqrt\frac{k}{m} = i \omega$
+\conseq $x(t) = \frac{1}{2} (x_0 \frac{v_0}{\lambda_1})e^{\lambda_1 t} + \frac12 (x_0 - \frac{v_0}{\lambda_1})e^{-\lambda_1 t} = \frac{1}{2} x_0 (e^{i \omega t} + e^{-i\omega t}) + \frac12 \frac{v_0}{i\omega}(e^{i \omega t} - e^{-i\omega t})$
+mit $\cos(\omega t) = \frac{1}{2} (e^{i \omega t} + e^{i \omega t})$ und $\sin(\omega t) = \frac{1}{2i} (e^{i \omega t} - e^{i \omega t})$
+Energie $\dot{x}(t) = - x_0 \omega \sin(\omega t) + v_0 \cos(\omega t)$
+$E = T + V = \frac12 m\dot{x}^2 + \frac12 k x^2$ (letzter Term: Federpotential von harmonischem Oszillator)
+$ = \frac{1}{2} m (v_0 \cos(\omega t) - x_0 \omega \sin(\omega t)) = \frac{1}{2} m v_0^2 + \frac12 \underbrace{m \omega^2}_{k} x_0^2$ \conseq Energieerhaltung im Reibungsfreien Fall
+\paragraph{b}
+$m \ddot{x} = -kx + f_0 \cos(\omega_0 t) \rightarrow \ddot{x} + \omega^2 x = \frac{f_0}{m} \cos(\omega_0 t)$
+	Die Lösung ist eine Superposition aus der Lösung $x_0(t)$ der freien Gleichung aus \textit{a} und einer sogenannten Partikulärlösung $x_p$, mit dem Ansatz $x_p(t) = c_0 \cos(\omega_0 t - \phi)$
+	\\Setze $x_p(t)$ in  $c_1 + c_2 = x_0$ ein: $\dot{x}_p = - c_0 \omega_0 \sin(\omega_0 t - \phi)$, $\ddot{x}_p = - c_0 \omega_0^2 \cos(\omega_0 t - \phi)$
+	\conseq $\ddot{x}_p + \omega_2 x_p = - c_0 \cos(\omega_0 t - \phi) + \omega^2 c_0 \cos(\omega_0 t - \phi)$
+	mit $\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y)$
+	\conseq $\frac{f_0}{m} \cos(\omega t) = c_0 (\omega^2 - \omega_0^2) (\cos(\omega_0 t) \cos(\phi) - \sin(\omega_0 t)\sin(\phi))$
+	$0 = \cos(\omega_0 t)(c_0 (\omega^2 - \omega_0^2)\cos(\phi) - \frac{f_0}{m}) - \sin(\omega_0 t)(c_0 (\omega^2 - \omega_0^2) \sin(\phi))$
+	\\ Wenn das für alle $t$ gelten soll, so muss jeder Term, proportional zu $\cos(\omega_0 t)$ und $\sin(\omega_0 t)$, seperat verschwinden \conseq $c_0 (\omega^2 - \omega_0^2) \cos(\phi) - \frac{f_0}{m} = 0 \text{(i)}$ und $c_0 (\omega^2 - \omega_0^2) \sin(\phi) = 0 \text{(ii)}$\\
+	Bestimme $c_0$ und $\phi$.
+	(i) \conseq (i*) $c_0 (\omega^2 - \omega_0^2) \cos(\phi) = \frac{f_0}{m}$\\
+	(i)/(i*) \conseq $\frac{\sin(\phi)}{\cos(\phi)} = 0 = \tan (\phi)$
+	\conseq Erlaubte Werte für $\phi$ sind $0, \pm \pi, \dots$.\\
+	$(i*)^2 + (ii)^2$ \conseq $c_0^2 (\omega^2 - \omega_0^2)^2 (\cos^2(\phi) + \sin^2(\phi)) = \frac{f_0^2}{m^2}$ \conseq $c_o = \frac{\frac{f_0}{m}}{\omega^2 - \omega_0^2}$ Resonanzkatastrophe für $\omega_0 = \omega$\\
+Gesamt: $x(t) = x_0(t) + x_p(t)$\\
+$x(t) = x_0 \cos(\omega t) + \frac{v_0}{\omega} \sin(\omega t) + \frac{\frac{f_0}{m}}{\omega^2 - \omega_0^2} \cos (\omega_0 t - \phi)$
+
+\subsection{2}
+\textit{Langrangegleichung 2. Art entspricht Euler-Langrange-Gleichung.}
+$L(\vec q, \dotvec{q}) = T(\dotvec{q}) - V(\vec{q})$\\
+$L(\vec{x}, \dotvec{x}) = \frac12 m \dotvec{x}^2 - V(\vec{x}) = \frac12 m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - V(\vec{x})$, drei generalisierte Koordinaten und Geschwindigkeiten und für jeden Satz $(x, \dot x)$, $(y, \dot y)$, $(z, \dot z)$ gibt es eine Euler-Langrange-Gleichung\\
+Betrachte nur x: $L(x, \dot x) = \frac12 m \dot{x}^2 - V(x)$
+\conseq $\dd t \ffpartial{L}{\dot{x}} - \ffpartial{L}{x} = 0$ \conseq $\dd t (m \dot x) - (- \ffpartial{V}{x}) = 0$ \conseq $m \ddot x + \ffpartial{V}{x} = 0$ \conseq $m \ddot x = - \ffpartial{V}{x} = F_x$ \textit{Ein Teilchen der Masse $m$ erfährt im Potential $V(x)$ eine Kraft $F_x = -\ffpartial{V}{x}$}
+
+\subsection{3}
+Erinnerung $(q_i, \dot{q}_i:~ \dd t (\ffpartial{L(\vec{q}, \dotvec{q})}{\dot{q}_i}) = 0$\\
+$x = r \sin(\varphi)$, $y = - r \cos(\varphi)$, $z = 0$\\
+$v_x = \dot{x} = l \cos(\phi) \dot{\varphi}$, $v_y = l \sin(\varphi) \dot{\varphi}$ 
+\begin{itemize}
+	\item $x$ und $y$ sind nicht unabhängig: $x^2 + y^2 = r^2 = l^2$
+	\item Eine freie Koordinate $\varphi$ $L = T - V = \frac12 m\vec{v}^2 - mg y = \frac12 (v_x^2 + v_y^2 + v_z^2) - mgy = \frac12 m (l^2 \cos^2(\varphi) \dot{\varphi}^2 + l^2 \sin^2(\varphi)\dot{\varphi}^2) + mgl \cos(\varphi) = \frac12 m l^2 \dot{\varphi}^2  + mgl \cos(\varphi) = L(\varphi, \dot{\varphi})$
+\end{itemize}
+$L(\varphi, \dot{\varphi})$ is von $\dot{\varphi}$ und $\varphi$ abhängig \conseq $\varphi$ ist keine zyklische Koordinate \conseq Euler-Langrange-Gleichung für $(\varphi, \dot{\varphi})$: $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t (ml^2 \dot{\varphi}) - (-mgl \sin(\varphi)) = 0$ \conseq $ml^2 \ddot{\varphi} + mgl\sin(\varphi) = 0$ \conseq $\ddot{\varphi} + \underbrace{\frac{g}{l} \sin(\varphi)}_\text{Pendel} = 0$\\
+\textbf{Bemerkung} Hätte $L$ nicht $V$ abgehängt, also $L = T = \frac12 m \vec{v}^2 = \frac12 m l^2 \dot{\varphi}^2$.\\
+Dann wäre $\varphi$ zyklisch und $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t \ffpartial{L}{\dot{\varphi}} = 0$ \conseq $\ffpartial{L}{\dot{\varphi}} = m l^2 \dot{\varphi}$ Erhaltungsgröße und Drehimpuls
 
 
 
