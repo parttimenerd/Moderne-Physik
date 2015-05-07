@@ -52,6 +52,7 @@
 
 
 \renewcommand{\d}{\mathrm d}
+\newcommand{\md}{\d}
 \newcommand{\dd}[1]{\frac{\d}{\d #1}}
 \newcommand{\ddd}[2]{\frac{\d #1}{\d #2}}
 \newcommand{\tvector}[1]{\begin{pmatrix}#1\end{pmatrix}}
@@ -64,6 +65,7 @@
 \newcommand{\vardots}[2]{#1_1, \dots, #1_#2}
 \newcommand{\vecdotnumsq}[2]{\dot{\vec{#1}}^2_#2}
 \newcommand{\tfin}{t_\text{fin}}
+\newcommand{\const}{\text{konstant}}
 
 \makeatletter
 \@removefromreset{section}{chapter}
@@ -293,7 +295,7 @@ Es gibt $S = 2$ generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ un
 	x^2 + y^2 - l^2_1 &= 0\\
 	(x_1 - x_2)^2 + (y_1 + y_2)^2 - l_2^2 &= 0 
 \end{align*}
-Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Die verallgemeinerten Koordinaten könnten zum Beispiel die beiden Winkel $q_1 = \vartheta_1$ und $q_2 = \vartheta_2$ sein. Die usprünglichen Koordinaten können damit als $x_1 = l_1 \cos q_1$, $y_1 = l_1 \sin q_1$, $z_1 = 0$, $x_1 = l_1 \cos q_1 + l_2 \cos q_2$, $y_2 = l_1 \sin q_1 + l_2 \sin q_2$, $z_2 = 0$  dargestellt werden.
+Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Die verallgemeinerten Koordinaten könnten zum Beispiel die beiden Winkel $q_1 = \vartheta_1$ und $q_2 = \vartheta_2$ sein. Die ursprünglichen Koordinaten können damit als $x_1 = l_1 \sin q_1$, $y_1 = l_1 \cos q_1$, $z_1 = 0$, $x_2 = l_1 \sin q_1 + l_2 \sin q_2$, $y_2 = l_1 \cos q_1 + l_2 \cos q_2$, $z_2 = 0$  dargestellt werden.
 \end{beispiel*}
 
 
@@ -826,7 +828,109 @@ Damit kann man die Hamiltonfunktion als Gesamtenergie des Systems interpretieren
 
 
 
+\paragraph{Zusammengefasst}
+Aus der Homogenität in der Zeit folgt
+\[H=\sum\limits_{j=1}^S p_j\dot q_j - L = \const\]
+Falls die Zwangsbedingungen skleronom sind, folgt daraus die \emph{Energieerhaltung}, denn die Hamiltonfunktion ist die Gesamtenergie.
 
+\subsubsection{Homogenität des Raums}
+Wenn etwas räumlich homogen ist, bedeutet, dass es unabhängig vom Ort (Anfangsbedingungen). Eine Verschiebung des Systems verändert nicht die Dynamik. Damit ist ein solches System in der Regel nur von den relativen Abständen abhängig.
+
+Sei nun $\Delta q_j$ die Translation des Gesamtsystems. Bei Homogenität gilt $\frac{\partial L}{\partial q_j} = 0$ und damit, dass $q_j$ zyklisch und $p_j = \frac{\partial L}{\partial \dot q_j} = \const$ ist.
+
+Bei konservativen Systemen gilt nun $\frac{\partial V}{\partial \dot q_j}$ \todo{???}
+\begin{align*}
+p_j &= \frac{\partial L}{\partial \dot q_j} = \frac{\partial T}{\partial \dot q_j} = \sum \limits_{i=1}^Nm_i \dot{\vec r}_i\frac{\partial \dot{\vec r}_i}{\partial \dot q_j} = \sum\limits_{i=1}^Nm_i\dot{\vec r}_i\frac{\partial \vec r_i}{\partial q_i}\\
+\intertext{Übersetze $\Delta q_j$ in räumliche Koordinaten, also zu $\Delta q_j \vec n_j$ wobei $\vec{n}_j$ die Richtung ist, in der die Translation statt findet.
+	Die Änderung erfolgt damit entlang $\vec n_j$ im Infinitesimalen.}
+\frac{\partial\vec r_i}{\partial q_j} &= \lim\limits_{\Delta q_j \to 0} \frac{\vec r_i(q_j+\Delta q_j) - \vec r_i (q_j)}{\Delta q_j} = \lim\limits_{\Delta q_j \to 0} \frac{\Delta q_j \vec n_j}{\Delta q_j
+	n} \vec n_j
+\intertext{Womit für den Impuls gilt}
+p_j &= \vec n_j \cdot \sum\limits_{i=1}^N m_i \dot {\vec r}_i = \vec n_j \dot {\vec p}
+\intertext{und damit, wenn $\vec n_j$ beliebig gewählt wird, folgt, dass $\vec P$ konstant ist}
+\vec P &= \sum\limits_{i=1}^N m_i\dot {\vec r}_i = \text{Gesamtimpuls} = \const
+\end{align*}
+Die Homogenität des Raums ist genau dann vorhanden, wenn \emph{Impulserhaltung} auch vorhanden ist.
+
+\subsubsection{Isotropie des Raums}
+Jetzt ist $q_j$ so gewählt, dass $\Delta q_j$ ein Drehwinkel ($\Delta q_j = \Delta \varphi$) und $\vec n_j$ eine Drehachse ist: $\vec n_j \Rightarrow \Delta \vec r_i = \Delta q_j (\vec n_j \times \vec r_i)$\\
+$\frac{\partial \vec r_i}{\partial q_j}$ analog zum Impuls \todo{???}. Für den Impuls gilt
+
+\begin{align*}
+	p_j &= \frac{\partial L}{\partial \dot q_j} = \sum\limits_{i=1}^Nm_i \dot {\vec r}_i \cdot \frac{\partial \vec r_i}{\partial q_j}\\
+	\Rightarrow p_j &= \sum\limits_{i_1}^N m_i \dot {\vec r}_i \cdot (\vec n_j \times \vec r_i) = \vec n_j \sum\limits_{i=1}^N m_i (\vec r_i \times \dot {\vec r}_i)\\
+	p_j &= \vec n_j \sum\limits_{i=1}^N r_i \times (m_i\dot{\vec r}_i) \equiv \vec n_j \sum\limits_{i=1}^N \vec L_i = \vec n_j \cdot \vec L
+\end{align*}
+Hierbei ist
+$\vec L_i = \text{Drehimpuls des $i$-ten Teilchens}$\\
+$\vec L = \text{Gesamtdrehimpuls}$\\
+Isotropie  $\Leftrightarrow$ Drehimpulserhaltung
+\[\vec L = \sum\limits_{i=1}^Nm_i \vec r_i \times \dotvec r_i = \const \]
+\begin{bemerkung*}
+	Bei Systemen, die nur bei Translation entlang einer Richtung oder der Drehung um eine einzige Achse invariant sind, ist nur die entsprechende Komponente von Impuls oder Drehimpuls erhalten.
+\end{bemerkung*}
+
+\section{Hamilton-Mechanik}
+Die Hamiltonsche Mechanik ist eine Weiterentwicklung der Lagrangemechanik. Sie ist ein a posteriori\footnote{"'Eine Theorie, die a posteriori gebildet wurde, erfüllt hinsichtlich ihrer Wissenschaftlichkeit zunächst nur das Kriterium der Erklärungskraft und muss sich in anderer Hinsicht (Nachvollziehbarkeit, Überprüfbarkeit, Falsifizierbarkeit, Voraussagekraft) noch bewähren."' \href{https://de.wikipedia.org/wiki/A_posteriori}{wikipedia}} wichtiger Schritt auf dem Weg zur Quantenmechanik. Die Klassische Mechanik später zum "`Grenzfall"' der Übergeordneten Quantenmechanik. Ein der Quantenmechanik ähnliche mathematische Struktur lässt sich bereits hier entwickeln.
+
+Der Ausgangspunkt ist offensichtlich die Lagrangemechanik. Jetzt wird $(\vec q, \dot {\vec q})$ zu $(\vec q, \vec p, t)$ transformiert.
+
+Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
+\[\text{Lagange}\to\text{Hamilton}\]
+\[\text{$S$ Differentialgleichungen 2. Ordnung}\to\text{$2S$ Differentialgleichungen 1. Ordung}\]
+\[\text{$2S$ Anfangsbedingungen}\to\text{$2S$ Anfangsbedingungen}\]
+Der Übergang von $q_j$ nach $p_j$ geschieht per Legendre-Transformation, die im folgenden kurz erklärt wird.
+\subsubsection{Legendre - Transformation} \textit{als mathematisches Werkzeug}\\
+Sei $f(x)$ eine Funktion mit $\md f = \frac{\md f}{\md x} \md x = u \md x$ und $g(x)$ eine weitere Funktion mit $\frac{\md g}{\md u} = \pm x$
+\begin{align*}
+\md f &= u\md x = \md (ux) - x\md u\\
+\md (f-ux) &= - x \md u\\
+\Rightarrow \frac{\md}{\md u}(f-xu) &= -x\\
+g(u) = f(x) - ux = f(x) - x\frac{\md f(x)}{\md x}
+\end{align*}
+$g(u)$ ist jetzt die Legendre - Transformierte von $f(x)$.
+	
+	
+	
+\begin{beispiel*}[Transformieren von $f(x) = \alpha x^2$ und $\bar{f}(x) = \alpha(x+c)^2$]
+	Zuerst transformieren wir beide Funktionen jeweils durch Ersetzen, also ohne Anwendung der Legendre-Transformation.
+\begin{align*}
+u(x) &= \frac{\md f}{\md x} = 2 \alpha x \rightarrow x= \frac{u}{2\alpha} & \qquad   \bar u &= \frac{\md \bar f}{\md x} = 2\alpha(x+c) \rightarrow x=\frac{\bar u}{2\alpha} - c\\
+\rightarrow g(x) &= \frac{u^2}{4\alpha} & \qquad  \rightarrow \bar g(\bar u) &= \frac{\bar x^2}{4\alpha}
+\end{align*}
+$f$ und $\bar f$ haben die gleichen Transformationen. Damit ist diese Art zu Transformieren offensichtlich nicht eindeutig und auch nicht umkehrbar.\\
+Nun transformieren wir die beide Funktionen jeweils unter Verwendung der Legendre-Transformation
+\begin{align*}
+\rightarrow u &= 2\alpha x \rightarrow x= \frac {u}{2\alpha}      &  \qquad \bar{u} &= 2\alpha (x+c) \rightarrow x= \frac {\bar{u}}{2\alpha} -c\\
+\rightarrow g(x) &= f(x) - x\frac{\md f}{\md x}  &  \qquad   \rightarrow \overline g(x) &= \overline f(x) - x\frac{\md \overline f}{\md x}\\
+&= \alpha x^2 - x2\alpha x = -\alpha x^2         &    \qquad    &= \alpha (x+c)^2 - x 2\alpha( x+c)\\
+&=-\alpha^3(\frac{u}{2\alpha})^2      &  \qquad    &= \alpha (\frac {\bar{u}}{2\alpha})^2 - (\frac {\bar u}{2\alpha} -c) 2\alpha( \frac {u}{2\alpha} )\\
+&= -\frac{u^2}{4\alpha} = g(u)   &  \qquad    &= -\frac {\bar{u}^2}{4\alpha} +c\bar{u} = g(\bar{u}) \neq g(u)
+\end{align*}
+Es kann gezeigt werden (nicht hier), dass die Legendre-Transformation allgemein eindeutig und damit umkehrbar ist.
+\end{beispiel*}
+\subsubsection{Legendre-Transformation für mehrere Variablen}
+Zuer betrachten wir den Fall der Funktion $f(x,y)$, bei der $y$ durch $v$ ersetzt werden soll. Hier gilt, dass
+\[g(x,y) = f(x,y) - y(\frac{\partial f}{\partial y})_x\]
+die Legendre-Transformation von $f(x,y)$ bezüglich $y$ ist.
+
+Die Legendre-Transformation der Lagrangefunktion bezüglich der Geschwindigkeiten $\dot q_j$ haben wir schon kennengelernt. Mit $p_j = \frac{\partial L}{\partial \dot q_j}$ folgt daraus die \emph{Hamiltonfunktion}
+\[H(q_1,\ldots q_S,  p_1,\ldots, p_S,t) = (\sum\limits_{i=1}^S p_i \dot q_i) - L(q_1, \ldots,q_S, \dot q_1, \ldots, \dot q_S, t)\]
+\textit{Auch negative Legendre-Transformierte genannt}.
+Die Wahl von $H$ ist eine gute Wahl, da $H$ eng mit der Energie des Systems verknüpft ist. Denn, wie schon erwähnt, ist $G$ die Energie für holonom-skleronome Systeme!
+
+Die Bewegungsgleichungen können wir im folgenden aus dem totalen Differential $\md H$ folgern.
+Zuerst berechnen wir $\d H$ in dem wir das totale Differential von $\sum_{i=1}^s p_i \dot{q} - L$ bilden:
+\begin{align*}
+\md H &= \sum\limits_{i=1}^S (\md p_i \dot q_i + p_i \md \dot q_i) - \sum\limits_{i=1}^S (\frac{\partial L}{\partial q_i} \md q_i + \underbrace{\frac{\partial L}{\partial \dot q_i}}_{=p_i} \md \dot q_i) - \frac{\partial L}{\partial t} \md t\\
+&=\sum\limits_{i=1}^S(\dot q_i \md p_i - \frac{\partial L}{\partial q_i}\md q_i) - \frac{\partial L}{\partial t}\md t\\
+&=\sum\limits_{i=1}^S(\dot q_i \md p_i - \dot p_i\md q_i) - \frac{\partial L}{\partial t}\md t\\
+\intertext{Nun bilden wir $\d H$ nochmal von "`links"', d.h. wir setzen einfach die Definition des totalen Differentials ein.}
+\d H &= \sum\limits_{i=1}^S(\frac{\partial H}{\partial p_i}\md p_i + \frac{\partial H}{\partial q_i}\md q_i) + \frac{\partial H}{\partial t}\md t\\
+\end{align*}
+Jetzt sind aber $q_i$, $p_i$ und $t$ unabhängige Variablen und mit Hilfe eines Koeffizientenvergleichs, findet man die Bewegungsgleichungen
+\[\dot q_i = \frac{\partial H}{\partial p_i}\qquad \dot p_i = \frac{\partial H}{\partial q_i} \qquad -\frac{\partial L}{\partial t} = \frac{\partial H}{\partial t}\]
+Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Gleichungen} genannt.
 
 
 
@@ -973,12 +1077,14 @@ $$\int x^c \d x = \frac1{c+1} x^{c+1} + \mathrm{const}$$
 \paragraph{Konventionen}
 $$\int \d x f(x) = \int f(x) \d x$$
 
+\subsection{Vektoren}
+\paragraph{Spaltprodukt}
+$$\vec a \times (\vec b \times \vec c) = \vec b \times (\vec c \times \vec a) = \vec c \times (\vec a \times \vec b)$$
 
 
 
 
-
-\chapter{Übungsblatt Mitschriebe}
+\chapter{Übungsmitschriebe}
 
 \section{Blatt 0}
 \subsection{Aufgabe 12}
@@ -1183,6 +1289,83 @@ $L(\varphi, \dot{\varphi})$ is von $\dot{\varphi}$ und $\varphi$ abhängig \cons
 \textbf{Bemerkung} Hätte $L$ nicht $V$ abgehängt, also $L = T = \frac12 m \vec{v}^2 = \frac12 m l^2 \dot{\varphi}^2$.\\
 Dann wäre $\varphi$ zyklisch und $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t \ffpartial{L}{\dot{\varphi}} = 0$ \conseq $\ffpartial{L}{\dot{\varphi}} = m l^2 \dot{\varphi}$ Erhaltungsgröße und Drehimpuls
 
+\section{Blatt 3}
 
+\newcommand{\vp}{\varphi}
+\newcommand{\dvp}{\dot{\vp}}
+\newcommand{\ddvp}{\ddot{\vp}}
+
+\subsection{Aufgabe 1}
+$$L = T_\text{ges} - V_\text{ges} = \frac12 ml^2 (\dot{\varphi}_1^2 + \dot{\varphi}_2^2) - (- mgl [\cos(\varphi_1) + \cos(\varphi_2)] + \frac12 k l^2 (\sin(\varphi_1) - \sin(\vp_2)^2)$$
+kleine Winkel: $\vp_1, \vp_2$: $\sin(\vp) \approx \vp$, $\cos(\vp) \approx 1 - \vp^2 \approx 1$
+$$ = \frac12 ml^2 (\dot{\vp}_1^2 + \dot{\vp}_2^2) + 2mgl - \frac12 kl^2 (\vp_1 - \vp_2)^2 + \frac12 mgl(-\vp_1^2 - \vp_2^2)$$
+Euler-Lagrange (Lagrange 2. Art)
+$$\dd t \ffpartial{L}{\dvp_1} - \ffpartial{L}{\vp_1} \overset{!}{=} 0 = ml^2 \ddvp_1 - (-kl^2 (\vp_1 - \vp_2) - mgl\vp_1)$$
+$$\dd t \ffpartial{L}{\dvp_2} - \ffpartial{L}{\vp_2} \overset{!}{=} 0 = ml^2 \ddvp_2 - (kl^2 (\vp_1 - \vp_2) - mgl\vp_2)$$
+\conseq $$\ddvp_1 + \frac{g}{l} \vp-1 + \frac{k}{m}(\vp_1 - \vp_2) = 0$$
+$$\ddvp_2 \frac{g}{l} \vp_2 - \frac{k}{m} (\vp_1 - \vp_2) = 0$$
+Entkopple die beiden Gleichungen: Definiere die Normalkoordinaten $\Psi_1 = \vp_1 - \vp_2$ und $\Psi_2 = \vp_1 + \vp_2$
+Durch Addieren bzw. Subtrahieren der beiden Gleichungen
+$$\ddot{\Psi_1} + \frac{g}{l} \Psi_1 + 2 \frac{k}{m} \Psi_1 = 0$$
+$$\ddot{\Psi}_2 + \frac{g}{l} \Psi_2 = 0$$
+\conseq 2 entkopplte DGL
+$\ddot{\Phi}_1 = - (\frac{g}{l} + 2 \frac{k}{m}) \Psi_1$ mit $\omega_1^2 = \frac{g}{l} + 2 \frac{k}{m}$ und $\ddot{\Psi}_2 = - \frac{g}{l} \Psi_2$ mit $\omega_2^2 = \frac{g}{l}$, $\Psi_1$ und $\Psi_2$ unabhängige Oszillatoren, zu lösen wie gehabt.
+
+\paragraph{3 Fälle}
+Gleichschwingung ($\vp_1 = \vp_2$)\\
+\conseq $\Psi_1 = 0, \Psi_2 = 2 \vp_1 = 2 \vp_2$ \conseq $\ddvp_1 + \frac{g}{l} \vp_1 = 0$ und $\ddvp_2 + \frac{g}{l} \vp_2 = 0$ Beide Pendel schwingen mit gleicher Amplitude und gleicher Frequenz $\omega^2 = \frac{g}{l}$\\
+Gegenschwingung ($\vp_2 = -\vp_1$)\\
+\conseq $\Psi_2 = 0, \Psi_1 = 2 \vp_1 = - 2 \vp_2$ \conseq $\ddvp_1 + (\frac{g}{l} + 2 \frac{k}{m}) \vp_1 = 0$, $\ddvp_2 + (\frac{g}{l} + 2 \frac{k}{m}) \vp_2 = 0$. Gegenschwingung: Die Pendel schwingen mit der gleichen Amplitude, aber gegenteiliger Phase und mit einer Frequenz $\omega_1^2 = \omega_2^2 = \frac{g}{l} + \frac{2k}{m} > \frac{g}{l}$\\
+Schwebung ($\vp_2(t = 0) \neq 0, \vp_1(t=0) = 0$)\\
+\conseq $\Psi(t = 0) = - \vp_2(t=0), ~\Psi_2(t=0) = \vp_2(t=0)$\\
+Weiterhin: $\dvp_2(t=0) = \dvp_1(t = 0) = 0$
+\subparagraph{Allgemeiner Fall}
+In Normalkoordinaten im Allgemeinen Fall 2 Lösungen freier Pendel
+$$\Psi(t) = \Psi_1^0 \cos(\omega_1 t) + \frac{\dot{\Psi_1^0}}{\omega_1} \sin(\omega_1 t)$$
+$$\Psi(t) = \Psi_2^0 \cos(\omega_2 t) + \frac{\dot{\Psi_2^0}}{\omega_2} \sin(\omega_2 t)$$
+mit $\omega_1^2 = \frac{g}{l} + 2 \frac{k}{m} = \omega_2^2 + 2 \frac{k}{m}$, $\omega_2^2 = \frac{g}{l}$\\
+Ortskoordinaten: $\vp_1(t) = \frac{1}{2} (\Psi_1(t) + \Psi_2(t))$, $\vp_2(t) = \frac{1}{2} (-\Psi_1(t) + \Psi_2(t))$
+
+
+\conseq $\vp_1(t) = \frac12 [\Psi_1^0 \cos(\omega_1 t) + \frac{\dot{\Psi}_1^0}{\omega_1} \sin(\omega_1 t) + \Psi_2^0 \cos(\omega_2 t) + \frac{\dot{\Psi}_2^0}{\omega_2} \sin(\omega_2 t)]$ und
+$\vp_2(t) = \frac12 [- \Psi_1^0 \cos(\omega_1 t) + \frac{\dot{\Psi}_1^0}{\omega_1} \sin(\omega_1 t) + \Psi_2^0 \cos(\omega_2 t) + \frac{\dot{\Psi}_2^0}{\omega_2} \sin(\omega_2 t)]$
+
+Anfangsbedingungen: $\vp_2^0 \neq 0, \vp_1^0 = 0, \dvp_2^0 = \dvp_1^0 = 0$ \conseq $\Psi_1^0 = - \vp_2^0, \dot{\Psi}_1^0 = 0$, $\Psi_2^0 = \vp_2^0, \dot{\Psi}_2^0 = 0$
+\conseq $\vp_1(t) = \frac12 [- \vp_2^0 \cos(\omega_1 t) + \vp_2^0 \cos(\omega_2 t)]$ und $\vp_1(t) = \frac12 [\vp_2^0 \cos(\omega_2 t) + \vp_2^0 \cos(\omega_1 t)]$
+
+Einschub
+$\frac12 [\cos(x) + \cos(y)] = \cos(\frac{x + y}{2}) \cos(\frac{x-y}{2})$ und $\frac12 [\cos(x) - \cos(y)] = - \sin(\frac{x + y}{2}) \sin(\frac{x-y}{2})$
+
+\conseq $\vp_1(t) = \vp_2^0 \sin(\frac{\omega_2 + \omega_1}{2}) \sin(\frac{\omega_1 - \omega_2}{2})$ und $\vp_1(t) = \vp_2^0 \cos(\frac{\omega_2 + \omega_1}{2}) \cos(\frac{\omega_1 - \omega_2}{2})$
+
+
+\subsection{Aufgabe 2}
+Freie Koordinaten: $x$, $\phi$\\
+$$L = T - V = \frac12 m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - mgz$$
+$x$, $y$, $z$ sind nicht unabhängig: $y^2 + z^2 = l^2 = r^2$\\
+Koordinatenwechsel: $(x,y,z) \rightarrow (x,r,\vp)$
+\conseq $x = x$, $y = r \sin(\vp) = l \sin \vp$, $z = -r\cos(\vp) = -l \cos(\vp)$\\
+\conseq $\dot{x} = \dot{x}$, $\dot{y} = l \dvp \cos(\vp)$, $\dot{z} = l \dvp \sin(\vp)$
+\conseq $L = \frac12 m (\dot{x}^2 + \underbrace{l^2 \dvp^2 \cos^2(\vp) + l^2 \dvp^2 \sin^2(\vp)})_{l^2 \dvp^2} + mgl \cos(\vp)$\\
+$(x, \dot{x}) \xrightarrow[]{\text{x zyklisch}} \dd t (\ffpartial{L}{\dot{x}}) - \ffpartial{L}{x} = 0$
+\conseq $\dd t (\underbrace{m \dot{x}}_{p_x}) = m \ddot{x} = 0$\\
+Bewegungsgleichung mit konstanter Geschwindigkeit in $x$ und damit Impulserhaltung in $x$\\
+$(\vp, \dvp) \rightarrow \dd t (\ffpartial{L}{\dvp}) - \ffpartial{L}{\vp} = 0$ \conseq $\dd t (m l^2 \dvp) - (- mgl \sin(\vp)) = 0$ \conseq $\ddvp + \frac{g}{l} \sin(\vp) = 0$ \textit{Pendelgleichung}\\
+Zusammen: $m \ddot{x} = 0$ und $\ddvp \frac{g}{l} \sin(\vp) = 0$ sind zwei unabhängige Bewegungsgleichungen.\\
+Erhaltungssätze: $L$ ist nicht explizit von $\dot{x}$ abhängig \conseq $x$ zyklischen Koordinate \conseq $\ffpartial{L}{\dot{x}} = m \dot{x} = p_x$ erhalten
+
+\subsection{Aufgabe 3}
+$L = T_1 + T_2 - V_1 - V_2 = \frac12 m_1(\dot{x_1}^2 + \dots) + \frac12 m_2 (\dot{x}_2^2 + \dots) - (- m_1 g z_1) - (- m_2 g z_2)$\\
+Geschickter ist es, dem Problem angepasste Koordinaten zu verwenden: Da sich $m_1$ auf einem Kreis mit $r_1^2 = (l-r_2)^2$, da sich $m_2$ auf einer Sphäre mit $r_2^2 = x^2 + y^2 + z^2$ bewegt.\\
+\conseq $m_1$: Polarkoordinaten (Zylinderkoordinaten)\\
+$x_1 = r_1 \cos(\vp_1)$\\
+$y_1 = r_1 \sin(\vp_1)$\\
+$z_1 = z_1$\\
+$m_2$: Sphärische/Kugelkoordinaten\\
+$x_2 = r_2 \cos\vp_2 \sin \theta_2$\\
+$y_2 = r_2 \sin \vp_2 \sin \theta_2$\\
+$z_2 = r_2 \cos \theta_2$\\
+Zwangsbedingungen: $z_1 = \text{konstant} = 0$\\
+$r_1 + r_2 = l$ \conseq $r_2 = l r_1$
 
 \end{document}
