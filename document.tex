@@ -66,6 +66,10 @@
 \newcommand{\vecdotnumsq}[2]{\dot{\vec{#1}}^2_#2}
 \newcommand{\tfin}{t_\text{fin}}
 \newcommand{\const}{\text{konstant}}
+\newcommand{\vp}{\varphi}
+\newcommand{\dvp}{\dot{\vp}}
+\newcommand{\ddvp}{\ddot{\vp}}
+
 
 \makeatletter
 \@removefromreset{section}{chapter}
@@ -932,6 +936,235 @@ Jetzt sind aber $q_i$, $p_i$ und $t$ unabhängige Variablen und mit Hilfe eines 
 \[\dot q_i = \frac{\partial H}{\partial p_i}\qquad \dot p_i = \frac{\partial H}{\partial q_i} \qquad -\frac{\partial L}{\partial t} = \frac{\partial H}{\partial t}\]
 Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Gleichungen} genannt.
 
+\begin{bemerkung*}
+	$2S$ Differentialgleichung für die $q_i$ und $p_i$.
+	\begin{itemize}
+		\item Bewegung des Systems im Raum der $q_i$, $p_i$ \conseq \textbf{Phasenraum}
+		\item bei skleronomen Zwangsbedingungen $H = T + V = E$ \textit{Gesamtenergie des Systems}
+	\end{itemize}
+\end{bemerkung*}
+\begin{align*}
+	\ddd{H}{t} &= \sum_{j=1}^{s} (\ffpartial{H}{q_j} + \dot{q}_j + \ffpartial{H}{p_j} \dot{p}_j) + \ffpartial{H}{t}\\
+	&= \sum_{j=1}^{s} \underbrace{(\ffpartial{H}{q_j} \ffpartial{H}{p_j} - \ffpartial{H}{p_j} \ffpartial{H}{p_j})}_{=0}+ \ffpartial{H}{t}\\
+	&= \ffpartial{H}{t} = - \ffpartial{L}{t}
+\end{align*} 
+also ohne explizite Zeitabhängigkeit gilt $H = \const$ weil dann gilt $\ffpartial{H}{t} = 0$. H ist damit ein Integral der Bewegung.
+
+Bei zyklischen Variablen:
+$$q_j \text{~zyklisch} \Leftrightarrow \ffpartial{L}{q_j} = 0 \Leftrightarrow p_j = \const = c_j$$
+dann für $H$:
+$$\dot{p}_j = 0 = -\ffpartial{H}{q_j}$$
+\conseq zyklische Koordinaten erscheinen auch nicht in H.
+$p_j$ durch die Anfangsbedingung $p_j = c_j$ festgelegt. System also praktisch nur noch $(2S -2)$ Freiheitsgrade.
+$H$ nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q}_j$ Abhändigkeit in der Lagrangefunktion, d.h. wir haben hier einen klaren Vorteil des Hamiltonformalismus.
+
+\subsubsection{Vorgehen im Hamiltonformalismus als Rezept}
+\begin{enumerate}
+	\item generalisierte Koordinaten $\vec{q} = (q_1, \dots, q_s)$
+	\item $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
+	\item kinetische und potentielle Energie in Teilchenkoordinaten \conseq dann generalisierte Koordinaten.
+	$$L(\vec{q}, \dotvec{q}, t) = t(\vec{q}, \dotvec q,t  - V(\vec{q}, t))$$
+	\item generalisierte Impulse
+		$$p_j = \ffpartial{L}{\dot{q}_j} \Rightarrow p_j = p_j(\vec{q}, \dotvec{q}, t)$$
+	\item Lösen für $\dot{q}_j$
+	$$\dot{q}_j = \dot{q}_j (\vec{q}, \vec{p}, t)$$
+	\item Lagrangefunktion
+	$$l(\vec{q}, \dotvec{q}(\vec{q}, \vec{p}, t), t) = \tilde{L}(\vec{q}, \vec{p}, t)$$
+	\item Legendretransformation
+	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
+	\item kanonische Gleichungen aufstellen und lösen
+\end{enumerate}
+
+\begin{beispiel*}[2D-Fadenpendel]
+	\textit{Schritt 1} Zwangsbedingungen: $z = \const = 0$ und $x^2 + y^2 = l = \const$ \conseq $S = 1$ Freiheitsgrade, $p = \varphi$	
+	\textit{Schritt 2}
+	\begin{align*}
+	x &= l \sin \varphi
+	\end{align*}
+%	\begin{align*}
+%	x &= l \sin \vp\\
+%	y &= l \cos \vp\\
+%	\dot{x} &= l \dot{q} \cos q\\
+%	\dot{y} &= -l \dot{q} \sin q
+%	\intertext{\textit{Schritt 3}}
+%	T &= \frac12 (\dot{x}^2 + \dot{y}^2) = \frac{1}{2} m l^2 \dot{q}^2\\
+%	V &= - mg y = -mgl\cos q 
+%	L & T -V = \frac{1}{2} m l^2 \dot{q}^2 + mgl\cos q\\
+%	\intertext{generalisierter Impuls}
+%	p = \ffpartial{L}{\dot{q}} = m l^2 \dot{q} \rightarrow \dot{q} = \frac{p}{m l^2}
+%	\intertext{$L$ mit $\dot{q} \rightarrow p$}
+%	\tilde{L}(q, p) = \frac{p^2}{2 m l^2} + mgl\cos q
+%	\intertext{H aus Legendretransformation}
+%	H = p \dot{q} - L = \frac{p^2}{m l^2} - m g l \cos q\\
+%	&=  \frac{p^2}{2 ml^2} - mgl \cos q
+%	\intertext{Kanonische Bewegungsgleichungen:}
+%	\dot{q} = \ffpartial{H}{p} = \frac{p}{m l^2}\\
+%	\dot{p} = - \ffpartial{H}{q} = - mgl \sin q
+%	\intertext{System von $2S = 2$ gekoppelten Differentialgleichungen 1. Ordnung}
+%	\intertext{Lösen z.B. per Differentiation}
+%	\dd t \dot{q} &= \ddot{q} = \frac{\dot{p}}{ml^2} \overset{\text{$\vec{p}$ einsetzen}{=} - \frac{g}{l} \sin q
+%		\intertext{die bekannte Differentialgleichung des Fadenpendels}
+%		\intertext{Als System 1. Ordnung}
+%		\dot{q} = \frac{p}{ml^2}\\
+%		\dot{p} = - mgl \sin q \overset{\sin q \approx q \text{~für~} q \ll 1}{=} - mgl q\\
+%		\dd t \binom{q}{p} &= \underbrace{\begin{pmatrix}
+%			0 & \frac{1}{ml^2}\\ - mgl & 0
+%			\end{pmatrix}}_{M} \binom{q}{p}
+%		\intertext{$M$ diagonalisieren \conseq Transformation $U$}
+%		\dd t U\binom{q}{r} &= U M U^{-1} U \binom{q}{p}\\
+%		\dd t \binom{x_1}{x_2} = \begin{pmatrix}
+%		\lambda_1 & 0\\ 0 & \lambda_2
+%		\end{pmatrix} \binom{x_1}{x_2}
+%		\intertext{System entkoppelt}
+%		\conseq \dot{x}_i(t) = \lambda_i x_i(t) \cong x_i(t) = A e^{\lambda_i t}
+%		\intertext{Lösung bei linearen System klar. Bei allgemeinem System numerisch gut zu handhaben\footnote{Vgl. Runge-Kutta-Verfahren}.}		
+%		\end{align*}
+\end{beispiel*}
+
+
+\subsection{Zustand eines Systems}
+Welche Informationen sind notwendig, um ein System (von Massepunkten) vollständig zu beschreiben?
+Unterschiedliche Räume (auch am Beispiel des harmonischen Oszillators).
+\subsubsection{Konfigurationsraum} \textit{Koordinaten}
+\begin{align*}
+	\vec{q} = (q_1, \dots, q_s) \text{\textit{\qquad S dimensional}}
+\end{align*}
+harmonischer Oszillator im Konfigurationsraum ohne zeitliche Information.
+
+\subsubsection{Ereignisraum}
+$$\vec{q} = (q_1, \dots, q_s) \text{~und~} t \text{\textit{\qquad S dimensional}}$$
+\conseq Bahn $\vec{q}(t)$ aus $2S$ Anfangsbedingungen. \textit{Wo ist der Harmonische Oszillator zur Zeit $t$.}\\
+
+Im Hamiltonformalismus:
+
+\subsubsection{Phasenraum}
+$$\vec{q} = (q_1, \dots, q_s) \text{~und~} \vec{p} = (p_1, \dots, p_s) \text{\textit{\qquad S dimensional}}$$
+\conseq Phasenraumpunkt $\vec{\pi} = (q_1, \dots, q_s, p_1, \dots, p_s)$
+beim harmonischen Oszillator
+$$\frac{p^2}{2 m E} + \frac{q^2}{\frac{2 E}{m \omega_0^2}} = 1$$
+Daraus kann man die Halbachsen 
+\begin{align*}
+t &= \frac{2 E}{m \omega_0^2}  &   B &= \sqrt{2 m E}
+\end{align*}
+Dies Halbachsen bilden eine Ellipse bei fester Energie $E$.\\
+Ein Punkt $\vec{q}$ im Konfigurationsraum reicht aber nicht aus, um das System vollständig zu beschreiben man benötigt hierfür noch Impulse, also den Phasenraum.
+\todo{gesamte Zeitabhängigkeit im (????)}
+
+\subsubsection{Zustandsraum}
+Der Orts- und der Impulsvektor
+\begin{align*}
+	\vec{q} &= (q_1, \dots, q_s) & \vec{p} &= (p_1, \dots, p_s) & t
+\end{align*}
+legen das ganze System fest.\\
+Die Punkte im Zustandsraum $\vec{\pi} (t)$ werden im Hamiltonformalismus durch eine Differentialgleichung 1. Ordnung beschrieben.
+$$\vec{\pi}(t_0) \xrightarrow{\text{Kenntnis von $H$}} \vec{\pi}(t \neq t_0)$$
+
+\paragraph{Begriff des Zustandes $\Psi$}
+Ein Zustand $\Psi$ ist ein minimaler hinreichender Satz von Eigenschaften eines Systems, welcher ausreicht, um alle weiteren Eigenschaften daraus abzuleiten. In der Mechanik gilt, dass es für jede Eigenschaft der Massepunkte einen Punkt im Zustandsraum gibt: 
+$$f(\vec{q}, \vec{p}, t) = f(\vec{\pi}(t))$$
+
+% Ein Zustand $\Psi$ ist ein $\leftrightarrow$ Punkt $\vec{\pi}$ im Phasenraum
+
+Wenn aus Kenntnis eines $\Psi_0 = \Psi(t_0)$ $\Psi(t)$ festgelegt werden kann, folgt eine Differentialgleichung 1. Ordnung (in der Zeit)
+$$\dot{\Psi}(t) = \tilde{\Psi}(\Psi(t))$$
+\textit{In der Quantenmechanik ist dies die Schrödingergleichung.}\\
+Daraus folgen die Hamiltonschen kanonischen Gleichungen
+$$\dotvec \pi (t) = \tilde{\Psi}(\vec{\pi}(t))$$
+Die Hamiltonfunktion spielt eine fundamentale Rolle.
+
+\newcommand{\vpi}{\vec{\pi}}
+\newcommand{\poisson}[1]{\{#1\}_{\vec{p}, \vec{q}}}
+\subsection{Poisson-Klammern}
+Im folgenden eine Diskussion weiterer formaler Eigenschaften\footnote{der klassischen Mechanik} mit Hilfe der Poisson-Klammern. Jede Observable kann als Funktion eines Phasenraumpunktes $f(\vec{\pi}, t) = f (\vec{q}, \vec{p}, t)$ dargestellt werden. Woraus die folgende Bewegungsgleichung folgt
+\begin{align*}
+	\ddd{f}{t} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \dot{q}_j + \ffpartial{f}{p_j} \dot{p}_j) + \ffpartial{f}{t}
+\intertext{nun setzt man die Hamiltonschen Gleichungen ein und erhält}
+\ddd{f}{t} &= \sum_{j=1}^s\underbrace{(\ffpartial{f}{q_j} \ffpartial{H}{p_j} + \ffpartial{f}{p_j} \ffpartial{H}{q_j})}_{\{f, H\}_{\vec{q}, \vec{p}}} + \ffpartial{f}{t}
+\intertext{Wenn nun $f(\vec{q}, \vec{p}, t)$ und $g(\vec{q}, \vec{p}, t)$ zwei skalare Funktionen sind, gilt allgemein, dass}
+\{f, g\}_{\vec{q}, \vec{p}} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} + \ffpartial{f}{p_j} \ffpartial{g}{q_j})
+\intertext{die Poisson-Klammer von $f$ und $g$ ist. Jetzt kann die Bewegungsgleichung auch wie folgt geschrieben werden}
+\ddd{f}{t} &= \{f, H\}_{\vec{q}, \vec{p}} + \ffpartial{f}{t}
+\intertext{Es gibt ein paar Spezialfälle}
+\dot{q}_j &= \poisson{q, H}\\
+\dot{p}_j &= \poisson{p, H}
+\intertext{Interessant ist weiterhin}
+\poisson{q_i, q_j} &= \sum_{k=1}^s (\ffpartial{q_i}{q_k} \underbrace{\ffpartial{q_i}{p_k}}_{=0} - \underbrace{\ffpartial{q_i}{p_k}}_{=0} \ffpartial{q_j}{q_k}) = 0\\
+\poisson{p_i, p_k} &= \sum_{k=1}^s (\underbrace{\ffpartial{p_i}{q_k}}_{=0} \ffpartial{p_i}{p_k} - \ffpartial{p_i}{p_k} \underbrace{\ffpartial{p_i}{q_k}}_{=0}) = 0\\
+\poisson{q_i, p_j} &= \sum_{k=1}^s (\underbrace{\ffpartial{q_i}{q_k}}_{\delta_{ik}} \underbrace{\ffpartial{p_j}{p_k}}_{\delta_{jk}} - \underbrace{\ffpartial{q_i}{p_k}}_{=0} \underbrace{\ffpartial{p_j}{q_k}}_{=0})\\
+&= \sum_{k=1}^s \delta_{ik} \delta_{jk} = \delta_{ij}
+\end{align*}
+\todo{woher kommt das $-$??}
+\begin{bemerkung*}[Kronecker-Delta]
+	$\delta_{ij}$ ist das sogenannte Kronecker-Delta, es gilt hierfür
+	$$\delta_{ij} = \begin{cases}
+	1 & \quad i = j\\
+	0 & \quad \text{sonst}
+	\end{cases}$$
+\end{bemerkung*}
+\todo{is $\dot{q}_j = \poisson{q, H}$ correct??}
+
+\subsubsection{Die fundamentalen Poissonklammern}
+\begin{align*}
+\poisson{q_i, q_j} &= \poisson{p_i, p_j} = 0\\
+\poisson{q_i, p_j} &= \delta_{ij}
+\end{align*}
+Betrachte nun die Koordinaten $\vec{Q}$, $\vec{P}$ mit $\vec{Q} = \vec{Q}(\vec{q}, \vec{p})$, $\vec{P} = \vec{P}(\vec{q}, \vec{p})$ und $\tilde{H}(\vec{Q}, \vec{P})$ welche durch Einsetzen in $H(\vec{q}, \vec{p})$ entsteht.\\
+Nun beschäftigen wir und mit der Frage, ob die Wahl der $\vec{q}$, $\vec{p}$ ausgezeichnet ist.
+Untersuche hierfür
+\begin{align*}
+\dot{Q}_i &= \dd t Q_i(\vec{q}, \vec{p}) = \sum_{k=1}^s (\ffpartial{Q_i}{q_k} \ffpartial{H}{p_k} - \ffpartial{Q_i}{p_k} \ffpartial{H}{q_k})
+\intertext{Da $\tilde{H}(\vec{Q}, \vec{P}) = H(\vec{q}, \vec{p})$ gilt, kann man die Kettenregel verwenden, um auf folgendes zu kommen}
+&= \sum_{k,l=1}^s (\ffpartial{Q_i}{q_k} (\ffpartial{\tilde{H}}{Q_l} \ffpartial{Q_l}{p_k} + \ffpartial{\tilde{H}}{p_k} \ffpartial{P_l}{p_k}) - \ffpartial{Q_i}{p_k} (\ffpartial{\tilde{H}}{Q_l} \ffpartial{Q_l}{q_k} + \ffpartial{\tilde H}{P_l} \ffpartial{P_l}{q_k}))\\
+&= \sum_{k,l=1}^s (\underbrace{\ffpartial{\tilde H}{Q_l}}_{-\dot{P}_l} (\ffpartial{Q_i}{q_k} \ffpartial{Q_l}{p_k} - \ffpartial{Q_i}{p_k} \ffpartial{Q_l}{q_k}) + \underbrace{\ffpartial{\tilde H}{P_l}}_{\dot{Q}_l} (\ffpartial{Q_i}{q_k} \ffpartial{P_l}{p_k} - \ffpartial{Q_i}{p_k} \ffpartial{P_l}{q_k}))\\
+&= \sum_{l=1}^{s} (- \dot{P}_l \poisson{Q_i, Q_l} + \dot{Q}_l \poisson{Q_i, P_l})
+\end{align*}
+Per Koeffizientenvergleich folgt mit den vorher angegebenen Gleichungen 
+\begin{align*}
+	\poisson{Q_i, Q_l} &= 0 & \poisson{Q_i, P_l} &= \delta{il}
+\end{align*}
+Ein ähnliche Rechnung für $\dot{P}_j$ führt zu $\poisson{P_i, P_l} = 0$. Damit gelten die fundamentalen Klammern auch für andere kanonisch konjugierte Variablen \footnote{Sie erfüllen die Hamiltonschen Gleichungen. Vgl. \href{http://www.chemgapedia.de/vsengine/glossary/de/kanonisch_00032konjugierte_00032variable.glos.html}{ChemgaPedia}}.
+Weiter mit dem Phasenraumfunktionen für unterschiedliche kanonisch konjugierte Variablen
+$F$, $G$; $\vec{q}$, $\vec{p}$ bzw. $\vec{Q}$, $\vec{P}$ wie oben
+\begin{align*}
+\poisson{F, G} &= \sum_{j=1}^{s} (\ffpartial{F}{q_j} \ffpartial{G}{p_i} - \ffpartial{F}{p_i} \ffpartial{G}{q_j})
+\intertext{Jetzt wird angenommen, dass $G = G(\vec{Q}, \vec{P})$ gilt, dass also $G$ von $\vec{P}$ und $\vec{Q}$ abhängig ist.}
+&= \sum_{l,j=1}^{s} (\ffpartial{F}{q_i} (\ffpartial{G}{Q_l} \ffpartial{Q_l}{p_j} + \ffpartial{G}{P_l} \ffpartial{P_l}{p_j})  - \ffpartial{F}{p_j} (\ffpartial{G}{Q_l} \ffpartial{Q_l}{q_j} + \ffpartial{G}{P_l} \ffpartial{P_l}{q_j}))\\
+&= \sum_{l=1}^s (\ffpartial{G}{Q_l} \poisson{F, Q_l} + \ffpartial{G}{P_l} \poisson{F, P_l})      \qquad \text{\circled{$\ast$}}
+\intertext{Speziell für $F = Q_k$ oder $F = P_k$ gilt}
+	\poisson{Q_k, G} &= \sum_{l=1}^s (\ffpartial{G}{Q_l} \underbrace{\poisson{Q_k, Q_l}}_{=0} + \ffpartial{G}{P_l} \underbrace{\poisson{Q_k, P_l}}_{\delta_{kl}})\\
+	&= \ffpartial{G}{P_k} = - \poisson{G, Q_k}\\
+	\poisson{P_k, G} &= \sum_{j=1}^{s} \ffpartial{G}{Q_l} \underbrace{\poisson{P_k, Q_l}}_{= - \delta_{kl}} + \ffpartial{G}{P_l} \underbrace{\poisson{P_k, P_l}}_{=0}
+	\intertext{- ??}
+	\intertext{Die Poisson-Klammer ist antisymmetrisch}
+	\poisson{f, g} &= \sum_{l=1}^s \ffpartial{f}{q_l} \ffpartial{g}{p_l} - \ffpartial{f}{p_l} \ffpartial{q}{q_l} = - (\sum_{l = 1}^s \ffpartial{f}{p_l} \ffpartial{q}{q_l} - \ffpartial{f}{q_l} \ffpartial{g}{p_l}) = \poisson{g, f}\\
+	&= - \ffpartial{G}{Q_k} = - \poisson{G, P_k}
+	\intertext{Zurück zum Beweis. Mit $F$ gilt}
+	\poisson{F, Q_l} &= - \ffpartial{F}{P_l}\\
+	\poisson{F, P_l} &= \ffpartial{F}{Q_l}
+	\intertext{in \circled{$\ast$} ($\poisson{F, G} = \sum_{l=1}^s \ffpartial{G}{Q_l} \poisson{F, Q_l} + \ffpartial{G}{P_l} \poisson{F, P_l}$ folgt damit nun)}
+	\poisson{F, Q} &= \sum_{l=1}^s (\ffpartial{G}{Q_l} (- \ffpartial{F}{P_l}) + \ffpartial{G}{P_l} \ffpartial{F}{Q_l})\\
+	&= \sum_{l=1}^s (\ffpartial{F}{Q_l} \ffpartial{G}{P_l} - \ffpartial{F}{P_l} \ffpartial{G}{Q_l})\\
+	&= \{F, Q\}_{\vec{Q}, \vec{P}}\\
+	\rightarrow \ffpartial{f}{t} &= \{f, H\} + \ffpartial{f}{t}
+\end{align*}
+
+Die Poissonklammer hängt also nicht von der Wahl der kanonisch konjugierten Variablen ab. Die Koordinaten als Index können deswegen weggelassen werden.
+$$\{F, G\}_{\vec{q}, \vec{p}} = \{F, G\}_{\vec{Q}, \vec{P}} = \{F, G\}$$
+Die Poissonklammer kann auch als algebraisches Konstrukt mit den folgenden Eigenschaften betrachtet werden 
+\begin{description}
+	\item[Linerarität] $\{c_1 f_1 + c_2 f_2, g\} = c_1 \{f_1, g\} + c_2 \{f_2, g\}$ ($c_1$, $c_2$ konstant)
+	\item[Antisymmetrie] $\{f, g\} = - \{g, f\}$ \conseq ${f, f} = 0$
+	\item[Nullelement] $\{c, f\} = 0$, $f=f(\vec{q}, \vec{p})$; $c = \const$
+	\item[Produktregel] $\{f, g h\} = g \{f, h\} + \{f, g\} h$
+	\item[Jacobi-Identität] $\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$
+\end{description}
+
+\todo{remove?}
+Bis hierher $\{,\}$ nur algebraische Vereinfachung (+ eventuell die Einsicht in fundamentale Klammern).\\
+Für physikalische Einsicht zurück zu Zustandsgrößen.
+
+
+
 
 
 
@@ -1081,7 +1314,16 @@ $$\int \d x f(x) = \int f(x) \d x$$
 \paragraph{Spaltprodukt}
 $$\vec a \times (\vec b \times \vec c) = \vec b \times (\vec c \times \vec a) = \vec c \times (\vec a \times \vec b)$$
 
-
+\subsection{Totales Differential}
+$$\d f = f(\vec{x} + \d \vec{x}) - f(\vec{x}), f = f(\vec{x}) = f(x_1, \dots, x_n)$$
+$\d f$ Änderung unabhängig von den Koordinaten.
+partielle Ableitung (alle anderen Koordinaten fest)
+$$\ffpartial{f(\vec{x})}{x_i} \d x_i$$
+z.B. $n = 2$: $f (x, y)$
+$$\d f = \ffpartial{f(x,y)}{x} \d x + \ffpartial(f(x,y)){y} \d y$$
+allgemein
+$$\d f = \sum_{i=1}^n \ffpartial{f(\vec{x})}{x_i}$$
+$\d f$, $\d x$, $\d y$, \dots sind Variablen, "`$\partial f$"' nicht
 
 
 \chapter{Übungsmitschriebe}
@@ -1290,10 +1532,6 @@ $L(\varphi, \dot{\varphi})$ is von $\dot{\varphi}$ und $\varphi$ abhängig \cons
 Dann wäre $\varphi$ zyklisch und $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t \ffpartial{L}{\dot{\varphi}} = 0$ \conseq $\ffpartial{L}{\dot{\varphi}} = m l^2 \dot{\varphi}$ Erhaltungsgröße und Drehimpuls
 
 \section{Blatt 3}
-
-\newcommand{\vp}{\varphi}
-\newcommand{\dvp}{\dot{\vp}}
-\newcommand{\ddvp}{\ddot{\vp}}
 
 \subsection{Aufgabe 1}
 $$L = T_\text{ges} - V_\text{ges} = \frac12 ml^2 (\dot{\varphi}_1^2 + \dot{\varphi}_2^2) - (- mgl [\cos(\varphi_1) + \cos(\varphi_2)] + \frac12 k l^2 (\sin(\varphi_1) - \sin(\vp_2)^2)$$
