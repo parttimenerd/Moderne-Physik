@@ -290,7 +290,7 @@ Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufig be
 \begin{beispiel*}[Teilchen auf der Kugeloberfläche]
 $p = 1$ Zwangsbedingungen:
 $$x^2 + y^2 + z^2 - R^2 = 0$$
-Es gibt $S = 2$ generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.
+Es gibt $S = 2$ generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.\footnote{Hierbei wurden die sogenannten Kugelkoordinaten werden, welche im weiteren Verlauf ein wichtiges mathematisches Hilfsmittel darstellen.}
 \end{beispiel*}
 
 \begin{beispiel*}[Doppelpendel in der Ebene] $p = 4$ holonom-skleronome Zwangsbedingungen:
@@ -321,6 +321,7 @@ Man kann die Kraft in zwei Teile zerlegen:
 $$m \ddotvec{r}_i = \vec{F}_i = \vec{K}_i + \vec{Z}_i$$
 die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z}_i$. Damit kommt man zur virtuellen Arbeit ($\d W_i = - \vec{F}_i \d \vec{r}_i$)
 $$\delta W = - \vec{F} \delta \vec{r}$$
+Wenn man darin die obere Gleichung als $\vec{F}_i = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ einsetzt folgt
 $$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
 \todo{kären, wie es zur Formel kommt}
 Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn gilt $\delta W = \sum_i \vec{K}_i \delta \rvec_i$.
@@ -355,7 +356,8 @@ Das heißt, es gelten keine expliziten Zwangskräfte mehr.
 Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von ihnen, also als generalisierte Koordinaten, zu formulieren. Damit soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
-$$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_i} \delta q_j$$
+$$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j$$
+\todo{letzter Ausdruck korrekt?}
 
 Damit kann \circled{1}  wie folgt geschrieben werden
 $$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
@@ -366,7 +368,8 @@ $Q_i$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_i$ ist nich
 
 \paragraph{Spezialfall konservative Systeme}
 Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ darstellen. Und damit gilt auch
-$$Q_j = \sum_{i = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
+$$Q_i = \sum_{j = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
+\todo{i und j vertauscht???}
 
 Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
 
@@ -1163,15 +1166,271 @@ Die Poissonklammer kann auch als algebraisches Konstrukt mit den folgenden Eigen
 Bis hierher $\{,\}$ nur algebraische Vereinfachung (+ eventuell die Einsicht in fundamentale Klammern).\\
 Für physikalische Einsicht zurück zu Zustandsgrößen.
 
+% % %
+Physikalische Einsicht:
+Observable: $f = f(\vec{q}, \vec{p}, t) = f(\vec{\pi}, t)$, $\ddd{f}{t} = \{f, H\} + \ffpartial{f}{t}$
+D.h. für \textit{Integrale der Bewegung}
+$\ddd{f}{t} = 0 \Leftrightarrow \{H, f\} = \ffpartial{f}{t}$
+insbesondere, wenn $f$ nicht explizit zeitabhängig. Kenntnis der Integrale der Bewegung wesentlich für die Lösung eines dynamischen Problems \conseq Hier: einfaches Kriterium.
+Einfacher Test: $f = H$: $\ddd{H}{t} = \{H, H\} + \ffpartial{H}{t} = \ffpartial{H}{t}$ schon bekannt. (bei skeleronomen Zwangsbedingungen = Energiesatz) 
+Bis hierhin ausführliche Diskussion der Poissonklammern als mathematisches Werkzeug der klassischen Mechanik.
+\conseq jetzt die abstrakten Eigenschaften der Klammer werden verallgemeinert
+Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quantenmechanik gibt.
 
+\newcommand{\fihbar}{\frac{1}{i \hbar}}
 
-
+\section{Ausblick auf die Quantenmechanik}
+Jetzt sie $\{,\}$ eine abstrakte Klammer mit den abstrakte Eigenschaften der Poissonklammer, wie verstehen diese als mathematische Struktur.
+Eine Realisierung dieser Struktur ist die Poissonklammer \conseq klassische Mechanik.
+Alternativ: \textit{Quantenmechanik}
+Hier Observablen sind lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewähnlichen Vektoren. Definiere Klammer jetzt als Kommutator $[A,B] = AB - BA$
+als die abstrakte mathematische Struktur. Konkret können Operatoren Matrizen sein. Hier nicht Nichtkommutativität z.B. von Drehungen bekannt. "`Reihenfolge der Operatoren ist relevant"'.
+Konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Struktur wäre folgendes
+\begin{enumerate}
+	\item Physik Observable $\equiv$ hermitischer, lineare Operator $A$ auf einem Hilbertraum
+	\item Mögliche Messwerte von $A$ = Eigenwerte von A
+	\item $\{\dots, \dots\} \equiv \fihbar [A, B]$ mit $\hbar = \frac{h}{2 \pi}$
+	\item Fundamentalklammern
+	$[q_i, p_j] = i \hbar \delta_{ij}$ (analog zur Poissonklammer)\\
+	$[q_i, q_j] = [p_i, p_j] = 0$
+	\item Hamiltonfunktion $H(\vec{q}, \vec{p}, t) \leftrightarrow $ Hamiltonoperator $H$ (Eigenwerte sind die möglichen Energiezustände)
+	\item Bewegungsgleichung\footnote{Auch als Heisenbergsche Bewegungsgleichung bekannt, vgl. \href{https://de.wikipedia.org/wiki/Heisenbergsche_Bewegungsgleichung}{Wikipedia}}
+	$$\dd t A = \fihbar [A, H] + \ffpartial{A}{t}$$
+	\conseq Postulate der Quantenmechanik.
+\end{enumerate}
 
 
 
 \chapter{Relativität}
-Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
-Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
+%Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
+%Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
+
+\paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme. Invarianz/Kovarianz physikalischer Observablen und Gesetze.
+Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme)
+\conseq \textbf{speizielle} Relativitätstheorie
+Darüber hinaus: \textbf{allgemeine} Relativitätstheorie. Beschleunigungen \conseq Scheinkräfte
+\conseq Eigenschaften von Raum und Zeit
+\conseq Gravitationskräfte als Eigenschaft von Raum und Zeit
+Im folgenden "`nur"' die spezielle Relativitätstheorie.
+Wichtiges Kriterium für relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme
+$v \ll c$ klassisch (nicht relativistisch)
+$v \lesssim c$ spezielle Relativitätstheorie.
+Theorie so konstruiert, dass die Newtonsche Mechanik als Grenzfall $v \ll c$ enthalten ist.
+
+\subsection{Bezugssysteme / Inertialsysteme}
+\paragraph{Klassische Mechanik}
+\begin{itemize}
+	\item es gibt Bezugssysteme, die anderen gegenüber ausgezeichnet sond, da in ihnen keine Scheinkräfte wirken. \textit{Intertialsysteme}.
+	Möglicherweise gibt es einen \textit{absoluten Raum} (Newton).
+	\item Es gibt eine \textit{absolute Zeit}. In der klassischen Physik spricht nichts dagegen.
+	\item Genauer: In Inertialsystemen nur Newtons Gesetz $\vec{F} = m \ddotvec{r}$ gilt ohne Hinzunahme von Schein-/Trägheitskräften.
+	Ausgangspunkt ist das Inertialsystem $\Sigma$.
+	Alle Systeme $\Sigma'$, die sich geradlinig, gleichförmig mit $\vec v$ relativ zu $\Sigma$ bewegen ($\vec{r}' = \vec{r} - \vec{v}t$), sind auch Inertialsysteme.
+	\conseq Galilei-Transformation (z.B. $\vec{v} \parallel \hat{z}$)
+\end{itemize}
+Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten.
+\begin{align*}
+	\Sigma& & \Sigma& \text{per Galilei Transformation}\\
+	\dotvec{r} &= c \hat{r}, \hat{r} = \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
+\end{align*}
+Keine sphärischen Wenn $\Sigma'$.
+Vorstellung von "`Weltäther"' verknüpft mit absolutem Raum.
+
+
+Behauptung es gibt einen \textbf{absoluten Raum} in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
+Experimenteller Test
+\subsubsection{Michelson-Morley-Experiment}
+Idee: Betrachtung der Bewegung der Erde um die Sonne. Die Erde driftet mit immerhin $v = 30 \frac{\mathrm{km}}{\mathrm{h}}$ um die Sonne durch den Weltäther.
+Breitet sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder kann man die Geschwindigkeit des Äthers relativ zur Sonne messen?
+Aufbau: vgl. \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}
+Grob zusammen gefasst, läuft das Licht über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ für eine konstruktive Interferenz.
+Laufzeiten $\Delta_{ij}$ unter Berücksichtigung des Ätherwindes $S_0 \to S_1: \Delta_{01} = \frac{l_1}{c - v} \text{~(mit Äther)}$, $S_1 \to S_0: \Delta_{10} = \frac{l_1}{c + v}$ \conseq $S_0 - S_1 - S_0: \Delta_1 = \frac{l_1}{c-v} + \frac{l_1}{c+v} = 2 \frac{l_1}{c} \frac{1}{1 - \frac{v^2}{c^2}}$ (aus Zeichnung) $c\Delta_{20}^2 = l_2^2 + v^2 \Delta_{20}^2$, $c\Delta_{02}^2 = l_2^2 + v^2 \Delta_{02}^2$, $\Delta_{20} = \Delta_{02} = \Delta_{2} = 2 \frac{2l_2}{c} \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$ \conseq Laufzeitunterschied \conseq optische Wegdifferenz der zwei Teilstrahlen 
+$$\delta = c (\Delta_2 - \Delta_1) = 2 (\frac{l_2}{\sqrt{1 - \frac{v^2}{c^2}}} - \frac{l_1}{1 - \frac{v^2}{c^2}})$$ 
+\conseq Drehung der Apparatur um $90^\circ$. Wie ändert sich die Intensität? \conseq Rolle von $l_1$ und $l_2$ wird vertauscht.
+$$\delta' = c (\Delta_2' - \Delta_1') = 2 (\frac{l_2}{1 - \frac{v^2}{c^2}} - \frac{l_1}{\sqrt{1 - \frac{v^2}{c^2}}})$$
+Wie muss der Apparat verstellt werden, wenn gedreht?
+$$S = \delta' - \delta = 2(l_1 + l_2) (\frac{1}{1-\frac{v^2}{c^2}} - \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}})$$
+Annahme  $v \ll c$; $\frac{v}{c} \ll 1$
+$$S \approxeq 2 (l_1 + l_2) (1 + \frac{v^2}{c^2} - (1 + \frac{1}{2} \frac{v^2}{c^2}) + \dots) = (l_1 + l_2) \frac{v^2}{c^2}$$
+Sichtbares Licht $\lambda \approx 500 \mathrm{nm}$ und $c = 3 \cdot 10^8 \mathrm{m} \mathrm{s}^{-1}$ \conseq $l_1 + l_2 \approxeq 50 \mathrm{m}$ um Verschiebung um 1 1 Interferenzmaximum zu messen.
+$M+M$ \conseq $\sim 10 \mathrm{m}$ mit Vielfachreflexionen \conseq wären sensitiv auf $\frac{v}{c}$ gewesen. Aber: \textbf{kein Effekt gemessen!}
+
+\begin{folgerung*}~\\
+	\begin{itemize}
+		\item Lichtgeschwindigkeit überall gleich.
+		\item Wenn es weiterhin Inertialsysteme geben soll (jetzt erst recht!). \conseq Galileo-Transformation falsch.
+		\item[\conseq] Keine absolute Zeit. Kein absoluter Raum.
+		\item[\conseq] ohne unendlich schneller Informationsaustausch. (kein absoluter Raum). Begriff der \textbf{Gleichzeitigkeit} an Synchronisation mittels Licht gebunden.
+		Ruhendes System klar. Synchronisation möglich. Beim bewegten System komplizierter.
+	\end{itemize}
+\end{folgerung*}
+
+\subsection{Einstein}: Festhalten an der Gleichberechtigung aller Bezugssysteme \conseq \textbf{Einsteins Postulate}
+\begin{description}
+	\item[Äquivalenzprinzip] Physikalische Gesetze und Experimente sind gleichförmig, geradlinig zueinander bewegten Systemen gleich.
+	\item[Konstanz der Lichtgeschwindigkeit] Die Lichtgeschwindigkeit ist in allen System gleich ($=c$), unabhänig von der Bewegung der Quelle. 
+\end{description}
+\conseq Transformationsformeln für physikalische Größen.
+Insbesondere Raum und Zeit, in dem als Grenzfall $v \ll c$ die Galilei-Transformation enthalten sein muss.
+
+\subsubsection{Lorentz-Transformation}
+Zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit $v$ gleichförmig geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse ist $z$ bzw. $z'$ und die Zeit ist gleich.
+
+gleichförmig, geradlinige Bewegung von $\Sigma'$ relativ zu $\Sigma$ mit $v$ ($\vec{v} \parallel \hat{z}$) bei $t = 0$, Beide Systeme identisch $\Sigma = \Sigma'$. 
+
+Vergleich zweier Lcihtblitze, die zu $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden. $\Sigma: ~r = c t,~\Sigma:~r' = c t'$ Kugelwelle $c^2 + t^2 = r^2 = x^2 + y^2 + z^2$. Aber wegen der Konstanz der Lichtgeschwindigkeit $c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$
+\conseq Verknüpfung von Raum und Zeit.
+\paragraph{Viervektoren}
+$$x = (x^0, x^1, x^2, x^3) = (ct, \vec{x}\in\Re)$$
+nicht euklidisch, sondern Elemente des Minkowski-Raums, hier
+$$x^2 = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 = {x^0}^2 - \vec{x}^2 = c^2t^2 - \vec{x}^2$$
+\conseq gleiche Ausbreitung der Kugelwelle in $\Sigma$ und $\Sigma'$ bedeutet Invarianz des Vierervektorquadrats im Minkowski-Raum.
+$$x^{~2} = x'^2$$
+oder $$c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2$$
+Die gesuchte Transformation ist die \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich \conseq \textbf{spezielle Lorentztransformation}, $\cdot $ Drehung = allgemeine Lorentztransformation.
+Im folgenden immer entlang der z-Achse ($\vec{v} \parallel \hat{z}$). Beziehung zwischen $x$ und $x'$ notwendig linear, weil nur gleichförmig, geradlinige Bewegungen betrachtet.
+$$x'^{\mu} = L^\mu_\nu x^\nu$$
+$x'^\mu = \mu$-te Koordinate des Vierervektors $(x^0, x^1, x^2, x^3)$  
+
+\paragraph{Index-Notation}
+\begin{align*}
+(\vec{F})_i &= (m \vec{a})_i &\rightarrow& F_i &=ma_i\\
+S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& a_ib_i &= S\\
+(\vec{a})_i &= (M\vec{b})_i &\rightarrow& a_i &= \sum_{j=1}^3 M_{i\mathbf{j}} b_\mathbf{j} = M_{ij}b_j\\
+\vec{a} &= L M \vec{b}  &\rightarrow& a_i &=L_{ij}M_{jk}b_k
+\end{align*}
+Vierervektoren $x^\mu, x$, $x^\mu$ oft sowohl Indexschreibweise als auch "`ganzer"' Vektor.\\
+\conseq $x^\mu = (x^0, \vec{x})$ kontravarianter und $x_\mu = (x^0, -\vec{x})$ kovarianter.\\
+Skalarprodukt $x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$\\
+
+%Weiter mit Lorentz...
+Konvention: $\mu, \nu, \rho, \sigma = 0, 1, 2, 3$, 0 die Zeit, $i,j,k,l = 1,2,3$
+und $\cos x y = \cos(x) y$
+%
+
+\begin{align*}
+x'^\mu &= L^\mu_{~\nu} x^\nu \equiv \sum_{\nu=0}^{3} L^\mu_{~\nu}\\
+&= L^\mu_{~0} x^0 + L^\mu_{~1}x^1 + L^\mu_{~2}x^2 + L^\mu_{~3}x^3\\
+&= L^{\mu 0}x^0 - L^{\mu 1}x^1 - L^{\mu 2}x^2 - L^{\mu 3}x^3\\
+x'^\mu &= L^\mu_{~\nu} x^\nu \text{Bewegung von Bezugssysteme in $z$-Richtung}
+\intertext{hier $\nu = 0,1,2,3$}
+\intertext{$x$,$y$-Richtung invariant, da Bewegung in z \conseq $x' = x$ und $y' = y$}
+\begin{pmatrix}
+ct' \\ x' \\ y' \\ z'
+\end{pmatrix} &= \begin{pmatrix}
+L_{00} & 0 & 0 & L_{03}\\
+0 & 1 & 0 & 0\\
+0 &0 & 1 & 0\\
+L_{30} & 0 & 0 & L_{33}
+\end{pmatrix}
+\begin{pmatrix}
+ct \\ x \\ y \\ z
+\end{pmatrix}
+\end{align*}
+\begin{align*}
+\intertext{nur Vermischen der $ct$ und $z$-Komponente, nicht $x$ und $y$, folgende beide Gleichungen muss erfüllt sein}
+(x')^2 &= (x)^2\\
+(x'^0)^2 - (x'^3)^2 &= (x^0)^2 - (x^3)^2\\
+\Rightarrow (L_{00}x^0 + L_{03}x^3)^2 - (L_{30} x^0 L_{33}x^3)^2 &= (x^0)^2 - (x^3)^2\\
+(L_{00}^2-L_{30}^2)(x^0)^2 + (L_{03}^2 - L_{33}^2)(x^3)^2 + 2(L_{00}L_{03} - L_{30} L_{33})x^0 x^3 &= (x^0)^2 - (x^3)^2\\
+\Rightarrow L_{00}^2 - L_{30}^2 &= 1\\
+L_{03}^2 - L_{33}^2 &= -1\\
+L_{00}L_{03} - L_{30}L_{33} &= 0
+\intertext{Damit hat man 3 Gleichungen für 4 Unbekannte \conseq 1 Parameter übrig. Verwendung des $sinh$ und $cosh$}
+\end{align*}
+\begin{align*}
+\sin^2 \vp + \cos^2\vp &= 1 \rightarrow \cosh^2 y - \sinh^2 y = 1\\
+\rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{Gl. 1}\\
+&= L_{33} &  &= L_{03}\\
+\cosh y \sinh y - \sinh y \cosh y &= 0\\
+\rightarrow \text{wähle}\\
+L &= \begin{pmatrix}
+\cosh y & 0 & 0 & - \sinh y\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+-\sinh y & 0 & 0 & \cosh y 
+\end{pmatrix}
+\intertext{$y \in \Re$, Bedeutung? Zusammenhan zwischen $y$ und $v$ (Geschwindigkeit)?}
+\intertext{Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$?}
+\end{align*}
+\begin{align*}
+x^3 &= v t = \frac{v}{c} c t = \frac{v}{c} x^0\\
+x'^3 &= 0 = \cosh y \underbrace{x^3}_{\frac{v}{c} x^0 \text{wegen Bewegung des Ursprungs}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
+&= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
+\frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
+\intertext{$y$ ist die "`Rapidität"' oder auch "`verallgemeinerte Geschwindigkeit"'}
+\end{align*}
+\begin{align*}
+y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \rightarrow y \approx \frac{v}{c}\\
+\cosh^2 y - \sinh^2 y &= 1\\
+\cosh^2 y (1 - \frac{\sinh^2 y}{\cosh^2 y}) &= 1\\
+\cosh^2 y (1 - \tanh^2 y) &= 1\\
+\cosh y &= \frac{1}{\sqrt{1 - \tanh^2 y}} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}}\\
+\sinh y &= \cosh y \tanh y = \frac{\frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\intertext{übliche Abkürzungen $\beta = \frac{v}{c}$; $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$ \conseq $\cosh y = \gamma$; $\sinh y = \gamma \beta$}
+\end{align*}
+\begin{align*}
+L &= \begin{pmatrix}
+\gamma & 0 & 0 & - \gamma \beta\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+-\gamma \beta & 0 & 0 & \gamma
+\end{pmatrix}
+\intertext{$L$ ist "`verallgemeinerte Drehung"'.}
+\intertext{Komponentenweise}
+x' &= x, ~y'=y, ~z'=\gamma (z - \beta c t), ~ct' = \gamma (ct - \beta z)
+\intertext{Dies sind die \textbf{Lorentztransformationsformeln}}
+\intertext{Zeit wird mittransformiert, dies war bei der Galilei-Transformation nicht der Fall}
+\end{align*}
+
+\begin{bemerkung*}~\\
+	\begin{enumerate}
+		\item Grenzfall $v \ll c$ \conseq Galilei-Transformation
+		\item $c$ is Maximalgeschwindigkeit (sonst $\gamma$ imaginär)
+		\item Inverse Lorentztransformation $L^{-1} = L(v \to -v)$, klar, denn $\Sigma$ bewegt sich von $\Sigma'$ aus mit $-v$ entlang der $z$-Achse, genauer
+		\begin{align*}
+		\begin{pmatrix}
+		\gamma & -\gamma \beta\\
+		-\gamma \beta & \gamma
+		\end{pmatrix}
+		\begin{pmatrix}
+		\gamma & \gamma \beta\\
+		\gamma \beta & \gamma
+		\end{pmatrix}
+		&= 	\begin{pmatrix}
+		\gamma^2 - \gamma^2 \beta^2& \gamma^2 \beta -\gamma^2 \beta\\
+		-\gamma^2 \beta + \gamma^2 \beta & -\gamma^2 \beta^2 + \gamma^2
+		\end{pmatrix}\\
+		&= \begin{pmatrix}
+		\gamma^2(1 - \beta^2)& 0\\
+		0 & \gamma^2(1 - \beta^2)
+		\end{pmatrix}
+		= \begin{pmatrix}
+		1 & 0 \\ 0 & 1
+		\end{pmatrix}
+		\end{align*}
+		\item $x^2 = x^0 x^0 - \vec{x} \vec{x} = {x^0}^2 - \vec{x}^2$. Neben $x^2$ \textbf{alle} Quadrate von Minkowski-4-Vektoren \textbf{invariant} unter Lorentztransformationen. Ebenso auch Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu = L^{\mu}_{~\rho}y^\rho =~$ "`Lorentz-Skalare"'
+	\end{enumerate}
+\end{bemerkung*}
+
+\begin{folgerung*}[Folgerungen aus den Lorentztransformationen]
+	\begin{description}~\\
+		\item[\textit{(a)} Gleichzeitigkeit] $z' = \gamma (z - \beta c t)$\\ $ct' = \gamma (ct - \beta z)$ in zwei Systemen $\Sigma$ und $\Sigma'$ vergeht die Zeit unterschiedlich schnell. Gleichzeitigkeit?\\
+		Im Bezugssystem $\Sigma$ zwei Ereigniss gleichzeitig bei $z_1$, $z_2$\\
+		Im Bezugssystem $\Sigma'$: $ct_1' = \gamma (ct_1 - \beta z_1)$ und $ct_2' = \gamma (ct_2 - \beta z_2)$\\
+		damit ist $c \Delta t' = c(t_1'- t_2') = \gamma\beta (z_2 - z_1) \neq 0$.
+		Das Vorzeichen hängt vom Vorzeichen von $(z_2 - z_1)$ ab. Die Reihenfolge ist damit möglicherweise variabel.\\
+		Vertauschung von Ursache und Wirkung?\\
+		Sei in $\Sigma$ $t_2 > t_1$\\
+		$\Sigma'$: $c\underbrace{(t'_2 - t'_1)}_{> 0 \text{, wenn kausal}} = \gamma (c (t_2 - t_1) - \beta (z_2 - z_1))$\\
+		also $\gamma (c (t_2 - t_1) - \beta (z_2 - z_1)) > 0!$\\
+		$\gamma > 0$, als $c (t_2 - t_1) > \beta (z_2 - z_1)$ immer, wenn $c(t_2 - t_2) > (z_2 - z_1)$ (da $\beta < 1$) und damit $c \Delta t > \Delta z$\\
+		Also $c \Delta t \geq \Delta z$.\\
+		Ein Lichtsignal kann Informationen zwischen $z$ und $z_2$ austauschen. \conseq Kausalität erhalten ($t'_2 > t_1$)\\
+		Andernfalls $c \Delta t < \Delta z$\\
+		Keine Informationsübertragung möglich \conseq auch die Reihenfolge der Ereignisse kann geändert werden.
+	\end{description}
+\end{folgerung*}
 
 \chapter{Quantenmechanik}
 \begin{itemize}
@@ -1215,14 +1474,14 @@ Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell et
 \section{Mathematischer Merkzettel}
 
 \subsection{Funktionen}
-\begin{eqnarray}
+\begin{eqnarray*}
 \log_e \equiv \ln, \log_10 \equiv \lg, \log_2 \equiv \mathrm{ld}\\
 \log_x(x^a) = a, \log(xy) = \log(x) + \log(y), \log(\frac{x}{y}) = \log(x) - \log(y), \log_b(x^a) = a \log_b(x)\\
 x^a x^b = x^{a + b}, x^a y^a = (x y)^a, (z^a)^b, b^{\log_b x} = x\\
 \log_b \sqrt[n]{x} = \frac{1}{n} \log_b(x), \log_b(1) = 0, \log_b(x) = \frac{\log_a(x)}{\log_a(b)}\\
 \frac{\d}{\d x} \log_b (x) = \frac{1}{x \ln(b)}\\
 \sin^2x + \cos^2 x = 1, \sin(0) = \sin(\pi) = \dots = 0, \\ \cos(0) = 1 = - \cos(\pi), \sin(\frac{\pi}{2}) = 1 = - \sin(\frac{3 \pi}{2}), \cos(\frac{\pi}{2}) = \cos(\frac{3 \pi}{2}) = 0
-\end{eqnarray}
+\end{eqnarray*}
 
 \subsection{Komplexe Zahlen}
 
@@ -1245,6 +1504,8 @@ $z_k$ ist sozusagen ein "`Vektor"' in der komplexen Zahlenebene, also im zweidim
 
 \subsection{Matrizen}
 $spur(A) = $ Summe der Diagonaleinträge, weiteres (Addition, Multiplikation und Determinante): siehe Lineare Algebra.
+
+$$x_i = M_{ij} x_j \Leftrightarrow \sum_{j=1}^1 M_{ij} x_j$$
 
 \subsection{Ableitung}
 
@@ -1324,7 +1585,6 @@ $$\d f = \ffpartial{f(x,y)}{x} \d x + \ffpartial(f(x,y)){y} \d y$$
 allgemein
 $$\d f = \sum_{i=1}^n \ffpartial{f(\vec{x})}{x_i}$$
 $\d f$, $\d x$, $\d y$, \dots sind Variablen, "`$\partial f$"' nicht
-
 
 \chapter{Übungsmitschriebe}
 
