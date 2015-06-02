@@ -69,10 +69,10 @@
 \newcommand{\vp}{\varphi}
 \newcommand{\dvp}{\dot{\vp}}
 \newcommand{\ddvp}{\ddot{\vp}}
-
+\renewcommand{\Re}{\mathbb{R}}
 
 \makeatletter
-\@removefromreset{section}{chapter}
+%\@removefromreset{section}{chapter}
 \makeatother
 
 \makeatletter
@@ -1205,116 +1205,111 @@ Konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Strukt
 %Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
 %Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
 
-\paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme. Invarianz/Kovarianz physikalischer Observablen und Gesetze.
-Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme)
-\conseq \textbf{speizielle} Relativitätstheorie
-Darüber hinaus: \textbf{allgemeine} Relativitätstheorie. Beschleunigungen \conseq Scheinkräfte
-\conseq Eigenschaften von Raum und Zeit
-\conseq Gravitationskräfte als Eigenschaft von Raum und Zeit
-Im folgenden "`nur"' die spezielle Relativitätstheorie.
-Wichtiges Kriterium für relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme
-$v \ll c$ klassisch (nicht relativistisch)
-$v \lesssim c$ spezielle Relativitätstheorie.
-Theorie so konstruiert, dass die Newtonsche Mechanik als Grenzfall $v \ll c$ enthalten ist.
+\paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme? Und wie steht es um die Invarianz/Kovarianz physikalischer Observablen und Gesetze.
+Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{speizielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationkräfte werden als Eigenschaft von Raum und Zeit beschrieben.
 
-\subsection{Bezugssysteme / Inertialsysteme}
-\paragraph{Klassische Mechanik}
-\begin{itemize}
-	\item es gibt Bezugssysteme, die anderen gegenüber ausgezeichnet sond, da in ihnen keine Scheinkräfte wirken. \textit{Intertialsysteme}.
-	Möglicherweise gibt es einen \textit{absoluten Raum} (Newton).
-	\item Es gibt eine \textit{absolute Zeit}. In der klassischen Physik spricht nichts dagegen.
-	\item Genauer: In Inertialsystemen nur Newtons Gesetz $\vec{F} = m \ddotvec{r}$ gilt ohne Hinzunahme von Schein-/Trägheitskräften.
-	Ausgangspunkt ist das Inertialsystem $\Sigma$.
-	Alle Systeme $\Sigma'$, die sich geradlinig, gleichförmig mit $\vec v$ relativ zu $\Sigma$ bewegen ($\vec{r}' = \vec{r} - \vec{v}t$), sind auch Inertialsysteme.
-	\conseq Galilei-Transformation (z.B. $\vec{v} \parallel \hat{z}$)
-\end{itemize}
-Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten.
+Im folgenden betrachten wir "`nur"' die spezielle Relativitätstheorie.
+Das wichtigtes Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
+\begin{description}
+	\item[bei $v \ll c$] hat man den klassischen (also nicht relativistischen) Fall, den wir schon im 2. Kapitel näher betrachtet haben
+	\item[bei $v \lesssim c $] sind die relativistischen Effekte bedeutend und man verwendet die spezielle Relativitätstheorie
+\end{description}
+Man sieht, dass die Theorie so konstruiert ist, dass die Newtonsche Mechanik als Grenzfall $v \ll c$ in ihr enthalten ist.
+
+\section{Bezugssysteme / Inertialsysteme}
+\subsection{Klassische Mechanik}
+In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken, diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen \textit{absoluten Raum} \todo{Erläuterung}.
+
+Sicher gibt es aber eine \textit{absolute Zeit}, gegen die in der klassischen Physik nichts spricht.
+
+Um nochmal auf die \textit{Inertialsysteme} zurückzukommen: Genauer gilt in ihnen das Newtonsche Gesetz $\vec{F} = m \ddotvec{r}$ ohne Hinzunahme von Schein- oder Trägheitskräften. Im folgenden ist der Ausgangspunkt das Inertialsystem $\Sigma$.
+Alle Systeme $\Sigma'$, die sich geradlinig und gleichförmig mit der Geschwindigkeit $\vec v$ relativ zu $\Sigma$ bewegen ($\vec{r}' = \vec{r} - \vec{v}t$), sind auch Inertialsysteme. Deswegen kann man in der klassischen Mechanik einfach die Galilei-Transformation (z.B. $\vec{v} \parallel \hat{z}$) verwenden.
+
+Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten ist nun folgende
 \begin{align*}
 	\Sigma& & \Sigma& \text{per Galilei Transformation}\\
 	\dotvec{r} &= c \hat{r}, \hat{r} = \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
 \end{align*}
-Keine sphärischen Wenn $\Sigma'$.
-Vorstellung von "`Weltäther"' verknüpft mit absolutem Raum.
+Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
 
-
-Behauptung es gibt einen \textbf{absoluten Raum} in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
-Experimenteller Test
 \subsubsection{Michelson-Morley-Experiment}
-Idee: Betrachtung der Bewegung der Erde um die Sonne. Die Erde driftet mit immerhin $v = 30 \frac{\mathrm{km}}{\mathrm{h}}$ um die Sonne durch den Weltäther.
-Breitet sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder kann man die Geschwindigkeit des Äthers relativ zur Sonne messen?
-Aufbau: vgl. \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}
-Grob zusammen gefasst, läuft das Licht über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ für eine konstruktive Interferenz.
-Laufzeiten $\Delta_{ij}$ unter Berücksichtigung des Ätherwindes $S_0 \to S_1: \Delta_{01} = \frac{l_1}{c - v} \text{~(mit Äther)}$, $S_1 \to S_0: \Delta_{10} = \frac{l_1}{c + v}$ \conseq $S_0 - S_1 - S_0: \Delta_1 = \frac{l_1}{c-v} + \frac{l_1}{c+v} = 2 \frac{l_1}{c} \frac{1}{1 - \frac{v^2}{c^2}}$ (aus Zeichnung) $c\Delta_{20}^2 = l_2^2 + v^2 \Delta_{20}^2$, $c\Delta_{02}^2 = l_2^2 + v^2 \Delta_{02}^2$, $\Delta_{20} = \Delta_{02} = \Delta_{2} = 2 \frac{2l_2}{c} \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$ \conseq Laufzeitunterschied \conseq optische Wegdifferenz der zwei Teilstrahlen 
-$$\delta = c (\Delta_2 - \Delta_1) = 2 (\frac{l_2}{\sqrt{1 - \frac{v^2}{c^2}}} - \frac{l_1}{1 - \frac{v^2}{c^2}})$$ 
-\conseq Drehung der Apparatur um $90^\circ$. Wie ändert sich die Intensität? \conseq Rolle von $l_1$ und $l_2$ wird vertauscht.
-$$\delta' = c (\Delta_2' - \Delta_1') = 2 (\frac{l_2}{1 - \frac{v^2}{c^2}} - \frac{l_1}{\sqrt{1 - \frac{v^2}{c^2}}})$$
-Wie muss der Apparat verstellt werden, wenn gedreht?
-$$S = \delta' - \delta = 2(l_1 + l_2) (\frac{1}{1-\frac{v^2}{c^2}} - \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}})$$
-Annahme  $v \ll c$; $\frac{v}{c} \ll 1$
-$$S \approxeq 2 (l_1 + l_2) (1 + \frac{v^2}{c^2} - (1 + \frac{1}{2} \frac{v^2}{c^2}) + \dots) = (l_1 + l_2) \frac{v^2}{c^2}$$
-Sichtbares Licht $\lambda \approx 500 \mathrm{nm}$ und $c = 3 \cdot 10^8 \mathrm{m} \mathrm{s}^{-1}$ \conseq $l_1 + l_2 \approxeq 50 \mathrm{m}$ um Verschiebung um 1 1 Interferenzmaximum zu messen.
-$M+M$ \conseq $\sim 10 \mathrm{m}$ mit Vielfachreflexionen \conseq wären sensitiv auf $\frac{v}{c}$ gewesen. Aber: \textbf{kein Effekt gemessen!}
+Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl, Morley dafür aber als erster Amerikaner 1907 den Physik Nobelpreis bekam.
 
-\begin{folgerung*}~\\
-	\begin{itemize}
-		\item Lichtgeschwindigkeit überall gleich.
-		\item Wenn es weiterhin Inertialsysteme geben soll (jetzt erst recht!). \conseq Galileo-Transformation falsch.
-		\item[\conseq] Keine absolute Zeit. Kein absoluter Raum.
-		\item[\conseq] ohne unendlich schneller Informationsaustausch. (kein absoluter Raum). Begriff der \textbf{Gleichzeitigkeit} an Synchronisation mittels Licht gebunden.
-		Ruhendes System klar. Synchronisation möglich. Beim bewegten System komplizierter.
-	\end{itemize}
+\paragraph{Idee} Wir Betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \frac{\mathrm{km}}{\mathrm{h}}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
+
+\paragraph{Aufbau} vgl. \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}
+Grob zusammen gefasst, läuft das Licht, mit Wellenlänge $\lambda$, über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. Für eine konstruktive Interferenz der beiden resultierenden Lichtstrahlen muss die Wegdifferenz $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ sein.
+
+Die Laufzeiten $\Delta_{ij}$ sind unter Berücksichtigung des Ätherwindes $S_0 \to S_1: \Delta_{01} = \frac{l_1}{c - v} \text{~(mit Äther)}$, $S_1 \to S_0: \Delta_{10} = \frac{l_1}{c + v}$ \conseq $S_0 - S_1 - S_0: \Delta_1 = \frac{l_1}{c-v} + \frac{l_1}{c+v} = 2 \frac{l_1}{c} \frac{1}{1 - \frac{v^2}{c^2}}$ (aus Zeichnung) $c\Delta_{20}^2 = l_2^2 + v^2 \Delta_{20}^2$, $c\Delta_{02}^2 = l_2^2 + v^2 \Delta_{02}^2$, $\Delta_{20} = \Delta_{02} = \Delta_{2} = 2 \frac{2l_2}{c} \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$ damit bekommt man den Laufzeitunterschied und damit wiederum die optische Wegdifferenz der zwei Teilstrahlen
+$$\delta = c (\Delta_2 - \Delta_1) = 2 \left(\frac{l_2}{\sqrt{1 - \frac{v^2}{c^2}}} - \frac{l_1}{1 - \frac{v^2}{c^2}}\right)$$ 
+Nun dreht man die Apparatur Apparatur um $90^\circ$. Wie ändert sich die Intensität? Die Rolle von $l_1$ und $l_2$ wird einfach vertauscht.
+$$\delta' = c (\Delta_2' - \Delta_1') = 2 \left(\frac{l_2}{1 - \frac{v^2}{c^2}} - \frac{l_1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
+Wie muss der Apparat verstellt werden, wenn er gedreht wurde?
+$$S = \delta' - \delta = 2(l_1 + l_2) \left(\frac{1}{1-\frac{v^2}{c^2}} - \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
+Angenommen  $v \ll c$ und damit $\frac{v}{c} \ll 1$, dann gilt
+$$S \approxeq 2 (l_1 + l_2) \left(1 + \frac{v^2}{c^2} - (1 + \frac{1}{2} \frac{v^2}{c^2}) + \dots\right) = (l_1 + l_2) \frac{v^2}{c^2}$$
+Bei sichtbarem Licht mit $\lambda \approx 500 \mathrm{nm}$ und der Lichtgeschwindigkeit $c = 3 \cdot 10^8 ~\mathrm{m} \mathrm{s}^{-1}$ müsste $l_1 + l_2 \approxeq 50 \mathrm{m}$ gelten, um eine Verschiebung um 1 Interferenzmaximum messen zu können.
+Im Michelson-Morley-Experiment waren es ungefähr $10 \mathrm{m}$ mit Vielfachreflexionen, weswegen es sensitiv genug gewesen wäre. Aber es wurde trotzdem \textbf{kein Effekt gemessen!} Genauso wie in vielen nachfolgenden gleichartigen Experimenten.
+
+\begin{folgerung*}
+	Die Lichtgeschwindigkeit ist überall, d.h. in jedem Bezugssystem, gleich.
+\end{folgerung*}
+\begin{folgerung*}
+	Wenn es weiterhin Inertialsysteme geben soll (jetzt erst recht!) ist die Galileo-Transformation notwendigerweise falsch. Damit gibt es keine absolute Zeit und keinen absoluten Raum.
+\end{folgerung*}
+\begin{folgerung*}
+	Es gibt außerdem keinen unendlich schnellen Informationsaustausch. Da der Begriff der \textbf{Gleichzeitigkeit} an eine Synchronisation mittels Licht gebunden ist, ist jener Begriff nur in ruhenden Systemen klar, in ihnen ist eine Synchronisierung möglich, in bewegten Systemen ist das ganze viel schwieriger. Wir werden später auf diesen Begriff noch einmal zurückkommen.
 \end{folgerung*}
 
-\subsection{Einstein}: Festhalten an der Gleichberechtigung aller Bezugssysteme \conseq \textbf{Einsteins Postulate}
+\section{Einstein}
+Er hält mit seinen Theorien an der Gleichberechtigung aller Bezugssysteme fest, bzw. erfordert sie.
+
+\subsection{Einsteins Postulate}
 \begin{description}
-	\item[Äquivalenzprinzip] Physikalische Gesetze und Experimente sind gleichförmig, geradlinig zueinander bewegten Systemen gleich.
-	\item[Konstanz der Lichtgeschwindigkeit] Die Lichtgeschwindigkeit ist in allen System gleich ($=c$), unabhänig von der Bewegung der Quelle. 
+	\item[Äquivalenzprinzip] Die Physikalischen Gesetze und Experimente sind in gleichförmig und geradlinig zueinander bewegten Systemen gleich.
+	\item[Konstanz der Lichtgeschwindigkeit] Die Lichtgeschwindigkeit ist in allen System gleich ($=c$), unabhängig von der Bewegung der Quelle. 
 \end{description}
-\conseq Transformationsformeln für physikalische Größen.
-Insbesondere Raum und Zeit, in dem als Grenzfall $v \ll c$ die Galilei-Transformation enthalten sein muss.
+Daraus folgen neue Transformationsformeln für physikalische Größen, insbesondere für Raum und Zeit, in welchen als Grenzfall $v \ll c$ die Galilei-Transformation enthalten sein muss.
 
-\subsubsection{Lorentz-Transformation}
-Zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit $v$ gleichförmig geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse ist $z$ bzw. $z'$ und die Zeit ist gleich.
+\subsection{Lorentz-Transformation}
+Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$) und die Zeit ist gleich\todo{???}. Bei $t = 0$ sind beide Systeme identisch $\Sigma = \Sigma'$.
 
-gleichförmig, geradlinige Bewegung von $\Sigma'$ relativ zu $\Sigma$ mit $v$ ($\vec{v} \parallel \hat{z}$) bei $t = 0$, Beide Systeme identisch $\Sigma = \Sigma'$. 
+Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma:$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
+$$c^2 + t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
+Es findet offensichtlich eine Verknüpfung von Raum und Zeit statt.
 
-Vergleich zweier Lcihtblitze, die zu $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden. $\Sigma: ~r = c t,~\Sigma:~r' = c t'$ Kugelwelle $c^2 + t^2 = r^2 = x^2 + y^2 + z^2$. Aber wegen der Konstanz der Lichtgeschwindigkeit $c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$
-\conseq Verknüpfung von Raum und Zeit.
-\paragraph{Viervektoren}
+\subsubsection{Viervektoren}
 $$x = (x^0, x^1, x^2, x^3) = (ct, \vec{x}\in\Re)$$
-nicht euklidisch, sondern Elemente des Minkowski-Raums, hier
+Diese Vektoren sind nicht euklidisch, sondern Elemente des Minkowski-Raums, weiter gilt damit
 $$x^2 = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 = {x^0}^2 - \vec{x}^2 = c^2t^2 - \vec{x}^2$$
-\conseq gleiche Ausbreitung der Kugelwelle in $\Sigma$ und $\Sigma'$ bedeutet Invarianz des Vierervektorquadrats im Minkowski-Raum.
-$$x^{~2} = x'^2$$
-oder $$c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2$$
-Die gesuchte Transformation ist die \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich \conseq \textbf{spezielle Lorentztransformation}, $\cdot $ Drehung = allgemeine Lorentztransformation.
-Im folgenden immer entlang der z-Achse ($\vec{v} \parallel \hat{z}$). Beziehung zwischen $x$ und $x'$ notwendig linear, weil nur gleichförmig, geradlinige Bewegungen betrachtet.
+Die gleiche Ausbreitung der Kugelwelle in $\Sigma$ und $\Sigma'$ ist die Invarianz des Vierervektorquadrats im Minkowski-Raum.
+$$x^{~2} = x'^2 \text{~oder~} c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2$$
+Die gesuchte Transformation ist die sogenannte \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich, womit wir die \textbf{spezielle Lorentztransformation} haben, welchen zusammen mit einer Drehung, die allgemeine Lorentztransformation ergibt.
+
+
+Die Beziehung zwischen $x$ und $x'$ ist notwendig linear, weil nur wir nur gleichförmige und geradlinige Bewegungen betrachten.
 $$x'^{\mu} = L^\mu_\nu x^\nu$$
-$x'^\mu = \mu$-te Koordinate des Vierervektors $(x^0, x^1, x^2, x^3)$  
+$x^\mu$ ist in dieser Schreibweise die $\mu$-te Koordinate des Vierervektors $(x^0, x^1, x^2, x^3)$  
 
 \paragraph{Index-Notation}
+Ein kurzer Notationseinschub.
 \begin{align*}
-(\vec{F})_i &= (m \vec{a})_i &\rightarrow& F_i &=ma_i\\
-S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& a_ib_i &= S\\
-(\vec{a})_i &= (M\vec{b})_i &\rightarrow& a_i &= \sum_{j=1}^3 M_{i\mathbf{j}} b_\mathbf{j} = M_{ij}b_j\\
-\vec{a} &= L M \vec{b}  &\rightarrow& a_i &=L_{ij}M_{jk}b_k
+(\vec{F})_i &= (m \vec{a})_i &\rightarrow& & F_i &=ma_i\\
+S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& & a_ib_i &= S\\
+(\vec{a})_i &= (M\vec{b})_i &\rightarrow& & a_i &= \sum_{j=1}^3 M_{i\mathbf{j}} b_\mathbf{j} = M_{ij}b_j\\
+\vec{a} &= L M \vec{b}  &\rightarrow& & a_i &=L_{ij}M_{jk}b_k
 \end{align*}
-Vierervektoren $x^\mu, x$, $x^\mu$ oft sowohl Indexschreibweise als auch "`ganzer"' Vektor.\\
-\conseq $x^\mu = (x^0, \vec{x})$ kontravarianter und $x_\mu = (x^0, -\vec{x})$ kovarianter.\\
-Skalarprodukt $x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$\\
-
-%Weiter mit Lorentz...
-Konvention: $\mu, \nu, \rho, \sigma = 0, 1, 2, 3$, 0 die Zeit, $i,j,k,l = 1,2,3$
-und $\cos x y = \cos(x) y$
-%
-
+Vierervektoren $x^\mu, x$, $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiherhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
+$$x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$$
+Als Konvention gilt weiterhin $\mu, \nu, \rho, \sigma \in  \{0, 1, 2, 3\}$, Index 0 ist die Zeit, $i,j,k,l \in \{1,2,3\}$ und $\cos x y = \cos(x) y$\\
+\\
+Weiter mit der Lorentztransformation:
 \begin{align*}
 x'^\mu &= L^\mu_{~\nu} x^\nu \equiv \sum_{\nu=0}^{3} L^\mu_{~\nu}\\
 &= L^\mu_{~0} x^0 + L^\mu_{~1}x^1 + L^\mu_{~2}x^2 + L^\mu_{~3}x^3\\
 &= L^{\mu 0}x^0 - L^{\mu 1}x^1 - L^{\mu 2}x^2 - L^{\mu 3}x^3\\
-x'^\mu &= L^\mu_{~\nu} x^\nu \text{Bewegung von Bezugssysteme in $z$-Richtung}
-\intertext{hier $\nu = 0,1,2,3$}
-\intertext{$x$,$y$-Richtung invariant, da Bewegung in z \conseq $x' = x$ und $y' = y$}
+x'^\mu &= L^\mu_{~\nu} x^\nu \text{~~Bewegung von Bezugssysteme in $z$-Richtung}
+\intertext{Die $x$- und $y$-Richtung sind invariant, da die Bewegung in z Richtung stattfindet und damit offensichtlich $x' = x$ und $y' = y$}
 \begin{pmatrix}
 ct' \\ x' \\ y' \\ z'
 \end{pmatrix} &= \begin{pmatrix}
@@ -1328,7 +1323,7 @@ ct \\ x \\ y \\ z
 \end{pmatrix}
 \end{align*}
 \begin{align*}
-\intertext{nur Vermischen der $ct$ und $z$-Komponente, nicht $x$ und $y$, folgende beide Gleichungen muss erfüllt sein}
+\intertext{Es findet nur ein Vermischen der $ct$- und $z$-Komponente statt, nicht aber der $x$- und $y$-Komponenten. Folgende beide Gleichungen müssen erfüllt sein, vgl. Anfang dieses Abschnitts.}
 (x')^2 &= (x)^2\\
 (x'^0)^2 - (x'^3)^2 &= (x^0)^2 - (x^3)^2\\
 \Rightarrow (L_{00}x^0 + L_{03}x^3)^2 - (L_{30} x^0 L_{33}x^3)^2 &= (x^0)^2 - (x^3)^2\\
@@ -1336,30 +1331,29 @@ ct \\ x \\ y \\ z
 \Rightarrow L_{00}^2 - L_{30}^2 &= 1\\
 L_{03}^2 - L_{33}^2 &= -1\\
 L_{00}L_{03} - L_{30}L_{33} &= 0
-\intertext{Damit hat man 3 Gleichungen für 4 Unbekannte \conseq 1 Parameter übrig. Verwendung des $sinh$ und $cosh$}
 \end{align*}
+Nun hat man 3 Gleichungen für 4 Unbekannte, es ist also 1 Parameter übrig. Im folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
 \begin{align*}
 \sin^2 \vp + \cos^2\vp &= 1 \rightarrow \cosh^2 y - \sinh^2 y = 1\\
-\rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{Gl. 1}\\
-&= L_{33} &  &= L_{03}\\
+\rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{~Gl. 1}\\
+&= L_{33} &  &= L_{03} \text{~Gl. 2}\\
 \cosh y \sinh y - \sinh y \cosh y &= 0\\
-\rightarrow \text{wähle}\\
+\text{Wähle jetzt~}
 L &= \begin{pmatrix}
 \cosh y & 0 & 0 & - \sinh y\\
 0 & 1 & 0 & 0\\
 0 & 0 & 1 & 0\\
 -\sinh y & 0 & 0 & \cosh y 
 \end{pmatrix}
-\intertext{$y \in \Re$, Bedeutung? Zusammenhan zwischen $y$ und $v$ (Geschwindigkeit)?}
-\intertext{Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$?}
 \end{align*}
+Was ist die Bedeutung von $y \in \Re$? Was ist der Zusammenhang zwischen $y$ und $v$? Und was hat $y$ damit mit der Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$ zu tun?
 \begin{align*}
 x^3 &= v t = \frac{v}{c} c t = \frac{v}{c} x^0\\
-x'^3 &= 0 = \cosh y \underbrace{x^3}_{\frac{v}{c} x^0 \text{wegen Bewegung des Ursprungs}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
+x'^3 &= 0 = \cosh y \underbrace{x^3}_{\frac{v}{c} x^0\text{~wegen der Bewegung des Ursprungs}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
 &= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
 \frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
-\intertext{$y$ ist die "`Rapidität"' oder auch "`verallgemeinerte Geschwindigkeit"'}
 \end{align*}
+$y$ ist die "`Rapidität"' oder auch "`verallgemeinerte Geschwindigkeit"'
 \begin{align*}
 y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \rightarrow y \approx \frac{v}{c}\\
 \cosh^2 y - \sinh^2 y &= 1\\
@@ -1367,8 +1361,8 @@ y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \rightarrow y \approx \frac{v}{c}\\
 \cosh^2 y (1 - \tanh^2 y) &= 1\\
 \cosh y &= \frac{1}{\sqrt{1 - \tanh^2 y}} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}}\\
 \sinh y &= \cosh y \tanh y = \frac{\frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}}
-\intertext{übliche Abkürzungen $\beta = \frac{v}{c}$; $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$ \conseq $\cosh y = \gamma$; $\sinh y = \gamma \beta$}
 \end{align*}
+Üblich sind folgende Abkürzungen: $\beta = \frac{v}{c}$; $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$ \conseq $\cosh y = \gamma$; $\sinh y = \gamma \beta$ und damit
 \begin{align*}
 L &= \begin{pmatrix}
 \gamma & 0 & 0 & - \gamma \beta\\
@@ -1379,57 +1373,57 @@ L &= \begin{pmatrix}
 \intertext{$L$ ist "`verallgemeinerte Drehung"'.}
 \intertext{Komponentenweise}
 x' &= x, ~y'=y, ~z'=\gamma (z - \beta c t), ~ct' = \gamma (ct - \beta z)
-\intertext{Dies sind die \textbf{Lorentztransformationsformeln}}
-\intertext{Zeit wird mittransformiert, dies war bei der Galilei-Transformation nicht der Fall}
 \end{align*}
+Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtlich mittransformiert, dies war bei der Galilei-Transformation nicht der Fall
 
-\begin{bemerkung*}~\\
-	\begin{enumerate}
-		\item Grenzfall $v \ll c$ \conseq Galilei-Transformation
-		\item $c$ is Maximalgeschwindigkeit (sonst $\gamma$ imaginär)
-		\item Inverse Lorentztransformation $L^{-1} = L(v \to -v)$, klar, denn $\Sigma$ bewegt sich von $\Sigma'$ aus mit $-v$ entlang der $z$-Achse, genauer
-		\begin{align*}
-		\begin{pmatrix}
-		\gamma & -\gamma \beta\\
-		-\gamma \beta & \gamma
-		\end{pmatrix}
-		\begin{pmatrix}
-		\gamma & \gamma \beta\\
-		\gamma \beta & \gamma
-		\end{pmatrix}
-		&= 	\begin{pmatrix}
-		\gamma^2 - \gamma^2 \beta^2& \gamma^2 \beta -\gamma^2 \beta\\
-		-\gamma^2 \beta + \gamma^2 \beta & -\gamma^2 \beta^2 + \gamma^2
-		\end{pmatrix}\\
-		&= \begin{pmatrix}
-		\gamma^2(1 - \beta^2)& 0\\
-		0 & \gamma^2(1 - \beta^2)
-		\end{pmatrix}
-		= \begin{pmatrix}
-		1 & 0 \\ 0 & 1
-		\end{pmatrix}
-		\end{align*}
-		\item $x^2 = x^0 x^0 - \vec{x} \vec{x} = {x^0}^2 - \vec{x}^2$. Neben $x^2$ \textbf{alle} Quadrate von Minkowski-4-Vektoren \textbf{invariant} unter Lorentztransformationen. Ebenso auch Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu = L^{\mu}_{~\rho}y^\rho =~$ "`Lorentz-Skalare"'
-	\end{enumerate}
+\begin{bemerkung*}
+	Der Grenzfall bei $v \ll c$ ist die Galilei-Transformation.
+\end{bemerkung*}
+\begin{bemerkung*}
+	 $c$ ist die Maximalgeschwindigkeit (sonst wäre $\gamma$ imaginär).
+\end{bemerkung*}
+\begin{bemerkung*}
+	Die Inverse Lorentztransformation ist $L^{-1} = L(v \to -v)$, was trivial ist, denn $\Sigma$ bewegt sich von $\Sigma'$ aus mit $-v$ entlang der $z$-Achse, oder genauer
+	\begin{align*}
+	\begin{pmatrix}
+	\gamma & -\gamma \beta\\
+	-\gamma \beta & \gamma
+	\end{pmatrix}
+	\begin{pmatrix}
+	\gamma & \gamma \beta\\
+	\gamma \beta & \gamma
+	\end{pmatrix}
+	&= 	\begin{pmatrix}
+	\gamma^2 - \gamma^2 \beta^2& \gamma^2 \beta -\gamma^2 \beta\\
+	-\gamma^2 \beta + \gamma^2 \beta & -\gamma^2 \beta^2 + \gamma^2
+	\end{pmatrix}\\
+	&= \begin{pmatrix}
+	\gamma^2(1 - \beta^2)& 0\\
+	0 & \gamma^2(1 - \beta^2)
+	\end{pmatrix}
+	= \begin{pmatrix}
+	1 & 0 \\ 0 & 1
+	\end{pmatrix}
+	\end{align*}
+\end{bemerkung*}
+\begin{bemerkung*} Es gilt $x^2 = x^0 x^0 - \vec{x} \vec{x} = {x^0}^2 - \vec{x}^2$. Neben $x^2$ sind \textbf{alle} Quadrate von Minkowski-Vierervektoren \textbf{invariant} unter Lorentztransformationen. Ebenso gilt dies auch für die Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu = L^{\mu}_{~\rho}y^\rho$, die sogenannten "`Lorentz-Skalare"'.
 \end{bemerkung*}
 
-\begin{folgerung*}[Folgerungen aus den Lorentztransformationen]
-	\begin{description}~\\
-		\item[\textit{(a)} Gleichzeitigkeit] $z' = \gamma (z - \beta c t)$\\ $ct' = \gamma (ct - \beta z)$ in zwei Systemen $\Sigma$ und $\Sigma'$ vergeht die Zeit unterschiedlich schnell. Gleichzeitigkeit?\\
-		Im Bezugssystem $\Sigma$ zwei Ereigniss gleichzeitig bei $z_1$, $z_2$\\
-		Im Bezugssystem $\Sigma'$: $ct_1' = \gamma (ct_1 - \beta z_1)$ und $ct_2' = \gamma (ct_2 - \beta z_2)$\\
-		damit ist $c \Delta t' = c(t_1'- t_2') = \gamma\beta (z_2 - z_1) \neq 0$.
-		Das Vorzeichen hängt vom Vorzeichen von $(z_2 - z_1)$ ab. Die Reihenfolge ist damit möglicherweise variabel.\\
-		Vertauschung von Ursache und Wirkung?\\
-		Sei in $\Sigma$ $t_2 > t_1$\\
-		$\Sigma'$: $c\underbrace{(t'_2 - t'_1)}_{> 0 \text{, wenn kausal}} = \gamma (c (t_2 - t_1) - \beta (z_2 - z_1))$\\
-		also $\gamma (c (t_2 - t_1) - \beta (z_2 - z_1)) > 0!$\\
-		$\gamma > 0$, als $c (t_2 - t_1) > \beta (z_2 - z_1)$ immer, wenn $c(t_2 - t_2) > (z_2 - z_1)$ (da $\beta < 1$) und damit $c \Delta t > \Delta z$\\
-		Also $c \Delta t \geq \Delta z$.\\
-		Ein Lichtsignal kann Informationen zwischen $z$ und $z_2$ austauschen. \conseq Kausalität erhalten ($t'_2 > t_1$)\\
-		Andernfalls $c \Delta t < \Delta z$\\
-		Keine Informationsübertragung möglich \conseq auch die Reihenfolge der Ereignisse kann geändert werden.
-	\end{description}
+\begin{folgerung*}[\textbf{(a) Gleichzeitigkeit}]
+	\begin{align*}
+		z'  &= \gamma (z - \beta c t)\\
+		ct' &= \gamma (ct - \beta z)
+	\end{align*}
+	In zwei Systemen $\Sigma$ und $\Sigma'$ vergeht die Zeit also unterschiedlich schnell. Was ist nun mit der Gleichzeitigkeit?\\
+	Im Bezugssystem $\Sigma$ finden zwei Ereignisse gleichzeitig bei $z_1$ bzw. $z_2$ statt.\\
+	Im Bezugssystem $\Sigma'$ gilt $ct_1' = \gamma (ct_1 - \beta z_1)$ und $ct_2' = \gamma (ct_2 - \beta z_2)$, damit ist $c \Delta t' = c(t_1'- t_2') = \gamma\beta (z_2 - z_1) \neq 0$.
+	Das Vorzeichen hängt vom Vorzeichen von $(z_2 - z_1)$ ab. Die Reihenfolge ist damit möglicherweise variabel. Findet damit eine	Vertauschung von Ursache und Wirkung statt?\\
+	\textbf{Sei $\Sigma$ $t_2 > t_1$}\\
+	~~$\Sigma'$: $c\underbrace{(t'_2 - t'_1)}_{> 0 \text{, wenn kausal}} = \gamma (c (t_2 - t_1) - \beta (z_2 - z_1))$\\
+	also $\gamma (c (t_2 - t_1) - \beta (z_2 - z_1)) > 0!$\\
+		$\gamma >~0$, als $c (t_2 - t_1) > \beta (z_2 - z_1)$ immer, wenn $c(t_2 - t_2) > (z_2 - z_1)$ (da $\beta < 1$) und damit gilt $c \Delta t > \Delta z$\\
+	Also $c \Delta t \geq \Delta z$.\\
+		Ein Lichtsignal kann Informationen zwischen $z$ und $z_2$ austauschen. Damit bleibt die Kausalität erhalten ($t'_2 > t_1$), andernfalls wäre $c \Delta t < \Delta z$ und deswegen keine Informationsübertragung möglich. Die Reihenfolge der Ereignisse kann dann zwar geändert werden, aber es ist nicht beobachtbar.
 \end{folgerung*}
 
 \chapter{Quantenmechanik}
