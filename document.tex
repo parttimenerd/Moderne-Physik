@@ -171,7 +171,7 @@ Die Definition der trägen Masse ist damit unabhängig von der Kraft. Hierfür e
 
 \begin{beispiel*}[Gravitationskraft]
 Die Anziehung zwischen zwei Körpern der Masse $M$ und $m$ ist 
-$$\vec{F}_G = - \gamma \frac{M m}{r^2} \hat{r}$$
+$$\vec{F}_G = \gamma \frac{M m}{r^2} \hat{r}$$
  wobei $\hat{r} = \frac{\vec{r}}{|\vec{r}|}$ und $\gamma$ die Newtonsche Gravitationskonstante sind. Sofern der Abstand und eine der Massen, ohne Beschränkung der Allgemeinheit $M$, konstant ist, kann man die Formel zu $F = m g$ vereinfachen. $g$ ist auf der Erde $\approx 9.81 \frac{\text{m}}{\text{s}^2}$.
  Als Folge daraus sind träge und die schwere Masse eines Teilchens identisch.
 \end{beispiel*}
@@ -342,8 +342,8 @@ In anderen Worten: Da die Zwangskraft senkrecht zur Bewegungsrichtung wirkt, ver
 \end{beispiel*}
 
 \begin{beispiel*}[Hantel]
-$$\delta \vec{r}_i = \delta\vec{s},~~ \delta \vec{r}_2 = \delta \vec{s} + \delta \vec{x}_R$$
-Hierbei ist $\vec{x}_R$ die Rotation von Objekt 2 um Objekt 1.
+$$\delta \vec{r}_1 = \delta\vec{s},~~ \delta \vec{r}_2 = \delta \vec{s} + \delta \vec{x}_R$$
+Hierbei ist $\delta \vec{x}_R$ die Rotation von Objekt 2 um Objekt 1.
 Mit dem Prinzip der virtuellen Arbeit, $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$, folgt daraus
 $$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delta \vec{s} + \delta \vec{x}_R) 
 = \underbrace{(\vec{Z}_1 + \vec{Z}_2)}_{\vec{Z}_1 = - \vec{Z}_2} \delta \vec{s} + \underbrace{\vec{Z}_2 \delta \vec{x}_R}_{= 0, \vec{Z}_2 \bot \delta \vec{x}_R} = 0$$
@@ -357,12 +357,12 @@ Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschrän
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
 $$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j$$
-\todo{letzter Ausdruck korrekt?}
 
 Damit kann \circled{1}  wie folgt geschrieben werden
 $$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
 = \sum_{i=1}^N \underbrace{\sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_i} \delta q_i 
 = \sum_{i = 1}^N Q_i \delta q_i$$
+\todo{letzter Ausdruck korrekt? i und j richtig???}
 
 $Q_i$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_i$ ist nicht unbedingt Kraft, weil die Dimension von den $q_i$ selbst unklar ist. Jedoch ist die Einheit von $Q_i \cdot q_i$ natürlich die Energie.
 
@@ -399,7 +399,7 @@ und damit gilt mit dem d'Alembertsches Prinzip
 \end{align*}
 
 Die Formel wird in dieser Allgemeinheit eher selten verwendet. Häufiger wird die folgende "`Version"' angewandt. Bei \textbf{holonomen Zwangsbedingungen} sind alle $q_j$ unabhängig voneinander, d.h. die $\delta q_j$  können bis auf eines unabhängig voneinander $\delta q_j = 0$ gesetzt werden. Daher muss jeder Summand 0 sein.
-$$\forall i:  \dd t ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j} - Q_j = 0$$
+$$\forall j:  \dd t ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j} - Q_j = 0$$
 
 \paragraph{Konservatives System}
 In einem konservativen System ist die Kraft $Q_j$ auf ein Potential $V_j$ zurückzuführen. Das Potential V, und damit auch die generalisierte Kraft $Q_j = - \ffpartial{V}{q_j}$, ist unabhängig von der Geschwindigkeit $\dot{q}_j$. Anders ausgedrückt gilt
@@ -451,7 +451,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\begin{align*}
 	T & = \frac12 m_1 \vecdotnumsq{r}{1} + \frac12 m_2 \vecdotnumsq{r}{2}\\
 	&= \frac12 m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2)\\
-	&= \frac12 m_q \dot{q}_1^2 + \frac12 m_2 ( (\dot{q}_1 + \dot{q}_2 l \cos q_2)^2 l^2 \dot{q}_2^2 \sin^2 q-2)\\
+	&= \frac12 m_q \dot{q}_1^2 + \frac12 m_2 ( (\dot{q}_1 + \dot{q}_2 l \cos q_2)^2 + l^2 \dot{q}_2^2 \sin^2 q_2)\\
 	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (2 \dot{q}_1 \dot{q}_2 l \cos q_2 + \dot{q}_2^2 l^2)\\
 	V &= 0 - m_2 g l \cos q_2\\
 	&\text{\textit{Konstanten können weggelassen werden, da die Kraft in der Ableitung steckt.}}\\
@@ -474,7 +474,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 
 \begin{beispiel*}[Schwingende Hantel \textendash~Fortsetzung]
 	\begin{align*}
-		p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 = \text{konstant}\\
+		p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 \cos q_2 = \const\\
 		\Rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos q_2 + c\\
 		\overset{\text{Integration}}{\Rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)
 	\end{align*}
@@ -541,7 +541,7 @@ Die konkreten Koordinaten hängen von den generalisierten ab: $q_1, \dots, q_j \
 
 Damit gilt für nicht-holonome Bedingungen in $q_j$
 \begin{align*}
-\sum_{i=1}^j a_{im} \d q_m + b_{it} \d t &= 0, i = 1, \dots, p = 0
+\sum_{i=1}^j a_{im} \d q_m + b_{it} \d t &= 0, i = 1, \dots, p
 \intertext{für virtuelle Verrückungen, bei denen $\delta t = 0$ gilt, ist die Gleichung wie folgt}
 \sum_{m=1}^j a_{im} \delta q_m &= 0, i = 1, \dots, p
 \intertext{Nun werden die Lagrange-Multiplikatoren $\lambda_i = \lambda_i(t)$ eingeführt}
@@ -581,9 +581,9 @@ f(x,y,t) &= r - l = 0 \text{~~~~die Zwangsbedingung}\\
 V &= -mg y = -mg (l -r \cos \varphi)\\
 T &= \frac12 m (\dot{x}^2 + \dot{y}^2)\\
 \dot{x} &= \dot{r} \sin \varphi + r \dot{\varphi} \cos \varphi\\
-\dot{y} &= - \dot{r} \cos \varphi + r \dot{\varphi} \cos \varphi\\
+\dot{y} &= - \dot{r} \cos \varphi + r \dot{\varphi} \sin \varphi\\
 \dot{x}^2 + \dot{y}^2 &= \dot{r}^2 \sin^2 \varphi + 2 r \dot{r} \dot\varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \cos^2 \varphi + \dot{r}^2 \cos^2 \varphi - 2 r \dot r \dot \varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \sin^2 \varphi \\
-&= \dot{r}^2 + r^2 \dot{\varphi}2\\
+&= \dot{r}^2 + r^2 \dot{\varphi}^2\\
 L &= T-V = \frac12 m (\dot{r}^2 + r^2 \dot{\varphi}^2) + mg(l - r \cos \varphi)\\
 \ffpartial{L}{r} - \dd t \ffpartial{L}{\dot{r}} &= m r \dot{\varphi}^2 - mg \cos \varphi - \dd t m \dot{r} \\
 &= -m (g \cos \varphi + \ddot{r} - r \dot{\varphi}^2)\\
@@ -598,12 +598,12 @@ Daraus folgen 3 Gleichungen
 \begin{description}
 	\item[$r$-Gleichung] $$\lambda = m \ddot{r} + mg \cos \varphi - m r \dot{\varphi}^2$$
 	\item[$\varphi$-Gleichung] $$\ddot{\varphi} + \frac{2 \dot{r}}{r} \dot{\varphi} + \frac{g}{r} \sin \varphi = 0$$
-	\item[$l$-Gleichung] $$r = l \rightarrow \dot{t} = \ddot{r} = 0 $$
+	\item[$l$-Gleichung] $$r = l \rightarrow \dot{r} = \ddot{r} = 0 $$
 \end{description}
 Randbemerkung: $\lambda = -m(l \dot{\varphi}^2 - g \cos \varphi)$ ist hier die Fadenspannung.
 
-Das ganze kann man vereinfachen wenn man $\dot{r} = 0$ und $\sin \varphi \approx \varphi$ annimmt (letzteres gilt für klein $\varphi$). Damit gilt dann folgendes
-$$\varphi(t) = \varphi_0 \sin \sqrt{\frac{g}{l} t}$$
+Das ganze kann man vereinfachen wenn man $\dot{r} = 0$ und $\sin \varphi \approx \varphi$ annimmt (letzteres gilt für klein $\varphi$). Damit gilt dann folgendes ($\ddot{\vp} + \frac{g}{l} \vp = 0$
+$$\varphi(t) = \varphi_0 \sin \sqrt{\frac{g}{l}} t$$
 \end{beispiel*}
 
 \subsection{Das Hamiltonische Prinzip}	
@@ -627,8 +627,8 @@ Wir betrachten Scharen $\vec{q}(t)$ mit gleichen Endpunkten $\vec{q}(t_1)$ und $
 
 Beim Hamiltonische Prinzip wird nun die Bahn des Systems betrachtet und wollen eine extremale Bahn finden.
 
-\subsection{Hamiltonische Prinzip}
-Systembewegung erfolgt so, dass $S{\vec{q}(t)}$ für die richtige Trajektorie extremal, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
+~\\
+Die Systembewegung erfolgt so, dass $S{\vec{q}(t)}$ für die richtige Trajektorie extremal, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
 $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overset{!}{=}$$
 
 \begin{bemerkung*}
@@ -1180,7 +1180,7 @@ Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quan
 \newcommand{\fihbar}{\frac{1}{i \hbar}}
 
 \section{Ausblick auf die Quantenmechanik}
-Jetzt sie $\{,\}$ eine abstrakte Klammer mit den abstrakte Eigenschaften der Poissonklammer, wie verstehen diese als mathematische Struktur.
+Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakte Eigenschaften der Poissonklammer, wie verstehen diese als mathematische Struktur.
 Eine Realisierung dieser Struktur ist die Poissonklammer \conseq klassische Mechanik.
 Alternativ: \textit{Quantenmechanik}
 Hier Observablen sind lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewähnlichen Vektoren. Definiere Klammer jetzt als Kommutator $[A,B] = AB - BA$
@@ -1209,7 +1209,7 @@ Konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Strukt
 Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{speizielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationkräfte werden als Eigenschaft von Raum und Zeit beschrieben.
 
 Im folgenden betrachten wir "`nur"' die spezielle Relativitätstheorie.
-Das wichtigtes Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
+Das wichtigste Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
 \begin{description}
 	\item[bei $v \ll c$] hat man den klassischen (also nicht relativistischen) Fall, den wir schon im 2. Kapitel näher betrachtet haben
 	\item[bei $v \lesssim c $] sind die relativistischen Effekte bedeutend und man verwendet die spezielle Relativitätstheorie
@@ -1218,7 +1218,7 @@ Man sieht, dass die Theorie so konstruiert ist, dass die Newtonsche Mechanik als
 
 \section{Bezugssysteme / Inertialsysteme}
 \subsection{Klassische Mechanik}
-In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken, diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen \textit{absoluten Raum} \todo{Erläuterung}.
+In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber scheinbar ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken, diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen \textit{absoluten Raum} \todo{Erläuterung}.
 
 Sicher gibt es aber eine \textit{absolute Zeit}, gegen die in der klassischen Physik nichts spricht.
 
@@ -1227,7 +1227,7 @@ Alle Systeme $\Sigma'$, die sich geradlinig und gleichförmig mit der Geschwindi
 
 Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten ist nun folgende
 \begin{align*}
-	\Sigma& & \Sigma& \text{per Galilei Transformation}\\
+	\Sigma& & \Sigma'& \text{~~~per Galilei Transformation}\\
 	\dotvec{r} &= c \hat{r}, \hat{r} = \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
 \end{align*}
 Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
@@ -1235,7 +1235,7 @@ Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Of
 \subsubsection{Michelson-Morley-Experiment}
 Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl, Morley dafür aber als erster Amerikaner 1907 den Physik Nobelpreis bekam.
 
-\paragraph{Idee} Wir Betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \frac{\mathrm{km}}{\mathrm{h}}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
+\paragraph{Idee} Wir Betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \mathrm{km}\mathrm{s}^{-1}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
 
 \paragraph{Aufbau} vgl. \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}
 Grob zusammen gefasst, läuft das Licht, mit Wellenlänge $\lambda$, über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. Für eine konstruktive Interferenz der beiden resultierenden Lichtstrahlen muss die Wegdifferenz $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ sein.
@@ -1272,19 +1272,19 @@ Er hält mit seinen Theorien an der Gleichberechtigung aller Bezugssysteme fest,
 Daraus folgen neue Transformationsformeln für physikalische Größen, insbesondere für Raum und Zeit, in welchen als Grenzfall $v \ll c$ die Galilei-Transformation enthalten sein muss.
 
 \subsection{Lorentz-Transformation}
-Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$) und die Zeit ist gleich\todo{???}. Bei $t = 0$ sind beide Systeme identisch $\Sigma = \Sigma'$.
+Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$) und die Zeit bewegt sich in ihnen gleich schnell\todo{???}. Bei $t = 0$ sind beide Systeme identisch $\Sigma = \Sigma'$.
 
-Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma:$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
-$$c^2 + t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
+Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma':$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
+$$c^2 t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
 Es findet offensichtlich eine Verknüpfung von Raum und Zeit statt.
 
 \subsubsection{Viervektoren}
-$$x = (x^0, x^1, x^2, x^3) = (ct, \vec{x}\in\Re)$$
+$$x = (x^0, x^1, x^2, x^3) = (ct, \vec{x}\in\Re^3)$$
 Diese Vektoren sind nicht euklidisch, sondern Elemente des Minkowski-Raums, weiter gilt damit
-$$x^2 = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 = {x^0}^2 - \vec{x}^2 = c^2t^2 - \vec{x}^2$$
+$$x^2 = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 = (x^0)^2 - \vec{x}^2 = c^2t^2 - \vec{x}^2$$
 Die gleiche Ausbreitung der Kugelwelle in $\Sigma$ und $\Sigma'$ ist die Invarianz des Vierervektorquadrats im Minkowski-Raum.
 $$x^{~2} = x'^2 \text{~oder~} c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2$$
-Die gesuchte Transformation ist die sogenannte \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich, womit wir die \textbf{spezielle Lorentztransformation} haben, welchen zusammen mit einer Drehung, die allgemeine Lorentztransformation ergibt.
+Die gesuchte Transformation ist die sogenannte \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich, womit wir die \textbf{spezielle Lorentztransformation} haben, welche zusammen mit einer Drehung, die allgemeine Lorentztransformation ergibt.
 
 
 Die Beziehung zwischen $x$ und $x'$ ist notwendig linear, weil nur wir nur gleichförmige und geradlinige Bewegungen betrachten.
@@ -1295,11 +1295,11 @@ $x^\mu$ ist in dieser Schreibweise die $\mu$-te Koordinate des Vierervektors $(x
 Ein kurzer Notationseinschub.
 \begin{align*}
 (\vec{F})_i &= (m \vec{a})_i &\rightarrow& & F_i &=ma_i\\
-S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& & a_ib_i &= S\\
-(\vec{a})_i &= (M\vec{b})_i &\rightarrow& & a_i &= \sum_{j=1}^3 M_{i\mathbf{j}} b_\mathbf{j} = M_{ij}b_j\\
+S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& & S&=a_ib_i\\
+(\vec{a})_i &= (M\vec{b})_i &\rightarrow& & a_i &= \sum_{j=1}^3 M_{ij} b_{j} = M_{ij}b_j\\
 \vec{a} &= L M \vec{b}  &\rightarrow& & a_i &=L_{ij}M_{jk}b_k
 \end{align*}
-Vierervektoren $x^\mu, x$, $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiherhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
+Vierervektoren $x^\mu, x$, mit $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiherhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
 $$x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$$
 Als Konvention gilt weiterhin $\mu, \nu, \rho, \sigma \in  \{0, 1, 2, 3\}$, Index 0 ist die Zeit, $i,j,k,l \in \{1,2,3\}$ und $\cos x y = \cos(x) y$\\
 \\
@@ -1349,7 +1349,7 @@ L &= \begin{pmatrix}
 Was ist die Bedeutung von $y \in \Re$? Was ist der Zusammenhang zwischen $y$ und $v$? Und was hat $y$ damit mit der Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$ zu tun?
 \begin{align*}
 x^3 &= v t = \frac{v}{c} c t = \frac{v}{c} x^0\\
-x'^3 &= 0 = \cosh y \underbrace{x^3}_{\frac{v}{c} x^0\text{~wegen der Bewegung des Ursprungs}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
+x'^3 &= 0 = \cosh y \underbrace{x^3}_{\frac{v}{c} x^0 = v t \text{~wegen der Bewegung des Ursprungs}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
 &= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
 \frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
 \end{align*}
@@ -1372,7 +1372,10 @@ L &= \begin{pmatrix}
 \end{pmatrix}
 \intertext{$L$ ist "`verallgemeinerte Drehung"'.}
 \intertext{Komponentenweise}
-x' &= x, ~y'=y, ~z'=\gamma (z - \beta c t), ~ct' = \gamma (ct - \beta z)
+x' &= x\\
+y'&=y\\
+z'&=\gamma (z - \beta c t)\\
+ct' &= \gamma (ct - \beta z)
 \end{align*}
 Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtlich mittransformiert, dies war bei der Galilei-Transformation nicht der Fall
 
@@ -1406,7 +1409,7 @@ Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtli
 	\end{pmatrix}
 	\end{align*}
 \end{bemerkung*}
-\begin{bemerkung*} Es gilt $x^2 = x^0 x^0 - \vec{x} \vec{x} = {x^0}^2 - \vec{x}^2$. Neben $x^2$ sind \textbf{alle} Quadrate von Minkowski-Vierervektoren \textbf{invariant} unter Lorentztransformationen. Ebenso gilt dies auch für die Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu = L^{\mu}_{~\rho}y^\rho$, die sogenannten "`Lorentz-Skalare"'.
+\begin{bemerkung*} Es gilt $x^2 = x^0 x^0 - \vec{x} \vec{x} = (x^0)^2 - \vec{x}^2$. Neben $x^2$ sind \textbf{alle} Quadrate von Minkowski-Vierervektoren \textbf{invariant} unter Lorentztransformationen. Ebenso gilt dies auch für die Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu  L^{\mu}_{~\rho}y^\rho$, die sogenannten "`Lorentz-Skalare"'.
 \end{bemerkung*}
 
 \begin{folgerung*}[\textbf{(a) Gleichzeitigkeit}]
@@ -1426,7 +1429,193 @@ Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtli
 		Ein Lichtsignal kann Informationen zwischen $z$ und $z_2$ austauschen. Damit bleibt die Kausalität erhalten ($t'_2 > t_1$), andernfalls wäre $c \Delta t < \Delta z$ und deswegen keine Informationsübertragung möglich. Die Reihenfolge der Ereignisse kann dann zwar geändert werden, aber es ist nicht beobachtbar.
 \end{folgerung*}
 
+%\paragraph{Erinnerung}
+$c \Delta t \geq \Delta z$ Informationsübertragung möglich\\
+$<$ \dots nicht\\
+
+allgemein für 4-Vektoren $x = (ct, \vec{x})$\\
+$c^2 t^2 > \vec{x}^2$ zeitartiger Vektor\\
+$c^2 t^2 < \vec{x}^2$ raumartiger Vektor\\
+$c^2 t^2 = \vec{x}^2$ lichtartiger Vektor\\
+
+Im System $\Sigma$: Lichtblitze am Ort $z$, zu Zeiten $t_1$ und $t_2$ mit $\Delta t = t_2 - t_1$ auseinander.
+$\Sigma'$ ($\beta$): $\Delta t' = t'_2 - t'_1$, $c t'_1 = \gamma (c t_1 - \beta z)$ und $c t'_2 = \gamma (ct_2 - \beta z)$\\
+\conseq $\Delta t' = \gamma \Delta t = \frac{1}{\sqrt{1 - \beta^2}} \Delta t > \Delta t$\\
+$\gamma > 1$: \conseq Die Zeit in $\Sigma'$ ist gedehnt.\\
+Paradox? nein denn auch Koordinaten werden transformiert. Obwohl  $z = z_1 = z_2$ in $\Sigma$ gilt $z'_1 = \gamma (z - \beta c t_1)$, $z'_2 = \gamma (z - \beta c t_2)$ und $z'_2 - z'_1 = \Delta z = - \gamma \beta c \Delta t = - c \beta \Delta t' \neq 0$.\\
+In $\Sigma$: Ereignis an einem Ort, gemessen mit einer Uhr.\\
+In $\Sigma'$: Zwei Uhren notwendig, an Orten $z'_1$, $z'_2$.\\
+Ausgezeichnetes System, wo Zeit immer an einem Ort gemessen wird, z.B.:
+Das Ruhesystem eines Objekts, Teilchen \conseq Eigenzeit \conseq $\Delta \tau$.
+Eindrucksvolles Beispiel: $\mu$-Zerfall. ($\mu^\pm$ \conseq $e^\pm + \nu_1 + \nu_2$, $N(t) = N(0) e^{\frac{t}{\tau_0}}$)\\
+Lebensdauer $\tau_0$ so kurz, dass sie es nicht von der oberen Atmosphäre bis zur Oberfläche schaffen würden, ohne vorher zu zerfallen \conseq $\gamma$-Faktor $\approxeq$ 9 erlaubt das aber.
+
+\subsubsection{Längenkontraktion}
+In $\Sigma$: Stab der Länge $l$ in Ruhe. Länge als Differenz zweier Orte $l = z_2 - z_1$\\
+In $\Sigma'$:  $z'_1 = \gamma (z_1 - \beta c t_1)$, $z'_2 = \gamma (z_2 - \beta c t_2)$\\
+$l' = z'_2 - z'_1 = \gamma (z_2 - z_1) - \gamma \beta c (t_2 - t_1)$\\
+In $\Sigma'$ sollen $t'_1$ und $t'_2$ gleich sein.
+$c t'_1 = \gamma (z_1 - \beta c t_1) \overset{!}{=} c t'_2 = \gamma (z_2 - \beta c t_2)$\\
+\conseq $c t_1 - \beta z_1 = c t_2 - \beta z_2$ \\ $c(t_2 - t_1) = \beta (z_2 - z_1)$\\
+\conseq $l' = \gamma (z_2 - z_1) - \gamma \beta \beta (z_2 - z_1) = \gamma \underbrace{(1 - \beta^2)}_{\frac{1}{\gamma^2}} (z_2 - z_1)$
+\conseq $l' = \frac{1}{\gamma} (z_2 - z_1) = \frac{l}{\gamma} < l$
+Die im bewegten System gemessene Lösung ist kürzer. \conseq Konsequenz der Messvorschrift "`gleichzeitig"'
+
+\subsubsection{Addition von Geschwindigkeiten}
+$L(\beta_3) = L(\beta_2) L(\beta_1)$\\
+$\begin{pmatrix}
+\gamma_3 & 0 & 0 &- \gamma_3 \beta_3\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+- \gamma_3 \beta_3 & 0 & 0 & \gamma_3
+\end{pmatrix} = \begin{pmatrix}
+	\gamma_2 & 0 & 0 &- \gamma_2 \beta_2\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 0 & 1\\
+	- \gamma_2 \beta_2 & 0 & 0 & \gamma_2
+\end{pmatrix} = \begin{pmatrix}
+	\gamma_1 & 0 & 0 &- \gamma_1 \beta_1\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 0 & 1\\
+	- \gamma_1 \beta_1 & 0 & 0 & \gamma_1
+\end{pmatrix}$
+Welche Geschwindigkeit $v_3$ ergibt sich, wenn eine Geschwindigkeit $v_1$ um $v_2$ geboosted wird?
+$\begin{pmatrix}
+	\gamma_2 & -\gamma_2 \beta_2\\
+	- \gamma_2 \beta_2 & \gamma_2
+\end{pmatrix} \begin{pmatrix}
+\gamma_1 & - \gamma_1 \beta_1\\
+-\gamma_1 \beta_1 & \gamma_1
+\end{pmatrix} = \begin{pmatrix}
+\gamma_1 \gamma_2 + \gamma_1 \gamma_2 \beta_1 \beta_2 & - \gamma_1 \gamma_2 \beta_1 - \gamma_1 \gamma_2 \beta_2\\
+- \gamma_1 \gamma_2 \beta_2 - \gamma_1 \gamma_2 \beta_1 & \gamma_1 \gamma_2 \beta_1 \beta_2 + \gamma_1 \gamma_2
+\end{pmatrix} \overset{!}{=} \begin{pmatrix}
+\gamma_3 & -\gamma_3 \beta_3\\
+- \gamma_3 \beta_3 & \gamma_3
+\end{pmatrix} = \begin{pmatrix}
+\gamma_1 \gamma_2 (1 + \beta_1 \beta_2) & - \gamma_1 \gamma_2 (\beta_1 + \beta_2)\\
+- \gamma_1 \gamma_2 (\beta_1 + \beta_2) & \gamma_1 \gamma_2 (1 + \beta_1 \beta_2)
+\end{pmatrix}$
+\conseq $\gamma_3 = \gamma_1 \gamma_2 (1 + \beta_1 \beta_2)$ und $\gamma_3 \beta_3 = \gamma_1 \gamma_2 (\beta_1 + \beta_2)$ \conseq $\beta_3 = \frac{\gamma_3 \beta_3}{\gamma_3} = \frac{\beta_1 + \beta_2}{1 + \beta_1 \beta_2}$\\
+$c \beta_3$ ist die Geschwindigkeit in $\Sigma'$, wenn $c\beta_1$ Geschwindigkeit in $\Sigma$ war und $\Sigma'$ mit $c\beta_2$ relativ zu $\Sigma$ ist.
+
+z.B. a) $v_1 = v_2 = \frac{c}{2}$ \conseq $\beta_1 = \beta_2 = \frac12$, $\beta_3 = \frac{1}{1 + \frac14} = \frac45 < 1$, $v_3 = \frac45 c < c$\\
+b) $v_1 = c$, $\beta_1 = 1$, Boost mit $\beta_2$, $\beta_3 = \frac{1 + \beta_2}{1 + 1 \cdot \beta_2} = \frac{1 + \beta_2}{1 + \beta_2} = 1$ \conseq egal, wie schnell sich $\Sigma'$ bewegt \conseq immer $\beta_3 = 1$, wenn $\beta_1 = 1$ (sogar, wenn $\beta_2 = -1$!).
+
+\paragraph{Rapiditäten (Erinnerung)} $\gamma_3 = \cosh y_3$ und $\gamma-3 \beta_3 = \sinh y_3$
+aber auch $\gamma_3 = \cosh y_3 = y_1 y_2 + \gamma_1 \beta_1 \gamma_2 \beta_2 = \cosh y_1 \cosh y_2 + \sinh y_1 \sinh y_2 = \frac12 (e^{y_1} + e^{-y_1}) \frac12 (e^{y_2} + e^{y_2}) + \frac14 (e^{y_1} - e^{- y_1}) (e^{y_2} - e^{-y_2}) = \frac14 (e^{y_1} e^{y_2} + e^{y_1} e^{-y_2} + e^{-y_1} e^{y_2} + e^{-y_1} e^{-y_2} + e^{y_1} e^{y_2} - e^{y_1} e^{-y_2} - e^{-y_1} e^{y_2} - e^{-y_1} e^{-y_2}) = \frac14 (2 e^{y_1} e^{y_2} + 2 e^{-y_1} e^{-y_2}) = \frac12 (e^{y_1 + y_2} + e^{-(y_1 + y_2)}) = \cosh (y_1 + y_2) = \cosh y_3$ (analog für $\sinh y_3$). Also: Rapiditäten werden einfach addiert.
+
+
+$\beta_3 = \frac{\beta_1 + \beta_2}{1 + \beta_1 \beta_2}$, $\gamma = \cosh y$ \conseq $\cosh y_3 = \cosh(y_1 + y_2)$ \conseq $y_3 = y_1 + y_2$ Rapiditäten als verallgemeinerte Geschwindigkeiten. Vergleich von Ereignissen in zwei Systemen $\Sigma$ und $\Sigma'$ graphisch mit \textbf{Minkowski Diagrammen}
+\todo{Wiki link}
+In $\Sigma'$ wir Ereignisse hier eintragen?
+$ct'-Achse$: bei $z' = 0$\\
+
+$z' = 0 = \gamma (z - \beta c t)$ \conseq $ct = \frac{1}{\beta} z$ (in $\Sigma$)\\
+$0 < \beta < 1$, \conseq $\frac{1}{\beta} > 1$\\
+
+$z'$-Achse bei $ct' = 0$\\
+
+$c t' = \gamma (ct - \beta z) = 0$ \conseq $ct = \beta z$\\
+
+Achseneinteilung? (x,y = 0)\\
+$s^2 = c^2 t^2 - \vec{x}^2 = c^2 t^2 - z^2 = c^2 {t'}^2 - z'^2$ 
+z.B. $s^2 = 1$
+$c^2 t^2 - z^2 = 1^2 = c^2 t'2 - z'^2$\\
+Winkelhalbierende = Lichtkegel $\pm ct = \pm z$ und $\pm c t' = z'$
+
+
+\subsection{Zurück zur klassischen Mechanik}
+Suchen Begriffe Impuls, Kraft, Geschwindigkeit. Differentiale?
+$$\d x^\mu = (c \d t, \d x, \d y, \d z)$$
+Infitisemale Verrückung.
+\conseq Invariante
+\begin{align*}
+ \d s^2  &= c^2 \d t^2 (\d \vec{x})^2\\
+ & = c^2 \d t^2 - \d x^2 - \d y^2 - \d z^2\\
+ & = c^2 \d t^2 (1 - \underbrace{\frac{\d x^2}{c^2 \d t^2} - \frac{\d y^2}{c^2 \d t^2} - \frac{\d z^2}{c^2 \d t^2}}_{- \frac{1}{c^2} (\ddd x t, \ddd y t, \ddd z t)^2 = - \frac{\vec{v}^2}{c^2}})\\
+ & = \d s^2 = c^2 \d t^2 (\underbrace{1 - \frac{v^2}{c^2}}_{\frac{1}{\gamma^2}})\\
+ & = \frac{1}{\gamma^2} c^2 \d t^2
+\end{align*}
+$\frac{1}{c} \d s = \d \tau$ \conseq Eigenzeit $\tau$ (Zeit, die im Ruhesystem vergeht).
+Vergleich mit Zeit im Beobachtungssystem $t$
+$$\d \tau = \frac{1}{\gamma} \d t (\equiv t = \gamma \tau)$$
+Eigenzeit als Kandidat für Zeitdifferential in mechanischen Gesetzen.
+\conseq \textbf{Vierergeschwindigkeit über Eigenzeit}
+\begin{align*}
+	u^\mu &= \ddd{x^\mu}{\tau} = \ddd{x^\mu}{t} \ddd t \tau = \gamma \ddd{x^\mu}{t}\\
+	&= \gamma \dd t (c t, x, y, z) = \gamma (c, \ddd{\vec{x}}{t})\\
+	&= \gamma (c, \vec{v})\\
+	u^\mu u_\mu &= u^2 = \gamma^2 (c^2 - \vec{v}^2) = c^2 \gamma^2 (\underbrace{1 - \frac{v^2}{c^2}}_{= \frac{1}{\gamma^2}})
+\end{align*}
+Ansatz für \textbf{Kraftgleichung} ($\vec{F} = m \vec{a}$ und $m$ skalar)
+$$K^\mu = m \ddd{u^\mu}{\tau}$$
+zunächst nur räumliche Komponenten
+\begin{align*}
+	K^i &= m \dd \tau u^i = m \gamma \dd t u^i = m \gamma \dd t \gamma v^i\\
+	&= \gamma \dd t \underbrace{m \gamma v^i}_{= p^i \text{~räumliche Komponente des relatistischen Impulses}}\\
+	p^i &= \gamma m v^i \xrightarrow{\gamma \to 1} m v^i\\
+	K^i = \gamma F^i \xrightarrow{\gamma \to 1} F^i
+\end{align*}
+Was ist $K^0$? Betrachte
+\begin{align*}
+	K \cdot u &= K^\mu u_\mu = K^0 u^0 - \vec{K} \cdot \vec{u}\\
+	&= (m \dd \tau u^0) u^0 - (m \dd \tau \vec{u}) \cdot \vec{u}\\
+	&= \frac12 m \dd \tau (u^0 u^0 - \vec{u} \cdot \vec{u}) \text{\qquad (Produktegel rückwärts)}\\
+	&= \frac12 m \dd \tau u^2 = \frac12 m \dd \tau c^2 = 0\\
+	\Rightarrow K^0 u^0 &= \vec{K} \cdot \vec{u} = K^0 \gamma c = \gamma^2 \vec{F} \cdot \vec{v}\\
+	\Rightarrow K^0 = \gamma \frac{\vec{F} \cdot \vec{v}}{c}
+	\intertext{Viererkraft}
+	K^\mu &= \gamma (\frac{\vec{F} \cdot \vec{v}}{c}, \vec{F})
+	\intertext{Was ist die nullte Komponente der Minkowski-Kraft $K^\mu$?}
+	\gamma \frac{\vec{F} \cdot \vec{v}}{c} & = m \dd \tau u^0 = m \gamma \dd t \gamma c\\
+	\vec{F} \cdot \vec{v} &= \dd t \frac{m c^2}{\sqrt{1 - \beta^2}} = \dd t T_v 
+\end{align*}
+$[\vec{F} \cdot \vec{v}] = $ Energie pro Zeit.\\
+$T_v = \frac{m c^2}{\sqrt{1 - \beta^2}} = \gamma m c^2$ relativistische kinetische Energie\\
+$v \ll c$: $\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = 1 + \frac{1}{2} \frac{v^2}{c^2} + \dots$ \conseq $T_v = m c^2 + \frac{1}{2} m v^2 + \dots$\\
+\conseq kinetische Energie $\frac12 m v^2$ + \textbf{Ruheenergie} $m c^2$ (additive Konstante)
+$$E_0 = m c^2$$
+
+Bleibt noch Viererimpuls $p^\mu$
+\begin{align*}
+	p^\mu &= m u^\mu = m \gamma (c, \vec{v})\\
+	&= (\gamma m c, \gamma m \vec{v})\\
+	&= (\frac{T_v}{c}, p^i)
+\end{align*}
+
+\begin{bemerkung*}
+	Energie-Impuls-Vierervektor entspricht Zeit-Raum.
+\end{bemerkung*}
+
+\begin{align*}
+	p_\mu p^\mu = p^2 &= \gamma^2 m^2 c^2 - \gamma^2 \vec{p}^{~2}\\
+	&= \frac{T_v^2}{c^2} - \gamma^2 \vec{p}^2\\
+	&= m^2 u^2 = m^2 c^2 = \const
+\end{align*}
+Masse ist Lorentzskalar. Ändert sich nicht.
+
 \chapter{Quantenmechanik}
+\section{historische Experimente und Widersprüche}
+\subsection{Hohlraumstrahlung} (Wärmestrahlung, Schwarzkörperstrahlung)
+Idealisierter Raum, Wände bei Temperatur $T$. Strahlung wird im Gleichgewicht ständig von den Wänden gleichermaßen emmittiert und absorbiert. Körper hat keine besonderen Eigenschaften (schwarz). Beobachtung der Strahlung durch ein kleines Loch. Erklärung des Spektrums $\ddd{E}{\nu} = w_\nu$ ($\nu$ Frequenz des Lichts) = "`Verteilung von Frequenzen $\nu$ des Lichts"'.
+\conseq Abhängigkeit desselben von der Temperatur bereitete Probleme.
+
+\paragraph{korrekte Folgerungen aus der klassischen Thermodynamik}
+$$w_\nu = f(\nu, T) \text{\qquad Kirchhoff}$$
+$f(\nu, T)$ universelle Funktion, unabhängig von Wänden, etc.\\
+\textbf{Wiensches Gesetz}
+$$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
+Energiegehalt des Spektrums
+\begin{align*}
+	\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^2 g(\frac{\nu}{T}) \d v\\
+	&= T^4 \int_0^\infty x^3 g(x) \d x = \alpha T^4 \text{\qquad Stefan-Boltzmann-Gesetz}
+\end{align*}
+\todo{$\nu^3$ oder $\nu^2$?}
+
+
+% % % % % % % % % %
+
 \begin{itemize}
 	\item ein bisschen Historisches
 	\item einfache 1-D Theorie
@@ -1447,6 +1636,964 @@ Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtli
 
 \appendix
 
+\chapter{Kurzskriptum}
+\chapter{Klassische Mechanik}
+
+\section{Abriss der Newtonsche Mechanik}
+
+
+\subsection{Newtonsche Gesetze}
+\begin{definition*}[1. Gesetz \textit{Galileiisches Trägheitsgesetz}] 
+	\textbf{Inertialsysteme} in welchen ein kräftefreier Körper ruht oder sich geradlinig und gleichförmig bewegt.
+\end{definition*}
+
+\begin{definition*}[Impuls]
+	\begin{equation*}
+	\vec{p} = m \vec{v}
+	\end{equation*}
+\end{definition*}
+
+\begin{definition*}[2. Gesetz \textit{Newtonsches Bewegungssgesetz}]
+	\begin{equation*}
+	\dot{\vec{p}} = \vec{F}, \dot{\vec{v}} = \vec{a} \rightarrow \vec{F} = m \vec{a}
+	\end{equation*}
+\end{definition*}
+
+\begin{definition*}[3. Gesetz \textit{actio = reactio}]
+	\begin{equation*}
+	\vec{F}_{ij} = -\vec{F}_{ji}
+	\end{equation*}
+\end{definition*}
+
+\subsubsection{Beispiele für Kräfte}
+
+\begin{beispiel*}[Gravitationskraft]
+	Die Anziehung zwischen zwei Körpern der Masse $M$ und $m$ ist 
+	$$\vec{F}_G = \gamma \frac{M m}{r^2} \hat{r}$$
+	wobei $\hat{r} = \frac{\vec{r}}{|\vec{r}|}$ und $\gamma$ die Newtonsche Gravitationskonstante sind.
+\end{beispiel*}
+
+%\begin{beispiel*}[Coulombkraft]
+%	Die Coulombkraft ist die Kraft zwischen zwei elektrischen Ladungen $Q_1$ und $Q_2$:
+%	\begin{equation*}
+%	\vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{Q_1 Q_2}{r^2} \hat{r}
+%	\end{equation*}
+%\end{beispiel*}
+
+
+\begin{beispiel*}[Lineare, stets negative Kraft]
+	\textit{Feder um Ruhelage $x = 0$}
+	$$F = \alpha |x| < 0$$
+	Daraus ergibt sich ein (perfekter) harmonischer Oszillator, welcher ein wichtiges mathematisches Beispiel für gebundene Systeme ist.
+\end{beispiel*}
+
+\begin{definition*}[Galilei-Transformation]
+	$$ \vec{r}' = \vec{r} + \vec{v}_0t$$
+	Die Newtonsche Gesetze sind, wie schon angemerkt, unter Transformationen dieser Art immer gleich formuliert oder forminvariant.
+\end{definition*}
+
+\begin{definition*}[Nichtinertialsysteme]
+	Nichtinertialsysteme sind zum Beispiel \textit{Beschleunigte Bezugssysteme}. Die Koordinaten werden in solchen Systemen nicht gleichförmig gegeneinander verschoben. Hierdurch kommt es zu \textbf{Scheinkräften}.
+\end{definition*}
+
+
+\section{Lagrange-Mechanik}
+
+\subsection{Einführung}
+Der Ausgangspunkt für die Lagrange-Mechanik ist die Newtonsche Mechanik. In welcher formal gilt
+$$ m_i \ddotvec{r}_i = \vec{F}_i + \sum_{i \neq j}^{N} \vec{F}_{ij}, ~~~~i = 1, \dots, N$$
+Hierbei ist $\vec{F}_i$ die externe ortsabhängige Kraft, welche zum Beispiel wegen einem Kraftfeld herrscht und $\vec{F}_{ij}$ die inneren Kräfte paarweise zwischen den beteiligten Massepunkten.
+
+\subsubsection{Zwangsbedingungen} 
+Schränken die Bewegung von Massepunkten in einem (allgemeineren) System auf das vorgegebene System ein.
+
+\paragraph{\textit{A} holonome Zwangsbedingungen}  sind unabhängig von der Zeit, d.h. $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0 \text{~oder konstant}, i = 1, \dots, p$$ 
+
+\subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} sind explizit von der Zeit abhängig, d.h.
+$$ \frac{\partial f_i}{\partial t} = 0, i = 1, \dots, p$$
+Beispiele: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
+
+\subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} sind nicht explizit, sondern nur implizit von der Zeit abhängig, d.h.
+$$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
+Beispiel: Ebene mit veränderlichem Winkel: $\frac{z}{x} - \tan{\phi(t)} = 0$
+
+Im folgenden quasi ausschließlich holonome Zwangsbedingungen betrachtet.
+
+\paragraph{\textit{B} nicht holonome Zwangsbedingung} können nur als Ungleichungen oder differentielle Einschränkungen.
+
+\subsubsection{Verallgemeinerte Koordinaten}
+Zwangbedingungen formulieren Zwangskräfte implizit und sind einfacher als selbige. Ziel: Elimination der Zwangskräfte.
+
+\paragraph{Holonome Zwangsbedingungen}
+Hier, wie im folgenden, werden ausschließlich holonome Zwangsbedingen betrachtet. Bei ihnen führt die Verwendung verallgemeinerter Koordinaten zu einer Reduktion der Freiheitsgrade\footnote{Wenn im folgenden von $S$ oder $s$ die Rede ist, ist immer die Anzahl der Freiheitsgrade gemeint.} auf $S = 3N - p$. Hierbei ist, wie im folgenden oft, $p$ die Anzahl der holonomen Zwangsbedingungen. 
+
+Die resultierenden, linear unabhängigen, \textbf{generalisierten Koordinaten} sind $q_1, \dots, q_s$. Weiterhin ist $\vec{q} = (q_1, \dots, q_S)$
+% \in \text{Konfigurationsraum}$.
+. Die generalisierten Geschwindigkeiten lassen sich daraus als $\dot{q}_1, \dots, \dot{q}_N$ ableiten. Die alten Koordinaten lassen sich als Funktion der generalisierten Koordinaten beschreiben: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$.
+
+%\paragraph{Bemerkung}
+%Sofern als Anfangsbedingungen $\vec{q}_0, \dotvec{q}_0$ gegeben sind, ist der Zustand des beschränkten Systems zu jedem zu jedem Zeitpunkt bekannt. Anders ausgedrückt: Damit kann man eine Lösung des ursprünglichen Problems finden. Zwar sind die verallgemeinerten Koordinaten selbst nicht eindeutig, wohl aber ihre Anzahl.
+%
+%Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufig bekannten Dimensionen oder Einheiten besitzen. Damit sind sie zwar einfacher in der Verwendung aber eventuell weniger anschaulich.
+\paragraph{Beispiele}
+
+\begin{beispiel*}[Teilchen auf der Kugeloberfläche]
+	Eine Zwangsbedingung: $x^2 + y^2 + z^2 - R^2 = 0$\\
+	\conseq Generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ und damit $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$.
+\end{beispiel*}
+
+\begin{beispiel*}[Doppelpendel in der Ebene] $p = 4$ holonom-skleronome Zwangsbedingungen:
+	\begin{align*}
+	z_1 = z_2 &= \text{konstant}\\
+	x^2 + y^2 - l^2_1 &= 0\\
+	(x_1 - x_2)^2 + (y_1 + y_2)^2 - l_2^2 &= 0 
+	\end{align*}
+	Generalisierte Koordinaten $q_1 = \vartheta_1$ und $q_2 = \vartheta_2$ und damit $x_1 = l_1 \sin q_1$, $y_1 = l_1 \cos q_1$, $z_1 = 0$, $x_2 = l_1 \sin q_1 + l_2 \sin q_2$, $y_2 = l_1 \cos q_1 + l_2 \cos q_2$, $z_2 = 0$
+\end{beispiel*}
+
+
+\subsection{Das d'Alembertsche Prinzip}
+
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan durchgeführt wird und verträglich mit den Zwangsbedingungen ist. \conseq $\delta t = 0$.
+$$m \ddotvec{r}_i = \vec{F}_i = \vec{K}_i + \vec{Z}_i$$
+
+%Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn gilt $\delta W = \sum_i \vec{K}_i \delta \rvec_i$.
+
+\paragraph{Prinzip der virtuellen Arbeit}
+$$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
+"`Die gedachten Bewegungen, z.B. jene senkrecht zu einer durch die Zwangsbedingungen vorgegebenen Bahn, verrichten keine Arbeit."'
+
+\subsubsection{Beispiele für Zwangskräfte}
+
+\begin{beispiel*}[Teilchen auf Kurve]
+	$$\vec{Z} \bot \delta \vec{r} \Rightarrow \vec{Z} \delta \vec{r} = 0$$
+\end{beispiel*}
+
+\begin{beispiel*}[Hantel]
+	$$\delta \vec{r}_i = \delta\vec{s},~~ \delta \vec{r}_2 = \delta \vec{s} + \delta \vec{x}_R$$
+	Hierbei ist $\vec{x}_R$ die Rotation von Objekt 2 um Objekt 1.
+	Mit dem Prinzip der virtuellen Arbeit, $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$, folgt daraus
+	$$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delta \vec{s} + \delta \vec{x}_R) 
+	= \underbrace{(\vec{Z}_1 + \vec{Z}_2)}_{\vec{Z}_1 = - \vec{Z}_2} \delta \vec{s} + \underbrace{\vec{Z}_2 \delta \vec{x}_R}_{= 0, \vec{Z}_2 \bot \delta \vec{x}_R} = 0$$
+\end{beispiel*}
+
+\subsection{Lagrange Formalismus}
+
+\paragraph{Spezialfall konservative Systeme}
+Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ darstellen. Und damit gilt auch
+$$Q_i = \sum_{j = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
+\todo{i und j vertauscht???}
+
+Die Formel wird in dieser Allgemeinheit eher selten verwendet. Häufiger wird die folgende "`Version"' angewandt. Bei \textbf{holonomen Zwangsbedingungen} sind alle $q_j$ unabhängig voneinander, d.h. die $\delta q_j$  können bis auf eines unabhängig voneinander $\delta q_j = 0$ gesetzt werden. Daher muss jeder Summand 0 sein.
+$$\forall i:  \dd t ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j} - Q_j = 0$$
+
+\paragraph{Konservatives System}
+In einem konservativen System ist die Kraft $Q_j$ auf ein Potential $V_j$ zurückzuführen. Das Potential V, und damit auch die generalisierte Kraft $Q_j = - \ffpartial{V}{q_j}$, ist unabhängig von der Geschwindigkeit $\dot{q}_j$. Anders ausgedrückt gilt
+$$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \{  \dd{t} \fpartial{\dot{q}_j} (T-V) - \fpartial{q_j} (T -V) \} \delta q_j = 0$$
+
+\subsubsection{Langangefunktion}
+Man kann die Gleichungen auch wie folgt schreiben, wenn man die Lagrangefunktion $L$ einführt.
+$$L(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) = T(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) - V(q_1, \dots, q_s)$$
+
+\subsubsection{Lagrangegleichung \textit{1. Art}}
+$$\sum_{j = 1}^s  (  \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j}  ) \delta q_j = 0$$
+
+\subsubsection{Lagrangegleichung \textit{2. Art}}
+Gegeben sei wieder ein konservatives System mit holonomen Zwangsbedingungen.
+$$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, \dots, s$$
+
+\begin{bemerkung*}[Fazit]~\\
+	Mit den Lagrangegleichungen wurden die Zwangskräfte eliminiert. Man hat dafür $S$ gewöhnliche Differenzialgleichungen 2. Ordnung bekommen, für welche man $2S$ Anfangsbedingungen benötigt um sie zu lösen.
+	Statt Impuls und Kraft, wie bei den Newtonschen Gesetzen, liegen hierbei Energie und Arbeit im Fokus.
+\end{bemerkung*}
+
+\begin{bemerkung*}[Ausblick]
+	$$L = L(\vardots{q}{s}, \vardots{\dot{q}}{s}, t)$$
+	Die Lagrangegleichungen sind invariant gegenüber Punkttransformationen \\
+	$(\vardots{q}{s}) \underset{\text{differenzierbar}}{\leftrightarrow} (\vardots{\bar{q}}{s})$ mit $\bar{q}_i = \bar{q}_i(\vardots{q}{s}, t)$, $q_i = q_i(\vardots{\bar{q}}{s}, t)$
+	Damit hat man bei der Wahl der generalisierten Koordinaten gewisse Freiheiten. Diese kann man zur Vereinfachung des Problems nutzen. Hierbei ist es sinnvoll weitere Symmetrien im Problem auszunutzen.
+\end{bemerkung*}
+
+\newcommand{\invisible}[1]{ }
+\invisible{
+\begin{beispiel*}[Schwingende Hantel]
+	\textit{Hantel deren eine Masse $m_1$ auf einer Stange gelagert ist und deren andere Masse $m_2$ nach unten an der Hantel hängt.}
+	
+	Die Masse $m_1$ ist frei in $x$-Richtung beweglich und an der Masse $m_2$ zieht die Gravitationskraft.
+	Es gibt die folgenden 4 holonom-skleronomen Zwangsbedingungen
+	\begin{align*}
+	z_1 = z_2 &= 0\\
+	y_1 &= 0\\
+	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0
+	\end{align*}
+	womit es im System $s = 6 -4$ Freiheitsgrade gibt.
+	Als generalisierte Koordinaten kann man zum Beispiel $q_1 = x$ und $q_2 = \phi$ (der Winkel zwischen Lot und Hantelstange) wählen. Damit sind die Koordinaten und Geschwindigkeiten:
+	\begin{align*}
+	x_1 &= q_1 & x_2 &= q_1 + l \sin q_2\\
+	y_1 &= 0 & y_2 &= l \cos q_2\\
+	z_1 &= 0 & z_2 &= 0\\
+	\dot{x}_1 &= \dot{q}_1 & \dot{x}_2 &= \dot{q}_1 + \dot{q}_2 l \cos q_2\\
+	&&\dot{y}_2 &= - l \dot{q}_2 \sin q_2
+	\end{align*}
+	Damit ist die Kinetische Energie
+	\begin{align*}
+	T & = \frac12 m_1 \vecdotnumsq{r}{1} + \frac12 m_2 \vecdotnumsq{r}{2}\\
+	&= \frac12 m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2)\\
+	&= \frac12 m_q \dot{q}_1^2 + \frac12 m_2 ( (\dot{q}_1 + \dot{q}_2 l \cos q_2)^2 l^2 \dot{q}_2^2 \sin^2 q-2)\\
+	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (2 \dot{q}_1 \dot{q}_2 l \cos q_2 + \dot{q}_2^2 l^2)\\
+	V &= 0 - m_2 g l \cos q_2\\
+	&\text{\textit{Konstanten können weggelassen werden, da die Kraft in der Ableitung steckt.}}\\
+	\rightarrow L &= T - V\\
+	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (l^2 \dot{q}_2^2 + 2 l \dot{q}_1 \dot{q}_2 \cos q_2) + m_2 g l \cos q_2
+	\end{align*}
+	\textbf{Interessante Beobachtung} L hängt nicht von $q_1$ ab (nur von $\dot{q}_1$).
+	\begin{align*}
+	\dd t \ffpartial{L}{\dot{q}_1} - \underbrace{\ffpartial{L}{q_1}}_{= 0} = 0 \text{~und damit~} 	\ffpartial{L}{\dot{q}_1} = \text{konstant}
+	\end{align*}
+\end{beispiel*}}
+
+\begin{definition*}[Zyklische Koordinate]\label{zyklische_koordinate}
+	Ein Koordinate $q_j$ ist genau dann zyklisch falls gilt
+	$$\ffpartial{L}{q_j} = 0 \Leftrightarrow \ffpartial{L}{\dot{q}_j} = \text{konstant} \equiv p_j$$
+	mit dem verallgemeinerten Impuls 
+	$$p_j = \ffpartial{L}{\dot{q_j}}$$
+	Zyklische Koordinaten führen automatisch zu einem \textit{Erhaltungssatz}. Deswegen sollten möglichst viele generalisierte Koordinaten zyklisch sein.
+\end{definition*}
+
+\invisible{
+\begin{beispiel*}[Schwingende Hantel \textendash~Fortsetzung]
+	\begin{align*}
+	p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 = \text{konstant}\\
+	\Rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos q_2 + c\\
+	\overset{\text{Integration}}{\Rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)
+	\end{align*}
+	Die Anfangsbedingungen:
+	\begin{align*}
+	q_1(t = 0) &= q_2(t = 0) = 0\\
+	\dot{q}_2(t=0) &= \omega_0\\
+	\dot{q}_1(t=0) &= - \frac{m_2 l}{m_1 + m_2} \omega_0\\
+	\Rightarrow c &= 0 \Rightarrow q_1(t) = - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)\\
+	\intertext{Damit erfolgt bereits die Rücktransformation}
+	x_1(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t)\\
+	y_1(t) &= 0\\
+	y_2(t) &= l \cos \phi(t)\\
+	x_2(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t) + l \sin \phi(t)\\ 
+	\intertext{Mit $l = \frac{m_1 + m_2}{m_1 + m_2} l$}
+	&= \frac{m_1}{m_1 m_2} l \sin \phi(t)\\
+	\end{align*}
+	Nur verwendet man die 3. Zwangsbedingung vom Anfang
+	\begin{align*}
+	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0\\
+	\Leftrightarrow \frac{(x_1 - x_2)^2}{l^2} + \frac{y_2^2}{l^2} &= 1\\ 
+	\Leftrightarrow \frac{x_2^2(t)}{(\frac{m_1 l}{m_1 + m_2})^2} + \frac{y_2^2(t)}{l^2} &= 1
+	\end{align*}
+	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 m_2}l < l \text{~und~} l$.
+	Dazu die $q_2$-\textit{Lagrange}-Gleichung
+	\begin{align*}
+	\ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \dot{q}_2 + l \dot{q}_1 \cos q_2)\\
+	\dd t \ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \ddot{q}_2 + l \ddot{q}_1 \cos q_2 - l \dot{q}_1 \dot{q}_2 \sin q_2)\\
+	\ffpartial{L}{q_2} &= m_2 (- l \dot{q}_1 \dot{q}_2 \sin q_2 - g l \sin q_2)\\
+	0 &= m_2 (l^2 \ddot{q}_2 + l \ddot{q}_1 \cos q_2 + g l \sin q_2)\\
+	\intertext{Jetzt $\ddot{q}_1$ von oben (per Differentation)}
+	\ddot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} (\ddot{q}_2 \cos q_2 - \dot{q}_2^2 \sin q_2)
+	\end{align*}
+	Damit erhält man die $q_2$-Gleichung
+	$$l^2 \ddot{q}_2 - \frac{m_2 l^2}{m_1 + m_2}(\ddot{q_2} \cos q_2 - \dot{q}_2^2 \sin q_2) \cos q_2 + g l \sin q_2 = 0$$
+	und eine \Dgl~ 2. Ordnung für $q_2(t) = \phi(t)$.
+	
+	Im allgemeinen sehr kompliziere Lösung, das Lösen geht dann z.B. numerisch. Man kann das Lösen aber vereinfachen durch weitere Annahmen über das System. Zum Beispiel durch die Beschränkung auf kleine $\phi$:
+	$$\phi(t) = \frac{\omega_0}{\omega} \sin \omega t \text{~und~} \omega = \sqrt{\frac{g}{l} \frac{m_1 + m_2}{m_1}}$$
+\end{beispiel*}
+}
+
+\subsubsection{Rezept für holonome Zwangsbedingungen}
+
+Für die häufigsten Fälle mit \textbf{holonomen} Zwangsbedingungen und \textbf{konservativen} Kräften gibt es ein Rezept:
+\begin{enumerate}
+	\item Zwangsbedingungen formulieren
+	\item Generalisierte Koordinaten festlegen
+	\item Lagrangefunktion hinschreiben (mit generalisierten Koordinaten und Geschwindigkeiten)
+	\item Lagrangefunktion ableiten und wenn möglich lösen
+	\item Eventuell Rücktransformation auf gewöhnliche Koordinaten
+\end{enumerate}
+
+\invisible{
+\begin{beispiel*}[holonome Zwangsbedingungen mit Zwangskräften]
+	Es wird ein Pendel mit Winkel $\varphi$ zum Lot, der Länge $l$ und der Masse $m$ betrachtet.
+	Zunächst wird $r=l$ variabel gewählt. Die verallgemeinerten Koordinaten sind deswegen offensichtlich $\varphi$ und $r$.
+	\begin{align*}
+	x &= r \sin \varphi\\
+	y &= l - r \cos \varphi\\
+	f(x,y,t) &= r - l = 0 \text{~~~~die Zwangsbedingung}\\
+	V &= -mg y = -mg (l -r \cos \varphi)\\
+	T &= \frac12 m (\dot{x}^2 + \dot{y}^2)\\
+	\dot{x} &= \dot{r} \sin \varphi + r \dot{\varphi} \cos \varphi\\
+	\dot{y} &= - \dot{r} \cos \varphi + r \dot{\varphi} \cos \varphi\\
+	\dot{x}^2 + \dot{y}^2 &= \dot{r}^2 \sin^2 \varphi + 2 r \dot{r} \dot\varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \cos^2 \varphi + \dot{r}^2 \cos^2 \varphi - 2 r \dot r \dot \varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \sin^2 \varphi \\
+	&= \dot{r}^2 + r^2 \dot{\varphi}2\\
+	L &= T-V = \frac12 m (\dot{r}^2 + r^2 \dot{\varphi}^2) + mg(l - r \cos \varphi)\\
+	\ffpartial{L}{r} - \dd t \ffpartial{L}{\dot{r}} &= m r \dot{\varphi}^2 - mg \cos \varphi - \dd t m \dot{r} \\
+	&= -m (g \cos \varphi + \ddot{r} - r \dot{\varphi}^2)\\
+	\ffpartial{L}{\varphi} - \dd t \ffpartial{L}{\dot{\varphi}} &= mgr \sin \varphi - \dd t m r^2 \dot{q} \\
+	&= mgr \sin \varphi - 2mr\dot{r}\dot{\varphi} - mr^2 \ddot{\varphi}\\
+	\end{align*}
+	Zwangsbedingung $r-l = 0 = \bar{f}(r, \varphi, t)$\\
+	$\ffpartial{f}{r} = 1$ alle anderen partiellen Ableitungen $= 0$\\
+	\conseq $\lambda_r = \bar{Q}_r$ ist Zwangskraft in $r$-Richtung
+	
+	Daraus folgen 3 Gleichungen
+	\begin{description}
+		\item[$r$-Gleichung] $$\lambda = m \ddot{r} + mg \cos \varphi - m r \dot{\varphi}^2$$
+		\item[$\varphi$-Gleichung] $$\ddot{\varphi} + \frac{2 \dot{r}}{r} \dot{\varphi} + \frac{g}{r} \sin \varphi = 0$$
+		\item[$l$-Gleichung] $$r = l \rightarrow \dot{t} = \ddot{r} = 0 $$
+	\end{description}
+	Randbemerkung: $\lambda = -m(l \dot{\varphi}^2 - g \cos \varphi)$ ist hier die Fadenspannung.
+	
+	Das ganze kann man vereinfachen wenn man $\dot{r} = 0$ und $\sin \varphi \approx \varphi$ annimmt (letzteres gilt für klein $\varphi$). Damit gilt dann folgendes
+	$$\varphi(t) = \varphi_0 \sin \sqrt{\frac{g}{l} t}$$
+\end{beispiel*}
+}
+
+\subsection{Das Hamiltonische Prinzip}	
+Bahnen im Konfigurationsraum\dots
+
+\begin{definition*}[Wirkungsintegral]
+	$$S{ \vec{q}(t) } = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
+	Wir betrachten Scharen $\vec{q}(t)$ mit gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$	
+\end{definition*}
+
+
+Beim Hamiltonische Prinzip wird nun die Bahn des Systems betrachtet und wollen eine extremale Bahn finden.
+
+~\\
+Die Systembewegung erfolgt so, dass $S{\vec{q}(t)}$ für die richtige Trajektorie extremal, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
+$$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overset{!}{=}$$
+
+\begin{bemerkung*}
+	Die Gleichung $\delta S = 0$ enthält die gesamte klassische Mechanik. Das Prinzip (der Minimierung der Trajektorie) wird auch jenseits der Mechanik verwendet, es ist natürlich koordinatenunabhängig.
+\end{bemerkung*}
+
+Bewegungsgleichungen? \conseq Variationsrechnung.
+Finden der Kurve $\vec{q}(t)$, die $S\{\vec{q}(t)\}$ extremal macht.
+
+\subsubsection{Elemente der Variationsrechnung}
+
+\begin{definition*}[Eulergleichung]
+	Wie die Lagrangegleichung, gilt aber ganz allgemein für Variationsprobleme.
+	$$ \ffpartial{f}{y} - \dd x \ffpartial{f}{y'} = 0$$++++
+\end{definition*}
+
+Zunächst ein eindimensionales Problem.
+\paragraph{Problem} Finde eine Kurve $y(x)$ für die ein bestimmtes Funktional extremal wird. Zum Beispiel "`eine kürzeste Verbindung"', beispielsweise auf einer krummen Fläche (Geodäte) wie einer Seifenhaut.
+Die verschiedenen möglichen bilden ein Schar $f(x, y, y')$ von $y(x)$ mit festen Endpunkten. Es wird angenommen, dass $f$ differenzierbar in allen Variablen ist. Im folgenden gilt weiterhin $y' = \ddd{y}{x}$.
+Funktional
+\begin{align*}
+J\{y(x)\} &= \int_{x_1}^{x_2} f(x, y, y') \d x = \int_{x_1}^{x_2} \tilde{f}(x) \d x
+\end{align*}
+Das Problem kann nun wie folgt ausgedrückt werden: Für welches $y(x)$ wird $J\{y(x)\}$ extremal?\\
+Dies ist ähnlich zu einer einfachen Extremwertaufgabe, wenn die Schar $y(x)$ durch den Parameter $\alpha$ parametrisiert werden kann. Dies kann zum Beispiel so geschehen so dass
+\begin{align*}
+y_{\alpha = 0}(x) &= y_0(x)
+\intertext{die extremale und damit gesuchte Bahn wird. Damit kann man jetzt $y_\alpha$ aufteilen}
+y_\alpha(x) &= y_0(x) + \gamma_\alpha(x)
+\intertext{$\gamma_\alpha(x)$ ist hierbei eine fast beliebige, differenzierbare Funktion mit, welche an den Endpunkten für alle $\alpha$ verschwindet, also 0 wird. Nach dem, wie $\gamma_\alpha$ konstruiert wurde gilt auch}
+\gamma_{\alpha = 0}(x) &= 0~~~\forall x
+\intertext{Man kann $\gamma_\alpha$ auch anders angeben: $\gamma_\alpha(x) = \alpha \eta(x), ~~~ \eta(x_1) = \eta(x_2) = 0$. $x$ wird festgehalten und dann eine Taylorreihe mit $\alpha = 0$ wie folgt entwickelt}
+\gamma_\alpha(x) &= \alpha (\ffpartial{\gamma_\alpha(x)}{\alpha})_{\alpha = 0} + \frac{\alpha^2}{2} (\frac{\partial^2 \gamma_\alpha(x)}{\partial x^2})_{\alpha = 0} + \dots
+\intertext{Oder wieder anders}
+\gamma_\alpha(x) &= y_0(x) + \alpha(\ffpartial{y_\alpha}{\alpha})_{\alpha = 0} + \dots
+\end{align*}
+
+$y_\alpha(x)$ wird nun in der Nähe (besser gesagt in der $\epsilon$-Umgebung) von $\alpha = 0$ variert. Daraus folgt, dass $\alpha \rightarrow \d \alpha$.
+Und damit $\delta y = y_{\d \alpha} - y_0(x) = \d \alpha (\ffpartial{y_\alpha(x)}{\alpha})_{\alpha = 0}$.
+Wird nun $\delta y$ bei festem $x$ betrachtet (vgl. virtuelle Verrückungen bei fester Zeit t. ($\delta t = 0$)) kommt man zu einer Variation des Funktionals $J\{y(x)\}$
+$$\delta J \{ y_{\d \alpha}(x) \} - J\{ y_0(x)\} = (\ddd{J(x)}{\alpha})_{\alpha = 0} \d \alpha = \int_{x_1}^{x_2} (f(x, y_{\d \alpha}, y'_{\d \alpha}) - f(x, y_0, y'_0)) \d x$$\todo{vorher Zusatz???}
+Jetzt ist die Extremalbedingung offensichtlich
+$$(\ddd{J(\alpha)}{\alpha})_{\alpha = 0} = 0$$ für beliebige $\gamma_{\alpha}(x)$
+\conseq $y_0(x)$ eingesetzt in die gesuchte Bahn. Es ist eine stationäre Bahn genau dann, wenn $\delta J \overset{!}{=} 0$.
+Durch einfaches Umformen folgt damit
+\begin{align*}
+(\ddd{J(\alpha)}{\alpha}) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{x} \ffpartial{y}{\alpha} + \ffpartial{f}{y'} \ffpartial{y'}{\alpha} + \ffpartial{f}{x} \ffpartial{x}{\alpha})
+\intertext{mit der Identität $\int_{x_1}^{x_2} \ffpartial{f}{y'} \ffpartial{y'}{\alpha} = \int_{x_1}^{x_2} \ffpartial{f}{y'} \dd x \ffpartial{y}{\alpha}$, $\ffpartial{y'}{\alpha} = \fpartial{\alpha} \ddd{y}{x} = \dd x \ffpartial{y}{\alpha}$ und partieller Integration folgt}
+&= \underbrace{\left. \ffpartial{f}{y'} \ffpartial{y}{\alpha} \right|_{x_1}^{x_2}}_{=0, \text{da keine Variation an den Endpunkten.}} - \int_{x_1}^{x_2} \d x (\dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha})\\
+\dd \alpha J(x) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{y} - \dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha}\\
+\delta J &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{y} - \dd x \ffpartial{f}{y'}) \delta y
+\end{align*}
+$\delta J \overset{!}{=} 0$ für beliebige $\delta y$ damit verschwindet der Integrand \todo{richtig???}. Daraus folgt wieder die Eulersche Gleichung
+$$\ffpartial{f}{y} - \dd x \ffpartial{f}{y'} = 0$$
+Und damit eine Differentialgleichung 2. Ordnung für das gesuchte $y(x)$. (vgl. Lagrange-Gleichung 2. Art)
+
+\begin{beispiel*}[Kürzeste Verbindung zweier Punkte in der Ebene]~\\
+	Welches Funktional? (Infitisemale Länge $\d s = \sqrt{\d x^2 \d y^2}$) Gesucht ist $\int_{p_1}^{p_2} \d s = J$\\
+	$$J = \int_{p_1}^{p_2} \d s = \int_{x_1}^{x_2} \sqrt{\d x^2 + \d y^2} = \int_{x_1}^{y_2} \sqrt{1 + (\ddd{y}{x})^2} \d x = \int_{x_1}^{x_2} \sqrt{1 + {y'}^2} \d x$$
+	$\delta J = 0$ führt zur extremalen Bahn $y(x)$. 
+	$$ f(x, y, y') = \sqrt{1 + {y'}^2}$$
+	Nun verwenden wir die Eulergleichung: $\ffpartial{f}{y} = 0$; $\ffpartial{f}{y'} = \frac{y'}{\sqrt{1 + {y'}^2}}$ und damit folgt
+	$$\dd x \frac{y'}{\sqrt{1 + {y'}^2}} = 0$$
+	oder anders gesagt
+	$$\frac{y'}{\sqrt{1 + {y'}^2}} = \text{konstant} = c \rightarrow {y'}^2 = c^2 ( 1 + {y'}^2)$$
+	Zusammenfassend folgt damit mit ${y'}^2(1 - c^2) = 1$
+	$${y'}^2 = \text{konstant}, y' = \text{konstant}$$
+	und damit schlussendlich die Lösung des Problems
+	$$y(x) = a x + b$$
+	$a$, $b$ werden über die Anfbangsbedingungen$(x_1, y_1)$ und $(x_2, y_2)$ festgelegt.
+\end{beispiel*}
+
+\begin{beispiel*}[Minimale Rotationsfläche]~\\
+	\textit{Es wird im Grunde genommen wie beim letzten Beispiel vorgeganen} Die Minimalfläche ist
+	\begin{align*}
+	J &= \int \d A = \int 2 \pi x \d s
+	\intertext{mit $\d s = \sqrt{\d x^2 + \d y^2} = \sqrt{1 + (\ddd{y}{x})^2} \d x = \sqrt{1 + {y'}^2} \d x$ folgt}
+	&= 2 \pi \int_{x_1}^{x_2} x \sqrt{1 + {y'}^2}
+	\end{align*}
+	Wenn $\delta J = 0$ gilt, ist $J$ die extremale Fläche, d.h. die minimalgroße Fläche.
+	Es wird nun die Funktion, besser gesagt die Variation, $f$ definiert 
+	\begin{align*}
+	f(x,y,y') &= x \sqrt{1 + {y'}^2} & \text{~\textit{mit }}y' = \ddd{y}{x}\\
+	\ffpartial{f}{y} &= 0 & \ffpartial{f}{y'} = \frac{x y'}{\sqrt{1 + {y'}^2}}\\
+	\xRightarrow[]{\text{Eulergleichung}} \dd x \frac{x y'}{\sqrt{1 + {y'}^2}} &= 0\\
+	\frac{x y'}{\sqrt{1 + {y'}^2}} &= \text{konstant} = a\\
+	\ddd{y}{x} &= y' = \frac{a}{\sqrt{x^2 - a^2}}\\
+	y(x) &= a \text{arcosh}(\frac{x}{a}) + b & \text{~\textit{oder }} x(y) = a \cosh (\frac{y - b}{a})
+	\end{align*}
+	$a$, $b$ können mit den Anfangsbedingungen gefunden werden $(x_1, y_1)$ und $(x_2, y_2)$.\\
+	Ein Hinweis am Rande: Die Kurve, welche durch den Kosinushyperbolikus beschrieben wird, wird auch Kettenlinie\footnote{\href{https://de.wikipedia.org/wiki/Kettenlinie_\%28Mathematik\%29}{Wikipedia}} genannt.
+\end{beispiel*}
+
+\textbf{Hamiltonisches Prinzip}
+Das Integralprinzip (Hamilton) und das differentielle Prinzip (d'Alembert) sind äquivalent. Beide führen auf die Lagrangegleichungen. 
+
+\subsubsection{Erhaltungsgrößen}
+\paragraph{Allgemeines System} Die allgemeinen Koordinaten $q_i$, $\dot{q}_i$ für $i = 1, \dots, s$ sind im Laufe der Zeit veränderlich, womit es $2S$ Funktionen der Zeit gibt. Einige von diesen sind jedoch konstant\footnote{Mathematisch ausgedrückt gilt dann $F_r = F_r(q_1, \dots, q_s, \dot{q}_1, \dot{q}_s, t) = \text{konstant}$.}, was nicht Zufall sein muss.\footnote{Es ist aus offensichtlichen das Ziel, dass möglichst viele Funktionen konstant sind. Denn wie man schon im Lagrange-Teil gesehen hat, wird damit die Komplexität des Problems reduziert.}
+Diese konstanten Funktionen heißen auch \textbf{Integrale der Bewegung}.
+
+\invisible{\paragraph{Im Prinzip gilt} Bei $2S$ Integralen der Bewegung $C_i$ ist das Problem gelöst, weil $q_i = q_i(C_1, \dots, C_{2S}, t)$ und damit das Problem nicht mehr dynamisch ist. Die Lösung kann dann einfach abgelesen werden.
+
+Einige Konstanten der Bewegung hängen mit den Grundeigenschaften von Raum und Zeit zusammen (siehe unten).
+
+Allgemein gilt, dass, wie schon gesagt, möglichst viele Konstanten der Bewegung bestimmt werden sollten, bevor die Lösung angestrebt wird. Einige der möglichen Konstanten haben wir schon kennengelernt: Die Resultate zyklischer Koordinaten: $q_i$ sei zyklisch\ref{zyklische_koordinate}, damit gilt
+$$p_j = \ffpartial{L}{\dot{q}_j} = \text{konstant}$$
+Ein gutes Beispiel hierfür sind Zweikörperprobleme.
+
+\begin{beispiel*}[Zweikörperproblem\footnote{\href{http://de.wikipedia.org/wiki/Zweik\%C3\%B6rperproblem}{Wikipedia}}\footnote{Konkrete Beispiele: Anziehung zwischen Protonen und Elektronen im Atom oder der Sonne und der Erde.}]~\\
+	Zwei Massepunkte $m_1$ und $m_2$ haben die Koordinaten $\vec{r}_1$ und $\vec{r}_2$ und die Relativkoordinate $\vec{r} = \vec{r}_i - \vec{r}_2$. Als Kraft herrscht nur das Potentialfeld\footnote{Nur abhängig von der relativen Position der Massepunkte. Beispiele hierfür sind das Gravitationsfeld oder das elektrische Feld}
+	\begin{align*}
+	V(\vec{r}_1, \vec{r}_2) &= V(| \vec{r}_1 - \vec{r}_2|) = V(r)\\
+	\text{Gesammtmasse~~~} M &= m_1 + m_2\\
+	\text{reduzierte Masse~~~} \mu &= \frac{m_1 m_2}{m_1 + m_2}\\
+	\text{Schwerpunkt~~~} R &= \frac{1}{M} (m_1 \vec{r}_1 + m_2 \vec{r}_2)\\
+	\text{Relativkoordinate~~~} \vec{r} &= \vec{r}_1 - \vec{r}_2 = r (\sin \vartheta \cos \varphi, \sin \vartheta \sin \varphi, \cos \vartheta)
+	\end{align*}
+	
+	\paragraph{Wir Erwarten}
+	\dots das sowohl Bewegung des Schwerpunkts trivial also gleichförmig, wie auch  Bewegung der reduzierten Masse $\mu$ im Schwerpunktsystem ist.\\~\\
+	Die generalisierten Koordinaten sind in unserem Beispiel
+	\begin{align*}
+	\vec{R} &= (q_1, q_2, q_3) \text{~mit~} r = q_4, \vartheta = q_5, \varphi = q_6
+	\intertext{Damit ist die Lagrangefunktion in den generalisierten Koordinaten}
+	L &= \frac{M}{2} (\dot{q}_1^2 + \dot{q}_2^2 + \dot{q}_3^2) \\~&- V(q_4) + \frac{\mu}{2} (\dot{q}_4^2 + q_4^2 \dot{q}_5^2 + q_4^2 \dot{q}_6^2 \sin^2 q_5)
+	\intertext{Offensichtlich sind die Koordinaten $q_1, q_2, q_3, q_6$ zyklisch und $p_i = \ffpartial{L}{\dot{q}_i} = M \dot{q}_i$ für ($i =1, 2, 3$), also bleibt der \textit{Schwerpunktsimpuls} erhalten.}
+	\vec{p} &= M \dotvec{R} = \text{konstant}\\
+	p_6 &= \ffpartial{L}{\dot{q}_6} = \mu q_4^2 \dot{q}_6 \sin^2 q_5 = \mu \dot{\varphi} r^2 \sin^2 \vartheta = L_r^{(Z)} = \text{konstant}\\
+	\intertext{Die $z$-Komponente des Relativdrehimpulses ist ersichtlicherweise konstant\footnote{Vergleiche: Geworfenes Frisbee, dessen Drehachse relativ gesehen sich nicht verändert.\footnote{Tipp: Dies mit einer Tafelkreide zu probieren ist aufgrund des vergleichsweise geringen Impulses schlecht möglich.}}}
+	\intertext{Wenn man das Problem nun versucht in den Kartesischen Koordinaten anzugehen, führt das folgender Langrange-Funktion}
+	L &= \frac{m_1}{2} (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
+	~&- V((x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2)
+	\intertext{Auch hier sind die Erhaltungssätze ebenso gültig. Sie sind aber viel schwerer abzulesen.}
+	\end{align*}
+\end{beispiel*}
+}
+
+\subsubsection{Homogenität in der Zeit}
+Das bedeutet die Invarianz der Bewegung gegenüber Zeittranslationen bei gleichen Anfangsbedingungen.\\
+Hamiltonfunktion:
+$$H = \sum_{j=1}^s p_j \dot{q}_j - L$$
+für die nach Konstruktion gilt $\ddd{H}{t} = 0$, oder anders ausgedrückt, dass $H = \text{konstant}$ gilt.
+
+\subsubsection{Interpretation von $H$} \dots für konservative Systeme mit holonom-skleronomen Zwangsbedingungen.
+$$T = \frac12 \sum_{i=1}^N m_i \dotvec{r}_i^2$$
+
+Man kann die Hamiltonfunktion als Gesamtenergie des Systems interpretieren.
+
+
+
+
+
+
+\paragraph{Zusammengefasst}
+Aus der Homogenität in der Zeit folgt
+\[H=\sum\limits_{j=1}^S p_j\dot q_j - L = \const\]
+Falls die Zwangsbedingungen skleronom sind, folgt daraus die \emph{Energieerhaltung}, denn die Hamiltonfunktion ist die Gesamtenergie.
+
+\subsubsection{Homogenität des Raums}
+Wenn etwas räumlich homogen ist, bedeutet, dass es unabhängig vom Ort (Anfangsbedingungen). Eine Verschiebung des Systems verändert nicht die Dynamik. Damit ist ein solches System in der Regel nur von den relativen Abständen abhängig.
+
+Die Homogenität des Raums ist genau dann vorhanden, wenn \emph{Impulserhaltung} auch vorhanden ist.
+
+
+\begin{bemerkung*}
+	Bei Systemen, die nur bei Translation entlang einer Richtung oder der Drehung um eine einzige Achse invariant sind, ist nur die entsprechende Komponente von Impuls oder Drehimpuls erhalten.
+\end{bemerkung*}
+
+\section{Hamilton-Mechanik}
+Der Ausgangspunkt ist offensichtlich die Lagrangemechanik. Jetzt wird $(\vec q, \dot {\vec q})$ zu $(\vec q, \vec p, t)$ transformiert.
+
+Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
+\[\text{Lagange}\to\text{Hamilton}\]
+\[\text{$S$ Differentialgleichungen 2. Ordnung}\to\text{$2S$ Differentialgleichungen 1. Ordung}\]
+\[\text{$2S$ Anfangsbedingungen}\to\text{$2S$ Anfangsbedingungen}\]
+Der Übergang von $q_j$ nach $p_j$ geschieht per Legendre-Transformation, die im folgenden kurz erklärt wird.
+\subsubsection{Legendre - Transformation} \textit{als mathematisches Werkzeug}\\
+Sei $f(x)$ eine Funktion mit $\md f = \frac{\md f}{\md x} \md x = u \md x$ und $g(x)$ eine weitere Funktion mit $\frac{\md g}{\md u} = \pm x$
+\begin{align*}
+\md f &= u\md x = \md (ux) - x\md u\\
+\md (f-ux) &= - x \md u\\
+\Rightarrow \frac{\md}{\md u}(f-xu) &= -x\\
+g(u) &= f(x) - ux = f(x) - x\frac{\md f(x)}{\md x}
+\end{align*}
+$g(u)$ ist jetzt die Legendre - Transformierte von $f(x)$.
+
+
+
+\begin{beispiel*}[Transformieren von $f(x) = \alpha x^2$ und $\bar{f}(x) = \alpha(x+c)^2$]
+	Zuerst transformieren wir beide Funktionen jeweils durch Ersetzen, also ohne Anwendung der Legendre-Transformation.
+	\begin{align*}
+	u(x) &= \frac{\md f}{\md x} = 2 \alpha x \rightarrow x= \frac{u}{2\alpha} & \qquad   \bar u &= \frac{\md \bar f}{\md x} = 2\alpha(x+c) \rightarrow x=\frac{\bar u}{2\alpha} - c\\
+	\rightarrow g(x) &= \frac{u^2}{4\alpha} & \qquad  \rightarrow \bar g(\bar u) &= \frac{\bar x^2}{4\alpha}
+	\end{align*}
+	$f$ und $\bar f$ haben die gleichen Transformationen. Damit ist diese Art zu Transformieren offensichtlich nicht eindeutig und auch nicht umkehrbar.\\
+	Nun transformieren wir die beide Funktionen jeweils unter Verwendung der Legendre-Transformation
+	\begin{align*}
+	\rightarrow u &= 2\alpha x \rightarrow x= \frac {u}{2\alpha}      &  \qquad \bar{u} &= 2\alpha (x+c) \rightarrow x= \frac {\bar{u}}{2\alpha} -c\\
+	\rightarrow g(x) &= f(x) - x\frac{\md f}{\md x}  &  \qquad   \rightarrow \overline g(x) &= \overline f(x) - x\frac{\md \overline f}{\md x}\\
+	&= \alpha x^2 - x2\alpha x = -\alpha x^2         &    \qquad    &= \alpha (x+c)^2 - x 2\alpha( x+c)\\
+	&=-\alpha^3(\frac{u}{2\alpha})^2      &  \qquad    &= \alpha (\frac {\bar{u}}{2\alpha})^2 - (\frac {\bar u}{2\alpha} -c) 2\alpha( \frac {u}{2\alpha} )\\
+	&= -\frac{u^2}{4\alpha} = g(u)   &  \qquad    &= -\frac {\bar{u}^2}{4\alpha} +c\bar{u} = g(\bar{u}) \neq g(u)
+	\end{align*}
+	Es kann gezeigt werden (nicht hier), dass die Legendre-Transformation allgemein eindeutig und damit umkehrbar ist.
+\end{beispiel*}
+
+Bewegungsgleichungen
+\[\dot q_i = \frac{\partial H}{\partial p_i}\qquad \dot p_i = \frac{\partial H}{\partial q_i} \qquad -\frac{\partial L}{\partial t} = \frac{\partial H}{\partial t}\]
+Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Gleichungen} genannt.
+
+\begin{bemerkung*}
+	$2S$ Differentialgleichung für die $q_i$ und $p_i$.
+	\begin{itemize}
+		\item Bewegung des Systems im Raum der $q_i$, $p_i$ \conseq \textbf{Phasenraum}
+		\item bei skleronomen Zwangsbedingungen $H = T + V = E$ \textit{Gesamtenergie des Systems}
+	\end{itemize}
+\end{bemerkung*}
+ohne explizite Zeitabhängigkeit gilt $H = \const$ weil dann gilt $\ffpartial{H}{t} = 0$. H ist damit ein Integral der Bewegung.
+
+Bei zyklischen Variablen:
+$$q_j \text{~zyklisch} \Leftrightarrow \ffpartial{L}{q_j} = 0 \Leftrightarrow p_j = \const = c_j$$
+dann für $H$:
+$$\dot{p}_j = 0 = -\ffpartial{H}{q_j}$$
+\conseq zyklische Koordinaten erscheinen auch nicht in H.
+$p_j$ durch die Anfangsbedingung $p_j = c_j$ festgelegt. System also praktisch nur noch $(2S -2)$ Freiheitsgrade.
+$H$ nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q}_j$ Abhändigkeit in der Lagrangefunktion, d.h. wir haben hier einen klaren Vorteil des Hamiltonformalismus.
+
+\subsubsection{Vorgehen im Hamiltonformalismus als Rezept}
+\begin{enumerate}
+	\item generalisierte Koordinaten $\vec{q} = (q_1, \dots, q_s)$
+	\item $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
+	\item kinetische und potentielle Energie in Teilchenkoordinaten \conseq dann generalisierte Koordinaten.
+	$$L(\vec{q}, \dotvec{q}, t) = t(\vec{q}, \dotvec q,t  - V(\vec{q}, t))$$
+	\item generalisierte Impulse
+	$$p_j = \ffpartial{L}{\dot{q}_j} \Rightarrow p_j = p_j(\vec{q}, \dotvec{q}, t)$$
+	\item Lösen für $\dot{q}_j$
+	$$\dot{q}_j = \dot{q}_j (\vec{q}, \vec{p}, t)$$
+	\item Lagrangefunktion
+	$$l(\vec{q}, \dotvec{q}(\vec{q}, \vec{p}, t), t) = \tilde{L}(\vec{q}, \vec{p}, t)$$
+	\item Legendretransformation
+	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
+	\item kanonische Gleichungen aufstellen und lösen
+\end{enumerate}
+
+\begin{beispiel*}[2D-Fadenpendel]
+	\textit{Schritt 1} Zwangsbedingungen: $z = \const = 0$ und $x^2 + y^2 = l = \const$ \conseq $S = 1$ Freiheitsgrade, $p = \varphi$	
+	\textit{Schritt 2}
+	\begin{align*}
+	x &= l \sin \varphi
+	\end{align*}
+	%	\begin{align*}
+	%	x &= l \sin \vp\\
+	%	y &= l \cos \vp\\
+	%	\dot{x} &= l \dot{q} \cos q\\
+	%	\dot{y} &= -l \dot{q} \sin q
+	%	\intertext{\textit{Schritt 3}}
+	%	T &= \frac12 (\dot{x}^2 + \dot{y}^2) = \frac{1}{2} m l^2 \dot{q}^2\\
+	%	V &= - mg y = -mgl\cos q 
+	%	L & T -V = \frac{1}{2} m l^2 \dot{q}^2 + mgl\cos q\\
+	%	\intertext{generalisierter Impuls}
+	%	p = \ffpartial{L}{\dot{q}} = m l^2 \dot{q} \rightarrow \dot{q} = \frac{p}{m l^2}
+	%	\intertext{$L$ mit $\dot{q} \rightarrow p$}
+	%	\tilde{L}(q, p) = \frac{p^2}{2 m l^2} + mgl\cos q
+	%	\intertext{H aus Legendretransformation}
+	%	H = p \dot{q} - L = \frac{p^2}{m l^2} - m g l \cos q\\
+	%	&=  \frac{p^2}{2 ml^2} - mgl \cos q
+	%	\intertext{Kanonische Bewegungsgleichungen:}
+	%	\dot{q} = \ffpartial{H}{p} = \frac{p}{m l^2}\\
+	%	\dot{p} = - \ffpartial{H}{q} = - mgl \sin q
+	%	\intertext{System von $2S = 2$ gekoppelten Differentialgleichungen 1. Ordnung}
+	%	\intertext{Lösen z.B. per Differentiation}
+	%	\dd t \dot{q} &= \ddot{q} = \frac{\dot{p}}{ml^2} \overset{\text{$\vec{p}$ einsetzen}{=} - \frac{g}{l} \sin q
+	%		\intertext{die bekannte Differentialgleichung des Fadenpendels}
+	%		\intertext{Als System 1. Ordnung}
+	%		\dot{q} = \frac{p}{ml^2}\\
+	%		\dot{p} = - mgl \sin q \overset{\sin q \approx q \text{~für~} q \ll 1}{=} - mgl q\\
+	%		\dd t \binom{q}{p} &= \underbrace{\begin{pmatrix}
+	%			0 & \frac{1}{ml^2}\\ - mgl & 0
+	%			\end{pmatrix}}_{M} \binom{q}{p}
+	%		\intertext{$M$ diagonalisieren \conseq Transformation $U$}
+	%		\dd t U\binom{q}{r} &= U M U^{-1} U \binom{q}{p}\\
+	%		\dd t \binom{x_1}{x_2} = \begin{pmatrix}
+	%		\lambda_1 & 0\\ 0 & \lambda_2
+	%		\end{pmatrix} \binom{x_1}{x_2}
+	%		\intertext{System entkoppelt}
+	%		\conseq \dot{x}_i(t) = \lambda_i x_i(t) \cong x_i(t) = A e^{\lambda_i t}
+	%		\intertext{Lösung bei linearen System klar. Bei allgemeinem System numerisch gut zu handhaben\footnote{Vgl. Runge-Kutta-Verfahren}.}		
+	%		\end{align*}
+\end{beispiel*}
+
+
+\invisible{\subsection{Zustand eines Systems}
+Welche Informationen sind notwendig, um ein System (von Massepunkten) vollständig zu beschreiben?
+Unterschiedliche Räume (auch am Beispiel des harmonischen Oszillators).
+\subsubsection{Konfigurationsraum} \textit{Koordinaten}
+\begin{align*}
+\vec{q} = (q_1, \dots, q_s) \text{\textit{\qquad S dimensional}}
+\end{align*}
+harmonischer Oszillator im Konfigurationsraum ohne zeitliche Information.
+
+\subsubsection{Ereignisraum}
+$$\vec{q} = (q_1, \dots, q_s) \text{~und~} t \text{\textit{\qquad S dimensional}}$$
+\conseq Bahn $\vec{q}(t)$ aus $2S$ Anfangsbedingungen. \textit{Wo ist der Harmonische Oszillator zur Zeit $t$.}\\
+
+Im Hamiltonformalismus:
+
+\subsubsection{Phasenraum}
+$$\vec{q} = (q_1, \dots, q_s) \text{~und~} \vec{p} = (p_1, \dots, p_s) \text{\textit{\qquad S dimensional}}$$
+\conseq Phasenraumpunkt $\vec{\pi} = (q_1, \dots, q_s, p_1, \dots, p_s)$
+beim harmonischen Oszillator
+$$\frac{p^2}{2 m E} + \frac{q^2}{\frac{2 E}{m \omega_0^2}} = 1$$
+Daraus kann man die Halbachsen 
+\begin{align*}
+t &= \frac{2 E}{m \omega_0^2}  &   B &= \sqrt{2 m E}
+\end{align*}
+Dies Halbachsen bilden eine Ellipse bei fester Energie $E$.\\
+Ein Punkt $\vec{q}$ im Konfigurationsraum reicht aber nicht aus, um das System vollständig zu beschreiben man benötigt hierfür noch Impulse, also den Phasenraum.
+\todo{gesamte Zeitabhängigkeit im (????)}
+
+\subsubsection{Zustandsraum}
+Der Orts- und der Impulsvektor
+\begin{align*}
+\vec{q} &= (q_1, \dots, q_s) & \vec{p} &= (p_1, \dots, p_s) & t
+\end{align*}
+legen das ganze System fest.\\
+Die Punkte im Zustandsraum $\vec{\pi} (t)$ werden im Hamiltonformalismus durch eine Differentialgleichung 1. Ordnung beschrieben.
+$$\vec{\pi}(t_0) \xrightarrow{\text{Kenntnis von $H$}} \vec{\pi}(t \neq t_0)$$
+
+\invisible{\paragraph{Begriff des Zustandes $\Psi$}
+Ein Zustand $\Psi$ ist ein minimaler hinreichender Satz von Eigenschaften eines Systems, welcher ausreicht, um alle weiteren Eigenschaften daraus abzuleiten. In der Mechanik gilt, dass es für jede Eigenschaft der Massepunkte einen Punkt im Zustandsraum gibt: 
+$$f(\vec{q}, \vec{p}, t) = f(\vec{\pi}(t))$$
+
+% Ein Zustand $\Psi$ ist ein $\leftrightarrow$ Punkt $\vec{\pi}$ im Phasenraum
+
+Wenn aus Kenntnis eines $\Psi_0 = \Psi(t_0)$ $\Psi(t)$ festgelegt werden kann, folgt eine Differentialgleichung 1. Ordnung (in der Zeit)
+$$\dot{\Psi}(t) = \tilde{\Psi}(\Psi(t))$$
+\textit{In der Quantenmechanik ist dies die Schrödingergleichung.}\\
+Daraus folgen die Hamiltonschen kanonischen Gleichungen
+$$\dotvec \pi (t) = \tilde{\Psi}(\vec{\pi}(t))$$
+Die Hamiltonfunktion spielt eine fundamentale Rolle.
+}
+}
+
+\subsection{Poisson-Klammern}
+\begin{align*}
+\intertext{Wenn nun $f(\vec{q}, \vec{p}, t)$ und $g(\vec{q}, \vec{p}, t)$ zwei skalare Funktionen sind, gilt allgemein, dass}
+\{f, g\}_{\vec{q}, \vec{p}} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} + \ffpartial{f}{p_j} \ffpartial{g}{q_j})
+\intertext{die Poisson-Klammer von $f$ und $g$ ist. Jetzt kann die Bewegungsgleichung auch wie folgt geschrieben werden}
+\ddd{f}{t} &= \{f, H\}_{\vec{q}, \vec{p}} + \ffpartial{f}{t}
+\intertext{Es gibt ein paar Spezialfälle}
+\dot{q}_j &= \poisson{q, H}\\
+\dot{p}_j &= \poisson{p, H}
+\intertext{Interessant ist weiterhin}
+\poisson{q_i, q_j} &= 0\\
+\poisson{p_i, p_k} &= 0\\
+\poisson{q_i, p_j} &= \delta_{ij}
+\end{align*}
+
+\subsubsection{Die fundamentalen Poissonklammern}
+\begin{align*}
+\poisson{q_i, q_j} &= \poisson{p_i, p_j} = 0\\
+\poisson{q_i, p_j} &= \delta_{ij}
+\end{align*}
+
+Die Poissonklammern hängen nicht von der Wahl der kanonisch konjugierten Variablen ab.
+
+$$\{F, G\}_{\vec{q}, \vec{p}} = \{F, G\}_{\vec{Q}, \vec{P}} = \{F, G\}$$
+Die Poissonklammer kann auch als algebraisches Konstrukt mit den folgenden Eigenschaften betrachtet werden 
+\begin{description}
+	\item[Linerarität] $\{c_1 f_1 + c_2 f_2, g\} = c_1 \{f_1, g\} + c_2 \{f_2, g\}$ ($c_1$, $c_2$ konstant)
+	\item[Antisymmetrie] $\{f, g\} = - \{g, f\}$ \conseq ${f, f} = 0$
+	\item[Nullelement] $\{c, f\} = 0$, $f=f(\vec{q}, \vec{p})$; $c = \const$
+	\item[Produktregel] $\{f, g h\} = g \{f, h\} + \{f, g\} h$
+	\item[Jacobi-Identität] $\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$
+\end{description}
+
+\todo{remove?}
+Bis hierher $\{,\}$ nur algebraische Vereinfachung (+ eventuell die Einsicht in fundamentale Klammern).\\
+Für physikalische Einsicht zurück zu Zustandsgrößen.
+
+% % %
+Physikalische Einsicht:
+Observable: $f = f(\vec{q}, \vec{p}, t) = f(\vec{\pi}, t)$, $\ddd{f}{t} = \{f, H\} + \ffpartial{f}{t}$
+D.h. für \textit{Integrale der Bewegung}
+$\ddd{f}{t} = 0 \Leftrightarrow \{H, f\} = \ffpartial{f}{t}$
+insbesondere, wenn $f$ nicht explizit zeitabhängig. Kenntnis der Integrale der Bewegung wesentlich für die Lösung eines dynamischen Problems \conseq Hier: einfaches Kriterium.
+Einfacher Test: $f = H$: $\ddd{H}{t} = \{H, H\} + \ffpartial{H}{t} = \ffpartial{H}{t}$ schon bekannt. (bei skeleronomen Zwangsbedingungen = Energiesatz) 
+Bis hierhin ausführliche Diskussion der Poissonklammern als mathematisches Werkzeug der klassischen Mechanik.
+\conseq jetzt die abstrakten Eigenschaften der Klammer werden verallgemeinert
+Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quantenmechanik gibt.
+
+
+\chapter{Relativität}
+\invisible{%Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
+%Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
+
+\paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme? Und wie steht es um die Invarianz/Kovarianz physikalischer Observablen und Gesetze.
+Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{speizielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationkräfte werden als Eigenschaft von Raum und Zeit beschrieben.
+
+Im folgenden betrachten wir "`nur"' die spezielle Relativitätstheorie.
+Das wichtigste Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
+\begin{description}
+	\item[bei $v \ll c$] hat man den klassischen (also nicht relativistischen) Fall, den wir schon im 2. Kapitel näher betrachtet haben
+	\item[bei $v \lesssim c $] sind die relativistischen Effekte bedeutend und man verwendet die spezielle Relativitätstheorie
+\end{description}
+Man sieht, dass die Theorie so konstruiert ist, dass die Newtonsche Mechanik als Grenzfall $v \ll c$ in ihr enthalten ist.}
+
+\section{Bezugssysteme / Inertialsysteme}
+\invisible{\subsection{Klassische Mechanik}
+In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber scheinbar ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken, diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen \textit{absoluten Raum} \todo{Erläuterung}.
+
+Sicher gibt es aber eine \textit{absolute Zeit}, gegen die in der klassischen Physik nichts spricht.
+
+Um nochmal auf die \textit{Inertialsysteme} zurückzukommen: Genauer gilt in ihnen das Newtonsche Gesetz $\vec{F} = m \ddotvec{r}$ ohne Hinzunahme von Schein- oder Trägheitskräften. Im folgenden ist der Ausgangspunkt das Inertialsystem $\Sigma$.
+Alle Systeme $\Sigma'$, die sich geradlinig und gleichförmig mit der Geschwindigkeit $\vec v$ relativ zu $\Sigma$ bewegen ($\vec{r}' = \vec{r} - \vec{v}t$), sind auch Inertialsysteme. Deswegen kann man in der klassischen Mechanik einfach die Galilei-Transformation (z.B. $\vec{v} \parallel \hat{z}$) verwenden.
+
+Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten ist nun folgende
+\begin{align*}
+\Sigma& & \Sigma'& \text{~~~per Galilei Transformation}\\
+\dotvec{r} &= c \hat{r}, \hat{r} = \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
+\end{align*}
+Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
+
+%\invisible{
+\subsubsection{Michelson-Morley-Experiment}
+Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl, Morley dafür aber als erster Amerikaner 1907 den Physik Nobelpreis bekam.
+
+\paragraph{Idee} Wir Betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \mathrm{km}\mathrm{s}^{-1}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
+
+\paragraph{Aufbau} vgl. \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}
+Grob zusammen gefasst, läuft das Licht, mit Wellenlänge $\lambda$, über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. Für eine konstruktive Interferenz der beiden resultierenden Lichtstrahlen muss die Wegdifferenz $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ sein.
+
+Die Laufzeiten $\Delta_{ij}$ sind unter Berücksichtigung des Ätherwindes $S_0 \to S_1: \Delta_{01} = \frac{l_1}{c - v} \text{~(mit Äther)}$, $S_1 \to S_0: \Delta_{10} = \frac{l_1}{c + v}$ \conseq $S_0 - S_1 - S_0: \Delta_1 = \frac{l_1}{c-v} + \frac{l_1}{c+v} = 2 \frac{l_1}{c} \frac{1}{1 - \frac{v^2}{c^2}}$ (aus Zeichnung) $c\Delta_{20}^2 = l_2^2 + v^2 \Delta_{20}^2$, $c\Delta_{02}^2 = l_2^2 + v^2 \Delta_{02}^2$, $\Delta_{20} = \Delta_{02} = \Delta_{2} = 2 \frac{2l_2}{c} \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$ damit bekommt man den Laufzeitunterschied und damit wiederum die optische Wegdifferenz der zwei Teilstrahlen
+$$\delta = c (\Delta_2 - \Delta_1) = 2 \left(\frac{l_2}{\sqrt{1 - \frac{v^2}{c^2}}} - \frac{l_1}{1 - \frac{v^2}{c^2}}\right)$$ 
+Nun dreht man die Apparatur Apparatur um $90^\circ$. Wie ändert sich die Intensität? Die Rolle von $l_1$ und $l_2$ wird einfach vertauscht.
+$$\delta' = c (\Delta_2' - \Delta_1') = 2 \left(\frac{l_2}{1 - \frac{v^2}{c^2}} - \frac{l_1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
+Wie muss der Apparat verstellt werden, wenn er gedreht wurde?
+$$S = \delta' - \delta = 2(l_1 + l_2) \left(\frac{1}{1-\frac{v^2}{c^2}} - \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
+Angenommen  $v \ll c$ und damit $\frac{v}{c} \ll 1$, dann gilt
+$$S \approxeq 2 (l_1 + l_2) \left(1 + \frac{v^2}{c^2} - (1 + \frac{1}{2} \frac{v^2}{c^2}) + \dots\right) = (l_1 + l_2) \frac{v^2}{c^2}$$
+Bei sichtbarem Licht mit $\lambda \approx 500 \mathrm{nm}$ und der Lichtgeschwindigkeit $c = 3 \cdot 10^8 ~\mathrm{m} \mathrm{s}^{-1}$ müsste $l_1 + l_2 \approxeq 50 \mathrm{m}$ gelten, um eine Verschiebung um 1 Interferenzmaximum messen zu können.
+Im Michelson-Morley-Experiment waren es ungefähr $10 \mathrm{m}$ mit Vielfachreflexionen, weswegen es sensitiv genug gewesen wäre. Aber es wurde trotzdem \textbf{kein Effekt gemessen!} Genauso wie in vielen nachfolgenden gleichartigen Experimenten.}
+
+\begin{folgerung*}
+	Die Lichtgeschwindigkeit ist überall, d.h. in jedem Bezugssystem, gleich.
+\end{folgerung*}
+\begin{folgerung*}
+	Wenn es weiterhin Inertialsysteme geben soll (jetzt erst recht!) ist die Galileo-Transformation notwendigerweise falsch. Damit gibt es keine absolute Zeit und keinen absoluten Raum.
+\end{folgerung*}
+\begin{folgerung*}
+	Es gibt außerdem keinen unendlich schnellen Informationsaustausch. Da der Begriff der \textbf{Gleichzeitigkeit} an eine Synchronisation mittels Licht gebunden ist, ist jener Begriff nur in ruhenden Systemen klar, in ihnen ist eine Synchronisierung möglich, in bewegten Systemen ist das ganze viel schwieriger. Wir werden später auf diesen Begriff noch einmal zurückkommen.
+\end{folgerung*}
+
+\section{Einstein}
+Er hält mit seinen Theorien an der Gleichberechtigung aller Bezugssysteme fest, bzw. erfordert sie.
+
+\subsection{Einsteins Postulate}
+\begin{description}
+	\item[Äquivalenzprinzip] Die Physikalischen Gesetze und Experimente sind in gleichförmig und geradlinig zueinander bewegten Systemen gleich.
+	\item[Konstanz der Lichtgeschwindigkeit] Die Lichtgeschwindigkeit ist in allen System gleich ($=c$), unabhängig von der Bewegung der Quelle. 
+\end{description}
+
+\subsection{Lorentz-Transformation}
+\invisible{Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$) und die Zeit bewegt sich in ihnen gleich schnell\todo{???}. Bei $t = 0$ sind beide Systeme identisch $\Sigma = \Sigma'$.
+
+Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma':$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
+$$c^2 t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
+Es findet offensichtlich eine Verknüpfung von Raum und Zeit statt.}
+
+\subsubsection{Viervektoren}
+$$x = (x^0, x^1, x^2, x^3) = (ct, \vec{x}\in\Re^3)$$
+\invisible{Diese Vektoren sind nicht euklidisch, sondern Elemente des Minkowski-Raums, weiter gilt damit
+$$x^2 = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 = (x^0)^2 - \vec{x}^2 = c^2t^2 - \vec{x}^2$$
+Die gleiche Ausbreitung der Kugelwelle in $\Sigma$ und $\Sigma'$ ist die Invarianz des Vierervektorquadrats im Minkowski-Raum.
+$$x^{~2} = x'^2 \text{~oder~} c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2$$
+Die gesuchte Transformation ist die sogenannte \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich, womit wir die \textbf{spezielle Lorentztransformation} haben, welche zusammen mit einer Drehung, die allgemeine Lorentztransformation ergibt.
+}
+
+Die Beziehung zwischen $x$ und $x'$ ist notwendig linear, weil nur wir nur gleichförmige und geradlinige Bewegungen betrachten.
+$$x'^{\mu} = L^\mu_\nu x^\nu$$
+$x^\mu$ ist in dieser Schreibweise die $\mu$-te Koordinate des Vierervektors $(x^0, x^1, x^2, x^3)$  
+
+\paragraph{Index-Notation}
+Ein kurzer Notationseinschub.
+\begin{align*}
+(\vec{F})_i &= (m \vec{a})_i &\rightarrow& & F_i &=ma_i\\
+S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& & S&=a_ib_i\\
+(\vec{a})_i &= (M\vec{b})_i &\rightarrow& & a_i &= \sum_{j=1}^3 M_{ij} b_{j} = M_{ij}b_j\\
+\vec{a} &= L M \vec{b}  &\rightarrow& & a_i &=L_{ij}M_{jk}b_k
+\end{align*}
+Vierervektoren $x^\mu, x$, mit $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiherhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
+$$x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$$
+Als Konvention gilt weiterhin $\mu, \nu, \rho, \sigma \in  \{0, 1, 2, 3\}$, Index 0 ist die Zeit, $i,j,k,l \in \{1,2,3\}$ und $\cos x y = \cos(x) y$\\
+\\
+Weiter mit der Lorentztransformation:
+\begin{align*}
+x'^\mu &= L^\mu_{~\nu} x^\nu \equiv \sum_{\nu=0}^{3} L^\mu_{~\nu}\\
+&= L^\mu_{~0} x^0 + L^\mu_{~1}x^1 + L^\mu_{~2}x^2 + L^\mu_{~3}x^3\\
+&= L^{\mu 0}x^0 - L^{\mu 1}x^1 - L^{\mu 2}x^2 - L^{\mu 3}x^3\\
+x'^\mu &= L^\mu_{~\nu} x^\nu \text{~~Bewegung von Bezugssysteme in $z$-Richtung}
+\end{align*}
+\invisible{
+\begin{align*}
+\intertext{Die $x$- und $y$-Richtung sind invariant, da die Bewegung in z Richtung stattfindet und damit offensichtlich $x' = x$ und $y' = y$}
+\begin{pmatrix}
+ct' \\ x' \\ y' \\ z'
+\end{pmatrix} &= \begin{pmatrix}
+L_{00} & 0 & 0 & L_{03}\\
+0 & 1 & 0 & 0\\
+0 &0 & 1 & 0\\
+L_{30} & 0 & 0 & L_{33}
+\end{pmatrix}
+\begin{pmatrix}
+ct \\ x \\ y \\ z
+\end{pmatrix}
+\end{align*}
+\begin{align*}
+\intertext{Es findet nur ein Vermischen der $ct$- und $z$-Komponente statt, nicht aber der $x$- und $y$-Komponenten. Folgende beide Gleichungen müssen erfüllt sein, vgl. Anfang dieses Abschnitts.}
+(x')^2 &= (x)^2\\
+(x'^0)^2 - (x'^3)^2 &= (x^0)^2 - (x^3)^2\\
+\Rightarrow (L_{00}x^0 + L_{03}x^3)^2 - (L_{30} x^0 L_{33}x^3)^2 &= (x^0)^2 - (x^3)^2\\
+(L_{00}^2-L_{30}^2)(x^0)^2 + (L_{03}^2 - L_{33}^2)(x^3)^2 + 2(L_{00}L_{03} - L_{30} L_{33})x^0 x^3 &= (x^0)^2 - (x^3)^2\\
+\Rightarrow L_{00}^2 - L_{30}^2 &= 1\\
+L_{03}^2 - L_{33}^2 &= -1\\
+L_{00}L_{03} - L_{30}L_{33} &= 0
+\end{align*}
+Nun hat man 3 Gleichungen für 4 Unbekannte, es ist also 1 Parameter übrig. Im folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
+\begin{align*}
+\sin^2 \vp + \cos^2\vp &= 1 \rightarrow \cosh^2 y - \sinh^2 y = 1\\
+\rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{~Gl. 1}\\
+&= L_{33} &  &= L_{03} \text{~Gl. 2}\\
+\cosh y \sinh y - \sinh y \cosh y &= 0\\
+\text{Wähle jetzt~}
+L &= \begin{pmatrix}
+\cosh y & 0 & 0 & - \sinh y\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+-\sinh y & 0 & 0 & \cosh y 
+\end{pmatrix}
+\end{align*}
+Was ist die Bedeutung von $y \in \Re$? Was ist der Zusammenhang zwischen $y$ und $v$? Und was hat $y$ damit mit der Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$ zu tun?
+\begin{align*}
+x^3 &= v t = \frac{v}{c} c t = \frac{v}{c} x^0\\
+x'^3 &= 0 = \cosh y \underbrace{x^3}_{\frac{v}{c} x^0 = v t \text{~wegen der Bewegung des Ursprungs}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
+&= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
+\frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
+\end{align*}
+$y$ ist die "`Rapidität"' oder auch "`verallgemeinerte Geschwindigkeit"'
+\begin{align*}
+y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \rightarrow y \approx \frac{v}{c}\\
+\cosh^2 y - \sinh^2 y &= 1\\
+\cosh^2 y (1 - \frac{\sinh^2 y}{\cosh^2 y}) &= 1\\
+\cosh^2 y (1 - \tanh^2 y) &= 1\\
+\cosh y &= \frac{1}{\sqrt{1 - \tanh^2 y}} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}}\\
+\sinh y &= \cosh y \tanh y = \frac{\frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{align*}
+}
+Üblich sind folgende Abkürzungen: $\beta = \frac{v}{c}$; $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$ \conseq $\cosh y = \gamma$; $\sinh y = \gamma \beta$ und damit
+\begin{align*}
+L &= \begin{pmatrix}
+\gamma & 0 & 0 & - \gamma \beta\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+-\gamma \beta & 0 & 0 & \gamma
+\end{pmatrix}
+\intertext{$L$ ist "`verallgemeinerte Drehung"'.}
+\intertext{Komponentenweise}
+x' &= x\\
+y'&=y\\
+z'&=\gamma (z - \beta c t)\\
+ct' &= \gamma (ct - \beta z)
+\end{align*}
+Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtlich mittransformiert, dies war bei der Galilei-Transformation nicht der Fall
+
+\begin{bemerkung*}
+	Der Grenzfall bei $v \ll c$ ist die Galilei-Transformation.
+\end{bemerkung*}
+\begin{bemerkung*}
+	$c$ ist die Maximalgeschwindigkeit (sonst wäre $\gamma$ imaginär).
+\end{bemerkung*}
+\begin{bemerkung*}
+	Die Inverse Lorentztransformation ist $L^{-1} = L(v \to -v)$
+\end{bemerkung*}
+\begin{bemerkung*} Es gilt $x^2 = x^0 x^0 - \vec{x} \vec{x} = (x^0)^2 - \vec{x}^2$. Neben $x^2$ sind \textbf{alle} Quadrate von Minkowski-Vierervektoren \textbf{invariant} unter Lorentztransformationen. Ebenso gilt dies auch für die Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu  L^{\mu}_{~\rho}y^\rho$, die sogenannten "`Lorentz-Skalare"'.
+\end{bemerkung*}
+
+\begin{folgerung*}[\textbf{(a) Gleichzeitigkeit}]
+	\invisible{\begin{align*}
+	z'  &= \gamma (z - \beta c t)\\
+	ct' &= \gamma (ct - \beta z)
+	\end{align*}
+	In zwei Systemen $\Sigma$ und $\Sigma'$ vergeht die Zeit also unterschiedlich schnell. Was ist nun mit der Gleichzeitigkeit?\\
+	Im Bezugssystem $\Sigma$ finden zwei Ereignisse gleichzeitig bei $z_1$ bzw. $z_2$ statt.\\
+	Im Bezugssystem $\Sigma'$ gilt $ct_1' = \gamma (ct_1 - \beta z_1)$ und $ct_2' = \gamma (ct_2 - \beta z_2)$, damit ist $c \Delta t' = c(t_1'- t_2') = \gamma\beta (z_2 - z_1) \neq 0$.
+	Das Vorzeichen hängt vom Vorzeichen von $(z_2 - z_1)$ ab. Die Reihenfolge ist damit möglicherweise variabel. Findet damit eine	Vertauschung von Ursache und Wirkung statt?\\
+	\textbf{Sei $\Sigma$ $t_2 > t_1$}\\
+	~~$\Sigma'$: $c\underbrace{(t'_2 - t'_1)}_{> 0 \text{, wenn kausal}} = \gamma (c (t_2 - t_1) - \beta (z_2 - z_1))$\\
+	also $\gamma (c (t_2 - t_1) - \beta (z_2 - z_1)) > 0!$\\
+	$\gamma >~0$, als $c (t_2 - t_1) > \beta (z_2 - z_1)$ immer, wenn $c(t_2 - t_2) > (z_2 - z_1)$ (da $\beta < 1$) und damit gilt $c \Delta t > \Delta z$\\
+	Also $c \Delta t \geq \Delta z$.\\}
+	Ein Lichtsignal kann Informationen zwischen $z$ und $z_2$ austauschen. Damit bleibt die Kausalität erhalten ($t'_2 > t_1$), andernfalls wäre $c \Delta t < \Delta z$ und deswegen keine Informationsübertragung möglich. Die Reihenfolge der Ereignisse kann dann zwar geändert werden, aber es ist nicht beobachtbar.
+\end{folgerung*}
+
+%\paragraph{Erinnerung}
+$c \Delta t \geq \Delta z$ Informationsübertragung möglich\\
+$<$ \dots nicht\\
+
+allgemein für 4-Vektoren $x = (ct, \vec{x})$\\
+$c^2 t^2 > \vec{x}^2$ zeitartiger Vektor\\
+$c^2 t^2 < \vec{x}^2$ raumartiger Vektor\\
+$c^2 t^2 = \vec{x}^2$ lichtartiger Vektor\\
+
+\conseq $\Delta t' = \gamma \Delta t = \frac{1}{\sqrt{1 - \beta^2}} \Delta t > \Delta t$\\
+
+
+\subsubsection{Längenkontraktion}
+In $\Sigma$: Stab der Länge $l$ in Ruhe. Länge als Differenz zweier Orte $l = z_2 - z_1$\\
+$l' = \frac{1}{\gamma} (z_2 - z_1) = \frac{l}{\gamma} < l$
+Die im bewegten System gemessene Lösung ist kürzer. \conseq Konsequenz der Messvorschrift "`gleichzeitig"'
+
+\subsubsection{Addition von Geschwindigkeiten}
+$L(\beta_3) = L(\beta_2) L(\beta_1)$\\ $\gamma_3 = \gamma_1 \gamma_2 (1 + \beta_1 \beta_2)$ und  $\beta_3 = \frac{\beta_1 + \beta_2}{1 + \beta_1 \beta_2}$\\
+$c \beta_3$ ist die Geschwindigkeit in $\Sigma'$, wenn $c\beta_1$ Geschwindigkeit in $\Sigma$ war und $\Sigma'$ mit $c\beta_2$ relativ zu $\Sigma$ ist.
+
+\paragraph{Rapiditäten (Erinnerung)} $\gamma_3 = \cosh y_3$ und $\gamma-3 \beta_3 = \sinh y_3$
+aber auch $\gamma_3 = \cosh y_3 = y_1 y_2 + \gamma_1 \beta_1 \gamma_2 \beta_2 = \cosh y_1 \cosh y_2 + \sinh y_1 \sinh y_2 = \frac12 (e^{y_1} + e^{-y_1}) \frac12 (e^{y_2} + e^{y_2}) + \frac14 (e^{y_1} - e^{- y_1}) (e^{y_2} - e^{-y_2}) = \frac14 (e^{y_1} e^{y_2} + e^{y_1} e^{-y_2} + e^{-y_1} e^{y_2} + e^{-y_1} e^{-y_2} + e^{y_1} e^{y_2} - e^{y_1} e^{-y_2} - e^{-y_1} e^{y_2} - e^{-y_1} e^{-y_2}) = \frac14 (2 e^{y_1} e^{y_2} + 2 e^{-y_1} e^{-y_2}) = \frac12 (e^{y_1 + y_2} + e^{-(y_1 + y_2)}) = \cosh (y_1 + y_2) = \cosh y_3$ (analog für $\sinh y_3$). Also: Rapiditäten werden einfach addiert.
+
 \chapter{Organisatorisches}
 
 \section{Literatur}
@@ -1457,7 +2604,6 @@ Dies sind die \textbf{Lorentztransformationsformeln}. Die Zeit wird offensichtli
 	\item Schäfer/Georgi/Trippler, Mathematik-Vorkurs, Teubner Verlag \conseq \textit{Abitur-Stoff und etwas mehr}
 	\item L. Papula, Mathematik für Ingenieure und Naturwissenschaftler, Vieweg Verlag
 	\item P. Furlan, Das gelbe Rechenbuch, Verlag Martina Furlan
-	-----------------------
 	\item F. Kuypers, Klassische Mechanik, 5. Auflage, Wiley-VCH
 	\item I. Honerkamp, H. Römer, Klassische theoretische Physik, \href{http://www.freidok.uni-freiburg.de/volltexte/82/}{digitalisierte 3. Auflage}
 	\item F. Hund, Grundbegriffe der Physik, BI Hochschulbücher (sehr alt), gibt's in der Fachbibliothek
