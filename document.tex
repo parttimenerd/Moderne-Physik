@@ -389,7 +389,7 @@ Damit gilt zusammenfassend
 \begin{align*}
 \sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^S m_i \left( \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \right) \delta q_j\\ 
 &= \sum_{i=1}^N\sum_{j=1}^S m_i \left(  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \right) \delta q_j \\
-&= \sum_{j = 1}^S \left( \dd{t} \fpartial{\dot{q}_j} T - \ffpartial{T}{q_j} \right) \delta q_j
+&= \sum_{j = 1}^S \left( \dd{t} \ffpartial{T}{\dot{q}_j} - \ffpartial{T}{q_j} \right) \delta q_j
 \end{align*}
 Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2$ die "`Kinetische Energie"'
 und damit gilt mit dem d'Alembertsches Prinzip
