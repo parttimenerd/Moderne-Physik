@@ -378,18 +378,18 @@ Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
 &= \sum_{i = 1}^N m_i \ddot{\vec{r}}_i \delta \vec{r}_i 
 = \sum_{i = 1}^N \sum_{j = 1}^s m_i \ddot{\vec{r}}_i  \ffpartial{\vec{r}_i}{q_j} \delta q_j \\
 \intertext{vgl. Produktregel mit $\dd t f \cdot g = \ddd{f}{t} \cdot g + f \cdot \ddd{g}{t} \Leftrightarrow \ddd{f}{t} \cdot g = \dd t f \cdot g - f \cdot \ddd{g}{t}$}
-&= \sum_{i=1}^N \sum_{j=1}^s m_i \{\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \}
+&= \sum_{i=1}^N \sum_{j=1}^s m_i \left(\dd{t} (\dot{\vec{r}}_i \ffpartial{\vec{r_i}}{q_j} \delta q_j) -\dot{\vec{r}}_i \dd{t} \ffpartial{\vec{r}_i}{q_j} \delta q_j \right)
 \end{align*}
 
 $\dd t \ffpartial{\vec{r}_i}{q_j}$ kann man auch wie folgt schreiben 
-$$\dd{t} \ffpartial{\vec{r}_i}{q_j} = \sum_{l=1}^s \frac{\partial^2 \vec{r}_i}{\partial q_l \partial q_j} \frac{\d q_l}{\d t} + \frac{\partial^2 \vec{r}_i}{\partial t \partial q_j} = \fpartial{q_j} \{ \sum_{l=1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l + \ffpartial{\vec{r}_i}{t}\} = \ffpartial{\dot{\vec{r}}_i}{q_j}$$
+$$\dd{t} \ffpartial{\vec{r}_i}{q_j} = \sum_{l=1}^s \frac{\partial^2 \vec{r}_i}{\partial q_l \partial q_j} \frac{\d q_l}{\d t} + \frac{\partial^2 \vec{r}_i}{\partial t \partial q_j} = \fpartial{q_j} \left( \sum_{l=1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l + \ffpartial{\vec{r}_i}{t}\right) = \ffpartial{\dot{\vec{r}}_i}{q_j}$$
 Außerdem gilt
 $$\ffpartial{\vec{r}_i}{q_j} = \fpartial{\dot q_j} \sum_{l = 1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l = \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j}$$
 Damit gilt zusammenfassend
 \begin{align*}
-\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^S m_i \{ \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \} \delta q_j\\ 
-&= \sum_{i=1}^N\sum_{j=1}^S m_i \{  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \} \delta q_j \\
-&= \sum_{j = 1}^S \{ \dd{t} \fpartial{\dot{q}_j} T - \ffpartial{T}{q_j} \} \delta q_j
+\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^S m_i \left( \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \right) \delta q_j\\ 
+&= \sum_{i=1}^N\sum_{j=1}^S m_i \left(  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \right) \delta q_j \\
+&= \sum_{j = 1}^S \left( \dd{t} \fpartial{\dot{q}_j} T - \ffpartial{T}{q_j} \right) \delta q_j
 \end{align*}
 Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2$ die "`Kinetische Energie"'
 und damit gilt mit dem d'Alembertsches Prinzip
@@ -403,7 +403,7 @@ $$\forall j:  \dd t ( \ffpartial{T}{\dot{q}_j}) - \ffpartial{T}{q_j} - Q_j = 0$$
 
 \paragraph{Konservatives System}
 In einem konservativen System ist die Kraft $Q_j$ auf ein Potential $V_j$ zurückzuführen. Das Potential V, und damit auch die generalisierte Kraft $Q_j = - \ffpartial{V}{q_j}$, ist unabhängig von der Geschwindigkeit $\dot{q}_j$. Anders ausgedrückt gilt
-$$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \{  \dd{t} \fpartial{\dot{q}_j} (T-V) - \fpartial{q_j} (T -V) \} \delta q_j = 0$$
+$$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \left(  \dd{t} \fpartial{\dot{q}_j} (T-V) - \fpartial{q_j} (T -V) \right) \delta q_j = 0$$
 
 \subsubsection{Langangefunktion}
 Man kann die Gleichungen auch wie folgt schreiben, wenn man die Lagrangefunktion $L$ einführt.
