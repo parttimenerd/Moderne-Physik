@@ -246,16 +246,17 @@ Denn meist haben die Probleme eine durch Zwangsbedingungen eingeschränkte Geome
 \subsubsection{Zwangsbedingungen} 
 Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in einem (allgemeineren) System auf das vorgegebene System einschränken. Es gibt verschiedene Arten von Zwangsbedingungen:
 
-\paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind unabhängig von der Zeit, d.h. $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0, i = 1, \dots, p$$ 
+\paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind Verknüpfungen der Teilchenkoordinaten und eventuell der
+Zeit in folgender Form: $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0, i = 1, \dots, p$$ 
 Beispiel: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
 
-Holonome Zwangsbedingungen können weiter in skleronome und rheonome Zwangsbedingungen unterteilt werden:
+Holonome Zwangsbedingungen können weiter in skleronome (starre) und rheonome (fließende) Zwangsbedingungen unterteilt werden:
 
-\subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig \todo{holonom-skeleronome Zwangsbed. wirklich explizit von der Zeit abhänging?}, d.h.
+\subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} Sie sind \textbf{nicht} explizit von der Zeit abhängig, d.h.
 $$ \frac{\partial f_i}{\partial t} = 0, i = 1, \dots, p$$
 Beispiele: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
 
-\subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} Sie sind nicht explizit, sondern nur implizit von der Zeit abhängig, d.h.
+\subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
 $$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
 Beispiel: Ebene mit veränderlichem Winkel: $\frac{z}{x} - \tan{\phi(t)} = 0$
 
