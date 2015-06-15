@@ -361,16 +361,15 @@ $$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j
 
 Damit kann \circled{1}  wie folgt geschrieben werden
 $$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
-= \sum_{i=1}^N \underbrace{\sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_i} \delta q_i 
-= \sum_{i = 1}^N Q_i \delta q_i$$
-\todo{letzter Ausdruck korrekt? i und j richtig???}
+= \sum_{i=1}^N \sum_{j = 1}^S \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
+= \sum_{j=1}^S \left( \underbrace{\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_j} \right) \delta q_j
+= \sum_{j = 1}^S Q_j \delta q_j$$
 
-$Q_i$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_i$ ist nicht unbedingt Kraft, weil die Dimension von den $q_i$ selbst unklar ist. Jedoch ist die Einheit von $Q_i \cdot q_i$ natürlich die Energie.
+$Q_j$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
 
 \paragraph{Spezialfall konservative Systeme}
 Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ darstellen. Und damit gilt auch
-$$Q_i = \sum_{j = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
-\todo{i und j vertauscht???}
+$$Q_j = \sum_{i = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
 
 Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
 
