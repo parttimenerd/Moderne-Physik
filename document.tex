@@ -280,10 +280,10 @@ Hier, wie im folgenden, werden ausschließlich holonome Zwangsbedingen betrachte
 
 Die resultierenden, linear unabhängigen, \textbf{generalisierten Koordinaten} sind $q_1, \dots, q_s$. Weiterhin ist $\vec{q} = (q_1, \dots, q_S)$
 % \in \text{Konfigurationsraum}$.
-. Die generalisierten Geschwindigkeiten lassen sich daraus als $\dot{q}_1, \dots, \dot{q}_N$ ableiten. Die alten Koordinaten lassen sich als Funktion der generalisierten Koordinaten beschreiben: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$.
+. Die generalisierten Geschwindigkeiten lassen sich daraus als $\dot{q}_1, \dots, \dot{q}_N$ ableiten. Die ursprünglichen Koordinaten lassen sich als Funktion der generalisierten Koordinaten beschreiben: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$.
 
 \paragraph{Bemerkung}
-Sofern als Anfangsbedingungen $\vec{q}_0, \dotvec{q}_0$ gegeben sind, ist der Zustand des beschränkten Systems zu jedem zu jedem Zeitpunkt bekannt. Anders ausgedrückt: Damit kann man eine Lösung des ursprünglichen Problems finden. Zwar sind die verallgemeinerten Koordinaten selbst nicht eindeutig, wohl aber ihre Anzahl.
+Sofern als Anfangsbedingungen $\vec{q}_0, \dotvec{q}_0$ gegeben sind, ist der Zustand des beschränkten Systems zu jedem Zeitpunkt bekannt. Anders ausgedrückt: Damit kann man eine Lösung des ursprünglichen Problems finden. Zwar sind die verallgemeinerten Koordinaten selbst nicht eindeutig, wohl aber ihre Anzahl.
 
 Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufig bekannten Dimensionen oder Einheiten besitzen. Damit sind sie zwar einfacher in der Verwendung aber eventuell weniger anschaulich.
 \paragraph{Beispiele}
@@ -306,11 +306,11 @@ Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Die verallgemeinerten Koordinaten k
 
 \subsection{Das d'Alembertsche Prinzip}
 
-\subsubsection{Ziel} Das Ziel dieses Prinzips is die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
+\subsubsection{Ziel} Das Ziel dieses Prinzips ist die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
 
 %Vor Elimination der Zwangskräfte \conseq Definition. Dazu
 
-\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normales Differential, die tatsächliche/reale Koordinatenänderung.
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, die tatsächliche/reale Koordinatenänderung.
 
 \begin{beispiel*}[Teilchen im Aufzug]
 Weil der zurückgelegte Weg auch als $\delta x = v_0 \cot \Delta t$ dargestellt werden kann gilt
@@ -324,7 +324,7 @@ die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z
 $$\delta W = - \vec{F} \delta \vec{r}$$
 Wenn man darin die obere Gleichung als $\vec{F}_i = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ einsetzt folgt
 $$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
-\todo{kären, wie es zur Formel kommt}
+\todo{klären, wie es zur Formel kommt}
 Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn gilt $\delta W = \sum_i \vec{K}_i \delta \rvec_i$.
 
 \paragraph{Prinzip der virtuellen Arbeit}
