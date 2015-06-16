@@ -1054,7 +1054,7 @@ $$\vec{q} = (q_1, \dots, q_s) \text{~und~} \vec{p} = (p_1, \dots, p_s) \text{\te
 \conseq Phasenraumpunkt $\vec{\pi} = (q_1, \dots, q_s, p_1, \dots, p_s)$
 beim harmonischen Oszillator
 $$\frac{p^2}{2 m E} + \frac{q^2}{\frac{2 E}{m \omega_0^2}} = 1$$
-Daraus kann man die Halbachsen 
+Daraus kann man die folgende Halbachsen bestimmen
 \begin{align*}
 A &= \sqrt{\frac{2 E}{m \omega_0^2}}  &   B &= \sqrt{2 m E}
 \end{align*}
@@ -1139,7 +1139,7 @@ Weiter mit dem Phasenraumfunktionen für unterschiedliche kanonisch konjugierte 
 $F$, $G$; $\vec{q}$, $\vec{p}$ bzw. $\vec{Q}$, $\vec{P}$ wie oben
 \begin{align*}
 \poisson{F, G} &= \sum_{j=1}^{s} (\ffpartial{F}{q_j} \ffpartial{G}{p_i} - \ffpartial{F}{p_i} \ffpartial{G}{q_j})
-\intertext{Jetzt wird angenommen, dass $G = G(\vec{Q}, \vec{P})$ gilt, dass also $G$ von $\vec{P}$ und $\vec{Q}$ abhängig ist.}
+\intertext{Jetzt wird angenommen, dass $G = G(\vec{Q}, \vec{P})$ gilt. Also $G$ von $\vec{P}$ und $\vec{Q}$ abhängig ist.}
 &= \sum_{l,j=1}^{s} (\ffpartial{F}{q_i} (\ffpartial{G}{Q_l} \ffpartial{Q_l}{p_j} + \ffpartial{G}{P_l} \ffpartial{P_l}{p_j})  - \ffpartial{F}{p_j} (\ffpartial{G}{Q_l} \ffpartial{Q_l}{q_j} + \ffpartial{G}{P_l} \ffpartial{P_l}{q_j}))\\
 &= \sum_{l=1}^s (\ffpartial{G}{Q_l} \poisson{F, Q_l} + \ffpartial{G}{P_l} \poisson{F, P_l})      \qquad \text{\circled{$\ast$}}
 \intertext{Speziell für $F = Q_k$ oder $F = P_k$ gilt}
@@ -1188,10 +1188,10 @@ Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quan
 \newcommand{\fihbar}{\frac{1}{i \hbar}}
 
 \section{Ausblick auf die Quantenmechanik}
-Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakte Eigenschaften der Poissonklammer, wie verstehen diese als mathematische Struktur.
+Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakte Eigenschaften der Poissonklammer, wir verstehen diese als mathematische Struktur.
 Eine Realisierung dieser Struktur ist die Poissonklammer \conseq klassische Mechanik.
 Alternativ: \textit{Quantenmechanik}
-Hier Observablen sind lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewähnlichen Vektoren. Definiere Klammer jetzt als Kommutator $[A,B] = AB - BA$
+Hier sind Observablenlineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewöhnlichen Vektoren. Definiere Klammer jetzt als Kommutator $[A,B] = AB - BA$
 als die abstrakte mathematische Struktur. Konkret können Operatoren Matrizen sein. Hier nicht Nichtkommutativität z.B. von Drehungen bekannt. "`Reihenfolge der Operatoren ist relevant"'.
 Konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Struktur wäre folgendes
 \begin{enumerate}
@@ -1214,7 +1214,7 @@ Konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Strukt
 %Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
 
 \paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme? Und wie steht es um die Invarianz/Kovarianz physikalischer Observablen und Gesetze.
-Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{speizielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationkräfte werden als Eigenschaft von Raum und Zeit beschrieben.
+Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{spezielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationkräfte werden als Eigenschaft von Raum und Zeit beschrieben.
 
 Im folgenden betrachten wir "`nur"' die spezielle Relativitätstheorie.
 Das wichtigste Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
@@ -1241,9 +1241,9 @@ Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch au
 Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
 
 \subsubsection{Michelson-Morley-Experiment}
-Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl, Morley dafür aber als erster Amerikaner 1907 den Physik Nobelpreis bekam.
+Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA, mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (bzw. dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl. Morley bekam dafür aber als erster Amerikaner 1907 den Physik Nobelpreis.
 
-\paragraph{Idee} Wir Betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \mathrm{km}\mathrm{s}^{-1}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich aus? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
+\paragraph{Idee} Wir Betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \mathrm{km}\mathrm{s}^{-1}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich ausbreitet? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
 
 \paragraph{Aufbau} vgl. \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}
 Grob zusammen gefasst, läuft das Licht, mit Wellenlänge $\lambda$, über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. Für eine konstruktive Interferenz der beiden resultierenden Lichtstrahlen muss die Wegdifferenz $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ sein.
@@ -1295,7 +1295,7 @@ $$x^{~2} = x'^2 \text{~oder~} c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2
 Die gesuchte Transformation ist die sogenannte \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich, womit wir die \textbf{spezielle Lorentztransformation} haben, welche zusammen mit einer Drehung, die allgemeine Lorentztransformation ergibt.
 
 
-Die Beziehung zwischen $x$ und $x'$ ist notwendig linear, weil nur wir nur gleichförmige und geradlinige Bewegungen betrachten.
+Die Beziehung zwischen $x$ und $x'$ ist notwendig linear, weil wir nur gleichförmige und geradlinige Bewegungen betrachten.
 $$x'^{\mu} = L^\mu_\nu x^\nu$$
 $x^\mu$ ist in dieser Schreibweise die $\mu$-te Koordinate des Vierervektors $(x^0, x^1, x^2, x^3)$  
 
@@ -1307,7 +1307,7 @@ S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& & S&=a_ib_i\\
 (\vec{a})_i &= (M\vec{b})_i &\rightarrow& & a_i &= \sum_{j=1}^3 M_{ij} b_{j} = M_{ij}b_j\\
 \vec{a} &= L M \vec{b}  &\rightarrow& & a_i &=L_{ij}M_{jk}b_k
 \end{align*}
-Vierervektoren $x^\mu, x$, mit $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiherhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
+Vierervektoren $x^\mu, x$, mit $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiterhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
 $$x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$$
 Als Konvention gilt weiterhin $\mu, \nu, \rho, \sigma \in  \{0, 1, 2, 3\}$, Index 0 ist die Zeit, $i,j,k,l \in \{1,2,3\}$ und $\cos x y = \cos(x) y$\\
 \\
@@ -1536,7 +1536,7 @@ Winkelhalbierende = Lichtkegel $\pm ct = \pm z$ und $\pm c t' = z'$
 \subsection{Zurück zur klassischen Mechanik}
 Suchen Begriffe Impuls, Kraft, Geschwindigkeit. Differentiale?
 $$\d x^\mu = (c \d t, \d x, \d y, \d z)$$
-Infitisemale Verrückung.
+Infinitesimale Verrückung.
 \conseq Invariante
 \begin{align*}
  \d s^2  &= c^2 \d t^2 (\d \vec{x})^2\\
