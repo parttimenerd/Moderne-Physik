@@ -70,6 +70,8 @@
 \newcommand{\dvp}{\dot{\vp}}
 \newcommand{\ddvp}{\ddot{\vp}}
 \renewcommand{\Re}{\mathbb{R}}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
 
 \makeatletter
 %\@removefromreset{section}{chapter}
@@ -619,7 +621,7 @@ $$L(\vec{q}(t), \dotvec{q}(t), t) = \tilde{L}(t)$$
 $$S{ \vec{q}(t) } = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
 Dimension "`Wirkung"' \conseq Energie: Zeit
 $S$ hängt von $\vec{q}(t)$ und $t_1, t_2$ ab 
-Funktion $\vec{q}(t) \xrightarrow{\text{Abbildung}} S { \vec{q}(t) }$ im allgemeinen Funktional.
+Funktion $\vec{q}(t) \xrightarrow{\text{Abbildung}} S \{ \vec{q}(t) \}$ im allgemeinen Funktional.
 
 Wir betrachten Scharen $\vec{q}(t)$ mit gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$	
 \end{definition*}
@@ -628,8 +630,8 @@ Wir betrachten Scharen $\vec{q}(t)$ mit gleichen Endpunkten $\vec{q}(t_1)$ und $
 Beim Hamiltonschen Prinzip wird nun die Bahn des Systems betrachtet und wir wollen eine extremale Bahn finden.
 
 ~\\
-Die Systembewegung erfolgt so, dass $S{\vec{q}(t)}$ für die richtige Trajektorie extremal wird, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
-$$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overset{!}{=}$$
+Die Systembewegung erfolgt so, dass $S\{\vec{q}(t)\}$ für die richtige Trajektorie extremal, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
+$$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overset{!}{=} 0$$
 
 \begin{bemerkung*}
 	Die Gleichung $\delta S = 0$ enthält auf elegante Weise die gesamte klassische Mechanik. Das Prinzip (der Minimierung der Trajektorie) wird auch jenseits der Mechanik verwendet\footnote{Zum Beispiel in der Teilchenphysik, der geometrischen Optik (Fermatsches Prizip, dabei bewegt sich Licht auf einer Bahn, so dass die benötigte Zeit minimal ist. Damit können Brechungsindizes gefunden werden.)}. Es ist natürlich koordinatenunabhängig.
@@ -637,17 +639,17 @@ $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overs
 
 \subsubsection{Äquivalenz zum Prinzip von d'Alembert}
 \begin{align*}
-\sum_{i=1}^N (m_i \ddotvec{r}_i - \vec{K}_i) \delta \vec{r} &= 0\\
+\sum_{i=1}^N (m_i \ddotvec{r}_i - \vec{K}_i) \delta \vec{r_i} &= 0\\
 \intertext{Integration über die Zeit}
-\int_{t_1}^{t_2} (\sum_{i=1}^N (m_i \ddotvec{r}_i - \vec{K}_i) \delta \vec{r}) \d t &= 0
-\intertext{mit $\ddotvec{r}_i \delta \vec{r}_i = \dd t (\dotvec{r}_i \cdot \delta \vec{r}_i) - \dotvec{r}_i \cdot \delta \dotvec{r}_i = \dd t (\dotvec{r}_i \cdot \delta \vec{r}_i) - \frac12 \delta (\dotvec{r}_i^2)$}
-\int_{t_1}^{t_2} (\sum_{i=1}^N (\dd t (m_i \dotvec{r}_i \cdot \vec{r}_i) - \frac12 m_i \delta (\dotvec{r}_i^2) - \vec{K}_i \cdot \delta \vec{r}) \d t &= 0
+\int_{t_1}^{t_2} (\sum_{i=1}^N (m_i \ddotvec{r}_i - \vec{K}_i) \delta \vec{r_i}) \d t &= 0
+\intertext{mit $\ddotvec{r}_i \delta \vec{r}_i = \dd t (\dotvec{r}_i \cdot \delta \vec{r}_i) - \dotvec{r}_i \cdot \delta \dotvec{r}_i = \dd t (\dotvec{r}_i \cdot \delta \vec{r}_i) - \frac12 \delta \dot{(\vec{\hspace{-1em}r\hspace{1em}}_i^2)}$}
+\int_{t_1}^{t_2} (\sum_{i=1}^N (\dd t (m_i \dotvec{r}_i \cdot \vec{r}_i) - \frac12 m_i \delta (\dotvec{r}_i^2) - \vec{K}_i \cdot \delta \vec{r}_i) \d t &= 0
 \intertext{Integration}
-\int_{t_1}^{t_2} \sum_{i=1}^N \dd t (m_i \dotvec{r}_i \cdot \vec{r}_i) \d t
+\int_{t_1}^{t_2} \sum_{i=1}^N \dd t (m_i \dotvec{r}_i \cdot \delta \vec{r}_i) \d t
 =  \left. \sum_{i=1}^N m_i \dotvec{r}_i \cdot \delta \vec{r}_i \right|_{t_1}^{t_2} &= 0\\
 \intertext{Keine Variation an den Endpunkten}
 \Rightarrow \int_{t_1}^{t_2} \sum_{i=1}^N [ \delta (\frac{m_i}{2} \dotvec{r}_i^2 ) + \vec{K}_i \cdot \delta \vec{r}_i ] \d t &= 0
-\intertext{mit $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, $i = 1, \dots, N$ findet man die generalisierte (holonom-konservative) Kraft und das Potential}
+\intertext{mit $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, $i = 1, \dots, N$ findet man die generalisierte Kraft und das (holonom-konservative) Potential}
 \sum_{i=1}^N \vec{K}_i \delta \vec{r}_i = \sum_{j=1}^s Q_j \delta q_j = \sum_{j=1}^{s} - \ffpartial{V}{q_j} \delta q_j &= - \delta V
 \intertext{Daraus folgt dann zusammen genommen, die Äquivalenz des Prinzips von d'Alembert und dem Hamiltonschen}
 0 = \int_{t_1}^{t_2} \delta (T-V) \d t = \delta \int_{t_1}^{t_2} (T-V) \d t = \delta \int_{t_1}^{t_2} L \d t &= 0
@@ -679,7 +681,7 @@ y_\alpha(x) &= y_0(x) + \gamma_\alpha(x)
 \intertext{$\gamma_\alpha(x)$ ist hierbei eine fast beliebige, differenzierbare Funktion, welche an den Endpunkten für alle $\alpha$ verschwindet, also 0 wird. Nach dem, wie $\gamma_\alpha$ konstruiert wurde gilt auch}
 \gamma_{\alpha = 0}(x) &= 0~~~\forall x
 \intertext{Man kann $\gamma_\alpha$ auch anders angeben: $\gamma_\alpha(x) = \alpha \eta(x), ~~~ \eta(x_1) = \eta(x_2) = 0$. $x$ wird festgehalten und dann eine Taylorreihe mit $\alpha = 0$ wie folgt entwickelt}
-\gamma_\alpha(x) &= \alpha (\ffpartial{\gamma_\alpha(x)}{\alpha})_{\alpha = 0} + \frac{\alpha^2}{2} (\frac{\partial^2 \gamma_\alpha(x)}{\partial x^2})_{\alpha = 0} + \dots
+\gamma_\alpha(x) &= \alpha (\ffpartial{\gamma_\alpha(x)}{\alpha})_{\alpha = 0} + \frac{\alpha^2}{2} (\frac{\partial^2 \gamma_\alpha(x)}{\partial \alpha^2})_{\alpha = 0} + \dots
 \intertext{Oder wieder anders}
 \gamma_\alpha(x) &= y_0(x) + \alpha(\ffpartial{y_\alpha}{\alpha})_{\alpha = 0} + \dots
 \end{align*}
@@ -687,25 +689,28 @@ y_\alpha(x) &= y_0(x) + \gamma_\alpha(x)
 $y_\alpha(x)$ wird nun in der Nähe (besser gesagt in der $\epsilon$-Umgebung) von $\alpha = 0$ variert. Daraus folgt, dass $\alpha \rightarrow \d \alpha$.
 Und damit $\delta y = y_{\d \alpha} - y_0(x) = \d \alpha (\ffpartial{y_\alpha(x)}{\alpha})_{\alpha = 0}$.
 Wird nun $\delta y$ bei festem $x$ betrachtet (vgl. virtuelle Verrückungen bei fester Zeit t. ($\delta t = 0$)) kommt man zu einer Variation des Funktionals $J\{y(x)\}$
-$$\delta J \{ y_{\d \alpha}(x) \} - J\{ y_0(x)\} = (\ddd{J(x)}{\alpha})_{\alpha = 0} \d \alpha = \int_{x_1}^{x_2} (f(x, y_{\d \alpha}, y'_{\d \alpha}) - f(x, y_0, y'_0)) \d x$$\todo{vorher Zusatz???}
+\begin{align*}
+\delta J &= J \{ y_{\d \alpha}(x) \} - J\{ y_0(x)\} = (\ddd{J(x)}{\alpha})_{\alpha = 0} \d \alpha\\
+&= \int_{x_1}^{x_2} (f(x, y_{\d \alpha}, y'_{\d \alpha}) - f(x, y_0, y'_0)) \d x
+\end{align*}
 Jetzt ist die Extremalbedingung offensichtlich
-$$(\ddd{J(\alpha)}{\alpha})_{\alpha = 0} = 0$$ für beliebige $\gamma_{\alpha}(x)$
-\conseq $y_0(x)$ eingesetzt in die gesuchte Bahn. Es ist eine stationäre Bahn genau dann, wenn $\delta J \overset{!}{=} 0$.
+$$(\ddd{J(\alpha)}{\alpha})_{\alpha = 0} = 0$$ für beliebige $\gamma_{\alpha}(x)$\\
+\conseq $y_0(x)$ eingesetzt ist die gesuchte Bahn. Es ist eine stationäre Bahn genau dann, wenn $\delta J \overset{!}{=} 0$.
 Durch einfaches Umformen folgt damit
 \begin{align*}
 (\ddd{J(\alpha)}{\alpha}) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{x} \ffpartial{y}{\alpha} + \ffpartial{f}{y'} \ffpartial{y'}{\alpha} + \ffpartial{f}{x} \ffpartial{x}{\alpha})
-\intertext{mit der Identität $\int_{x_1}^{x_2} \ffpartial{f}{y'} \ffpartial{y'}{\alpha} = \int_{x_1}^{x_2} \ffpartial{f}{y'} \dd x \ffpartial{y}{\alpha}$, $\ffpartial{y'}{\alpha} = \fpartial{\alpha} \ddd{y}{x} = \dd x \ffpartial{y}{\alpha}$ und partieller Integration folgt}
-&= \underbrace{\left. \ffpartial{f}{y'} \ffpartial{y}{\alpha} \right|_{x_1}^{x_2}}_{=0, \text{da keine Variation an den Endpunkten.}} - \int_{x_1}^{x_2} \d x (\dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha})\\
+\intertext{mit der Identität $\int_{x_1}^{x_2} \d x \ffpartial{f}{y'} \ffpartial{y'}{\alpha} = \int_{x_1}^{x_2} \d x \ffpartial{f}{y'} \dd x \ffpartial{y}{\alpha}$, $\ffpartial{y'}{\alpha} = \fpartial{\alpha} \ddd{y}{x} = \dd x \ffpartial{y}{\alpha}$ und partieller Integration folgt}
+&= \underbrace{\left. \ffpartial{f}{y'} \ffpartial{y}{\alpha} \right|_{x_1}^{x_2}}_{\hspace{-10em}=0, \text{~da keine Variation an den Endpunkten.\hspace{-10em}}} - \int_{x_1}^{x_2} \d x (\dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha}\\
 \dd \alpha J(x) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{y} - \dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha}\\
 \delta J &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{y} - \dd x \ffpartial{f}{y'}) \delta y
 \end{align*}
-$\delta J \overset{!}{=} 0$ für beliebige $\delta y$ damit verschwindet der Integrand \todo{richtig???}. Daraus folgt wieder die Eulersche Gleichung
+$\delta J \overset{!}{=} 0$ für beliebige $\delta y$ damit verschwindet der Integrand. Daraus folgt wieder die Eulersche Gleichung
 $$\ffpartial{f}{y} - \dd x \ffpartial{f}{y'} = 0$$
 Und damit eine Differentialgleichung 2. Ordnung für das gesuchte $y(x)$. (vgl. Lagrange-Gleichung 2. Art)
 
 \begin{beispiel*}[Kürzeste Verbindung zweier Punkte in der Ebene]~\\
-	Welches Funktional? (Infinitesimale Länge $\d s = \sqrt{\d x^2 \d y^2}$) Gesucht ist $\int_{p_1}^{p_2} \d s = J$\\
-	$$J = \int_{p_1}^{p_2} \d s = \int_{x_1}^{x_2} \sqrt{\d x^2 + \d y^2} = \int_{x_1}^{y_2} \sqrt{1 + (\ddd{y}{x})^2} \d x = \int_{x_1}^{x_2} \sqrt{1 + {y'}^2} \d x$$
+	Welches Funktional? (Infinitesimale Länge $\d s = \sqrt{\d x^2 + \d y^2}$) Gesucht ist $\int_{p_1}^{p_2} \d s = J$\\
+	$$J = \int_{p_1}^{p_2} \d s = \int_{x_1}^{x_2} \sqrt{\d x^2 + \d y^2} = \int_{x_1}^{x_2} \sqrt{1 + (\ddd{y}{x})^2} \d x = \int_{x_1}^{x_2} \sqrt{1 + {y'}^2} \d x$$
 	$\delta J = 0$ führt zur extremalen Bahn $y(x)$. 
 	$$ f(x, y, y') = \sqrt{1 + {y'}^2}$$
 	Nun verwenden wir die Eulergleichung: $\ffpartial{f}{y} = 0$; $\ffpartial{f}{y'} = \frac{y'}{\sqrt{1 + {y'}^2}}$ und damit folgt
@@ -720,11 +725,12 @@ Und damit eine Differentialgleichung 2. Ordnung für das gesuchte $y(x)$. (vgl. 
 \end{beispiel*}
 
 \begin{beispiel*}[Minimale Rotationsfläche]~\\
+Punkte $(x_1,y_1),(x_2,y_2)$ rotieren um $y$-Achse. Gesucht Kurve zwischen ihnen, die Rotationsfläche minimiert. (Seifenblasen-Verhalten.)
 \textit{Es wird im Grunde genommen wie beim letzten Beispiel vorgegangen} Die Minimalfläche ist
 \begin{align*}
 J &= \int \d A = \int 2 \pi x \d s
 \intertext{mit $\d s = \sqrt{\d x^2 + \d y^2} = \sqrt{1 + (\ddd{y}{x})^2} \d x = \sqrt{1 + {y'}^2} \d x$ folgt}
-&= 2 \pi \int_{x_1}^{x_2} x \sqrt{1 + {y'}^2}
+&= 2 \pi \int_{x_1}^{x_2} x \sqrt{1 + {y'}^2} \d x
 \end{align*}
 Wenn $\delta J = 0$ gilt, ist $J$ die extremale Fläche, d.h. die minimalgroße Fläche.
 Es wird nun die Funktion, besser gesagt die Variation, $f$ definiert 
@@ -734,7 +740,7 @@ f(x,y,y') &= x \sqrt{1 + {y'}^2} & \text{~\textit{mit }}y' = \ddd{y}{x}\\
 \xRightarrow[]{\text{Eulergleichung}} \dd x \frac{x y'}{\sqrt{1 + {y'}^2}} &= 0\\
 \frac{x y'}{\sqrt{1 + {y'}^2}} &= \text{konstant} = a\\
 \ddd{y}{x} &= y' = \frac{a}{\sqrt{x^2 - a^2}}\\
-y(x) &= a \text{arcosh}(\frac{x}{a}) + b & \text{~\textit{oder }} x(y) = a \cosh (\frac{y - b}{a})
+y(x) &= a \arcosh (\frac{x}{a}) + b & \text{~\textit{oder }} x(y) = a \cosh (\frac{y - b}{a})
 \end{align*}
 $a$, $b$ können mit den Anfangsbedingungen gefunden werden $(x_1, y_1)$ und $(x_2, y_2)$.\\
 Ein Hinweis am Rande: Die Kurve, welche durch den Kosinus Hyperbolicus beschrieben wird, wird auch Kettenlinie\footnote{\href{https://de.wikipedia.org/wiki/Kettenlinie_\%28Mathematik\%29}{Wikipedia}} genannt.
@@ -758,7 +764,7 @@ Das Integralprinzip (Hamilton) und das differentielle Prinzip (d'Alembert) sind 
 \textit{Das Hamiltonsche Prinzip wird ausgiebig in der Quantenmechanik verwendet. Im folgenden wird weiter auf die Hamiltonfunktion eingegangen um als Ziel sich in die Quantenmechanik zu bewegen. Es werden im speziellen Eigenschaften der Hamilton-Funktion angegeben.}
 
 \subsubsection{Erhaltungsgrößen}
-\paragraph{Allgemeines System} Die allgemeinen Koordinaten $q_i$, $\dot{q}_i$ für $i = 1, \dots, s$ sind im Laufe der Zeit veränderlich, womit es $2S$ Funktionen der Zeit gibt. Einige von diesen sind jedoch konstant\footnote{Mathematisch ausgedrückt gilt dann $F_r = F_r(q_1, \dots, q_s, \dot{q}_1, \dot{q}_s, t) = \text{konstant}$.}, was nicht Zufall sein muss.\footnote{Es ist aus offensichtlichen Gründen das Ziel, dass möglichst viele Funktionen konstant sind. Denn wie man schon im Lagrange-Teil gesehen hat, wird damit die Komplexität des Problems reduziert.}
+\paragraph{Allgemeines System} Die allgemeinen Koordinaten $q_i$, $\dot{q}_i$ für $i = 1, \dots, s$ sind im Laufe der Zeit veränderlich, womit es $2S$ Funktionen der Zeit gibt. Einige von diesen sind jedoch konstant\footnote{Mathematisch ausgedrückt gilt dann $F_r = F_r(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) = \text{konstant}$.}, was nicht Zufall sein muss.\footnote{Es ist aus offensichtlichen das Ziel, dass möglichst viele Funktionen konstant sind. Denn wie man schon im Lagrange-Teil gesehen hat, wird damit die Komplexität des Problems reduziert.}
 Diese konstanten Funktionen heißen auch \textbf{Integrale der Bewegung}.
 
 \paragraph{Im Prinzip gilt} Bei $2S$ Integralen der Bewegung $C_i$ ist das Problem gelöst, weil $q_i = q_i(C_1, \dots, C_{2S}, t)$ und damit das Problem nicht mehr dynamisch ist. Die Lösung kann dann einfach abgelesen werden.
@@ -788,11 +794,13 @@ Die generalisierten Koordinaten sind in unserem Beispiel
 	L &= \frac{M}{2} (\dot{q}_1^2 + \dot{q}_2^2 + \dot{q}_3^2) \\~&- V(q_4) + \frac{\mu}{2} (\dot{q}_4^2 + q_4^2 \dot{q}_5^2 + q_4^2 \dot{q}_6^2 \sin^2 q_5)
 	\intertext{Offensichtlich sind die Koordinaten $q_1, q_2, q_3, q_6$ zyklisch und $p_i = \ffpartial{L}{\dot{q}_i} = M \dot{q}_i$ für ($i =1, 2, 3$), also bleibt der \textit{Schwerpunktsimpuls} erhalten.}
 	\vec{p} &= M \dotvec{R} = \text{konstant}\\
-	p_6 &= \ffpartial{L}{\dot{q}_6} = \mu q_4^2 \dot{q}_6 \sin^2 q_5 = \mu \dot{\varphi} r^2 \sin^2 \vartheta = L_r^{(Z)} = \text{konstant}\\
-	\intertext{Die $z$-Komponente des Relativdrehimpulses ist ersichtlicherweise konstant\footnote{Vergleiche: Geworfenes Frisbee, dessen Drehachse relativ gesehen sich nicht verändert.\footnote{Tipp: Dies mit einer Tafelkreide zu probieren ist aufgrund des vergleichsweise geringen Impulses schlecht möglich.}}}
-	\intertext{Wenn man das Problem nun versucht in den kartesischen Koordinaten anzugehen, führt das zu folgender Langrange-Funktion}
-	L &= \frac{m_1}{2} (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
-	~&- V((x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2)
+	p_6 &= \ffpartial{L}{\dot{q}_6} = \mu q_4^2 \dot{q}_6 \sin^2 q_5 = \mu \dot{\varphi} r^2 \sin^2 \vartheta = L_r^{(Z)} = \text{konstant}
+\end{align*}
+Die $z$-Komponente des Relativdrehimpulses ist ersichtlicherweise konstant\footnote{Vergleiche: Geworfenes Frisbee, dessen Drehachse relativ gesehen sich nicht verändert.\footnote{Tipp: Dies mit einer Tafelkreide zu probieren ist aufgrund des vergleichsweise geringen Impulses schlecht möglich.}}.
+Wenn man das Problem nun versucht in den Kartesischen Koordinaten anzugehen, führt das folgender Langrange-Funktion.
+\begin{align*}
+	L =& \frac{m_1}{2} (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
+	&- V((x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2)
 	\intertext{Auch hier sind die Erhaltungssätze ebenso gültig. Sie sind aber viel schwerer abzulesen.}
 \end{align*}
 \end{beispiel*}
@@ -805,7 +813,7 @@ Das bedeutet die Invarianz der Bewegung gegenüber Zeittranslationen\footnote{Da
 \Rightarrow \vec{q}(t_1 + t) &= \vec{q}(t_2 + t)
 \end{align*}
 Daraus folgt die zeitweise Homogenität. Sie ist offenbar erfüllt, da die Lagrange-Funktion L nicht explizit von der Zeit abhängt ($\ffpartial{L}{t} = 0$). Damit bekommen wir das totale Differential
-$$\ddd{L}{t} = \sum_{j=1}^{s} (\underbrace{\ffpartial{L}{q_i}}_{\dd t \ffpartial{L}{\dot{q}_j}} \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j) + \underbrace{\ffpartial{L}{t}}_{= 0} = \sum_{j = 1}^s [ (\dd t \ffpartial{L}{\dot{q}_j}) \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j] = \dd t \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j$$
+$$\ddd{L}{t} = \sum_{j=1}^{s} (\underbrace{\ffpartial{L}{q_j}}_{\dd t \ffpartial{L}{\dot{q}_j}} \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j) + \underbrace{\ffpartial{L}{t}}_{= 0} = \sum_{j = 1}^s [ (\dd t \ffpartial{L}{\dot{q}_j}) \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j] = \dd t \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j$$
 also gilt insgesamt
 $$\dd t (L - \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j) = 0$$
 mit dem generalisiertem Impuls $p_j = \ffpartial{L}{\dot{q}_j}$ folgt die Hamiltonfunktion
@@ -818,14 +826,14 @@ $$T = \frac12 \sum_{i=1}^N m_i \dotvec{r}_i^2$$
 \textit{zur Erinnerung $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, also ist $\vec{r}_i$ unabhängig von den Geschwindigkeiten.} Es folgt weiterhin
 $$\dotvec{r}_i^2 = \{(\sum_{j=1}^s \ffpartial{\vec{r}_i}{q_j} \dot{q}_j + \underbrace{\ffpartial{\vec{r}_i}{\dot{q}_i}}_{=0} \ddot{q}_i) + \underbrace{\ffpartial{\vec{r}_i}{t}}_{=0, \text{ skleronom}}\}^2 $$
 Womit die Ortsvektoren $\vec{r}_i$ unabhängig von der Zeit sind. Nun bekommt man
-$$T = \frac12 \sum_{i=1}^N m_i \sum_{j,l=1}^{s} \ffpartial{\vec{r}_i}{q_i} \ffpartial{\vec{r}_i}{q_l} \dot{q}_j \dot{q}_j = \frac12 \sum_{j,l = 1}^{} \dot{q_j} \dot{q_l} \underbrace{\sum_{i=1}^N m_i \ffpartial{\vec{r}_i}{q_j} \ffpartial{\vec{r}_i}{q_l}}_{\alpha_{jl}} = \sum_{j,l=1}^s \alpha_{jl} \dot{q}_j \dot{q}_l = $$
-Das ist ein sogenannte "`homogene quadratische Form in $\dot{q}_j$"' von $T$.
+$$T = \frac12 \sum_{i=1}^N m_i \sum_{j,l=1}^{s} \ffpartial{\vec{r}_i}{q_i} \ffpartial{\vec{r}_i}{q_l} \dot{q}_j \dot{q}_l = \frac12 \sum_{j,l = 1}^{} \dot{q_j} \dot{q_l} \underbrace{\sum_{i=1}^N m_i \ffpartial{\vec{r}_i}{q_j} \ffpartial{\vec{r}_i}{q_l}}_{\alpha_{jl}} = \sum_{j,l=1}^s \alpha_{jl} \dot{q}_j \dot{q}_l$$
+Das ist eine sogenannte "`homogene quadratische Form in $\dot{q}_j$"' von $T$.
 Durch skalieren von $T(\dot{q}_1, \dots, \dot{q}_s)$ mit dem Faktor $a$
 $$T(a \dot{q}_1, \dots, a \dot{q}_s) = a^2 T(\dot{q}_1, \dots, \dot{q}_s)$$
 erkennt man, dass gilt
 $$\ffpartial{T}{a} = \sum_{j=1}^s \ffpartial{T}{(a \dot{q}_j)}\dot{q}_j = 2 a T$$
-womit für $a = 1, 2$ schlussendlich  gilt
-$$T = \sum_{j=1}^s \ffpartial{T}{\dot{q}_j} \dot{q}_j = \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} = \sum_{j=1}^s p_j \dot{q}_j$$
+womit für $a = 1$ schlussendlich  gilt
+$$ 2 T = \sum_{j=1}^s \ffpartial{T}{\dot{q}_j} \dot{q}_j = \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} = \sum_{j=1}^s p_j \dot{q}_j$$
 Mit dieser Erkenntnis kann man nun die Hamiltonfunktion umformen zu
 $$H = \sum_{j=1}^s p_j \dot{q}_j - L = 2T - L = 2 T - (T-V) = T + V = E$$
 Damit kann man die Hamiltonfunktion als Gesamtenergie des Systems interpretieren.
@@ -865,7 +873,7 @@ $\frac{\partial \vec r_i}{\partial q_j}$ analog zum Impuls \todo{???}. Für den 
 
 \begin{align*}
 	p_j &= \frac{\partial L}{\partial \dot q_j} = \sum\limits_{i=1}^Nm_i \dot {\vec r}_i \cdot \frac{\partial \vec r_i}{\partial q_j}\\
-	\Rightarrow p_j &= \sum\limits_{i_1}^N m_i \dot {\vec r}_i \cdot (\vec n_j \times \vec r_i) = \vec n_j \sum\limits_{i=1}^N m_i (\vec r_i \times \dot {\vec r}_i)\\
+	\Rightarrow p_j &= \sum\limits_{i=1}^N m_i \dot {\vec r}_i \cdot (\vec n_j \times \vec r_i) = \vec n_j \sum\limits_{i=1}^N m_i (\vec r_i \times \dot {\vec r}_i)\\
 	p_j &= \vec n_j \sum\limits_{i=1}^N r_i \times (m_i\dot{\vec r}_i) \equiv \vec n_j \sum\limits_{i=1}^N \vec L_i = \vec n_j \cdot \vec L
 \end{align*}
 Hierbei ist
@@ -884,7 +892,7 @@ Der Ausgangspunkt ist offensichtlich die Lagrangemechanik. Jetzt wird $(\vec q, 
 
 Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
 \[\text{Lagrange}\to\text{Hamilton}\]
-\[\text{$S$ Differentialgleichungen 2. Ordnung}\to\text{$2S$ Differentialgleichungen 1. Ordung}\]
+\[\text{$S$ Differentialgleichungen 2. Ordnung}\to\text{$2S$ Differentialgleichungen 1. Ordnung}\]
 \[\text{$2S$ Anfangsbedingungen}\to\text{$2S$ Anfangsbedingungen}\]
 Der Übergang von $q_j$ nach $p_j$ geschieht per Legendre-Transformation, die im folgenden kurz erklärt wird.
 \subsubsection{Legendre - Transformation} \textit{als mathematisches Werkzeug}\\
@@ -893,7 +901,7 @@ Sei $f(x)$ eine Funktion mit $\md f = \frac{\md f}{\md x} \md x = u \md x$ und $
 \md f &= u\md x = \md (ux) - x\md u\\
 \md (f-ux) &= - x \md u\\
 \Rightarrow \frac{\md}{\md u}(f-xu) &= -x\\
-g(u) = f(x) - ux = f(x) - x\frac{\md f(x)}{\md x}
+g(u) &= f(x) - ux = f(x) - x\frac{\md f(x)}{\md x}
 \end{align*}
 $g(u)$ ist jetzt die Legendre - Transformierte von $f(x)$.
 	
@@ -936,18 +944,18 @@ Zuerst berechnen wir $\d H$ in dem wir das totale Differential von $\sum_{i=1}^s
 \d H &= \sum\limits_{i=1}^S(\frac{\partial H}{\partial p_i}\md p_i + \frac{\partial H}{\partial q_i}\md q_i) + \frac{\partial H}{\partial t}\md t\\
 \end{align*}
 Jetzt sind aber $q_i$, $p_i$ und $t$ unabhängige Variablen und mit Hilfe eines Koeffizientenvergleichs, findet man die Bewegungsgleichungen
-\[\dot q_i = \frac{\partial H}{\partial p_i}\qquad \dot p_i = \frac{\partial H}{\partial q_i} \qquad -\frac{\partial L}{\partial t} = \frac{\partial H}{\partial t}\]
+\[\dot q_i = \frac{\partial H}{\partial p_i}\qquad \dot p_i = - \frac{\partial H}{\partial q_i} \qquad -\frac{\partial L}{\partial t} = \frac{\partial H}{\partial t}\]
 Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Gleichungen} genannt.
 
 \begin{bemerkung*}
-	$2S$ Differentialgleichung für die $q_i$ und $p_i$.
+	$2S$ Differentialgleichungen für die $q_i$ und $p_i$.
 	\begin{itemize}
 		\item Bewegung des Systems im Raum der $q_i$, $p_i$ \conseq \textbf{Phasenraum}
 		\item bei skleronomen Zwangsbedingungen $H = T + V = E$ \textit{Gesamtenergie des Systems}
 	\end{itemize}
 \end{bemerkung*}
 \begin{align*}
-	\ddd{H}{t} &= \sum_{j=1}^{s} (\ffpartial{H}{q_j} + \dot{q}_j + \ffpartial{H}{p_j} \dot{p}_j) + \ffpartial{H}{t}\\
+	\ddd{H}{t} &= \sum_{j=1}^{s} (\ffpartial{H}{q_j} \dot{q}_j + \ffpartial{H}{p_j} \dot{p}_j) + \ffpartial{H}{t}\\
 	&= \sum_{j=1}^{s} \underbrace{(\ffpartial{H}{q_j} \ffpartial{H}{p_j} - \ffpartial{H}{p_j} \ffpartial{H}{p_j})}_{=0}+ \ffpartial{H}{t}\\
 	&= \ffpartial{H}{t} = - \ffpartial{L}{t}
 \end{align*} 
@@ -966,13 +974,13 @@ $H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q
 	\item Generalisierte Koordinaten festlegen $\vec{q} = (q_1, \dots, q_s)$
 	\item Transformationsgleichungen aufstellen $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
 	\item Kinetische und potentielle Energie in Teilchenkoordinaten formulieren \conseq dann generalisierte Koordinaten.
-	$$L(\vec{q}, \dotvec{q}, t) = t(\vec{q}, \dotvec q,t  - V(\vec{q}, t))$$
+	$$L(\vec{q}, \dotvec{q}, t) = T(\vec{q}, \dotvec q,t)  - V(\vec{q}, t)$$
 	\item Generalisierte Impulse berechnen
 		$$p_j = \ffpartial{L}{\dot{q}_j} \Rightarrow p_j = p_j(\vec{q}, \dotvec{q}, t)$$
 	\item Lösen für $\dot{q}_j$
 	$$\dot{q}_j = \dot{q}_j (\vec{q}, \vec{p}, t)$$
 	\item Lagrange-Funktion
-	$$l(\vec{q}, \dotvec{q}(\vec{q}, \vec{p}, t), t) = \tilde{L}(\vec{q}, \vec{p}, t)$$
+	$$L(\vec{q}, \dotvec{q}(\vec{q}, \vec{p}, t), t) = \tilde{L}(\vec{q}, \vec{p}, t)$$
 	\item Legendre-Transformation
 	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
 	\item Kanonische (Hamiltonsche) Gleichungen aufstellen und lösen
@@ -980,49 +988,49 @@ $H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q
 \end{enumerate}
 
 \begin{beispiel*}[2D-Fadenpendel]
-	\textit{Schritt 1} Zwangsbedingungen: $z = \const = 0$ und $x^2 + y^2 = l = \const$ \conseq $S = 1$ Freiheitsgrade, $p = \varphi$	
-	\textit{Schritt 2}
-	\begin{align*}
+\textit{Schritt 1} Zwangsbedingungen: $z = \const = 0$ und $x^2 + y^2 = l^2 = \const$ \conseq $S = 1$ Freiheitsgrade, $q = \varphi$
+\textit{Schritt 2}
+\begin{align*}
 	x &= l \sin \varphi
-	\end{align*}
-%	\begin{align*}
-%	x &= l \sin \vp\\
-%	y &= l \cos \vp\\
-%	\dot{x} &= l \dot{q} \cos q\\
-%	\dot{y} &= -l \dot{q} \sin q
-%	\intertext{\textit{Schritt 3}}
-%	T &= \frac12 (\dot{x}^2 + \dot{y}^2) = \frac{1}{2} m l^2 \dot{q}^2\\
-%	V &= - mg y = -mgl\cos q 
-%	L & T -V = \frac{1}{2} m l^2 \dot{q}^2 + mgl\cos q\\
-%	\intertext{generalisierter Impuls}
-%	p = \ffpartial{L}{\dot{q}} = m l^2 \dot{q} \rightarrow \dot{q} = \frac{p}{m l^2}
-%	\intertext{$L$ mit $\dot{q} \rightarrow p$}
-%	\tilde{L}(q, p) = \frac{p^2}{2 m l^2} + mgl\cos q
-%	\intertext{H aus Legendretransformation}
-%	H = p \dot{q} - L = \frac{p^2}{m l^2} - m g l \cos q\\
-%	&=  \frac{p^2}{2 ml^2} - mgl \cos q
-%	\intertext{Kanonische Bewegungsgleichungen:}
-%	\dot{q} = \ffpartial{H}{p} = \frac{p}{m l^2}\\
-%	\dot{p} = - \ffpartial{H}{q} = - mgl \sin q
-%	\intertext{System von $2S = 2$ gekoppelten Differentialgleichungen 1. Ordnung}
-%	\intertext{Lösen z.B. per Differentiation}
-%	\dd t \dot{q} &= \ddot{q} = \frac{\dot{p}}{ml^2} \overset{\text{$\vec{p}$ einsetzen}{=} - \frac{g}{l} \sin q
-%		\intertext{die bekannte Differentialgleichung des Fadenpendels}
-%		\intertext{Als System 1. Ordnung}
-%		\dot{q} = \frac{p}{ml^2}\\
-%		\dot{p} = - mgl \sin q \overset{\sin q \approx q \text{~für~} q \ll 1}{=} - mgl q\\
-%		\dd t \binom{q}{p} &= \underbrace{\begin{pmatrix}
-%			0 & \frac{1}{ml^2}\\ - mgl & 0
-%			\end{pmatrix}}_{M} \binom{q}{p}
-%		\intertext{$M$ diagonalisieren \conseq Transformation $U$}
-%		\dd t U\binom{q}{r} &= U M U^{-1} U \binom{q}{p}\\
-%		\dd t \binom{x_1}{x_2} = \begin{pmatrix}
-%		\lambda_1 & 0\\ 0 & \lambda_2
-%		\end{pmatrix} \binom{x_1}{x_2}
-%		\intertext{System entkoppelt}
-%		\conseq \dot{x}_i(t) = \lambda_i x_i(t) \cong x_i(t) = A e^{\lambda_i t}
-%		\intertext{Lösung bei linearen System klar. Bei allgemeinem System numerisch gut zu handhaben\footnote{Vgl. Runge-Kutta-Verfahren}.}		
-%		\end{align*}
+\end{align*}
+\begin{align*}
+	x &= l \sin \vp\\
+	y &= l \cos \vp\\
+	\dot{x} &= l \dot{q} \cos q\\
+	\dot{y} &= -l \dot{q} \sin q
+	\intertext{\textit{Schritt 3}}
+	T &= \frac12 m (\dot{x}^2 + \dot{y}^2) = \frac{1}{2} m l^2 \dot{q}^2\\
+	V &= - mg y = -mgl\cos q \\
+	L &= T -V = \frac{1}{2} m l^2 \dot{q}^2 + mgl\cos q\\
+	\intertext{generalisierter Impuls}
+	p = \ffpartial{L}{\dot{q}} = m l^2 \dot{q} \rightarrow \dot{q} = \frac{p}{m l^2}
+	\intertext{$L$ mit $\dot{q} \rightarrow p$}
+	\tilde{L}(q, p) = \frac{p^2}{2 m l^2} + mgl\cos q
+	\intertext{H aus Legendretransformation}
+	H = p \dot{q} - L = \frac{p^2}{m l^2} - \frac{p^2}{2ml^2} - m g l \cos q\\
+	&=  \frac{p^2}{2 ml^2} - mgl \cos q
+	\intertext{Kanonische Bewegungsgleichungen:}
+	\dot{q} = \ffpartial{H}{p} = \frac{p}{m l^2}\\
+	\dot{p} = - \ffpartial{H}{q} = - mgl \sin q
+	\intertext{System von $2S = 2$ gekoppelten Differentialgleichungen 1. Ordnung}
+	\intertext{Lösen z.B. per Differentiation}
+	\dd t \dot{q} &= \ddot{q} = \frac{\dot{p}}{ml^2} \overset{\text{$\vec{p}$ einsetzen}}{=} - \frac{g}{l} \sin q
+		\intertext{die bekannte Differentialgleichung des Fadenpendels}
+	\intertext{Als System 1. Ordnung}
+	\dot{q} = \frac{p}{ml^2}\\
+	\dot{p} &= - mgl \sin q \overset{\sin q \approx q \text{~für~} q \ll 1}{=} - mgl q\\
+	\dd t \binom{q}{p} &= \underbrace{\begin{pmatrix}
+		0 & \frac{1}{ml^2}\\ - mgl & 0
+		\end{pmatrix}}_{M} \binom{q}{p}
+	\intertext{$M$ diagonalisieren \conseq Transformation $U$}
+	\dd t U\binom{q}{p} &= U M U^{-1} U \binom{q}{p}\\
+	\dd t \binom{x_1}{x_2} = \begin{pmatrix}
+	\lambda_1 & 0\\ 0 & \lambda_2
+	\end{pmatrix} \binom{x_1}{x_2}
+	\intertext{System entkoppelt}
+	\rightarrow \dot{x}_i(t) = \lambda_i x_i(t) \cong x_i(t) = A e^{\lambda_i t}	
+\end{align*}
+Lösung bei linearen System klar. Bei allgemeinem System numerisch gut zu handhaben\footnote{Vgl. Runge-Kutta-Verfahren}.
 \end{beispiel*}
 
 
@@ -1036,19 +1044,19 @@ Unterschiedliche Räume (auch am Beispiel des harmonischen Oszillators).
 harmonischer Oszillator im Konfigurationsraum ohne zeitliche Information.
 
 \subsubsection{Ereignisraum}
-$$\vec{q} = (q_1, \dots, q_s) \text{~und~} t \text{\textit{\qquad S dimensional}}$$
+$$\vec{q} = (q_1, \dots, q_s) \text{~und~} t \text{\textit{\qquad S + 1 dimensional}}$$
 \conseq Bahn $\vec{q}(t)$ aus $2S$ Anfangsbedingungen. \textit{Wo ist der Harmonische Oszillator zur Zeit $t$.}\\
 
 Im Hamiltonformalismus:
 
 \subsubsection{Phasenraum}
-$$\vec{q} = (q_1, \dots, q_s) \text{~und~} \vec{p} = (p_1, \dots, p_s) \text{\textit{\qquad S dimensional}}$$
+$$\vec{q} = (q_1, \dots, q_s) \text{~und~} \vec{p} = (p_1, \dots, p_s) \text{\textit{\qquad 2 S dimensional}}$$
 \conseq Phasenraumpunkt $\vec{\pi} = (q_1, \dots, q_s, p_1, \dots, p_s)$
 beim harmonischen Oszillator
 $$\frac{p^2}{2 m E} + \frac{q^2}{\frac{2 E}{m \omega_0^2}} = 1$$
 Daraus kann man die Halbachsen 
 \begin{align*}
-t &= \frac{2 E}{m \omega_0^2}  &   B &= \sqrt{2 m E}
+A &= \sqrt{\frac{2 E}{m \omega_0^2}}  &   B &= \sqrt{2 m E}
 \end{align*}
 Dies Halbachsen bilden eine Ellipse bei fester Energie $E$.\\
 Ein Punkt $\vec{q}$ im Konfigurationsraum reicht aber nicht aus, um das System vollständig zu beschreiben man benötigt hierfür noch Impulse, also den Phasenraum.
@@ -1083,14 +1091,14 @@ Im folgenden eine Diskussion weiterer formaler Eigenschaften\footnote{der klassi
 \begin{align*}
 	\ddd{f}{t} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \dot{q}_j + \ffpartial{f}{p_j} \dot{p}_j) + \ffpartial{f}{t}
 \intertext{nun setzt man die Hamiltonschen Gleichungen ein und erhält}
-\ddd{f}{t} &= \sum_{j=1}^s\underbrace{(\ffpartial{f}{q_j} \ffpartial{H}{p_j} + \ffpartial{f}{p_j} \ffpartial{H}{q_j})}_{\{f, H\}_{\vec{q}, \vec{p}}} + \ffpartial{f}{t}
+\ddd{f}{t} &= \sum_{j=1}^s\underbrace{(\ffpartial{f}{q_j} \ffpartial{H}{p_j} - \ffpartial{f}{p_j} \ffpartial{H}{q_j})}_{\{f, H\}_{\vec{q}, \vec{p}}} + \ffpartial{f}{t}
 \intertext{Wenn nun $f(\vec{q}, \vec{p}, t)$ und $g(\vec{q}, \vec{p}, t)$ zwei skalare Funktionen sind, gilt allgemein, dass}
-\{f, g\}_{\vec{q}, \vec{p}} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} + \ffpartial{f}{p_j} \ffpartial{g}{q_j})
+\{f, g\}_{\vec{q}, \vec{p}} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} - \ffpartial{f}{p_j} \ffpartial{g}{q_j})
 \intertext{die Poisson-Klammer von $f$ und $g$ ist. Jetzt kann die Bewegungsgleichung auch wie folgt geschrieben werden}
 \ddd{f}{t} &= \{f, H\}_{\vec{q}, \vec{p}} + \ffpartial{f}{t}
 \intertext{Es gibt ein paar Spezialfälle}
-\dot{q}_j &= \poisson{q, H}\\
-\dot{p}_j &= \poisson{p, H}
+\dot{q}_j &= \poisson{q_j, H}\\
+\dot{p}_j &= \poisson{p_j, H}
 \intertext{Interessant ist weiterhin}
 \poisson{q_i, q_j} &= \sum_{k=1}^s (\ffpartial{q_i}{q_k} \underbrace{\ffpartial{q_i}{p_k}}_{=0} - \underbrace{\ffpartial{q_i}{p_k}}_{=0} \ffpartial{q_j}{q_k}) = 0\\
 \poisson{p_i, p_k} &= \sum_{k=1}^s (\underbrace{\ffpartial{p_i}{q_k}}_{=0} \ffpartial{p_i}{p_k} - \ffpartial{p_i}{p_k} \underbrace{\ffpartial{p_i}{q_k}}_{=0}) = 0\\
@@ -1124,7 +1132,7 @@ Untersuche hierfür
 \end{align*}
 Per Koeffizientenvergleich folgt mit den vorher angegebenen Gleichungen 
 \begin{align*}
-	\poisson{Q_i, Q_l} &= 0 & \poisson{Q_i, P_l} &= \delta{il}
+	\poisson{Q_i, Q_l} &= 0 & \poisson{Q_i, P_l} &= \delta_{il}
 \end{align*}
 Ein ähnliche Rechnung für $\dot{P}_j$ führt zu $\poisson{P_i, P_l} = 0$. Damit gelten die fundamentalen Klammern auch für andere kanonisch konjugierte Variablen \footnote{Sie erfüllen die Hamiltonschen Gleichungen. Vgl. \href{http://www.chemgapedia.de/vsengine/glossary/de/kanonisch_00032konjugierte_00032variable.glos.html}{ChemgaPedia}}.
 Weiter mit dem Phasenraumfunktionen für unterschiedliche kanonisch konjugierte Variablen
@@ -1137,8 +1145,7 @@ $F$, $G$; $\vec{q}$, $\vec{p}$ bzw. $\vec{Q}$, $\vec{P}$ wie oben
 \intertext{Speziell für $F = Q_k$ oder $F = P_k$ gilt}
 	\poisson{Q_k, G} &= \sum_{l=1}^s (\ffpartial{G}{Q_l} \underbrace{\poisson{Q_k, Q_l}}_{=0} + \ffpartial{G}{P_l} \underbrace{\poisson{Q_k, P_l}}_{\delta_{kl}})\\
 	&= \ffpartial{G}{P_k} = - \poisson{G, Q_k}\\
-	\poisson{P_k, G} &= \sum_{j=1}^{s} \ffpartial{G}{Q_l} \underbrace{\poisson{P_k, Q_l}}_{= - \delta_{kl}} + \ffpartial{G}{P_l} \underbrace{\poisson{P_k, P_l}}_{=0}
-	\intertext{- ??}
+	\poisson{P_k, G} &= \sum_{j=1}^{s} \ffpartial{G}{Q_l} \underbrace{\poisson{P_k, Q_l}}_{= - \delta_{kl}} + \ffpartial{G}{P_l} \underbrace{\poisson{P_k, P_l}}_{=0} = - \ffpartial{G}{Q_k} = - \{G, P_k\}
 	\intertext{Die Poisson-Klammer ist antisymmetrisch}
 	\poisson{f, g} &= \sum_{l=1}^s \ffpartial{f}{q_l} \ffpartial{g}{p_l} - \ffpartial{f}{p_l} \ffpartial{q}{q_l} = - (\sum_{l = 1}^s \ffpartial{f}{p_l} \ffpartial{q}{q_l} - \ffpartial{f}{q_l} \ffpartial{g}{p_l}) = \poisson{g, f}\\
 	&= - \ffpartial{G}{Q_k} = - \poisson{G, P_k}
@@ -1157,7 +1164,7 @@ $$\{F, G\}_{\vec{q}, \vec{p}} = \{F, G\}_{\vec{Q}, \vec{P}} = \{F, G\}$$
 Die Poissonklammer kann auch als algebraisches Konstrukt mit den folgenden Eigenschaften betrachtet werden 
 \begin{description}
 	\item[Linerarität] $\{c_1 f_1 + c_2 f_2, g\} = c_1 \{f_1, g\} + c_2 \{f_2, g\}$ ($c_1$, $c_2$ konstant)
-	\item[Antisymmetrie] $\{f, g\} = - \{g, f\}$ \conseq ${f, f} = 0$
+	\item[Antisymmetrie] $\{f, g\} = - \{g, f\}$ \conseq $\{f, f\} = 0$
 	\item[Nullelement] $\{c, f\} = 0$, $f=f(\vec{q}, \vec{p})$; $c = \const$
 	\item[Produktregel] $\{f, g h\} = g \{f, h\} + \{f, g\} h$
 	\item[Jacobi-Identität] $\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$
@@ -1598,21 +1605,97 @@ Masse ist Lorentzskalar. Ändert sich nicht.
 
 \chapter{Quantenmechanik}
 \section{historische Experimente und Widersprüche}
-\subsection{Hohlraumstrahlung} (Wärmestrahlung, Schwarzkörperstrahlung)
-Idealisierter Raum, Wände bei Temperatur $T$. Strahlung wird im Gleichgewicht ständig von den Wänden gleichermaßen emmittiert und absorbiert. Körper hat keine besonderen Eigenschaften (schwarz). Beobachtung der Strahlung durch ein kleines Loch. Erklärung des Spektrums $\ddd{E}{\nu} = w_\nu$ ($\nu$ Frequenz des Lichts) = "`Verteilung von Frequenzen $\nu$ des Lichts"'.
-\conseq Abhängigkeit desselben von der Temperatur bereitete Probleme.
+\subsection{Hohlraumstrahlung} Die Hohlraumstrahlung ist auch als Wärmestrahlung oder Schwarzkörperstrahlung bekannt. Sie wird von einem idealisierten Raum, dessen Wände die Temperatur haben $T$, im Gleichgewicht ständig von den Wänden gleichermaßen emittiert und absorbiert. Der Raum/Körper hat keine besonderen Eigenschaften (d.h. er ist schwarz). Man beobachtet die Strahlung durch ein kleines Loch in einer der Raumwände. Es geht nun darum, eine Erklärung des beobachteten Spektrums $\ddd{E}{\nu} = w_\nu$ ($\nu$ Frequenz des Lichts) = "`Verteilung von Frequenzen $\nu$ des Lichts"' zu finden. Die Abhängigkeit derselben von der Temperatur bereitetet dabei viele Probleme.
 
-\paragraph{korrekte Folgerungen aus der klassischen Thermodynamik}
+\paragraph{Folgerungen aus der klassischen Thermodynamik}
+Mithilfe der klassischen Thermodynamik
 $$w_\nu = f(\nu, T) \text{\qquad Kirchhoff}$$
 $f(\nu, T)$ universelle Funktion, unabhängig von Wänden, etc.\\
 \textbf{Wiensches Gesetz}
 $$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
 Energiegehalt des Spektrums
 \begin{align*}
-	\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^2 g(\frac{\nu}{T}) \d v\\
+	\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^3 g(\frac{\nu}{T}) \d v\\
 	&= T^4 \int_0^\infty x^3 g(x) \d x = \alpha T^4 \text{\qquad Stefan-Boltzmann-Gesetz}
 \end{align*}
-\todo{$\nu^3$ oder $\nu^2$?}
+Maximum der Energieverteilung  $\frac{\nu_\text{max}}{T} = \const$
+\conseq $\lambda_\text{max} \cdot \nu_\text{max} = c$ \conseq $\lambda_\text{max} \cdot T = \const$\\
+Temperatur steigt ??????????? schwarz \conseq $\underset{\xrightarrow{\text{Temperatur}}}{\text{rotglühend}}$ \conseq weiß\\
+
+Berechnung (Versuch) von $g(\frac{\nu}{T})$ in der klassischen Physik\\
+Annahme: im Hohlraum bilden sich stehende Wellen aus, im thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ Energie ($k_B =$ Boltzmann-Konstante).
+\conseq Abzählen der stehenden Wellen im Hohlraum:
+Hohlraum = Würfel mit Kantenlänge $a$. \conseq $\frac{\lambda}{2}\cdot n = a \cos \alpha$ in einer Richtung ($n = 1, 2, 3, \dots$) $\hat =$ für $y$- und $z$-Richtung: $n_1, n_2, n_3 = 0, 1, \dots$
+$$n_1 = \frac{2 a \cos \alpha_1}{\lambda}; n_2 = \frac{2 a \cos \alpha_2}{\lambda}; n_3 = \frac{2 a \cos \alpha_3}{\lambda}$$
+$$\vec{u} = (\cos \alpha_1, \cos \alpha_2, \cos \alpha_3); u^2 = 1$$
+$$n_1^2 + n_2^2 + n_3^2 = (\frac{2a}{\lambda})^2 = (\frac{2 a \nu}{c})^2$$
+$\rightarrow \nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen\\
+stehende Wellen im Hohlraum.\\
+Frequenzraum ist kubisches Gitter mit Kantenlänge $\frac{c}{2a}$. Frequenzen zischen 0 und $nu$\\
+$\frac{\text{Kugel mit Radius~}\nu}{\text{Volumen / Punkt}}$\\
+$N(\nu) = \frac{\frac18 \frac{4\pi}{3} \nu^3}{(\frac{c}{2a})^3} = \frac18 \frac{4\pi}{3} (\frac{2a}{c}\nu)^3$\\
+$\d N(\nu) = 4 \pi a^3 \frac{\nu^2}{c^3} \d \nu$ \conseq Anzahl der Frequenzen zischen $\nu$ und $\nu + \d \nu$. Spektrale Dichte der Zustände mit $\frac12 k_B \cdot \underbrace{2}_{\text{E + B - Feld}} \cdot \underbrace{2}_{\text{Polarisierungen}} = 2 k_B T$\\
+Energie / Volumen $a^3$
+\begin{align*}
+	W_\nu \d \nu &= 8 \pi \frac{\nu^2}{c^3} k_B T \d \nu\\
+	&= 8 \pi \frac{\nu^3}{c^3} k_B \frac{T}{\nu} \d \nu\\
+	\rightarrow g(\frac{\nu}{T}) &= 8 \pi \frac{k_B}{c^3} \frac{T}{\nu}
+\end{align*}
+(Rayleigh-Jeans-Gesetz)\\
+Alternatives (phänomenologisches Gesetz (Wien)
+$$g(\frac{\nu}{T}) = a e^{- b \frac{\nu}{T}}$$
+Wir suchen eine Interpolation der Daten.\\
+Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ \textbf{Ultraviolettkatastrophe}\\
+Ausweg: \textbf{Plancksche Strahlungsformel}\\
+Austausch zwischen Strahlung und Wand mit linearen Oszillatoren in der Wand.\\
+(klassisch): Jede Energie der Oszillatoren erlaubt.\\
+\textbf{Planck} Nur $E_n = n \cdot \epsilon_0, n = 0, 1, 2, \dots$ erlaubt (Quantenhypothese). Die Atome in der Wand können also nur diskrete Energiewerte $\Delta E = m \cdot e_0 \qquad (m = 0, \pm 1, \pm 2, \dots)$ aufnehmen und abgeben. \emph{Krasser Gegensatz zur klassischen Physik}. Jetzt insgesamt $N$ Oszillatoren in der Wand. $N(n)$ im Zustand $E = n \cdot \epsilon_0$. $N = \sum_{n=1}^{\infty} N(n)$, $E = \sum_{n=0}^{\infty} N(n) n \epsilon_0$.\\
+Mittlere Energie pro Freiheitsgrad $\hat \epsilon$:
+$$\hat \epsilon = \frac{E}{N}$$
+Im thermischen Gleichgewicht $N(n) \sim e^{- \beta n \epsilon_0}$ (Boltzmann-Verteilung). $\beta = \frac{1}{k_B T}$\\
+$\hat \epsilon$ ausrechnen:
+\begin{align*}
+		\hat \epsilon &= \frac{\sum_{n=0}^\infty n \epsilon_0 e^{- \beta n \epsilon_0}}{\sum_{n=0}^\infty e^{- \beta n \epsilon_0}}  = - \dd \beta \ln (\sum_{n=0}^\infty e^{- \beta n \epsilon_0})
+\end{align*}
+$\beta, \epsilon_0 > 0 $ \conseq geometrische Reihe
+$$\sum_{n=0}^\infty e^{- \beta n \epsilon_0} = \sum_{n=0}^\infty (e^{- \beta \epsilon_0})^n = \frac{1}{1 - e^{-\beta \epsilon_0}}$$
+$$\Rightarrow \hat \epsilon = \frac{\epsilon_0}{e^{\beta \epsilon_0}} \neq \frac12 k_B T$$
+Konsequenz: ersetze $k_B T$ bei Ableitung des R-J-Gesetzes durch $\hat \epsilon$\\
+$\rightarrow W_\nu = \frac{8\pi\nu^3}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$\\
+Wien: $\nu^2 g(\frac{\nu}{T}); \epsilon_0 = h \nu$ $h \sim 10^{37} Js$ Plancksches Wirkungsquantum.\\
+$\hookrightarrow W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$ (Plancksche Strahlungsformel).\\
+Sowohl Wiens Formel, als auch $R-J-Gesetz$ als Grenzfälle enthalten
+
+$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
+k_B T & h\nu \ll k_B T\\
+h \nu e^{- \frac{h\nu}{k_B T}} & h \nu \gg k_B T
+\end{cases}$
+Integration über alle Frequenzen \conseq Stefan-Boltzmann-Gesetz
+$$W(T) = (\frac{8\pi^5}{15} \frac{k_B^4}{c^3 h^3}) T^4$$
+
+\subsection{Teilchen und Wellen}
+Phänomene, die auf den Teilchencharakter des Lichtes und auf den Wellencharakter von Teilchen hindeuten.
+
+\subsubsection{Interferenz von Lichtwellen}
+\textbf{Doppelspaltexperiment}\\
+monchromatisches Licht $\lambda$\\
+Konstruktive Interferenz wenn Gangunterschied $g = m \cdot \lambda$\\
+Destruktive Interferenz bei $g = (m - \frac12) \lambda$\\
+$\cos \alpha = \frac{m\lambda}{d}$ Maxima der Lichtintensität\\
+\conseq klarer Beweis der Wellennatur des Lichtes, siehe auch Wasser, Schall\\
+\conseq Strukturuntersuchungen
+
+\subsubsection{Photoeffekt}
+(Lichtelektrischer Effekt)
+vgl. Wikipedia
+
+Licht mit Frequenz $\nu$ trifft mit Intensität $I$ auf Material und schlägt \circled{$e^-$} heraus. Wir bremsen die Elektronen mit einer Gegenspannung $U_g$ ab.
+
+
+
+
+
+
 
 
 % % % % % % % % % %
@@ -2179,7 +2262,7 @@ Bewegungsgleichungen
 Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Gleichungen} genannt.
 
 \begin{bemerkung*}
-	$2S$ Differentialgleichung für die $q_i$ und $p_i$.
+	$2S$ Differentialgleichungen für die $q_i$ und $p_i$.
 	\begin{itemize}
 		\item Bewegung des Systems im Raum der $q_i$, $p_i$ \conseq \textbf{Phasenraum}
 		\item bei skleronomen Zwangsbedingungen $H = T + V = E$ \textit{Gesamtenergie des Systems}
