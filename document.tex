@@ -958,24 +958,25 @@ $$q_j \text{~zyklisch} \Leftrightarrow \ffpartial{L}{q_j} = 0 \Leftrightarrow p_
 dann für $H$:
 $$\dot{p}_j = 0 = -\ffpartial{H}{q_j}$$
 \conseq zyklische Koordinaten erscheinen auch nicht in H.
-$p_j$ durch die Anfangsbedingung $p_j = c_j$ festgelegt. System also praktisch nur noch $(2S -2)$ Freiheitsgrade.
-$H$ nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q}_j$ Abhändigkeit in der Lagrangefunktion, d.h. wir haben hier einen klaren Vorteil des Hamiltonformalismus.
+$p_j$ wird durch die Anfangsbedingung $p_j = c_j$ festgelegt. Das System hat also praktisch nur noch $(2S -2)$ Freiheitsgrade.
+$H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q}_j$ Abhändigkeit in der Lagrangefunktion, d.h. wir haben hier einen klaren Vorteil des Hamiltonformalismus.
 
 \subsubsection{Vorgehen im Hamiltonformalismus als Rezept}
 \begin{enumerate}
-	\item generalisierte Koordinaten $\vec{q} = (q_1, \dots, q_s)$
-	\item $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
-	\item kinetische und potentielle Energie in Teilchenkoordinaten \conseq dann generalisierte Koordinaten.
+	\item Generalisierte Koordinaten festlegen $\vec{q} = (q_1, \dots, q_s)$
+	\item Transformationsgleichungen aufstellen $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
+	\item Kinetische und potentielle Energie in Teilchenkoordinaten formulieren \conseq dann generalisierte Koordinaten.
 	$$L(\vec{q}, \dotvec{q}, t) = t(\vec{q}, \dotvec q,t  - V(\vec{q}, t))$$
-	\item generalisierte Impulse
+	\item Generalisierte Impulse berechnen
 		$$p_j = \ffpartial{L}{\dot{q}_j} \Rightarrow p_j = p_j(\vec{q}, \dotvec{q}, t)$$
 	\item Lösen für $\dot{q}_j$
 	$$\dot{q}_j = \dot{q}_j (\vec{q}, \vec{p}, t)$$
-	\item Lagrangefunktion
+	\item Lagrange-Funktion
 	$$l(\vec{q}, \dotvec{q}(\vec{q}, \vec{p}, t), t) = \tilde{L}(\vec{q}, \vec{p}, t)$$
-	\item Legendretransformation
+	\item Legendre-Transformation
 	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
-	\item kanonische Gleichungen aufstellen und lösen
+	\item Kanonische (Hamiltonsche) Gleichungen aufstellen und lösen
+	$$\dot{p}_i = -\ffpartial{H(q,p,t)}{q_i},~~~ \dot{q}_i = \ffpartial{H(q,p,t)}{p_i}$$
 \end{enumerate}
 
 \begin{beispiel*}[2D-Fadenpendel]
