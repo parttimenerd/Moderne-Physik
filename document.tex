@@ -804,10 +804,10 @@ Das bedeutet die Invarianz der Bewegung gegenüber Zeittranslationen\footnote{Da
 \vec{q}(t_2) &= \vec{q}_0\\
 \Rightarrow \vec{q}(t_1 + t) &= \vec{q}(t_2 + t)
 \end{align*}
-Daraus folgt die zeitweise Homogenität. Sie ist offenbar erfüllt, wenn $\ddd{L}{t} = 0$\todo{richtig???}, damit bekommen wir das totale Differential
+Daraus folgt die zeitweise Homogenität. Sie ist offenbar erfüllt, da die Lagrange-Funktion L nicht explizit von der Zeit abhängt ($\ffpartial{L}{t} = 0$). Damit bekommen wir das totale Differential
 $$\ddd{L}{t} = \sum_{j=1}^{s} (\underbrace{\ffpartial{L}{q_i}}_{\dd t \ffpartial{L}{\dot{q}_j}} \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j) + \underbrace{\ffpartial{L}{t}}_{= 0} = \sum_{j = 1}^s [ (\dd t \ffpartial{L}{\dot{q}_j}) \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j] = \dd t \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j$$
 also gilt insgesamt
-$$\dd t (L - \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j) = 0$$\footnote{richtig???}
+$$\dd t (L - \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j) = 0$$
 mit dem generalisiertem Impuls $p_j = \ffpartial{L}{\dot{q}_j}$ folgt die Hamiltonfunktion
 $$H = \sum_{j=1}^s p_j \dot{q}_j - L$$
 für die nach Konstruktion gilt $\ddd{H}{t} = 0$, oder anders ausgedrückt, dass $H = \text{konstant}$ gilt.
