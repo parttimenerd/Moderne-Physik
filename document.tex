@@ -18,6 +18,8 @@
 \usepackage[colorlinks=true,linkcolor=black,naturalnames]{hyperref}
 \usepackage[colorinlistoftodos]{todonotes}
 \allowdisplaybreaks[3]
+\usepackage{stmaryrd}
+\usepackage{siunitx}
 
 \theoremstyle{definition}
 \newtheorem*{definition*}{Definition}
@@ -72,6 +74,7 @@
 \renewcommand{\Re}{\mathbb{R}}
 \DeclareMathOperator{\arsinh}{arsinh}
 \DeclareMathOperator{\arcosh}{arcosh}
+\newcommand{\celectron}{\circled{$e^-$}}
 
 \makeatletter
 %\@removefromreset{section}{chapter}
@@ -1682,6 +1685,10 @@ monochromatisches Licht $\lambda$\\
 Konstruktive Interferenz wenn Gangunterschied $g = m \cdot \lambda$\\
 Destruktive Interferenz bei $g = (m - \frac12) \lambda$\\
 $\cos \alpha = \frac{m\lambda}{d}$ Maxima der Lichtintensität\\
+% % %
+$$n \frac{\lambda}{2} \cos \alpha = a$$
+damit $n_i = \frac{2a \cos \alpha}{\lambda}$
+% % %
 \conseq klarer Beweis der Wellennatur des Lichtes, siehe auch Wasser, Schall\\
 \conseq Strukturuntersuchungen
 
@@ -1694,9 +1701,161 @@ Licht mit Frequenz $\nu$ trifft mit Intensität $I$ auf Material und schlägt \c
 
 
 
+\paragraph{Beobachtungen}
+\begin{itemize}
+	\item Photoeffekt tritt für Licht deshalb einer Grenzfrequenz $\nu_g$ auf.
+	\item kinetische Energie $E_\text{kin}$ der \circled{$e^-$} nur von $\nu$ abhängig, \emph{nicht} von der Intensität des Lichtes. $\lightning$ klassischen Feld
+	\item $\nu > \nu_g$ Anzahl der \circled{$e^-$} proportional zur Intensität
+	\item Effekt sofort \conseq \circled{$e^-$} kann keine Energie aufsammeln
+	\item[\conseq] \emph{Lichtquantenhypothese} (Einstein 1905): Licht = Ansammlung von Photonen mit Energie $h \nu$
+\end{itemize}
+\begin{align*}
+h \nu &= E_\text{kin} + W_\text{A}\\
+E_\text{Lichtquant} &= \frac12 m v^2 + \text{Austrittsarbeit}
+\end{align*}
 
+\subsubsection{Compton-Effekt}
+Bestrahlung von \circled{$e^-$} (leicht gebunden in Atomen) mit Röntgenlicht $\nu_0$ bzw. $\lambda_0$\\
+Beobachtung nach der Wechselwirkung. Neben $\lambda_0$ wird weiteres Licht bei $\lambda = \lambda_0 + \Delta \lambda$ beobachtet. (Viel Licht mit geringerer Energie). Erklärung durch \emph{Stoß} von $\gamma$-Photonen mit \circled{$e^-$} der Atomhülle.\\
+Photonimpuls $\frac{h \nu_0}{c} \rightarrow \frac{h \nu}{c} < \frac{h \nu_0}{c}$\\
+\conseq $\Delta \lambda = \lambda - \lambda_0 = \lambda_c = (1 - \cos \theta)$
+Erklärung nur im Teilchenbild möglich.
 
+\subsection{Atomphysik}
+Einige Phänomene: Rutherford: \circled{$e^-$}-Wolke ($\SI{1}{\angstrom}$) um Atomkern ($\SI{1}{\femto\meter}$).
+Emission von Licht (Wellen/Quanten). Abstrahlung von schwingenden Elektronen (beschleunigt bewegten).
+\conseq erlaubt im Prinzip Licht jeder Wellenlänge \conseq Aber Beobachtung von Spektrallinien (H-Atom)\\
+$v \sim \frac1\lambda \sim \frac{1}{n^2} - \frac{1}{m^2}$ mit $n$ fest, $n = 1, 2, 3, 4, (5)$ und $m \geq n + 1$\\
+Emission von Lichtquanten $h \nu = E_m - E_n$ \conseq nur diskrete Energien der Elektronen erlaubt. Widerspruch zum klassischen Bild ("`Planetenbahnen"').\\
+Bohrsches Atommodell. $E_n = \SI{-13.6}{\electronvolt} - \frac{1}{n^2}$ (Quantenhypothese für Elektronenbahnen).\\
+Unterstützt durch
 
+\subsubsection{Franck-Hertz-Versuch}
+(Gustav Hertz,  Neffe von Heinrich).
+Statt eines kontinuierlich ansteigenden Stromes werden starke Abfälle beobachtet (nach Schritten von jeweils $\SI{4.9}{\electronvolt}$). Die \celectron können die Gegenspannung nicht mehr überwinden, da sie Energie an die Hg-Atome abgeben. \conseq Diskrete Energien von $n \cdot \SI{4.9}{\electronvolt}$. Licht der entsprechenden Wellenlänge wird nachgewiesen.
+
+\subsection{Wellennatur der Teilchen}
+Beugungsexperimente (Davisson und Germer) von \celectron an Kristallen. \conseq \textbf{Interferenz} von Elektronen-Wellen(?). Wie bei Röntgenstrahlen. Man sieht einen Gangunterschied und damit eine Interferenz (vgl. Röntgen).\\
+\conseq \textbf{De Broglie}-Wellenlänge von Teilchen ist
+$$\lambda = \frac{h}{p}$$
+
+\subsection{Schrödingergleichung}
+Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden werden. \conseq Hamilton-Jacobi-Theorie. \conseq berechnet die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
+$$i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)$$
+$\hbar = \frac{h}{2 \pi}$. \\
+H: Hamiltonoperator, ganz analog zur Hamiltonfunktion
+$$H = \frac{\vec{v}^2}{2m} + V(\vec{r})$$
+Dann Impulsoperator (in der "`Ortsdarstellung"')
+$$\vec{p} = - i \hbar \vec{\nabla}$$
+darin $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$, damit gilt
+$$H = - \frac{\hbar^2}{2m} \vec{\nabla}^2 + V(\vec{r})$$
+Wobei $\vec{\nabla}^2$ der Laplaceoperator ist: $\vec{\nabla}^2 = \ffpartial{^2}{x^2} +\ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$\\
+$\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt die Schrödingergleichung für ein gegebenes Potential. Wellenfunktion beschreibt den Zustand eines Systems (z.B. eines oder mehrerer Teilchen in einem Potential). Deutung (Schrödinger).\\
+
+meist H zeitunabhängig.
+
+\paragraph{Lösung der Schrödingergleichung} per Separationsansatz $\Psi(\vec{r}, t) = \Psi(\vec{r}) \vp(t)$
+\begin{align*}
+	i \hbar \fpartial{t} \Psi(\vec{r}) \vp &= \Psi(\vec{r}) \vp(t)\\
+	= \Psi(\vec{r}) i \hbar \fpartial{t} \vp(t) &= \vp(t) H \Psi(\vec{r})\\
+	\frac{1}{\vp(t)} i \hbar \fpartial{t} \vp(t) = \frac{1}{\Psi(\vec{r})} H \Psi(\vec{r})
+\end{align*}
+Linke Seite hängt nur von der zeit ab, rechte nur vom Ort. \conseq linke Seite = rechte Seite = konstant\\
+Dimension von E (reelle Zahl)
+\conseq a) $i \hbar \fpartial{t} \vp(t) = E \vp(t)$\\
+b) $H \Psi(\vec{r}) = E \Psi(\vec{r})$\\
+Weiter mit a):
+$$\fpartial{t} \vp(t) = \dd{t} \vp(t) = - i \frac{E}{\hbar} \vp(t) \Rightarrow \vp(t) = \vp_0 e^{-i\frac{E}{\hbar} \vp(t)} \equiv \vp_0 e^{- \omega t}$$
+"`Oszillationen"' der Welle mit der "`Frequenz"' $\omega = \frac{E}{\hbar}$
+
+% % % % % % % % % % % %
+\begin{align*}
+i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)\\
+\Psi(\vec{r}, t) = \Psi(\vec{r}) \phi(t)\\
+\rightarrow \vp(t) = \vp_0 e^{-i\frac{E}{\hbar}t}\\
+H\Psi(\vec{r}) = E \Psi(\vec{r}) \text{\qquad TISE}
+\end{align*}
+\subsubsection{Zeitunabhängige Schrödingergleichung}
+H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hamiltonoperators \conseq Lösungen beschreiben. Energieeigenzustände des Systems zu bestimmten Eigenwerten E.
+
+\begin{bemerkung*}
+	Schrödingergleichung linear in der Zeit \conseq aus Anfangszustand $\Psi(\vec{r}, t_0)$ zu Zeit $t_0$ \conseq $\Psi(\vec{r}, t)$ per Schrödingergleichung (siehe auch Hamiltonfunktion). Problem meist Lösung der Zeitunabhängige Schrödingergleichung.\\
+	Ist $\Psi(\vec{r}, t)$ wirklich einer "`Materiewelle"'?\\
+	\conseq Doppelspaltexperiment, für Teilchen \celectron
+	\begin{itemize}
+		\item jeweils ein Spalt abgedeckt
+		\item beide offen
+	\end{itemize}
+	\begin{itemize}
+		\item Funktioniert mit sehr geringen Intensitäten. \conseq einzelnen Teilchen. Interferenzmuster als Histogramm von Detektorklicks.
+		\item Vorherige Beobachtung würde Interferenz zerstören
+		\item Elektron behält seinen Teilchencharakter trotz Interferenzeffekt
+	\end{itemize}
+	(Feynman Ledcture Bd. III, 1)\\
+	\conseq Wellenfunktion als \textbf{Wahrscheinlichkeitsamplitude} angedeutet.\\
+	$|\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = $ Wahrscheinlichkeit, Teilchen in einer $d^3 \vec{r}$ Umgebung von $\vec{r}$ zu finden.\\
+	\conseq z.B. mit $\Psi_{1,2}(\vec{r}, t) = $ Wellenfunktion für \celectron durch $S_{1, 2}$\\
+	\conseq $|\Psi_1 + \Psi_2|^2 \neq |\Psi_1|^2 + |\Psi_2|^2$\\
+	Interferenz der im allgemein komplexen Wellenfunktion. Schreibe $\Psi_{1,2}= A_{1,2} e^{i\vp_{1,2}}$ mit $|a|^2 = a a^\ast$\\
+	$|\Psi_1 + \Psi_2|^2 = |A_1 e^{i\vp_1} + A_2 e^{i \vp_2}|^2 = |A_1|^2 + |A_2|^2 + A_1 A_2 (\underbrace{e^{i(\vp_1 - \vp_2)} + e^{-i(\vp_1 - \vp_2)}}_{2\cos(\vp_1 - \vp_2)}) = |A_1¦^2 + |A_2|^2 + \underbrace{2 A_1 A_2 \cos(\vp_1 - \vp_2)}_{\text{"`Interferenzterm"'}}$\\
+	Interferenzterm kann auch negativ sein.\\
+	Wahrscheinlichkeitsinterpretation verlangt Normalisierung der Wellenfunktion
+	$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = 1$$
+	bzw.
+	$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} < \infty$$
+	nur für \textbf{quadratintegrable Funktionen.}\\
+	Schrödingergleichung ist linear, d.h. wenn $\Psi_1(\vec{r}, t)$ und $\Psi_2(\vec{r}, t)$ Lösungen, dann auch $\Psi(\vec{r}, t) = \alpha \Psi_1(\vec{r}, t) + \beta \Psi_2(\vec{r}, t)$.\\
+	(Superpositionsprinzip). Wegen der Deutung von $|\Psi|^2$ kommt es auf eine globale Phase nicht an: $\Psi \to \Psi e^{i\alpha} \Rightarrow |\Psi|^2 = \Psi e^{i\alpha} \Psi^\ast e^{-i\alpha} = \Psi \Psi^\ast = |\Psi|^2$\\
+	wohl abre auf relative Phase zweier Lösungen (\conseq Interferenz)
+	\subsubsection{Lösung freier Teilchen}
+	$V(\vec{r}) = 0 \rightarrow H = - \frac{\hbar^²}{2m} \vec{\nabla}^2$\\
+	$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$
+	$\psi(\vec{r})$ erfüllt $H\psi(\vec{r}) = E\psi(\vec{r})$ ($E > 0$, weil Energie)\\
+	Ansatz $e^{i\vec{k} \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$\\
+	$\vec{k}$ zunächst beliebiger, fester Vektor.\\
+	$\vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} \rightarrow \ffpartial{^2}{x^2} e^{i\vec{k}\cdot \vec{r}} = (ik_x) (i k_x) e^{i\vec{k}\cdot \vec{r}} = -k_x^2 e^{i\vec{k}\cdot \vec{r}} \Rightarrow \vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} = - \vec{k}^2 e^{i\vec{k}\cdot \vec{r}}$\\
+	$H e^{i\vec{k}\cdot \vec{r}} = \frac{\hbar^2 \vec{k}^2}{2m} e^{i\vec{k}\cdot \vec{r}} \overset{!}{=} E e^{i\vec{k}\cdot \vec{r}}$\\
+	Lösung ist \textbf{ebene Welle} $\Psi(\vec{r}, t) = \Psi_0 e^{i (\vec{k} \cdot \vec{r} - \omega t)}$ (mit $\omega = \frac{E}{\hbar}$)\\
+	$E = \hbar \omega = \frac{\hbar^2 \vec{k}^2}{2m} \rightarrow \omega = \omega(h) = \frac{\hbar \vec{k}^2}{2m}, k = |\vec{k}|$\\
+	Was ist eine ebene Welle?
+	\begin{description}
+		\item[fester Ort] Schwingung $\Psi \underbrace{e^{i\vec{k} \cdot \vec{r}}}_{\text{fest}} \underbrace{e^{-i\omega t}}_{\cos(\omega t) - i \sin(\omega t)}$
+		\item[feste Zeit] $t = t_0$, $e^{i (\vec{k} \cdot \vec{r} - \omega t_0)}$
+	\end{description}
+	Orte mit gleichem Funktionswert $\vec{k} \cdot \vec{r} = \omega t_0, \hat{k} \cdot \vec{r} = \frac{\omega t_0}{k}$\\
+	$\vec{k} \cdot \vec{r} = \omega t_0$ \conseq $\vec{r}$ liegen auf einer Ebene $\perp \vec{k}$\\
+	für $t > t_0$ "`wandert"' die Ebene ungeändert in Richtung $\vec{k}$.\\
+	Gleichen Wert bekommen wir auch für $e^{i(\vec{h} \cdot \vec{r} - \omega t - 2 \pi n)}$ \conseq viele Ebenen, verschoben um 
+	$$\lambda = \frac{2\pi}{k} \rightarrow \vec{k} = \text{\textbf{Wellenvektor}}$$
+	(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$)\\
+	vgl. de Broglie - Wellenlänge:
+	$$p = \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k \rightarrow E = \frac{\hbar^2 k^2}{2m} = \frac{p^2}{2m}$$
+	$\frac{p^2}{2m} = $ Energie des freien Punktteilchens.\\
+	Impulsoperator: $\vec{p} = - i \hbar \vec{\nabla}$\\
+	\begin{align*}
+		\vec{p} \Psi(\vec{r}, t) &= - i \hbar \vec{\nabla} \Psi(\vec{r}, t)\\
+		&= -i \hbar \vec{\nabla} \Psi_0 e^{i(\vec{k} \cdot \vec{r} - \omega t)}\\
+		&= -i \hbar (+ i \vec{k}) e^{i(\vec{k} \cdot \vec{r} - \omega t)} \Psi_0\\
+		&= \hbar \vec{k} \Psi(\vec{r}, t) \rightarrow \vec{p} = \hbar \vec{k} 
+	\end{align*}
+\end{bemerkung*}
+\subsubsection{Nichtnormierbarkeit ebener Wellen}
+Wenn Wellenfunktion Aufenthaltswahrscheinlichkeit sein soll muss gelten
+$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} \overset!= 1$$
+Aber $$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = \int |\Psi_0|^2 \d^3 \vec{r} = |\Psi_0|^2 \underbrace{\int \d^3 \vec{r}}_{V \to \infty}$$
+$|\Psi_0|^2 V \Rightarrow \Psi_0 = \frac{1}{\sqrt V} = \const$
+Zwei Möglichkeiten
+\paragraph{a) V endlich} (z.B. $V(\text{Universum})$) \conseq Wahrscheinlichekit Teilchen vorzufinden überall gleich. Aber ein fester Impuls
+\paragraph{b) \textbf{Wellenpaket}}
+Nutzen des Superpositionsprinzips
+$$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ (Fourierreihe)\\
+Ist auch Lösung der Schrödingergleichung\\
+Kontinuierlicher $\vec{k}, \omega$\\
+$$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{h}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ (Fourierintegral)\\
+in Schrödingergleichung \conseq $(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) = 0 \rightarrow \int \d^3 \vec{k} \d \omega \tilde{\vec{k}, \omega} (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} = 0$\\
+erfüllt durch $\tilde\Psi(\vec{k}, \omega) = \tilde\Psi (\vec{k}) \delta(w -w(\vec k))$ (mit $\int f(x) \delta(x - x_0) \d x = f (x_0)$)\\
+also $\Psi(\vec{r}, t = \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)})$\\
+$\tilde \Psi(\vec{k})$ ist Amplitudenfunktion eines Wellenpakets.
 
 % % % % % % % % % %
 
