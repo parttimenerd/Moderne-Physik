@@ -330,7 +330,7 @@ $$\delta W = - \vec{F} \delta \vec{r}$$
 Wenn man darin die obere Gleichung als $\vec{F}_i = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ einsetzt folgt
 $$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
 \todo{klären, wie es zur Formel kommt}
-Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn gilt $\delta W = \sum_i \vec{K}_i \delta \rvec_i$.
+Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn wir fordern, dass die Zwangskräfte keine Arbeit verrichten\footnote{Erfahrungsgemäß} und damit $\delta W = \sum_i \vec{K}_i \delta \rvec_i$ gilt.
 
 \paragraph{Prinzip der virtuellen Arbeit}
 $$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
@@ -652,7 +652,7 @@ $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overs
 =  \left. \sum_{i=1}^N m_i \dotvec{r}_i \cdot \delta \vec{r}_i \right|_{t_1}^{t_2} &= 0\\
 \intertext{Keine Variation an den Endpunkten}
 \Rightarrow \int_{t_1}^{t_2} \sum_{i=1}^N [ \delta (\frac{m_i}{2} \dotvec{r}_i^2 ) + \vec{K}_i \cdot \delta \vec{r}_i ] \d t &= 0
-\intertext{mit $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, $i = 1, \dots, N$ findet man die generalisierte Kraft und das (holonom-konservative) Potential}
+\intertext{mit $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, $i = 1, \dots, N$ findet man die generalisierte Kraft und das konservative Potential mit holonomen Zwangsbedigungen.}
 \sum_{i=1}^N \vec{K}_i \delta \vec{r}_i = \sum_{j=1}^s Q_j \delta q_j = \sum_{j=1}^{s} - \ffpartial{V}{q_j} \delta q_j &= - \delta V
 \intertext{Daraus folgt dann zusammen genommen, die Äquivalenz des Prinzips von d'Alembert und dem Hamiltonschen}
 0 = \int_{t_1}^{t_2} \delta (T-V) \d t = \delta \int_{t_1}^{t_2} (T-V) \d t = \delta \int_{t_1}^{t_2} L \d t &= 0
@@ -856,7 +856,7 @@ Wenn etwas räumlich homogen ist, bedeutet das, dass es unabhängig vom Ort (Anf
 
 Sei nun $\Delta q_j$ die Translation des Gesamtsystems. Bei Homogenität gilt $\frac{\partial L}{\partial q_j} = 0$ und damit, dass $q_j$ zyklisch und $p_j = \frac{\partial L}{\partial \dot q_j} = \const$ ist.
 
-Bei konservativen Systemen gilt nun $\frac{\partial V}{\partial \dot q_j}$ \todo{???}
+Bei konservativen Systemen gilt nun $\frac{\partial V}{\partial \dot q_j} = 0$
 \begin{align*}
 p_j &= \frac{\partial L}{\partial \dot q_j} = \frac{\partial T}{\partial \dot q_j} = \sum \limits_{i=1}^Nm_i \dot{\vec r}_i\frac{\partial \dot{\vec r}_i}{\partial \dot q_j} = \sum\limits_{i=1}^Nm_i\dot{\vec r}_i\frac{\partial \vec r_i}{\partial q_i}\\
 \intertext{Übersetze $\Delta q_j$ in räumliche Koordinaten, also zu $\Delta q_j \vec n_j$ wobei $\vec{n}_j$ die Richtung ist, in der die Translation statt findet.
@@ -872,7 +872,7 @@ Die Homogenität des Raums ist genau dann vorhanden, wenn \emph{Impulserhaltung}
 
 \subsubsection{Isotropie des Raums}
 Jetzt ist $q_j$ so gewählt, dass $\Delta q_j$ ein Drehwinkel ($\Delta q_j = \Delta \varphi$) und $\vec n_j$ eine Drehachse ist: $\vec n_j \Rightarrow \Delta \vec r_i = \Delta q_j (\vec n_j \times \vec r_i)$\\
-$\frac{\partial \vec r_i}{\partial q_j}$ analog zum Impuls \todo{???}. Für den Impuls gilt
+Rechnung für den Impuls analog zur Rechnung oben. Für den Impuls gilt
 
 \begin{align*}
 	p_j &= \frac{\partial L}{\partial \dot q_j} = \sum\limits_{i=1}^Nm_i \dot {\vec r}_i \cdot \frac{\partial \vec r_i}{\partial q_j}\\
@@ -1062,8 +1062,7 @@ Daraus kann man die folgende Halbachsen bestimmen
 A &= \sqrt{\frac{2 E}{m \omega_0^2}}  &   B &= \sqrt{2 m E}
 \end{align*}
 Dies Halbachsen bilden eine Ellipse bei fester Energie $E$.\\
-Ein Punkt $\vec{q}$ im Konfigurationsraum reicht aber nicht aus, um das System vollständig zu beschreiben man benötigt hierfür noch Impulse, also den Phasenraum.
-\todo{gesamte Zeitabhängigkeit im (????)}
+Ein Punkt $\vec{q}$ im Konfigurationsraum reicht aber nicht aus, um das System vollständig zu beschreiben man benötigt hierfür noch Impulse, also den Phasenraum, und natürlich die Zeit $t$:
 
 \subsubsection{Zustandsraum}
 Der Orts- und der Impulsvektor
@@ -1108,7 +1107,7 @@ Im folgenden eine Diskussion weiterer formaler Eigenschaften\footnote{der klassi
 \poisson{q_i, p_j} &= \sum_{k=1}^s (\underbrace{\ffpartial{q_i}{q_k}}_{\delta_{ik}} \underbrace{\ffpartial{p_j}{p_k}}_{\delta_{jk}} - \underbrace{\ffpartial{q_i}{p_k}}_{=0} \underbrace{\ffpartial{p_j}{q_k}}_{=0})\\
 &= \sum_{k=1}^s \delta_{ik} \delta_{jk} = \delta_{ij}
 \end{align*}
-\todo{woher kommt das $-$??}
+
 \begin{bemerkung*}[Kronecker-Delta]
 	$\delta_{ij}$ ist das sogenannte Kronecker-Delta, es gilt hierfür
 	$$\delta_{ij} = \begin{cases}
@@ -1116,7 +1115,6 @@ Im folgenden eine Diskussion weiterer formaler Eigenschaften\footnote{der klassi
 	0 & \quad \text{sonst}
 	\end{cases}$$
 \end{bemerkung*}
-\todo{is $\dot{q}_j = \poisson{q, H}$ correct??}
 
 \subsubsection{Die fundamentalen Poisson-Klammern}
 \begin{align*}
@@ -1283,7 +1281,7 @@ Er hält mit seinen Theorien an der Gleichberechtigung aller Bezugssysteme fest,
 Daraus folgen neue Transformationsformeln für physikalische Größen, insbesondere für Raum und Zeit, in welchen als Grenzfall $v \ll c$ die Galilei-Transformation enthalten sein muss.
 
 \subsection{Lorentz-Transformation}
-Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$) und die Zeit bewegt sich in ihnen gleich schnell\todo{???}. Bei $t = 0$ sind beide Systeme identisch $\Sigma = \Sigma'$.
+Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$). Bei $t = 0$ sind beide Systeme identisch $\Sigma = \Sigma'$.
 
 Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma':$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
 $$c^2 t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
