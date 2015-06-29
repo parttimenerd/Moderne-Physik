@@ -326,7 +326,7 @@ dargestellt werden.
 
 %Vor Elimination der Zwangskräfte \conseq Definition. Dazu
 
-\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, die tatsächliche/reale Koordinatenänderung.
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
 
 \begin{beispiel*}[Teilchen im Aufzug]
 Weil der zurückgelegte Weg auch als $\delta x = v_0 \cot \Delta t$ dargestellt werden kann gilt
@@ -340,7 +340,7 @@ die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z
 $$\delta W = - \vec{F} \delta \vec{r}$$
 Wenn man darin die obere Gleichung als $\vec{F}_i = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ einsetzt folgt
 $$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
-Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn wir fordern, dass die Zwangskräfte keine Arbeit verrichten\footnote{Erfahrungsgemäß} und damit $\delta W = \sum_i \vec{K}_i \delta \rvec_i$ gilt.
+Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn wir fordern, dass die Zwangskräfte keine Arbeit verrichten\footnote{Dies gilt "`erfahrungsgemäß"'.} und damit $\delta W = \sum_i \vec{K}_i \delta \rvec_i$ gilt.
 
 \paragraph{Prinzip der virtuellen Arbeit}
 $$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
@@ -352,8 +352,8 @@ $$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
 
 \subsubsection{Beispiele für Zwangskräfte}
 
-\begin{beispiel*}[Teilchen auf Kurve]
-$$\vec{Z} \bot \delta \vec{r} \Rightarrow \vec{Z} \delta \vec{r} = 0$$
+\begin{beispiel*}[Teilchen auf einer Kurve]
+$$\vec{Z} \bot \delta \vec{r} \qquad \Rightarrow \qquad \vec{Z} \delta \vec{r} = 0$$
 In anderen Worten: Da die Zwangskraft senkrecht zur Bewegungsrichtung wirkt, verrichtet sie keinerlei Arbeit. 
 \end{beispiel*}
 
@@ -368,7 +368,7 @@ $$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delt
 \subsection{Lagrange Formalismus}
 Wenn man $\vec{F}_i = m \ddotvec{r}_i = m \ddv{r} = \dot p$ wie vorher als $F_i = \vec{K}_i + \vec{Z}_i$ aufteilt kann man mit Hilfe des \textit{Prinzips der virtuellen Arbeit} folgern.
 $$\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} = 0$$
-Das heißt, es gelten keine expliziten Zwangskräfte mehr.
+Das heißt, das keine expliziten Zwangskräfte mehr gelten.
 Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von ihnen, also als generalisierte Koordinaten, zu formulieren. Damit soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
@@ -514,7 +514,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\Leftrightarrow \frac{x_2^2(t)}{(\frac{m_1 l}{m_1 + m_2})^2} + \frac{y_2^2(t)}{l^2} &= 1
 	\end{align*}
 	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 m_2}l < l \text{~und~} l$.
-	Dazu die $q_2$-\textit{Lagrange}-Gleichung
+	Dazu die $q_2$-Lagrange-Gleichung
 	\begin{align*}
 	\ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \dot{q}_2 + l \dot{q}_1 \cos q_2)\\
 	\dd t \ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \ddot{q}_2 + l \ddot{q}_1 \cos q_2 - l \dot{q}_1 \dot{q}_2 \sin q_2)\\
@@ -527,7 +527,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	$$l^2 \ddot{q}_2 - \frac{m_2 l^2}{m_1 + m_2}(\ddot{q_2} \cos q_2 - \dot{q}_2^2 \sin q_2) \cos q_2 + g l \sin q_2 = 0$$
 	und eine \Dgl~ 2. Ordnung für $q_2(t) = \phi(t)$.
 	
-	Im allgemeinen sehr kompliziere Lösung, das Lösen geht dann z.B. numerisch. Man kann das Lösen aber vereinfachen durch weitere Annahmen über das System. Zum Beispiel durch die Beschränkung auf kleine $\phi$:
+	Im allgemeinen gibt es eine sehr kompliziere Lösung, das Lösen geht dann z.B. numerisch. Man kann das Lösen aber durch weitere Annahmen über das System vereinfachen. Zum Beispiel durch die Beschränkung auf kleine $\phi$:
 	$$\phi(t) = \frac{\omega_0}{\omega} \sin \omega t \text{~und~} \omega = \sqrt{\frac{g}{l} \frac{m_1 + m_2}{m_1}}$$
 \end{beispiel*}
 
@@ -565,7 +565,7 @@ Damit gilt für nicht-holonome Bedingungen in $q_j$
 \sum_{m=1}^j (\ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m}) \delta q_m &= 0
 \intertext{Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht unabhängig sind. Zusammengefasst folgt damit}
 \sum_{m=1}^j { \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} } \delta q_m &= 0
-\intertext{Nur ein Teil der generalisierten Koordinaten ist, wie schon oft erwähnt, unabhängig voneinander: $m=1,\dots,j-p$ sind unabhängig und $m = j-p+1, \dots j$ sind abhängig, die Wahl der $q_m$ findet dementsprechend statt}
+\intertext{Nur ein Teil der generalisierten Koordinaten ist, wie schon oft erwähnt, unabhängig voneinander: $m=1,\dots,j-p$ sind unabhängig und $m = j-p+1, \dots j$ sind abhängig, die Wahl der $q_m$ findet dementsprechend statt.}
 \intertext{Wähle für die letzten $p$ Gleichungen die bisher nicht bestimmten $\lambda_i$ so, dass}
 \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} &= 0, m = j-p+1, \dots, j
 \intertext{Damit hat man nur noch Gleichungen mit unabhängigen $q_m$ \conseq jeder Summand ist 0. Woraus Lagrange-Gleichungen 1. Art entstehen}
@@ -592,7 +592,7 @@ Zunächst wird $r=l$ variabel gewählt. Die verallgemeinerten Koordinaten sind d
 \begin{align*}
 x &= r \sin \varphi\\
 y &= l - r \cos \varphi\\
-f(x,y,t) &= r - l = 0 \text{~~~~die Zwangsbedingung}\\
+f(x,y,t) &= r - l = 0 \text{~~~~ist die Zwangsbedingung}\\
 V &= -mg y = -mg (l -r \cos \varphi)\\
 T &= \frac12 m (\dot{x}^2 + \dot{y}^2)\\
 \dot{x} &= \dot{r} \sin \varphi + r \dot{\varphi} \cos \varphi\\
@@ -622,32 +622,32 @@ $$\varphi(t) = \varphi_0 \sin \sqrt{\frac{g}{l}} t$$
 \end{beispiel*}
 
 \subsection{Das Hamiltonsche Prinzip}	
-Zeigen, dass die Lagrange-Gleichungen nicht nur aus dem differentiellen Prinzip von d'Alembert folgen: hier momentane virtuelle Verrückungen betrachtet.
+Wir zeigen, dass die Lagrange-Gleichungen nicht nur aus dem differentiellen Prinzip von d'Alembert folgen: gerade hatten wir momentane virtuelle Verrückungen betrachtet.
 \textbf{Dagegen Hamilton}: \textbf{Integralprinzip}\\
-Variation der gesamten Bahn bei festen Endpunkten
-Dazu Bahnen $\vec{q}(t)$ im Konfigurationsraum
+Dass ist die Variation der gesamten Bahn bei festen Endpunkten.
+Dazu betrachten wir Bahnen $\vec{q}(t)$ im Konfigurationsraum
 $$\vec{q}(t) = (q_1(t), \dots, q_s(t))$$
-ein $\vec{q}(t)$ beschreibt einen Zustand des gesamten Systems. Für gegebene $\vec{q}(t)$ und $\dot{\vec{q}}(t)$ wird die Lagrange-Funktion Funktion der Zeit 
+ein $\vec{q}(t)$ beschreibt einen Zustand des gesamten Systems. Für gegebene $\vec{q}(t)$ und $\dot{\vec{q}}(t)$ wird die Lagrange-Funktion eine Funktion der Zeit 
 $$L(\vec{q}(t), \dotvec{q}(t), t) = \tilde{L}(t)$$
 
 \begin{definition*}[Wirkungsintegral]
 $$S{ \vec{q}(t) } = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
-Dimension "`Wirkung"' \conseq Energie: Zeit
-$S$ hängt von $\vec{q}(t)$ und $t_1, t_2$ ab 
+Die Dimension hiervon ist "`Wirkung"' \conseq Energie: Die Zeit
+$S$ hängt von $\vec{q}(t)$ und $t_1, t_2$ ab. 
 Funktion $\vec{q}(t) \xrightarrow{\text{Abbildung}} S \{ \vec{q}(t) \}$ im allgemeinen Funktional.
 
-Wir betrachten Scharen $\vec{q}(t)$ mit gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$	
+Wir betrachten Scharen $\vec{q}(t)$ mit den gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$.	
 \end{definition*}
 
 
 Beim Hamiltonschen Prinzip wird nun die Bahn des Systems betrachtet und wir wollen eine extremale Bahn finden.
 
 ~\\
-Die Systembewegung erfolgt so, dass $S\{\vec{q}(t)\}$ für die richtige Trajektorie extremal, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
+Die Systembewegung erfolgt so, dass $S\{\vec{q}(t)\}$ für die richtige Trajektorie extremal wird, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
 $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overset{!}{=} 0$$
 
 \begin{bemerkung*}
-	Die Gleichung $\delta S = 0$ enthält auf elegante Weise die gesamte klassische Mechanik. Das Prinzip (der Minimierung der Trajektorie) wird auch jenseits der Mechanik verwendet\footnote{Zum Beispiel in der Teilchenphysik, der geometrischen Optik (Fermatsches Prinzip, dabei bewegt sich Licht auf einer Bahn, so dass die benötigte Zeit minimal ist. Damit können Brechungsindizes gefunden werden.)}. Es ist natürlich koordinatenunabhängig.
+	Die Gleichung $\delta S = 0$ enthält auf elegante Weise die gesamte klassische Mechanik. Das Prinzip (der Minimierung der Trajektorie) wird auch jenseits der Mechanik verwendet\footnote{Zum Beispiel in der Teilchenphysik, der geometrischen Optik (Fermatsches Prinzip, dabei bewegt sich Licht auf einer Bahn, so dass die benötigte Zeit minimal ist. Damit können die Brechungsindizes gefunden werden.)}. Es ist natürlich koordinatenunabhängig.
 \end{bemerkung*}
 
 \subsubsection{Äquivalenz zum Prinzip von d'Alembert}
@@ -664,7 +664,7 @@ $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overs
 \Rightarrow \int_{t_1}^{t_2} \sum_{i=1}^N [ \delta (\frac{m_i}{2} \dotvec{r}_i^2 ) + \vec{K}_i \cdot \delta \vec{r}_i ] \d t &= 0
 \intertext{mit $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, $i = 1, \dots, N$ findet man die generalisierte Kraft und das konservative Potential mit holonomen Zwangsbedigungen.}
 \sum_{i=1}^N \vec{K}_i \delta \vec{r}_i = \sum_{j=1}^s Q_j \delta q_j = \sum_{j=1}^{s} - \ffpartial{V}{q_j} \delta q_j &= - \delta V
-\intertext{Daraus folgt dann zusammen genommen, die Äquivalenz des Prinzips von d'Alembert und dem Hamiltonschen}
+\intertext{Daraus folgt dann zusammen genommen die Äquivalenz des Prinzips von d'Alembert und dem Hamiltonschen}
 0 = \int_{t_1}^{t_2} \delta (T-V) \d t = \delta \int_{t_1}^{t_2} (T-V) \d t = \delta \int_{t_1}^{t_2} L \d t &= 0
 \end{align*}
 
@@ -674,14 +674,13 @@ Finden der Kurve $\vec{q}(t)$, die $S\{\vec{q}(t)\}$ extremal macht.
 \subsubsection{Elemente der Variationsrechnung}
 
 \begin{definition*}[Euler-Gleichung]
-	Wie die Lagrange-Gleichung, gilt aber ganz allgemein für Variationsprobleme.
+	Sie ist aufgebaut wie die Lagrange-Gleichung, gilt aber ganz allgemein für Variationsprobleme.
 	$$ \ffpartial{f}{y} - \dd x \ffpartial{f}{y'} = 0$$
-\end{definition*}
-
+\end{definition*}~\\
 Zunächst ein eindimensionales Problem.
 \paragraph{Problem} Finde eine Kurve $y(x)$ für die ein bestimmtes Funktional extremal wird. Zum Beispiel "`eine kürzeste Verbindung"', beispielsweise auf einer krummen Fläche (Geodäte) wie einer Seifenhaut.
 Die verschiedenen möglichen Verbindungen bilden eine Schar $f(x, y, y')$ von $y(x)$ mit festen Endpunkten. Es wird angenommen, dass $f$ differenzierbar in allen Variablen ist. Im folgenden gilt weiterhin $y' = \ddd{y}{x}$.
-Funktional
+Wir bilden das Funktional
 \begin{align*}
 J\{y(x)\} &= \int_{x_1}^{x_2} f(x, y, y') \d x = \int_{x_1}^{x_2} \tilde{f}(x) \d x
 \end{align*}
@@ -706,12 +705,12 @@ Wird nun $\delta y$ bei festem $x$ betrachtet (vgl. virtuelle Verrückungen bei 
 \delta J &= J \{ y_{\d \alpha}(x) \} - J\{ y_0(x)\} = (\ddd{J(x)}{\alpha})_{\alpha = 0} \d \alpha\\
 &= \int_{x_1}^{x_2} (f(x, y_{\d \alpha}, y'_{\d \alpha}) - f(x, y_0, y'_0)) \d x
 \end{align*}
-Jetzt ist die Extremalbedingung offensichtlich
-$$(\ddd{J(\alpha)}{\alpha})_{\alpha = 0} = 0$$ für beliebige $\gamma_{\alpha}(x)$\\
-\conseq $y_0(x)$ eingesetzt ist die gesuchte Bahn. Es ist eine stationäre Bahn genau dann, wenn $\delta J \overset{!}{=} 0$.
+Jetzt ist die Extremalbedingung offensichtlich: Es muss für beliebige $\gamma_{\alpha}(x)$ gelten
+$$(\ddd{J(\alpha)}{\alpha})_{\alpha = 0} = 0$$
+Damit ist $y_0(x)$ eingesetzt ist die gesuchte Bahn. Es ist eine stationäre Bahn genau dann, wenn $\delta J \overset{!}{=} 0$.
 Durch einfaches Umformen folgt damit
 \begin{align*}
-(\ddd{J(\alpha)}{\alpha}) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{x} \ffpartial{y}{\alpha} + \ffpartial{f}{y'} \ffpartial{y'}{\alpha} + \ffpartial{f}{x} \ffpartial{x}{\alpha})
+(\ddd{J(\alpha)}{\alpha}) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{y} \ffpartial{y}{\alpha} + \ffpartial{f}{y'} \ffpartial{y'}{\alpha} + \ffpartial{f}{x} \ffpartial{x}{\alpha})
 \intertext{mit der Identität $\int_{x_1}^{x_2} \d x \ffpartial{f}{y'} \ffpartial{y'}{\alpha} = \int_{x_1}^{x_2} \d x \ffpartial{f}{y'} \dd x \ffpartial{y}{\alpha}$, $\ffpartial{y'}{\alpha} = \fpartial{\alpha} \ddd{y}{x} = \dd x \ffpartial{y}{\alpha}$ und partieller Integration folgt}
 &= \underbrace{\left. \ffpartial{f}{y'} \ffpartial{y}{\alpha} \right|_{x_1}^{x_2}}_{\hspace{-10em}=0, \text{~da keine Variation an den Endpunkten.\hspace{-10em}}} - \int_{x_1}^{x_2} \d x (\dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha}\\
 \dd \alpha J(x) &= \int_{x_1}^{x_2} \d x (\ffpartial{f}{y} - \dd x \ffpartial{f}{y'}) \ffpartial{y}{\alpha}\\
