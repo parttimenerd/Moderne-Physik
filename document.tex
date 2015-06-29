@@ -230,7 +230,7 @@ Im folgenden ein paar Themen, welche nicht direkt in der Vorlesung behandelt wer
 \end{itemize}
 Im nächsten Kapitel wird die einfache Newtonsche Mechanik um die mathematischen Hilfsmittel der analytischen Mechanik erweitert.
 
-\subsection{Literatur} Grundkurs Theoretische Physik 2: Analytische Mechanik / von Wolfgang Nolting\footnote{Dieses Buch gibt es in der Bibliothek als PDF.}
+\subsection{Literatur} Grundkurs Theoretische Physik 2: Analytische Mechanik von Wolfgang Nolting\footnote{Dieses Buch gibt es in der Bibliothek als PDF oder in Papierform.}
 
 
 
@@ -247,7 +247,7 @@ Mit Hilfe der daraus resultierenden $3N$ Differentialgleichungen kann das Proble
 
 Beim Versuch des direkten Lösens kann es zu Problemen zu kommen. 
 
-\paragraph{Problem} Die Formulierung in den einfachen (kartesischen) Koordinaten $x, y, z$ ist meist kompliziert und oft hoffnungslos.
+\paragraph{Problem} Die Formulierung in den einfachen (kartesischen) Koordinaten $x, y, z$ ist meist kompliziert und allzu oft hoffnungslos.
 Denn meist haben die Probleme eine durch Zwangsbedingungen eingeschränkte Geometrie. Ein Beispiel hierfür wäre die Beschreibung der Bewegung einer Perle, welche auf einem Draht aufgefädelt ist. Wenn dieser Draht zu einem Kreis gebogen wurde, kann man die Koordinaten einschränken, zum Beispiel auf Polarkoordinaten\footnote{Polarkoordinaten $\vec{x} = \binom{r}{\phi}$ bestehen aus einem Abstand $r$ zum Mittelpunkt und einem Winkel $\phi$ zu einem festgelegten "`Lot"'.}, um die Zwangsbedingungen direkt zu integrieren.
 
 \subsubsection{Zwangsbedingungen} 
@@ -255,25 +255,25 @@ Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in eine
 
 \paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind Verknüpfungen der Teilchenkoordinaten und eventuell der
 Zeit in folgender Form: $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0, i = 1, \dots, p$$ 
-Beispiel: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
+\emph{Beispiel}: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
 
 Holonome Zwangsbedingungen können weiter in skleronome (starre) und rheonome (fließende) Zwangsbedingungen unterteilt werden:
 
 \subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} Sie sind \textbf{nicht} explizit von der Zeit abhängig, d.h.
 $$ \frac{\partial f_i}{\partial t} = 0, i = 1, \dots, p$$
-Beispiele: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
+\emph{Beispiel}: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
 
 \subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
 $$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
-Beispiel: Ebene mit veränderlichem Winkel: $\frac{z}{x} - \tan{\phi(t)} = 0$
+\emph{Beispiel}: Ein Teilchen, welches sich auf einer Ebene mit veränderlichem Winkel $\phi$ befindet: $\frac{z}{x} - \tan{\phi(t)} = 0$
 
 
 \paragraph{\textit{B} nicht holonome Zwangsbedingung}
 Nicht holonome Zwangsbedingungen können nur als 
 \begin{itemize}
-	\item \textit{B1} Ungleichungen oder
-	\item \textit{B2} differentielle Einschränkungen
-	$$ \sum_{m = 1}^{3N} f_{im} d_{x_m} + f_{it} \d t = 0$$
+	\item[\textit{B1}] Ungleichungen oder
+	\item[\textit{B2}] differentielle Einschränkungen
+	$ \sum_{m = 1}^{3N} f_{im} d_{x_m} + f_{it} \d t = 0$
 \end{itemize}
 dargestellt werden, was die Arbeit mit ihnen, gegenüber den holonomen, erschwert. 
 
@@ -298,7 +298,11 @@ Zu beachten ist, dass diese Koordinaten keine vorgegebenen oder zwangsläufig be
 \begin{beispiel*}[Teilchen auf der Kugeloberfläche]
 $p = 1$ Zwangsbedingungen:
 $$x^2 + y^2 + z^2 - R^2 = 0$$
-Es gibt $S = 2$ generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als $x = R \sin{q_1} \cos{q_2}$, $y = R \sin q_1 \sin q_2$ und $z = R \cos q_1$ dargestellt werden.\footnote{Hierbei wurden die sogenannten Kugelkoordinaten werden, welche im weiteren Verlauf ein wichtiges mathematisches Hilfsmittel darstellen.}
+Es gibt $S = 2$ generalisierte Koordinaten, z.B.\footnote{Wie gesagt, die generalisierten Koordinaten selbst sind nicht eindeutig. Meistens wählt man aber die einfachste Lösung.} in den Kugelkoordinaten: $q_1 = \vartheta$; $q_2 = \varphi$ und die ursprünglichen Koordinaten können damit als 
+\begin{align*}
+x &= R \sin{q_1} \cos{q_2} & y &= R \sin q_1 \sin q_2 & z &= R \cos q_1
+\end{align*}
+dargestellt werden.
 \end{beispiel*}
 
 \begin{beispiel*}[Doppelpendel in der Ebene] $p = 4$ holonom-skleronome Zwangsbedingungen:
@@ -307,7 +311,12 @@ Es gibt $S = 2$ generalisierte Koordinaten $q_1 = \vartheta$; $q_2 = \varphi$ un
 	x^2 + y^2 - l^2_1 &= 0\\
 	(x_1 - x_2)^2 + (y_1 + y_2)^2 - l_2^2 &= 0 
 \end{align*}
-Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Die verallgemeinerten Koordinaten könnten zum Beispiel die beiden Winkel $q_1 = \vartheta_1$ und $q_2 = \vartheta_2$ sein. Die ursprünglichen Koordinaten können damit als $x_1 = l_1 \sin q_1$, $y_1 = l_1 \cos q_1$, $z_1 = 0$, $x_2 = l_1 \sin q_1 + l_2 \sin q_2$, $y_2 = l_1 \cos q_1 + l_2 \cos q_2$, $z_2 = 0$  dargestellt werden.
+Damit gibt es $S = 6 - 4= 2$ Freiheitsgrade. Die verallgemeinerten Koordinaten könnten zum Beispiel die beiden Winkel $q_1 = \vartheta_1$ und $q_2 = \vartheta_2$ sein. Die ursprünglichen Koordinaten können damit als 
+\begin{align*}
+x_1 &= l_1 \sin q_1 & y_1 &= l_1 \cos q_1 & z_1 &= 0\\
+x_2 &= l_1 \sin q_1 + l_2 \sin q_2 & y_2 &= l_1 \cos q_1 + l_2 \cos q_2 & z_2 &= 0
+\end{align*}
+dargestellt werden.
 \end{beispiel*}
 
 
@@ -1796,7 +1805,7 @@ H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hami
 	\conseq z.B. mit $\Psi_{1,2}(\vec{r}, t) = $ Wellenfunktion für \celectron durch $S_{1, 2}$\\
 	\conseq $|\Psi_1 + \Psi_2|^2 \neq |\Psi_1|^2 + |\Psi_2|^2$\\
 	Interferenz der im allgemein komplexen Wellenfunktion. Schreibe $\Psi_{1,2}= A_{1,2} e^{i\vp_{1,2}}$ mit $|a|^2 = a a^\ast$\\
-	$|\Psi_1 + \Psi_2|^2 = |A_1 e^{i\vp_1} + A_2 e^{i \vp_2}|^2 = |A_1|^2 + |A_2|^2 + A_1 A_2 (\underbrace{e^{i(\vp_1 - \vp_2)} + e^{-i(\vp_1 - \vp_2)}}_{2\cos(\vp_1 - \vp_2)}) = |A_1¦^2 + |A_2|^2 + \underbrace{2 A_1 A_2 \cos(\vp_1 - \vp_2)}_{\text{"`Interferenzterm"'}}$\\
+	$|\Psi_1 + \Psi_2|^2 = |A_1 e^{i\vp_1} + A_2 e^{i \vp_2}|^2 = |A_1|^2 + |A_2|^2 + A_1 A_2 (\underbrace{e^{i(\vp_1 - \vp_2)} + e^{-i(\vp_1 - \vp_2)}}_{2\cos(\vp_1 - \vp_2)}) = |A_1|^2 + |A_2|^2 + \underbrace{2 A_1 A_2 \cos(\vp_1 - \vp_2)}_{\text{"`Interferenzterm"'}}$\\
 	Interferenzterm kann auch negativ sein.\\
 	Wahrscheinlichkeitsinterpretation verlangt Normalisierung der Wellenfunktion
 	$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = 1$$
@@ -1807,7 +1816,7 @@ H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hami
 	(Superpositionsprinzip). Wegen der Deutung von $|\Psi|^2$ kommt es auf eine globale Phase nicht an: $\Psi \to \Psi e^{i\alpha} \Rightarrow |\Psi|^2 = \Psi e^{i\alpha} \Psi^\ast e^{-i\alpha} = \Psi \Psi^\ast = |\Psi|^2$\\
 	wohl abre auf relative Phase zweier Lösungen (\conseq Interferenz)
 	\subsubsection{Lösung freier Teilchen}
-	$V(\vec{r}) = 0 \rightarrow H = - \frac{\hbar^²}{2m} \vec{\nabla}^2$\\
+	$V(\vec{r}) = 0 \rightarrow H = - \frac{\hbar^2}{2m} \vec{\nabla}^2$\\
 	$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$
 	$\psi(\vec{r})$ erfüllt $H\psi(\vec{r}) = E\psi(\vec{r})$ ($E > 0$, weil Energie)\\
 	Ansatz $e^{i\vec{k} \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$\\
