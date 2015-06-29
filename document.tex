@@ -944,12 +944,12 @@ die Legendre-Transformation von $f(x,y)$ bezüglich $y$ ist.
 Die Legendre-Transformation der Lagrange-Funktion bezüglich der Geschwindigkeiten $\dot q_j$ haben wir schon kennengelernt. Mit $p_j = \frac{\partial L}{\partial \dot q_j}$ folgt daraus die \emph{Hamilton-Funktion}
 \[H(q_1,\ldots q_S,  p_1,\ldots, p_S,t) = (\sum\limits_{i=1}^S p_i \dot q_i) - L(q_1, \ldots,q_S, \dot q_1, \ldots, \dot q_S, t)\]
 \textit{Auch negative Legendre-Transformierte genannt}.
-Die Wahl von $H$ ist eine gute Wahl, da $H$ eng mit der Energie des Systems verknüpft ist. Denn, wie schon erwähnt, ist $G$ die Energie für holonom-skleronome Systeme!
+Die Wahl von $H$ ist eine gute Wahl, da $H$ eng mit der Energie des Systems verknüpft ist. Denn, wie schon erwähnt, ist $H$ die Energie für holonom-skleronome Systeme!
 
 Die Bewegungsgleichungen können wir im folgenden aus dem totalen Differential $\md H$ folgern.
 Zuerst berechnen wir $\d H$ in dem wir das totale Differential von $\sum_{i=1}^s p_i \dot{q} - L$ bilden:
 \begin{align*}
-\md H &= \sum\limits_{i=1}^S (\md p_i \dot q_i + p_i \md \dot q_i) - \sum\limits_{i=1}^S (\frac{\partial L}{\partial q_i} \md q_i + \underbrace{\frac{\partial L}{\partial \dot q_i}}_{=p_i} \md \dot q_i) - \frac{\partial L}{\partial t} \md t\\
+\md H &= \sum\limits_{i=1}^S (\dot q_i \md p_i + p_i \md \dot q_i) - \sum\limits_{i=1}^S (\frac{\partial L}{\partial q_i} \md q_i + \underbrace{\frac{\partial L}{\partial \dot q_i}}_{=p_i} \md \dot q_i) - \frac{\partial L}{\partial t} \md t\\
 &=\sum\limits_{i=1}^S(\dot q_i \md p_i - \frac{\partial L}{\partial q_i}\md q_i) - \frac{\partial L}{\partial t}\md t\\
 &=\sum\limits_{i=1}^S(\dot q_i \md p_i - \dot p_i\md q_i) - \frac{\partial L}{\partial t}\md t\\
 \intertext{Nun bilden wir $\d H$ nochmal von "`links"', d.h. wir setzen einfach die Definition des totalen Differentials ein.}
@@ -971,21 +971,21 @@ Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Glei
 	&= \sum_{j=1}^{s} \underbrace{(\ffpartial{H}{q_j} \ffpartial{H}{p_j} - \ffpartial{H}{p_j} \ffpartial{H}{p_j})}_{=0}+ \ffpartial{H}{t}\\
 	&= \ffpartial{H}{t} = - \ffpartial{L}{t}
 \end{align*} 
-also ohne explizite Zeitabhängigkeit gilt $H = \const$ weil dann gilt $\ffpartial{H}{t} = 0$. H ist damit ein Integral der Bewegung.
+Also gilt ohne explizite Zeitabhängigkeit $H = \const$ weil dann $\ffpartial{H}{t} = 0$. $H$ ist damit ein Integral der Bewegung.
 
 Bei zyklischen Variablen:
 $$q_j \text{~zyklisch} \Leftrightarrow \ffpartial{L}{q_j} = 0 \Leftrightarrow p_j = \const = c_j$$
-dann für $H$:
+Dann gilt für $H$:
 $$\dot{p}_j = 0 = -\ffpartial{H}{q_j}$$
-\conseq zyklische Koordinaten erscheinen auch nicht in H.
-$p_j$ wird durch die Anfangsbedingung $p_j = c_j$ festgelegt. Das System hat also praktisch nur noch $(2S -2)$ Freiheitsgrade.
-$H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q}_j$ Abhängigkeit in der Lagrange-Funktion, d.h. wir haben hier einen klaren Vorteil des Hamiltonformalismus.
+Damit erscheinen die zyklischen Koordinaten auch nicht in $H$.
+$p_j$ wird durch die Anfangsbedingung $p_j = c_j$ festgelegt. Das System hat also praktisch nur noch $2S - 2$ Freiheitsgrade.
+$H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vergleiche hierbei $L$, welches immer noch von $\dot{q}_j$ abhängt. Wir haben hier einen klaren Vorteil des Hamiltonformalismus.
 
 \subsubsection{Vorgehen im Hamiltonformalismus als Rezept}
 \begin{enumerate}
 	\item Generalisierte Koordinaten festlegen $\vec{q} = (q_1, \dots, q_s)$
 	\item Transformationsgleichungen aufstellen $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
-	\item Kinetische und potentielle Energie in Teilchenkoordinaten formulieren \conseq dann generalisierte Koordinaten.
+	\item Kinetische und potentielle Energie in Teilchenkoordinaten und danach in generalisierten Koordinaten formulieren.
 	$$L(\vec{q}, \dotvec{q}, t) = T(\vec{q}, \dotvec q,t)  - V(\vec{q}, t)$$
 	\item Generalisierte Impulse berechnen
 		$$p_j = \ffpartial{L}{\dot{q}_j} \Rightarrow p_j = p_j(\vec{q}, \dotvec{q}, t)$$
@@ -996,15 +996,14 @@ $H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q
 	\item Legendre-Transformation
 	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
 	\item Kanonische (Hamiltonsche) Gleichungen aufstellen und lösen
-	$$\dot{p}_i = -\ffpartial{H(q,p,t)}{q_i},~~~ \dot{q}_i = \ffpartial{H(q,p,t)}{p_i}$$
+	\begin{align*}
+	\dot{p}_i &= -\ffpartial{H(q,p,t)}{q_i} & \dot{q}_i &= \ffpartial{H(q,p,t)}{p_i}
+	\end{align*}
 \end{enumerate}
 
 \begin{beispiel*}[2D-Fadenpendel]
-\textit{Schritt 1} Zwangsbedingungen: $z = \const = 0$ und $x^2 + y^2 = l^2 = \const$ \conseq $S = 1$ Freiheitsgrade, $q = \varphi$
+\textit{Schritt 1} Zwangsbedingungen: $z = \const = 0$ und $x^2 + y^2 = l^2 = \const$. Damit hat das Systeme $S = 1$ Freiheitsgrade, z.B. $q = \varphi$\\
 \textit{Schritt 2}
-\begin{align*}
-	x &= l \sin \varphi
-\end{align*}
 \begin{align*}
 	x &= l \sin \vp\\
 	y &= l \cos \vp\\
@@ -1015,40 +1014,39 @@ $H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vgl. $L$, hier immer noch $\dot{q
 	V &= - mg y = -mgl\cos q \\
 	L &= T -V = \frac{1}{2} m l^2 \dot{q}^2 + mgl\cos q\\
 	\intertext{generalisierter Impuls}
-	p = \ffpartial{L}{\dot{q}} = m l^2 \dot{q} \rightarrow \dot{q} = \frac{p}{m l^2}
+	p &= \ffpartial{L}{\dot{q}} = m l^2 \dot{q} \Rightarrow \dot{q} = \frac{p}{m l^2}
 	\intertext{$L$ mit $\dot{q} \rightarrow p$}
-	\tilde{L}(q, p) = \frac{p^2}{2 m l^2} + mgl\cos q
+	\tilde{L}(q, p) &= \frac{p^2}{2 m l^2} + mgl\cos q
 	\intertext{H aus Legendre-Transformation}
-	H = p \dot{q} - L = \frac{p^2}{m l^2} - \frac{p^2}{2ml^2} - m g l \cos q\\
+	H &= p \dot{q} - L = \frac{p^2}{m l^2} - \frac{p^2}{2ml^2} - m g l \cos q\\
 	&=  \frac{p^2}{2 ml^2} - mgl \cos q
 	\intertext{Kanonische Bewegungsgleichungen:}
-	\dot{q} = \ffpartial{H}{p} = \frac{p}{m l^2}\\
-	\dot{p} = - \ffpartial{H}{q} = - mgl \sin q
+	\dot{q} &= \ffpartial{H}{p} = \frac{p}{m l^2}\\
+	\dot{p} &= - \ffpartial{H}{q} = - mgl \sin q
 	\intertext{System von $2S = 2$ gekoppelten Differentialgleichungen 1. Ordnung}
 	\intertext{Lösen z.B. per Differentiation}
 	\dd t \dot{q} &= \ddot{q} = \frac{\dot{p}}{ml^2} \overset{\text{$\vec{p}$ einsetzen}}{=} - \frac{g}{l} \sin q
-		\intertext{die bekannte Differentialgleichung des Fadenpendels}
+	\intertext{Dies diie bekannte Differentialgleichung des Fadenpendels.}
 	\intertext{Als System 1. Ordnung}
-	\dot{q} = \frac{p}{ml^2}\\
+	\dot{q} &= \frac{p}{ml^2}\\
 	\dot{p} &= - mgl \sin q \overset{\sin q \approx q \text{~für~} q \ll 1}{=} - mgl q\\
 	\dd t \binom{q}{p} &= \underbrace{\begin{pmatrix}
 		0 & \frac{1}{ml^2}\\ - mgl & 0
 		\end{pmatrix}}_{M} \binom{q}{p}
 	\intertext{$M$ diagonalisieren \conseq Transformation $U$}
 	\dd t U\binom{q}{p} &= U M U^{-1} U \binom{q}{p}\\
-	\dd t \binom{x_1}{x_2} = \begin{pmatrix}
+	\dd t \binom{x_1}{x_2} &= \begin{pmatrix}
 	\lambda_1 & 0\\ 0 & \lambda_2
 	\end{pmatrix} \binom{x_1}{x_2}
 	\intertext{System entkoppelt}
-	\rightarrow \dot{x}_i(t) = \lambda_i x_i(t) \cong x_i(t) = A e^{\lambda_i t}	
+	\rightarrow \dot{x}_i(t) &= \lambda_i x_i(t) \cong x_i(t) = A e^{\lambda_i t}	
 \end{align*}
-Lösung bei linearen System klar. Bei allgemeinem System numerisch gut zu handhaben\footnote{Vgl. Runge-Kutta-Verfahren}.
+Lösung bei linearen System klar. Bei allgemeinem System numerisch gut zu handhaben.\footnote{Vgl. Runge-Kutta-Verfahren}
 \end{beispiel*}
 
 
 \subsection{Zustand eines Systems}
 Welche Informationen sind notwendig, um ein System (von Massepunkten) vollständig zu beschreiben?
-Unterschiedliche Räume (auch am Beispiel des harmonischen Oszillators).
 \subsubsection{Konfigurationsraum} \textit{Koordinaten}
 \begin{align*}
 	\vec{q} = (q_1, \dots, q_s) \text{\textit{\qquad S dimensional}}
@@ -1057,7 +1055,7 @@ harmonischer Oszillator im Konfigurationsraum ohne zeitliche Information.
 
 \subsubsection{Ereignisraum}
 $$\vec{q} = (q_1, \dots, q_s) \text{~und~} t \text{\textit{\qquad S + 1 dimensional}}$$
-\conseq Bahn $\vec{q}(t)$ aus $2S$ Anfangsbedingungen. \textit{Wo ist der Harmonische Oszillator zur Zeit $t$.}\\
+\conseq Bahn $\vec{q}(t)$ aus $2S$ Anfangsbedingungen. \textit{Wo ist der Harmonische Oszillator zur Zeit $t$?}\\
 
 Im Hamiltonformalismus:
 
@@ -1083,12 +1081,12 @@ Die Punkte im Zustandsraum $\vec{\pi} (t)$ werden im Hamiltonformalismus durch e
 $$\vec{\pi}(t_0) \xrightarrow{\text{Kenntnis von $H$}} \vec{\pi}(t \neq t_0)$$
 
 \paragraph{Begriff des Zustandes $\Psi$}
-Ein Zustand $\Psi$ ist ein minimaler hinreichender Satz von Eigenschaften eines Systems, welcher ausreicht, um alle weiteren Eigenschaften daraus abzuleiten. In der Mechanik gilt, dass es für jede Eigenschaft der Massepunkte einen Punkt im Zustandsraum gibt: 
+Ein Zustand $\Psi$ ist ein minimal hinreichender Satz von Eigenschaften eines Systems, welcher ausreicht, um alle weiteren Eigenschaften daraus abzuleiten. In der Mechanik gilt, dass es für jede Eigenschaft der Massepunkte einen Punkt im Zustandsraum gibt: 
 $$f(\vec{q}, \vec{p}, t) = f(\vec{\pi}(t))$$
 
 % Ein Zustand $\Psi$ ist ein $\leftrightarrow$ Punkt $\vec{\pi}$ im Phasenraum
 
-Wenn aus Kenntnis eines $\Psi_0 = \Psi(t_0)$ $\Psi(t)$ festgelegt werden kann, folgt eine Differentialgleichung 1. Ordnung (in der Zeit)
+Wenn aus Kenntnis eines $\Psi_0 = \Psi(t_0)$ die Funktion $\Psi(t)$ selbst festgelegt werden kann, folgt eine Differentialgleichung 1. Ordnung (in der Zeit)
 $$\dot{\Psi}(t) = \tilde{\Psi}(\Psi(t))$$
 \textit{In der Quantenmechanik ist dies die Schrödingergleichung.}\\
 Daraus folgen die Hamiltonschen kanonischen Gleichungen
