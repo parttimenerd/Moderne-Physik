@@ -956,7 +956,9 @@ Zuerst berechnen wir $\d H$ in dem wir das totale Differential von $\sum_{i=1}^s
 \d H &= \sum\limits_{i=1}^S(\frac{\partial H}{\partial p_i}\md p_i + \frac{\partial H}{\partial q_i}\md q_i) + \frac{\partial H}{\partial t}\md t\\
 \end{align*}
 Jetzt sind aber $q_i$, $p_i$ und $t$ unabhängige Variablen und mit Hilfe eines Koeffizientenvergleichs, findet man die Bewegungsgleichungen
-\[\dot q_i = \frac{\partial H}{\partial p_i}\qquad \dot p_i = - \frac{\partial H}{\partial q_i} \qquad -\frac{\partial L}{\partial t} = \frac{\partial H}{\partial t}\]
+\begin{align*}
+\dot q_i &= \frac{\partial H}{\partial p_i} & \dot p_i &= - \frac{\partial H}{\partial q_i} & -\frac{\partial L}{\partial t} &= \frac{\partial H}{\partial t}
+\end{align*}
 Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Gleichungen} genannt.
 
 \begin{bemerkung*}
@@ -1091,19 +1093,19 @@ $$\dot{\Psi}(t) = \tilde{\Psi}(\Psi(t))$$
 \textit{In der Quantenmechanik ist dies die Schrödingergleichung.}\\
 Daraus folgen die Hamiltonschen kanonischen Gleichungen
 $$\dotvec \pi (t) = \tilde{\Psi}(\vec{\pi}(t))$$
-Die Hamilton-Funktion spielt eine fundamentale Rolle.
+Die Hamilton-Funktion spielt eine fundamentale Rolle in der Quantenmechanik wie auch im weiteren Verlauf dieser Vorlesung.
 
 \newcommand{\vpi}{\vec{\pi}}
 \newcommand{\poisson}[1]{\{#1\}_{\vec{p}, \vec{q}}}
 \subsection{Poisson-Klammern}
-Im folgenden eine Diskussion weiterer formaler Eigenschaften\footnote{der klassischen Mechanik} mit Hilfe der Poisson-Klammern. Jede Observable kann als Funktion eines Phasenraumpunktes $f(\vec{\pi}, t) = f (\vec{q}, \vec{p}, t)$ dargestellt werden. Woraus die folgende Bewegungsgleichung folgt
+Im folgenden eine Diskussion weiterer formaler Eigenschaften der klassischen Mechanik mit Hilfe der Poisson-Klammern. Jede Observable kann als Funktion eines Phasenraumpunktes $f(\vec{\pi}, t) = f (\vec{q}, \vec{p}, t)$ dargestellt werden. Woraus die folgende Bewegungsgleichung folgt
 \begin{align*}
 	\ddd{f}{t} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \dot{q}_j + \ffpartial{f}{p_j} \dot{p}_j) + \ffpartial{f}{t}
 \intertext{nun setzt man die Hamiltonschen Gleichungen ein und erhält}
 \ddd{f}{t} &= \sum_{j=1}^s\underbrace{(\ffpartial{f}{q_j} \ffpartial{H}{p_j} - \ffpartial{f}{p_j} \ffpartial{H}{q_j})}_{\{f, H\}_{\vec{q}, \vec{p}}} + \ffpartial{f}{t}
 \intertext{Wenn nun $f(\vec{q}, \vec{p}, t)$ und $g(\vec{q}, \vec{p}, t)$ zwei skalare Funktionen sind, gilt allgemein, dass}
 \{f, g\}_{\vec{q}, \vec{p}} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} - \ffpartial{f}{p_j} \ffpartial{g}{q_j})
-\intertext{die Poisson-Klammer von $f$ und $g$ ist. Jetzt kann die Bewegungsgleichung auch wie folgt geschrieben werden}
+\intertext{die Poisson-Klammer von $f$ und $g$ ist. \textit{Erinnerung: $\dot q_i = \frac{\partial H}{\partial p_i}$ und $\dot p_i = - \frac{\partial H}{\partial q_i}$.} Jetzt kann die Bewegungsgleichung auch wie folgt geschrieben werden}
 \ddd{f}{t} &= \{f, H\}_{\vec{q}, \vec{p}} + \ffpartial{f}{t}
 \intertext{Es gibt ein paar Spezialfälle}
 \dot{q}_j &= \poisson{q_j, H}\\
@@ -1142,7 +1144,7 @@ Per Koeffizientenvergleich folgt mit den vorher angegebenen Gleichungen
 \begin{align*}
 	\poisson{Q_i, Q_l} &= 0 & \poisson{Q_i, P_l} &= \delta_{il}
 \end{align*}
-Ein ähnliche Rechnung für $\dot{P}_j$ führt zu $\poisson{P_i, P_l} = 0$. Damit gelten die fundamentalen Klammern auch für andere kanonisch konjugierte Variablen \footnote{Sie erfüllen die Hamiltonschen Gleichungen. Vgl. \href{http://www.chemgapedia.de/vsengine/glossary/de/kanonisch_00032konjugierte_00032variable.glos.html}{ChemgaPedia}}.
+Ein ähnliche Rechnung für $\dot{P}_j$ führt zu $\poisson{P_i, P_l} = 0$. Damit gelten die fundamentalen Klammern auch für andere kanonisch konjugierte Variablen\footnote{Kanonisch konjugierte Variablen erfüllen die Hamiltonschen Gleichungen. Vgl. \href{http://www.chemgapedia.de/vsengine/glossary/de/kanonisch_00032konjugierte_00032variable.glos.html}{ChemgaPedia}}.
 Weiter mit dem Phasenraumfunktionen für unterschiedliche kanonisch konjugierte Variablen
 $F$, $G$; $\vec{q}$, $\vec{p}$ bzw. $\vec{Q}$, $\vec{P}$ wie oben
 \begin{align*}
@@ -1178,41 +1180,42 @@ Die Poisson-Klammer kann auch als algebraisches Konstrukt mit den folgenden Eige
 	\item[Jacobi-Identität] $\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$
 \end{description}
 
-\todo{remove?}
-Bis hierher $\{,\}$ nur algebraische Vereinfachung (+ eventuell die Einsicht in fundamentale Klammern).\\
-Für physikalische Einsicht zurück zu Zustandsgrößen.
+Bis hier wurde Poisson-Klammer nur als algebraische Vereinfachung betrachtet, mit eventuell der Einsicht der fundamentalen Klammern.\\
+Für physikalische Einsichten gehen wir zurück zu den Zustandsgrößen.
 
 % % %
-Physikalische Einsicht:
-Observable: $f = f(\vec{q}, \vec{p}, t) = f(\vec{\pi}, t)$, $\ddd{f}{t} = \{f, H\} + \ffpartial{f}{t}$
-D.h. für \textit{Integrale der Bewegung}
-$\ddd{f}{t} = 0 \Leftrightarrow \{H, f\} = \ffpartial{f}{t}$
-insbesondere, wenn $f$ nicht explizit zeitabhängig. Kenntnis der Integrale der Bewegung wesentlich für die Lösung eines dynamischen Problems \conseq Hier: einfaches Kriterium.
-Einfacher Test: $f = H$: $\ddd{H}{t} = \{H, H\} + \ffpartial{H}{t} = \ffpartial{H}{t}$ schon bekannt. (bei skleronomen Zwangsbedingungen = Energiesatz) 
-Bis hierhin ausführliche Diskussion der Poisson-Klammern als mathematisches Werkzeug der klassischen Mechanik.
-\conseq jetzt die abstrakten Eigenschaften der Klammer werden verallgemeinert
-Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quantenmechanik gibt.
+\paragraph{Physikalische Einsicht}~\\
+\textit{Observable}: 
+$$f = f(\vec{q}, \vec{p}, t) = f(\vec{\pi}, t) \qquad \ddd{f}{t} = \{f, H\} + \ffpartial{f}{t}$$
+D.h. für \textit{Integrale der Bewegung} gilt
+$$\ddd{f}{t} = 0 \Leftrightarrow \{H, f\} = \ffpartial{f}{t}$$
+insbesondere, wenn $f$ nicht explizit zeitabhängig. Die Kenntnis der Integrale der Bewegung ist wesentlich für die Lösung eines dynamischen Problems. Dafür finden wir hier ein einfaches Kriterium.\\
+\textit{Einfacher Test}: $f = H$: $\ddd{H}{t} = \{H, H\} + \ffpartial{H}{t} = \ffpartial{H}{t}$ schon bekannt (bei skleronomen Zwangsbedingungen = Energiesatz).\\
+Bis hierhin haben wir die Poisson-Klammer\footnote{Ob das Wort im Plural oder Singular geschrieben wird ist egal, es wird in der Regel das selbe gemeint.} ausführlich als mathematisches Werkzeug der klassischen Mechanik diskutiert.
+Jetzt werden die abstrakten Eigenschaften der Klammer werden verallgemeinert.
+Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quantenmechanik gibt.\footnote{Insbesondere auch die Heisenbergsche Unschärferelation.}
 
 \newcommand{\fihbar}{\frac{1}{i \hbar}}
 
 \section{Ausblick auf die Quantenmechanik}
-Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakte Eigenschaften der Poisson-Klammer, wir verstehen diese als mathematische Struktur.
-Eine Realisierung dieser Struktur ist die Poisson-Klammer \conseq klassische Mechanik.
-Alternativ: \textit{Quantenmechanik}
-Hier sind Observable lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewöhnlichen Vektoren. Definiere Klammer jetzt als Kommutator $[A,B] = AB - BA$
-als die abstrakte mathematische Struktur. Konkret können Operatoren Matrizen sein. Hier nicht Nichtkommutativität z.B. von Drehungen bekannt. "`Reihenfolge der Operatoren ist relevant"'.
-Konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Struktur wäre folgendes
+Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakteb Eigenschaften der Poisson-Klammer, wir verstehen diese als mathematische Struktur.
+Eine Realisierung dieser Struktur ist die bekannte Poisson-Klammer in der klassischen Mechanik.
+
+\paragraph{Alternative Klammer in der Quantenmechanik}
+Hier sind Observablen lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewöhnlichen Vektoren. Man definiert die Klammer jetzt als Kommutator $[A,B] = AB - BA$, d.h.
+als die abstrakte mathematische Struktur. Konkret können Operatoren Matrizen sein. Hierbei ist die Nichtkommutativität z.B. von Drehungen bekannt. "`Reihenfolge der Operatoren ist relevant"'. Und damit ist natürlich $[A, B]$ nicht immer $0$.
+Eine konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Struktur wäre folgendes
 \begin{enumerate}
-	\item Physik Observable $\equiv$ hermitischer, lineare Operator $A$ auf einem Hilbertraum
-	\item Mögliche Messwerte von $A$ = Eigenwerte von A
-	\item $\{\dots, \dots\} \equiv \fihbar [A, B]$ mit $\hbar = \frac{h}{2 \pi}$
-	\item Fundamentalklammern
+	\item Physikalische Observable entsprechen hermitischer, lineare Operator $A$ auf einem Hilbertraum
+	\item Mögliche Messwerte von $A$ entsprechen den Eigenwerten von $A$
+	\item $\{\dots, \dots\}$ entspricht $\fihbar [A, B]$ mit $\hbar = \frac{h}{2 \pi}$
+	\item Die Fundamentalklammern sind
 	$[q_i, p_j] = i \hbar \delta_{ij}$ (analog zur Poisson-Klammer)\\
 	$[q_i, q_j] = [p_i, p_j] = 0$
-	\item Hamilton-Funktion $H(\vec{q}, \vec{p}, t) \leftrightarrow $ Hamiltonoperator $H$ (Eigenwerte sind die möglichen Energiezustände)
+	\item Hamilton-Funktion $H(\vec{q}, \vec{p}, t)$ wird zum Hamiltonoperator $H$, dessen Eigenwerte sind die möglichen Energiezustände
 	\item Bewegungsgleichung\footnote{Auch als Heisenbergsche Bewegungsgleichung bekannt, vgl. \href{https://de.wikipedia.org/wiki/Heisenbergsche_Bewegungsgleichung}{Wikipedia}}
 	$$\dd t A = \fihbar [A, H] + \ffpartial{A}{t}$$
-	\conseq Postulate der Quantenmechanik.
+	Daraus folgen Postulate der Quantenmechanik.
 \end{enumerate}
 
 
