@@ -896,22 +896,24 @@ Isotropie  $\Leftrightarrow$ Drehimpulserhaltung
 \end{bemerkung*}
 
 \section{Hamilton-Mechanik}
-Die Hamiltonsche Mechanik ist eine Weiterentwicklung der Lagrange-Mechanik. Sie ist ein a posteriori\footnote{"'Eine Theorie, die a posteriori gebildet wurde, erfüllt hinsichtlich ihrer Wissenschaftlichkeit zunächst nur das Kriterium der Erklärungskraft und muss sich in anderer Hinsicht (Nachvollziehbarkeit, Überprüfbarkeit, Falsifizierbarkeit, Voraussagekraft) noch bewähren."' \href{https://de.wikipedia.org/wiki/A_posteriori}{wikipedia}} wichtiger Schritt auf dem Weg zur Quantenmechanik. Die Klassische Mechanik wird später zum "`Grenzfall"' der Übergeordneten Quantenmechanik. Ein der Quantenmechanik ähnliche mathematische Struktur lässt sich bereits hier entwickeln.
+Die Hamiltonsche Mechanik ist eine Weiterentwicklung der Lagrange-Mechanik. Sie ist ein a posteriori\footnote{"`Eine Theorie, die a posteriori gebildet wurde, erfüllt hinsichtlich ihrer Wissenschaftlichkeit zunächst nur das Kriterium der Erklärungskraft und muss sich in anderer Hinsicht (Nachvollziehbarkeit, Überprüfbarkeit, Falsifizierbarkeit, Voraussagekraft) noch bewähren."' \href{https://de.wikipedia.org/wiki/A_posteriori}{Wikipedia}} wichtiger Schritt auf dem Weg zur Quantenmechanik. Die Klassische Mechanik wird später zum "`Grenzfall"' der Übergeordneten Quantenmechanik. Eine, der Quantenmechanik ähnliche, mathematische Struktur lässt sich bereits hier entwickeln.
 
 Der Ausgangspunkt ist offensichtlich die Lagrange-Mechanik. Jetzt wird $(\vec q, \dot {\vec q})$ zu $(\vec q, \vec p, t)$ transformiert.
 
 Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
-\[\text{Lagrange}\to\text{Hamilton}\]
-\[\text{$S$ Differentialgleichungen 2. Ordnung}\to\text{$2S$ Differentialgleichungen 1. Ordnung}\]
-\[\text{$2S$ Anfangsbedingungen}\to\text{$2S$ Anfangsbedingungen}\]
+\begin{align*}
+&\text{Lagrange} &\to& &\text{Hamilton}\\
+&\text{$S$ Differentialgleichungen 2. Ordnung} &\to& &\text{$2S$ Differentialgleichungen 1. Ordnung}\\
+&\text{$2S$ Anfangsbedingungen} &\to& &\text{$2S$ Anfangsbedingungen}
+\end{align*}
 Der Übergang von $q_j$ nach $p_j$ geschieht per Legendre-Transformation, die im folgenden kurz erklärt wird.
-\subsubsection{Legendre - Transformation} \textit{als mathematisches Werkzeug}\\
+\subsubsection{Legendre - Transformation} \textit{\dots als mathematisches Werkzeug}\\
 Sei $f(x)$ eine Funktion mit $\md f = \frac{\md f}{\md x} \md x = u \md x$ und $g(x)$ eine weitere Funktion mit $\frac{\md g}{\md u} = \pm x$
 \begin{align*}
 \md f &= u\md x = \md (ux) - x\md u\\
 \md (f-ux) &= - x \md u\\
 \Rightarrow \frac{\md}{\md u}(f-xu) &= -x\\
-g(u) &= f(x) - ux = f(x) - x\frac{\md f(x)}{\md x}
+g(u) &= f(x) - xu = f(x) - x\frac{\md f(x)}{\md x}
 \end{align*}
 $g(u)$ ist jetzt die Legendre - Transformierte von $f(x)$.
 	
@@ -924,7 +926,7 @@ u(x) &= \frac{\md f}{\md x} = 2 \alpha x \rightarrow x= \frac{u}{2\alpha} & \qqu
 \rightarrow g(x) &= \frac{u^2}{4\alpha} & \qquad  \rightarrow \bar g(\bar u) &= \frac{\bar x^2}{4\alpha}
 \end{align*}
 $f$ und $\bar f$ haben die gleichen Transformationen. Damit ist diese Art zu Transformieren offensichtlich nicht eindeutig und auch nicht umkehrbar.\\
-Nun transformieren wir die beide Funktionen jeweils unter Verwendung der Legendre-Transformation
+Nun transformieren wir die beide Funktionen jeweils unter der Verwendung der Legendre-Transformation
 \begin{align*}
 \rightarrow u &= 2\alpha x \rightarrow x= \frac {u}{2\alpha}      &  \qquad \bar{u} &= 2\alpha (x+c) \rightarrow x= \frac {\bar{u}}{2\alpha} -c\\
 \rightarrow g(x) &= f(x) - x\frac{\md f}{\md x}  &  \qquad   \rightarrow \overline g(x) &= \overline f(x) - x\frac{\md \overline f}{\md x}\\
@@ -932,7 +934,7 @@ Nun transformieren wir die beide Funktionen jeweils unter Verwendung der Legendr
 &=-\alpha^3(\frac{u}{2\alpha})^2      &  \qquad    &= \alpha (\frac {\bar{u}}{2\alpha})^2 - (\frac {\bar u}{2\alpha} -c) 2\alpha( \frac {u}{2\alpha} )\\
 &= -\frac{u^2}{4\alpha} = g(u)   &  \qquad    &= -\frac {\bar{u}^2}{4\alpha} +c\bar{u} = g(\bar{u}) \neq g(u)
 \end{align*}
-Es kann gezeigt werden (nicht hier), dass die Legendre-Transformation allgemein eindeutig und damit umkehrbar ist.
+Es kann gezeigt werden, dass die Legendre-Transformation allgemein eindeutig und damit umkehrbar ist.\footnote{Dies zu zeigen würde aber den Rahmen dieser Vorlesung sprengen.}
 \end{beispiel*}
 \subsubsection{Legendre-Transformation für mehrere Variablen}
 Zuerst betrachten wir den Fall der Funktion $f(x,y)$, bei der $y$ durch $v$ ersetzt werden soll. Hier gilt, dass
