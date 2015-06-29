@@ -728,17 +728,16 @@ Und damit eine Differentialgleichung 2. Ordnung für das gesuchte $y(x)$. (vgl. 
 	Nun verwenden wir die Euler-Gleichung: $\ffpartial{f}{y} = 0$; $\ffpartial{f}{y'} = \frac{y'}{\sqrt{1 + {y'}^2}}$ und damit folgt
 	$$\dd x \frac{y'}{\sqrt{1 + {y'}^2}} = 0$$
 	oder anders gesagt
-	$$\frac{y'}{\sqrt{1 + {y'}^2}} = \text{konstant} = c \rightarrow {y'}^2 = c^2 ( 1 + {y'}^2)$$
-	Zusammenfassend folgt damit mit ${y'}^2(1 - c^2) = 1$
-	$${y'}^2 = \text{konstant}, y' = \text{konstant}$$
-	und damit schlussendlich die Lösung des Problems
+	$$\frac{y'}{\sqrt{1 + {y'}^2}} = \text{konstant} = c \qquad \Rightarrow \qquad {y'}^2 = c^2 ( 1 + {y'}^2)$$
+	Zusammenfassend folgt damit mit ${y'}^2(1 - c^2) = 1$, dass $y'$ konstant ist
+	und damit schlussendlich auch die Lösung des Problems
 	$$y(x) = a x + b$$
 	$a$, $b$ werden über die Anfangsbedingungen$(x_1, y_1)$ und $(x_2, y_2)$ festgelegt.
 \end{beispiel*}
 
 \begin{beispiel*}[Minimale Rotationsfläche]~\\
-Punkte $(x_1,y_1),(x_2,y_2)$ rotieren um $y$-Achse. Gesucht Kurve zwischen ihnen, die Rotationsfläche minimiert. (Seifenblasen-Verhalten.)
-\textit{Es wird im Grunde genommen wie beim letzten Beispiel vorgegangen} Die Minimalfläche ist
+Die Punkte $(x_1,y_1),(x_2,y_2)$ rotieren um die $y$-Achse. Gesucht ist die Kurve zwischen ihnen, welche die Rotationsfläche minimiert. (Seifenblasen-Verhalten.)
+\textit{Es wird im Grunde genommen wie beim letzten Beispiel vorgegangen.} Die Minimalfläche ist
 \begin{align*}
 J &= \int \d A = \int 2 \pi x \d s
 \intertext{mit $\d s = \sqrt{\d x^2 + \d y^2} = \sqrt{1 + (\ddd{y}{x})^2} \d x = \sqrt{1 + {y'}^2} \d x$ folgt}
@@ -754,20 +753,20 @@ f(x,y,y') &= x \sqrt{1 + {y'}^2} & \text{~\textit{mit }}y' = \ddd{y}{x}\\
 \ddd{y}{x} &= y' = \frac{a}{\sqrt{x^2 - a^2}}\\
 y(x) &= a \arcosh (\frac{x}{a}) + b & \text{~\textit{oder }} x(y) = a \cosh (\frac{y - b}{a})
 \end{align*}
-$a$, $b$ können mit den Anfangsbedingungen gefunden werden $(x_1, y_1)$ und $(x_2, y_2)$.\\
+$a$, $b$ können wieder mithilfe der Anfangsbedingungen $(x_1, y_1)$ und $(x_2, y_2)$ gefunden werden.\\
 Ein Hinweis am Rande: Die Kurve, welche durch den Kosinus Hyperbolicus beschrieben wird, wird auch Kettenlinie\footnote{\href{https://de.wikipedia.org/wiki/Kettenlinie_\%28Mathematik\%29}{Wikipedia}} genannt.
 \end{beispiel*}
 
 \subsubsection{Verallgemeinerung des Variationsproblems auf mehrere Variablen}
 \textit{\dots und damit die Euler-Gleichung natürlich auch.}\\
-Das betrachtete $y$ wird nun als Vektor $\vec{y}(x) = (y_1(x), \dots, y_s(x))$ geschrieben und ganz analog
+Das betrachtete $y$ wird nun als Vektor $\vec{y}(x) = (y_1(x), \dots, y_s(x))$ geschrieben und ganz analog gilt
 $$\delta J = \int_{x_1}^{x_2} \d x \sum_{i=1}^{s} (\ffpartial{f}{y_i} - \dd x \ffpartial{f}{y'_i}) \delta y_i = 0$$
 Hierbei sind $\delta y_i$ die unabhängigen Freiheitsgrade. Offensichtlich gibt es eine Gleichung pro Freiheitsgrad
 \begin{align*}
 \ffpartial{f}{y_i} - \dd x \ffpartial{f}{y'_i} &= 0, i = 1, \dots, s
 \intertext{Dies stellt in etwa die Euler-Lagrange-Gleichungen dar. Nun kann man das Hamiltonsche Prinzip anwenden}
 \delta \int L(t, \vec{q}, \dotvec{q}) \d t &\overset{!}{=} 0
-\intertext{Es funktioniert also völlig analog, damit bekommt man Lagrange-Gleichungen 2. Art}
+\intertext{Es funktioniert also völlig analog. Damit bekommt man Lagrange-Gleichungen 2. Art}
 \dd t \ffpartial{L}{\dot{q}_i} - \ffpartial{L}{q_i} &= 0
 \end{align*}
 \conseq \textbf{Hamiltonsches Prinzip}
@@ -783,11 +782,11 @@ Diese konstanten Funktionen heißen auch \textbf{Integrale der Bewegung}.
 
 Einige Konstanten der Bewegung hängen mit den Grundeigenschaften von Raum und Zeit zusammen (siehe unten).
 
-Allgemein gilt, dass, wie schon gesagt, möglichst viele Konstanten der Bewegung bestimmt werden sollten, bevor die Lösung angestrebt wird. Einige der möglichen Konstanten haben wir schon kennengelernt: Die Resultate zyklischer Koordinaten: $q_i$ sei zyklisch\ref{zyklische_koordinate}, damit gilt
+Allgemein gilt, dass, wie schon gesagt, möglichst viele Konstanten der Bewegung bestimmt werden sollten, bevor die Lösung angestrebt wird. Einige der möglichen Konstanten haben wir schon kennengelernt: Die Resultate zyklischer Koordinaten: $q_i$ sei zyklisch\footnote{vgl. \ref{zyklische_koordinate}}, damit gilt
 $$p_j = \ffpartial{L}{\dot{q}_j} = \text{konstant}$$
 Ein gutes Beispiel hierfür sind Zweikörperprobleme.
 
-\begin{beispiel*}[Zweikörperproblem\footnote{\href{http://de.wikipedia.org/wiki/Zweik\%C3\%B6rperproblem}{Wikipedia}}\footnote{Konkrete Beispiele: Anziehung zwischen Protonen und Elektronen im Atom, oder zwischen Sonne und Erde.}]~\\
+\begin{beispiel*}[Zweikörperproblem\footnote{\href{http://de.wikipedia.org/wiki/Zweik\%C3\%B6rperproblem}{Wikipedia}}\footnote{Konkrete Beispiele sind die Anziehung zwischen Protonen und Elektronen im Atom oder jener zwischen Sonne und Erde.}]~\\
 Zwei Massepunkte $m_1$ und $m_2$ haben die Koordinaten $\vec{r}_1$ und $\vec{r}_2$ und die Relativkoordinate $\vec{r} = \vec{r}_i - \vec{r}_2$. Als Kraft herrscht nur das Potentialfeld\footnote{Nur abhängig von der relativen Position der Massepunkte. Beispiele hierfür sind das Gravitationsfeld oder das elektrische Feld}
 \begin{align*}
 V(\vec{r}_1, \vec{r}_2) &= V(| \vec{r}_1 - \vec{r}_2|) = V(r)\\
@@ -795,10 +794,9 @@ V(\vec{r}_1, \vec{r}_2) &= V(| \vec{r}_1 - \vec{r}_2|) = V(r)\\
 \text{reduzierte Masse~~~} \mu &= \frac{m_1 m_2}{m_1 + m_2}\\
 \text{Schwerpunkt~~~} R &= \frac{1}{M} (m_1 \vec{r}_1 + m_2 \vec{r}_2)\\
 \text{Relativkoordinate~~~} \vec{r} &= \vec{r}_1 - \vec{r}_2 = r (\sin \vartheta \cos \varphi, \sin \vartheta \sin \varphi, \cos \vartheta)
-\end{align*}
-
-\paragraph{Wir Erwarten}
-\dots das sowohl die Bewegung des Schwerpunkts trivial, also gleichförmig, wie auch die Bewegung der reduzierten Masse $\mu$ im Schwerpunktsystem ist.\\~\\
+\end{align*}~\\
+\emph{Wir Erwarten}
+\dots das sowohl die Bewegung des Schwerpunkts trivial, also gleichförmig, ist wie auch die Bewegung der reduzierten Masse $\mu$ im Schwerpunktsystem ist.\\~\\
 Die generalisierten Koordinaten sind in unserem Beispiel
 \begin{align*}
 \vec{R} &= (q_1, q_2, q_3) \text{~mit~} r = q_4, \vartheta = q_5, \varphi = q_6
@@ -808,12 +806,12 @@ Die generalisierten Koordinaten sind in unserem Beispiel
 	\vec{p} &= M \dotvec{R} = \text{konstant}\\
 	p_6 &= \ffpartial{L}{\dot{q}_6} = \mu q_4^2 \dot{q}_6 \sin^2 q_5 = \mu \dot{\varphi} r^2 \sin^2 \vartheta = L_r^{(Z)} = \text{konstant}
 \end{align*}
-Die $z$-Komponente des Relativdrehimpulses ist ersichtlicherweise konstant\footnote{Vergleiche: Geworfenes Frisbee, dessen Drehachse relativ gesehen sich nicht verändert.\footnote{Tipp: Dies mit einer Tafelkreide zu probieren ist aufgrund des vergleichsweise geringen Impulses schlecht möglich.}}.
-Wenn man das Problem nun versucht in den Kartesischen Koordinaten anzugehen, führt das folgender Lagrange-Funktion.
+Die $z$-Komponente des Relativdrehimpulses ist offensichtlich konstant\footnote{Vergleiche: Geworfenes Frisbee, dessen Drehachse relativ gesehen sich nicht verändert.\footnote{Tipp: Dies mit einer Tafelkreide zu probieren ist aufgrund des vergleichsweise geringen Impulses schlecht möglich.}}.
+Wenn man nun versucht das Problem in den Kartesischen Koordinaten anzugehen, führt das zu folgender Lagrange-Funktion:
 \begin{align*}
 	L =& \frac{m_1}{2} (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
 	&- V((x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2)
-	\intertext{Auch hier sind die Erhaltungssätze ebenso gültig. Sie sind aber viel schwerer abzulesen.}
+	\intertext{Auch hier sind die Erhaltungssätze gültig. Sie sind aber viel schwerer abzulesen.}
 \end{align*}
 \end{beispiel*}
 
@@ -830,13 +828,13 @@ also gilt insgesamt
 $$\dd t (L - \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j) = 0$$
 mit dem generalisiertem Impuls $p_j = \ffpartial{L}{\dot{q}_j}$ folgt die Hamilton-Funktion
 $$H = \sum_{j=1}^s p_j \dot{q}_j - L$$
-für die nach Konstruktion gilt $\ddd{H}{t} = 0$, oder anders ausgedrückt, dass $H = \text{konstant}$ gilt.
+für die nach Konstruktion gilt $\ddd{H}{t} = 0$, oder anders ausgedrückt, dass sie konstant ist.
 
 \subsubsection{Interpretation von $H$} \dots für konservative Systeme mit holonom-skleronomen Zwangsbedingungen.
 Dazu schreiben wir zuerst die kinetische Energie in den verallgemeinerten Koordinaten:
 $$T = \frac12 \sum_{i=1}^N m_i \dotvec{r}_i^2$$
-\textit{zur Erinnerung $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, also ist $\vec{r}_i$ unabhängig von den Geschwindigkeiten.} Es folgt weiterhin
-$$\dotvec{r}_i^2 = \{(\sum_{j=1}^s \ffpartial{\vec{r}_i}{q_j} \dot{q}_j + \underbrace{\ffpartial{\vec{r}_i}{\dot{q}_i}}_{=0} \ddot{q}_i) + \underbrace{\ffpartial{\vec{r}_i}{t}}_{=0, \text{ skleronom}}\}^2 $$
+\textit{Zur Erinnerung $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, also ist $\vec{r}_i$ unabhängig von den Geschwindigkeiten.} Es folgt weiterhin
+$$\dotvec{r}_i^2 = \left( (\sum_{j=1}^s \ffpartial{\vec{r}_i}{q_j} \dot{q}_j + \underbrace{\ffpartial{\vec{r}_i}{\dot{q}_i}}_{=0} \ddot{q}_i) + \underbrace{\ffpartial{\vec{r}_i}{t}}_{=0, \text{ skleronom}}\right)^2 $$
 Womit die Ortsvektoren $\vec{r}_i$ unabhängig von der Zeit sind. Nun bekommt man
 $$T = \frac12 \sum_{i=1}^N m_i \sum_{j,l=1}^{s} \ffpartial{\vec{r}_i}{q_i} \ffpartial{\vec{r}_i}{q_l} \dot{q}_j \dot{q}_l = \frac12 \sum_{j,l = 1}^{} \dot{q_j} \dot{q_l} \underbrace{\sum_{i=1}^N m_i \ffpartial{\vec{r}_i}{q_j} \ffpartial{\vec{r}_i}{q_l}}_{\alpha_{jl}} = \sum_{j,l=1}^s \alpha_{jl} \dot{q}_j \dot{q}_l$$
 Das ist eine sogenannte "`homogene quadratische Form in $\dot{q}_j$"' von $T$.
@@ -861,7 +859,7 @@ Aus der Homogenität in der Zeit folgt
 Falls die Zwangsbedingungen skleronom sind, folgt daraus die \emph{Energieerhaltung}, denn die Hamilton-Funktion ist die Gesamtenergie.
 
 \subsubsection{Homogenität des Raums}
-Wenn etwas räumlich homogen ist, bedeutet das, dass es unabhängig vom Ort (Anfangsbedingungen) ist. Eine Verschiebung des Systems verändert nicht die Dynamik. Damit ist ein solches System in der Regel nur von den relativen Abständen abhängig.
+Wenn etwas räumlich homogen ist, bedeutet das, dass es unabhängig vom Ort\footnote{Genauer gesagt der örtlichen Anfangsbedingungen} ist. Eine Verschiebung des Systems verändert nicht die Dynamik. Damit ist ein solches System in der Regel nur von den relativen Abständen abhängig.
 
 Sei nun $\Delta q_j$ die Translation des Gesamtsystems. Bei Homogenität gilt $\frac{\partial L}{\partial q_j} = 0$ und damit, dass $q_j$ zyklisch und $p_j = \frac{\partial L}{\partial \dot q_j} = \const$ ist.
 
@@ -873,15 +871,15 @@ p_j &= \frac{\partial L}{\partial \dot q_j} = \frac{\partial T}{\partial \dot q_
 \frac{\partial\vec r_i}{\partial q_j} &= \lim\limits_{\Delta q_j \to 0} \frac{\vec r_i(q_j+\Delta q_j) - \vec r_i (q_j)}{\Delta q_j} = \lim\limits_{\Delta q_j \to 0} \frac{\Delta q_j \vec n_j}{\Delta q_j
 	n} \vec n_j
 \intertext{Womit für den Impuls gilt}
-p_j &= \vec n_j \cdot \sum\limits_{i=1}^N m_i \dot {\vec r}_i = \vec n_j \dot {\vec p}
+p_j &= \vec n_j \cdot \sum\limits_{i=1}^N m_i \dot {\vec r}_i = \vec n_j \dot {\vec P}
 \intertext{und damit, wenn $\vec n_j$ beliebig gewählt wird, folgt, dass $\vec P$ konstant ist}
 \vec P &= \sum\limits_{i=1}^N m_i\dot {\vec r}_i = \text{Gesamtimpuls} = \const
 \end{align*}
-Die Homogenität des Raums ist genau dann vorhanden, wenn \emph{Impulserhaltung} auch vorhanden ist.
+Die Homogenität des Raums ist genau dann vorhanden, wenn es \emph{Impulserhaltung} gibt.
 
 \subsubsection{Isotropie des Raums}
 Jetzt ist $q_j$ so gewählt, dass $\Delta q_j$ ein Drehwinkel ($\Delta q_j = \Delta \varphi$) und $\vec n_j$ eine Drehachse ist: $\vec n_j \Rightarrow \Delta \vec r_i = \Delta q_j (\vec n_j \times \vec r_i)$\\
-Rechnung für den Impuls analog zur Rechnung oben. Für den Impuls gilt
+Die Rechnung für den Impuls funktioniert analog zur Rechnung oben. Für den Impuls gilt
 
 \begin{align*}
 	p_j &= \frac{\partial L}{\partial \dot q_j} = \sum\limits_{i=1}^Nm_i \dot {\vec r}_i \cdot \frac{\partial \vec r_i}{\partial q_j}\\
@@ -894,7 +892,7 @@ $\vec L = \text{Gesamtdrehimpuls}$\\
 Isotropie  $\Leftrightarrow$ Drehimpulserhaltung
 \[\vec L = \sum\limits_{i=1}^Nm_i \vec r_i \times \dotvec r_i = \const \]
 \begin{bemerkung*}
-	Bei Systemen, die nur bei Translation entlang einer Richtung oder der Drehung um eine einzige Achse invariant sind, ist nur die entsprechende Komponente von Impuls oder Drehimpuls erhalten.
+	Bei Systemen, die nur bei der Translation entlang einer Richtung oder der Drehung um eine einzige Achse invariant sind, ist nur die entsprechende Komponente von Impuls oder Drehimpuls erhalten.
 \end{bemerkung*}
 
 \section{Hamilton-Mechanik}
