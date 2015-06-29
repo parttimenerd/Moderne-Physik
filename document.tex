@@ -76,6 +76,8 @@
 \DeclareMathOperator{\arcosh}{arcosh}
 \newcommand{\celectron}{\circled{$e^-$}}
 
+\DeclareSIUnit\year{a}
+
 \makeatletter
 %\@removefromreset{section}{chapter}
 \makeatother
@@ -329,7 +331,6 @@ die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z
 $$\delta W = - \vec{F} \delta \vec{r}$$
 Wenn man darin die obere Gleichung als $\vec{F}_i = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ einsetzt folgt
 $$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
-\todo{klären, wie es zur Formel kommt}
 Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn wir fordern, dass die Zwangskräfte keine Arbeit verrichten\footnote{Erfahrungsgemäß} und damit $\delta W = \sum_i \vec{K}_i \delta \rvec_i$ gilt.
 
 \paragraph{Prinzip der virtuellen Arbeit}
@@ -656,7 +657,7 @@ $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overs
 \sum_{i=1}^N \vec{K}_i \delta \vec{r}_i = \sum_{j=1}^s Q_j \delta q_j = \sum_{j=1}^{s} - \ffpartial{V}{q_j} \delta q_j &= - \delta V
 \intertext{Daraus folgt dann zusammen genommen, die Äquivalenz des Prinzips von d'Alembert und dem Hamiltonschen}
 0 = \int_{t_1}^{t_2} \delta (T-V) \d t = \delta \int_{t_1}^{t_2} (T-V) \d t = \delta \int_{t_1}^{t_2} L \d t &= 0
-\end{align*}\todo{holonom-konservative Kraft???}
+\end{align*}
 
 Bewegungsgleichungen? \conseq Variationsrechnung.
 Finden der Kurve $\vec{q}(t)$, die $S\{\vec{q}(t)\}$ extremal macht.
@@ -1919,7 +1920,7 @@ $$\Psi''(x) + k^2(x) \psi(x) = 0$$
 \end{bemerkung*}
 
 \begin{bemerkung*}
-	$\psi(x)$ endlich wegen Wahrscheinlichkeisinterpretation von $|\psi|^2$
+	$\psi(x)$ endlich wegen Wahrscheinlichkeitsinterpretation von $|\psi|^2$
 \end{bemerkung*}
 
 \begin{bemerkung*}
@@ -1933,7 +1934,7 @@ Bereich mit $E = V$ ($k^2 = 0$) klassische Umkehrpunkte.\\
 Bereich mit $E < V$ ($k^2 < 0$) klassisch verboten.\\
 Was bedeutet das für die Wellenfunktion?
 \begin{description}
-	\item[$E < V$] \conseq $k^2 > 0 $ \conseq $\psi''(x) = - \underbrace{k^2}_{> 0} \psi(x)$. $\psi''$ hat immer umgekehrtes Vorzeichen von $\psi$. $\psi(x)$ ist zur $x$-Achse hin gekrümmt. \conseq Oszillationen. z.B. $V = $ konstant, $k = \const$, $\psi(x) = e^{\pm i k x}$\\
+	\item[$E < V$] \conseq $k^2 > 0 $ \conseq $\psi''(x) = - \underbrace{k^2}_{> 0} \psi(x)$. $\psi''$ hat immer umgekehrtes Vorzeichen von $\psi$. $\psi(x)$ ist zur $x$-Achse hin gekrümmt. \conseq Oszillationen. z.B. $V = $ konstant, $k^2 = \const < 0$, $k=\sqrt{\frac{2m}{\hbar^2} (E - V)} = i \sqrt{\frac{2m}{\hbar^2} (V - E)} \equiv i \kappa $, $\psi''(x) = \kappa^2 \psi(x)$ \conseq $\psi \sim e^{\pm \kappa x}$. $E < V$ für positive $x$ \conseq $e^{\kappa x}$ divergiert. $\Rightarrow$ $\psi(x) \to e^{-\kappa x}$ für $x \to \infty$. typisches \textbf{expotentielles Abklingen}. % $\psi(x) = e^{\pm i k x}$\\
 	$\psi''(x) = (\pm i k) (\pm i k) e^{\pm i k x} = - k^2 \psi(x)$\\
 	allgemein $\psi(x) = A e^{ikx} + Be^{ikx}$ mit $k = \sqrt{\frac{2m}{\hbar^2} (E -V)}$
 	\item[$E = V$] \conseq $k^2 = 0$ \conseq $\psi''(x) = 0$, Wendepunkt von $\psi(x)$
@@ -1943,9 +1944,82 @@ Was bedeutet das für die Wellenfunktion?
 \paragraph{typische Fall}
 3 Möglichkeiten in verbotenen Bereich
 \begin{itemize}
-	\item[a)] asymptotisches Anschmiegen an die $x$-Achse
+	\item[a)] asymptotisches Anschmiegen an die $x$-Achse.
 	\item[b) / c)] $\psi(x) \to \infty$ für $x \to \infty$ \conseq keine Wahrscheinlichkeitsinterpretation \conseq keine physikalische Lösungen.
 \end{itemize}
+
+\begin{beispiel*}[$\infty$-Potentialtopf]
+	$E \ll V$ außerhalb eines erlaubten Bereiches $[0, a]$.\\
+	$V = \begin{cases}
+	\infty & x < 0\\
+	\infty & x > a\\
+	0 & 0 \le x \le a
+	\end{cases}$\\
+	Lösungen außerhalb des Topfes $\Psi(x) = 0$. Innerhalb $V = 0$ \conseq ebene Welle $\psi(x) = A e^{ikx} + Be^{-ikx}$. $k^2 = \frac{2mE}{\hbar^2}$\\
+	Stetige Wellenfunktion \conseq $\psi$ verschwindet am Rand.
+	\begin{align*}
+		\psi(0) &=\psi(a) = 0\\
+		\psi(0) &= A + B = 0 \qquad \Rightarrow B = -A\\
+		\psi(a) &= A(e^{ika} - e^{ika}) = 0\\
+		&= 2iA \sin(ka) = 0\\
+		\rightarrow ka &= 2\pi n \qquad n = 1, 2, 3, \dots\\
+		k &= \frac{2\pi h}{a}\\
+		\rightarrow E &= \frac{\hbar^2 k^2}{2 m} = \frac{4 \pi^2 \hbar^2}{2 m a^2} n^2 = E_n\\
+		\intertext{$A$ aus Normierung}
+		\int_b^a 4 A^2 \sin^2 kx \d x &\overset!= 1\\
+		\Rightarrow 1 &= \frac{4A^2a}{2} \qquad \Rightarrow A = \frac{1}{\sqrt{2a}}\\
+		\psi_n(x) = \sqrt{\frac2a} \sin(\frac{2\pi}{a} n x) \qquad E = \frac{4 \pi^2 \hbar^2}{2ma^2} n^2
+	\end{align*}
+	Stehende Wellen im Kasten im Kasten. Mit \textbf{diskreten Energieniveaus}.
+\end{beispiel*}
+
+\begin{beispiel*}[Endlicher Potentialtopf]
+	$V = \begin{cases}
+	V_0 & x < 0\\
+	V_0 & x > a\\
+	0 & 0 \le x \le a
+	\end{cases}$\\
+	\textbf{E < V}: Gebundene Zustände wie im $\infty$-Potentialtopf. \textbf{aber}: jetzt potentielles Eindringen in verbotenen Bereich.\\
+	\textbf{E > $V_0$} zusätzlich sogenannte \textbf{Streuzustände}.\\
+	z.B. Streuexperiment: Teilchen/Welle läuft von links ein \conseq was passiert?\\
+	\conseq zwei Möglichkeiten: Reflexion und Transmission
+	\conseq $0 \le R, T \le 1$ ($T$ steigt mit wachsender Energie und hat kleiner werdende Minima bei Vielfachen der "`Wellenlänge"', $R$ verhält sich Komplementät.)\\
+	\textbf{"'Resonanzen"'}, wenn Welle in Topf hineinpasst. \textbf{Streuexperiment}: Resonanzen erlauben Rückschluss auf das System, an dem gestreut wird.
+\end{beispiel*}
+
+\begin{beispiel*}[Potentialwall]
+	(Topf mit $V_0 \to -V$)
+	$V = \begin{cases}
+	V_0 > 0 & |x| < x_0\\
+	0 & \text{sonst}
+	\end{cases}$\\
+	Untersuchen von links einlaufender Welle.
+	$$\psi_0(x) \sim e^{ik_0x} \qquad k_0^2 = \frac{2m}{\hbar^2} E$$
+	interessant $E < V_0$ (klassisch kann Teilchen den Wall nicht überwinden). (vor Wall $Ae^{ik_0x}$, Expotentieller Abfall im Wall $Ce^{-\kappa x}$, danach Welle mit $Be^{ik_0 x}$)\\
+	\conseq auslaufender Zustand transmittierte und reflektierte Welle. Rechnung führt zu sogenanntem \textbf{Gamor-Faktor} (Transmissionswahrscheinlichkeit)
+	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
+	\conseq Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreichte, diese zu überwinden \conseq Tunneleffekt.\\
+	\textbf{Gamor}. Anwendung auf beliebige Potentialbarriere per Approximation (als Treppenbarrieren)
+	$$T(E) = e^{-\frac{2}{\hbar} \int_{0}^{\infty} \sqrt{2m (V(x') - E)}~ \d x'}$$
+	Erklärung des $\alpha$-Zerfalls von Atomkernen. Spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n). Keine Beeinflussung von außen (Druck, Temperatur). 
+	$\alpha$-Teilchen mit sehr charakteristischer Energie emittiert. Halbwertszeiten sehr unterschiedlich. z.B.
+	$~^{212}Po: \tau_{\frac12} = \SI{3e-7}{\second}$,
+	$~^{238}U: \tau_{\frac12} = \SI{4.5 e9}{\year}$\\
+	Geiger-Nutall-Gesetz: $A$ = Massenzahl = $N + Z$ = Neutronen + Protonen, $E$ = Energie des $\alpha$-Teilchens.
+	$$\ln \tau_{\frac12} = A \frac{Z}{\sqrt{E}} + \dots$$
+	$\leftarrow$ aus Modell für $\alpha$-Teilchen im Atomkern
+\end{beispiel*}
+
+\begin{beispiel*} [Ausblick: Kronig-Penney-Modell eines Festkörpers]
+	Potential (periodisch)
+	$$V(x) = D \sum_{n = -\infty}^{\infty} \delta(x - n a)$$
+	$x \neq n a$ \conseq klassisch erlaubt, quasi freie Teilchen $\Rightarrow$ Ebenen Wellen mit periodischen Randbedingungen. zwei Typen von Bedingung an Wellenfunktion.\\
+	\textbf{I.} Stetig an dem Rand
+	$$\psi(n a + \epsilon) \overset!= \psi(na - \epsilon) \equiv \psi(na)$$
+	Schrödingerlgeichung ($\epsilon \to 0^+$)
+	$$\int_(na-\epsilon)^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon} = - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \to 0 \text{weil $\psi$ stetig}$$
+	\conseq $\psi'(x +\epsilon) - \psi'(x -\epsilon) = \frac{2m}{\hbar^2} D \psi(n a)$ endlicher Sprung in $\psi'$ an verbotenen Stellen.
+	\end{beispiel*}
 
 % % % % % % % % % % % %
 \begin{itemize}
@@ -2946,6 +3020,7 @@ Eine Liste von Materialien, welche beim Lernen helfen und welche besser sind, al
 \begin{description}
 	\item[Grundkurs Theoretische Physik 2, Nolting] Ein gutes Buch mit vielen Aufgaben zu Langrange und Hamilton. Es ist in der Bibliothek in ausreichender Menge vorhanden.
 	\item[\href{https://de.wikibooks.org/wiki/Aufgabensammlung_Physik:_Theoretische_Mechanik}{wikibooks: Aufgaben Theorische Mechanik}] Einfache Aufgaben zum Langrange (wobei das spherische Pendel in der letzten Klausur dran kam), welche gut und ausführlich erklärt sind.
+	\item[Blätter des letzten Jahres] Im letzten Jahr, waren 7 von 13 Übungsblättern zum Thema Quantenmechanik. Sie waren einfacher, also näher an Klausuraufgaben, und verständlicher als die aktuellen. Sie werden leider nicht mehr auf der Website der Vorlesung verlinkt, sind aber dennoch zugänglich. Die Blätter \verb|B| und Lösungen \verb|L| findet ihr unter\\ \verb-http://www.tkm.kit.edu/downloads/ss2014_modphys_info/mod_phys_- \verb-inf_2014_{B|L}[Nummer].pdf-
 \end{description}
 
 \chapter{Mathematische Grundlagen}
