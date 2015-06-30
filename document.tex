@@ -1777,11 +1777,11 @@ meist H zeitunabhängig.
 
 \paragraph{Lösung der Schrödingergleichung} per Separationsansatz $\Psi(\vec{r}, t) = \Psi(\vec{r}) \vp(t)$
 \begin{align*}
-	i \hbar \fpartial{t} \Psi(\vec{r}) \vp &= \Psi(\vec{r}) \vp(t)\\
+	i \hbar \fpartial{t} \Psi(\vec{r}) \vp(t) &= H \Psi(\vec{r}) \vp(t)\\
 	= \Psi(\vec{r}) i \hbar \fpartial{t} \vp(t) &= \vp(t) H \Psi(\vec{r})\\
 	\frac{1}{\vp(t)} i \hbar \fpartial{t} \vp(t) = \frac{1}{\Psi(\vec{r})} H \Psi(\vec{r})
 \end{align*}
-Linke Seite hängt nur von der zeit ab, rechte nur vom Ort. \conseq linke Seite = rechte Seite = konstant\\
+Linke Seite hängt nur von der Zeit ab, rechte nur vom Ort. \conseq linke Seite = rechte Seite = konstant\\
 Dimension von E (reelle Zahl)
 \conseq a) $i \hbar \fpartial{t} \vp(t) = E \vp(t)$\\
 b) $H \Psi(\vec{r}) = E \Psi(\vec{r})$\\
@@ -1801,7 +1801,7 @@ H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hami
 
 \begin{bemerkung*}
 	Schrödingergleichung linear in der Zeit \conseq aus Anfangszustand $\Psi(\vec{r}, t_0)$ zu Zeit $t_0$ \conseq $\Psi(\vec{r}, t)$ per Schrödingergleichung (siehe auch Hamiltonfunktion). Problem meist Lösung der Zeitunabhängige Schrödingergleichung.\\
-	Ist $\Psi(\vec{r}, t)$ wirklich einer "`Materiewelle"'?\\
+	Ist $\Psi(\vec{r}, t)$ wirklich eine "`Materiewelle"'?\\
 	\conseq Doppelspaltexperiment, für Teilchen \celectron
 	\begin{itemize}
 		\item jeweils ein Spalt abgedeckt
@@ -1827,7 +1827,7 @@ H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hami
 	nur für \textbf{quadratintegrable Funktionen.}\\
 	Schrödingergleichung ist linear, d.h. wenn $\Psi_1(\vec{r}, t)$ und $\Psi_2(\vec{r}, t)$ Lösungen, dann auch $\Psi(\vec{r}, t) = \alpha \Psi_1(\vec{r}, t) + \beta \Psi_2(\vec{r}, t)$.\\
 	(Superpositionsprinzip). Wegen der Deutung von $|\Psi|^2$ kommt es auf eine globale Phase nicht an: $\Psi \to \Psi e^{i\alpha} \Rightarrow |\Psi|^2 = \Psi e^{i\alpha} \Psi^\ast e^{-i\alpha} = \Psi \Psi^\ast = |\Psi|^2$\\
-	wohl abre auf relative Phase zweier Lösungen (\conseq Interferenz)
+	wohl aber auf relative Phase zweier Lösungen (\conseq Interferenz)
 	\subsubsection{Lösung freier Teilchen}
 	$V(\vec{r}) = 0 \rightarrow H = - \frac{\hbar^2}{2m} \vec{\nabla}^2$\\
 	$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$
