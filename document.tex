@@ -23,6 +23,7 @@
 \usepackage{paralist}
 \usepackage{braket}
 \usepackage{pgfplots}
+\usepackage{dsfont}
 
 \theoremstyle{definition}
 \newtheorem*{definition*}{Definition}
@@ -1712,10 +1713,10 @@ Wien: $\nu^2 g(\frac{\nu}{T}); \epsilon_0 = h \nu$ $h \sim 10^{37} Js$ Plancksch
 $\hookrightarrow W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$ (Plancksche Strahlungsformel).\\
 Sowohl Wiens Formel, als auch $R-J-Gesetz$ als Grenzfälle enthalten
 
-$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
+$$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
 k_B T & h\nu \ll k_B T\\
 h \nu e^{- \frac{h\nu}{k_B T}} & h \nu \gg k_B T
-\end{cases}$
+\end{cases}$$
 Integration über alle Frequenzen \conseq Stefan-Boltzmann-Gesetz
 $$W(T) = (\frac{8\pi^5}{15} \frac{k_B^4}{c^3 h^3}) T^4$$
 
@@ -1782,7 +1783,7 @@ Beugungsexperimente (Davisson und Germer) von \celectron an Kristallen. \conseq 
 \conseq \textbf{De Broglie}-Wellenlänge von Teilchen ist
 $$\lambda = \frac{h}{p}$$
 
-\subsection{Schrödingergleichung}
+\section{Schrödingergleichung}
 Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden werden. \conseq Hamilton-Jacobi-Theorie. \conseq berechnet die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
 $$i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)$$
 $\hbar = \frac{h}{2 \pi}$. \\
@@ -2031,6 +2032,7 @@ Was bedeutet das für die Wellenfunktion?
 	V_0 & x > a\\
 	0 & 0 \le x \le a
 	\end{cases}$\\
+	
 	\textbf{E < V}: Gebundene Zustände wie im $\infty$-Potentialtopf. \textbf{aber}: jetzt potentielles Eindringen in verbotenen Bereich.\\
 	\textbf{E > $V_0$} zusätzlich sogenannte \textbf{Streuzustände}.\\
 	z.B. Streuexperiment: Teilchen/Welle läuft von links ein \conseq was passiert?\\
@@ -2109,88 +2111,81 @@ Was bedeutet das für die Wellenfunktion?
 
 \section{Formale Grundlagen der Quantenmechanik}
 \begin{definition*}[Zustand]
-	Der Zustand eines Systems ist, analog zu $\pi(t) = \{\vec{q}, \vec{p}, t\}$, hier in Quantenmechanik abstrakter Vektor $\ket{\Psi}$ (nicht $\vec{\Psi}$) aus \textbf{Hilbertraum}. Meist $\ket{\Psi} = \ket{\Psi(t)}$.
+	Der Zustand eines Systems ist, analog zu $\pi(t) = \{\vec{q}, \vec{p}, t\}$, hier in Quantenmechanik abstrakter Vektor $\ket{\Psi}$ (nicht $\vec{\Psi}$) aus \textbf{Hilbertraum}. Meist wird abkürzend $\ket{\Psi} = \ket{\Psi(t)}$ gesetzt.
 \end{definition*}
 \begin{definition*}[Hilbertraum]
-	$\infty$-dimensionaler Vektorraum mit Skalarprodukt und abzählbarer Basis.
-	Verknüpfungen mit anderen Elementen oder komplexen Zahlen.
-	% % % immer kleines \psi statt \Psi!!!!
-	Hilbertraum $\mathcal{H}$.
+	Wir betrachten im folgenden einen $\infty$-dimensionalen Vektorraum mit einem Skalarprodukt und einer abzählbaren Basis, dieser Vektorraum ist über den $\Co$ definiert. D.h. Elemente des Vektorraums können mit anderen Elementen des selben Vektorraums und komplexen Zahlen verknüpft werden. Oder formal
 	\begin{align*}
 		\ket{\psi} + \ket{\vp} &\in \mathcal{H}\\
-		c \ket{\psi} + d \ket{\vp} = \ket{c \psi + d \vp}
+		c \ket{\psi} + d \ket{\vp} &= \ket{c \psi + d \vp}
 	\end{align*}
-	$\exists$ \textbf{Nullelemente} $0, \ket{0}$
+
+	Da der Vektorraum nach Konstruktion abgeschlossen\footnote{Zumindest, wenn man keine Spezialfälle betrachtet.} ist und wir für ihn ein Skalarprodukt gerfordert haben, kann man den Vektorraum auch als Hilbertraum $\mathcal{H}$ auffassen. Wir überprüfen nun einfach zum Spaß, die Bedingungen an den Vektorraum (und dessen Skalarprodukt). Desweiteren schauen wir uns noch die Bedingungen für Orthogonalität, \dots an:\\
+	\textbf{Es gibt Nullelemente} $0, \ket{0}$ mit
 	\begin{align*}
 		\ket{\alpha} + \ket{0} &= \ket{\alpha}\\
 		0 \cdot \ket{\alpha} &= \ket{0}\\
-		c \cdot \ket{0} = \ket{0}
+		c \cdot \ket{0} &= \ket{0}
+		\intertext{\textbf{Inverse}}
+		\ket{\alpha} - \ket{\alpha} &= \ket{\alpha} + \ket{-\alpha} = \ket{0}
+		\intertext{\textbf{Distributivgesetz}}
+		c (\ket{\alpha} + \ket{\beta}) &= c \ket{\alpha} + c \ket{\alpha}\\
+		(c+d) \ket{\alpha} &= c \ket{\alpha} + d \ket{\alpha}
+		\intertext{\textbf{Abzählbare Basis} $B = \{\ket{n}\} = \{\ket{1}, \ket{2}, \ket{3}, \dots\}$ ist genau dann eine Basis, wenn}
+		\sum_n c_n \ket{n} &= \ket{0} \Leftrightarrow \forall n: c_n = 0
+		\intertext{\textbf{Skalarprodukt}}
+		\braket{\alpha | \beta} &= c \in \Co\\
+		\braket{\alpha | \beta}^\ast &= \braket{\beta | \alpha}\\
+		\braket{\alpha | \beta + \gamma} &= \braket{\alpha | \beta} + \bra{\alpha | \gamma}\\
+		c \braket{\alpha | \beta} &= \braket{\alpha | c \beta} = \braket{c^\ast \alpha | \beta}\\
+		\braket{\alpha | \alpha} &\geq 0 \text{~für~} \ket{\alpha} \neq 0\\
+		\intertext{\textbf{Norm}}
+		\| \alpha \| &= \sqrt{\braket{\alpha | \alpha}}
+		\intertext{\textbf{Orthogonalität} Zwei beliebige Vektoren $\ket{\alpha}$ und $\ket{\beta}$ sind orthogonal, wenn}
+		\braket{\alpha | \beta} &= 0
+		\intertext{\textbf{Orthogonale Basis} Seien $\ket{n}$ und $\ket{m}$ beliebige Basisvektoren}
+		\braket{n | m} &= 0 \Leftrightarrow \ket{n} \neq \ket{m}
+		\intertext{\textbf{Orthonormale Basis} Seien $B$ eine orthogonale Basis}
+		\forall \ket{n} \in B: \| n \| &= 1
 	\end{align*}
-	\textbf{Inverse} $\ket{\alpha} - \ket{\alpha} = \ket{\alpha} + \ket{-\alpha} = \ket{0}$\\
-	Distributivgesetz $c (\ket{\alpha} + \ket{\beta}) = c \ket{\alpha} + c \ket{\alpha}$\\
-	$(c+d) \ket{\alpha} = c \ket{\alpha} + d \ket{\alpha}$\\
-	Sei $\{\ket{n}\}$ eine Basis $\ket{1}, \ket{2}, \ket{3}, \dots$ genau dann Basis wenn $\sum_n c_n \ket{n} = \ket{0}$ nur, wenn alle $c_n = 0$\\
-	\textbf{Skalarprodukt} $\ket{\alpha}, \ket{\beta} \in \Co$
-	$\ket{\alpha} \to \bra{\alpha}$ $\braket{\alpha | \beta} = c \in \Co$, $\braket{\alpha | \beta}* = \braket{\beta | \alpha}$, $\braket{\alpha | \beta + \gamma} = \braket{\alpha | \beta} + \bra{\alpha | \gamma}$, $c \braket{\alpha | \beta} = \braket{\alpha | c \beta} = \braket{c* \alpha | beta}$, $\braket{\alpha | \alpha} \geq 0$ wenn $\ket{\alpha} \neq 0$\\
-	\textbf{Norm} $\| \alpha \| = \sqrt{\braket{\alpha | \alpha}}$\\
-	\textbf{Orthogonalität} $\braket{\alpha | \beta} = 0$\\
-	\textbf{Basis} $\ket{n}$ sei orthogonal $\braket{n | m} = \delta_{nm}$ am besten auch $\| n \| = 1$.\\
-	beliebiger Zustan $\ket{\Psi}$ darstellen durch Basis mit $\braket{n | \Psi} = $ Projektion von $\ket{\Psi}$ und $\ket{n}$ mit Vollständigkeit $\sum_n \ket n \bra n = 1$\\
-	$$\ket{\Psi} = \ket{\Psi} = \sum_n \underbrace{\ket{n}}_{\text{Basisvektor}} \overbrace{\braket{n | \psi}}^{\text{"`Länge"' von $\ket{\psi}$ in Richtung $\ket n$}}$$
-	ebenso $$\ket{\psi} \to \begin{pmatrix}
-	\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots \\ \braket{n | \Psi}
-	\end{pmatrix}$$
-	Problem $n \to \infty$. \conseq kontinuierlicher Index $n \in \Re$. 
-	$\braket{n | \psi} = \psi_n$ \conseq $\psi(n)$ = komplexe Funktion\\
-	Anschluss der Wellenfunktion an die abstrakten Zustände $\ket{\psi}$ (Komponenten des Vektors) \conseq "`\textbf{Ortsdarstellung}"'.\\
-	Vektor $\psi(x) = \braket{x | \psi}$ (1-dim.)\\
-	bzw. $\psi(\vec{r}) = \braket{\vec{r} | \psi}$.
-	Jetzt $\psi(\vec{r})$ Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. $\ket{\vec{r}}$ = Eigenvektoren des Ortsoperators: $\underbrace{\hat{\vec{r}}}_{\text{\vspace{-10em}Operator}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$.\\
-	Dann \textbf{Skalarprodukt als Integral}
+	Ein beliebiger Zustand $\ket{\psi}$ lässt desweiteren durch Basisvektoren darstellen. Hierbei kann $\braket{n | \psi}$ als die Projektion von $\ket{\psi}$ in Richtung $\ket{n}$ angesehen werden. Nach Konstruktion, und weil wir implizit eine orthogonale Basis annehmen, gilt außerdem $\sum_n \ket n \bra n = \mathds{1}$. Wobei mit $\mathds{1}$ hier die "`Einheitsmatrix"' gemeint ist.
 	\begin{align*}
-		\braket{\psi | \vp} &= \braket{\psi | 1 | \vp} = \sum_n \braket{\psi | n} \braket{n | \vp}\\
-		&= \sum_n \psi^\ast_n \vp_n \vp_n
-		\intertext{bzw. im kontinuierlichem $n \to \vec{r}$}
-		\braket{\psi | \vp} &= \int \d^3 \vec{r} \underbrace{\braket{\psi | \vec{r}}}_{\braket{\vec{r} | \psi}^\ast} \braket{\vec{r} | \vp} \text{mit $1 \int \d^3 \vec{r} \ket{\vec{r}} \bra{\vec{r}}$}\\
+	\ket{\psi} &= \sum_n \underbrace{\ket{n}}_{\text{Basisvektor}\hspace{-2em}} \overbrace{\braket{n | \psi}}^{\hspace{-10em}\text{"`Länge"' von $\ket{\psi}$ in Richtung $\ket n$}\hspace{-10em}}
+	\end{align*}
+	$\ket{\psi}$ kann also wie folgt dargestellt werden
+	$$\ket{\psi} \to \begin{pmatrix}
+		\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots
+	\end{pmatrix}$$
+	Wir lassen jetzt zu, dass Index $n \in \Re$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade eber definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
+	Die abstrakten Zustände von $\ket{\psi}$ sind Komponenten des Vektors. In dem wir $\ket{\psi}$ als Wellenfunktion betrachten, kommen wir unter anderem auf eine Art "`\textbf{Ortsdarstellung}"':
+	$$\psi(x) = \braket{x | \psi} \text{~\textit{(1-dim.)}~~~ bzw.~~~} \psi(\vec{r}) = \braket{\vec{r} | \psi}$$
+	Jetzt sind offensichtlich die $\psi(\vec{r})$ die Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. Außerdem sind die $\ket{\vec{r}}$ damit die Eigenvektoren des Ortsoperators, da gilt $$\underbrace{\hat{\vec{r}}}_{\text{\hspace{-10em}Operator\hspace{-10em}}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$$
+	Das vorher definierte Skalarprodukt
+	\begin{align*}
+		\braket{\psi | \vp} &= \braket{\psi | \mathds{1} | \vp} = \sum_n \braket{\psi | n} \braket{n | \vp}\\
+		&= \sum_n \psi^\ast_n \vp_n
+		\intertext{müssen wir jetzt "`im kontinuierlichen"' ($n \to \vec{r}$) als Integral auffassen}
+		\braket{\psi | \vp} &= \int \d^3 \vec{r} \underbrace{\braket{\psi | \vec{r}}}_{\braket{\vec{r} | \psi}^\ast} \braket{\vec{r} | \vp} \text{\qquad mit $1 = \int \d^3 \vec{r} \ket{\vec{r}} \bra{\vec{r}}$}\\
 		&= \int \d^3 \vec{r} \psi^\ast(\vec{r}) \vp(\vec{r})
 	\end{align*}
-	\conseq Wellenfunktion $\psi(x)$ bzw. $\psi(\vec{r})$ ist eine konkruente Darstellung des abstrakten Zustandes $\ket\psi$\\
-	Operatoren (meist lineare Operatoren)
-	$$A \ket{\alpha} = \ket{\beta} = \ket{A \alpha}$$
-	$A_1 = A_2$, wenn $A_1 \ket{\alpha} = A_2 \ket{\alpha}$ (für alle $\ket{\alpha}$).\\
-	linear $(a A + b B) \ket{\alpha} = a A \ket{\alpha} + b B\ket{\alpha}$, $a,b \in \Co$, $A$, $B$ lineare Operatoren.
-	$$A_2 A_1 \ket{\alpha} = A_2 \ket{A_1 \alpha} = A_2 (A_1 \ket{\alpha})$$
-	adjungierter Operator
-	$$\braket{\beta | A | \alpha} = \braket{\beta | A \alpha} = \braket{A^+ \beta | \alpha} = \braket{\alpha | A^+ | \beta}^\ast$$
-	\conseq Eigenwertproblem
-	$$A \ket{\alpha} = a \ket{\alpha}$$
-	$A$ Operator, $\ket{\alpha}$ Eigenvektor, $a \in \Co$ Eigenwert\\
-	analog zu Matrizen.\\
-	hermitesche Matrix (selbstadjungiert) $A^+ = A^{\top \ast} = A$
-	$$\braket{\alpha | A | \alpha} = a \braket{\alpha | \alpha} = \dots = a^\ast \braket{\alpha | \alpha}$$
-	\conseq $a \in \Re$
-	\conseq hermitesche Operatoren haben reelle Eigenwerte
+	Die Wellenfunktionen $\psi(x)$ bzw. $\psi(\vec{r})$ sind kongruente Darstellungen des abstrakten Zustandes $\ket\psi$.
+	
+	\paragraph{Operatoren} In der Regel werden lineare Operatoren betrachtet.\\
+	Für Operatoren gilt, dass deren Anwendung $A \ket{\alpha} = \ket{A \alpha}$ einen neuen Zustand $\ket{\beta}$ des selben Vektorraumes zur Folge hat. Zwei Operatoren sind identisch, falls, sie für alle Zustände $\ket{\alpha}$ dasselbe Ergebnis produzieren. Für zwei lineare Operatoren $A$ und $B$ und $a,b \in \Co$ definieren wir die Addition wie folgt
+	\begin{align*}
+		(a A + b B) \ket{\alpha} &= a A \ket{\alpha} + b B\ket{\alpha}\\
+		\intertext{Als Notation verwenden wir}
+		B A \ket{\alpha} &= B \ket{A \alpha} = B (A \ket{\alpha})
+	\end{align*}
+	
+	\paragraph{Adjungierter Operator} korrespondierend zum Operator $A$ ist $A^+ = A^{\top \ast}$, also der transponierte und komplex konjugierte Operator.
+	\paragraph{Selbstadjungierter Operator} \textit{auch als hermitescher\footnote{Hermitesch wird wie "`hermit'sch"' ausgesprochen} Operator bezeichnet}\\
+	Für muss gelten $A^+ = A$. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte:\\
+	Sei $\ket a$ ein Eigenvektor von $A$ zu Eigenwert $\alpha$, d.h. $A \ket{a} = \alpha a$ man rechnet nun $\braket{a | A | a}$ aus:
+	$$\alpha \braket{a | a} = \braket{a | \alpha | a} = \braket{a | (A a)} = \braket{a | A | a} \overset{\text{da $A^+ = A$}}{=} \braket{(A a) | a} = \alpha^\ast \braket{a | a}$$
+	Dies würde einen Widerspruch darstellen, wenn $\alpha \notin \Re$ wäre.
 \end{definition*}
 
-
-% % % % % % % % % % % %
-\begin{itemize}
-	\item ein bisschen Historisches
-	\item einfache 1-D Theorie
-	\item[\conseq] Schrödingergleichung, Ortsdarstellung (zeitunabhängige Darstellung?) \conseq "`Wellenmechanik"'
-	\item Postulate der \QM
-	\item Symmetrien und Erhaltungssätze, insbesondere Drehimpuls, Spin
-	\item Wasserstoffatom \conseq Periodensystem der Elemente
-	\item Identische Teilchen (Bosonen und Fermionen)
-	\item Mindestens die Hälfte mit Quantenmechanik
-\end{itemize}
-
-%\begin{itemize}
-%	\item ntwicklung der formalen, analytischen Mechanik (Lagrange, Hamilton, Jacobi)
-%	\item erlaubt theoretische Diskussion der Mechanik
-%	\item Symmetrien und weitere wichtige konzepte, die in der \textbf{Quantenmechanik} (Quantenformalismus für einzelne Objekte, formalere Theorie der Quantenphysik)
-%	\item "`Hamiltonoperator"'. Kanonisch konjugierte Variable \conseq Symmetrie und Erhaltungssätze. Symmetrien \conseq Erhaltungsgrößen
-%\end{itemize}
 
 \appendix
 
