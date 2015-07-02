@@ -1833,7 +1833,7 @@ Zuerst bringen wir aber noch $i \hbar$ von der linken auf die rechte Seite um da
 \end{align*}
 Die Welle hat "`Oszillationen"' mit der "`Frequenz"' $\omega = \frac{E}{\hbar}$
 
-\subsubsection{Zeitunabhängige Schrödingergleichung}
+\section{Zeitunabhängige Schrödingergleichung}
 Die Hamiltonfunktion $H$ beschreibt die Energie des Systems in der klassischer Mechanik. Hier, in der Quantenmechanik, gibt es die Energieeigenwerte $E$ des Hamiltonoperators. Die Lösungen der Schrödingergleichung beschreiben die Energieeigenzustände des Systems zu den bestimmten Eigenwerten $E$.
 
 \begin{bemerkung*}[Linearität der Schrödingergleichung]~\\
@@ -1872,20 +1872,35 @@ Die Hamiltonfunktion $H$ beschreibt die Energie des Systems in der klassischer M
 	Wohl kommt es aber natürlich auf die relative Phase zweier Lösungen, aus welcher die Interferenz resultiert, an.
 \end{bemerkung*}
 
-\subsubsection{Lösung freier Teilchen}
-$V(\vec{r}) = 0 \rightarrow H = - \frac{\hbar^2}{2m} \vec{\nabla}^2$\\
-$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$
-$\psi(\vec{r})$ erfüllt $H\psi(\vec{r}) = E\psi(\vec{r})$ ($E > 0$, weil Energie)\\
-Ansatz $e^{i\vec{k} \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$\\
-$\vec{k}$ zunächst beliebiger, fester Vektor.\\
-$\vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} \rightarrow \ffpartial{^2}{x^2} e^{i\vec{k}\cdot \vec{r}} = (ik_x) (i k_x) e^{i\vec{k}\cdot \vec{r}} = -k_x^2 e^{i\vec{k}\cdot \vec{r}} \Rightarrow \vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} = - \vec{k}^2 e^{i\vec{k}\cdot \vec{r}}$\\
-$H e^{i\vec{k}\cdot \vec{r}} = \frac{\hbar^2 \vec{k}^2}{2m} e^{i\vec{k}\cdot \vec{r}} \overset{!}{=} E e^{i\vec{k}\cdot \vec{r}}$\\
-Lösung ist \textbf{ebene Welle} $\Psi(\vec{r}, t) = \Psi_0 e^{i (\vec{k} \cdot \vec{r} - \omega t)}$ (mit $\omega = \frac{E}{\hbar}$)\\
-$E = \hbar \omega = \frac{\hbar^2 \vec{k}^2}{2m} \rightarrow \omega = \omega(h) = \frac{\hbar \vec{k}^2}{2m}, k = |\vec{k}|$\\
-Was ist eine ebene Welle?
+\subsection{Lösung für freie Teilchen}
+Freie Teilchen sind der einfachste Fall, denn hier gilt, dass das Potential per Definition 0 ist und der Hamiltonoperator damit als
+$$H = - \frac{\hbar^2}{2m} \vec{\nabla}^2$$
+geschrieben werden kann. Nun betrachten wir die Form der möglichen Lösungen, die wir weiter oben gefunden haben
+$$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$$
+wenn man $\psi(\vec{r})$ in die zeitunabhängige Schrödingergleichung $H\psi(\vec{r}) = E\psi(\vec{r})$ einsetzt, merkt man das $\psi(\vec{r})$ diese erfüllt.\footnote{Hierbei muss $E > 0$ gelten, da E die Energie repräsentiert.}. Wir verwenden jetzt den Ansatz 
+$$e^{i\vec{k} \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$$
+Wobei $\vec{k}$ zunächst ein beliebiger aber fester Vektor, auch Wellenvektor genannt, ist. Zunächst wenden wir den Nabla-Operator $\vec{\nabla}^2$ auf den Ansatz an
+\begin{align*}
+	\vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} &= \ffpartial{^2}{x^2} e^{i\vec{k}\cdot \vec{r}} = (ik_x) (i k_x) e^{i\vec{k}\cdot \vec{r}}\\
+	&= -k_x^2 e^{i\vec{k}\cdot \vec{r}}\\
+	\Rightarrow \vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} &= - \vec{k}^2 e^{i\vec{k}\cdot \vec{r}}
+	\intertext{Mit der Schrödingergleichung folgern wir}
+	H e^{i\vec{k}\cdot \vec{r}} &= \frac{\hbar^2 \vec{k}^2}{2m} e^{i\vec{k}\cdot \vec{r}} \overset{!}{=} E e^{i\vec{k}\cdot \vec{r}}
+\end{align*}
+Die Lösung ist also eine \textbf{ebene Welle} 
+$$\Psi(\vec{r}, t) = \Psi_0 e^{i (\vec{k} \cdot \vec{r} - \omega t)}$$
+mit $\omega = \frac{E}{\hbar}$ und
+\begin{align*}
+E &= \hbar \omega = \frac{\hbar^2 \vec{k}^2}{2m} & \Rightarrow \omega &= \omega(k) = \frac{\hbar \vec{k}^2}{2m} & k &= |\vec{k}|
+\end{align*}
+
+\subsubsection{Was ist eine ebene Welle?}
+Sie hat \dots
 \begin{description}
-	\item[fester Ort] Schwingung $\Psi \underbrace{e^{i\vec{k} \cdot \vec{r}}}_{\text{fest}} \underbrace{e^{-i\omega t}}_{\cos(\omega t) - i \sin(\omega t)}$
-	\item[feste Zeit] $t = t_0$, $e^{i (\vec{k} \cdot \vec{r} - \omega t_0)}$
+	\item[an einem festen Ort] eine Schwingung 
+	$$\Psi = \underbrace{e^{i\vec{k} \cdot \vec{r}}}_{\text{fest}} \underbrace{e^{-i\omega t}}_{\cos(\omega t) - i \sin(\omega t)}$$ \todo{korrekt???}
+	\item[zu einem festen Zeitpunkt] $t = t_0$ eine Schwingung 
+	$$e^{i (\vec{k} \cdot \vec{r} - \omega t_0)}$$
 \end{description}
 Orte mit gleichem Funktionswert $\vec{k} \cdot \vec{r} = \omega t_0, \hat{k} \cdot \vec{r} = \frac{\omega t_0}{k}$\\
 $\vec{k} \cdot \vec{r} = \omega t_0$ \conseq $\vec{r}$ liegen auf einer Ebene $\perp \vec{k}$\\
