@@ -20,6 +20,8 @@
 \allowdisplaybreaks[3]
 \usepackage{stmaryrd}
 \usepackage{siunitx}
+\usepackage{paralist}
+\usepackage{braket}
 
 \theoremstyle{definition}
 \newtheorem*{definition*}{Definition}
@@ -72,6 +74,7 @@
 \newcommand{\dvp}{\dot{\vp}}
 \newcommand{\ddvp}{\ddot{\vp}}
 \renewcommand{\Re}{\mathbb{R}}
+\newcommand{\Co}{\mathbb{C}}
 \DeclareMathOperator{\arsinh}{arsinh}
 \DeclareMathOperator{\arcosh}{arcosh}
 \newcommand{\celectron}{\circled{$e^-$}}
@@ -2041,7 +2044,107 @@ Was bedeutet das für die Wellenfunktion?
 	Schrödingerlgeichung ($\epsilon \to 0^+$)
 	$$\int_(na-\epsilon)^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon} = - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \to 0 \text{weil $\psi$ stetig}$$
 	\conseq $\psi'(x +\epsilon) - \psi'(x -\epsilon) = \frac{2m}{\hbar^2} D \psi(n a)$ endlicher Sprung in $\psi'$ an verbotenen Stellen.
-	\end{beispiel*}
+	
+	% % % % %
+	
+	$$\Psi_n(x) = e_n e^{ik(x-na)} + b_n e^{-ik (x-na)}$$
+	(freie Wellenfunktion) $k = \sqrt{\frac{2m}{\hbar^2} E}$
+	$\Psi_n$ im Bereich $B_n = \{ x | na < x < (n+1)a\}$
+	\begin{enumerate}
+		\item stetig: $\Psi(na + \epsilon) = \Psi(na -\epsilon) \equiv \Psi(na)$
+		\item $\Psi'(na+\epsilon) - \Psi'(na -\epsilon) = \frac{2m}{\hbar^2} D \Psi(na)$
+		zu Gleichung ($n \to \infty$)
+		$V(x) = V(x + a)$
+	\end{enumerate}
+	Translationssymmetrie
+	insbesondere 
+	$$|\Psi(x + a)|^2 = |\Psi(x)|^2$$
+	Unterscheide nur durch Phasenfaktor $e^{iKa}$
+	$$\Psi(x+a) = e^{iKa}u(x)$$
+	$$u(x+a) = u(x)$$
+	(Bloch-Wellen).
+	Stetigkeit $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$
+	1,2 für $a_0, b_0 \Rightarrow a_0, b_0$ wenn Gleichung lösbar \conseq Bedingung an mögliche $K$, d.h. an mögliche Energien. \conseq Determinante der Koeffizientenmatrik $\overset!=$ 0
+	$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$
+	= 0, falls $\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}$
+	$1 \geq \dots$
+	da $K$ beliebig nur rechte Seite $\leq 1$!
+	rechte Seite: $\cos y + \alpha \frac{\sin y}{y}$ mit $y = ka \sim \sqrt{E}$
+	\conseq \textbf{Energiebänder} als erlaubte Zustände.
+	+ \textbf{Pauli-prinzip}: jeder Zustand darf von Fermionen nur einmal besetzt werden! (Fermionen = Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"')
+	(Nur so zum Überlegen) Aufgrund des Spin: zwei Plätze pro Zustand \conseq daher ganz oder halb gefüllte Bänder bei $T = 0$
+	\begin{enumerate}[a)]
+		\item ganz gefüllt \conseq keine freien Zustände leicht erreichbar. \textbf{Isolator}
+		\item halb gefüllt \conseq Zustände durch leichte Anregung erreichbar \conseq \textbf{Leiter}
+		\item Halbleiter: "`Isolator mit sehr kleiner Bandlücke"'
+	\end{enumerate}
+\end{beispiel*}
+
+\section{Formale Grundlagen der Quantenmechanik}
+\begin{definition*}[Zustand]
+	Der Zustand eines Systems ist, analog zu $\pi(t) = \{\vec{q}, \vec{p}, t\}$, hier in Quantenmechanik abstrakter Vektor $\ket{\Psi}$ (nicht $\vec{\Psi}$) aus \textbf{Hilbertraum}. Meist $\ket{\Psi} = \ket{\Psi(t)}$.
+\end{definition*}
+\begin{definition*}[Hilbertraum]
+	$\infty$-dimensionaler Vektorraum mit Skalarprodukt und abzählbarer Basis.
+	Verknüpfungen mit anderen Elementen oder komplexen Zahlen.
+	% % % immer kleines \psi statt \Psi!!!!
+	Hilbertraum $\mathcal{H}$.
+	\begin{align*}
+		\ket{\psi} + \ket{\vp} &\in \mathcal{H}\\
+		c \ket{\psi} + d \ket{\vp} = \ket{c \psi + d \vp}
+	\end{align*}
+	$\exists$ \textbf{Nullelemente} $0, \ket{0}$
+	\begin{align*}
+		\ket{\alpha} + \ket{0} &= \ket{\alpha}\\
+		0 \cdot \ket{\alpha} &= \ket{0}\\
+		c \cdot \ket{0} = \ket{0}
+	\end{align*}
+	\textbf{Inverse} $\ket{\alpha} - \ket{\alpha} = \ket{\alpha} + \ket{-\alpha} = \ket{0}$\\
+	Distributivgesetz $c (\ket{\alpha} + \ket{\beta}) = c \ket{\alpha} + c \ket{\alpha}$\\
+	$(c+d) \ket{\alpha} = c \ket{\alpha} + d \ket{\alpha}$\\
+	Sei $\{\ket{n}\}$ eine Basis $\ket{1}, \ket{2}, \ket{3}, \dots$ genau dann Basis wenn $\sum_n c_n \ket{n} = \ket{0}$ nur, wenn alle $c_n = 0$\\
+	\textbf{Skalarprodukt} $\ket{\alpha}, \ket{\beta} \in \Co$
+	$\ket{\alpha} \to \bra{\alpha}$ $\braket{\alpha | \beta} = c \in \Co$, $\braket{\alpha | \beta}* = \braket{\beta | \alpha}$, $\braket{\alpha | \beta + \gamma} = \braket{\alpha | \beta} + \bra{\alpha | \gamma}$, $c \braket{\alpha | \beta} = \braket{\alpha | c \beta} = \braket{c* \alpha | beta}$, $\braket{\alpha | \alpha} \geq 0$ wenn $\ket{\alpha} \neq 0$\\
+	\textbf{Norm} $\| \alpha \| = \sqrt{\braket{\alpha | \alpha}}$\\
+	\textbf{Orthogonalität} $\braket{\alpha | \beta} = 0$\\
+	\textbf{Basis} $\ket{n}$ sei orthogonal $\braket{n | m} = \delta_{nm}$ am besten auch $\| n \| = 1$.\\
+	beliebiger Zustan $\ket{\Psi}$ darstellen durch Basis mit $\braket{n | \Psi} = $ Projektion von $\ket{\Psi}$ und $\ket{n}$ mit Vollständigkeit $\sum_n \ket n \bra n = 1$\\
+	$$\ket{\Psi} = \ket{\Psi} = \sum_n \underbrace{\ket{n}}_{\text{Basisvektor}} \overbrace{\braket{n | \psi}}^{\text{"`Länge"' von $\ket{\psi}$ in Richtung $\ket n$}}$$
+	ebenso $$\ket{\psi} \to \begin{pmatrix}
+	\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots \\ \braket{n | \Psi}
+	\end{pmatrix}$$
+	Problem $n \to \infty$. \conseq kontinuierlicher Index $n \in \Re$. 
+	$\braket{n | \psi} = \psi_n$ \conseq $\psi(n)$ = komplexe Funktion\\
+	Anschluss der Wellenfunktion an die abstrakten Zustände $\ket{\psi}$ (Komponenten des Vektors) \conseq "`\textbf{Ortsdarstellung}"'.\\
+	Vektor $\psi(x) = \braket{x | \psi}$ (1-dim.)\\
+	bzw. $\psi(\vec{r}) = \braket{\vec{r} | \psi}$.
+	Jetzt $\psi(\vec{r})$ Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. $\ket{\vec{r}}$ = Eigenvektoren des Ortsoperators: $\underbrace{\hat{\vec{r}}}_{\text{\vspace{-10em}Operator}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$.\\
+	Dann \textbf{Skalarprodukt als Integral}
+	\begin{align*}
+		\braket{\psi | \vp} &= \braket{\psi | 1 | \vp} = \sum_n \braket{\psi | n} \braket{n | \vp}\\
+		&= \sum_n \psi^\ast_n \vp_n \vp_n
+		\intertext{bzw. im kontinuierlichem $n \to \vec{r}$}
+		\braket{\psi | \vp} &= \int \d^3 \vec{r} \underbrace{\braket{\psi | \vec{r}}}_{\braket{\vec{r} | \psi}^\ast} \braket{\vec{r} | \vp} \text{mit $1 \int \d^3 \vec{r} \ket{\vec{r}} \bra{\vec{r}}$}\\
+		&= \int \d^3 \vec{r} \psi^\ast(\vec{r}) \vp(\vec{r})
+	\end{align*}
+	\conseq Wellenfunktion $\psi(x)$ bzw. $\psi(\vec{r})$ ist eine konkruente Darstellung des abstrakten Zustandes $\ket\psi$\\
+	Operatoren (meist lineare Operatoren)
+	$$A \ket{\alpha} = \ket{\beta} = \ket{A \alpha}$$
+	$A_1 = A_2$, wenn $A_1 \ket{\alpha} = A_2 \ket{\alpha}$ (für alle $\ket{\alpha}$).\\
+	linear $(a A + b B) \ket{\alpha} = a A \ket{\alpha} + b B\ket{\alpha}$, $a,b \in \Co$, $A$, $B$ lineare Operatoren.
+	$$A_2 A_1 \ket{\alpha} = A_2 \ket{A_1 \alpha} = A_2 (A_1 \ket{\alpha})$$
+	adjungierter Operator
+	$$\braket{\beta | A | \alpha} = \braket{\beta | A \alpha} = \braket{A^+ \beta | \alpha} = \braket{\alpha | A^+ | \beta}^\ast$$
+	\conseq Eigenwertproblem
+	$$A \ket{\alpha} = a \ket{\alpha}$$
+	$A$ Operator, $\ket{\alpha}$ Eigenvektor, $a \in \Co$ Eigenwert\\
+	analog zu Matrizen.\\
+	hermitesche Matrix (selbstadjungiert) $A^+ = {A^t}^\ast A$
+	$$\braket{\alpha | A | \alpha} = a \braket{\alpha | \alpha} = \dots = a^\ast \braket{\alpha | \alpha}$$
+	\conseq $a \in \Re$
+	\conseq hermitesche Operatoren haben reelle Eigenwerte
+\end{definition*}
+
 
 % % % % % % % % % % % %
 \begin{itemize}
