@@ -1801,17 +1801,16 @@ $$\lambda = \frac{h}{p}$$
 \section{Schrödingergleichung}
 Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden\footnote{In der Hamilton-Jacobi-Theorie, welche im Kapitel über Analytische Mechanik in groben Zügen behandelt wurde.} werden. Man berechnet nun die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
 $$i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)$$
-$\hbar = \frac{h}{2 \pi}$. \\
-H: Hamiltonoperator, ganz analog zur Hamiltonfunktion
+Hierbei ist $\hbar = \frac{h}{2 \pi}$ und $H$ der Hamiltonoperator\footnote{Der Hamiltonoperator, ist ganz analog zur Hamiltonfunktion in der analytischen Mechanik.}
 $$H = \frac{\vec{v}^2}{2m} + V(\vec{r})$$
-Dann Impulsoperator (in der "`Ortsdarstellung"')
+Wir führen nun den wichtigen Impulsoperator (in der "`Ortsdarstellung"') ein
 $$\vec{p} = - i \hbar \vec{\nabla}$$
-darin $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$, damit gilt
+mit $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$ und können damit den Hamiltonoperator auch wie folgt schreiben
 $$H = - \frac{\hbar^2}{2m} \vec{\nabla}^2 + V(\vec{r})$$
-Wobei $\vec{\nabla}^2$ der Laplaceoperator ist: $\vec{\nabla}^2 = \ffpartial{^2}{x^2} +\ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$\\
-$\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt die Schrödingergleichung für ein gegebenes Potential. Wellenfunktion beschreibt den Zustand eines Systems (z.B. eines oder mehrerer Teilchen in einem Potential). Deutung (Schrödinger).\\
-
-meist H zeitunabhängig.
+Wobei $\vec{\nabla}^2$ der Laplaceoperator ist, $\vec{\nabla}^2 = \ffpartial{^2}{x^2} +\ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$.
+$\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt per Definition die Schrödingergleichung\footnote{Sie bescherte ihrem Schöpfer den Physik Nobelpreis des Jahres 1933.} für ein gegebenes Potential. Sie beschreibt den Zustand eines Systems (z.B. eines oder mehrerer Teilchen in einem Potential) als Wahrscheinlichkeitsverteilung\footnote{"`I don't like it, and I'm sorry I ever had anything to do with it."' – Erwin Schrödinger"'}. \\
+~\\
+Der Hamiltonoperator ist meistens zeitunabhängig, was die Lösung vereinfacht. 
 
 \paragraph{Lösung der Schrödingergleichung} per Separationsansatz $\Psi(\vec{r}, t) = \Psi(\vec{r}) \vp(t)$
 \begin{align*}
