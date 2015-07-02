@@ -1764,11 +1764,11 @@ Beugungsexperimente (Davisson und Germer) von \celectron an Kristallen. \conseq 
 $$\lambda = \frac{h}{p}$$
 
 \subsection{Schrödingergleichung}
-Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden werden. \conseq Hamilton-Jacobi-Theorie. \conseq berechnet die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
+Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden werden. \conseq Hamilton-Jacobi-Theorie. \conseq beschreibt die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
 $$i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)$$
 $\hbar = \frac{h}{2 \pi}$. \\
 H: Hamiltonoperator, ganz analog zur Hamiltonfunktion
-$$H = \frac{\vec{v}^2}{2m} + V(\vec{r})$$
+$$H = \frac{\vec{p}^2}{2m} + V(\vec{r})$$
 Dann Impulsoperator (in der "`Ortsdarstellung"')
 $$\vec{p} = - i \hbar \vec{\nabla}$$
 darin $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$, damit gilt
@@ -1800,7 +1800,7 @@ i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)\\
 H\Psi(\vec{r}) = E \Psi(\vec{r}) \text{\qquad TISE}
 \end{align*}
 \subsubsection{Zeitunabhängige Schrödingergleichung}
-H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hamiltonoperators \conseq Lösungen beschreiben. Energieeigenzustände des Systems zu bestimmten Eigenwerten E.
+H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hamiltonoperators \conseq Lösungen beschreiben Energieeigenzustände des Systems zu bestimmten Eigenwerten E.
 
 \begin{bemerkung*}
 	Schrödingergleichung linear in der Zeit \conseq aus Anfangszustand $\Psi(\vec{r}, t_0)$ zu Zeit $t_0$ \conseq $\Psi(\vec{r}, t)$ per Schrödingergleichung (siehe auch Hamiltonfunktion). Problem meist Lösung der Zeitunabhängige Schrödingergleichung.\\
@@ -1835,7 +1835,7 @@ H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hami
 	$V(\vec{r}) = 0 \rightarrow H = - \frac{\hbar^2}{2m} \vec{\nabla}^2$\\
 	$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$
 	$\psi(\vec{r})$ erfüllt $H\psi(\vec{r}) = E\psi(\vec{r})$ ($E > 0$, weil Energie)\\
-	Ansatz $e^{i\vec{k} \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$\\
+	Ansatz $e^{i\vec{k}\cdot \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$\\
 	$\vec{k}$ zunächst beliebiger, fester Vektor.\\
 	$\vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} \rightarrow \ffpartial{^2}{x^2} e^{i\vec{k}\cdot \vec{r}} = (ik_x) (i k_x) e^{i\vec{k}\cdot \vec{r}} = -k_x^2 e^{i\vec{k}\cdot \vec{r}} \Rightarrow \vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} = - \vec{k}^2 e^{i\vec{k}\cdot \vec{r}}$\\
 	$H e^{i\vec{k}\cdot \vec{r}} = \frac{\hbar^2 \vec{k}^2}{2m} e^{i\vec{k}\cdot \vec{r}} \overset{!}{=} E e^{i\vec{k}\cdot \vec{r}}$\\
@@ -1876,9 +1876,9 @@ $$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\ve
 Ist auch Lösung der Schrödingergleichung\\
 Kontinuierlicher $\vec{k}, \omega$\\
 $$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{h}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ (Fourierintegral)\\
-in Schrödingergleichung \conseq $(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) = 0 \rightarrow \int \d^3 \vec{k} \d \omega \tilde{\vec{k}, \omega} (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} = 0$\\
+in Schrödingergleichung \conseq $(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) = 0 \rightarrow \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{k}, \omega) (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} = 0$\\
 erfüllt durch $\tilde\Psi(\vec{k}, \omega) = \tilde\Psi (\vec{k}) \delta(w -w(\vec k))$ (mit $\int f(x) \delta(x - x_0) \d x = f (x_0)$)\\
-also $\Psi(\vec{r}, t = \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)})$\\
+also $\Psi(\vec{r}, t) = \int \d^3 \vec{k} \tilde\Psi (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega(\vec{k})t)}$\\
 $\tilde \Psi(\vec{k})$ ist Amplitudenfunktion eines Wellenpakets.
 
 % % % % % % % % % %
@@ -1889,17 +1889,17 @@ $$\tilde{\Psi} = \begin{cases}
 0 & \text{sonst}
 \end{cases}$$
 $$\Psi(x,t) = \tilde{\Psi}_0 \int_{k_0-\Delta k}^{k_0+\Delta k} \d k e^{i(kx - \omega(k)t)}$$
-$$\omega(k) = \frac{\hbar k^2}{2m} \approxeq \frac{\hbar k_0^2}{2m} + \frac{\hbar h_0}{m}(k - k_0) + \dots \qquad \frac{\Delta k}{k_0} \ll 1$$
+$$\omega(k) = \frac{\hbar k^2}{2m} \approxeq \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m}(k - k_0) + \dots \qquad \frac{\Delta k}{k_0} \ll 1$$
 $$\omega(k) = - \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m} k$$
 $$\Psi(x,t) = \tilde{\Psi_0} \int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{i (kx + \frac{\hbar h_0^2}{2m}t - \frac{\hbar h_0}{m} k t)} \d k = \tilde{\Psi}_0  e^{\frac{i \hbar h_0^2}{2m}t}  \int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{ik(\overbrace{x - \frac{\hbar k_0}{m}t}^a)} \d k$$
 $$ I = \int_{\kappa_0}^{\kappa_1} e^{iak} \d k = \left. \frac{1}{ia} e^{i a h} \right|_{\kappa_0}^{\kappa_1} = \frac1{ia} (e^{ia\kappa_1} - e^{ia\kappa_0}), \kappa_0 = k_0 - \Delta k, \kappa_1 = k_0 + \Delta k$$
 $$I = \frac{1}{ia} (e^{ia(k_0 + \Delta k)} e^{ia (k_0 - \Delta k)}) = \frac{1}{ia} e^{iak} (e^{ia \Delta k} - e^{-ia \Delta k}) = \frac{1}{ia} e^{ia k_0} 2 i \sin a \Delta k \qquad \frac{\hbar k_0}{m} = v_g$$
 $$\Psi(x,t) = \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
 $v_g$ = "`Gruppengeschwindigkeit"'
-$$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
-Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = (\frac{\sin y}{y})^2$$ an: \href{http://www.wolframalpha.com/input/?i=\%28\\frac{\\sin+y}{y}\%29^2}{wolframalpha}\\
+$$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin^2((x - v_g t)\Delta k)}{(x - v_g t)^2 \Delta k^2}$$
+Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^2$$ an: \href{http://www.wolframalpha.com/input/?i=\%28\\frac{\\sin+y}{y}\%29^2}{wolframalpha}\\
 Bereich des ersten Maximums enthällt 95\% der Fläche. \conseq Aufenthaltswahrscheinlichkeit konzentriert sich auf $-\pi < \Delta k x(t) < \pi$, $x(t) = x - v_g t$.
-$$\Delta k (x_\text{max} - x_\text{min} = \Delta k \Delta x = 2 \pi)$$
+$$\Delta k (x_\text{max} - x_\text{min}) = \Delta k \Delta x = 2 \pi$$
 $$\hbar\Delta k \Delta x = 2 \pi \hbar = h$$
 $$\Delta p \Delta x = h$$
 \conseq \textbf{Unschärferelation} beobachtet (siehe auch Gauß-Pakete in Übung).\\
@@ -1922,7 +1922,7 @@ $$\Delta x \Delta p \geq \frac12 | \langle [x, p] \rangle | = \frac{\hbar}{2}$$
 
 \subsection{Eindimensionale Potentialprobleme}
 Bisher nur freie Teilchen und Wellenpakete. Jetzt realistischere Potentiale. Dimension zunächst in einer Dimension ausreichend. Problem
-$$h\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
+$$i\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
 mit
 $$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
 \conseq Separation $\Psi(x, t) = \psi(x) \vp(t)$\\
@@ -1930,18 +1930,18 @@ $$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
 $\psi(x)$ erfüllt die stationäre Schrödingergleichung mit gleichem E.
 \begin{align*}
 	H \psi(x) &= E \psi(x)\\
-	(- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)) \psi(x) &= E \psi(x)
+	\left(- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)\right) \psi(x) &= E \psi(x)
 \end{align*}
 oder
-$$\ddd{^x}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) = 0$$
-$$\Psi''(x) + k^2(x) \psi(x) = 0$$
+$$\ddd{^2}{x^2} \psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) = 0$$
+$$\psi''(x) + k^2(x) \psi(x) = 0$$
 
 \begin{bemerkung*}
 	Wegen $V(x)$ reel gilt auch $\psi^\ast(x)$ Lösung, wenn $\psi(x)$ Lösung, auch $\psi(x) \pm \psi^\ast(x)$ \conseq immer reele Linearkombination möglich.
 \end{bemerkung*}
 
 \begin{bemerkung*}
-	$k^2(x)$ \conseq siehe freihe Lösung $\frac{\hbar^2 k^2}{2m} = E$
+	$k^2(x)$ \conseq siehe freie Lösung $\frac{\hbar^2 k^2}{2m} = E$
 \end{bemerkung*}
 
 \begin{bemerkung*}
@@ -1950,13 +1950,15 @@ $$\Psi''(x) + k^2(x) \psi(x) = 0$$
 
 \begin{bemerkung*}
 	$$\psi''(x) = \underbrace{- k^2(x)}_{= - \frac{2m}{\hbar^2} (E - V(x))} \psi(x)$$
-	$V(x)$ nur endliche Spänge \conseq Knick in $\psi'(x)$ und $\psi(x)$ stetig und $\psi(x)$ stetig.
+	$V(x)$ nur endliche Sprünge \conseq Knick in $\psi'(x)$ und $\psi'(x)$ stetig und $\psi(x)$ stetig.
 \end{bemerkung*}
 
-Physikalische Diskussion anhand der möglichen Energien des Teilchens:\\
-Bereich mit $E > V$ ($k^2 > 0$) klassisch erlaubt.\\
-Bereich mit $E = V$ ($k^2 = 0$) klassische Umkehrpunkte.\\
-Bereich mit $E < V$ ($k^2 < 0$) klassisch verboten.\\
+Physikalische Diskussion anhand der möglichen Energien des Teilchens:
+\begin{itemize}
+\item Bereich mit $E > V$ ($k^2 > 0$) klassisch erlaubt.
+\item Bereich mit $E = V$ ($k^2 = 0$) klassische Umkehrpunkte.
+\item Bereich mit $E < V$ ($k^2 < 0$) klassisch verboten.
+\end{itemize}
 Was bedeutet das für die Wellenfunktion?
 \begin{description}
 	\item[$E < V$] \conseq $k^2 > 0 $ \conseq $\psi''(x) = - \underbrace{k^2}_{> 0} \psi(x)$. $\psi''$ hat immer umgekehrtes Vorzeichen von $\psi$. $\psi(x)$ ist zur $x$-Achse hin gekrümmt. \conseq Oszillationen. z.B. $V = $ konstant, $k^2 = \const < 0$, $k=\sqrt{\frac{2m}{\hbar^2} (E - V)} = i \sqrt{\frac{2m}{\hbar^2} (V - E)} \equiv i \kappa $, $\psi''(x) = \kappa^2 \psi(x)$ \conseq $\psi \sim e^{\pm \kappa x}$. $E < V$ für positive $x$ \conseq $e^{\kappa x}$ divergiert. $\Rightarrow$ $\psi(x) \to e^{-\kappa x}$ für $x \to \infty$. typisches \textbf{expotentielles Abklingen}. % $\psi(x) = e^{\pm i k x}$\\
@@ -1966,7 +1968,7 @@ Was bedeutet das für die Wellenfunktion?
 	\item[$E < V$] \conseq $k^2 < 0$ \conseq $\psi''(x)$ hat immer gleiche Vorzeichen, wie $\psi(x)$. $\psi(x)$ immer von der $x$-Achse weg gekrümmt.
 \end{description}
 
-\paragraph{typische Fall}
+\paragraph{typischer Fall}
 3 Möglichkeiten in verbotenen Bereich
 \begin{itemize}
 	\item[a)] asymptotisches Anschmiegen an die $x$-Achse.
@@ -2235,7 +2237,7 @@ $$x_i = M_{ij} x_j \Leftrightarrow \sum_{j=1}^1 M_{ij} x_j$$
 
 \paragraph{Mehrfache Ableitung}
 $$\dd x (\dd x f(x)) = \d x (\d x f(x)) = \frac{\d^2 f(x)}{\d x^2}$$
-n-te Ableitung: $\frac{\d^n}{\d x^2} f(x)$
+n-te Ableitung: $\frac{\d^n}{\d x^n} f(x)$
 
 \paragraph{Grundlagen}
 $$\dd x f(x) \equiv f'(x) = \d x f(x)$$
