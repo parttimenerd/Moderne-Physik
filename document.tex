@@ -1915,9 +1915,8 @@ $$ I = \int_{\kappa_0}^{\kappa_1} e^{iak} \d k = \left. \frac{1}{ia} e^{i a h} \
 $$I = \frac{1}{ia} (e^{ia(k_0 + \Delta k)} e^{ia (k_0 - \Delta k)}) = \frac{1}{ia} e^{iak} (e^{ia \Delta k} - e^{-ia \Delta k}) = \frac{1}{ia} e^{ia k_0} 2 i \sin a \Delta k \qquad \frac{\hbar k_0}{m} = v_g$$
 $$\Psi(x,t) = \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
 $v_g$ = "`Gruppengeschwindigkeit"'
-$$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
-Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = (\frac{\sin y}{y})^2$$ an:
-
+$$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin^2((x - v_g t)\Delta k)}{(x - v_g t)^2 \Delta k^2}$$
+Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^2$$ an:
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[xlabel=${y}$, ylabel=$(\frac{\sin y}{y})^2$, xtick=\empty, ytick=\empty, ymin = 0]
