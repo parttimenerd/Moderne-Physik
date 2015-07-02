@@ -22,6 +22,7 @@
 \usepackage{siunitx}
 \usepackage{paralist}
 \usepackage{braket}
+\usepackage{pgfplots}
 
 \theoremstyle{definition}
 \newtheorem*{definition*}{Definition}
@@ -116,7 +117,11 @@
 ~\\~\\
 	Dies ist ein Skriptartig aufbereiteter Mitschrieb der Vorlesung "`Moderne Physik für Informatiker"', welche von Herrn Gieseke im Sommersemester 2015 am KIT gelesen wurde. Es besteht kein Anspruch auf Richtigkeit oder Vollständigkeit. Fehler, und andere Anmerkungen, können gerne an \textit{me@mostlynerdless.de} gesendet werden. Die Quellen finden sich auf \href{https://github.com/parttimenerd/Moderne-Physik}{github}.\\
 	~\\
-	\textbf{Es handelt sich um einen Entwurf, der laufend verbessert wird.} ~\\
+	\textbf{Ich freue mich über Pull-Request\dots}\\
+	~\\
+	\textbf{Es handelt sich um einen Entwurf, der laufend verbessert wird. Besonders der Quantenmechanikteil wird gerade überarbeit.} ~\\
+	
+	~\\
 	\textbf{Im Literaturteil findet sich eine Liste von Büchern und Ressourcen, die zum lernen hilfreich sind.} Vorschläge hierfür werden gerne entgegengenommen.
 \listoftodos
 
@@ -1634,23 +1639,36 @@ Die Masse selbst ist ein Lorentzskalar. Sie ändert sich nicht.
 \section{historische Experimente und Widersprüche}
 \subsection{Hohlraumstrahlung} Die Hohlraumstrahlung ist auch als Wärmestrahlung oder Schwarzkörperstrahlung bekannt. Sie wird von einem idealisierten Raum, dessen Wände die Temperatur $T$ haben, im Gleichgewicht ständig von den Wänden gleichermaßen emittiert und absorbiert. Der Raum/Körper hat keine besonderen Eigenschaften (d.h. er ist schwarz). Man beobachtet die Strahlung durch ein kleines Loch in einer der Raumwände. Es geht nun darum, eine Erklärung des beobachteten Spektrums $\ddd{E}{\nu} = w_\nu$ ($\nu$ Frequenz des Lichts) = "`Verteilung von Frequenzen $\nu$ des Lichts"' zu finden. Die Abhängigkeit derselben von der Temperatur bereitetet dabei viele Probleme.
 
-\paragraph{Folgerungen aus der klassischen Thermodynamik}
-Mithilfe der klassischen Thermodynamik
-$$w_\nu = f(\nu, T) \text{\qquad Kirchhoff}$$
-$f(\nu, T)$ universelle Funktion, unabhängig von Wänden, etc.\\
-\textbf{Wiensches Gesetz}
+\subsection{Folgerungen aus der klassischen Thermodynamik}
+\begin{folgerung*}[Kirchhoff]
+	Mithilfe der klassischen Thermodynamik folgerte Kirchhoff, dass die Frequenzverteilungsfunktion folgende Gestalt hat
+	$$w_\nu = f(\nu, T)$$
+	$f(\nu, T)$ ist dabei eine universelle Funktion, welche unabhängig von z.B. den Wänden ist.
+\end{folgerung*}
+
+\begin{folgerung*}[Wiensches Gesetz]
+Wien postulierte die folgende Gestalt für $f$
 $$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
-Energiegehalt des Spektrums
+\end{folgerung*}
+
+\begin{folgerung*}[Stefan-Boltzmann-Gesetz]
+Der Energiegehalt des Spektrums ist
 \begin{align*}
 	\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^3 g(\frac{\nu}{T}) \d v\\
 	&= T^4 \int_0^\infty x^3 g(x) \d x = \alpha T^4 \text{\qquad Stefan-Boltzmann-Gesetz}
 \end{align*}
-Maximum der Energieverteilung  $\frac{\nu_\text{max}}{T} = \const$
-\conseq $\lambda_\text{max} \cdot \nu_\text{max} = c$ \conseq $\lambda_\text{max} \cdot T = \const$\\
-Temperatur steigt ??????????? schwarz \conseq $\underset{\xrightarrow{\text{Temperatur}}}{\text{rotglühend}}$ \conseq weiß\\
+\end{folgerung*}
 
-Berechnung (Versuch) von $g(\frac{\nu}{T})$ in der klassischen Physik\\
-Annahme: im Hohlraum bilden sich stehende Wellen aus, im thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ Energie ($k_B =$ Boltzmann-Konstante).
+\begin{folgerung*}[Rayleigh-Jeans-Gesetz]
+Das Maximum der Energieverteilung  ist
+\begin{align*}
+\frac{\nu_\text{max}}{T} &= \const\\
+\rightarrow \lambda_\text{max} \cdot \nu_\text{max} &= c\\
+\rightarrow \lambda_\text{max} \cdot T &= \const
+\end{align*}
+Daraus folgt, dass mit steigender Temperatur, die Wellenlänge sinkt (und die Frequenz steigt). Also strahlt ein Körper nach diesem Modell bei steigender Temperatur zuerst schwarzes (also gar nicht), dann rotes und bei sehr hoher Temperatur weißes Licht aus.\\
+Jetzt es an die Berechnung der im Versuch erwartbaren Werte von $g(\frac{\nu}{T})$, mit Hilfe der klassischen Physik.\\
+\paragraph{Annahme} im Hohlraum bilden sich stehende Wellen aus, im thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ Energie ($k_B =$ Boltzmann-Konstante).
 \conseq Abzählen der stehenden Wellen im Hohlraum:
 Hohlraum = Würfel mit Kantenlänge $a$. \conseq $\frac{\lambda}{2}\cdot n = a \cos \alpha$ in einer Richtung ($n = 1, 2, 3, \dots$) $\hat =$ für $y$- und $z$-Richtung: $n_1, n_2, n_3 = 0, 1, \dots$
 $$n_1 = \frac{2 a \cos \alpha_1}{\lambda}; n_2 = \frac{2 a \cos \alpha_2}{\lambda}; n_3 = \frac{2 a \cos \alpha_3}{\lambda}$$
@@ -1669,6 +1687,7 @@ Energie / Volumen $a^3$
 	\rightarrow g(\frac{\nu}{T}) &= 8 \pi \frac{k_B}{c^3} \frac{T}{\nu}
 \end{align*}
 (Rayleigh-Jeans-Gesetz)\\
+\end{folgerung*}
 Alternatives phänomenologisches Gesetz (Wien)
 $$g(\frac{\nu}{T}) = a e^{- b \frac{\nu}{T}}$$
 Wir suchen eine Interpolation der Daten.\\
@@ -1897,7 +1916,16 @@ $$I = \frac{1}{ia} (e^{ia(k_0 + \Delta k)} e^{ia (k_0 - \Delta k)}) = \frac{1}{i
 $$\Psi(x,t) = \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
 $v_g$ = "`Gruppengeschwindigkeit"'
 $$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
-Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = (\frac{\sin y}{y})^2$$ an: \href{http://www.wolframalpha.com/input/?i=\%28\\frac{\\sin+y}{y}\%29^2}{wolframalpha}\\
+Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = (\frac{\sin y}{y})^2$$ an:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[xlabel=${y}$, ylabel=$(\frac{\sin y}{y})^2$, xtick=\empty, ytick=\empty, ymin = 0]
+  \addplot[red, samples=500,domain=-3*pi:3*pi]{sin(deg(x)) ^2 / deg(x)^2};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
 Bereich des ersten Maximums enthällt 95\% der Fläche. \conseq Aufenthaltswahrscheinlichkeit konzentriert sich auf $-\pi < \Delta k x(t) < \pi$, $x(t) = x - v_g t$.
 $$\Delta k (x_\text{max} - x_\text{min} = \Delta k \Delta x = 2 \pi)$$
 $$\hbar\Delta k \Delta x = 2 \pi \hbar = h$$
@@ -2139,7 +2167,7 @@ Was bedeutet das für die Wellenfunktion?
 	$$A \ket{\alpha} = a \ket{\alpha}$$
 	$A$ Operator, $\ket{\alpha}$ Eigenvektor, $a \in \Co$ Eigenwert\\
 	analog zu Matrizen.\\
-	hermitesche Matrix (selbstadjungiert) $A^+ = {A^t}^\ast A$
+	hermitesche Matrix (selbstadjungiert) $A^+ = A^{\top \ast} = A$
 	$$\braket{\alpha | A | \alpha} = a \braket{\alpha | \alpha} = \dots = a^\ast \braket{\alpha | \alpha}$$
 	\conseq $a \in \Re$
 	\conseq hermitesche Operatoren haben reelle Eigenwerte
@@ -2189,7 +2217,7 @@ Eine Liste von Materialien, welche beim Lernen helfen und welche besser sind, al
 	\item[Grundkurs Theoretische Physik 2, Nolting] Ein gutes Buch mit vielen Aufgaben zu Langrange und Hamilton. Es ist in der Bibliothek in ausreichender Menge vorhanden.
 	\item[\href{https://de.wikibooks.org/wiki/Aufgabensammlung_Physik:_Theoretische_Mechanik}{wikibooks: Aufgaben Theorische Mechanik}] Einfache Aufgaben zum Langrange (wobei das spherische Pendel in der letzten Klausur dran kam), welche gut und ausführlich erklärt sind.
 	\item[Blätter des letzten Jahres] Im letzten Jahr, waren 7 von 13 Übungsblättern zum Thema Quantenmechanik. Sie waren einfacher, also näher an Klausuraufgaben, und verständlicher als die aktuellen. Sie werden leider nicht mehr auf der Website der Vorlesung verlinkt, sind aber dennoch zugänglich. Die Blätter \verb|B| und Lösungen \verb|L| findet ihr unter\\ \verb-http://www.tkm.kit.edu/downloads/ss2014_modphys_info/mod_phys_- \verb-inf_2014_{B|L}[Nummer].pdf-
-	\item[\href{http://physik.leech.it/pub/}{http://physik.leech.it/pub/}] Sammlung von Altklausuren von Physikstudenten. Die Klausuren zu Theo B (Analytische Mechanik) und Theo D (Quantenmechanik) sind teilweise zur Vorbereitung geeignet.
+	\item[\href{http://physik.leech.it/pub/}{http://physik.leech.it/pub/}] Sammlung von Altklausuren von Physikstudenten. Die Klausuren zu Theo B (Analytische Mechanik) und Theo D (Quantenmechanik) sind teilweise zur Vorbereitung geeignet. Denn meine Erfahrung ist, für dieses Fach, dass es besser ist den voll und ganz zu verstehen, als dutzende von Altklausuren zu rechnen.
 	\item[Quantenphysik für Dummies / Steven Holzner] Ein Buch, dass die Quantenmechanik gut erklärt. Es ist in der Bib in der Lehrbuchsammlung Physik zu finden.
 \end{description}
 
