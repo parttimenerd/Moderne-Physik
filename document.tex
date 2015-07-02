@@ -1812,27 +1812,27 @@ $\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt
 ~\\
 Der Hamiltonoperator ist meistens zeitunabhängig, was die Lösung vereinfacht. 
 
-\paragraph{Lösung der Schrödingergleichung} per Separationsansatz $\Psi(\vec{r}, t) = \Psi(\vec{r}) \vp(t)$
+\subsection{Lösung der Schrödingergleichung}
+Wir versuchen die Schrödingergleichung per Separationsansatz $\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t)$ zu lösen
 \begin{align*}
-	i \hbar \fpartial{t} \Psi(\vec{r}) \vp(t) &= H \Psi(\vec{r}) \vp(t)\\
-	= \Psi(\vec{r}) i \hbar \fpartial{t} \vp(t) &= \vp(t) H \Psi(\vec{r})\\
-	\frac{1}{\vp(t)} i \hbar \fpartial{t} \vp(t) = \frac{1}{\Psi(\vec{r})} H \Psi(\vec{r})
+	i \hbar \fpartial{t} \psi(\vec{r}) \vp(t) &= H \psi(\vec{r}) \vp(t)\\
+	\Leftrightarrow \psi(\vec{r}) i \hbar \fpartial{t} \vp(t) &= \vp(t) H \psi(\vec{r})\\
+	\Leftrightarrow \frac{1}{\vp(t)} i \hbar \fpartial{t} \vp(t) &= \frac{1}{\psi(\vec{r})} H \psi(\vec{r})
 \end{align*}
-Linke Seite hängt nur von der Zeit ab, rechte nur vom Ort. \conseq linke Seite = rechte Seite = konstant\\
-Dimension von E (reelle Zahl)
-\conseq a) $i \hbar \fpartial{t} \vp(t) = E \vp(t)$\\
-b) $H \Psi(\vec{r}) = E \Psi(\vec{r})$\\
-Weiter mit a):
-$$\fpartial{t} \vp(t) = \dd{t} \vp(t) = - i \frac{E}{\hbar} \vp(t) \Rightarrow \vp(t) = \vp_0 e^{-i\frac{E}{\hbar} \vp(t)} \equiv \vp_0 e^{- \omega t}$$
-"`Oszillationen"' der Welle mit der "`Frequenz"' $\omega = \frac{E}{\hbar}$
+Die linke Seite hängt nur noch von der Zeit ab, die rechte nur noch vom Ort. Da beide Seiten gleich sind, müssen sie zwangsweise jeweils einen konstanten Wert haben. Wir folgern nun 
+\begin{enumerate}[a)]
+	 \item $i \hbar \fpartial{t} \vp(t) = E \vp(t)$
+	 \item $H \psi(\vec{r}) = E \psi(\vec{r})$ \textit{Diese Gleichung wird auch als Zeitunabhängige Schrödingergleichung, kurz TISE\footnote{TISE ist die Abkürzung der englischen Übersetzung.}, bezeichnet}
+\end{enumerate}
+Wobei $E$ eine reelle Zahl ist und oft auch als "`Energie"' bezeichnet wird. Wir betrachten nun kurz die Gleichung a) und suchen hierfür eine Lösung.
+Zuerst bringen wir aber noch $i \hbar$ von der linken auf die rechte Seite um dann zu folgern
+\begin{align*}
+	\fpartial{t} \vp(t) &= \dd{t} \vp(t) \overset!= - i \frac{E}{\hbar} \vp(t)\\
+	\Rightarrow \vp(t) &= \vp_0 e^{-i\frac{E}{\hbar} t}\\
+	&\equiv \vp_0 e^{- \omega t}
+\end{align*}
+Die Welle hat "`Oszillationen"' mit der "`Frequenz"' $\omega = \frac{E}{\hbar}$
 
-% % % % % % % % % % % %
-\begin{align*}
-i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)\\
-\Psi(\vec{r}, t) = \Psi(\vec{r}) \phi(t)\\
-\rightarrow \vp(t) = \vp_0 e^{-i\frac{E}{\hbar}t}\\
-H\Psi(\vec{r}) = E \Psi(\vec{r}) \text{\qquad TISE}
-\end{align*}
 \subsubsection{Zeitunabhängige Schrödingergleichung}
 H Energie des Systems in klassischer Mechanik. Hier Energieeigenwerte E des Hamiltonoperators \conseq Lösungen beschreiben. Energieeigenzustände des Systems zu bestimmten Eigenwerten E.
 
