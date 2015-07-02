@@ -1668,56 +1668,81 @@ Das Maximum der Energieverteilung  ist
 \rightarrow \lambda_\text{max} \cdot T &= \const
 \end{align*}
 Daraus folgt, dass mit steigender Temperatur, die Wellenlänge sinkt (und die Frequenz steigt). Also strahlt ein Körper nach diesem Modell bei steigender Temperatur zuerst schwarzes (also gar nicht), dann rotes und bei sehr hoher Temperatur weißes Licht aus.\\
-Jetzt es an die Berechnung der im Versuch erwartbaren Werte von $g(\frac{\nu}{T})$, mit Hilfe der klassischen Physik.\\
-\paragraph{Annahme} im Hohlraum bilden sich stehende Wellen aus, im thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ Energie ($k_B =$ Boltzmann-Konstante).
-\conseq Abzählen der stehenden Wellen im Hohlraum:
-Hohlraum = Würfel mit Kantenlänge $a$. \conseq $\frac{\lambda}{2}\cdot n = a \cos \alpha$ in einer Richtung ($n = 1, 2, 3, \dots$) $\hat =$ für $y$- und $z$-Richtung: $n_1, n_2, n_3 = 0, 1, \dots$
-$$n_1 = \frac{2 a \cos \alpha_1}{\lambda}; n_2 = \frac{2 a \cos \alpha_2}{\lambda}; n_3 = \frac{2 a \cos \alpha_3}{\lambda}$$
-$$\vec{u} = (\cos \alpha_1, \cos \alpha_2, \cos \alpha_3); u^2 = 1$$
+Jetzt es an die Berechnung der im Versuch erwartbaren Werte von $g(\frac{\nu}{T})$, mit Hilfe der klassischen Physik.
+\paragraph{Annahme} Im Hohlraum bilden sich stehende Wellen aus. Im sich einstellenden thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ an Energie, hierbei ist $k_B$ die Boltzmann-Konstante. Wir zählen jetzt die stehenden Wellen im Hohlraum um damit auf eine bessere Form von $g$ zu kommen:\\
+Der Hohlraum ist ein Würfel mit Kantenlänge $a$. Also gilt für jede Richtung, dass jede stehende Welle in dieser Richtung $\frac{\lambda}{2}\cdot n = a \cos \alpha$ mit $n = 0, 1, 2, 3, \dots$ erfüllen muss. Das gleiche natürlich auf für die $y$ und $z$-Richtung, womit wir $n_1, n_2, n_3 = 0, 1, \dots$ bekommen mit:
+\begin{align*}
+n_1 &= \frac{2 a \cos \alpha_1}{\lambda} & n_2 &= \frac{2 a \cos \alpha_2}{\lambda} & n_3 &= \frac{2 a \cos \alpha_3}{\lambda}
+\end{align*}
+\begin{align*}
+\vec{u} &= (\cos \alpha_1, \cos \alpha_2, \cos \alpha_3) & u^2 &= 1
+\end{align*}
 $$n_1^2 + n_2^2 + n_3^2 = (\frac{2a}{\lambda})^2 = (\frac{2 a \nu}{c})^2$$
-$\rightarrow \nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen\\
-stehende Wellen im Hohlraum.\\
-Frequenzraum ist kubisches Gitter mit Kantenlänge $\frac{c}{2a}$. Frequenzen zischen 0 und $nu$\\
-$\frac{\text{Kugel mit Radius~}\nu}{\text{Volumen / Punkt}}$\\
+Daraus folgern wir, dass es $\nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen für stehende Wellen im Hohlraum gibt.\todo{Warum???}\\
+Der Frequenzraum ist ein kubisches Gitter mit der Kantenlänge $\frac{c}{2a}$. Die Frequenzen liegen zwischen 0 und $\nu$ \todo{Warum???}\\
+$\frac{\text{Kugel mit Radius~}\nu}{\text{Volumen / Punkt}}$
 $N(\nu) = \frac{\frac18 \frac{4\pi}{3} \nu^3}{(\frac{c}{2a})^3} = \frac18 \frac{4\pi}{3} (\frac{2a}{c}\nu)^3$\\
-$\d N(\nu) = 4 \pi a^3 \frac{\nu^2}{c^3} \d \nu$ \conseq Anzahl der Frequenzen zischen $\nu$ und $\nu + \d \nu$. Spektrale Dichte der Zustände mit $\frac12 k_B \cdot \underbrace{2}_{\text{E + B - Feld}} \cdot \underbrace{2}_{\text{Polarisierungen}} = 2 k_B T$\\
+$\d N(\nu) = 4 \pi a^3 \frac{\nu^2}{c^3} \d \nu$ Deswegen ist die Anzahl der Frequenzen zwischen $\nu$ und $\nu + \d \nu$. Die spektrale Dichte der Zustände mit $\frac12 k_B \cdot \underbrace{2}_{\text{E + B - Feld}} \cdot \underbrace{2}_{\text{Polarisierungen}} = 2 k_B T$ ist:
 Energie / Volumen $a^3$
 \begin{align*}
 	W_\nu \d \nu &= 8 \pi \frac{\nu^2}{c^3} k_B T \d \nu\\
 	&= 8 \pi \frac{\nu^3}{c^3} k_B \frac{T}{\nu} \d \nu\\
 	\rightarrow g(\frac{\nu}{T}) &= 8 \pi \frac{k_B}{c^3} \frac{T}{\nu}
-\end{align*}
-(Rayleigh-Jeans-Gesetz)\\
+\end{align*}\todo{Warum??? Das macht irgendwie keinen Sinn.}
+Die letzte Zeile wird auch als Rayleigh-Jeans-Gesetz bezeichnet.
+\begin{center}
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$\frac{T}{\nu}$, xtick=\empty, ytick=\empty, ymin = 0, ymin=0]
+	\addplot[red, samples=50,domain=0:3*pi]{1 / x};
+	\end{axis}
+	\end{tikzpicture}
+\end{center}
 \end{folgerung*}
-Alternatives phänomenologisches Gesetz (Wien)
+Ein alternatives phänomenologisches\footnote{Sprich: Wurde durch scharfes Hinsehen gefunden.} Gesetz (Wien)
 $$g(\frac{\nu}{T}) = a e^{- b \frac{\nu}{T}}$$
-Wir suchen eine Interpolation der Daten.\\
-Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ \textbf{Ultraviolett-Katastrophe}\\
-Ausweg: \textbf{Plancksche Strahlungsformel}\\
-Austausch zwischen Strahlung und Wand mit linearen Oszillatoren in der Wand.\\
-(klassisch): Jede Energie der Oszillatoren erlaubt.\\
-\textbf{Planck} Nur $E_n = n \cdot \epsilon_0, n = 0, 1, 2, \dots$ erlaubt (Quantenhypothese). Die Atome in der Wand können also nur diskrete Energiewerte $\Delta E = m \cdot e_0 \qquad (m = 0, \pm 1, \pm 2, \dots)$ aufnehmen und abgeben. \emph{Krasser Gegensatz zur klassischen Physik}. Jetzt insgesamt $N$ Oszillatoren in der Wand. $N(n)$ im Zustand $E = n \cdot \epsilon_0$. $N = \sum_{n=1}^{\infty} N(n)$, $E = \sum_{n=0}^{\infty} N(n) n \epsilon_0$.\\
-Mittlere Energie pro Freiheitsgrad $\hat \epsilon$:
-$$\hat \epsilon = \frac{E}{N}$$
-Im thermischen Gleichgewicht $N(n) \sim e^{- \beta n \epsilon_0}$ (Boltzmann-Verteilung). $\beta = \frac{1}{k_B T}$\\
-$\hat \epsilon$ ausrechnen:
+Qualitativ, sieht die Formel wie folgt aus.
+\begin{center}
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$e^{-\frac{\nu}{T}}$, xtick=\empty, ytick=\empty, ymin = 0, xmin=0]
+	\addplot[red, samples=50,domain=0:3*pi]{e^(-x)};
+	\end{axis}
+	\end{tikzpicture}
+\end{center}~\\
+Wir suchen nun eine möglichst gute Interpolation der Daten.\\
+Da die Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ ist, kommt (mit dem Rayleigh-Jeans-Gesetz) zur sogenannten \textbf{Ultraviolett-Katastrophe}. Hierbei ist zu beachten, dass das Rayleigh-Jeans-Gesetz besser bei kürzeren Wellenlängen und Wiens Formel besser bei größeren Wellenlängen passt. Deswegen liegt die Ultraviolett-Katastrophe nur an ersterem.
+
+\paragraph{Ausweg} Der Ausweg ist die Plancksche Strahlungsformel.
+
+\subsubsection{Planksche Strahlungsformel und Wirkungsquantum}
+Wir betrachten den Austausch zwischen Strahlung und Wand: Dieser findet mit den linearen Oszillatoren in letzter statt.
+Klassisch gesehen sind Oszillatoren jeder Energie erlaubt.\\
+\textbf{Planck} postulierte nun, dass nur $E_n = n \cdot \epsilon_0, n = 0, 1, 2, \dots$ erlaubt sind. Diese Hypothese wird auch Quantenhypothese genannt. Die Atome in der Wand können also nur diskrete Energiewerte $\Delta E = m \cdot e_0 \qquad (m = 0, \pm 1, \pm 2, \dots)$ aufnehmen und abgeben. Dies steht im \emph{krassen Gegensatz zur klassischen Physik}. Jetzt gibt es insgesamt $N$ Oszillatoren in der Wand. $N(n)$ sind im Zustand $E = n \cdot \epsilon_0$. Damit gilt natürlich
+\begin{align*}
+N &= \sum_{n=1}^{\infty} N(n) & E &= \sum_{n=0}^{\infty} N(n) n \epsilon_0
+\end{align*}
+Die Mittlere Energie pro Freiheitsgrad ist $$\hat \epsilon = \frac{E}{N}$$
+Im thermischen Gleichgewicht gilt
+$$N(n) \sim e^{- \beta n \epsilon_0}$$
+Die Verteilung wird auch Boltzmann-Verteilung genannt. Dabei gilt $\beta = \frac{1}{k_B T}$.\\
+Wir rechnen nun $\hat \epsilon$ aus und vergleichen den Wert mit dem "`klassischen"' Wert:
 \begin{align*}
 		\hat \epsilon &= \frac{\sum_{n=0}^\infty n \epsilon_0 e^{- \beta n \epsilon_0}}{\sum_{n=0}^\infty e^{- \beta n \epsilon_0}}  = - \dd \beta \ln (\sum_{n=0}^\infty e^{- \beta n \epsilon_0})
+		\intertext{Ein mathematischer Zwischenschub: Mit der Formel für die geometrische Reihe und $\beta, \epsilon_0 > 0$ gilt hier
+		$$\sum_{n=0}^\infty e^{- \beta n \epsilon_0} = \sum_{n=0}^\infty (e^{- \beta \epsilon_0})^n = \frac{1}{1 - e^{-\beta \epsilon_0}}$$}
+		\Rightarrow \hat \epsilon &= \frac{\epsilon_0}{e^{\beta \epsilon_0}} \neq \frac12 k_B T
 \end{align*}
-$\beta, \epsilon_0 > 0 $ \conseq geometrische Reihe
-$$\sum_{n=0}^\infty e^{- \beta n \epsilon_0} = \sum_{n=0}^\infty (e^{- \beta \epsilon_0})^n = \frac{1}{1 - e^{-\beta \epsilon_0}}$$
-$$\Rightarrow \hat \epsilon = \frac{\epsilon_0}{e^{\beta \epsilon_0}} \neq \frac12 k_B T$$
-Konsequenz: ersetze $k_B T$ bei Ableitung des R-J-Gesetzes durch $\hat \epsilon$\\
-$\rightarrow W_\nu = \frac{8\pi\nu^3}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$\\
-Wien: $\nu^2 g(\frac{\nu}{T}); \epsilon_0 = h \nu$ $h \sim 10^{37} Js$ Plancksches Wirkungsquantum.\\
-$\hookrightarrow W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$ (Plancksche Strahlungsformel).\\
-Sowohl Wiens Formel, als auch $R-J-Gesetz$ als Grenzfälle enthalten
-
+Als Konsequenz ersetzen wir $k_B T$ bei der Herleitung des R-J-Gesetzes durch $\hat \epsilon$:
+$$W_\nu = \frac{8\pi\nu^3}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$$
+Was wir nun in Wiens Formel vom Anfang einsetzen können
+$$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
+Des weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksches Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als
+$$W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$$
+Diese Formel ist auch als Plancksche Strahlungsformel bekannt. Sowohl Wiens Formel, als auch das Rayleigh-Jeans-Gesetz sind in ihr als Grenzfälle enthalten (in ihrem jeweiligen Bereich):
 $$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
 k_B T & h\nu \ll k_B T\\
 h \nu e^{- \frac{h\nu}{k_B T}} & h \nu \gg k_B T
 \end{cases}$$
-Integration über alle Frequenzen \conseq Stefan-Boltzmann-Gesetz
+Die Integration über alle Frequenzen führt zu einer Neuformulierung diese Stefan-Boltzmann-Gesetzes vom Anfang dieses Kapitels
 $$W(T) = (\frac{8\pi^5}{15} \frac{k_B^4}{c^3 h^3}) T^4$$
 
 \subsection{Teilchen und Wellen}
@@ -1921,7 +1946,7 @@ Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[xlabel=${y}$, ylabel=$(\frac{\sin y}{y})^2$, xtick=\empty, ytick=\empty, ymin = 0]
-  \addplot[red, samples=500,domain=-3*pi:3*pi]{sin(deg(x)) ^2 / deg(x)^2};
+  \addplot[red, samples=100,domain=-3*pi:3*pi]{sin(deg(x)) ^2 / deg(x)^2};
   \end{axis}
 \end{tikzpicture}
 \end{center}
