@@ -1919,7 +1919,7 @@ $$\Delta x \Delta p \geq \frac12 | \langle [x, p] \rangle | = \frac{\hbar}{2}$$
 
 \subsection{Eindimensionale Potentialprobleme}
 Bisher nur freie Teilchen und Wellenpakete. Jetzt realistischere Potentiale. Dimension zunächst in einer Dimension ausreichend. Problem
-$$h\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
+$$i\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
 mit
 $$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
 \conseq Separation $\Psi(x, t) = \psi(x) \vp(t)$\\
@@ -1927,18 +1927,18 @@ $$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
 $\psi(x)$ erfüllt die stationäre Schrödingergleichung mit gleichem E.
 \begin{align*}
 	H \psi(x) &= E \psi(x)\\
-	(- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)) \psi(x) &= E \psi(x)
+	\left(- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)\right) \psi(x) &= E \psi(x)
 \end{align*}
 oder
-$$\ddd{^x}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) = 0$$
-$$\Psi''(x) + k^2(x) \psi(x) = 0$$
+$$\ddd{^2}{x^2} \psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) = 0$$
+$$\psi''(x) + k^2(x) \psi(x) = 0$$
 
 \begin{bemerkung*}
 	Wegen $V(x)$ reel gilt auch $\psi^\ast(x)$ Lösung, wenn $\psi(x)$ Lösung, auch $\psi(x) \pm \psi^\ast(x)$ \conseq immer reele Linearkombination möglich.
 \end{bemerkung*}
 
 \begin{bemerkung*}
-	$k^2(x)$ \conseq siehe freihe Lösung $\frac{\hbar^2 k^2}{2m} = E$
+	$k^2(x)$ \conseq siehe freie Lösung $\frac{\hbar^2 k^2}{2m} = E$
 \end{bemerkung*}
 
 \begin{bemerkung*}
@@ -1947,13 +1947,15 @@ $$\Psi''(x) + k^2(x) \psi(x) = 0$$
 
 \begin{bemerkung*}
 	$$\psi''(x) = \underbrace{- k^2(x)}_{= - \frac{2m}{\hbar^2} (E - V(x))} \psi(x)$$
-	$V(x)$ nur endliche Spänge \conseq Knick in $\psi'(x)$ und $\psi(x)$ stetig und $\psi(x)$ stetig.
+	$V(x)$ nur endliche Sprünge \conseq Knick in $\psi'(x)$ und $\psi'(x)$ stetig und $\psi(x)$ stetig.
 \end{bemerkung*}
 
-Physikalische Diskussion anhand der möglichen Energien des Teilchens:\\
-Bereich mit $E > V$ ($k^2 > 0$) klassisch erlaubt.\\
-Bereich mit $E = V$ ($k^2 = 0$) klassische Umkehrpunkte.\\
-Bereich mit $E < V$ ($k^2 < 0$) klassisch verboten.\\
+Physikalische Diskussion anhand der möglichen Energien des Teilchens:
+\begin{itemize}
+\item Bereich mit $E > V$ ($k^2 > 0$) klassisch erlaubt.
+\item Bereich mit $E = V$ ($k^2 = 0$) klassische Umkehrpunkte.
+\item Bereich mit $E < V$ ($k^2 < 0$) klassisch verboten.
+\end{itemize}
 Was bedeutet das für die Wellenfunktion?
 \begin{description}
 	\item[$E < V$] \conseq $k^2 > 0 $ \conseq $\psi''(x) = - \underbrace{k^2}_{> 0} \psi(x)$. $\psi''$ hat immer umgekehrtes Vorzeichen von $\psi$. $\psi(x)$ ist zur $x$-Achse hin gekrümmt. \conseq Oszillationen. z.B. $V = $ konstant, $k^2 = \const < 0$, $k=\sqrt{\frac{2m}{\hbar^2} (E - V)} = i \sqrt{\frac{2m}{\hbar^2} (V - E)} \equiv i \kappa $, $\psi''(x) = \kappa^2 \psi(x)$ \conseq $\psi \sim e^{\pm \kappa x}$. $E < V$ für positive $x$ \conseq $e^{\kappa x}$ divergiert. $\Rightarrow$ $\psi(x) \to e^{-\kappa x}$ für $x \to \infty$. typisches \textbf{expotentielles Abklingen}. % $\psi(x) = e^{\pm i k x}$\\
@@ -1963,7 +1965,7 @@ Was bedeutet das für die Wellenfunktion?
 	\item[$E < V$] \conseq $k^2 < 0$ \conseq $\psi''(x)$ hat immer gleiche Vorzeichen, wie $\psi(x)$. $\psi(x)$ immer von der $x$-Achse weg gekrümmt.
 \end{description}
 
-\paragraph{typische Fall}
+\paragraph{typischer Fall}
 3 Möglichkeiten in verbotenen Bereich
 \begin{itemize}
 	\item[a)] asymptotisches Anschmiegen an die $x$-Achse.
