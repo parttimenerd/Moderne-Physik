@@ -1901,25 +1901,34 @@ Sie hat \dots
 	$$\Psi = \underbrace{e^{i\vec{k} \cdot \vec{r}}}_{\text{fest}} \underbrace{e^{-i\omega t}}_{\cos(\omega t) - i \sin(\omega t)}$$ \todo{korrekt???}
 	\item[zu einem festen Zeitpunkt] $t = t_0$ eine Schwingung 
 	$$e^{i (\vec{k} \cdot \vec{r} - \omega t_0)}$$
+	Orte mit gleichem Funktionswert sind
+	\begin{align*}
+	\vec{k} \cdot \vec{r} = \omega t_0 \Rightarrow \hat{k} \cdot \vec{r} = \frac{\omega t_0}{k}
+	\end{align*}
+	Orte für die im speziellen gilt $\vec{k} \cdot \vec{r} = \omega t_0$ liegen auf einer Ebene, welche senkrecht zu $\vec{k}$ ist.
 \end{description}
-Orte mit gleichem Funktionswert $\vec{k} \cdot \vec{r} = \omega t_0, \hat{k} \cdot \vec{r} = \frac{\omega t_0}{k}$\\
-$\vec{k} \cdot \vec{r} = \omega t_0$ \conseq $\vec{r}$ liegen auf einer Ebene $\perp \vec{k}$\\
-für $t > t_0$ "`wandert"' die Ebene ungeändert in Richtung $\vec{k}$.\\
-Gleichen Wert bekommen wir auch für $e^{i(\vec{h} \cdot \vec{r} - \omega t - 2 \pi n)}$ \conseq viele Ebenen, verschoben um 
-$$\lambda = \frac{2\pi}{k} \rightarrow \vec{k} = \text{\textbf{Wellenvektor}}$$
-(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$)\\
-vgl. de Broglie - Wellenlänge:
-$$p = \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k \rightarrow E = \frac{\hbar^2 k^2}{2m} = \frac{p^2}{2m}$$
-$\frac{p^2}{2m} = $ Energie des freien Punktteilchens.\\
-Impulsoperator: $\vec{p} = - i \hbar \vec{\nabla}$\\
+\textbf{für $t > t_0$} "`wandert"' die Ebene unverändert in Richtung $\vec{k}$.
+Den gleichen Wert bekommen wir übrigens auch für 
+$$e^{i(\vec{h} \cdot \vec{r} - \omega t - 2 \pi n)}$$
+Das sind viele Ebenen welche um
+$$\lambda = \frac{2\pi}{k}$$
+verschoben wurden. $k$ wird hierbei auch als \textbf{Wellenvektor} bezeichnet
+\todo{(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$)???}
+Nun vergleichen wir dies mit der schon bekannten de Broglie-Wellenlänge und folgern
+\begin{align*}
+p &= \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k\\
+\Rightarrow E &= \frac{\hbar^2 k^2}{2m} = \underbrace{\frac{p^2}{2m}}_{\hspace{-10em}\text{Energie eines freien Punktteilchens.}\hspace{-10em}}
+\end{align*}
+\textit{Zur Erinnerung:} Der Impulsoperator ist $\vec{p} = - i \hbar \vec{\nabla}$. Wenden wir diesen nun auf die Wellenfunktion an folgt
 \begin{align*}
 	\vec{p} \Psi(\vec{r}, t) &= - i \hbar \vec{\nabla} \Psi(\vec{r}, t)\\
 	&= -i \hbar \vec{\nabla} \Psi_0 e^{i(\vec{k} \cdot \vec{r} - \omega t)}\\
 	&= -i \hbar (+ i \vec{k}) e^{i(\vec{k} \cdot \vec{r} - \omega t)} \Psi_0\\
-	&= \hbar \vec{k} \Psi(\vec{r}, t) \rightarrow \vec{p} = \hbar \vec{k} 
+	&= \hbar \vec{k} \Psi(\vec{r}, t)\\
+	\Rightarrow \vec{p} &= \hbar \vec{k} = \text{Impuls(eigenwert)}
 \end{align*}
 
-\subsubsection{Nichtnormierbarkeit ebener Wellen}
+\subsection{Nichtnormierbarkeit ebener Wellen}
 Wenn Wellenfunktion Aufenthaltswahrscheinlichkeit sein soll muss gelten
 $$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} \overset!= 1$$
 Aber $$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = \int |\Psi_0|^2 \d^3 \vec{r} = |\Psi_0|^2 \underbrace{\int \d^3 \vec{r}}_{V \to \infty}$$
