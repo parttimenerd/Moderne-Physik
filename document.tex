@@ -1692,7 +1692,7 @@ Energie / Volumen $a^3$
 Die letzte Zeile wird auch als Rayleigh-Jeans-Gesetz bezeichnet.
 \begin{center}
 	\begin{tikzpicture}
-	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$\frac{T}{\nu}$, xtick=\empty, ytick=\empty, ymin = 0, ymin=0]
+	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$\frac{T}{\nu}$, xtick=\empty, ytick=\empty, ymin = 0, xmin=0]
 	\addplot[red, samples=50,domain=0:3*pi]{1 / x};
 	\end{axis}
 	\end{tikzpicture}
@@ -1991,26 +1991,30 @@ Wir betrachten jetzt die Funktion $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\s
 \end{tikzpicture}
 \end{center}
 
-Im Bereich des ersten Maximums konzentriert sich 95\% der Fläche der Kurve. Damit konzentriert sich auch die  Aufenthaltswahrscheinlichkeit auf $-\pi < \Delta k x(t) < \pi$, $x(t) = x - v_g t$.
-$$\Delta k (x_\text{max} - x_\text{min}) = \Delta k \Delta x = 2 \pi$$
-$$\hbar\Delta k \Delta x = 2 \pi \hbar = h$$
-$$\Delta p \Delta x = h$$
-\conseq \textbf{Unschärferelation} beobachtet (siehe auch Gauß-Pakete in Übung).\\
-Enger Zusammenhang mit den Vertauschungsrelationen von Ort und Impuls
+Im Bereich des ersten Maximums liegen rund 95\% der Fläche der Kurve. Damit konzentriert sich auch die  Aufenthaltswahrscheinlichkeit auf $-\pi < \Delta k x(t) < \pi$ mit $x(t) = x - v_g t$. Daraus können wir etwas interessantes folgern
+\begin{align*}
+\Delta k (x_\text{max} - x_\text{min}) &= \Delta k \Delta x = 2 \pi\\
+\Rightarrow \hbar\Delta k \Delta x &= 2 \pi \hbar = h\\
+\Rightarrow \Delta p \Delta x &= h
+\end{align*}
+Damit haben wir die \textbf{Unschärferelation} beobachtet (siehe auch Gauß-Pakete in der Übung\todo{Mehr Erklärung}). Es besteht ein enger Zusammenhang mit den Vertauschungsrelationen von Ort und Impuls
 \begin{align*}
 	[p_x, x] &= p_x x - x p_x
 \end{align*}
-anwenden auf Wellenfunktion $\Psi(\vec{r}, t)$ (beliebig)
-$$p_x = - i \hbar \fpartial{x}$$
-$$[p_x, x] \Psi(\vec{r}, t) = (- i \hbar \fpartial{x} x - x (- i \hbar \fpartial{x})) \Psi(\vec{r}, t) = (-i\hbar\underbrace{\fpartial{x} (x \Psi(\vec{r}, t))}_{(\underbrace{\fpartial{x} x}_{=1}) \Psi(\vec{r}, t) + x \fpartial{x} \Psi(\vec{r}, t)} - x (- i \hbar \fpartial{x} \Psi(\vec{r}, t)) = - i \hbar \Psi(\vec{r}, t) - i \hbar x \fpartial{x} \Psi(\vec{r}, t) + i \hbar x \fpartial{x} \Psi(\vec{r}, t) = - i \hbar \Psi(\vec{r}, t)$$
-\conseq fundamentale Vertauschungsfunktion
+Wird dieser sogenannte Kommutator auf die beliebige Wellenfunktion $\Psi(\vec{r}, t)$ angewendet, folgt
+\begin{align*}
+[p_x, x] \Psi(\vec{r}, t) &= (- i \hbar \fpartial{x} x - x (- i \hbar \fpartial{x})) \Psi(\vec{r}, t)\\
+&= (-i\hbar\underbrace{\fpartial{x} (x \Psi(\vec{r}, t))}_{(\underbrace{\fpartial{x} x}_{=1}) \Psi(\vec{r}, t) + x \fpartial{x} \Psi(\vec{r}, t)} - x (- i \hbar \fpartial{x} \Psi(\vec{r}, t))\\
+&= - i \hbar \Psi(\vec{r}, t) - i \hbar x \fpartial{x} \Psi(\vec{r}, t) + i \hbar x \fpartial{x} \Psi(\vec{r}, t)\\
+&= - i \hbar \Psi(\vec{r}, t)
+\end{align*}
+Somit haben wir eine der fundamentalen Vertauschungsfunktionen gefunden
 $$-[p_x, x] = [x, p_x] = i \hbar$$
-(vgl. fundamentale Poisson-Klammer)\\
-\conseq \textbf{verallgemeinerte Heisenbergsche Unschärferelation}
+(vgl. mit det fundamentalen Poisson-Klammer)\\
+Wenn wir das ganze etwas verallgemeinern, finden wir die \textbf{verallgemeinerte Heisenbergsche Unschärferelation}, wobei im folgenden $A$, $B$ hermitesche Operatoren sind.
 $$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|$$
-A, B hermitesche Operatoren
-$$\Delta A^2 = \langle (A - \langle A \rangle)^2 \rangle = \langle A^2 \rangle - \langle A \rangle^2$$
-vgl.
+wobei $\Delta A^2 = \langle (A - \langle A \rangle)^2 \rangle = \langle A^2 \rangle - \langle A \rangle^2$
+Wenn wir die Formel jetzt auf unsere vorangegangenen Werte anwenden, folgt
 $$\Delta x \Delta p \geq \frac12 | \langle [x, p] \rangle | = \frac{\hbar}{2}$$
 
 
