@@ -2110,41 +2110,51 @@ Was bedeutet das für die Wellenfunktion?
 \end{beispiel*}
 
 \begin{beispiel*}[Endlicher Potentialtopf]
-	$V = \begin{cases}
+	Hier ist das Potential wie folgt gegeben
+	$$V = \begin{cases}
 	V_0 & x < 0\\
 	V_0 & x > a\\
 	0 & 0 \le x \le a
-	\end{cases}$\\
-	
-	\textbf{E < V}: Gebundene Zustände wie im $\infty$-Potentialtopf. \textbf{aber}: jetzt potentielles Eindringen in verbotenen Bereich.\\
-	\textbf{E > $V_0$} zusätzlich sogenannte \textbf{Streuzustände}.\\
-	z.B. Streuexperiment: Teilchen/Welle läuft von links ein \conseq was passiert?\\
-	\conseq zwei Möglichkeiten: Reflexion und Transmission
-	\conseq $0 \le R, T \le 1$ ($T$ steigt mit wachsender Energie und hat kleiner werdende Minima bei Vielfachen der "`Wellenlänge"', $R$ verhält sich Komplementät.)\\
-	\textbf{"'Resonanzen"'}, wenn Welle in Topf hineinpasst. \textbf{Streuexperiment}: Resonanzen erlauben Rückschluss auf das System, an dem gestreut wird.
+	\end{cases}$$
+	Es gibt im wesentlichen zwei Fälle
+	\begin{description}
+		\item[$E < V_0$] Es gibt hier wieder gebundene Zustände wie im $\infty$-Potentialtopf. Zusätzlich können die Teilchen jetzt aber potentiell in den "`verbotenen"' Bereich $E < V$ eintreten.
+		\item[$E > V_0$] Zusätzlich gibt es hier sogenannte \textbf{Streuzustände}. Streuzustände findet zum Beispiel mithilfe eines Streuexperiments: Hierbei "`läuft"' ein Teilchen oder eine Welle von links im mittleren Bereich ein. Was passiert nun wohl?\\
+		Es gibt zwei Möglichkeiten: Reflexion und Transmission mit den dazugehörigen Koeffizienten $T \leq$ und $R \geq 0$. $T$ steigt hierbei mit wachsender Energie und hat kleiner werdende Minima bei Vielfachen der "`Wellenlänge"', $R$ verhält sich entgegengesetzt dazu.\\
+		 Es gibt dabei \textbf{"`Resonanzen"'}, wenn die Welle in den Potentialtopf hineinpasst. Übrigens: Das Streuexperiment erlaubt mit den Resonanzen Rückschlüsse auf das System, an dem gestreut wurde.
+	\end{description}
 \end{beispiel*}
 
 \begin{beispiel*}[Potentialwall]
-	(Topf mit $V_0 \to -V$)
-	$V = \begin{cases}
+	Ein Potentialwall ist ein "`umgedrehter"' Potentialtopf mit dem Potential
+	$$V = \begin{cases}
 	V_0 > 0 & |x| < x_0\\
 	0 & \text{sonst}
-	\end{cases}$\\
-	Untersuchen von links einlaufender Welle.
-	$$\psi_0(x) \sim e^{ik_0x} \qquad k_0^2 = \frac{2m}{\hbar^2} E$$
-	interessant $E < V_0$ (klassisch kann Teilchen den Wall nicht überwinden). (vor Wall $Ae^{ik_0x}$, Expotentieller Abfall im Wall $Ce^{-\kappa x}$, danach Welle mit $Be^{ik_0 x}$)\\
-	\conseq auslaufender Zustand transmittierte und reflektierte Welle. Rechnung führt zu sogenanntem \textbf{Gamor-Faktor} (Transmissionswahrscheinlichkeit)
+	\end{cases}$$
+	Wir untersuchen nun eine von links einlaufende Welle.
+	\begin{align*}
+	\psi_0(x) &\sim e^{ik_0x} & k_0^2 &= \frac{2m}{\hbar^2} E
+	\end{align*}
+	Interessant ist der Fall $E < V_0$, denn klassisch kann das Teilchen / die Welle den Wall nicht überwinden. Wir teilen die Wellenfunktion in die 3 Bereiche auf
+	$$\psi(x) = \begin{cases}
+	Ae^{ik_0x} + Be^{-ik_0 x} & \text{links vor dem Wall}\\
+	Ce^{-\kappa x} & \text{im Wall}\\
+	De^{ik_0 x} & \text{hinter dem Wall}
+	\end{cases}$$
+	Die einlaufende Wellenfunktion besteht aus einer transmittierten und einer reflektierten Welle. \todo{richtig???} Rechnungen führen zum sogenannten \textbf{Gamov-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
 	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
-	\conseq Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreichte, diese zu überwinden \conseq Tunneleffekt.\\
-	\textbf{Gamor}. Anwendung auf beliebige Potentialbarriere per Approximation (als Treppenbarrieren)
+	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch Tunneleffekt.\\
+	\textbf{Gamor}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
 	$$T(E) = e^{-\frac{2}{\hbar} \int_{0}^{\infty} \sqrt{2m (V(x') - E)}~ \d x'}$$
-	Erklärung des $\alpha$-Zerfalls von Atomkernen. Spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n). Keine Beeinflussung von außen (Druck, Temperatur). 
-	$\alpha$-Teilchen mit sehr charakteristischer Energie emittiert. Halbwertszeiten sehr unterschiedlich. z.B.
-	$~^{212}Po: \tau_{\frac12} = \SI{3e-7}{\second}$,
-	$~^{238}U: \tau_{\frac12} = \SI{4.5 e9}{\year}$\\
-	Geiger-Nutall-Gesetz: $A$ = Massenzahl = $N + Z$ = Neutronen + Protonen, $E$ = Energie des $\alpha$-Teilchens.
+	Wir können jetzt damit den $\alpha$-Zerfall von Atomkernen erklären. Der $\alpha$-Zerfall ist eine spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n), sieht geschieht ohne Beeinflussung von außen (z.B. Druck oder Temperatur). 
+	Die $\alpha$-Teilchen werden mit einer sehr charakteristischen Energie emittiert und die Halbwertszeiten sind sehr unterschiedlich, z.B.
+	\begin{align*}
+		~^{212}Po&: \tau_{\frac12} = \SI{3e-7}{\second}\\
+		~^{238}U&: \tau_{\frac12} = \SI{4.5 e9}{\year}
+	\end{align*}
+	\textbf{Geiger-Nutall-Gesetz}: $A$ ist die Massenzahl als Summe der Neutronen und Protonen und $E$ ist die Energie des $\alpha$-Teilchens. Nun gilt für die Halbwertszeit
 	$$\ln \tau_{\frac12} = A \frac{Z}{\sqrt{E}} + \dots$$
-	$\leftarrow$ aus Modell für $\alpha$-Teilchen im Atomkern
+	%$\leftarrow$ aus Modell für $\alpha$-Teilchen im Atomkern
 \end{beispiel*}
 
 \begin{beispiel*} [Ausblick: Kronig-Penney-Modell eines Festkörpers]
