@@ -2194,20 +2194,18 @@ Man findet Translationssymmetrien, insbesondere
 u(x+a) &= u(x)
 \end{align*}
 Diese Wellen heißen Bloch-Wellen.\\
-Stetigkeit $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$
-1,2 für $a_0, b_0 \Rightarrow a_0, b_0$ wenn Gleichung lösbar \conseq Bedingung an mögliche $K$, d.h. an mögliche Energien. \conseq Determinante der Koeffizientenmatrik $\overset!=$ 0
-$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$
-= 0, falls $\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}$
-$1 \geq \dots$
-da $K$ beliebig nur rechte Seite $\leq 1$!
-rechte Seite: $\cos y + \alpha \frac{\sin y}{y}$ mit $y = ka \sim \sqrt{E}$
-\conseq \textbf{Energiebänder} als erlaubte Zustände.
-+ \textbf{Pauli-prinzip}: jeder Zustand darf von Fermionen nur einmal besetzt werden! (Fermionen = Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"')
-(Nur so zum Überlegen) Aufgrund des Spin: zwei Plätze pro Zustand \conseq daher ganz oder halb gefüllte Bänder bei $T = 0$
+Mit der Stetigkeit folgern wir $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$, n = 1,2, sofern die Gleichung lösbar ist. Dies ist eine Bedingen an mögliche $K$, d.h. an mögliche Energien. Man sieht ein, dass die Determinante der Koeffizientenmatrix 0 sein muss.
+$$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$$
+Dies ist der Fall, wenn $$\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}\qquad m = 1, 2, \dots$$ \todo{korrekt??}
+Da $K$ beliebig sein Darf, ist nur die rechte Seite der Gleichung $\leq 1$. Die rechte Seite kann wie folgt umgeschrieben werden
+$$\cos y + \alpha \frac{\sin y}{y}\qquad = ka \sim \sqrt{E}$$
+
+Damit können wir \textbf{Energiebänder} als erlaubte Zustände darstellen. Zu diesem Thema passt auch gut, das \textbf{Pauli-prinzip}:\\
+Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"'} nur einmal besetzt werden. Aufgrund des Spins gibt es zwei "`Plätze"' pro Zustand, es gibt deswegen nur ganz oder halb gefüllte Bänder bei $T = 0$.
 \begin{enumerate}[a)]
-	\item ganz gefüllt \conseq keine freien Zustände leicht erreichbar. \textbf{Isolator}
-	\item halb gefüllt \conseq Zustände durch leichte Anregung erreichbar \conseq \textbf{Leiter}
-	\item Halbleiter: "`Isolator mit sehr kleiner Bandlücke"'
+	\item ganz gefüllt \conseq keine freien Zustände sind leicht erreichbar. \textit{Isolator}
+	\item halb gefüllt \conseq die Zustände sind durch leichte Anregung erreichbar. \textit{Leiter}
+	\item "`Isolator mit sehr kleiner Bandlücke"'. \textit{Halbleiter}
 \end{enumerate}
 
 \section{Formale Grundlagen der Quantenmechanik}
