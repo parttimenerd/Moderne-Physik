@@ -1929,26 +1929,35 @@ p &= \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k\\
 \end{align*}
 
 \subsection{Nichtnormierbarkeit ebener Wellen}
-Wenn Wellenfunktion Aufenthaltswahrscheinlichkeit sein soll muss gelten
-$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} \overset!= 1$$
-Aber $$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = \int |\Psi_0|^2 \d^3 \vec{r} = |\Psi_0|^2 \underbrace{\int \d^3 \vec{r}}_{V \to \infty}$$
-$|\Psi_0|^2 V \Rightarrow \Psi_0 = \frac{1}{\sqrt V} = \const$
-Zwei Möglichkeiten
-\paragraph{a) V endlich} (z.B. $V(\text{Universum})$) \conseq Wahrscheinlichekit Teilchen vorzufinden überall gleich. Aber ein fester Impuls
+Erinnerung: Wenn die Wellenfunktion die Aufenthaltswahrscheinlichkeit beschreiben soll, muss
+\begin{align*}
+\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} &\overset!= 1\\
+\intertext{gelten, aber es ist stattdessen}
+\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} &= \int |\Psi_0|^2 \d^3 \vec{r} = |\Psi_0|^2 \underbrace{\int \d^3 \vec{r}}_{=V \to \infty}
+\end{align*}
+Wegen $|\Psi_0|^2 V$ muss $\Psi_0 = \frac{1}{\sqrt V} = \const$ sein. Damit das gilt, hat man zwei Möglichkeiten
+\paragraph{a) V endlich} (z.B. weil $V(\text{Universum})$) damit ist die Wahrscheinlichkeit ein Teilchen vorzufinden überall gleich. Aber es hat einen festen Impuls, welcher exakt gemessen werden kann.
 \paragraph{b) \textbf{Wellenpaket}}
-Nutzen des Superpositionsprinzips
-$$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ (Fourierreihe)\\
-Ist auch Lösung der Schrödingergleichung\\
-Kontinuierlicher $\vec{k}, \omega$\\
-$$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{h}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ (Fourierintegral)\\
-in Schrödingergleichung \conseq $(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) = 0 \rightarrow \int \d^3 \vec{k} \d \omega \tilde{\vec{k}, \omega} (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} = 0$\\
-erfüllt durch $\tilde\Psi(\vec{k}, \omega) = \tilde\Psi (\vec{k}) \delta(w -w(\vec k))$ (mit $\int f(x) \delta(x - x_0) \d x = f (x_0)$)\\
-also $\Psi(\vec{r}, t = \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)})$\\
-$\tilde \Psi(\vec{k})$ ist Amplitudenfunktion eines Wellenpakets.
+In diesem Fall nutzen wir das Superpositionsprinzip aus
+$$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$
+Diese Reihe, auch Fourierreihe genannt, ist damit auch eine Lösung der Schrödingergleichung. Für kontinuierliche $\vec{k}, \omega$ gilt
+$$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{h}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ Dieses Integral wird auch Fourierintegral genannt. Wir setzen es nun in die, etwas umgeformte, Schrödingergleichung ein
+\begin{align*}
+	(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) &= 0\\
+	\Rightarrow \int \d^3 \vec{k} \d \omega \tilde{\vec{k}}\omega (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} &= 0
+\end{align*}
+Diese Gleichung wird durch
+\begin{align*}
+\tilde\Psi(\vec{k}, \omega) &= \tilde\Psi (\vec{k}) \delta(w -w(\vec k))\\
+\intertext{\textit{mit} $\int f(x) \delta(x - x_0) \d x = f (x_0)$}
+\Psi(\vec{r}, t) &= \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)})
+\end{align*}
+erfüllt.
+$\tilde \Psi(\vec{k})$ ist hierbei Amplitudenfunktion eines Wellenpakets.
 
 % % % % % % % % % %
 
-Einfaches Beispiel im eindimensionalen
+\subsection{Einfaches Beispiel im eindimensionalen}
 $$\tilde{\Psi} = \begin{cases}
 \tilde{\Psi}_0 & k_0 - \Delta k < k < k_0 + \Delta k\\
 0 & \text{sonst}
@@ -1992,6 +2001,7 @@ A, B hermitesche Operatoren
 $$\Delta A^2 = \langle (A - \langle A \rangle)^2 \rangle = \langle A^2 \rangle - \langle A \rangle^2$$
 vgl.
 $$\Delta x \Delta p \geq \frac12 | \langle [x, p] \rangle | = \frac{\hbar}{2}$$
+
 
 \subsection{Eindimensionale Potentialprobleme}
 Bisher nur freie Teilchen und Wellenpakete. Jetzt realistischere Potentiale. Dimension zunächst in einer Dimension ausreichend. Problem
