@@ -1655,7 +1655,7 @@ $$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
 \begin{folgerung*}[Stefan-Boltzmann-Gesetz]
 Der Energiegehalt des Spektrums ist
 \begin{align*}
-	\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^3 g(\frac{\nu}{T}) \d v\\
+	w(T) =\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^3 g(\frac{\nu}{T}) \d v\\
 	&= T^4 \int_0^\infty x^3 g(x) \d x = \alpha T^4 \text{\qquad Stefan-Boltzmann-Gesetz}
 \end{align*}
 \end{folgerung*}
@@ -1675,9 +1675,10 @@ Der Hohlraum ist ein Würfel mit Kantenlänge $a$. Also gilt für jede Richtung,
 n_1 &= \frac{2 a \cos \alpha_1}{\lambda} & n_2 &= \frac{2 a \cos \alpha_2}{\lambda} & n_3 &= \frac{2 a \cos \alpha_3}{\lambda}
 \end{align*}
 \begin{align*}
-\vec{u} &= (\cos \alpha_1, \cos \alpha_2, \cos \alpha_3) & u^2 &= 1
+\vec{u} &= (\cos \alpha_1, \cos \alpha_2, \cos \alpha_3) & u^2 &= 1\\
+\Rightarrow n_1^2 + n_2^2 + n_3^2 = (\frac{2a}{\lambda})^2 = (\frac{2 a \nu}{c})^2
 \end{align*}
-$$n_1^2 + n_2^2 + n_3^2 = (\frac{2a}{\lambda})^2 = (\frac{2 a \nu}{c})^2$$
+
 Daraus folgern wir, dass es $\nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen für stehende Wellen im Hohlraum gibt.\todo{Warum???}\\
 Der Frequenzraum ist ein kubisches Gitter mit der Kantenlänge $\frac{c}{2a}$. Die Frequenzen liegen zwischen 0 und $\nu$ \todo{Warum???}\\
 $\frac{\text{Kugel mit Radius~}\nu}{\text{Volumen / Punkt}}$
@@ -1716,11 +1717,11 @@ Da die Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ ist, kommt (mit dem R
 \subsubsection{Planksche Strahlungsformel und Wirkungsquantum}
 Wir betrachten den Austausch zwischen Strahlung und Wand: Dieser findet mit den linearen Oszillatoren in letzter statt.
 Klassisch gesehen sind Oszillatoren jeder Energie erlaubt.\\
-\textbf{Planck} postulierte nun, dass nur $E_n = n \cdot \epsilon_0, n = 0, 1, 2, \dots$ erlaubt sind. Diese Hypothese wird auch Quantenhypothese genannt. Die Atome in der Wand können also nur diskrete Energiewerte $\Delta E = m \cdot e_0 \qquad (m = 0, \pm 1, \pm 2, \dots)$ aufnehmen und abgeben. Dies steht im \emph{krassen Gegensatz zur klassischen Physik}. Jetzt gibt es insgesamt $N$ Oszillatoren in der Wand. $N(n)$ sind im Zustand $E = n \cdot \epsilon_0$. Damit gilt natürlich
+\textbf{Planck} postulierte nun, dass nur $E_n = n \cdot \epsilon_0, n = 0, 1, 2, \dots$ erlaubt sind. Diese Hypothese wird auch Quantenhypothese genannt. Die Atome in der Wand können also nur diskrete Energiewerte $\Delta E = m \cdot e_0 \qquad (m = 0, \pm 1, \pm 2, \dots)$ aufnehmen und abgeben. Dies steht im \emph{krassen Gegensatz zur klassischen Physik}. Jetzt gibt es insgesamt $N$ Oszillatoren in der Wand. $N(n)$ von ihnen sind im Zustand $E = n \cdot \epsilon_0$. Damit gilt natürlich
 \begin{align*}
 N &= \sum_{n=1}^{\infty} N(n) & E &= \sum_{n=0}^{\infty} N(n) n \epsilon_0
 \end{align*}
-Die Mittlere Energie pro Freiheitsgrad ist $$\hat \epsilon = \frac{E}{N}$$
+Die mittlere Energie pro Freiheitsgrad ist $$\hat \epsilon = \frac{E}{N}$$
 Im thermischen Gleichgewicht gilt
 $$N(n) \sim e^{- \beta n \epsilon_0}$$
 Die Verteilung wird auch Boltzmann-Verteilung genannt. Dabei gilt $\beta = \frac{1}{k_B T}$.\\
@@ -1729,10 +1730,10 @@ Wir rechnen nun $\hat \epsilon$ aus und vergleichen den Wert mit dem "`klassisch
 		\hat \epsilon &= \frac{\sum_{n=0}^\infty n \epsilon_0 e^{- \beta n \epsilon_0}}{\sum_{n=0}^\infty e^{- \beta n \epsilon_0}}  = - \dd \beta \ln (\sum_{n=0}^\infty e^{- \beta n \epsilon_0})
 		\intertext{Ein mathematischer Zwischenschub: Mit der Formel für die geometrische Reihe und $\beta, \epsilon_0 > 0$ gilt hier
 		$$\sum_{n=0}^\infty e^{- \beta n \epsilon_0} = \sum_{n=0}^\infty (e^{- \beta \epsilon_0})^n = \frac{1}{1 - e^{-\beta \epsilon_0}}$$}
-		\Rightarrow \hat \epsilon &= \frac{\epsilon_0}{e^{\beta \epsilon_0}} \neq \frac12 k_B T
+		\Rightarrow \hat \epsilon &= \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1} \neq \frac12 k_B T
 \end{align*}
 Als Konsequenz ersetzen wir $k_B T$ bei der Herleitung des R-J-Gesetzes durch $\hat \epsilon$:
-$$W_\nu = \frac{8\pi\nu^3}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$$
+$$W_\nu = \frac{8\pi\nu^2}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$$
 Was wir nun in Wiens Formel vom Anfang einsetzen können
 $$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
 Des weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksches Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als
@@ -1743,10 +1744,14 @@ k_B T & h\nu \ll k_B T\\
 h \nu e^{- \frac{h\nu}{k_B T}} & h \nu \gg k_B T
 \end{cases}$$
 Die Integration über alle Frequenzen führt zu einer Neuformulierung diese Stefan-Boltzmann-Gesetzes vom Anfang dieses Kapitels
-$$W(T) = (\frac{8\pi^5}{15} \frac{k_B^4}{c^3 h^3}) T^4$$
+\begin{align*}
+W(T) &= (\frac{8}{15} \pi^5 \frac{k_B^4}{c^3 h^3}) T^4\\
+\intertext{Außerdem gilt für die mittlere Energie}
+\hat{\epsilon} &= \frac{h \nu}{e^{\beta h \nu} - 1} 
+\end{align*}
 
 \subsection{Teilchen und Wellen}
-Im folgenden befassen wir uns mit Phänomenen, die auf den Teilchencharakter des Lichtes und auf den Wellencharakter von Teilchen\todo{Welche Phänomene???} hindeuten.
+Im folgenden befassen wir uns mit Phänomenen, die auf den Teilchencharakter des Lichtes und auf den Wellencharakter von Teilchen hindeuten.
 
 \subsubsection{Interferenz von Lichtwellen}
 Hierfür wird das \href{https://de.wikipedia.org/wiki/Doppelspaltexperiment}{Doppelspaltexperiment} betrachtet. Man verwendet dabei monochromatisches Licht der Wellenlänge $\lambda$. Man beobachtet zwei verschiedene Arten von Interferenzen
@@ -1754,13 +1759,13 @@ Hierfür wird das \href{https://de.wikipedia.org/wiki/Doppelspaltexperiment}{Dop
 	\item[Konstruktive Interferenz] falls der Gangunterschied $g$ ein Vielfaches von $\lambda$ ist
 	\item[Destruktive Interferenz] falls $g = (n - \frac12) \lambda$
 \end{description}
-Die Maxima der Lichtintensität liegt bei
-$$\cos \alpha = \frac{n\lambda}{d}$$
+Die Maxima der Lichtintensität liegen bei
+$$d \sin \alpha = n\lambda$$
 wobei $n = 0, 1, \dots$ und $d$ der Abstand zwischen Doppelspalt und Detektorschirm ist.\
 $$n \frac{\lambda}{2} \cos \alpha = a$$
 Hierbei ist $a$ der Abstand der beiden Spalten.
-damit folgt 
-$$n = \frac{2a \cos \alpha}{\lambda}$$
+Damit folgt 
+$$n = \frac{2a \cos \alpha}{\lambda}$$\todo{d und a verwechselt????? sin statt cos???, besser: $\frac{a \sin \alpha}{2} = n \lambda \Leftrightarrow n = \frac{a \sin \alpha}{2 \lambda}$???}
 was ein klarer Beweis der Wellennatur des Lichtes ist, siehe auch Wasser und Schall.
 
 \subsubsection{Photoeffekt} Der Photoeffekt\footnote{vgl \href{https://de.wikipedia.org/wiki/Photoelektrischer_Effekt}{Wikipedia}} wird auch Lichtelektrischer Effekt genannt. Hierbei trifft Licht mit der Frequenz $\nu$ und der Intensität $I$ auf ein bestimmtes Material und schlägt Elektronen heraus. Wir bremsen die Elektronen mit einer Gegenspannung $U_g$ ab. Man macht dabei unter anderem folgende Beobachtungen
@@ -1777,7 +1782,7 @@ E_\text{Lichtquant} &= \frac12 m v^2 + \text{Austrittsarbeit}
 \end{align*}
 
 \subsubsection{Compton-Effekt}
-Man bestrahlt hierfür Elektronen, welche leicht in ihrem jeweiligen Atom gebunden sind, mit Röntgenlicht der Wellenlänge\todo{Korrekt???} $\nu_0$ bzw. $\lambda_0$. Neben $\lambda_0$ wird weiteres Licht bei $\lambda = \lambda_0 + \Delta \lambda$ nach der Wechselwirkung beobachtet. (Viel Licht mit geringerer Energie). Man erklärt diese Beobachtung durch den \emph{Stoß} von $\gamma$-Photonen auf die Elektronen der Atomhülle.
+Um den Compton-Effekt\footnote{vgl. \href{https://de.wikipedia.org/wiki/Compton-Effekt}{Wikipedia}} zu messen, bestrahlt man  Elektronen, welche leicht in ihrem jeweiligen Atom gebunden sind, mit Röntgenlicht der Frequenz $\nu_0$ bzw. der Wellenlänge $\lambda_0$. Neben $\lambda_0$ wird weiteres Licht bei $\lambda = \lambda_0 + \Delta \lambda$ nach der Wechselwirkung beobachtet. (Viel Licht mit geringerer Energie). Man erklärt diese Beobachtung durch den \emph{Stoß} von $\gamma$-Photonen auf die Elektronen der Atomhülle.
 Der Photonimpuls ist $\frac{h \nu_0}{c}$ und damit gilt 
 $$\frac{h \nu}{c} < \frac{h \nu_0}{c} \qquad \Rightarrow \qquad \Delta \lambda = \lambda - \lambda_0 = \lambda_c = (1 - \cos \theta)$$
 Eine Erklärung des Phänomens ist nur möglich, falls das Licht als aus Teilchen bestend angenommen wird.
@@ -2144,7 +2149,7 @@ Was bedeutet das für die Wellenfunktion?
 	Die einlaufende Wellenfunktion besteht aus einer transmittierten und einer reflektierten Welle. \todo{richtig???} Rechnungen führen zum sogenannten \textbf{Gamov-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
 	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
 	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch Tunneleffekt.\\
-	\textbf{Gamow}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
+	\textbf{Gamov}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
 	$$T(E) = e^{-\frac{2}{\hbar} \int_{0}^{\infty} \sqrt{2m (V(x') - E)}~ \d x'}$$
 	Wir können jetzt damit den $\alpha$-Zerfall von Atomkernen erklären. Der $\alpha$-Zerfall ist eine spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n), sieht geschieht ohne Beeinflussung von außen (z.B. Druck oder Temperatur). 
 	Die $\alpha$-Teilchen werden mit einer sehr charakteristischen Energie emittiert und die Halbwertszeiten sind sehr unterschiedlich, z.B.
