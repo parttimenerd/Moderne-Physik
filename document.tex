@@ -2157,50 +2157,58 @@ Was bedeutet das für die Wellenfunktion?
 	%$\leftarrow$ aus Modell für $\alpha$-Teilchen im Atomkern
 \end{beispiel*}
 
-\begin{beispiel*} [Ausblick: Kronig-Penney-Modell eines Festkörpers]
-	Potential (periodisch)
-	$$V(x) = D \sum_{n = -\infty}^{\infty} \delta(x - n a)$$
-	$x \neq n a$ \conseq klassisch erlaubt, quasi freie Teilchen $\Rightarrow$ Ebenen Wellen mit periodischen Randbedingungen. zwei Typen von Bedingung an Wellenfunktion.\\
-	\textbf{I.} Stetig an dem Rand
+\subsection{Ausblick: Kronig-Penney-Modell eines Festkörpers}
+Hier ist das Potential periodisch wie folgt angegeben
+$$V(x) = D \sum_{n = -\infty}^{\infty} \delta(x - n a)$$
+(Im wesentlichen nur viele gleich hohe Spikes auf der $x$-Achse mit Abstand 1.)\\
+Klassisch ist $x \neq n a$ erlaubt, dann haben wir quasi freie Teilchen und ebenen Wellen mit periodischen Randbedingungen. Wir nehmen wieder die beiden Typen von Bedingung an Wellenfunktion und verwenden sie.
+\begin{description}
+	\item[\textbf{I.} Stetig an dem Rand]
 	$$\psi(n a + \epsilon) \overset!= \psi(na - \epsilon) \equiv \psi(na)$$
-	Schrödingerlgeichung ($\epsilon \to 0^+$)
-	$$\int_(na-\epsilon)^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon} = - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \to 0 \text{weil $\psi$ stetig}$$
-	\conseq $\psi'(x +\epsilon) - \psi'(x -\epsilon) = \frac{2m}{\hbar^2} D \psi(n a)$ endlicher Sprung in $\psi'$ an verbotenen Stellen.
-	
-	% % % % %
-	
-	$$\Psi_n(x) = e_n e^{ik(x-na)} + b_n e^{-ik (x-na)}$$
-	(freie Wellenfunktion) $k = \sqrt{\frac{2m}{\hbar^2} E}$
-	$\Psi_n$ im Bereich $B_n = \{ x | na < x < (n+1)a\}$
-	\begin{enumerate}
-		\item stetig: $\Psi(na + \epsilon) = \Psi(na -\epsilon) \equiv \Psi(na)$
-		\item $\Psi'(na+\epsilon) - \Psi'(na -\epsilon) = \frac{2m}{\hbar^2} D \Psi(na)$
-		zu Gleichung ($n \to \infty$)
-		$V(x) = V(x + a)$
-	\end{enumerate}
-	Translationssymmetrie
-	insbesondere 
-	$$|\Psi(x + a)|^2 = |\Psi(x)|^2$$
-	Unterscheide nur durch Phasenfaktor $e^{iKa}$
-	$$\Psi(x+a) = e^{iKa}u(x)$$
-	$$u(x+a) = u(x)$$
-	(Bloch-Wellen).
-	Stetigkeit $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$
-	1,2 für $a_0, b_0 \Rightarrow a_0, b_0$ wenn Gleichung lösbar \conseq Bedingung an mögliche $K$, d.h. an mögliche Energien. \conseq Determinante der Koeffizientenmatrik $\overset!=$ 0
-	$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$
-	= 0, falls $\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}$
-	$1 \geq \dots$
-	da $K$ beliebig nur rechte Seite $\leq 1$!
-	rechte Seite: $\cos y + \alpha \frac{\sin y}{y}$ mit $y = ka \sim \sqrt{E}$
-	\conseq \textbf{Energiebänder} als erlaubte Zustände.
-	+ \textbf{Pauli-prinzip}: jeder Zustand darf von Fermionen nur einmal besetzt werden! (Fermionen = Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"')
-	(Nur so zum Überlegen) Aufgrund des Spin: zwei Plätze pro Zustand \conseq daher ganz oder halb gefüllte Bänder bei $T = 0$
-	\begin{enumerate}[a)]
-		\item ganz gefüllt \conseq keine freien Zustände leicht erreichbar. \textbf{Isolator}
-		\item halb gefüllt \conseq Zustände durch leichte Anregung erreichbar \conseq \textbf{Leiter}
-		\item Halbleiter: "`Isolator mit sehr kleiner Bandlücke"'
-	\end{enumerate}
-\end{beispiel*}
+	Und damit die Schrödingergleichung (mit $\epsilon \to 0^+$)
+	\begin{align*}
+	&\int_{na-\epsilon}^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon}\\
+	&= - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \xrightarrow{\text{weil $\psi$ stetig ist}} 0
+	\end{align*}\todo{korrekt???}
+	\item[\textbf{II.} Ableitung ist stetig am Rand]
+	$$\psi'(x +\epsilon) - \psi'(x -\epsilon) = \frac{2m}{\hbar^2} D \psi(n a)$$
+	Dies ist ein endlicher Sprung in $\psi'$ an verbotenen Stellen.
+\end{description}
+
+% % % % %
+
+%$$\Psi_n(x) = e_n e^{ik(x-na)} + b_n e^{-ik (x-na)}$$
+%(freie Wellenfunktion) $k = \sqrt{\frac{2m}{\hbar^2} E}$
+%$\Psi_n$ im Bereich $B_n = \{ x | na < x < (n+1)a\}$
+%\begin{enumerate}
+%	\item stetig: $\Psi(na + \epsilon) = \Psi(na -\epsilon) \equiv \Psi(na)$
+%	\item $\Psi'(na+\epsilon) - \Psi'(na -\epsilon) = \frac{2m}{\hbar^2} D \Psi(na)$
+%	zu Gleichung ($n \to \infty$)
+%	$V(x) = V(x + a)$
+%\end{enumerate}
+Man findet Translationssymmetrien, insbesondere
+\begin{align*}
+|\psi(x + a)|^2 &= |\Psi(x)|^2
+\intertext{$\psi$ unterscheidet sich nur durch den Phasenfaktor $e^{iKa}$}
+\psi(x+a) &= e^{iKa}u(x)\\
+u(x+a) &= u(x)
+\end{align*}
+Diese Wellen heißen Bloch-Wellen.\\
+Stetigkeit $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$
+1,2 für $a_0, b_0 \Rightarrow a_0, b_0$ wenn Gleichung lösbar \conseq Bedingung an mögliche $K$, d.h. an mögliche Energien. \conseq Determinante der Koeffizientenmatrik $\overset!=$ 0
+$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$
+= 0, falls $\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}$
+$1 \geq \dots$
+da $K$ beliebig nur rechte Seite $\leq 1$!
+rechte Seite: $\cos y + \alpha \frac{\sin y}{y}$ mit $y = ka \sim \sqrt{E}$
+\conseq \textbf{Energiebänder} als erlaubte Zustände.
++ \textbf{Pauli-prinzip}: jeder Zustand darf von Fermionen nur einmal besetzt werden! (Fermionen = Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"')
+(Nur so zum Überlegen) Aufgrund des Spin: zwei Plätze pro Zustand \conseq daher ganz oder halb gefüllte Bänder bei $T = 0$
+\begin{enumerate}[a)]
+	\item ganz gefüllt \conseq keine freien Zustände leicht erreichbar. \textbf{Isolator}
+	\item halb gefüllt \conseq Zustände durch leichte Anregung erreichbar \conseq \textbf{Leiter}
+	\item Halbleiter: "`Isolator mit sehr kleiner Bandlücke"'
+\end{enumerate}
 
 \section{Formale Grundlagen der Quantenmechanik}
 \begin{definition*}[Zustand]
