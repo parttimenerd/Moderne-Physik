@@ -1958,20 +1958,31 @@ $\tilde \Psi(\vec{k})$ ist hierbei Amplitudenfunktion eines Wellenpakets.
 % % % % % % % % % %
 
 \subsection{Einfaches Beispiel im eindimensionalen}
-$$\tilde{\Psi} = \begin{cases}
+Die Amplitudenfunktion ist wie folgt gegeben
+\begin{align*}
+\tilde{\Psi} = \begin{cases}
 \tilde{\Psi}_0 & k_0 - \Delta k < k < k_0 + \Delta k\\
 0 & \text{sonst}
-\end{cases}$$
+\end{cases}
+\end{align*}
+Damit können wir mit der folgenden Formel auf $\Psi(x, t)$ schließen
 $$\Psi(x,t) = \tilde{\Psi}_0 \int_{k_0-\Delta k}^{k_0+\Delta k} \d k e^{i(kx - \omega(k)t)}$$
-$$\omega(k) = \frac{\hbar k^2}{2m} \approxeq \frac{\hbar k_0^2}{2m} + \frac{\hbar h_0}{m}(k - k_0) + \dots \qquad \frac{\Delta k}{k_0} \ll 1$$
-$$\omega(k) = - \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m} k$$
-$$\Psi(x,t) = \tilde{\Psi_0} \int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{i (kx + \frac{\hbar h_0^2}{2m}t - \frac{\hbar h_0}{m} k t)} \d k = \tilde{\Psi}_0  e^{\frac{i \hbar h_0^2}{2m}t}  \int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{ik(\overbrace{x - \frac{\hbar k_0}{m}t}^a)} \d k$$
-$$ I = \int_{\kappa_0}^{\kappa_1} e^{iak} \d k = \left. \frac{1}{ia} e^{i a h} \right|_{\kappa_0}^{\kappa_1} = \frac1{ia} (e^{ia\kappa_1} - e^{ia\kappa_0}), \kappa_0 = k_0 - \Delta k, \kappa_1 = k_0 + \Delta k$$
-$$I = \frac{1}{ia} (e^{ia(k_0 + \Delta k)} e^{ia (k_0 - \Delta k)}) = \frac{1}{ia} e^{iak} (e^{ia \Delta k} - e^{-ia \Delta k}) = \frac{1}{ia} e^{ia k_0} 2 i \sin a \Delta k \qquad \frac{\hbar k_0}{m} = v_g$$
-$$\Psi(x,t) = \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}$$
-$v_g$ = "`Gruppengeschwindigkeit"'
+\begin{align*}
+\omega(k) &= \frac{\hbar k^2}{2m} \approxeq \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m}(k - k_0) + \dots\\
+&\underset{\frac{\Delta k}{k_0} \ll 1}{=} - \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m} k
+\end{align*}
+Damit folgt
+\begin{align*}
+\Psi(x,t) &= \tilde{\Psi_0} \int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{i (kx + \frac{\hbar k_0^2}{2m}t - \frac{\hbar k_0}{m} k t)} \d k\\
+&= \tilde{\Psi}_0  e^{\frac{i \hbar k_0^2}{2m}t}  \underbrace{\int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{ik(\overbrace{x - \overbrace{\frac{\hbar k_0}{m}}^{v_g}t}^a)} \d k}_{I}\\
+I &= \int_{\kappa_0 = k_0-\Delta k}^{\kappa_1 = k_0 + \Delta k} e^{iak} \d k = \left. \frac{1}{ia} e^{i a h} \right|_{\kappa_0}^{\kappa_1} = \frac1{ia} (e^{ia\kappa_1} - e^{ia\kappa_0})\\
+&=\frac{1}{ia} (e^{ia(k_0 + \Delta k)} e^{ia (k_0 - \Delta k)}) = \frac{1}{ia} e^{iak} (e^{ia \Delta k} - e^{-ia \Delta k})\\
+&= \frac{1}{ia} e^{ia k_0} 2 i \sin a \Delta k\\
+\Rightarrow \Psi(x,t) &= \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}
+\end{align*}
+Hierbei ist $v_g$ die "`Gruppengeschwindigkeit"'.
 $$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin^2((x - v_g t)\Delta k)}{(x - v_g t)^2 \Delta k^2}$$
-Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^2$$ an:
+Wir betrachten jetzt die Funktion $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^2$$:
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[xlabel=${y}$, ylabel=$(\frac{\sin y}{y})^2$, xtick=\empty, ytick=\empty, ymin = 0]
@@ -1980,8 +1991,8 @@ Wir schauen jetzt $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^
 \end{tikzpicture}
 \end{center}
 
-Bereich des ersten Maximums enthällt 95\% der Fläche. \conseq Aufenthaltswahrscheinlichkeit konzentriert sich auf $-\pi < \Delta k x(t) < \pi$, $x(t) = x - v_g t$.
-$$\Delta k (x_\text{max} - x_\text{min} = \Delta k \Delta x = 2 \pi)$$
+Im Bereich des ersten Maximums konzentriert sich 95\% der Fläche der Kurve. Damit konzentriert sich auch die  Aufenthaltswahrscheinlichkeit auf $-\pi < \Delta k x(t) < \pi$, $x(t) = x - v_g t$.
+$$\Delta k (x_\text{max} - x_\text{min}) = \Delta k \Delta x = 2 \pi$$
 $$\hbar\Delta k \Delta x = 2 \pi \hbar = h$$
 $$\Delta p \Delta x = h$$
 \conseq \textbf{Unschärferelation} beobachtet (siehe auch Gauß-Pakete in Übung).\\
