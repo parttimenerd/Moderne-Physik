@@ -2019,56 +2019,65 @@ $$\Delta x \Delta p \geq \frac12 | \langle [x, p] \rangle | = \frac{\hbar}{2}$$
 
 
 \subsection{Eindimensionale Potentialprobleme}
-Bisher nur freie Teilchen und Wellenpakete. Jetzt realistischere Potentiale. Dimension zunächst in einer Dimension ausreichend. Problem
-$$h\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
+Bisher haben wir nur freie Teilchen und Wellenpakete betrachtet. Jetzt versuchen wir es mit etwas realistischeren Potentialen. Zunächst ist es hierfür völlig ausreichend eindimensionale Systeme zu betrachten. Das betrachtete Problem ist
+$$i\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
 mit
 $$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
-\conseq Separation $\Psi(x, t) = \psi(x) \vp(t)$\\
-\conseq $\vp(t) \sim e^{i \frac{e}{\hbar} t}$\\
+Zuerst Separieren wir wieder $\Psi$ zur $\Psi(x, t) = \psi(x) \vp(t)$ und $\vp(t) \sim e^{i \frac{E}{\hbar} t}$\\
 $\psi(x)$ erfüllt die stationäre Schrödingergleichung mit gleichem E.
 \begin{align*}
 	H \psi(x) &= E \psi(x)\\
-	(- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)) \psi(x) &= E \psi(x)
+	\Leftrightarrow (- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)) \psi(x) &= E \psi(x)\\
+	\Leftrightarrow \ddd{^x}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) &= 0\\
+	\Leftrightarrow \Psi''(x) + k^2(x) \psi(x) &= 0
 \end{align*}
-oder
-$$\ddd{^x}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) = 0$$
-$$\Psi''(x) + k^2(x) \psi(x) = 0$$
 
 \begin{bemerkung*}
-	Wegen $V(x)$ reel gilt auch $\psi^\ast(x)$ Lösung, wenn $\psi(x)$ Lösung, auch $\psi(x) \pm \psi^\ast(x)$ \conseq immer reele Linearkombination möglich.
+	Weil $V(x)$ reel ist, gilt, dass auch $\psi^\ast(x)$ eine Lösung ist, sofern $\psi(x)$ eine ist, natürlich ist auch $\psi(x) \pm \psi^\ast(x)$ eine richtige Lösung. Ganz allgemein sind immer reele Linearkombinationen der Lösungen möglich.
 \end{bemerkung*}
 
 \begin{bemerkung*}
-	$k^2(x)$ \conseq siehe freihe Lösung $\frac{\hbar^2 k^2}{2m} = E$
+	$k^2(x)$? Betrachte die freie Lösung $\frac{\hbar^2 k^2}{2m} = E$.
 \end{bemerkung*}
 
 \begin{bemerkung*}
-	$\psi(x)$ endlich wegen Wahrscheinlichkeitsinterpretation von $|\psi|^2$
+	$\psi(x)$ ist endlich wegen der Wahrscheinlichkeitsinterpretation von $|\psi|^2$.
 \end{bemerkung*}
 
 \begin{bemerkung*}
 	$$\psi''(x) = \underbrace{- k^2(x)}_{= - \frac{2m}{\hbar^2} (E - V(x))} \psi(x)$$
-	$V(x)$ nur endliche Spänge \conseq Knick in $\psi'(x)$ und $\psi(x)$ stetig und $\psi(x)$ stetig.
+	$V(x)$ darf nur endliche Sprünge haben. Solche Sprünge führen zu "`Knicken"' in $\psi$, aber $\psi'(x)$ und $\psi(x)$ müssen jeweils stetig sein.
 \end{bemerkung*}
 
-Physikalische Diskussion anhand der möglichen Energien des Teilchens:\\
-Bereich mit $E > V$ ($k^2 > 0$) klassisch erlaubt.\\
-Bereich mit $E = V$ ($k^2 = 0$) klassische Umkehrpunkte.\\
-Bereich mit $E < V$ ($k^2 < 0$) klassisch verboten.\\
+Physikalische Diskussion anhand der möglichen Energien des Teilchens:
+\begin{description}
+	\item[Bereich mit $E > V$ ($k^2 > 0$)] klassisch erlaubt.
+	\item[Bereich mit $E = V$ ($k^2 = 0$)] klassische Umkehrpunkte.
+	\item[Bereich mit $E < V$ ($k^2 < 0$)] klassisch verboten.
+\end{description}
 Was bedeutet das für die Wellenfunktion?
 \begin{description}
-	\item[$E < V$] \conseq $k^2 > 0 $ \conseq $\psi''(x) = - \underbrace{k^2}_{> 0} \psi(x)$. $\psi''$ hat immer umgekehrtes Vorzeichen von $\psi$. $\psi(x)$ ist zur $x$-Achse hin gekrümmt. \conseq Oszillationen. z.B. $V = $ konstant, $k^2 = \const < 0$, $k=\sqrt{\frac{2m}{\hbar^2} (E - V)} = i \sqrt{\frac{2m}{\hbar^2} (V - E)} \equiv i \kappa $, $\psi''(x) = \kappa^2 \psi(x)$ \conseq $\psi \sim e^{\pm \kappa x}$. $E < V$ für positive $x$ \conseq $e^{\kappa x}$ divergiert. $\Rightarrow$ $\psi(x) \to e^{-\kappa x}$ für $x \to \infty$. typisches \textbf{expotentielles Abklingen}. % $\psi(x) = e^{\pm i k x}$\\
-	$\psi''(x) = (\pm i k) (\pm i k) e^{\pm i k x} = - k^2 \psi(x)$\\
-	allgemein $\psi(x) = A e^{ikx} + Be^{ikx}$ mit $k = \sqrt{\frac{2m}{\hbar^2} (E -V)}$
-	\item[$E = V$] \conseq $k^2 = 0$ \conseq $\psi''(x) = 0$, Wendepunkt von $\psi(x)$
-	\item[$E < V$] \conseq $k^2 < 0$ \conseq $\psi''(x)$ hat immer gleiche Vorzeichen, wie $\psi(x)$. $\psi(x)$ immer von der $x$-Achse weg gekrümmt.
+	\item[$E < V$] \conseq $k^2 > 0 $ Damit gilt $\psi''(x) = - \underbrace{k^2}_{> 0} \psi(x)$ und $\psi''$ hat damit immer umgekehrtes Vorzeichen von $\psi$. $\psi(x)$ ist außerdem zur $x$-Achse hin gekrümmt.\\
+	Natürlich gibt es auch Oszillationen. z.B. wenn $V$ konstant und $k^2 = \const < 0$ ist, gilt
+	\begin{align*}
+	k &=\sqrt{\frac{2m}{\hbar^2} (E - V)} = i \sqrt{\frac{2m}{\hbar^2} (V - E)} \equiv i \kappa\\
+	\psi''(x) &= \kappa^2 \psi(x) \Rightarrow \psi \sim e^{\pm \kappa x}
+	\intertext{Für $E < V$ divergiert $e^{\kappa x}$ divergiert für positive x.}
+	\Rightarrow \psi(x) %\xrightarrow{x \to\infty} e^{-\kappa x}.
+	\intertext{Dies stellt ein typisches \textbf{expotentielles Abklingen} dar.} % $\psi(x) = e^{\pm i k x}$\\
+	\psi''(x) &= (\pm i k) (\pm i k) e^{\pm i k x} = - k^2 \psi(x)
+	\intertext{Etwas allgemeiner gilt mit $k = \sqrt{\frac{2m}{\hbar^2} (E -V)}$}
+	\psi(x) &= A e^{ikx} + Be^{ikx} 
+	\end{align*} 
+	\item[$E = V$] \conseq $k^2 = 0$ Hier gilt $\psi''(x) = 0$, damit ist $x$ ein Wendepunkt von $\psi(x)$.
+	\item[$E > V$] \conseq $k^2 < 0$, $\psi''(x)$ hat immer das gleiche Vorzeichen, wie $\psi(x)$. $\psi(x)$ immer von der $x$-Achse weg gekrümmt.
 \end{description}
 
-\paragraph{typische Fall}
-3 Möglichkeiten in verbotenen Bereich
+\subsubsection{Typische Fälle}
+3 Möglichkeiten gibt es für das Verhalten im verbotenen Bereich
 \begin{itemize}
-	\item[a)] asymptotisches Anschmiegen an die $x$-Achse.
-	\item[b) / c)] $\psi(x) \to \infty$ für $x \to \infty$ \conseq keine Wahrscheinlichkeitsinterpretation \conseq keine physikalische Lösungen.
+	\item[a)] Asymptotisches Anschmiegen an die $x$-Achse.
+	\item[b) / c)] $\psi(x) \xrightarrow{x \to \infty} \pm \infty$, offensichtlich können dies keine Wahrscheinlichkeitsinterpretationen und damit keine physikalischen Lösungen sein.
 \end{itemize}
 
 \begin{beispiel*}[$\infty$-Potentialtopf]
