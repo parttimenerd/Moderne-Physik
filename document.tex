@@ -2081,28 +2081,32 @@ Was bedeutet das für die Wellenfunktion?
 \end{itemize}
 
 \begin{beispiel*}[$\infty$-Potentialtopf]
-	$E \ll V$ außerhalb eines erlaubten Bereiches $[0, a]$.\\
-	$V = \begin{cases}
+	Das Potential ist wie folgt definiert\footnote{Wobei $V = \infty$ meistens das gleiche bedeutet, wie $E \ll V$.}
+	$$V = \begin{cases}
 	\infty & x < 0\\
 	\infty & x > a\\
 	0 & 0 \le x \le a
-	\end{cases}$\\
-	Lösungen außerhalb des Topfes $\Psi(x) = 0$. Innerhalb $V = 0$ \conseq ebene Welle $\psi(x) = A e^{ikx} + Be^{-ikx}$. $k^2 = \frac{2mE}{\hbar^2}$\\
-	Stetige Wellenfunktion \conseq $\psi$ verschwindet am Rand.
+	\end{cases}$$
+	Die Lösungen außerhalb des Topfes sind klarerweise $\Psi(x) = 0$. Da innerhalb des mittleren Bereiches $V = 0$ gilt, gibt es dort eine ebene Welle mit
+	\begin{align*}
+	\psi(x) &= A e^{ikx} + Be^{-ikx} & k^2 &= \frac{2mE}{\hbar^2}
+	\end{align*}
+	Da die Wellenfunktion stetig sein muss, verschwindet sie am Rand des mittleren Bereiches. In dem wir zusätzlich verlangen, dass die Ableitung der Wellenfunktion stetig sein muss, kommen wir wie folgt auf die Wellenfunktion im mittleren Bereich
 	\begin{align*}
 		\psi(0) &=\psi(a) = 0\\
 		\psi(0) &= A + B = 0 \qquad \Rightarrow B = -A\\
 		\psi(a) &= A(e^{ika} - e^{ika}) = 0\\
 		&= 2iA \sin(ka) = 0\\
-		\rightarrow ka &= 2\pi n \qquad n = 1, 2, 3, \dots\\
+		\Rightarrow ka &= 2\pi n \qquad n = 1, 2, 3, \dots\\
 		k &= \frac{2\pi h}{a}\\
-		\rightarrow E &= \frac{\hbar^2 k^2}{2 m} = \frac{4 \pi^2 \hbar^2}{2 m a^2} n^2 = E_n\\
-		\intertext{$A$ aus Normierung}
+		\Rightarrow E &= \frac{\hbar^2 k^2}{2 m} = \frac{4 \pi^2 \hbar^2}{2 m a^2} n^2 = E_n\\
+		\intertext{Den Faktor $A$ finden wir mittels Normierung}
 		\int_b^a 4 A^2 \sin^2 kx \d x &\overset!= 1\\
-		\Rightarrow 1 &= \frac{4A^2a}{2} \qquad \Rightarrow A = \frac{1}{\sqrt{2a}}\\
-		\psi_n(x) = \sqrt{\frac2a} \sin(\frac{2\pi}{a} n x) \qquad E = \frac{4 \pi^2 \hbar^2}{2ma^2} n^2
+		\Rightarrow 1 &= \frac{4A^2a}{2} \qquad \Rightarrow A = \frac{1}{\sqrt{2a}}
+		\intertext{Damit finden wir die möglichen Wellenfunktionen mit ihren jeweiligen Energien}
+		\psi_n(x) &= \sqrt{\frac2a} \sin(\frac{2\pi}{a} n x) \qquad E = \frac{4 \pi^2 \hbar^2}{2ma^2} n^2
 	\end{align*}
-	Stehende Wellen im Kasten im Kasten. Mit \textbf{diskreten Energieniveaus}.
+	Die Wellenfunktionen stellen stehende Wellen mit \textbf{diskreten Energieniveaus} im Kasten dar.
 \end{beispiel*}
 
 \begin{beispiel*}[Endlicher Potentialtopf]
