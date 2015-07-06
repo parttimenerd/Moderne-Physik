@@ -1,4 +1,8 @@
+%\documentclass[a5paper,ebook,oneside,openany]{memoir}
+%\usepackage[hmargin=1.5em]{geometry} 
 \documentclass[oneside]{book}
+
+
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
@@ -13,7 +17,7 @@
 \usepackage{tikz}
 \usepackage{color, soul}
 \usepackage{xparse}
-%\usepackage{a4wide}
+
 \usepackage{microtype}
 \usepackage[colorlinks=true,linkcolor=black,naturalnames]{hyperref}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -124,6 +128,10 @@
 	
 	~\\
 	\textbf{Im Literaturteil findet sich eine Liste von Büchern und Ressourcen, die zum lernen hilfreich sind.} Vorschläge hierfür werden gerne entgegengenommen.
+	~\\
+	~\\
+	\href{http://lgö.de/studium/moderne_physik/skript_dina5.pdf}{Neu: Dichter gepackte DINA5 Version, welche für EBook Reader besser geeignet ist.}
+	
 \listoftodos
 
 \chapter{Einführung}
@@ -606,7 +614,8 @@ V &= -mg y = -mg (l -r \cos \varphi)\\
 T &= \frac12 m (\dot{x}^2 + \dot{y}^2)\\
 \dot{x} &= \dot{r} \sin \varphi + r \dot{\varphi} \cos \varphi\\
 \dot{y} &= - \dot{r} \cos \varphi + r \dot{\varphi} \sin \varphi\\
-\dot{x}^2 + \dot{y}^2 &= \dot{r}^2 \sin^2 \varphi + 2 r \dot{r} \dot\varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \cos^2 \varphi + \dot{r}^2 \cos^2 \varphi - 2 r \dot r \dot \varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \sin^2 \varphi \\
+\dot{x}^2 + \dot{y}^2 &= \dot{r}^2 \sin^2 \varphi + 2 r \dot{r} \dot\varphi \sin \varphi \cos \varphi \\
+&+ r^2 \dot{\varphi}^2 \cos^2 \varphi + \dot{r}^2 \cos^2 \varphi - 2 r \dot r \dot \varphi \sin \varphi \cos \varphi + r^2 \dot{\varphi}^2 \sin^2 \varphi \\
 &= \dot{r}^2 + r^2 \dot{\varphi}^2\\
 L &= T-V = \frac12 m (\dot{r}^2 + r^2 \dot{\varphi}^2) + mg(l - r \cos \varphi)\\
 \ffpartial{L}{r} - \dd t \ffpartial{L}{\dot{r}} &= m r \dot{\varphi}^2 - mg \cos \varphi - \dd t m \dot{r} \\
