@@ -131,7 +131,9 @@
 	~\\
 	~\\
 	\href{http://lgö.de/studium/moderne_physik/skript_dina5.pdf}{Neu: Dichter gepackte DINA5 Version, welche für EBook Reader besser geeignet ist.}
-	
+	~\\
+	~\\
+	\href{http://lgö.de/studium/moderne_physik/summary.pdf}{Sehr kurze Zusammenfassung, welche handschriftlich auf zwei Seiten passen sollte.} \textit{Danke Felix.}
 \listoftodos
 
 \chapter{Einführung}
@@ -1688,17 +1690,21 @@ n_1 &= \frac{2 a \cos \alpha_1}{\lambda} & n_2 &= \frac{2 a \cos \alpha_2}{\lamb
 \Rightarrow n_1^2 + n_2^2 + n_3^2 = (\frac{2a}{\lambda})^2 = (\frac{2 a \nu}{c})^2
 \end{align*}
 
-Daraus folgern wir, dass es $\nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen für stehende Wellen im Hohlraum gibt.\todo{Warum???}\\
-Der Frequenzraum ist ein kubisches Gitter mit der Kantenlänge $\frac{c}{2a}$. Die Frequenzen liegen zwischen 0 und $\nu$ \todo{Warum???}\\
-$\frac{\text{Kugel mit Radius~}\nu}{\text{Volumen / Punkt}}$
-$N(\nu) = \frac{\frac18 \frac{4\pi}{3} \nu^3}{(\frac{c}{2a})^3} = \frac18 \frac{4\pi}{3} (\frac{2a}{c}\nu)^3$\\
+Daraus folgern wir, dass $\nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen für stehende Wellen im Hohlraum sind.\\
+Der Frequenzraum ist ein kubisches Gitter mit der Kantenlänge $\frac{c}{2a}$. Wir zählen alle Frequenzen zwischen  zwischen 0 und $\nu$\\
+$\frac{\text{"'Kugel mit Radius"'~}\nu}{\text{Volumen / Punkt}}$ =
+$N(\nu) = \frac{\overbrace{\frac18}^
+	\text{Nur der Oktant mit positiven Koordinaten} 
+	\frac{4\pi}{3}\nu^3
+	}{(\frac{c}{2a})^3} = \frac{1}{8} \frac{4\pi}{3}
+ (\frac{2a}{c}\nu)^3$\\
 $\d N(\nu) = 4 \pi a^3 \frac{\nu^2}{c^3} \d \nu$ Deswegen ist die Anzahl der Frequenzen zwischen $\nu$ und $\nu + \d \nu$. Die spektrale Dichte der Zustände mit $\frac12 k_B \cdot \underbrace{2}_{\text{E + B - Feld}} \cdot \underbrace{2}_{\text{Polarisierungen}} = 2 k_B T$ ist:
 Energie / Volumen $a^3$
 \begin{align*}
 	W_\nu \d \nu &= 8 \pi \frac{\nu^2}{c^3} k_B T \d \nu\\
 	&= 8 \pi \frac{\nu^3}{c^3} k_B \frac{T}{\nu} \d \nu\\
 	\rightarrow g(\frac{\nu}{T}) &= 8 \pi \frac{k_B}{c^3} \frac{T}{\nu}
-\end{align*}\todo{Warum??? Das macht irgendwie keinen Sinn.}
+\end{align*}
 Die letzte Zeile wird auch als Rayleigh-Jeans-Gesetz bezeichnet.
 \begin{center}
 	\begin{tikzpicture}
@@ -1771,10 +1777,10 @@ Hierfür wird das \href{https://de.wikipedia.org/wiki/Doppelspaltexperiment}{Dop
 Die Maxima der Lichtintensität liegen bei
 $$d \sin \alpha = n\lambda$$
 wobei $n = 0, 1, \dots$ und $d$ der Abstand zwischen Doppelspalt und Detektorschirm ist.\
-$$n \frac{\lambda}{2} \cos \alpha = a$$
+$$n \frac{\lambda}{2} \sin \alpha = a$$
 Hierbei ist $a$ der Abstand der beiden Spalten.
 Damit folgt 
-$$n = \frac{2a \cos \alpha}{\lambda}$$\todo{d und a verwechselt????? sin statt cos???, besser: $\frac{a \sin \alpha}{2} = n \lambda \Leftrightarrow n = \frac{a \sin \alpha}{2 \lambda}$???}
+$$n = \frac{2a \sin \alpha}{\lambda}$$
 was ein klarer Beweis der Wellennatur des Lichtes ist, siehe auch Wasser und Schall.
 
 \subsubsection{Photoeffekt} Der Photoeffekt\footnote{vgl \href{https://de.wikipedia.org/wiki/Photoelektrischer_Effekt}{Wikipedia}} wird auch Lichtelektrischer Effekt genannt. Hierbei trifft Licht mit der Frequenz $\nu$ und der Intensität $I$ auf ein bestimmtes Material und schlägt Elektronen heraus. Wir bremsen die Elektronen mit einer Gegenspannung $U_g$ ab. Man macht dabei unter anderem folgende Beobachtungen
@@ -1858,7 +1864,7 @@ Die Hamiltonfunktion $H$ beschreibt die Energie eines Systems in der klassischen
 		\item jeweils ein Spalt abgedeckt oder
 		\item beide offen
 	\end{enumerate}
-	Das Experiment funktioniert mit sehr geringen Intensitäten und sogar mit einzelnen Teilchen. Das Interferenzmuster sieht man als Histogramm der Elektronen"`auftreffer"' auf dem Detektor. Jede vorherige Beobachtung würde die Interferenz zerstören und das Elektron behält seinen Teilchencharakter trotz dem beobachteten Interferenzeffekt.\footnote{vgl. \href{http://www.feynmanlectures.caltech.edu/III\_01.html\#Ch1\-S1}{Feynman Ledcture Bd. III, 1}} Die Wellenfunktion wird deshalb von nun als \textbf{Wahrscheinlichkeitsamplitude}\todo{Besseres Wort oder Fußnote}~ angedeutet.
+	Das Experiment funktioniert mit sehr geringen Intensitäten und sogar mit einzelnen Teilchen. Das Interferenzmuster sieht man als Histogramm der Elektronen"`auftreffer"' auf dem Detektor. Jede vorherige Beobachtung würde die Interferenz zerstören und das Elektron behält seinen Teilchencharakter trotz dem beobachteten Interferenzeffekt.\footnote{vgl. \href{http://www.feynmanlectures.caltech.edu/III\_01.html\#Ch1\-S1}{Feynman Ledcture Bd. III, 1}} Die Wellenfunktion wird deshalb an einem Ort von nun als \textbf{Wahrscheinlichkeitsamplitude} angedeutet.
 	$$|\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = \mathbb{P}[\text{Man findet Teilchen in einer $d^3 \vec{r}$ Umgebung von $\vec{r}$}]$$
 	Ein Beispiel wären die beiden Wellenfunktionen $\Psi_{1}$ und $\Psi_2$, welche etwas über die Wahrscheinlichkeit aussagen, mit welcher das Elektron den ersten oder zweiten Spalt durchquert hat. Zu beachten ist hierbei
 	$$|\Psi_1 + \Psi_2|^2 \neq |\Psi_1|^2 + |\Psi_2|^2$$
@@ -1926,7 +1932,7 @@ $$e^{i(\vec{h} \cdot \vec{r} - \omega t - 2 \pi n)}$$
 Das sind viele Ebenen welche um
 $$\lambda = \frac{2\pi}{k}$$
 verschoben wurden. $k$ wird hierbei auch als \textbf{Wellenvektor} bezeichnet.
-\todo{(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$)??? Nichts dazu im Nolting\dots}
+\todo{(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$) allgemeine ebene Welle}
 Nun vergleichen wir dies mit der schon bekannten de Broglie-Wellenlänge und folgern
 \begin{align*}
 p &= \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k\\
@@ -2115,11 +2121,10 @@ Was bedeutet das für die Wellenfunktion?
 		\Rightarrow E &= \frac{\hbar^2 k^2}{2 m} = \frac{4 \pi^2 \hbar^2}{2 m a^2} n^2 = E_n\\
 		\intertext{Den Faktor $A$ finden wir mittels Normierung}
 		\int_b^a \psi^\ast \psi = \int_b^a 4 A^2 \sin^2 kx \d x &\overset!= 1\\
-		\Rightarrow 1 &= \frac{4A^2a}{2} \qquad \Rightarrow A = \frac{1}{\sqrt{2a}}
+		\xRightarrow{Erfahrung oder Integraltabelle} 1 &= \frac{4A^2a}{2} \qquad \Rightarrow A = \frac{1}{\sqrt{2a}}
 		\intertext{Damit finden wir die möglichen Wellenfunktionen mit ihren jeweiligen Energien}
 		\psi_n(x) &= \sqrt{\frac2a} \sin(\frac{2\pi}{a} n x) \qquad E = \frac{4 \pi^2 \hbar^2}{2ma^2} n^2
 	\end{align*}
-	\todo{Wie wurde Integral berechnet???}
 	Die Wellenfunktionen stellen stehende Wellen mit \textbf{diskreten Energieniveaus} im Kasten dar.
 \end{beispiel*}
 
@@ -2155,7 +2160,7 @@ Was bedeutet das für die Wellenfunktion?
 	Ce^{-\kappa x} & \text{im Wall}\\
 	De^{ik_0 x} & \text{hinter dem Wall}
 	\end{cases}$$
-	Die einlaufende Wellenfunktion besteht aus einer transmittierten und einer reflektierten Welle. \todo{richtig???} Rechnungen führen zum sogenannten \textbf{Gamov-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
+	Die einlaufende Wellenfunktion besteht aus einer einlaufenden und einer reflektierten Welle. Rechnungen führen zum sogenannten \textbf{Gamov-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
 	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
 	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch Tunneleffekt.\\
 	\textbf{Gamov}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
@@ -2181,9 +2186,9 @@ Klassisch ist $x \neq n a$ erlaubt, dann haben wir quasi freie Teilchen und eben
 	$$\psi(n a + \epsilon) \overset!= \psi(na - \epsilon) \equiv \psi(na)$$
 	Und damit die Schrödingergleichung (mit $\epsilon \to 0^+$)
 	\begin{align*}
-	&\int_{na-\epsilon}^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon}\\
+	&\int_{na-\epsilon}^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon} \delta(x - n) \psi(x) \d x\\
 	&= - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \xrightarrow{\text{weil $\psi$ stetig ist}} 0
-	\end{align*}\todo{korrekt???}
+	\end{align*}
 	\item[\textbf{II.} Ableitung ist stetig am Rand]
 	$$\psi'(x +\epsilon) - \psi'(x -\epsilon) = \frac{2m}{\hbar^2} D \psi(n a)$$
 	Dies ist ein endlicher Sprung in $\psi'$ an verbotenen Stellen.
@@ -2202,7 +2207,7 @@ Klassisch ist $x \neq n a$ erlaubt, dann haben wir quasi freie Teilchen und eben
 %\end{enumerate}
 Man findet Translationssymmetrien, insbesondere
 \begin{align*}
-|\psi(x + a)|^2 &= |\Psi(x)|^2
+|\psi(x + a)|^2 &= |\psi(x)|^2
 \intertext{$\psi$ unterscheidet sich nur durch den Phasenfaktor $e^{iKa}$}
 \psi(x+a) &= e^{iKa}u(x)\\
 u(x+a) &= u(x)
@@ -2210,9 +2215,9 @@ u(x+a) &= u(x)
 Diese Wellen heißen Bloch-Wellen.\\
 Mit der Stetigkeit folgern wir $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$, n = 1,2, sofern die Gleichung lösbar ist. Dies ist eine Bedingen an mögliche $K$, d.h. an mögliche Energien. Man sieht ein, dass die Determinante der Koeffizientenmatrix 0 sein muss.
 $$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$$
-Dies ist der Fall, wenn $$\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}\qquad m = 1, 2, \dots$$ \todo{korrekt??}
+Dies ist der Fall, wenn $$\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}\qquad m = 1, 2, \dots$$ 
 Da $K$ beliebig sein Darf, ist nur die rechte Seite der Gleichung $\leq 1$. Die rechte Seite kann wie folgt umgeschrieben werden
-$$\cos y + \alpha \frac{\sin y}{y}\qquad = ka \sim \sqrt{E}$$
+$$\cos y + \alpha \frac{\sin y}{y}\qquad y = ka \sim \sqrt{E}$$
 
 Damit können wir \textbf{Energiebänder} als erlaubte Zustände darstellen. Zu diesem Thema passt auch gut, das \textbf{Pauli-prinzip}:\\
 Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"'} nur einmal besetzt werden. Aufgrund des Spins gibt es zwei "`Plätze"' pro Zustand, es gibt deswegen nur ganz oder halb gefüllte Bänder bei $T = 0$.
@@ -2299,6 +2304,98 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 	Dies würde einen Widerspruch darstellen, wenn $\alpha \notin \Re$ wäre.
 \end{definition*}
 
+
+
+% % % % % % % % % % %
+$\braket{\alpha | \beta}$\\
+\textbf{Eigenvektoren} $\ket{n}, \ket{m}$ sind othogonal:
+$a_n^\ast \braket{m | n}^\ast \braket{m | A | n}^\ast = \braket{m | A^+ | n}^\ast = \braket{n | A | m} = a_m \braket{n | m}$
+\conseq $(a_m - a_n) \braket{n | m}$ = 0\conseq $\braket{n | m} = \delta_{nm}$ \conseq EV geeignet, um Basis zu konstruieren.
+
+\section{Postulate der Quantenmechanik}
+\begin{enumerate}[1)]
+\item \textbf{Zustandsraum} eines Systems ist ein Hilbertraum. Elemente sind die möglichen Zustände $\ket{\psi}$ des Systems.
+\item \textbf{Observable} sind lineare, selbstadjungierte (hermitesche) Operatoren im Zustandsraum. Die möglichen Messwerte einer Observable sind Eigenwerte.
+\item \textbf{Messprozess} Das System ist vor einer Messung im Zustand $\ket{\psi}$. Jetzt messen wir eine Observable $A = \sum_n a_n \ket{n} \bra{n}$ – Messung von $a_n$ mit Wahrscheinlichkeit
+$$W_n = |\braket{n | \psi}|^2$$
+Nach der Messung ist das System im Zustand $\sum_n | \braket{n | \psi}|^ = 1$ (weil als Wahrscheinlichkeit betrachtet).
+$$\ket{\psi} = \sum_n \ket{n}\braket{n | \psi}$$
+z.B. $\psi = \ket{1}\braket{1 | \psi} + \ket{2}\braket{2 | \psi}$
+$A = 3 \ket{1}\bra{1} + 42 \ket{2}\bra{2}$ Messe "`3"' \conseq $3 \ket{1}\braket{1 | \psi} = 3 \ket{1}\braket{1 | 1} \braket{1 | \psi} + 0$
+\item \textbf{Zeitentwicklung} mit der Schrödingergleichung
+$$ i\hbar \fpartial{t} \ket{\psi(t)} = H \ket{\psi(t)}$$
+\end{enumerate}
+
+\begin{bemerkung*}[zu 3)]
+	So nur gültig für nichtentartete\footnote{Entartet bedeutet, dass mehrere Zustände den gleichen Messwert liefern.} Observable. \conseq $\ket{\psi}$ reduziert sich auf Element des entsprechenden Unterraums.
+\end{bemerkung*}
+
+\begin{bemerkung*}[zu 4)]
+	"`Schrödingerbild"' = Zustände sind zeitabhängig, Operatoren nicht\\
+	vgl. "`Heisenbergbild"' = Zustände fix, Operatoren zeitabhängig
+\end{bemerkung*}
+
+\begin{beispiel*}[Eindimensionaler harmonischer Oszillator\footnote{vgl. \href{https://de.wikipedia.org/wiki/Harmonischer_Oszillator_\%28Quantenmechanik\%29}{Wikipedia}}]
+	$$H = \frac{p^2}{2m} + \frac12 m \omega^2 x^2$$
+	vgl. $\frac12 kx^2$,  k "`Federkonstante"', $\omega = \sqrt{\frac{k}{m}}$ im klassischen Fall\\
+	Wir erwarten gebundene Zustände. Wir suchen nun das Spektrum\footnote{Menge der Eigenwerte} von $H$. Suchen Eigenzustände von $H$. Können nicht Eigenzustände von $x$ oder $p$ sein, da $[H, x] \neq 0$, $[H, p] \neq 0$,	$[x, p] = i \hbar \neq 0$.\\
+	Versuche Linearkombination von $x$ und $p$ à la quadratische Ergänzung. Zwei neue Operatoren $a$, $a^+$:
+	$$a, a^+ = \frac{1}{\sqrt{2\hbar}} (\sqrt{m \omega} x \pm \frac{i}{\sqrt{m \omega}} p)$$
+	(da $x = x^+$ und $p = p^+$)
+	\begin{align*}
+	[a, a^+] &= \frac{1}{2 \hbar} [\sqrt{m \omega} + \frac{i}{\sqrt{m \omega}}, \sqrt{m \omega} + \frac{i}{\sqrt{m \omega}}]\\
+	&= \frac{1}{2 \hbar} ([\sqrt{m \omega} x, -\frac{i}{\sqrt{m \omega}} p ] + [\frac{i}{\sqrt{m \omega}} p, \sqrt{m \omega} x])
+	\intertext{$[a, b] = ab - ba, \alpha, \beta \in \Co \rightarrow [\alpha a, \beta b] = \alpha \beta - \alpha \beta b a = \alpha \beta [a, b]$}
+	&= \frac{1}{2 \hbar} (-i [x, p] + i \underbrace{[p, x]}_{- [x, p]})\\
+	&= \frac{-2i}{2 \hbar} \underbrace{[x, p]}_{i \hbar} = \mathds{1}
+	\intertext{$a$ und $a^+$ addieren und substrahieren, damit bekommen wir}
+	x &= \sqrt{\frac{\hbar}{2m \omega}} (a + a^+)\\
+	p &= i\sqrt{\frac{\hbar m \omega}{2}} (a - a^+)\\
+	H &= \underbrace{- \frac{1}{2m} \frac{h m \omega}{2}}_{- \frac{\hbar \omega}{4}} (a - a^+)^2 + \underbrace{\frac{m \omega^2}{2} \frac{\hbar}{2 m \omega}}_{\frac{\hbar \omega}{4}}\\
+	&= \frac{\hbar \omega}{4} ( (a + a^+)^2 - (a - a^+)^2)
+	\intertext{mit $a^2 = a a$}
+	&= \frac{\hbar \omega}{4} (a^2 + a a^+ + a^+ {a^+}^2 - a^2 + a a^+ + a^+ a - {a^+}^2)\\
+	&= \frac{\hbar \omega}{2} (\underbrace{a a^+}_{a a^+ = a^+ a + [a, a^+] = a^+ a + 1})\\
+	&= \frac{\hbar \omega}{2} (2 a^+ a + 1)\\
+	(a^+ a)^+ &= a^+ a \equiv N\\
+	H = \hbar \omega (N + \frac12)
+	\intertext{$N = a^+ a$ ist ein neuer hermitescher Operator}
+	[H, N] = [\hbar \omega N + \frac{\hbar \omega}{2}, N] = 0
+	\end{align*}
+	\conseq Eigenzustände von $H$ auch Eigenzustände von $N$.\\
+	Hilfsmittel: $[a, N]$, $[a^+, N]$.
+	\begin{align*}
+		a N &= a a^+ a = (a^+ a + [a, a^+]) a\\
+		&= (N + 1) a = Na + a = a N\\
+		[a, N] &= a
+		\intertext{ebenso}
+		a^+ N &= a^+ a^+ a = a^+ (a a^+ + [a^+, a])\\
+		&= a^+ (a a^+ - 1) = \underbrace{a^a}_N a^+ - a^+\\
+		[a^+, N] = - a^+
+		\intertext{Potenzen durchc rekursive Vorgehen:}
+		a^2 N = a^2 a^+ a &= a (a N) = a (Na + [a, N])\\
+		&= a (Na + a) = a N a + a^2\\
+		&= N a^2 + a^2 + a^2 = N a^2 + 2 a^2\\
+		[a^2, N] &= 2 a^2\\
+		[a, N] &= 1 \cdot a
+		\intertext{Allgemeiner (durch Induktion)}
+		[a^q, N] &= q a^q\\
+		[{a^+}^q] &= -q {a^+}^q
+	\end{align*}
+	Zurück zum Eigenwert-Problem von $N$ bzw. $H$.\\
+	\textbf{Annahme} Eigenwert $n$ zu Eigenzustand $\ket{n}$ von $N$
+	$$N \ket{n} = n \ket{n}$$
+	Was ist nun $n$? Und wie $n$s gibt es? Probiere
+	\begin{align*}
+		a^q N \ket{n} &= a^q n \ket{n} = n a^q \ket{n}\\
+		&= (Na^q + [a^q, N]) \ket{n} = (Na^q + qa^q) \ket{n}\\
+		N (q^a \ket{n}) &= (n - q)(a^q \ket{n})
+	\end{align*}
+	\dots neue Eigenwertgleichung von $N$ mit Eigenwert $(n - q)$ zum Eigenzustand $(a^q \ket{n})$ und $q = 0, 1, 2, \dots$\\
+	Annahme: $n$ beliebig ($\in \Re$)\\
+	\conseq $q$ unbeschränkt möglich \conseq auch negative Eigenwerte von N. Damit Eigenwerte $(n -q)$ für beliebige $q$ positiv bleiben (weil $n \sim $ Energie) \conseq Spektrum muss unten abbrechen, also $n$ auch ganzzahlig, $> 0$ \conseq insgesamt gilt irgendwann
+	$$N (a^q | \ket{n}) = 0 (a^q \ket{n}) = \ket{0}$$
+\end{beispiel*}
 
 \appendix
 
