@@ -2224,7 +2224,7 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 		c \ket{\psi} + d \ket{\vp} &= \ket{c \psi + d \vp}
 	\end{align*}
 
-	Da der Vektorraum nach Konstruktion abgeschlossen\footnote{Zumindest, wenn man keine Spezialfälle betrachtet.} ist und wir für ihn ein Skalarprodukt gerfordert haben, kann man den Vektorraum auch als Hilbertraum $\mathcal{H}$ auffassen. Wir überprüfen nun einfach zum Spaß, die Bedingungen an den Vektorraum (und dessen Skalarprodukt). Desweiteren schauen wir uns noch die Bedingungen für Orthogonalität, \dots an:\\
+	Da der Vektorraum nach Konstruktion abgeschlossen\footnote{Zumindest, wenn man keine Spezialfälle betrachtet.} ist und wir für ihn ein Skalarprodukt gefordert haben, kann man den Vektorraum auch als Hilbertraum $\mathcal{H}$ auffassen. Wir überprüfen nun einfach zum Spaß die Bedingungen an den Vektorraum (und dessen Skalarprodukt). Desweiteren schauen wir uns noch die Bedingungen für Orthogonalität, \dots an:\\
 	\textbf{Es gibt Nullelemente} $0, \ket{0}$ mit
 	\begin{align*}
 		\ket{\alpha} + \ket{0} &= \ket{\alpha}\\
@@ -2240,7 +2240,7 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 		\intertext{\textbf{Skalarprodukt}}
 		\braket{\alpha | \beta} &= c \in \Co\\
 		\braket{\alpha | \beta}^\ast &= \braket{\beta | \alpha}\\
-		\braket{\alpha | \beta + \gamma} &= \braket{\alpha | \beta} + \bra{\alpha | \gamma}\\
+		\braket{\alpha | \beta + \gamma} &= \braket{\alpha | \beta} + \braket{\alpha | \gamma}\\
 		c \braket{\alpha | \beta} &= \braket{\alpha | c \beta} = \braket{c^\ast \alpha | \beta}\\
 		\braket{\alpha | \alpha} &\geq 0 \text{~für~} \ket{\alpha} \neq 0\\
 		\intertext{\textbf{Norm}}
@@ -2249,10 +2249,10 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 		\braket{\alpha | \beta} &= 0
 		\intertext{\textbf{Orthogonale Basis} Seien $\ket{n}$ und $\ket{m}$ beliebige Basisvektoren}
 		\braket{n | m} &= 0 \Leftrightarrow \ket{n} \neq \ket{m}
-		\intertext{\textbf{Orthonormale Basis} Seien $B$ eine orthogonale Basis}
+		\intertext{\textbf{Orthonormale Basis} Sei $B$ eine orthogonale Basis}
 		\forall \ket{n} \in B: \| n \| &= 1
 	\end{align*}
-	Ein beliebiger Zustand $\ket{\psi}$ lässt desweiteren durch Basisvektoren darstellen. Hierbei kann $\braket{n | \psi}$ als die Projektion von $\ket{\psi}$ in Richtung $\ket{n}$ angesehen werden. Nach Konstruktion, und weil wir implizit eine orthogonale Basis annehmen, gilt außerdem $\sum_n \ket n \bra n = \mathds{1}$. Wobei mit $\mathds{1}$ hier die "`Einheitsmatrix"' gemeint ist.
+	Ein beliebiger Zustand $\ket{\psi}$ lässt sich desweiteren durch Basisvektoren darstellen. Hierbei kann $\braket{n | \psi}$ als die Projektion von $\ket{\psi}$ in Richtung $\ket{n}$ angesehen werden. Nach Konstruktion, und weil wir implizit eine orthogonale Basis annehmen, gilt außerdem $\sum_n \ket n \bra n = \mathds{1}$. Wobei mit $\mathds{1}$ hier die "`Einheitsmatrix"' gemeint ist.
 	\begin{align*}
 	\ket{\psi} &= \sum_n \underbrace{\ket{n}}_{\text{Basisvektor}\hspace{-2em}} \overbrace{\braket{n | \psi}}^{\hspace{-10em}\text{"`Länge"' von $\ket{\psi}$ in Richtung $\ket n$}\hspace{-10em}}
 	\end{align*}
