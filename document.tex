@@ -524,7 +524,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	y_2(t) &= l \cos \phi(t)\\
 	x_2(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t) + l \sin \phi(t)\\ 
 	\intertext{Mit $l = \frac{m_1 + m_2}{m_1 + m_2} l$}
-	&= \frac{m_1}{m_1 m_2} l \sin \phi(t)\\
+	&= \frac{m_1}{m_1 + m_2} l \sin \phi(t)\\
 	\end{align*}
 	Nur verwendet man die 3. Zwangsbedingung vom Anfang
 	\begin{align*}
@@ -532,7 +532,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\Leftrightarrow \frac{(x_1 - x_2)^2}{l^2} + \frac{y_2^2}{l^2} &= 1\\ 
 	\Leftrightarrow \frac{x_2^2(t)}{(\frac{m_1 l}{m_1 + m_2})^2} + \frac{y_2^2(t)}{l^2} &= 1
 	\end{align*}
-	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 m_2}l < l \text{~und~} l$.
+	Das beschreibt eine Ellipse mit den Halbachsen $\frac{m_1}{m_1 + m_2}l < l \text{~und~} l$.
 	Dazu die $q_2$-Lagrange-Gleichung
 	\begin{align*}
 	\ffpartial{L}{\dot{q}_2} &= m_2 (l^2 \dot{q}_2 + l \dot{q}_1 \cos q_2)\\
