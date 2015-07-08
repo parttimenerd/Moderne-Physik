@@ -8,13 +8,8 @@
 *.nav
 *.out
 *.pdf
-<<<<<<< HEAD
 *.snm
 *.toc
 *.loa
-=======
 *.pdfpc
-*.snm
-*.toc
->>>>>>> b5b07f70a0acfb183d449b2ae4305ac8410fec19
 *.synctex.gz
