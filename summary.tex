@@ -84,9 +84,20 @@ Produktregel: $\{f,gh\} = g\{f,h\} + \{f,g\}h$\\
 Jacobi-Identität: $\{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} = 0$\\
 $\{q_i,q_j\} = \{p_i,p_j\} = 0 \qquad \{p_i,q_j\} = \delta_{ij}$
 \section{Relativitätstheorie}
+$\gamma = \frac{1}{\sqrt{1 - \beta^2}}$, $\beta = \frac{v}{c}$\\
+$E^2 = m^2 c^4 + \vec{p}^2 c^2 = m^2 c^2 (1 + \beta^2)$\\
+Addition ($\beta$, $\beta'$): $\frac{\beta + \beta'}{1 + \beta \beta'}$\\
+Lichtquantum: $\omega = \frac{2 \pi c}{\lambda}$ mit $E = \hbar \omega$\\
+de Broglie: $\lambda = \frac{h}{p}$
+
 \section{Quantenmechanik}
 $E = h \nu = \hbar \omega, p = \hbar k$\\
 $\sin(\phi) = \frac1{2i} (e^{i\phi} - e^{i\phi}), \cos(\phi) = \frac12 (e^{i\phi} + e^{-i\phi})$\\
+$\sin(x \pm y)=\sin(x)\cos(y) \pm \cos(x)\sin(y)$\\
+$\cos(x \pm y)=\cos(x)\cos(y) \mp \sin(x)\sin(y)$\\
+$\sin (2x)= 2 \sin x \cos x$, $\cos (2x)= \cos^2 x - \sin^2 x = 1 - 2 \sin^2 x = 2 \cos^2 x - 1$, $\sin^2 x = \frac{1}{2}\ \Big(1 - \cos (2x) \Big)$\\
+$e^{ix} = \cos(x) + i \sin(x)$\\
+
 $\braket{g | \alpha u + \beta v} = \alpha \braket{g | u} + \beta \braket{g | v}, \braket{g | u} = \braket{u | g}$\\
 $\text{Ortsoperator:~} \hat{x} = x, \text{~~Impulsoperator:~} \hat{p} = -i \hbar \fpartial{x}$\\
 $\text{Schrödingergleichung:~} i\hbar \fpartial{t} \ket{\Psi} = \underbrace{\hat{H}}_{\frac{\hat{p}}{2m}} \ket{\Psi}$\\
@@ -104,7 +115,7 @@ $[\hat{A}, \hat{B} \hat{C}] = \hat{B}[\hat{A}, \hat{C}] + [\hat{A}, \hat{B}] \ha
 EZ von $\hat{H}$: Grundzustand $\ket{0} = N e^{-\frac{x^2}{4b^2}}, N = \sqrt[4]{2 \pi b^2}, b^2 = \frac{\hbar}{2 m \omega}$, $E = \frac{\hbar \omega}{2} = min$\\
 Absteigeoperator: $a = \sqrt{\frac{m\omega}{2 \hbar}} \hat{x} + \frac{i \hat{p}}{\sqrt{2 \hbar m \omega}}$, $[a, a^+] = 1$\\
 $a^+$ ist Erzeugungsoperator, $\hat{N} = a^+ a$ hermitescher Operators\\
-$\hat{N} \ket{n} = n \ket{n}$ mit $\ket{n} = \frac{(a^+)^n}{\sqrt{n!}} \ket{0}$, $\hat{H} \ket{n} = \hbar \omega (n + \frac{1}{2}) \ket{n}$
+$\hat{N} \ket{n} = n \ket{n}$ mit $\ket{n} = \frac{(a^+)^n}{\sqrt{n!}} \ket{0}$, $\hat{H} \ket{n} = \hbar \omega \underbrace{(n + \frac{1}{2})}_{E_n} \ket{n}$
 
 \end{multicols}
 \end{document}
