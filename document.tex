@@ -290,7 +290,7 @@ Nicht holonome Zwangsbedingungen können nur als
 \begin{itemize}
 	\item[\textit{B1}] Ungleichungen oder
 	\item[\textit{B2}] differentielle Einschränkungen
-	$ \sum_{m = 1}^{3N} f_{im} d_{x_m} + f_{it} \d t = 0$
+	$ \sum_{m = 1}^{3N} f_{im} \d x_m + f_{it} \d t = 0$
 \end{itemize}
 dargestellt werden, was die Arbeit mit ihnen, gegenüber den holonomen, erschwert. 
 
@@ -642,15 +642,15 @@ $$\varphi(t) = \varphi_0 \sin \sqrt{\frac{g}{l}} t$$
 \subsection{Das Hamiltonsche Prinzip}	
 Wir zeigen, dass die Lagrange-Gleichungen nicht nur aus dem differentiellen Prinzip von d'Alembert folgen: gerade hatten wir momentane virtuelle Verrückungen betrachtet.
 \textbf{Dagegen Hamilton}: \textbf{Integralprinzip}\\
-Dass ist die Variation der gesamten Bahn bei festen Endpunkten.
+Das ist die Variation der gesamten Bahn bei festen Endpunkten.
 Dazu betrachten wir Bahnen $\vec{q}(t)$ im Konfigurationsraum
 $$\vec{q}(t) = (q_1(t), \dots, q_s(t))$$
 ein $\vec{q}(t)$ beschreibt einen Zustand des gesamten Systems. Für gegebene $\vec{q}(t)$ und $\dot{\vec{q}}(t)$ wird die Lagrange-Funktion eine Funktion der Zeit 
 $$L(\vec{q}(t), \dotvec{q}(t), t) = \tilde{L}(t)$$
 
 \begin{definition*}[Wirkungsintegral]
-$$S{ \vec{q}(t) } = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
-Die Dimension hiervon ist "`Wirkung"' \conseq Energie: Die Zeit
+$$S\{\vec{q}(t)\} = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
+Die Dimension hiervon ist "`Wirkung"' \conseq Energie: Die Zahl
 $S$ hängt von $\vec{q}(t)$ und $t_1, t_2$ ab. 
 Funktion $\vec{q}(t) \xrightarrow{\text{Abbildung}} S \{ \vec{q}(t) \}$ im allgemeinen Funktional.
 
@@ -916,7 +916,7 @@ Isotropie  $\Leftrightarrow$ Drehimpulserhaltung
 \section{Hamilton-Mechanik}
 Die Hamiltonsche Mechanik ist eine Weiterentwicklung der Lagrange-Mechanik. Sie ist ein a posteriori\footnote{"`Eine Theorie, die a posteriori gebildet wurde, erfüllt hinsichtlich ihrer Wissenschaftlichkeit zunächst nur das Kriterium der Erklärungskraft und muss sich in anderer Hinsicht (Nachvollziehbarkeit, Überprüfbarkeit, Falsifizierbarkeit, Voraussagekraft) noch bewähren."' \href{https://de.wikipedia.org/wiki/A_posteriori}{Wikipedia}} wichtiger Schritt auf dem Weg zur Quantenmechanik. Die Klassische Mechanik wird später zum "`Grenzfall"' der Übergeordneten Quantenmechanik. Eine, der Quantenmechanik ähnliche, mathematische Struktur lässt sich bereits hier entwickeln.
 
-Der Ausgangspunkt ist offensichtlich die Lagrange-Mechanik. Jetzt wird $(\vec q, \dot {\vec q})$ zu $(\vec q, \vec p, t)$ transformiert.
+Der Ausgangspunkt ist offensichtlich die Lagrange-Mechanik. Jetzt wird $(\vec q, \dot {\vec q}, t)$ zu $(\vec q, \vec p, t)$ transformiert.
 
 Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
 \begin{align*}
@@ -931,7 +931,7 @@ Sei $f(x)$ eine Funktion mit $\md f = \frac{\md f}{\md x} \md x = u \md x$ und $
 \md f &= u\md x = \md (ux) - x\md u\\
 \md (f-ux) &= - x \md u\\
 \Rightarrow \frac{\md}{\md u}(f-xu) &= -x\\
-g(u) &= f(x) - xu = f(x) - x\frac{\md f(x)}{\md x}
+g(u) &= f(x) - xu = f(x) - x\frac{\md f}{\md x}
 \end{align*}
 $g(u)$ ist jetzt die Legendre - Transformierte von $f(x)$.
 	
@@ -956,11 +956,11 @@ Es kann gezeigt werden, dass die Legendre-Transformation allgemein eindeutig und
 \end{beispiel*}
 \subsubsection{Legendre-Transformation für mehrere Variablen}
 Zuerst betrachten wir den Fall der Funktion $f(x,y)$, bei der $y$ durch $v$ ersetzt werden soll. Hier gilt, dass
-\[g(x,y) = f(x,y) - y(\frac{\partial f}{\partial y})_x\]
+\[g(x,v) = f(x,y) - y\left(\frac{\partial f}{\partial y}\right)_x\]
 die Legendre-Transformation von $f(x,y)$ bezüglich $y$ ist.
 
 Die Legendre-Transformation der Lagrange-Funktion bezüglich der Geschwindigkeiten $\dot q_j$ haben wir schon kennengelernt. Mit $p_j = \frac{\partial L}{\partial \dot q_j}$ folgt daraus die \emph{Hamilton-Funktion}
-\[H(q_1,\ldots q_S,  p_1,\ldots, p_S,t) = (\sum\limits_{i=1}^S p_i \dot q_i) - L(q_1, \ldots,q_S, \dot q_1, \ldots, \dot q_S, t)\]
+\[H(q_1,\ldots q_S,  p_1,\ldots, p_S,t) = \left(\sum\limits_{i=1}^S p_i \dot q_i\right) - L(q_1, \ldots,q_S, \dot q_1, \ldots, \dot q_S, t)\]
 \textit{Auch negative Legendre-Transformierte genannt}.
 Die Wahl von $H$ ist eine gute Wahl, da $H$ eng mit der Energie des Systems verknüpft ist. Denn, wie schon erwähnt, ist $H$ die Energie für holonom-skleronome Systeme!
 
@@ -991,7 +991,7 @@ Diese werden \emph{Hamiltonsche Bewegungsgleichungen} oder \emph{kanonische Glei
 	&= \sum_{j=1}^{s} \underbrace{(\ffpartial{H}{q_j} \ffpartial{H}{p_j} - \ffpartial{H}{p_j} \ffpartial{H}{p_j})}_{=0}+ \ffpartial{H}{t}\\
 	&= \ffpartial{H}{t} = - \ffpartial{L}{t}
 \end{align*} 
-Also gilt ohne explizite Zeitabhängigkeit $H = \const$ weil dann $\ffpartial{H}{t} = 0$. $H$ ist damit ein Integral der Bewegung.
+Also gilt ohne explizite Zeitabhängigkeit $H = \const$, weil dann $\ffpartial{H}{t} = 0$. $H$ ist damit ein Integral der Bewegung.
 
 Bei zyklischen Variablen:
 $$q_j \text{~zyklisch} \Leftrightarrow \ffpartial{L}{q_j} = 0 \Leftrightarrow p_j = \const = c_j$$
@@ -1017,7 +1017,7 @@ $H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vergleiche hierbei $L$, welches i
 	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
 	\item Kanonische (Hamiltonsche) Gleichungen aufstellen und lösen
 	\begin{align*}
-	\dot{p}_i &= -\ffpartial{H(q,p,t)}{q_i} & \dot{q}_i &= \ffpartial{H(q,p,t)}{p_i}
+	\dot{p}_i &= -\ffpartial{H(\vec{q},\vec{p},t)}{q_i} & \dot{q}_i &= \ffpartial{H(\vec{q},\vec{p},t)}{p_i}
 	\end{align*}
 \end{enumerate}
 
@@ -2081,10 +2081,10 @@ Was bedeutet das für die Wellenfunktion?
 	\psi''(x) &= \kappa^2 \psi(x) \Rightarrow \psi \sim e^{\pm \kappa x}
 	\intertext{Für $E < V$ divergiert $e^{\kappa x}$ divergiert für positive x.}
 	\Rightarrow \psi(x) %\xrightarrow{x \to\infty} e^{-\kappa x}.
-	\intertext{Dies stellt ein typisches \textbf{expotentielles Abklingen} dar.} % $\psi(x) = e^{\pm i k x}$\\
+	\intertext{Dies stellt ein typisches \textbf{exponentielles Abklingen} dar.} % $\psi(x) = e^{\pm i k x}$\\
 	\psi''(x) &= (\pm i k) (\pm i k) e^{\pm i k x} = - k^2 \psi(x)
 	\intertext{Etwas allgemeiner gilt mit $k = \sqrt{\frac{2m}{\hbar^2} (E -V)}$}
-	\psi(x) &= A e^{ikx} + Be^{ikx} 
+	\psi(x) &= A e^{ikx} + Be^{-ikx} 
 	\end{align*} 
 	\item[$E = V$] \conseq $k^2 = 0$ Hier gilt $\psi''(x) = 0$, damit ist $x$ ein Wendepunkt von $\psi(x)$.
 	\item[$E > V$] \conseq $k^2 < 0$, $\psi''(x)$ hat immer das gleiche Vorzeichen, wie $\psi(x)$. $\psi(x)$ immer von der $x$-Achse weg gekrümmt.
@@ -2112,7 +2112,7 @@ Was bedeutet das für die Wellenfunktion?
 	\begin{align*}
 		\psi(0) &=\psi(a) = 0\\
 		\psi(0) &= A + B = 0 \qquad \Rightarrow B = -A\\
-		\psi(a) &= A(e^{ika} - e^{ika}) = 0\\
+		\psi(a) &= A(e^{ika} - e^{-ika}) = 0\\
 		&= 2iA \sin(ka) = 0\\
 		\Rightarrow ka &= 2\pi n \qquad n = 1, 2, 3, \dots\\
 		k &= \frac{2\pi h}{a}\\
