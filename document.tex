@@ -1658,7 +1658,7 @@ Die Masse selbst ist ein Lorentzskalar. Sie ändert sich nicht.
 
 \begin{folgerung*}[Wiensches Gesetz]
 Wien postulierte die folgende Gestalt für $f$
-$$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
+$$f(\nu, T) = \nu^3 g(\frac{\nu}{T})$$
 \end{folgerung*}
 
 \begin{folgerung*}[Stefan-Boltzmann-Gesetz]
@@ -1679,7 +1679,7 @@ Das Maximum der Energieverteilung  ist
 Daraus folgt, dass mit steigender Temperatur, die Wellenlänge sinkt (und die Frequenz steigt). Also strahlt ein Körper nach diesem Modell bei steigender Temperatur zuerst schwarzes (also gar nicht), dann rotes und bei sehr hoher Temperatur weißes Licht aus.\\
 Jetzt es an die Berechnung der im Versuch erwartbaren Werte von $g(\frac{\nu}{T})$, mit Hilfe der klassischen Physik.
 \paragraph{Annahme} Im Hohlraum bilden sich stehende Wellen aus. Im sich einstellenden thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ an Energie, hierbei ist $k_B$ die Boltzmann-Konstante. Wir zählen jetzt die stehenden Wellen im Hohlraum um damit auf eine bessere Form von $g$ zu kommen:\\
-Der Hohlraum ist ein Würfel mit Kantenlänge $a$. Also gilt für jede Richtung, dass jede stehende Welle in dieser Richtung $\frac{\lambda}{2}\cdot n = a \cos \alpha$ mit $n = 0, 1, 2, 3, \dots$ erfüllen muss. Das gleiche natürlich auf für die $y$ und $z$-Richtung, womit wir $n_1, n_2, n_3 = 0, 1, \dots$ bekommen mit:
+Der Hohlraum ist ein Würfel mit Kantenlänge $a$. Also gilt für jede Richtung, dass jede stehende Welle in dieser Richtung $\frac{\lambda}{2}\cdot n = a \cos \alpha$ mit $n = 0, 1, 2, 3, \dots$ erfüllen muss. Das Gleiche natürlich auch für die $y$ und $z$-Richtung, womit wir $n_1, n_2, n_3 = 0, 1, \dots$ bekommen mit:
 \begin{align*}
 n_1 &= \frac{2 a \cos \alpha_1}{\lambda} & n_2 &= \frac{2 a \cos \alpha_2}{\lambda} & n_3 &= \frac{2 a \cos \alpha_3}{\lambda}
 \end{align*}
@@ -1749,7 +1749,7 @@ Als Konsequenz ersetzen wir $k_B T$ bei der Herleitung des R-J-Gesetzes durch $\
 $$W_\nu = \frac{8\pi\nu^2}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$$
 Was wir nun in Wiens Formel vom Anfang einsetzen können
 $$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
-Des weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksches Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als
+Des weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksche Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als
 $$W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$$
 Diese Formel ist auch als Plancksche Strahlungsformel bekannt. Sowohl Wiens Formel, als auch das Rayleigh-Jeans-Gesetz sind in ihr als Grenzfälle enthalten (in ihrem jeweiligen Bereich):
 $$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
@@ -1846,7 +1846,7 @@ Zuerst bringen wir aber noch $i \hbar$ von der linken auf die rechte Seite um da
 \begin{align*}
 	\fpartial{t} \vp(t) &= \dd{t} \vp(t) \overset!= - i \frac{E}{\hbar} \vp(t)\\
 	\Rightarrow \vp(t) &= \vp_0 e^{-i\frac{E}{\hbar} t}\\
-	&\equiv \vp_0 e^{- \omega t}
+	&\equiv \vp_0 e^{-i \omega t}
 \end{align*}
 Die Welle hat "`Oszillationen"' mit der "`Frequenz"' $\omega = \frac{E}{\hbar}$
 
@@ -1908,7 +1908,7 @@ Die Lösung ist also eine \textbf{ebene Welle}
 $$\Psi(\vec{r}, t) = \Psi_0 e^{i (\vec{k} \cdot \vec{r} - \omega t)}$$
 mit $\omega = \frac{E}{\hbar}$ und
 \begin{align*}
-E &= \hbar \omega = \frac{\hbar^2 \vec{k}^2}{2m} & \Rightarrow \omega &= \omega(k) = \frac{\hbar \vec{k}^2}{2m} & k &= |\vec{k}|
+E &= \hbar \omega = \frac{\hbar^2 k^2}{2m} & \Rightarrow \omega &= \omega(k) = \frac{\hbar k^2}{2m} & k &= |\vec{k}|
 \end{align*}
 
 \subsubsection{Was ist eine ebene Welle?}
@@ -1958,16 +1958,16 @@ Wegen $|\Psi_0|^2 V$ muss $\Psi_0 = \frac{1}{\sqrt V} = \const$ sein. Damit das 
 In diesem Fall nutzen wir das Superpositionsprinzip aus
 $$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$
 Diese Reihe, auch Fourierreihe genannt, ist damit auch eine Lösung der Schrödingergleichung. Für kontinuierliche $\vec{k}, \omega$ gilt
-$$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{h}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ Dieses Integral wird auch Fourierintegral genannt. Wir setzen es nun in die, etwas umgeformte, Schrödingergleichung ein
+$$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{k}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ Dieses Integral wird auch Fourierintegral genannt. Wir setzen es nun in die (etwas umgeformte) Schrödingergleichung ein
 \begin{align*}
 	(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) &= 0\\
 	\Rightarrow \int \d^3 \vec{k} \d \omega \tilde{\vec{k}}\omega (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} &= 0
 \end{align*}
 Diese Gleichung wird durch
 \begin{align*}
-\tilde\Psi(\vec{k}, \omega) &= \tilde\Psi (\vec{k}) \delta(w -w(\vec k))\\
+\tilde\Psi(\vec{k}, \omega) &= \tilde\Psi (\vec{k}) \delta(\omega - \omega(\vec k))\\
 \intertext{\textit{mit} $\int f(x) \delta(x - x_0) \d x = f (x_0)$}
-\Psi(\vec{r}, t) &= \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)})
+\Psi(\vec{r}, t) &= \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)}
 \end{align*}
 erfüllt.
 $\tilde \Psi(\vec{k})$ ist hierbei Amplitudenfunktion eines Wellenpakets.
@@ -1997,7 +1997,7 @@ I &= \int_{\kappa_0 = k_0-\Delta k}^{\kappa_1 = k_0 + \Delta k} e^{iak} \d k = \
 &= \frac{1}{ia} e^{ia k_0} 2 i \sin a \Delta k\\
 \Rightarrow \Psi(x,t) &= \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}
 \end{align*}
-Hierbei ist $v_g$ die "`Gruppengeschwindigkeit"'.
+Hierbei ist $v_g = \frac{\hbar k_0}{m}$ die "`Gruppengeschwindigkeit"'.
 $$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin^2((x - v_g t)\Delta k)}{(x - v_g t)^2 \Delta k^2}$$
 Wir betrachten jetzt die Funktion $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^2$$:
 \begin{center}
@@ -2040,12 +2040,12 @@ Bisher haben wir nur freie Teilchen und Wellenpakete betrachtet. Jetzt versuchen
 $$i\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
 mit
 $$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
-Zuerst Separieren wir wieder $\Psi$ zur $\Psi(x, t) = \psi(x) \vp(t)$ und $\vp(t) \sim e^{i \frac{E}{\hbar} t}$\\
+Zuerst Separieren wir wieder $\Psi$ zur $\Psi(x, t) = \psi(x) \vp(t)$ und $\vp(t) \sim e^{-i \frac{E}{\hbar} t}$\\
 $\psi(x)$ erfüllt die stationäre Schrödingergleichung mit gleichem E.
 \begin{align*}
 	H \psi(x) &= E \psi(x)\\
 	\Leftrightarrow (- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)) \psi(x) &= E \psi(x)\\
-	\Leftrightarrow \ddd{^x}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) &= 0\\
+	\Leftrightarrow \ddd{^2}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) &= 0\\
 	\Leftrightarrow \Psi''(x) + k^2(x) \psi(x) &= 0
 \end{align*}
 
@@ -2074,7 +2074,7 @@ Physikalische Diskussion anhand der möglichen Energien des Teilchens:
 \end{description}
 Was bedeutet das für die Wellenfunktion?
 \begin{description}
-\item[$E>V$] $\to k^2 > 0$ Damit gilt $\psi''(x) = -k^2 \psi(x)$ und $\psi''$ hat immer das umgekehrte Vorzeichen von $\psi$. $\psi(x)$ ist außerdem ur x-Achse hin gekrümmt. Natürlich gibt es auch Oszillationen, z.B. wenn $V$ und $k$ konstant sind gilt $\psi(x) = e^{\pm ikx}$
+\item[$E>V$] $\to k^2 > 0$ Damit gilt $\psi''(x) = -k^2 \psi(x)$ und $\psi''$ hat immer das umgekehrte Vorzeichen von $\psi$. $\psi(x)$ ist außerdem zur x-Achse hin gekrümmt. Natürlich gibt es auch Oszillationen, z.B. wenn $V$ und $k$ konstant sind gilt $\psi(x) = e^{\pm ikx}$
 \[\psi'' = (\pm ik)(\pm ik)e^{\pm ikx} = -k^2 \psi(x)\]
 Allgemein hat $\psi(x)$ die Form
 $$\psi(x) = Ae^{ikx} + Be^{-ikx} \qquad \text{mit~} k=\sqrt{\frac{2m}{\hbar^2}(E-V)}$$
@@ -2150,10 +2150,10 @@ $$\psi(x) = Ae^{ikx} + Be^{-ikx} \qquad \text{mit~} k=\sqrt{\frac{2m}{\hbar^2}(E
 	Ce^{-\kappa x} & \text{im Wall}\\
 	De^{ik_0 x} & \text{hinter dem Wall}
 	\end{cases}$$
-	Die einlaufende Wellenfunktion besteht aus einer einlaufenden und einer reflektierten Welle. Rechnungen führen zum sogenannten \textbf{Gamov-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
+	Die einlaufende Wellenfunktion besteht aus einer einlaufenden und einer reflektierten Welle. Rechnungen führen zum sogenannten \textbf{Gamow-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
 	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
 	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch Tunneleffekt.\\
-	\textbf{Gamov}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
+	\textbf{Gamow}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
 	$$T(E) = e^{-\frac{2}{\hbar} \int_{0}^{\infty} \sqrt{2m (V(x') - E)}~ \d x'}$$
 	Wir können jetzt damit den $\alpha$-Zerfall von Atomkernen erklären. Der $\alpha$-Zerfall ist eine spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n), sieht geschieht ohne Beeinflussung von außen (z.B. Druck oder Temperatur). 
 	Die $\alpha$-Teilchen werden mit einer sehr charakteristischen Energie emittiert und die Halbwertszeiten sind sehr unterschiedlich, z.B.
