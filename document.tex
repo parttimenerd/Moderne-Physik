@@ -2697,6 +2697,37 @@ Wenn wir jetzt $l' = 2 l$ einsetzen
 	&= 0
 \end{align*}
 
+
+\subsection{Aufgabe) Lagrangegleichungen \& Erhaltungssätze}
+\paragraph{a)}
+\begin{align*}
+	V &= - (mz_1 + mz_2) g\\
+	T &= \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) 
+\end{align*}
+\paragraph{b)}
+\begin{align*}
+	L &= T - V = \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) + (mz_1 + mz_2) g\\
+	\intertext{mit $l = \pi R + z_1 + z_2 ~\Rightarrow~ z_2 = l - z_1 - \pi R$ und $\dot{z_2} = - \dot{z_1}$}
+	L &= \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1 - \pi R)
+\end{align*}
+
+\paragraph{c)}
+$$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
+
+\paragraph{d)}
+\begin{align*}
+	\dd{t} \ffpartial{L}{\dot{z}} &= (m + M) \ddot{z_1}\\
+	\ffpartial{L}{z_1} &= (m - M) g\\
+	\Rightarrow  (m + M) \ddot{z_1} - (m - M) g &\overset!= 0\\
+	\Rightarrow \ddot{z_1} = \frac{m - M}{m + M} g
+\end{align*}
+Da laut Aufgabenstellung gilt $m < M$, gilt, dass die Masse $m$ sich beschleunigt von der Erde nach oben entfernt, dass also die Masse $M$ immer schneller zum Boden hin fällt. Die Beschleunigung des Masse ist mit $z_1 = l - \pi R - z_2$ und damit $z_2 \sim -z_1$:
+$$\ddot{z_2} = -\frac{m - M}{m + M} g$$
+
+\paragraph{e)}
+$$z_1(t) = z_0 + v_O t + \frac12 \frac{m - M}{m + M} g t^2$$
+Damit bewegt sich die Masse $m$ beschleunigt nach oben.
+
 \chapter{Übungsmitschriebe}
 
 \section{Blatt 0}
