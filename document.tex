@@ -120,7 +120,7 @@
 ~\\~\\
 	Dies ist ein Skriptartig aufbereiteter Mitschrieb der Vorlesung "`Moderne Physik für Informatiker"', welche von Herrn Gieseke im Sommersemester 2015 am KIT gelesen wurde. Es besteht kein Anspruch auf Richtigkeit oder Vollständigkeit. Fehler, und andere Anmerkungen, können gerne an \textit{me@mostlynerdless.de} gesendet werden. Die Quellen finden sich auf \href{https://github.com/parttimenerd/Moderne-Physik}{github}.\\
 	~\\
-	\textbf{Ich freue mich über Pull-Request\dots}\\
+	\textbf{Ich freue mich über Pull-Requests\dots}\\
 	~\\
 	\textbf{Es handelt sich um einen Entwurf, der laufend verbessert wird. Besonders der Quantenmechanikteil wird gerade überarbeit.} ~\\
 	
@@ -132,6 +132,9 @@
 	~\\
 	~\\
 	\href{http://lgö.de/studium/moderne_physik/summary.pdf}{Sehr kurze Zusammenfassung, welche handschriftlich auf zwei Seiten passen sollte.} \textit{Danke Felix.}
+	~\\
+	~\\
+	\textbf{Ganz am Ende findet sich auch eine (fast vollständige Lösung des 12. Übungsblattes aka Probeklausur).}
 \listoftodos
 
 \chapter{Einführung}
@@ -2741,6 +2744,72 @@ $$l = \frac{l'}{\gamma} = \frac{\sqrt{19}}{10} \cdot 15 \mathrm{cm}$$
 
 \paragraph{c)}
 $$t = \gamma t' ~ \Rightarrow ~ \frac{t}{t'} = \gamma ~ \Rightarrow ~ v = \sqrt{10^{-6} + 1} \cdot c$$
+
+\subsection{Geschwindigkeitsaddition}
+Qualitativ: Damit $\kappa = \Lambda(\vec{u}) \Lambda(\vec{v})$ muss die Identität $|\vec{z}| = |\kappa \vec z|$ für einen beliebigen Vierervektor $\vec z$ gelten. Diese gilt: $|\kappa \vec z| = |\Lambda(\vec{u}) \underbrace{\Lambda(\vec{v}) \vec z}_{\vec w}|$, weil $\Lambda(\vec{v})$ eine Lorentztransformation ist, gilt $|\vec w| = |\Lambda(\vec{v}) \vec w|$, da auch $\Lambda(\vec{u})$ gilt, dass was zu zeigen war.
+
+\section{Quantenmechanik}
+
+\subsection{Aufgabe) Zerfließendes Wellenpaket}
+$m = \SI{1e-3}{\kilogram}$, $t = 0 \leadsto \Delta x = \SI{e-10}{\meter}$
+Im folgenden gehen wir einfach wie im Hinweis skizziert vor.
+\begin{align*}
+	\Delta x(t) &= \sqrt{a (1 + (\Delta t)^2} = \sqrt{a (1 + (\frac{\hbar t}{2ma})^2)}
+	\intertext{Zuerst berechnen wir $a$}
+	\Delta x(t) &= \sqrt{a} \overset{!}{=} \SI{e-10}{\meter}\\
+	\Rightarrow a &= \SI{e-20}{\meter}
+	\intertext{Nun formen wir das Ganze nach $t$ um undc erhalten}
+	t &= 2 m a \frac1\hbar \sqrt{\frac{(\Delta x(t))^2}{a} - 1}
+	\intertext{Sei nun (wie im Hinweis) $\Delta x = \SI{2e-10}{\meter}$, dann gilt}
+	t &= 2 m a \frac1\hbar \sqrt{\frac{(\SI{2e-10}{\meter})^2}{\SI{e-20}{\meter}} - 1} = 2 m a \frac1\hbar \sqrt{2 - 1} = \frac{2ma}{\hbar}
+	\intertext{Ein $\alpha$-Teilchen braucht für das Zerfließen des Wellenpakets offensichtlich viel kürzer, da $m = \SI{e-3}{\kilogram} \ll m_\alpha = \SI{4e-27}{\kilogram}$}
+\end{align*}
+
+\subsection{Aufgabe) Rechteckpotential}
+Fehlt.
+\subsection{Aufgabe) Rechteckpotential}
+Fehlt.
+
+\subsection{Aufgabe) Hilbertraumvektoren}
+$$ \hat{S}_x = \frac{\hbar}{2} \begin{pmatrix}
+0 & 1\\ 1 & 0
+\end{pmatrix}$$
+\paragraph{a)}
+Zuerst berechnen wir den Normierungsvektor $N$ über die Wahrscheinlichkeitsbetrachtung der Eigenvektoren, für die gelten muss $\braket{x | x} = 1$:
+\begin{align*}
+	\braket{U_x | U_x} = N^2 \binom{1}{1}^\top \binom{1}{1} = N^2 \cdot 2 \qquad \Rightarrow \qquad N = \frac{1}{\sqrt{2}}
+\end{align*}
+Nun berechnen wir noch die beiden Eigenwerte. Für diese gilt nach Definition $\hat{S}_x \ket{x} = \lambda \ket{x}$. Konkret gilt
+\begin{align*}
+	\hat{S}_x \ket{U_x} &= \frac{\hbar}{2} N \binom{1}{1} \overset{!}{=} \lambda_{U_x} N \ket{U_x}\\
+	\Rightarrow \lambda_{U_x} = \frac{\hbar}{2}\\
+	\hat{S}_x \ket{D_x} &= \frac{\hbar}{2} N \binom{-1}{1} \overset{!}{=} \lambda_{D_x} N \binom{1}{-1} = \lambda_{D_x} N \ket{U_x}\\
+	\Rightarrow \lambda_{U_x} = -\frac{\hbar}{2}
+\end{align*}
+
+\paragraph{b)} Betrachteter Vektor: $\ket{\psi} = N_\psi \binom{1 + \sqrt{3}}{1- \sqrt{3}}$
+\begin{align*}
+	\text{Normierung: ~} \braket{\psi | \psi} = N_\psi^2 ((1 + \sqrt{3})^3 + (1 - \sqrt{3})^2) = N_\psi^2 \cdot 8 \qquad \Rightarrow \qquad N = \frac{1}{\sqrt{8}}
+\end{align*}
+Man sieht auf den ersten Blick, dass $\ket{\psi}$ auch wie folgt geschrieben werden kann (Achtung mit den Normierungsfaktoren):
+$$\underbrace{\frac{\sqrt{2}}{\sqrt{8}}}_{= \frac{1}{2}} (\ket{U_x} + \sqrt{3} \ket{D_x})$$
+
+\paragraph{c)}
+Da schon alles wichtige in der Aufgabenstellung angegeben ist, kann man einfach ausrechnen und findet dann
+$$P_U = \frac{1}{4} \qquad P_D = \frac34$$
+Anmerkung: Umbedingt immer die Wahrscheinlichkeiten addieren, addieren sich diese nicht zu 1 auf, ist was falsch.
+
+\paragraph{d}
+Das zu zeigen ist durch einfaches Ausrechnen möglich:
+\begin{align*}
+	\hat{S}_x^2 = \frac{\hbar}{2} \begin{pmatrix}
+	0 & 1\\ 1 & 0
+	\end{pmatrix} \cdot \frac{\hbar}{2} \begin{pmatrix}
+	0 & 1\\ 1 & 0
+	\end{pmatrix} = \frac{\hbar^2}{4} \begin{pmatrix}
+	1 & 0\\ 0 & 1
+	\end{pmatrix} 
+\end{align*}
 
 \chapter{Übungsmitschriebe}
 
