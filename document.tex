@@ -2704,12 +2704,12 @@ Wenn wir jetzt $l' = 2 l$ einsetzen
 \subsection{Aufgabe) Lagrangegleichungen \& Erhaltungssätze}
 \paragraph{a)}
 \begin{align*}
-	V &= - (mz_1 + mz_2) g\\
+	V &= - (mz_1 + Mz_2) g\\
 	T &= \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) 
 \end{align*}
 \paragraph{b)}
 \begin{align*}
-	L &= T - V = \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) + (mz_1 + mz_2) g\\
+	L &= T - V = \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) + (mz_1 + Mz_2) g\\
 	\intertext{mit $l = \pi R + z_1 + z_2 ~\Rightarrow~ z_2 = l - z_1 - \pi R$ und $\dot{z_2} = - \dot{z_1}$}
 	L &= \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1 - \pi R)
 \end{align*}
@@ -2743,7 +2743,7 @@ $$t = \gamma t' = \frac{1}{\sqrt{1 - \frac{9^2}{10^2}}} t' = \frac{10}{\sqrt{19}
 $$l = \frac{l'}{\gamma} = \frac{\sqrt{19}}{10} \cdot 15 \mathrm{cm}$$
 
 \paragraph{c)}
-$$t = \gamma t' ~ \Rightarrow ~ \frac{t}{t'} = \gamma ~ \Rightarrow ~ v = \sqrt{1 - 10^{-12}} \cdot c$$
+$$t = \gamma t' ~ \Rightarrow ~ \frac{t}{t'} = \gamma ~ \Rightarrow ~ v = \sqrt{10^{-6} + 1} \cdot c$$
 
 \subsection{Geschwindigkeitsaddition}
 Qualitativ: Damit $\kappa = \Lambda(\vec{u}) \Lambda(\vec{v})$ muss die Identität $|\vec{z}| = |\kappa \vec z|$ für einen beliebigen Vierervektor $\vec z$ gelten. Diese gilt: $|\kappa \vec z| = |\Lambda(\vec{u}) \underbrace{\Lambda(\vec{v}) \vec z}_{\vec w}|$, weil $\Lambda(\vec{v})$ eine Lorentztransformation ist, gilt $|\vec w| = |\Lambda(\vec{v}) \vec w|$, da auch $\Lambda(\vec{u})$ gilt, dass was zu zeigen war.
@@ -2761,7 +2761,7 @@ Im folgenden gehen wir einfach wie im Hinweis skizziert vor.
 	\intertext{Nun formen wir das Ganze nach $t$ um undc erhalten}
 	t &= 2 m a \frac1\hbar \sqrt{\frac{(\Delta x(t))^2}{a} - 1}
 	\intertext{Sei nun (wie im Hinweis) $\Delta x = \SI{2e-10}{\meter}$, dann gilt}
-	t &= 2 m a \frac1\hbar \sqrt{\frac{(\SI{2e-10}{\meter})^2}{\SI{e-20}{\meter}} - 1} = 2 m a \frac1\hbar \sqrt{4 - 1} = \frac{3ma}{\hbar}
+	t &= 2 m a \frac1\hbar \sqrt{\frac{(\SI{2e-10}{\meter})^2}{\SI{e-20}{\meter}} - 1} = 2 m a \frac1\hbar \sqrt{2 - 1} = \frac{2ma}{\hbar}
 	\intertext{Ein $\alpha$-Teilchen braucht für das Zerfließen des Wellenpakets offensichtlich viel kürzer, da $m = \SI{e-3}{\kilogram} \ll m_\alpha = \SI{4e-27}{\kilogram}$}
 \end{align*}
 
@@ -2770,7 +2770,7 @@ Rechteckpotential, um $x_0$ zentriert, mit Breite $a$ und Höhe $V_0$. Teilchen 
 
 \paragraph{a)}
 $0 < E < V_0$. Teilchen nähert sich der Barriere von links.\\
-Schwingung links auf mittlerem Niveau \conseq $e^-x$ artige Kurve im Potential \conseq Schwingung mit anfänglicher Frequenz auf niedrigerem Niveau.
+Schwingung links auf mittlerem Niveau \conseq $e^{-x}$ artige Kurve im Potential \conseq Schwingung mit anfänglicher Frequenz auf niedrigerem Niveau.
 
 \paragraph{b)}
 Allgemein ist die stationäre Schrödingergleichung
@@ -2848,7 +2848,7 @@ Nun berechnen wir noch die beiden Eigenwerte. Für diese gilt nach Definition $\
 
 \paragraph{b)} Betrachteter Vektor: $\ket{\psi} = N_\psi \binom{1 + \sqrt{3}}{1- \sqrt{3}}$
 \begin{align*}
-	\text{Normierung: ~} \braket{\psi | \psi} = N_\psi^2 ((1 + \sqrt{3})^3 + (1 - \sqrt{3})^2) = N_\psi^2 \cdot 8 \qquad \Rightarrow \qquad N = \frac{1}{\sqrt{8}}
+	\text{Normierung: ~} \braket{\psi | \psi} = N_\psi^2 ((1 + \sqrt{3})^3 + (1 - \sqrt{3})^2) = N_\psi^2 \cdot 8 \qquad \Rightarrow \qquad N_\psi = \frac{1}{\sqrt{8}}
 \end{align*}
 Man sieht auf den ersten Blick, dass $\ket{\psi}$ auch wie folgt geschrieben werden kann (Achtung mit den Normierungsfaktoren):
 $$\underbrace{\frac{\sqrt{2}}{\sqrt{8}}}_{= \frac{1}{2}} (\ket{U_x} + \sqrt{3} \ket{D_x})$$
@@ -2858,7 +2858,7 @@ Da schon alles wichtige in der Aufgabenstellung angegeben ist, kann man einfach 
 $$P_U = \frac{1}{4} \qquad P_D = \frac34$$
 Anmerkung: Umbedingt immer die Wahrscheinlichkeiten addieren, addieren sich diese nicht zu 1 auf, ist was falsch.
 
-\paragraph{d)}
+\paragraph{d}
 Das zu zeigen ist durch einfaches Ausrechnen möglich:
 \begin{align*}
 	\hat{S}_x^2 = \frac{\hbar}{2} \begin{pmatrix}
