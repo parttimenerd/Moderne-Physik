@@ -2645,7 +2645,7 @@ Mit den Zylinderkoordinaten, können wir die kartesischen Koordinaten wie folgt 
 Damit eine Koordinate $\tau$ zyklisch ist, muss gelten
 $$\ffpartial{L}{\tau} = 0$$
 Womit der $\tau$-Impuls auch konstant und damit erhalten ist.\\
-Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $\phi$ abhängt. Oder formaler
+Wenn man sich die Lagrange-Funktion ansieht, sieht man, dass sie nicht von $\phi$ abhängt. Oder formaler
 $$\ffpartial{L}{\phi} = 0$$
 Damit haben wir die Erhaltungsgröße
 \begin{align*}
@@ -2656,26 +2656,28 @@ Damit haben wir die Erhaltungsgröße
 \end{align*}
 
 \paragraph{d)}
-Allgemein ist die (Euler-)Langrange-Gleichung für einen Koordinatensatz $(\tau, \dot{\tau})$
+Allgemein ist die (Euler-)Lagrange-Gleichung für einen Koordinatensatz $(\tau, \dot{\tau})$
 $$\dd{t} \ffpartial{L}{\dot{\tau}} - \ffpartial{L}{\tau} = 0$$
-Nun können wir für jede der 3 Koordinaten die Langrange-Gleichung aufstellen, dabei behalten wir aber immer die Erkenntnisse aus \textbf{c)} im Hinterkopf um Rechenaufwand zu sparen.
+Nun können wir für jede der 3 Koordinaten die Lagrange-Gleichung aufstellen, dabei behalten wir aber immer die Erkenntnisse aus \textbf{c)} im Hinterkopf um Rechenaufwand zu sparen.
 \begin{align*}
-	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \dot{\rho} \dot{\phi} + m \rho^2 \ddot{\phi} &
-	\Rightarrow 2 \dot{\rho} \dot{\phi} + \rho^2 \ddot{\phi} &\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \rho \dot{\rho} \dot{\phi} + m \rho^2 \ddot{\phi} &
+	\Rightarrow 2 \rho \dot{\rho} \dot{\phi} + \rho^2 \ddot{\phi} &\overset!= 0\\
 	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} & &
 	\\
 	\ffpartial{L}{z} &= - \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3} &
 	\Rightarrow m \ddot{z}  + \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3}&\overset!= 0\\
 	\dd{t} \ffpartial{L}{\dot{\rho}} &= m \ddot{\rho} && \\
-	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma}{\sqrt{\rho^2+z^2}} &
-	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\sqrt{\rho^2+z^2}} &\overset!= 0
+	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma \rho}{\sqrt{\rho^2+z^2}^3} &
+	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma \rho}{\sqrt{\rho^2+z^2}^3} &\overset!= 0
 \end{align*}
 \paragraph{e)}
 Annahmen: $z=0$, $\dot{\rho} = 0$ und $\ddot{\phi} = 0$\\
 Aus der Annahme folgt offensichtlich auch $\dot{z} = 0, \ddot{z} = 0, \ddot{\rho} = 0$, $\rho = \const$ und $\dot{\phi} = \const$
 \begin{align*}
-	 m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\sqrt{\rho^2+z^2}} &\overset!= 0 \\
-	\xLeftrightarrow{\text{mit Annahme}} \frac{\gamma \rho^3 m}{\rho} &\overset!= m^2 \rho^4 \dot{\phi}^2 \\
+	 m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma \rho}{\sqrt{\rho^2+z^2}^3} &\overset!= 0 \\
+	\xLeftrightarrow{\text{mit Annahme}} \frac{\gamma \rho}{\rho^3} &\overset!= m \rho \dot{\phi}^2 \\
+	\Leftrightarrow \gamma &\overset!= m \rho^3 \dot{\phi}^2 \\
+	\Leftrightarrow m \rho \gamma &\overset!= m^2 \rho^4 \dot{\phi}^2
 \end{align*}
 
 \paragraph{f)}
