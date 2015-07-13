@@ -2782,10 +2782,7 @@ Allgemein ist die stationäre Schrödingergleichung
 \begin{align*}
 	\frac{\hbar^2}{2m}\frac{\partial^2 \psi(x)}{\partial x^2} +  V_n \psi(x) &= E \psi(x)
 	\intertext{diese kann man Umschreiben zu}
-	\frac{\hbar^2}{2m}\frac{\partial^2 \psi(x)}{\partial x^2} &= (E - V_n) \psi(x)
-	\intertext{Nun setzen wir für $\psi$ den Ansatz $\psi = e^{ikx}$ ein}
-	- \frac{\hbar^2}{2m} k^2 e^{ikx} &= (E - V_0) e^{ikx}\\
-	k &= \sqrt{2m \frac{E - V_0}{\hbar^2}}\\
+	\frac{\partial^2 \psi(x)}{\partial x^2} &= \underbrace{\frac{2m}{\hbar^2} (E - V_n)}_{= k^2} \psi(x)
 	\intertext{Da $E - V_0 < 0$, ziehen wir das Minus aus der Wurzel}
 	k &= i \underbrace{\sqrt{2m \frac{V_0 - E}{\hbar^2}}}_{\kappa}\\
 	\intertext{Nun setzen wir dies in den Ansatz ein}
@@ -2817,7 +2814,7 @@ $$\begin{cases}
 	A e^{-\kappa x} = A e^{- (- i^2) \sqrt{\frac{2m}{\hbar^2} (-E)}} & x > \frac{a}{2}\\
 	B e^{i k x} + C e^{-ikx} & \text{sonst}
 \end{cases}$$
-Wobei $k \sqrt{\frac{2m}{\hbar^2} \underbrace{(E - V_0)}_{> 0}}$.
+Wobei $k = \sqrt{\frac{2m}{\hbar^2} \underbrace{(E - V_0)}_{> 0}}$.
 
 \paragraph{c)}
 $E > 0$. Wir erinnern uns an die vorherige Aufgabe. Offensichtlich hat die Wellenfunktion folgende Struktur:
