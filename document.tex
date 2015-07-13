@@ -2636,8 +2636,9 @@ Mit den Zylinderkoordinaten, können wir die kartesischen Koordinaten wie folgt 
 	\dot{x} &= \dot{\rho} \cos \phi - \rho \sin \phi\\
 	\dot{y} &= \dot{\rho} \sin \phi + \rho \cos \phi\\
 	\dot{z} &= \dot{z}
-	\intertext{Mit einfachem Einsetzen und quadrieren (oder einfach nur quadrieren der gegebenen Form von $\dot{r}$) findet man die Lagrangefunktion in den Zylinderkoordinaten}
-	L(r, \dot{r}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{r}^2 + r^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{\sqrt{\rho^2 + z^2}}
+	\intertext{Mit einfachem Einsetzen und quadrieren (oder einfach nur quadrieren der gegebenen Form von $\dot{\rho}$) findet man die Lagrangefunktion in den Zylinderkoordinaten}
+	L(\rho, \dot{\rho}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{r}
+	= \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{\sqrt{\rho^2 + z^2}}
 \end{align*}
 
 \paragraph{c)}
@@ -2646,13 +2647,12 @@ $$\ffpartial{L}{\tau} = 0$$
 Womit der $\tau$-Impuls auch konstant und damit erhalten ist.\\
 Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $\phi$ abhängt. Oder formaler
 $$\ffpartial{L}{\phi} = 0$$
-Damit haben wir die Erhaltungsgrößen
+Damit haben wir die Erhaltungsgröße
 \begin{align*}
-	p_\phi &= \ffpartial{L}{\dot{\phi}} = m r^2 \dot{\phi} = \const\\
-	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const
-	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$}
-	p_\rho &= \ffpartial{L}{\dot r} = m \dot \rho\\
-	p_z &= \ffpartial{L}{\dot z} = m \dot{z}
+	p_\phi &= \ffpartial{L}{\dot{\phi}} = m r^2 \dot{\phi} = \const
+	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$ und $p_z$}
+	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const\\
+	p_\rho &= \ffpartial{L}{\dot \rho} = m \dot \rho
 \end{align*}
 
 \paragraph{d)}
@@ -2662,43 +2662,45 @@ Nun können wir für jede der 3 Koordinaten die Langrange-Gleichung aufstellen, 
 \begin{align*}
 	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \dot{\rho} \dot{\phi} + m \rho^2 \ddot{\phi} &
 	\Rightarrow 2 \dot{\rho} \dot{\phi} + \rho^2 \ddot{\phi} &\overset!= 0\\
-	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} &
-	\Rightarrow m \ddot{z} &\overset!= 0\\
-	\dd{t} \ffpartial{L}{\dot{\rho}} &= m \ddot{\rho}\\
+	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} & &
+	\\
+	\ffpartial{L}{z} &= - \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3} &
+	\Rightarrow m \ddot{z}  + \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3}&\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot{\rho}} &= m \ddot{\rho} && \\
 	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma}{\rho^2} &
 	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0
 \end{align*}
-
+WARNUNG: ab hier macht die aufgabe wenig Sinn. Ab hier sind dies die Lösungen die noch mit der Verwirrung zwischen $r$ und $\rho$ enstanden sind.
 \paragraph{e)}
-Annahmen: $\dot{\rho} = 0$ und $\ddot{\phi} = 0$\\
-Aus der Annahme folgt offensichtlich auch $\ddot{\rho} = 0$, $\rho = \const$ und $\dot{\phi} = \const$
+Annahmen: $\dot{r} = 0$ und $\ddot{\phi} = 0$\\
+Aus der Annahme folgt offensichtlich auch $\ddot{r} = 0$, $r = \const$ und $\dot{\phi} = \const$
 \begin{align*}
-	m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0\\
-	\xLeftrightarrow{\text{mit Annahme}} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0\\
+	m\ddot{r} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0\\
+	\xLeftrightarrow{\text{mit Annahme}} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0\\
 	m r^3 \dot{\phi}^2 - \gamma &= 0\\
-    \rho &= \sqrt[3]{\frac{\gamma}{m {\dot{\phi}}^2}}
+    r &= \sqrt[3]{\frac{\gamma}{m {\dot{\phi}}^2}}
 \end{align*}
 
 \paragraph{f)}
 Erinnerung: $p_\phi = m \dot{\phi} = l$
 \begin{align*}
-	r(l) &= \rho(m \dot\phi) = \sqrt[3]{\frac{m \gamma}{l^2}} = \sqrt[3]{m \gamma} l^{-\frac23}
+	r(l) &= r(m \dot\phi) = \sqrt[3]{\frac{m \gamma}{l^2}} = \sqrt[3]{m \gamma} l^{-\frac23}
 \end{align*}
 Wenn wir jetzt $l' = 2 l$ einsetzen
 \begin{align*}
-	\rho' &= \rho(l') = \sqrt[3]{m \gamma} 2^{-\frac23}l^{-\frac23} = 2^{-\frac23} r(l)
+	r' &= r(l') = \sqrt[3]{m \gamma} 2^{-\frac23}l^{-\frac23} = 2^{-\frac23} r(l)
 \end{align*}
-
+WARNUNG Ende.
 \paragraph{g)}
 \begin{align*}
-	H &= \underbrace{m \dot{\rho}^2} + m \dot{\phi}^2 + m \dot{z}^2 - \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) - \frac{\gamma}{\rho}\\
-	&= \frac12 m \dot{\rho}^2 + m \dot{\phi}^2 (1 - \frac{\rho^2}{2}) + \frac12 m \dot{z}^2 - \frac{\gamma}{\rho}\\
-	&= \frac12 \frac{p_\rho^2}{m} + \frac{p_\phi^2}{m} (\frac{1}{\rho^4} - \frac{1}{2 \rho^2}) + \frac12 \frac{p_z^2}{m} - \frac{\gamma}{\rho}
+	H &= \underbrace{m \dot{\rho}^2} + m \rho^2\dot{\phi}^2 + m \dot{z}^2 - \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) - \frac{\gamma}{\sqrt{\rho^2+z^2}}\\
+	&= \frac12 m \dot{\rho}^2 + m \dot{\phi}^2 (\rho^2 - \frac{\rho^2}{2}) + \frac12 m \dot{z}^2 - \frac{\gamma}{\sqrt{\rho^2+z^2}}\\
+	&= \frac12 \frac{p_\rho^2}{m} + \frac{p_\phi^2}{2 m\rho^2} + \frac12 \frac{p_z^2}{m} - \frac{\gamma}{\sqrt{\rho^2+z^2}}
 \end{align*}
 
 \paragraph{i)}
 \begin{align*}
-	\{p_z, H\} &= \frac1{2m} \underbrace{\{p_z, p_\rho^2\}}_{=0} + \underbrace{\{p_z, \frac{p_\phi^2}{m} (\frac{1}{\rho^4} - \frac{1}{2 \rho^2})\}}_{=0} + \frac1{2m} \underbrace{\{p_z, p_z^2\}}_{=0} - \underbrace{\{p_z, \frac{\gamma}{\rho}\}}_{=0}\\
+	\{p_z, H\} &= \frac1{2m} \underbrace{\{p_z, p_\rho^2\}}_{=0} + \underbrace{\{p_z, \frac{p_\phi^2}{2 m\rho^2}\}}_{=0} + \frac1{2m} \underbrace{\{p_z, p_z^2\}}_{=0} - \underbrace{\{p_z, \frac{\gamma}{\rho}\}}_{=0}\\
 	&= 0
 \end{align*}
 
@@ -2714,11 +2716,14 @@ Wenn wir jetzt $l' = 2 l$ einsetzen
 	L &= T - V = \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) + (mz_1 + Mz_2) g\\
 	\intertext{mit $l = \pi R + z_1 + z_2 ~\Rightarrow~ z_2 = l - z_1 - \pi R$ und $\dot{z_2} = - \dot{z_1}$}
 	L &= \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1 - \pi R)
+	\intertext{da $R\ll l$}
+	  &\approx \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1)	
 \end{align*}
 
 \paragraph{c)}
-$$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
-
+%NEIN, Impulserhaltung gilt nicht
+%$$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
+Energieerhaltung?
 \paragraph{d)}
 \begin{align*}
 	\dd{t} \ffpartial{L}{\dot{z}} &= (m + M) \ddot{z_1}\\
@@ -2726,11 +2731,11 @@ $$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
 	\Rightarrow  (m + M) \ddot{z_1} - (m - M) g &\overset!= 0\\
 	\Rightarrow \ddot{z_1} = \frac{m - M}{m + M} g
 \end{align*}
-Da laut Aufgabenstellung gilt $m < M$, gilt, dass die Masse $m$ sich beschleunigt von der Erde nach oben entfernt, dass also die Masse $M$ immer schneller zum Boden hin fällt. Die Beschleunigung des Masse ist mit $z_1 = l - \pi R - z_2$ und damit $z_2 \sim -z_1$:
+Da laut Aufgabenstellung gilt $m < M$, gilt, dass die Masse $m$ sich beschleunigt von der Erde nach oben entfernt, dass also die Masse $M$ immer schneller zum Boden hin fällt. Die Beschleunigung der Masse ist mit $z_1 = l - \pi R - z_2$ und damit $z_2 \sim -z_1$:
 $$\ddot{z_2} = -\frac{m - M}{m + M} g$$
 
 \paragraph{e)}
-$$z_1(t) = z_0 + v_O t + \frac12 \frac{m - M}{m + M} g t^2$$
+$$z_1(t) = z_0 + v_0 t + \frac12 \frac{m - M}{m + M} g t^2$$
 Damit bewegt sich die Masse $m$ beschleunigt nach oben.
 
 \section{Spezielle Relativitätstheorie}
