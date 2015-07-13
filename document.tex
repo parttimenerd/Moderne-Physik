@@ -2649,7 +2649,7 @@ Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $\ph
 $$\ffpartial{L}{\phi} = 0$$
 Damit haben wir die Erhaltungsgröße
 \begin{align*}
-	p_\phi &= \ffpartial{L}{\dot{\phi}} = m r^2 \dot{\phi} = \const
+	p_\phi &= \ffpartial{L}{\dot{\phi}} = m \rho^2 \dot{\phi} = \const
 	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$ und $p_z$}
 	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const\\
 	p_\rho &= \ffpartial{L}{\dot \rho} = m \dot \rho
@@ -2667,30 +2667,26 @@ Nun können wir für jede der 3 Koordinaten die Langrange-Gleichung aufstellen, 
 	\ffpartial{L}{z} &= - \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3} &
 	\Rightarrow m \ddot{z}  + \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3}&\overset!= 0\\
 	\dd{t} \ffpartial{L}{\dot{\rho}} &= m \ddot{\rho} && \\
-	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma}{\rho^2} &
-	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0
+	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma}{\sqrt{\rho^2+z^2}} &
+	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\sqrt{\rho^2+z^2}} &\overset!= 0
 \end{align*}
-WARNUNG: ab hier macht die aufgabe wenig Sinn. Ab hier sind dies die Lösungen die noch mit der Verwirrung zwischen $r$ und $\rho$ enstanden sind.
 \paragraph{e)}
-Annahmen: $\dot{r} = 0$ und $\ddot{\phi} = 0$\\
-Aus der Annahme folgt offensichtlich auch $\ddot{r} = 0$, $r = \const$ und $\dot{\phi} = \const$
+Annahmen: $z=0$, $\dot{\rho} = 0$ und $\ddot{\phi} = 0$\\
+Aus der Annahme folgt offensichtlich auch $\dot{z} = 0, \ddot{z} = 0, \ddot{\rho} = 0$, $\rho = \const$ und $\dot{\phi} = \const$
 \begin{align*}
-	m\ddot{r} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0\\
-	\xLeftrightarrow{\text{mit Annahme}} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0\\
-	m r^3 \dot{\phi}^2 - \gamma &= 0\\
-    r &= \sqrt[3]{\frac{\gamma}{m {\dot{\phi}}^2}}
+	 m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\sqrt{\rho^2+z^2}} &\overset!= 0 \\
+	\xLeftrightarrow{\text{mit Annahme}} \frac{\gamma \rho^3 m}{\rho} &\overset!= m^2 \rho^4 \dot{\phi}^2 \\
 \end{align*}
 
 \paragraph{f)}
-Erinnerung: $p_\phi = m \dot{\phi} = l$
+Erinnerung: $p_\phi = m \rho^2 \dot{\phi} = l$
 \begin{align*}
-	r(l) &= r(m \dot\phi) = \sqrt[3]{\frac{m \gamma}{l^2}} = \sqrt[3]{m \gamma} l^{-\frac23}
+	\rho(l) &= \rho(m \rho^2 \dot\phi) = \frac{l^2}{\gamma m}
 \end{align*}
 Wenn wir jetzt $l' = 2 l$ einsetzen
 \begin{align*}
-	r' &= r(l') = \sqrt[3]{m \gamma} 2^{-\frac23}l^{-\frac23} = 2^{-\frac23} r(l)
+	\rho' &= \rho(l') = \frac{4 l^2}{\gamma m} = 4 \rho(l)
 \end{align*}
-WARNUNG Ende.
 \paragraph{g)}
 \begin{align*}
 	H &= \underbrace{m \dot{\rho}^2} + m \rho^2\dot{\phi}^2 + m \dot{z}^2 - \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) - \frac{\gamma}{\sqrt{\rho^2+z^2}}\\
