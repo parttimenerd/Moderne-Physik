@@ -58,10 +58,13 @@ $L=T-V \qquad T\text{: kin. Energie}, V\text{: potentielle Energie}$\\
 \[\forall j: \quad \ad{}{t} \pd{L}{\dot q_j} - \pd{L}{q_j} = \sum\limits_i \lambda_i \underbrace{\pd{f_i}{q_j}}_{a_{ij}}\]
 mit $q_j$ generalisierte Koordinaten und $f_i=0$ verbleibende Zwangsbedingungen.
 
+\paragraph{Totales Differential} \[\md f = \sum_i \pd{f}{x_i} \md x_i\]
+
+\paragraph{Legendre Transformation} $f(x,y) \to g(u,y)$ mit $u = \pd{f}{x} $, mit $g=f-ux$, um dann die 2 verbleibenden Variablen zu bestimmen kann man $g$ total differenzieren und dann Koeffizientenvergleich mit dem "allgemeinen totalen Differential" machen.
+
 \paragraph{Hamilton Prinzip}: Die Wirkung wird stationär, also $\delta S = \delta \int\limits_{t_1}^{t_2}L\md t = 0$
 
 \paragraph{Hamilton Mechanik}: $p_i = \pd{L}{\dot q_i}$
-\paragraph{Legendre Transformation} $f(x,y) \to g(u,y)$ mit $u = \pd{f}{x} $, mit $g=f-ux$, um dann die 2 verbleibenden Variablen zu bestimmen kann man $g$ total differenzieren und dann Koeffizientenvergleich mit dem "allgemeinen totalen Differential" machen.
 
 \paragraph{Hamiltongleichungen}
 \[H(q,p,t) = \sum\limits_{i=1}^n\dot q_i(q,p,t)p_i-L[q,\dot q(q,p,t),t]\]
