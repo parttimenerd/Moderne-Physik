@@ -2629,28 +2629,29 @@ Die allgemeine Langrange-Gleichung heißt hier
 \end{align*}
 Mit den Zylinderkoordinaten, können wir die kartesischen Koordinaten wie folgt schreiben
 \begin{align*}
-	x &= r \cos \phi\\
-	y &= r \sin \phi\\
+	x &= \rho \cos \phi\\
+	y &= \rho \sin \phi\\
 	z &= z
 	\intertext{Und damit sind die Geschwindigkeiten}
-	\dot{x} &= \dot{r} \cos \phi - r \sin \phi\\
-	\dot{y} &= \dot{r} \sin \phi + r \cos \phi\\
+	\dot{x} &= \dot{\rho} \cos \phi - \rho \sin \phi\\
+	\dot{y} &= \dot{\rho} \sin \phi + \rho \cos \phi\\
 	\dot{z} &= \dot{z}
-	\intertext{Mit einfachem Einsetzen und quadrieren (oder einfach nur quadrieren der gegebenen Form von $\dot{r}$) findet man die Lagrangefunktion in den Zylinderkoordinaten}
-	L(r, \dot{r}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{r}^2 + r^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{r}
+	\intertext{Mit einfachem Einsetzen und quadrieren (oder einfach nur quadrieren der gegebenen Form von $\dot{\rho}$) findet man die Lagrangefunktion in den Zylinderkoordinaten}
+	L(r, \dot{\rho}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{r}
+	= \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{\sqrt{\rho^2 + z^2}}
 \end{align*}
 
 \paragraph{c)}
 Damit eine Koordinate $\tau$ zyklisch ist, muss gelten
 $$\ffpartial{L}{\tau} = 0$$
 Womit der $\tau$-Impuls auch konstant und damit erhalten ist.\\
-Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $z$ und $\phi$ abhängt. Oder formaler
-$$\ffpartial{L}{\phi} = 0 \qquad \ffpartial{L}{z} = 0$$
-Damit haben wir die Erhaltungsgrößen
+Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $\phi$ abhängt. Oder formaler
+$$\ffpartial{L}{\phi} = 0$$
+Damit haben wir die Erhaltungsgröße
 \begin{align*}
-	p_\phi &= \ffpartial{L}{\dot{\phi}} = m r^2 \dot{\phi} = \const\\
-	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const
-	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$}
+	p_\phi &= \ffpartial{L}{\dot{\phi}} = m r^2 \dot{\phi} = \const
+	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$ und $p_z$}
+	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const\\
 	p_r &= \ffpartial{L}{\dot r} = m \dot r
 \end{align*}
 
@@ -2659,15 +2660,17 @@ Allgemein ist die (Euler-)Langrange-Gleichung für einen Koordinatensatz $(\tau,
 $$\dd{t} \ffpartial{L}{\dot{\tau}} - \ffpartial{L}{\tau} = 0$$
 Nun können wir für jede der 3 Koordinaten die Langrange-Gleichung aufstellen, dabei behalten wir aber immer die Erkenntnisse aus \textbf{c)} im Hinterkopf um Rechenaufwand zu sparen.
 \begin{align*}
-	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \dot{r} \dot{\phi} + m r^2 \ddot{\phi} &
-	\Rightarrow 2 \dot{r} \dot{\phi} + r^2 \ddot{\phi} &\overset!= 0\\
-	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} &
-	\Rightarrow m \ddot{z} &\overset!= 0\\
-	\dd{t} \ffpartial{L}{\dot{r}} &= m \ddot{r}\\
-	\ffpartial{L}{r} &= m r \dot{\phi}^2 - \frac{\gamma}{r^2} &
-	\Rightarrow m\ddot{r} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0
+	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \dot{\rho} \dot{\phi} + m \rho^2 \ddot{\phi} &
+	\Rightarrow 2 \dot{\rho} \dot{\phi} + \rho^2 \ddot{\phi} &\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} & &
+	\\
+	\ffpartial{L}{z} &= - \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3} &
+	\Rightarrow m \ddot{z}  + \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3}&\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot{r}} &= m \ddot{\rho} && \\
+	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma}{\rho^2} &
+	\Rightarrow m\ddot{r} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0
 \end{align*}
-
+WARNUNG: ab hier macht die aufgabe wenig Sinn. Ab hier sind dies die Lösungen die noch mit der Verwirrung zwischen $r$ und $\rho$
 \paragraph{e)}
 Annahmen: $\dot{r} = 0$ und $\ddot{\phi} = 0$\\
 Aus der Annahme folgt offensichtlich auch $\ddot{r} = 0$, $r = \const$ und $\dot{\phi} = \const$
@@ -2713,11 +2716,14 @@ Wenn wir jetzt $l' = 2 l$ einsetzen
 	L &= T - V = \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) + (mz_1 + Mz_2) g\\
 	\intertext{mit $l = \pi R + z_1 + z_2 ~\Rightarrow~ z_2 = l - z_1 - \pi R$ und $\dot{z_2} = - \dot{z_1}$}
 	L &= \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1 - \pi R)
+	\intertext{da $R\ll l$}
+	  &\approx \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1)	
 \end{align*}
 
 \paragraph{c)}
-$$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
-
+%NEIN, Impulserhaltung gilt nicht
+%$$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
+Energieerhaltung?
 \paragraph{d)}
 \begin{align*}
 	\dd{t} \ffpartial{L}{\dot{z}} &= (m + M) \ddot{z_1}\\
