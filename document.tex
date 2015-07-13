@@ -2629,29 +2629,30 @@ Die allgemeine Langrange-Gleichung heißt hier
 \end{align*}
 Mit den Zylinderkoordinaten, können wir die kartesischen Koordinaten wie folgt schreiben
 \begin{align*}
-	x &= r \cos \phi\\
-	y &= r \sin \phi\\
+	x &= \rho \cos \phi\\
+	y &= \rho \sin \phi\\
 	z &= z
 	\intertext{Und damit sind die Geschwindigkeiten}
-	\dot{x} &= \dot{r} \cos \phi - r \sin \phi\\
-	\dot{y} &= \dot{r} \sin \phi + r \cos \phi\\
+	\dot{x} &= \dot{\rho} \cos \phi - \rho \sin \phi\\
+	\dot{y} &= \dot{\rho} \sin \phi + \rho \cos \phi\\
 	\dot{z} &= \dot{z}
 	\intertext{Mit einfachem Einsetzen und quadrieren (oder einfach nur quadrieren der gegebenen Form von $\dot{r}$) findet man die Lagrangefunktion in den Zylinderkoordinaten}
-	L(r, \dot{r}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{r}^2 + r^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{r}
+	L(r, \dot{r}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{r}^2 + r^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{\sqrt{\rho^2 + z^2}}
 \end{align*}
 
 \paragraph{c)}
 Damit eine Koordinate $\tau$ zyklisch ist, muss gelten
 $$\ffpartial{L}{\tau} = 0$$
 Womit der $\tau$-Impuls auch konstant und damit erhalten ist.\\
-Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $z$ und $\phi$ abhängt. Oder formaler
-$$\ffpartial{L}{\phi} = 0 \qquad \ffpartial{L}{z} = 0$$
+Wenn man sich die Langrange-Funktion ansieht, sieht man, dass sie nicht von $\phi$ abhängt. Oder formaler
+$$\ffpartial{L}{\phi} = 0$$
 Damit haben wir die Erhaltungsgrößen
 \begin{align*}
 	p_\phi &= \ffpartial{L}{\dot{\phi}} = m r^2 \dot{\phi} = \const\\
 	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const
 	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$}
-	p_r &= \ffpartial{L}{\dot r} = m \dot r
+	p_\rho &= \ffpartial{L}{\dot r} = m \dot \rho\\
+	p_z &= \ffpartial{L}{\dot z} = m \dot{z}
 \end{align*}
 
 \paragraph{d)}
@@ -2659,45 +2660,45 @@ Allgemein ist die (Euler-)Langrange-Gleichung für einen Koordinatensatz $(\tau,
 $$\dd{t} \ffpartial{L}{\dot{\tau}} - \ffpartial{L}{\tau} = 0$$
 Nun können wir für jede der 3 Koordinaten die Langrange-Gleichung aufstellen, dabei behalten wir aber immer die Erkenntnisse aus \textbf{c)} im Hinterkopf um Rechenaufwand zu sparen.
 \begin{align*}
-	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \dot{r} \dot{\phi} + m r^2 \ddot{\phi} &
-	\Rightarrow 2 \dot{r} \dot{\phi} + r^2 \ddot{\phi} &\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \dot{\rho} \dot{\phi} + m \rho^2 \ddot{\phi} &
+	\Rightarrow 2 \dot{\rho} \dot{\phi} + \rho^2 \ddot{\phi} &\overset!= 0\\
 	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} &
 	\Rightarrow m \ddot{z} &\overset!= 0\\
-	\dd{t} \ffpartial{L}{\dot{r}} &= m \ddot{r}\\
-	\ffpartial{L}{r} &= m r \dot{\phi}^2 - \frac{\gamma}{r^2} &
-	\Rightarrow m\ddot{r} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0
+	\dd{t} \ffpartial{L}{\dot{\rho}} &= m \ddot{\rho}\\
+	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma}{\rho^2} &
+	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0
 \end{align*}
 
 \paragraph{e)}
-Annahmen: $\dot{r} = 0$ und $\ddot{\phi} = 0$\\
-Aus der Annahme folgt offensichtlich auch $\ddot{r} = 0$, $r = \const$ und $\dot{\phi} = \const$
+Annahmen: $\dot{\rho} = 0$ und $\ddot{\phi} = 0$\\
+Aus der Annahme folgt offensichtlich auch $\ddot{\rho} = 0$, $\rho = \const$ und $\dot{\phi} = \const$
 \begin{align*}
-	m\ddot{r} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0\\
-	\xLeftrightarrow{\text{mit Annahme}} - m r \dot{\phi}^2 + \frac{\gamma}{r^2} &\overset!= 0\\
+	m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0\\
+	\xLeftrightarrow{\text{mit Annahme}} - m \rho \dot{\phi}^2 + \frac{\gamma}{\rho^2} &\overset!= 0\\
 	m r^3 \dot{\phi}^2 - \gamma &= 0\\
-    r &= \sqrt[3]{\frac{\gamma}{m {\dot{\phi}}^2}}
+    \rho &= \sqrt[3]{\frac{\gamma}{m {\dot{\phi}}^2}}
 \end{align*}
 
 \paragraph{f)}
 Erinnerung: $p_\phi = m \dot{\phi} = l$
 \begin{align*}
-	r(l) &= r(m \dot\phi) = \sqrt[3]{\frac{m \gamma}{l^2}} = \sqrt[3]{m \gamma} l^{-\frac23}
+	r(l) &= \rho(m \dot\phi) = \sqrt[3]{\frac{m \gamma}{l^2}} = \sqrt[3]{m \gamma} l^{-\frac23}
 \end{align*}
 Wenn wir jetzt $l' = 2 l$ einsetzen
 \begin{align*}
-	r' &= r(l') = \sqrt[3]{m \gamma} 2^{-\frac23}l^{-\frac23} = 2^{-\frac23} r(l)
+	\rho' &= \rho(l') = \sqrt[3]{m \gamma} 2^{-\frac23}l^{-\frac23} = 2^{-\frac23} r(l)
 \end{align*}
 
 \paragraph{g)}
 \begin{align*}
-	H &= \underbrace{m \dot{r}^2} + m \dot{\phi}^2 + m \dot{z}^2 - \frac12 m (\dot{r}^2 + r^2 \dot{\phi}^2 + \dot{z}^2) - \frac{\gamma}{r}\\
-	&= \frac12 m \dot{r}^2 + m \dot{\phi}^2 (1 - \frac{r^2}{2}) + \frac12 m \dot{z}^2 - \frac{\gamma}{r}\\
-	&= \frac12 \frac{p_r^2}{m} + \frac{p_\phi^2}{m} (\frac{1}{r^4} - \frac{1}{2 r^2}) + \frac12 \frac{p_z^2}{m} - \frac{\gamma}{r}
+	H &= \underbrace{m \dot{\rho}^2} + m \dot{\phi}^2 + m \dot{z}^2 - \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) - \frac{\gamma}{\rho}\\
+	&= \frac12 m \dot{\rho}^2 + m \dot{\phi}^2 (1 - \frac{\rho^2}{2}) + \frac12 m \dot{z}^2 - \frac{\gamma}{\rho}\\
+	&= \frac12 \frac{p_\rho^2}{m} + \frac{p_\phi^2}{m} (\frac{1}{\rho^4} - \frac{1}{2 \rho^2}) + \frac12 \frac{p_z^2}{m} - \frac{\gamma}{\rho}
 \end{align*}
 
 \paragraph{i)}
 \begin{align*}
-	\{p_z, H\} &= \frac1{2m} \underbrace{\{p_z, p_r^2\}}_{=0} + \underbrace{\{p_z, \frac{p_\phi^2}{m} (\frac{1}{r^4} - \frac{1}{2 r^2})\}}_{=0} + \frac1{2m} \underbrace{\{p_z, p_z^2\}}_{=0} - \underbrace{\{p_z, \frac{\gamma}{r}\}}_{=0}\\
+	\{p_z, H\} &= \frac1{2m} \underbrace{\{p_z, p_\rho^2\}}_{=0} + \underbrace{\{p_z, \frac{p_\phi^2}{m} (\frac{1}{\rho^4} - \frac{1}{2 \rho^2})\}}_{=0} + \frac1{2m} \underbrace{\{p_z, p_z^2\}}_{=0} - \underbrace{\{p_z, \frac{\gamma}{\rho}\}}_{=0}\\
 	&= 0
 \end{align*}
 
