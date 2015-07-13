@@ -2766,7 +2766,42 @@ Im folgenden gehen wir einfach wie im Hinweis skizziert vor.
 \end{align*}
 
 \subsection{Aufgabe) Rechteckpotential}
-Fehlt.
+Rechteckpotential, um $x_0$ zentriert, mit Breite $a$ und Höhe $V_0$. Teilchen hat Masse $m$.
+
+\paragraph{a)}
+$0 < E < V_0$. Teilchen nähert sich der Barriere von links.\\
+Schwingung links auf mittlerem Niveau \conseq $e^-x$ artige Kurve im Potential \conseq Schwingung mit anfänglicher Frequenz auf niedrigerem Niveau.
+
+\paragraph{b)}
+Allgemein ist die stationäre Schrödingergleichung
+\begin{align*}
+	\frac{\hbar^2}{2m}\frac{\partial^2 \psi(x)}{\partial x^2} +  V_n \psi(x) &= E \psi(x)
+	\intertext{diese kann man Umschreiben zu}
+	\frac{\hbar^2}{2m}\frac{\partial^2 \psi(x)}{\partial x^2} &= (E - V_n) \psi(x)
+	\intertext{Nun setzen wir für $\psi$ den Ansatz $\psi = e^{ikx}$ ein}
+	- \frac{\hbar^2}{2m} k^2 e^{ikx} &= (E - V_0) e^{ikx}\\
+	k &= \sqrt{2m \frac{E - V_0}{\hbar^2}}\\
+	\intertext{Da $E - V_0 < 0$, ziehen wir das Minus aus der Wurzel}
+	k &= i \underbrace{\sqrt{2m \frac{V_0 - E}{\hbar^2}}}_{\kappa}\\
+	\intertext{Nun setzen wir dies in den Ansatz ein}
+	e^{ikx} = e^{-\kappa x} = e^{- \sqrt{2m \frac{V_0 - E}{\hbar^2}} x}
+\end{align*}
+Das $\kappa \propto \sqrt{V}$, $\kappa \propto -\sqrt{E}$,  $\kappa \propto \sqrt{m}$ und $\kappa$ in keiner Beziehung zu $a$ steht, sollte offensichtlich sein.
+
+\paragraph{c)}
+Ansatz
+\begin{align*}
+	\psi &= \begin{cases}
+		A e^{ik_1x} + Be^{-ik_1x} & x < -\frac{a}{2}\\
+		C e^{ik_2 x} + De^{-ik_2 x} & -\frac{a}{2} \leq x \leq \frac{a}{2}\\
+		E e^{ik_1x} + F e^{-ik_1x} & x > \frac{a}{2}
+	\end{cases}
+	\intertext{Wie im Aufgabenteil \textit{b)} finden wir $k_1$ und $k_2$. Nur das diesmal $E - V_0 > 0$ und damit kein Vorzeichen herausgezogen werden muss.}
+	k_1 &= \sqrt{2m \frac{E - \underbrace{V}_{= 0}}{\hbar^2}}\\
+	k_2 &= \sqrt{2m \frac{E - V_0}{\hbar^2}}
+	\intertext{Da $A e^{ikx} + Be^{-ikx} \propto \sin(k x)$ können wir folgern, dass bei größeren $k$ die Wellenlänge kleiner ist. Offensichtlich ist $k_2 < k_1$, somit ist auch die Wellenlänge im mittleren Bereich größer und in den beiden äußeren Bereichen kleiner.}
+\end{align*}
+
 \subsection{Aufgabe) Rechteckpotential}
 Fehlt.
 
