@@ -2803,7 +2803,31 @@ Ansatz
 \end{align*}
 
 \subsection{Aufgabe) Rechteckpotential}
-Fehlt.
+Ein Potentialtopf um $0$ zentriert, mit der Breite $a$ und dem Potential $V_0 < E < 0$.
+
+\paragraph{a)}
+Im klassisch verbotenen Bereich, ist es eine jeweils abfallende $e$-Funktion. Im mittleren Bereich zeichnet man eine um $0$ zentrierte $\cos$-Funktion mit der Wellenlänge $a$. Hierbei zu beachten ist, dass $E < 0$.
+$$\begin{cases}
+	A e^{\kappa x} = A e^{- i^2 \sqrt{\frac{2m}{\hbar^2} (-E)}} & x < -\frac{a}{2}\\
+	A e^{-\kappa x} = A e^{- (- i^2) \sqrt{\frac{2m}{\hbar^2} (-E)}} & x > \frac{a}{2}\\
+	B e^{i k x} + C e^{-ikx} & \text{sonst}
+\end{cases}$$
+Wobei $k \sqrt{\frac{2m}{\hbar^2} \underbrace{(E - V_0)}_{> 0}}$.
+
+\paragraph{c)}
+$E > 0$. Wir erinnern uns an die vorherige Aufgabe. Offensichtlich hat die Wellenfunktion folgende Struktur:
+\begin{align*}
+\psi &= \begin{cases}
+A e^{ik_1x} + Be^{-ik_1x} & x < -\frac{a}{2}\\
+C e^{ik_2 x} + De^{-ik_2 x} & -\frac{a}{2} \leq x \leq \frac{a}{2}\\
+E e^{ik_1x} + F e^{-ik_1x} & x > \frac{a}{2}
+\end{cases}
+\intertext{$k_1$ und $k_2$ findet man wie gewohnt}
+k_1 &= \sqrt{2m \frac{E - \underbrace{V}_{= 0}}{\hbar^2}}\\
+k_2 &= \sqrt{2m \frac{E - \underbrace{V}_{< 0}}{\hbar^2}}\\
+\Rightarrow k_1 < k_2
+\intertext{Damit gilt mit der Begründung von der letzten Aufgabe, dass die Wellenlänge im mittleren Bereich kleiner, als jene in den äußeren Bereichen ist.}
+\end{align*} 
 
 \subsection{Aufgabe) Hilbertraumvektoren}
 $$ \hat{S}_x = \frac{\hbar}{2} \begin{pmatrix}
