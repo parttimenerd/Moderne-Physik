@@ -84,6 +84,7 @@
 \newcommand{\celectron}{\circled{$e^-$}}
 
 \DeclareSIUnit\year{a}
+\DeclareSIUnit{\lightyear}{Lj}
 
 \makeatletter
 %\@removefromreset{section}{chapter}
@@ -1280,7 +1281,7 @@ Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Mich
 
 Mehr Informationen, wie auch eine Aufbauskizze, finden sich in der \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}.
 
-\paragraph{Idee} Wir betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = 30 \mathrm{km}\mathrm{s}^{-1}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich ausbreitet? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
+\paragraph{Idee} Wir betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = \SI{30}{\km\per\s}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich ausbreitet? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
 
 \paragraph{Aufbau}
 Grob zusammen gefasst, läuft das Licht, mit Wellenlänge $\lambda$, über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. Für eine konstruktive Interferenz der beiden resultierenden Lichtstrahlen muss die Wegdifferenz $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ sein.
@@ -1293,8 +1294,8 @@ Wie muss der Apparat verstellt werden, wenn er gedreht wurde?
 $$S = \delta' - \delta = 2(l_1 + l_2) \left(\frac{1}{1-\frac{v^2}{c^2}} - \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
 Angenommen  $v \ll c$ und damit $\frac{v}{c} \ll 1$, dann gilt
 $$S \approxeq 2 (l_1 + l_2) \left(1 + \frac{v^2}{c^2} - (1 + \frac{1}{2} \frac{v^2}{c^2}) + \dots\right) = (l_1 + l_2) \frac{v^2}{c^2}$$
-Bei sichtbarem Licht mit $\lambda \approx 500 \mathrm{nm}$ und der Lichtgeschwindigkeit $c = \SI{3e8}{\meter\per\second}$ müsste $l_1 + l_2 \approxeq 50 \mathrm{m}$ gelten, um eine Verschiebung um 1 Interferenzmaximum messen zu können.
-Im Michelson-Morley-Experiment waren es ungefähr $10 \mathrm{m}$ mit Vielfachreflexionen, weswegen es sensitiv genug gewesen wäre. Aber es wurde trotzdem \textbf{kein Effekt gemessen!} Genauso wie in vielen nachfolgenden gleichartigen Experimenten.
+Bei sichtbarem Licht mit $\lambda \approx \SI{500}{\nm}$ und der Lichtgeschwindigkeit $c = \SI{3e8}{\meter\per\second}$ müsste $l_1 + l_2 \approxeq \SI{50}{\m}$ gelten, um eine Verschiebung um 1 Interferenzmaximum messen zu können.
+Im Michelson-Morley-Experiment waren es ungefähr $\SI{10}{\m}$ mit Vielfachreflexionen, weswegen es sensitiv genug gewesen wäre. Aber es wurde trotzdem \textbf{kein Effekt gemessen!} Genauso wie in vielen nachfolgenden gleichartigen Experimenten.
 
 \begin{folgerung*}
 	Die Lichtgeschwindigkeit ist überall, d.h. in jedem Bezugssystem, gleich.
@@ -2738,16 +2739,16 @@ Damit bewegt sich die Masse $m$ beschleunigt nach oben.
 
 \section{Spezielle Relativitätstheorie}
 \subsection{Relativistisches Dinosaurierei}
-$v = 0.9c$. $t' = 30 \mathrm{Jahre}$ (im Bezugssystems der Rakete).
+$v = 0.9c$. $t' = \SI{30}{\year}$ (im Bezugssystems der Rakete).
 
 \paragraph{a)}
 "`Bewegte Uhren gehen langsamer"'
-$$t = \gamma t' = \frac{1}{\sqrt{1 - \frac{9^2}{10^2}}} t' = \frac{10}{\sqrt{19}} \cdot 30 \mathrm{Jahre} \approx 68.82 \mathrm{Jahre}$$
+$$t = \gamma t' = \frac{1}{\sqrt{1 - \frac{9^2}{10^2}}} t' = \frac{10}{\sqrt{19}} \cdot \SI{30}{\year} \approx \SI{68.82}{\year}$$
 
-$$s = vt \approx 61,94 \mathrm{Lichtjahre}$$
+$$s = vt \approx \SI{61,94}{\lightyear}$$
 
 \paragraph{b)}
-$$l = \frac{l'}{\gamma} = \frac{\sqrt{19}}{10} \cdot 15 \mathrm{cm} \approx  6.54 \mathrm{cm}$$
+$$l = \frac{l'}{\gamma} = \frac{\sqrt{19}}{10} \cdot \SI{15}{\cm} \approx  \SI{6.54}{\cm}$$
 
 \paragraph{c)}
 $$t = \gamma t' ~ \Rightarrow ~ \frac{t}{t'} = \gamma ~ \Rightarrow ~ v = \sqrt{1 - 10^{-12}} \cdot c$$
