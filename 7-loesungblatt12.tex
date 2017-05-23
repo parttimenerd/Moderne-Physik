@@ -1,0 +1,258 @@
+\chapter{Lösungen zu Blatt 12}
+Das folgende sind meine Lösungen des Blattes 12. Über Fehlerkorrekturen oder Ergänzungen freue ich mich natürlich, denn ich habe die Aufgaben nur nach bestem Wissen beantwortet.
+
+\section{Mechanik}
+\todo{$r \to \rho$}
+\subsection{Aufgabe) Teilchen im Zentralpotential}
+Masse $m$, $r = |\tilde{r}|$, Potential $V(r) = - \frac{\gamma}{r}$
+\paragraph{a)}
+Die allgemeine Langrange-Gleichung heißt hier
+\begin{align*}
+	L(\tilde{r}, \dot{\tilde{r}}) &= \frac12 m \dot{\tilde{r}}^2 - V(r) \overset{V(r) = - \frac{\gamma}{r}}{=} \frac12 m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) + \frac{\gamma}{r}
+\end{align*}
+Mit den Zylinderkoordinaten, können wir die kartesischen Koordinaten wie folgt schreiben
+\begin{align*}
+	x &= \rho \cos \phi\\
+	y &= \rho \sin \phi\\
+	z &= z
+	\intertext{Und damit sind die Geschwindigkeiten}
+	\dot{x} &= \dot{\rho} \cos \phi - \rho \sin \phi\\
+	\dot{y} &= \dot{\rho} \sin \phi + \rho \cos \phi\\
+	\dot{z} &= \dot{z}
+	\intertext{Mit einfachem Einsetzen und quadrieren (oder einfach nur quadrieren der gegebenen Form von $\dot{\rho}$) findet man die Lagrangefunktion in den Zylinderkoordinaten}
+	L(\rho, \dot{\rho}, \phi, \dot{\phi}, z, \dot{z}) &= \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{r}
+	= \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) + \frac{\gamma}{\sqrt{\rho^2 + z^2}}
+\end{align*}
+
+\paragraph{c)}
+Damit eine Koordinate $\tau$ zyklisch ist, muss gelten
+$$\ffpartial{L}{\tau} = 0$$
+Womit der $\tau$-Impuls auch konstant und damit erhalten ist.\\
+Wenn man sich die Lagrange-Funktion ansieht, sieht man, dass sie nicht von $\phi$ abhängt. Oder formaler
+$$\ffpartial{L}{\phi} = 0$$
+Damit haben wir die Erhaltungsgröße
+\begin{align*}
+	p_\phi &= \ffpartial{L}{\dot{\phi}} = m \rho^2 \dot{\phi} = \const
+	\intertext{Und weil es hilfreich für später ist, berechnen wir auch noch $p_r$ und $p_z$}
+	p_z &= \ffpartial{L}{\dot{z}} = m \dot{z} = \const\\
+	p_\rho &= \ffpartial{L}{\dot \rho} = m \dot \rho
+\end{align*}
+
+\paragraph{d)}
+Allgemein ist die (Euler-)Lagrange-Gleichung für einen Koordinatensatz $(\tau, \dot{\tau})$
+$$\dd{t} \ffpartial{L}{\dot{\tau}} - \ffpartial{L}{\tau} = 0$$
+Nun können wir für jede der 3 Koordinaten die Lagrange-Gleichung aufstellen, dabei behalten wir aber immer die Erkenntnisse aus \textbf{c)} im Hinterkopf um Rechenaufwand zu sparen.
+\begin{align*}
+	\dd{t} \ffpartial{L}{\dot\phi} &= 2 m \rho \dot{\rho} \dot{\phi} + m \rho^2 \ddot{\phi} &
+	\Rightarrow 2 \rho \dot{\rho} \dot{\phi} + \rho^2 \ddot{\phi} &\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot z} &= m \ddot{z} & &
+	\\
+	\ffpartial{L}{z} &= - \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3} &
+	\Rightarrow m \ddot{z}  + \frac{\gamma z}{\sqrt{\rho^2 + z^2}^3}&\overset!= 0\\
+	\dd{t} \ffpartial{L}{\dot{\rho}} &= m \ddot{\rho} && \\
+	\ffpartial{L}{\rho} &= m \rho \dot{\phi}^2 - \frac{\gamma \rho}{\sqrt{\rho^2+z^2}^3} &
+	\Rightarrow m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma \rho}{\sqrt{\rho^2+z^2}^3} &\overset!= 0
+\end{align*}
+\paragraph{e)}
+Annahmen: $z=0$, $\dot{\rho} = 0$ und $\ddot{\phi} = 0$\\
+Aus der Annahme folgt offensichtlich auch $\dot{z} = 0, \ddot{z} = 0, \ddot{\rho} = 0$, $\rho = \const$ und $\dot{\phi} = \const$
+\begin{align*}
+	 m\ddot{\rho} - m \rho \dot{\phi}^2 + \frac{\gamma \rho}{\sqrt{\rho^2+z^2}^3} &\overset!= 0 \\
+	\xLeftrightarrow{\text{mit Annahme}} \frac{\gamma \rho}{\rho^3} &\overset!= m \rho \dot{\phi}^2 \\
+	\Leftrightarrow \gamma &\overset!= m \rho^3 \dot{\phi}^2 \\
+	\Leftrightarrow m \rho \gamma &\overset!= m^2 \rho^4 \dot{\phi}^2
+\end{align*}
+
+\paragraph{f)}
+Erinnerung: $p_\phi = m \rho^2 \dot{\phi} = l$
+\begin{align*}
+	\rho(l) &= \rho(m \rho^2 \dot\phi) = \frac{l^2}{\gamma m}
+\end{align*}
+Wenn wir jetzt $l' = 2 l$ einsetzen
+\begin{align*}
+	\rho' &= \rho(l') = \frac{4 l^2}{\gamma m} = 4 \rho(l)
+\end{align*}
+\paragraph{g)}
+\begin{align*}
+	H &= \underbrace{m \dot{\rho}^2} + m \rho^2\dot{\phi}^2 + m \dot{z}^2 - \frac12 m (\dot{\rho}^2 + \rho^2 \dot{\phi}^2 + \dot{z}^2) - \frac{\gamma}{\sqrt{\rho^2+z^2}}\\
+	&= \frac12 m \dot{\rho}^2 + m \dot{\phi}^2 (\rho^2 - \frac{\rho^2}{2}) + \frac12 m \dot{z}^2 - \frac{\gamma}{\sqrt{\rho^2+z^2}}\\
+	&= \frac12 \frac{p_\rho^2}{m} + \frac{p_\phi^2}{2 m\rho^2} + \frac12 \frac{p_z^2}{m} - \frac{\gamma}{\sqrt{\rho^2+z^2}}
+\end{align*}
+
+\paragraph{i)}
+\begin{align*}
+	\{p_z, H\} &= \frac1{2m} \underbrace{\{p_z, p_\rho^2\}}_{=0} + \underbrace{\{p_z, \frac{p_\phi^2}{2 m\rho^2}\}}_{=0} + \frac1{2m} \underbrace{\{p_z, p_z^2\}}_{=0} - \underbrace{\{p_z, \frac{\gamma}{\rho}\}}_{=0}\\
+	&= 0
+\end{align*}
+
+
+\subsection{Aufgabe) Lagrangegleichungen \& Erhaltungssätze}
+\paragraph{a)}
+\begin{align*}
+	V &= - (mz_1 + Mz_2) g\\
+	T &= \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) 
+\end{align*}
+\paragraph{b)}
+\begin{align*}
+	L &= T - V = \frac12 (m \dot{z_1}^2 + M \dot{z_2}^2) + (mz_1 + Mz_2) g\\
+	\intertext{mit $l = \pi R + z_1 + z_2 ~\Rightarrow~ z_2 = l - z_1 - \pi R$ und $\dot{z_2} = - \dot{z_1}$}
+	L &= \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1 - \pi R)
+	\intertext{da $R\ll l$}
+	  &\approx \frac12 (m + M) \dot{z_1}^2 + mg z_1 + Mg (l - z_1)	
+\end{align*}
+
+\paragraph{c)}
+%NEIN, Impulserhaltung gilt nicht
+%$$p_m + p_M = 0 \qquad \Rightarrow \qquad m z_1 + M z_2 = \const$$
+Energieerhaltung?
+\paragraph{d)}
+\begin{align*}
+	\dd{t} \ffpartial{L}{\dot{z}} &= (m + M) \ddot{z_1}\\
+	\ffpartial{L}{z_1} &= (m - M) g\\
+	\Rightarrow  (m + M) \ddot{z_1} - (m - M) g &\overset!= 0\\
+	\Rightarrow \ddot{z_1} = \frac{m - M}{m + M} g
+\end{align*}
+Da laut Aufgabenstellung gilt $m < M$, gilt, dass die Masse $m$ sich beschleunigt von der Erde nach oben entfernt, dass also die Masse $M$ immer schneller zum Boden hin fällt. Die Beschleunigung der Masse ist mit $z_1 = l - \pi R - z_2$ und damit $z_2 \sim -z_1$:
+$$\ddot{z_2} = -\frac{m - M}{m + M} g$$
+
+\paragraph{e)}
+$$z_1(t) = z_0 + v_0 t + \frac12 \frac{m - M}{m + M} g t^2$$
+Damit bewegt sich die Masse $m$ beschleunigt nach oben.
+
+\section{Spezielle Relativitätstheorie}
+\subsection{Relativistisches Dinosaurierei}
+$v = 0.9c$. $t' = \SI{30}{\year}$ (im Bezugssystems der Rakete).
+
+\paragraph{a)}
+"`Bewegte Uhren gehen langsamer"'
+$$t = \gamma t' = \frac{1}{\sqrt{1 - \frac{9^2}{10^2}}} t' = \frac{10}{\sqrt{19}} \cdot \SI{30}{\year} \approx \SI{68.82}{\year}$$
+
+$$s = vt \approx \SI{61,94}{\lightyear}$$
+
+\paragraph{b)}
+$$l = \frac{l'}{\gamma} = \frac{\sqrt{19}}{10} \cdot \SI{15}{\cm} \approx  \SI{6.54}{\cm}$$
+
+\paragraph{c)}
+$$t = \gamma t' ~ \Rightarrow ~ \frac{t}{t'} = \gamma ~ \Rightarrow ~ v = \sqrt{1 - 10^{-12}} \cdot c$$
+
+\subsection{Geschwindigkeitsaddition}
+Einfaches Ausrechnen, wie bei einem der Übungsblätter.
+
+\section{Quantenmechanik}
+
+\subsection{Aufgabe) Zerfließendes Wellenpaket}
+$m = \SI{1e-3}{\kilogram}$, $t = 0 \leadsto \Delta x = \SI{e-10}{\meter}$
+Im folgenden gehen wir einfach wie im Hinweis skizziert vor.
+\begin{align*}
+	\Delta x(t) &= \sqrt{a (1 + (\Delta t)^2} = \sqrt{a (1 + (\frac{\hbar t}{2ma})^2)}
+	\intertext{Zuerst berechnen wir $a$}
+	\Delta x(t) &= \sqrt{a} \overset{!}{=} \SI{e-10}{\meter}\\
+	\Rightarrow a &= \SI{e-20}{\meter}
+	\intertext{Nun formen wir das Ganze nach $t$ um undc erhalten}
+	t &= 2 m a \frac1\hbar \sqrt{\frac{(\Delta x(t))^2}{a} - 1}
+	\intertext{Sei nun (wie im Hinweis) $\Delta x = \SI{2e-10}{\meter}$, dann gilt}
+	t &= 2 m a \frac1\hbar \sqrt{\frac{(\SI{2e-10}{\meter})^2}{\SI{e-20}{\meter}} - 1} = 2 m a \frac1\hbar \sqrt{4 - 1} = \frac{3ma}{\hbar}
+	\intertext{Ein $\alpha$-Teilchen braucht für das Zerfließen des Wellenpakets offensichtlich viel kürzer, da $m = \SI{e-3}{\kilogram} \ll m_\alpha = \SI{4e-27}{\kilogram}$}
+\end{align*}
+
+\subsection{Aufgabe) Rechteckpotential}
+Rechteckpotential, um $x_0$ zentriert, mit Breite $a$ und Höhe $V_0$. Teilchen hat Masse $m$.
+
+\paragraph{a)}
+$0 < E < V_0$. Teilchen nähert sich der Barriere von links.\\
+Schwingung links auf mittlerem Niveau \conseq $e^{-x}$ artige Kurve im Potential \conseq Schwingung mit anfänglicher Frequenz auf niedrigerem Niveau.
+
+\paragraph{b)}
+Allgemein ist die stationäre Schrödingergleichung
+\begin{align*}
+	\frac{\hbar^2}{2m}\frac{\partial^2 \psi(x)}{\partial x^2} +  V_n \psi(x) &= E \psi(x)
+	\intertext{diese kann man Umschreiben zu}
+	\frac{\partial^2 \psi(x)}{\partial x^2} &= \underbrace{\frac{2m}{\hbar^2} (E - V_n)}_{= k^2} \psi(x)
+	\intertext{Da $E - V_0 < 0$, ziehen wir das Minus aus der Wurzel}
+	k &= i \underbrace{\sqrt{2m \frac{V_0 - E}{\hbar^2}}}_{\kappa}\\
+	\intertext{Nun setzen wir dies in den Ansatz ein}
+	e^{ikx} = e^{-\kappa x} = e^{- \sqrt{2m \frac{V_0 - E}{\hbar^2}} x}
+\end{align*}
+Das $\kappa \propto \sqrt{V}$, $\kappa \propto -\sqrt{E}$,  $\kappa \propto \sqrt{m}$ und $\kappa$ in keiner Beziehung zu $a$ steht, sollte offensichtlich sein.
+
+\paragraph{c)}
+Ansatz
+\begin{align*}
+	\psi &= \begin{cases}
+		A e^{ik_1x} + Be^{-ik_1x} & x < -\frac{a}{2}\\
+		C e^{ik_2 x} + De^{-ik_2 x} & -\frac{a}{2} \leq x \leq \frac{a}{2}\\
+		E e^{ik_1x} + F e^{-ik_1x} & x > \frac{a}{2}
+	\end{cases}
+	\intertext{Wie im Aufgabenteil \textit{b)} finden wir $k_1$ und $k_2$. Nur das diesmal $E - V_0 > 0$ und damit kein Vorzeichen herausgezogen werden muss.}
+	k_1 &= \sqrt{2m \frac{E - \underbrace{V}_{= 0}}{\hbar^2}}\\
+	k_2 &= \sqrt{2m \frac{E - V_0}{\hbar^2}}
+	\intertext{Da $A e^{ikx} + Be^{-ikx} \propto \sin(k x)$ können wir folgern, dass bei größeren $k$ die Wellenlänge kleiner ist. Offensichtlich ist $k_2 < k_1$, somit ist auch die Wellenlänge im mittleren Bereich größer und in den beiden äußeren Bereichen kleiner.}
+\end{align*}
+
+\subsection{Aufgabe) Rechteckpotential}
+Ein Potentialtopf um $0$ zentriert, mit der Breite $a$ und dem Potential $V_0 < E < 0$.
+
+\paragraph{a)}
+Im klassisch verbotenen Bereich, ist es eine jeweils abfallende $e$-Funktion. Im mittleren Bereich zeichnet man eine um $0$ zentrierte $\cos$-Funktion mit der Wellenlänge $a$. Hierbei zu beachten ist, dass $E < 0$.
+$$\begin{cases}
+	A e^{\kappa x} = A e^{- i^2 \sqrt{\frac{2m}{\hbar^2} (-E)}} & x < -\frac{a}{2}\\
+	A e^{-\kappa x} = A e^{- (- i^2) \sqrt{\frac{2m}{\hbar^2} (-E)}} & x > \frac{a}{2}\\
+	B e^{i k x} + C e^{-ikx} & \text{sonst}
+\end{cases}$$
+Wobei $k = \sqrt{\frac{2m}{\hbar^2} \underbrace{(E - V_0)}_{> 0}}$.
+
+\paragraph{c)}
+$E > 0$. Wir erinnern uns an die vorherige Aufgabe. Offensichtlich hat die Wellenfunktion folgende Struktur:
+\begin{align*}
+\psi &= \begin{cases}
+A e^{ik_1x} + Be^{-ik_1x} & x < -\frac{a}{2}\\
+C e^{ik_2 x} + De^{-ik_2 x} & -\frac{a}{2} \leq x \leq \frac{a}{2}\\
+E e^{ik_1x} + F e^{-ik_1x} & x > \frac{a}{2}
+\end{cases}
+\intertext{$k_1$ und $k_2$ findet man wie gewohnt}
+k_1 &= \sqrt{2m \frac{E - \underbrace{V}_{= 0}}{\hbar^2}}\\
+k_2 &= \sqrt{2m \frac{E - \underbrace{V}_{< 0}}{\hbar^2}}\\
+\Rightarrow k_1 < k_2
+\intertext{Damit gilt mit der Begründung von der letzten Aufgabe, dass die Wellenlänge im mittleren Bereich kleiner, als jene in den äußeren Bereichen ist.}
+\end{align*} 
+
+\subsection{Aufgabe) Hilbertraumvektoren}
+$$ \hat{S}_x = \frac{\hbar}{2} \begin{pmatrix}
+0 & 1\\ 1 & 0
+\end{pmatrix}$$
+\paragraph{a)}
+Zuerst berechnen wir den Normierungsvektor $N$ über die Wahrscheinlichkeitsbetrachtung der Eigenvektoren, für die gelten muss $\braket{x | x} = 1$:
+\begin{align*}
+	\braket{U_x | U_x} = N^2 \binom{1}{1}^\top \binom{1}{1} = N^2 \cdot 2 \qquad \Rightarrow \qquad N = \frac{1}{\sqrt{2}}
+\end{align*}
+Nun berechnen wir noch die beiden Eigenwerte. Für diese gilt nach Definition $\hat{S}_x \ket{x} = \lambda \ket{x}$. Konkret gilt
+\begin{align*}
+	\hat{S}_x \ket{U_x} &= \frac{\hbar}{2} N \binom{1}{1} \overset{!}{=} \lambda_{U_x} N \ket{U_x}\\
+	\Rightarrow \lambda_{U_x} = \frac{\hbar}{2}\\
+	\hat{S}_x \ket{D_x} &= \frac{\hbar}{2} N \binom{-1}{1} \overset{!}{=} \lambda_{D_x} N \binom{1}{-1} = \lambda_{D_x} N \ket{U_x}\\
+	\Rightarrow \lambda_{U_x} = -\frac{\hbar}{2}
+\end{align*}
+
+\paragraph{b)} Betrachteter Vektor: $\ket{\psi} = N_\psi \binom{1 + \sqrt{3}}{1- \sqrt{3}}$
+\begin{align*}
+	\text{Normierung: ~} \braket{\psi | \psi} = N_\psi^2 ((1 + \sqrt{3})^3 + (1 - \sqrt{3})^2) = N_\psi^2 \cdot 8 \qquad \Rightarrow \qquad N_\psi = \frac{1}{\sqrt{8}}
+\end{align*}
+Man sieht auf den ersten Blick, dass $\ket{\psi}$ auch wie folgt geschrieben werden kann (Achtung mit den Normierungsfaktoren):
+$$\underbrace{\frac{\sqrt{2}}{\sqrt{8}}}_{= \frac{1}{2}} (\ket{U_x} + \sqrt{3} \ket{D_x})$$
+
+\paragraph{c)}
+Da schon alles wichtige in der Aufgabenstellung angegeben ist, kann man einfach ausrechnen und findet dann
+$$P_U = \frac{1}{4} \qquad P_D = \frac34$$
+Anmerkung: Umbedingt immer die Wahrscheinlichkeiten addieren, addieren sich diese nicht zu 1 auf, ist was falsch.
+
+\paragraph{d)}
+Das zu zeigen ist durch einfaches Ausrechnen möglich:
+\begin{align*}
+	\hat{S}_x^2 = \frac{\hbar}{2} \begin{pmatrix}
+	0 & 1\\ 1 & 0
+	\end{pmatrix} \cdot \frac{\hbar}{2} \begin{pmatrix}
+	0 & 1\\ 1 & 0
+	\end{pmatrix} = \frac{\hbar^2}{4} \begin{pmatrix}
+	1 & 0\\ 0 & 1
+	\end{pmatrix} 
+\end{align*}

@@ -1,0 +1,821 @@
+\chapter{Quantenmechanik}
+\section{historische Experimente und Widersprüche}
+\subsection{Hohlraumstrahlung} Die Hohlraumstrahlung ist auch als Wärmestrahlung oder Schwarzkörperstrahlung bekannt. Sie wird von einem idealisierten Raum, dessen Wände die Temperatur $T$ haben, im Gleichgewicht ständig von den Wänden gleichermaßen emittiert und absorbiert. Der Raum/Körper hat keine besonderen Eigenschaften (d.h. er ist schwarz). Man beobachtet die Strahlung durch ein kleines Loch in einer der Raumwände. Es geht nun darum, eine Erklärung des beobachteten Spektrums $\ddd{E}{\nu} = w_\nu$ ($\nu$ Frequenz des Lichts) = "`Verteilung von Frequenzen $\nu$ des Lichts"' zu finden. Die Abhängigkeit derselben von der Temperatur bereitetet dabei viele Probleme.
+
+\subsection{Folgerungen aus der klassischen Thermodynamik}
+\begin{folgerung*}[Kirchhoff]
+	Mithilfe der klassischen Thermodynamik folgerte Kirchhoff, dass die Frequenzverteilungsfunktion folgende Gestalt hat
+	$$w_\nu = f(\nu, T)$$
+	$f(\nu, T)$ ist dabei eine universelle Funktion, welche unabhängig von z.B. den Wänden ist.
+\end{folgerung*}
+
+\begin{folgerung*}[Wiensches Gesetz]
+Wien postulierte die folgende Gestalt für $f$
+$$f(\nu, T) = \nu^3 g(\frac{\nu}{T})$$
+\end{folgerung*}
+
+\begin{folgerung*}[Stefan-Boltzmann-Gesetz]
+Der Energiegehalt des Spektrums ist
+\begin{align*}
+	w(T) =\int_{0}^{\infty} w_\nu \d v &= W = \int_0^\infty \nu^3 g(\frac{\nu}{T}) \d v\\
+	&= T^4 \int_0^\infty x^3 g(x) \d x = \alpha T^4 \text{\qquad Stefan-Boltzmann-Gesetz}
+\end{align*}
+\end{folgerung*}
+
+\begin{folgerung*}[Rayleigh-Jeans-Gesetz]
+Das Maximum der Energieverteilung  ist
+\begin{align*}
+\frac{\nu_\text{max}}{T} &= \const\\
+\rightarrow \lambda_\text{max} \cdot \nu_\text{max} &= c\\
+\rightarrow \lambda_\text{max} \cdot T &= \const
+\end{align*}
+Daraus folgt, dass mit steigender Temperatur, die Wellenlänge sinkt (und die Frequenz steigt). Also strahlt ein Körper nach diesem Modell bei steigender Temperatur zuerst schwarzes (also gar nicht), dann rotes und bei sehr hoher Temperatur weißes Licht aus.\\
+Jetzt es an die Berechnung der im Versuch erwartbaren Werte von $g(\frac{\nu}{T})$, mit Hilfe der klassischen Physik.
+\paragraph{Annahme} Im Hohlraum bilden sich stehende Wellen aus. Im sich einstellenden thermodynamischen Gleichgewicht entfallen auf jeden Freiheitsgrad $\frac12 k_B T$ an Energie, hierbei ist $k_B$ die Boltzmann-Konstante. Wir zählen jetzt die stehenden Wellen im Hohlraum um damit auf eine bessere Form von $g$ zu kommen:\\
+Der Hohlraum ist ein Würfel mit Kantenlänge $a$. Also gilt für jede Richtung, dass jede stehende Welle in dieser Richtung $\frac{\lambda}{2}\cdot n = a \cos \alpha$ mit $n = 0, 1, 2, 3, \dots$ erfüllen muss. Das Gleiche natürlich auch für die $y$ und $z$-Richtung, womit wir $n_1, n_2, n_3 = 0, 1, \dots$ bekommen mit:
+\begin{align*}
+n_1 &= \frac{2 a \cos \alpha_1}{\lambda} & n_2 &= \frac{2 a \cos \alpha_2}{\lambda} & n_3 &= \frac{2 a \cos \alpha_3}{\lambda}
+\end{align*}
+\begin{align*}
+\vec{u} &= (\cos \alpha_1, \cos \alpha_2, \cos \alpha_3) & u^2 &= 1\\
+\Rightarrow n_1^2 + n_2^2 + n_3^2 = (\frac{2a}{\lambda})^2 = (\frac{2 a \nu}{c})^2
+\end{align*}
+
+Daraus folgern wir, dass $\nu = \frac{c}{2a} \sqrt{n_1^2 + n_2^2 + n_3^2}$ erlaubte Frequenzen für stehende Wellen im Hohlraum sind.\\
+Der Frequenzraum ist ein kubisches Gitter mit der Kantenlänge $\frac{c}{2a}$. Wir zählen alle Frequenzen zwischen  zwischen 0 und $\nu$\\
+$\frac{\text{"'Kugel mit Radius"'~}\nu}{\text{Volumen / Punkt}}$ =
+$N(\nu) = \frac{\overbrace{\frac18}^
+	\text{Nur der Oktant mit positiven Koordinaten} 
+	\frac{4\pi}{3}\nu^3
+	}{(\frac{c}{2a})^3} = \frac{1}{8} \frac{4\pi}{3}
+ (\frac{2a}{c}\nu)^3$\\
+$\d N(\nu) = 4 \pi a^3 \frac{\nu^2}{c^3} \d \nu$ Deswegen ist die Anzahl der Frequenzen zwischen $\nu$ und $\nu + \d \nu$. Die spektrale Dichte der Zustände mit $\frac12 k_B \cdot \underbrace{2}_{\text{E + B - Feld}} \cdot \underbrace{2}_{\text{Polarisierungen}} = 2 k_B T$ ist:
+Energie / Volumen $a^3$
+\begin{align*}
+	W_\nu \d \nu &= 8 \pi \frac{\nu^2}{c^3} k_B T \d \nu\\
+	&= 8 \pi \frac{\nu^3}{c^3} k_B \frac{T}{\nu} \d \nu\\
+	\rightarrow g(\frac{\nu}{T}) &= 8 \pi \frac{k_B}{c^3} \frac{T}{\nu}
+\end{align*}
+Die letzte Zeile wird auch als Rayleigh-Jeans-Gesetz bezeichnet.
+\begin{center}
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$\frac{T}{\nu}$, xtick=\empty, ytick=\empty, ymin = 0, xmin=0]
+	\addplot[red, samples=50,domain=0:3*pi]{1 / x};
+	\end{axis}
+	\end{tikzpicture}
+\end{center}
+\end{folgerung*}
+Ein alternatives phänomenologisches\footnote{Sprich: Wurde durch scharfes Hinsehen gefunden.} Gesetz (Wien)
+$$g(\frac{\nu}{T}) = a e^{- b \frac{\nu}{T}}$$
+Qualitativ, sieht die Formel wie folgt aus.
+\begin{center}
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$e^{-\frac{\nu}{T}}$, xtick=\empty, ytick=\empty, ymin = 0, xmin=0]
+	\addplot[red, samples=50,domain=0:3*pi]{e^(-x)};
+	\end{axis}
+	\end{tikzpicture}
+\end{center}~\\
+Wir suchen nun eine möglichst gute Interpolation der Daten.\\
+Da die Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ ist, kommt (mit dem Rayleigh-Jeans-Gesetz) zur sogenannten \textbf{Ultraviolett-Katastrophe}. Hierbei ist zu beachten, dass das Rayleigh-Jeans-Gesetz besser bei kürzeren Wellenlängen und Wiens Formel besser bei größeren Wellenlängen passt. Deswegen liegt die Ultraviolett-Katastrophe nur an ersterem.
+
+\paragraph{Ausweg} Der Ausweg ist die Plancksche Strahlungsformel.
+
+\subsubsection{Planksche Strahlungsformel und Wirkungsquantum}
+Wir betrachten den Austausch zwischen Strahlung und Wand: Dieser findet mit den linearen Oszillatoren in letzter statt.
+Klassisch gesehen sind Oszillatoren jeder Energie erlaubt.\\
+\textbf{Planck} postulierte nun, dass nur $E_n = n \cdot \epsilon_0, n = 0, 1, 2, \dots$ erlaubt sind. Diese Hypothese wird auch Quantenhypothese genannt. Die Atome in der Wand können also nur diskrete Energiewerte $\Delta E = m \cdot e_0 \qquad (m = 0, \pm 1, \pm 2, \dots)$ aufnehmen und abgeben. Dies steht im \emph{krassen Gegensatz zur klassischen Physik}. Jetzt gibt es insgesamt $N$ Oszillatoren in der Wand. $N(n)$ von ihnen sind im Zustand $E = n \cdot \epsilon_0$. Damit gilt natürlich
+\begin{align*}
+N &= \sum_{n=1}^{\infty} N(n) & E &= \sum_{n=0}^{\infty} N(n) n \epsilon_0
+\end{align*}
+Die mittlere Energie pro Freiheitsgrad ist $$\hat \epsilon = \frac{E}{N}$$
+Im thermischen Gleichgewicht gilt
+$$N(n) \sim e^{- \beta n \epsilon_0}$$
+Die Verteilung wird auch Boltzmann-Verteilung genannt. Dabei gilt $\beta = \frac{1}{k_B T}$.\\
+Wir rechnen nun $\hat \epsilon$ aus und vergleichen den Wert mit dem "`klassischen"' Wert:
+\begin{align*}
+		\hat \epsilon &= \frac{\sum_{n=0}^\infty n \epsilon_0 e^{- \beta n \epsilon_0}}{\sum_{n=0}^\infty e^{- \beta n \epsilon_0}}  = - \dd \beta \ln (\sum_{n=0}^\infty e^{- \beta n \epsilon_0})
+		\intertext{Ein mathematischer Zwischenschub: Mit der Formel für die geometrische Reihe und $\beta, \epsilon_0 > 0$ gilt hier
+		$$\sum_{n=0}^\infty e^{- \beta n \epsilon_0} = \sum_{n=0}^\infty (e^{- \beta \epsilon_0})^n = \frac{1}{1 - e^{-\beta \epsilon_0}}$$}
+		\Rightarrow \hat \epsilon &= \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1} \neq \frac12 k_B T
+\end{align*}
+Als Konsequenz ersetzen wir $k_B T$ bei der Herleitung des R-J-Gesetzes durch $\hat \epsilon$:
+$$W_\nu = \frac{8\pi\nu^2}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$$
+Was wir nun in Wiens Formel vom Anfang einsetzen können
+$$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
+Des weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksche Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als
+$$W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$$
+Diese Formel ist auch als Plancksche Strahlungsformel bekannt. Sowohl Wiens Formel, als auch das Rayleigh-Jeans-Gesetz sind in ihr als Grenzfälle enthalten (in ihrem jeweiligen Bereich):
+$$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
+k_B T & h\nu \ll k_B T\\
+h \nu e^{- \frac{h\nu}{k_B T}} & h \nu \gg k_B T
+\end{cases}$$
+Die Integration über alle Frequenzen führt zu einer Neuformulierung diese Stefan-Boltzmann-Gesetzes vom Anfang dieses Kapitels
+\begin{align*}
+W(T) &= (\frac{8}{15} \pi^5 \frac{k_B^4}{c^3 h^3}) T^4\\
+\intertext{Außerdem gilt für die mittlere Energie}
+\hat{\epsilon} &= \frac{h \nu}{e^{\beta h \nu} - 1} 
+\end{align*}
+
+\subsection{Teilchen und Wellen}
+Im folgenden befassen wir uns mit Phänomenen, die auf den Teilchencharakter des Lichtes und auf den Wellencharakter von Teilchen hindeuten.
+
+\subsubsection{Interferenz von Lichtwellen}
+Hierfür wird das \href{https://de.wikipedia.org/wiki/Doppelspaltexperiment}{Doppelspaltexperiment} betrachtet. Man verwendet dabei monochromatisches Licht der Wellenlänge $\lambda$. Man beobachtet zwei verschiedene Arten von Interferenzen
+\begin{description}
+	\item[Konstruktive Interferenz] falls der Gangunterschied $g$ ein Vielfaches von $\lambda$ ist
+	\item[Destruktive Interferenz] falls $g = (n - \frac12) \lambda$
+\end{description}
+Die Maxima der Lichtintensität liegen bei
+$$d \sin \alpha = n\lambda$$
+wobei $n = 0, 1, \dots$ und $d$ der Abstand zwischen Doppelspalt und Detektorschirm ist.\
+$$n \frac{\lambda}{2} \sin \alpha = a$$
+Hierbei ist $a$ der Abstand der beiden Spalten.
+Damit folgt 
+$$n = \frac{2a \sin \alpha}{\lambda}$$
+was ein klarer Beweis der Wellennatur des Lichtes ist, siehe auch Wasser und Schall.
+
+\subsubsection{Photoeffekt} Der Photoeffekt\footnote{vgl \href{https://de.wikipedia.org/wiki/Photoelektrischer_Effekt}{Wikipedia}} wird auch Lichtelektrischer Effekt genannt. Hierbei trifft Licht mit der Frequenz $\nu$ und der Intensität $I$ auf ein bestimmtes Material und schlägt Elektronen heraus. Wir bremsen die Elektronen mit einer Gegenspannung $U_g$ ab. Man macht dabei unter anderem folgende Beobachtungen
+\begin{itemize}
+	\item Der Photoeffekt tritt für Licht erst ab einer Grenzfrequenz $\nu_g$ auf.
+	\item Die kinetische Energie $E_\text{kin}$ der Elektronen ist nur von $\nu$ abhängig, \emph{nicht} von der Intensität des Lichtes. Was im Widerspruch zur klassischen Physik steht.
+	\item Falls $\nu > \nu_g$ ist, ist die Anzahl der Elektronen proportional zur Intensität des Lichtes.
+	\item Der Effekt tritt sofort auf. Also können die Elektronen keine Energie "`aufsammeln"'.
+\end{itemize}
+Aus diesen Beochbachtungen folgerte Einstein 1905 seine \textbf{Lichtquantenhypothese}\footnote{"`Physicists use the wave theory on Mondays, Wednesdays and Fridays and the particle theory on Tuesdays, Thursdays and Saturdays"' – William Henry Bragg}: Licht wird darin als Ansammlung von Photonen mit der Energie $h \nu$ angesehen. Für den Photoeffekt bekam Einstein übrigens den Physik Nobelpreis. Etwas formaler kann man das ganze zusammenfassen als
+\begin{align*}
+h \nu &= E_\text{kin} + W_\text{A}\\
+E_\text{Lichtquant} &= \frac12 m v^2 + \text{Austrittsarbeit}
+\end{align*}
+
+\subsubsection{Compton-Effekt}
+Um den Compton-Effekt\footnote{vgl. \href{https://de.wikipedia.org/wiki/Compton-Effekt}{Wikipedia}} zu messen, bestrahlt man  Elektronen, welche leicht in ihrem jeweiligen Atom gebunden sind, mit Röntgenlicht der Frequenz $\nu_0$ bzw. der Wellenlänge $\lambda_0$. Neben $\lambda_0$ wird weiteres Licht bei $\lambda = \lambda_0 + \Delta \lambda$ nach der Wechselwirkung beobachtet. (Viel Licht mit geringerer Energie). Man erklärt diese Beobachtung durch den \emph{Stoß} von $\gamma$-Photonen auf die Elektronen der Atomhülle.
+Der Photonimpuls ist $\frac{h \nu_0}{c}$ und damit gilt 
+$$\frac{h \nu}{c} < \frac{h \nu_0}{c} \qquad \Rightarrow \qquad \Delta \lambda = \lambda - \lambda_0 = \lambda_c = (1 - \cos \theta)$$
+Eine Erklärung des Phänomens ist nur möglich, falls das Licht als aus Teilchen bestend angenommen wird.
+
+\subsection{Atomphysik}
+Jedes Atom besteht im wesentlichen aus einer Elektronen-Wolke\footnote{Radius ist in der Größenordnung von $\SI{1}{\angstrom} = \SI{1e-10}{\meter}$} um den Atomkern\footnote{Radius ist in der Größenordnung von $\SI{1}{\femto\meter}$}. Atome emittieren unter bestimmten Umständen Licht (Wellen/Quanten). Im wesentlichen strahlen schwingende (und/oder beschleunigt bewegte) Elektronen einen Teil ihrer Energie als Strahlung ab.
+Es ist im Prinzip Licht jeder Wellenlänge erlaubt, man beobachtet aber Spektrallinien\footnote{vgl. \href{https://de.wikipedia.org/wiki/Spektrallinie}{Wikipedia}} (z.B. beim Wasserstoff(H)-Atom)
+$$v \sim \frac1\lambda \sim \frac{1}{n^2} - \frac{1}{m^2}$$
+mit $n$ fest, $n = 1, 2, 3, 4, (5)$ und $m \geq n + 1$. Weil nur Lichtquanten mit $h \nu = E_m - E_n$ emittiert werden, sind offensichtlicherweise nur diskrete Energien der Elektronen erlaubt. Dies ist wiederum ein Widerspruch zum klassischen Bild der "`Planetenbahnen", auf denen sich die Elektronen bewegen, und damit auch ein Widerspruch zum Bohrschen Atommodell. Die Quantenhypothese für Elektronenbahnen ist 
+$$E_n = \SI{-13.6}{\electronvolt} - \frac{1}{n^2}$$ 
+Sie wird unterstützt durch den
+
+\subsubsection{Franck-Hertz-Versuch}
+Beim Franck-Hertz-Versuch\footnote{vgl. \href{https://de.wikipedia.org/wiki/Franck-Hertz-Versuch}{Wikipedia}} werden statt eines kontinuierlich ansteigenden Stromes starke Abfälle beobachtet (nach Schritten von jeweils $\SI{4.9}{\electronvolt}$). Die Elektronen können die Gegenspannung nicht mehr überwinden, da sie Energie an die Quecksilber-Atome abgeben. Damit gibt es nur diskrete Energien von $n \cdot \SI{4.9}{\electronvolt}$. Das Licht der entsprechenden Wellenlänge wird im Versuch nachgewiesen. Für diesen Versuch bekamen Frank und Hertz (nicht Heinrich) 1925 den Physik Nobelpreis.
+
+\subsection{Wellennatur der Teilchen}
+Beugungsexperimente (Davisson und Germer) von Elektron an Kristallen. Zeigen die \textbf{Interferenz} von Elektronen-Wellen, wie bei Röntgenstrahlen. Man sieht einen Gangunterschied und damit eine Interferenz. Die \textbf{De Broglie}-Wellenlänge von Teilchen ist
+$$\lambda = \frac{h}{p}$$
+
+\section{Schrödingergleichung}
+Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden\footnote{In der Hamilton-Jacobi-Theorie, welche im Kapitel über Analytische Mechanik in groben Zügen behandelt wurde.} werden. Man berechnet nun die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
+$$i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)$$
+Hierbei ist $\hbar = \frac{h}{2 \pi}$ und $H$ der Hamiltonoperator\footnote{Der Hamiltonoperator, ist ganz analog zur Hamiltonfunktion in der analytischen Mechanik.}
+$$H = \frac{\vec{p}^2}{2m} + V(\vec{r})$$
+Wir führen nun den wichtigen Impulsoperator (in der "`Ortsdarstellung"') ein
+$$\vec{p} = - i \hbar \vec{\nabla}$$
+mit $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$ und können damit den Hamiltonoperator auch wie folgt schreiben
+$$H = - \frac{\hbar^2}{2m} \vec{\nabla}^2 + V(\vec{r})$$
+Wobei $\vec{\nabla}^2$ der Laplaceoperator ist, $\vec{\nabla}^2 = \ffpartial{^2}{x^2} +\ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$.
+$\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt per Definition die Schrödingergleichung\footnote{Sie bescherte ihrem Schöpfer den Physik Nobelpreis des Jahres 1933.} für ein gegebenes Potential. Sie beschreibt den Zustand eines Systems (z.B. eines oder mehrerer Teilchen in einem Potential) als Wahrscheinlichkeitsverteilung\footnote{"`I don't like it, and I'm sorry I ever had anything to do with it."' – Erwin Schrödinger"'}. \\
+~\\
+Der Hamiltonoperator ist meistens zeitunabhängig, was die Lösung vereinfacht. 
+
+\subsection{Lösung der Schrödingergleichung}
+Wir versuchen die Schrödingergleichung per Separationsansatz $\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t)$ zu lösen
+\begin{align*}
+	i \hbar \fpartial{t} \psi(\vec{r}) \vp(t) &= H \psi(\vec{r}) \vp(t)\\
+	\Leftrightarrow \psi(\vec{r}) i \hbar \fpartial{t} \vp(t) &= \vp(t) H \psi(\vec{r})\\
+	\Leftrightarrow \frac{1}{\vp(t)} i \hbar \fpartial{t} \vp(t) &= \frac{1}{\psi(\vec{r})} H \psi(\vec{r})
+\end{align*}
+Die linke Seite hängt nur noch von der Zeit ab, die rechte nur noch vom Ort. Da beide Seiten gleich sind, müssen sie zwangsweise jeweils einen konstanten Wert haben. Wir folgern nun 
+\begin{enumerate}[a)]
+	 \item $i \hbar \fpartial{t} \vp(t) = E \vp(t)$
+	 \item $H \psi(\vec{r}) = E \psi(\vec{r})$ \textit{Diese Gleichung wird auch als Zeitunabhängige Schrödingergleichung bezeichnet}
+\end{enumerate}
+Wobei $E$ eine reelle Zahl ist und oft auch als "`Energie"' bezeichnet wird. Wir betrachten nun kurz die Gleichung a) und suchen hierfür eine Lösung.
+Zuerst bringen wir aber noch $i \hbar$ von der linken auf die rechte Seite um dann zu folgern
+\begin{align*}
+	\fpartial{t} \vp(t) &= \dd{t} \vp(t) \overset!= - i \frac{E}{\hbar} \vp(t)\\
+	\Rightarrow \vp(t) &= \vp_0 e^{-i\frac{E}{\hbar} t}\\
+	&\equiv \vp_0 e^{-i \omega t}
+\end{align*}
+Die Welle hat "`Oszillationen"' mit der "`Frequenz"' $\omega = \frac{E}{\hbar}$
+
+\section{Zeitunabhängige Schrödingergleichung}
+Die Hamiltonfunktion $H$ beschreibt die Energie eines Systems in der klassischen Mechanik. Hier, in der Quantenmechanik, gibt es die Energieeigenwerte $E$ des Hamiltonoperators. Die Lösungen der Schrödingergleichung beschreiben die Energieeigenzustände des Systems zu den bestimmten Eigenwerten $E$.
+
+\begin{bemerkung*}[Linearität der Schrödingergleichung]~\\
+	Die Schrödingergleichung ist linear in der Zeit. Deswegen kann man aus dem Anfangszustand $\Psi(\vec{r}, t_0)$ (zum Zeitpunkt $t_0$) auf den weiteren zeitlichen Verlauf $\Psi(\vec{r}, t)$ per Schrödingergleichung schließen\footnote{Vergleiche dies mit der Hamiltonfunktion in der klassischen Mechanik.}. Das Problem ist meistens die Lösung der zeitunabhängigen Schrödingergleichung.
+\end{bemerkung*}
+\begin{bemerkung*}[Materiewelle und Wahrscheinlichkeitsinterpretation]~\\
+	Es stellt sich nun die Frage, ob $\Psi(\vec{r}, t)$ wirklich eine "`Materiewelle"' beschreibt. Deswegen betrachten wir das, schon im Einführungskapitel erwähnte, Doppelspaltexperiment für Elektronen. Hierbei ist entweder
+	\begin{enumerate}[a)]
+		\item jeweils ein Spalt abgedeckt oder
+		\item beide offen
+	\end{enumerate}
+	Das Experiment funktioniert mit sehr geringen Intensitäten und sogar mit einzelnen Teilchen. Das Interferenzmuster sieht man als Histogramm der Elektronen"`auftreffer"' auf dem Detektor. Jede vorherige Beobachtung würde die Interferenz zerstören und das Elektron behält seinen Teilchencharakter trotz dem beobachteten Interferenzeffekt.\footnote{vgl. \href{http://www.feynmanlectures.caltech.edu/III\_01.html\#Ch1\-S1}{Feynman Ledcture Bd. III, 1}} Die Wellenfunktion wird deshalb an einem Ort von nun als \textbf{Wahrscheinlichkeitsamplitude} angedeutet.
+	$$|\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = \mathbb{P}[\text{Man findet Teilchen in einer $d^3 \vec{r}$ Umgebung von $\vec{r}$}]$$
+	Ein Beispiel wären die beiden Wellenfunktionen $\Psi_{1}$ und $\Psi_2$, welche etwas über die Wahrscheinlichkeit aussagen, mit welcher das Elektron den ersten oder zweiten Spalt durchquert hat. Zu beachten ist hierbei
+	$$|\Psi_1 + \Psi_2|^2 \neq |\Psi_1|^2 + |\Psi_2|^2$$
+	Beim Doppelspaltexperiment kommt es zur Interferenz der im allgemein komplexen Wellenfunktionen. Wähle nun also $\Psi_{1,2}= A_{1,2} e^{i\vp_{1,2}}$ mit $|a|^2 = a a^\ast$ damit gilt
+	\begin{align*}
+		|\Psi_1 + \Psi_2|^2 &= |A_1 e^{i\vp_1} + A_2 e^{i \vp_2}|^2\\
+		&= |A_1|^2 + |A_2|^2 + A_1 A_2 (\underbrace{e^{i(\vp_1 - \vp_2)} + e^{-i(\vp_1 - \vp_2)}}_{2\cos(\vp_1 - \vp_2)})\\
+		&= |A_1|^2 + |A_2|^2 + \underbrace{2 A_1 A_2 \cos(\vp_1 - \vp_2)}_{\text{"`Interferenzterm"'}}
+	\end{align*}
+	Der Interferenzterm kann natürlich auch negativ sein.
+\end{bemerkung*}
+\begin{bemerkung*}[Normalisierung der Wellenfunktion]
+	Die Wahrscheinlichkeitsinterpretation verlangt die Normalisierung der Wellenfunktion, sodass gilt
+	$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} = 1$$
+	Sollte die Wellenfunktion nicht normalisiert sein, so muss doch gelten
+	$$\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} < \infty$$
+	damit eine Normalisierung überhaupt möglich ist. Funktionen, welche die letzte Gleichung erfüllen, werden auch quadratintegrabel genannt.
+\end{bemerkung*}
+\begin{bemerkung*}[Superpositionsprinzip]
+	Da die Schrödingergleichung linear ist, gilt dass wenn $\Psi_1(\vec{r}, t)$ und $\Psi_2(\vec{r}, t)$ Lösungen jener Gleichung sind, dann ist auch deren Superposition
+	$$\Psi(\vec{r}, t) = \alpha \Psi_1(\vec{r}, t) + \beta \Psi_2(\vec{r}, t)$$
+	eine Lösung. Weil wir $\Psi$ nur in Form von $|\Psi|^2$ als Wahrscheinlichkeit deuten, kommt es auf eine globale Phase $e^{i\alpha}$ nicht an:
+	$$|\Psi|^2 = \Psi e^{i\alpha} \Psi^\ast e^{-i\alpha} = \Psi \Psi^\ast = |\Psi|^2$$
+	Wohl kommt es aber natürlich auf die relative Phase zweier Lösungen, aus welcher die Interferenz resultiert, an.
+\end{bemerkung*}
+
+\subsection{Lösung für freie Teilchen}
+Freie Teilchen sind der einfachste Fall, denn hier gilt, dass das Potential per Definition 0 ist und der Hamiltonoperator damit als
+$$H = - \frac{\hbar^2}{2m} \vec{\nabla}^2$$
+geschrieben werden kann. Nun betrachten wir die Form der möglichen Lösungen, die wir weiter oben gefunden haben
+$$\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t) = \psi(\vec{r}) e^{- i \frac{E}{\hbar} t}$$
+wenn man $\psi(\vec{r})$ in die zeitunabhängige Schrödingergleichung $H\psi(\vec{r}) = E\psi(\vec{r})$ einsetzt, merkt man das $\psi(\vec{r})$ diese erfüllt.\footnote{Hierbei muss $E > 0$ gelten, da E die Energie repräsentiert.}. Wir verwenden jetzt den Ansatz 
+$$e^{i\vec{k} \vec{r}} = e^{i k_x x} e^{i k_y y} e^{i k_z z}$$
+Wobei $\vec{k}$ zunächst ein beliebiger aber fester Vektor, auch Wellenvektor genannt, ist. Zunächst wenden wir den Nabla-Operator $\vec{\nabla}^2$ auf den Ansatz an
+\begin{align*}
+	\vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} &= \ffpartial{^2}{x^2} e^{i\vec{k}\cdot \vec{r}} = (ik_x) (i k_x) e^{i\vec{k}\cdot \vec{r}}\\
+	&= -k_x^2 e^{i\vec{k}\cdot \vec{r}}\\
+	\Rightarrow \vec{\nabla}^2 e^{i\vec{k}\cdot \vec{r}} &= - \vec{k}^2 e^{i\vec{k}\cdot \vec{r}}
+	\intertext{Mit der Schrödingergleichung folgern wir}
+	H e^{i\vec{k}\cdot \vec{r}} &= \frac{\hbar^2 \vec{k}^2}{2m} e^{i\vec{k}\cdot \vec{r}} \overset{!}{=} E e^{i\vec{k}\cdot \vec{r}}
+\end{align*}
+Die Lösung ist also eine \textbf{ebene Welle} 
+$$\Psi(\vec{r}, t) = \Psi_0 e^{i (\vec{k} \cdot \vec{r} - \omega t)}$$
+mit $\omega = \frac{E}{\hbar}$ und
+\begin{align*}
+E &= \hbar \omega = \frac{\hbar^2 k^2}{2m} & \Rightarrow \omega &= \omega(k) = \frac{\hbar k^2}{2m} & k &= |\vec{k}|
+\end{align*}
+
+\subsubsection{Was ist eine ebene Welle?}
+Sie hat \dots
+\begin{description}
+	\item[an einem festen Ort] eine Schwingung 
+	$$\Psi = \underbrace{e^{i\vec{k} \cdot \vec{r}}}_{\text{fest}} \underbrace{e^{-i\omega t}}_{\cos(\omega t) - i \sin(\omega t)}$$
+	\item[zu einem festen Zeitpunkt] $t = t_0$ eine Schwingung 
+	$$e^{i (\vec{k} \cdot \vec{r} - \omega t_0)}$$
+	Orte mit gleichem Funktionswert sind
+	\begin{align*}
+	\vec{k} \cdot \vec{r} = \omega t_0 \Rightarrow \hat{k} \cdot \vec{r} = \frac{\omega t_0}{k}
+	\end{align*}
+	Orte für die im speziellen gilt $\vec{k} \cdot \vec{r} = \omega t_0$ liegen auf einer Ebene, welche senkrecht zu $\vec{k}$ ist.
+\end{description}
+\textbf{für $t > t_0$} "`wandert"' die Ebene unverändert in Richtung $\vec{k}$.
+Den gleichen Wert bekommen wir übrigens auch für 
+$$e^{i(\vec{h} \cdot \vec{r} - \omega t - 2 \pi n)}$$
+Das sind viele Ebenen welche um
+$$\lambda = \frac{2\pi}{k}$$
+verschoben wurden. $k$ wird hierbei auch als \textbf{Wellenvektor} bezeichnet.
+(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$vim allgemeine ebene Welle)
+Nun vergleichen wir dies mit der schon bekannten de Broglie-Wellenlänge und folgern
+\begin{align*}
+p &= \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k\\
+\Rightarrow E &= \frac{\hbar^2 k^2}{2m} = \underbrace{\frac{p^2}{2m}}_{\hspace{-10em}\text{Energie eines freien Punktteilchens.}\hspace{-10em}}
+\end{align*}
+\textit{Zur Erinnerung:} Der Impulsoperator ist $\vec{p} = - i \hbar \vec{\nabla}$. Wenden wir diesen nun auf die Wellenfunktion an folgt
+\begin{align*}
+	\vec{p} \Psi(\vec{r}, t) &= - i \hbar \vec{\nabla} \Psi(\vec{r}, t)\\
+	&= -i \hbar \vec{\nabla} \Psi_0 e^{i(\vec{k} \cdot \vec{r} - \omega t)}\\
+	&= -i \hbar (+ i \vec{k}) e^{i(\vec{k} \cdot \vec{r} - \omega t)} \Psi_0\\
+	&= \hbar \vec{k} \Psi(\vec{r}, t)\\
+	\Rightarrow \vec{p} &= \hbar \vec{k} = \text{Impuls(eigenwert)}
+\end{align*}
+
+\subsection{Nichtnormierbarkeit ebener Wellen}
+Erinnerung: Wenn die Wellenfunktion die Aufenthaltswahrscheinlichkeit beschreiben soll, muss
+\begin{align*}
+\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} &\overset!= 1\\
+\intertext{gelten, aber es ist stattdessen}
+\int |\Psi(\vec{r}, t)|^2 \d^3 \vec{r} &= \int |\Psi_0|^2 \d^3 \vec{r} = |\Psi_0|^2 \underbrace{\int \d^3 \vec{r}}_{=V \to \infty}
+\end{align*}
+Wegen $|\Psi_0|^2 V$ muss $\Psi_0 = \frac{1}{\sqrt V} = \const$ sein. Damit das gilt, hat man zwei Möglichkeiten
+\paragraph{a) V endlich} (z.B. weil $V(\text{Universum})$ \text{??? und warum ist die Wahrscheinlichkeit dann überall gleich???}) damit ist die Wahrscheinlichkeit ein Teilchen vorzufinden überall gleich. Aber es hat einen festen Impuls, welcher exakt gemessen werden kann.
+\paragraph{b) \textbf{Wellenpaket}}
+In diesem Fall nutzen wir das Superpositionsprinzip aus
+$$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$
+Diese Reihe, auch Fourierreihe genannt, ist damit auch eine Lösung der Schrödingergleichung. Für kontinuierliche $\vec{k}, \omega$ gilt
+$$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{k}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ Dieses Integral wird auch Fourierintegral genannt. Wir setzen es nun in die (etwas umgeformte) Schrödingergleichung ein
+\begin{align*}
+	(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) &= 0\\
+	\Rightarrow \int \d^3 \vec{k} \d \omega \tilde{\vec{k}}\omega (\hbar \omega - \frac{\hbar^2 k^2}{2m}) e^{i(\vec{k}\cdot \vec{r} - \omega t)} &= 0
+\end{align*}
+Diese Gleichung wird durch
+\begin{align*}
+\tilde\Psi(\vec{k}, \omega) &= \tilde\Psi (\vec{k}) \delta(\omega - \omega(\vec k))\\
+\intertext{\textit{mit} $\int f(x) \delta(x - x_0) \d x = f (x_0)$}
+\Psi(\vec{r}, t) &= \int \d^3 \vec{k} \tilde{\Psi} (\vec{k}) e^{i(\vec{k}\cdot \vec{r} - \omega t)}
+\end{align*}
+erfüllt.
+$\tilde \Psi(\vec{k})$ ist hierbei Amplitudenfunktion eines Wellenpakets.
+
+% % % % % % % % % %
+
+\subsection{Einfaches Beispiel im eindimensionalen}
+Die Amplitudenfunktion ist wie folgt gegeben
+\begin{align*}
+\tilde{\Psi} = \begin{cases}
+\tilde{\Psi}_0 & k_0 - \Delta k < k < k_0 + \Delta k\\
+0 & \text{sonst}
+\end{cases}
+\end{align*}
+Damit können wir mit der folgenden Formel auf $\Psi(x, t)$ schließen
+$$\Psi(x,t) = \tilde{\Psi}_0 \int_{k_0-\Delta k}^{k_0+\Delta k} \d k e^{i(kx - \omega(k)t)}$$
+\begin{align*}
+\omega(k) &= \frac{\hbar k^2}{2m} \approxeq \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m}(k - k_0) + \dots\\
+&\underset{\frac{\Delta k}{k_0} \ll 1}{=} - \frac{\hbar k_0^2}{2m} + \frac{\hbar k_0}{m} k
+\end{align*}
+Damit folgt
+\begin{align*}
+\Psi(x,t) &= \tilde{\Psi_0} \int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{i (kx + \frac{\hbar k_0^2}{2m}t - \frac{\hbar k_0}{m} k t)} \d k\\
+&= \tilde{\Psi}_0  e^{\frac{i \hbar k_0^2}{2m}t}  \underbrace{\int_{k_0 - \Delta k}^{k_0 + \Delta k} e^{ik(\overbrace{x - \overbrace{\frac{\hbar k_0}{m}}^{v_g}t}^a)} \d k}_{I}\\
+I &= \int_{\kappa_0 = k_0-\Delta k}^{\kappa_1 = k_0 + \Delta k} e^{iak} \d k = \left. \frac{1}{ia} e^{i a h} \right|_{\kappa_0}^{\kappa_1} = \frac1{ia} (e^{ia\kappa_1} - e^{ia\kappa_0})\\
+&=\frac{1}{ia} (e^{ia(k_0 + \Delta k)} e^{ia (k_0 - \Delta k)}) = \frac{1}{ia} e^{iak} (e^{ia \Delta k} - e^{-ia \Delta k})\\
+&= \frac{1}{ia} e^{ia k_0} 2 i \sin a \Delta k\\
+\Rightarrow \Psi(x,t) &= \tilde{\Psi}_0 e^{\frac{i\hbar k_0^2}{2m} t} e^{i (x - v_g t) k_0} \frac{2 \sin((x - v_g t)\Delta k)}{(x - v_g t)}
+\end{align*}
+Hierbei ist $v_g = \frac{\hbar k_0}{m}$ die "`Gruppengeschwindigkeit"'.
+$$|\Psi(x,t)|^2 = |\tilde{\Psi}_0|^2 4 \Delta k^2 \frac{\sin^2((x - v_g t)\Delta k)}{(x - v_g t)^2 \Delta k^2}$$
+Wir betrachten jetzt die Funktion $$f(y) = \frac{\sin^2 y}{y^2} = \left(\frac{\sin y}{y}\right)^2$$:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[xlabel=${y}$, ylabel=$(\frac{\sin y}{y})^2$, xtick=\empty, ytick=\empty, ymin = 0]
+  \addplot[red, samples=100,domain=-3*pi:3*pi]{sin(deg(x)) ^2 / deg(x)^2};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Im Bereich des ersten Maximums liegen rund 95\% der Fläche der Kurve. Damit konzentriert sich auch die  Aufenthaltswahrscheinlichkeit auf $-\pi < \Delta k x(t) < \pi$ mit $x(t) = x - v_g t$. Daraus können wir etwas interessantes folgern
+\begin{align*}
+\Delta k (x_\text{max} - x_\text{min}) &= \Delta k \Delta x = 2 \pi\\
+\Rightarrow \hbar\Delta k \Delta x &= 2 \pi \hbar = h\\
+\Rightarrow \Delta p \Delta x &= h
+\end{align*}
+Damit haben wir die \textbf{Unschärferelation} beobachtet. Es besteht ein enger Zusammenhang mit den Vertauschungsrelationen von Ort und Impuls
+\begin{align*}
+	[p_x, x] &= p_x x - x p_x
+\end{align*}
+Wird dieser sogenannte Kommutator auf die beliebige Wellenfunktion $\Psi(\vec{r}, t)$ angewendet, folgt
+\begin{align*}
+[p_x, x] \Psi(\vec{r}, t) &= (- i \hbar \fpartial{x} x - x (- i \hbar \fpartial{x})) \Psi(\vec{r}, t)\\
+&= (-i\hbar\underbrace{\fpartial{x} (x \Psi(\vec{r}, t))}_{(\underbrace{\fpartial{x} x}_{=1}) \Psi(\vec{r}, t) + x \fpartial{x} \Psi(\vec{r}, t)} - x (- i \hbar \fpartial{x} \Psi(\vec{r}, t))\\
+&= - i \hbar \Psi(\vec{r}, t) - i \hbar x \fpartial{x} \Psi(\vec{r}, t) + i \hbar x \fpartial{x} \Psi(\vec{r}, t)\\
+&= - i \hbar \Psi(\vec{r}, t)
+\end{align*}
+Somit haben wir eine der fundamentalen Vertauschungsfunktionen gefunden
+$$-[p_x, x] = [x, p_x] = i \hbar$$
+(vgl. mit det fundamentalen Poisson-Klammer)\\
+Wenn wir das ganze etwas verallgemeinern, finden wir die \textbf{verallgemeinerte Heisenbergsche Unschärferelation}, wobei im folgenden $A$, $B$ hermitesche Operatoren sind.
+$$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|$$
+wobei $\Delta A^2 = \langle (A - \langle A \rangle)^2 \rangle = \langle A^2 \rangle - \langle A \rangle^2$
+Wenn wir die Formel jetzt auf unsere vorangegangenen Werte anwenden, folgt
+$$\Delta x \Delta p \geq \frac12 | \langle [x, p] \rangle | = \frac{\hbar}{2}$$
+
+
+\subsection{Eindimensionale Potentialprobleme}
+Bisher haben wir nur freie Teilchen und Wellenpakete betrachtet. Jetzt versuchen wir es mit etwas realistischeren Potentialen. Zunächst ist es hierfür völlig ausreichend eindimensionale Systeme zu betrachten. Das betrachtete Problem ist
+$$i\hbar \fpartial{t} \Psi(x, t) = H \Psi(x, t)$$
+mit
+$$H = \frac{p^2}{2m} + V(x) = - \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)$$
+Zuerst Separieren wir wieder $\Psi$ zur $\Psi(x, t) = \psi(x) \vp(t)$ und $\vp(t) \sim e^{-i \frac{E}{\hbar} t}$\\
+$\psi(x)$ erfüllt die stationäre Schrödingergleichung mit gleichem E.
+\begin{align*}
+	H \psi(x) &= E \psi(x)\\
+	\Leftrightarrow (- \frac{\hbar^2}{2m} \ddd{^2}{x^2} + V(x)) \psi(x) &= E \psi(x)\\
+	\Leftrightarrow \ddd{^2}{x^2} \Psi(x) + \underbrace{\frac{2m}{\hbar^2}(E - V(x))}_{k^2(x)} \psi(x) &= 0\\
+	\Leftrightarrow \Psi''(x) + k^2(x) \psi(x) &= 0
+\end{align*}
+
+\begin{bemerkung*}
+	Weil $V(x)$ reel ist, gilt, dass auch $\psi^\ast(x)$ eine Lösung ist, sofern $\psi(x)$ eine ist, natürlich ist auch $\psi(x) \pm \psi^\ast(x)$ eine richtige Lösung. Ganz allgemein sind immer reele Linearkombinationen der Lösungen möglich.
+\end{bemerkung*}
+
+\begin{bemerkung*}
+	$k^2(x)$? Betrachte die freie Lösung $\frac{\hbar^2 k^2}{2m} = E$.
+\end{bemerkung*}
+
+\begin{bemerkung*}
+	$\psi(x)$ ist endlich wegen der Wahrscheinlichkeitsinterpretation von $|\psi|^2$.
+\end{bemerkung*}
+
+\begin{bemerkung*}
+	$$\psi''(x) = \underbrace{- k^2(x)}_{= - \frac{2m}{\hbar^2} (E - V(x))} \psi(x)$$
+	$V(x)$ darf nur endliche Sprünge haben. Solche Sprünge führen zu "`Knicken"' in $\psi$, aber $\psi'(x)$ und $\psi(x)$ müssen jeweils stetig sein.
+\end{bemerkung*}
+
+Physikalische Diskussion anhand der möglichen Energien des Teilchens:
+\begin{description}
+	\item[Bereich mit $E > V$ ($k^2 > 0$)] klassisch erlaubt.
+	\item[Bereich mit $E = V$ ($k^2 = 0$)] klassische Umkehrpunkte.
+	\item[Bereich mit $E < V$ ($k^2 < 0$)] klassisch verboten.
+\end{description}
+Was bedeutet das für die Wellenfunktion?
+\begin{description}
+\item[$E>V$] $\to k^2 > 0$ Damit gilt $\psi''(x) = -k^2 \psi(x)$ und $\psi''$ hat immer das umgekehrte Vorzeichen von $\psi$. $\psi(x)$ ist außerdem zur x-Achse hin gekrümmt. Natürlich gibt es auch Oszillationen, z.B. wenn $V$ und $k$ konstant sind gilt $\psi(x) = e^{\pm ikx}$
+\[\psi'' = (\pm ik)(\pm ik)e^{\pm ikx} = -k^2 \psi(x)\]
+Allgemein hat $\psi(x)$ die Form
+$$\psi(x) = Ae^{ikx} + Be^{-ikx} \qquad \text{mit~} k=\sqrt{\frac{2m}{\hbar^2}(E-V)}$$
+\item[$E=V$] $\to k^2=0 \Rightarrow \psi''(x) = 0$ Wendepunkt von $\psi(x)$
+\item[$E<V$] $\to k^2 < 0 \Rightarrow \psi''(x)$ hat immer das gleiche Vorzeichen wie $\psi(x)$. $\psi(x)$ immer von der x-Achse weg gekrümmt.
+\end{description}
+
+\subsubsection{Typische Fälle}
+3 Möglichkeiten gibt es für das Verhalten im verbotenen Bereich
+\begin{itemize}
+	\item[a)] Asymptotisches Anschmiegen an die $x$-Achse.
+	\item[b) / c)] $\psi(x) \xrightarrow{x \to \infty} \pm \infty$, offensichtlich können dies keine Wahrscheinlichkeitsinterpretationen und damit keine physikalischen Lösungen sein.
+\end{itemize}
+
+\begin{beispiel*}[$\infty$-Potentialtopf]
+	Das Potential ist wie folgt definiert\footnote{Wobei $V = \infty$ meistens das gleiche bedeutet, wie $E \ll V$.}
+	$$V = \begin{cases}
+	\infty & x < 0\\
+	\infty & x > a\\
+	0 & 0 \le x \le a
+	\end{cases}$$
+	Die Lösungen außerhalb des Topfes sind klarerweise $\Psi(x) = 0$. Da innerhalb des mittleren Bereiches $V = 0$ gilt, gibt es dort eine ebene Welle mit
+	\begin{align*}
+	\psi(x) &= A e^{ikx} + Be^{-ikx} & k^2 &= \frac{2mE}{\hbar^2}
+	\end{align*}
+	Da die Wellenfunktion stetig sein muss, verschwindet sie am Rand des mittleren Bereiches. In dem wir zusätzlich verlangen, dass die Ableitung der Wellenfunktion stetig sein muss, kommen wir wie folgt auf die Wellenfunktion im mittleren Bereich
+	\begin{align*}
+		\psi(0) &=\psi(a) = 0\\
+		\psi(0) &= A + B = 0 \qquad \Rightarrow B = -A\\
+		\psi(a) &= A(e^{ika} - e^{-ika}) = 0\\
+		&= 2iA \sin(ka) = 0\\
+		\Rightarrow ka &= 2\pi n \qquad n = 1, 2, 3, \dots\\
+		k &= \frac{2\pi h}{a}\\
+		\Rightarrow E &= \frac{\hbar^2 k^2}{2 m} = \frac{4 \pi^2 \hbar^2}{2 m a^2} n^2 = E_n\\
+		\intertext{Den Faktor $A$ finden wir mittels Normierung}
+		\int_b^a \psi^\ast \psi = \int_b^a 4 A^2 \sin^2 kx \d x &\overset!= 1\\
+		\xRightarrow{Erfahrung oder Integraltabelle} 1 &= \frac{4A^2a}{2} \qquad \Rightarrow A = \frac{1}{\sqrt{2a}}
+		\intertext{Damit finden wir die möglichen Wellenfunktionen mit ihren jeweiligen Energien}
+		\psi_n(x) &= \sqrt{\frac2a} \sin(\frac{2\pi}{a} n x) \qquad E = \frac{4 \pi^2 \hbar^2}{2ma^2} n^2
+	\end{align*}
+	Die Wellenfunktionen stellen stehende Wellen mit \textbf{diskreten Energieniveaus} im Kasten dar.
+\end{beispiel*}
+
+\begin{beispiel*}[Endlicher Potentialtopf]
+	Hier ist das Potential wie folgt gegeben
+	$$V = \begin{cases}
+	V_0 & x < 0\\
+	V_0 & x > a\\
+	0 & 0 \le x \le a
+	\end{cases}$$
+	Es gibt im wesentlichen zwei Fälle
+	\begin{description}
+		\item[$E < V_0$] Es gibt hier wieder gebundene Zustände wie im $\infty$-Potentialtopf. Zusätzlich können die Teilchen jetzt aber potentiell in den "`verbotenen"' Bereich $E < V$ eintreten.
+		\item[$E > V_0$] Zusätzlich gibt es hier sogenannte \textbf{Streuzustände}. Streuzustände findet zum Beispiel mithilfe eines Streuexperiments: Hierbei "`läuft"' ein Teilchen oder eine Welle von links im mittleren Bereich ein. Was passiert nun wohl?\\
+		Es gibt zwei Möglichkeiten: Reflexion und Transmission mit den dazugehörigen Koeffizienten $T \leq$ und $R \geq 0$. $T$ steigt hierbei mit wachsender Energie und hat kleiner werdende Minima bei Vielfachen der "`Wellenlänge"', $R$ verhält sich entgegengesetzt dazu.\\
+		 Es gibt dabei \textbf{"`Resonanzen"'}, wenn die Welle in den Potentialtopf hineinpasst. Übrigens: Das Streuexperiment erlaubt mit den Resonanzen Rückschlüsse auf das System, an dem gestreut wurde.
+	\end{description}
+\end{beispiel*}
+
+\begin{beispiel*}[Potentialwall]
+	Ein Potentialwall ist ein "`umgedrehter"' Potentialtopf mit dem Potential
+	$$V = \begin{cases}
+	V_0 > 0 & |x| < x_0\\
+	0 & \text{sonst}
+	\end{cases}$$
+	Wir untersuchen nun eine von links einlaufende Welle.
+	\begin{align*}
+	\psi_0(x) &\sim e^{ik_0x} & k_0^2 &= \frac{2m}{\hbar^2} E
+	\end{align*}
+	Interessant ist der Fall $E < V_0$, denn klassisch kann das Teilchen / die Welle den Wall nicht überwinden. Wir teilen die Wellenfunktion in die 3 Bereiche auf
+	$$\psi(x) = \begin{cases}
+	Ae^{ik_0x} + Be^{-ik_0 x} & \text{links vor dem Wall}\\
+	Ce^{-\kappa x} & \text{im Wall}\\
+	De^{ik_0 x} & \text{hinter dem Wall}
+	\end{cases}$$
+	Die einlaufende Wellenfunktion besteht aus einer einlaufenden und einer reflektierten Welle. Rechnungen führen zum sogenannten \textbf{Gamow-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
+	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
+	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch Tunneleffekt.\\
+	\textbf{Gamow}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
+	$$T(E) = e^{-\frac{2}{\hbar} \int_{0}^{\infty} \sqrt{2m (V(x') - E)}~ \d x'}$$
+	Wir können jetzt damit den $\alpha$-Zerfall von Atomkernen erklären. Der $\alpha$-Zerfall ist eine spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n), sieht geschieht ohne Beeinflussung von außen (z.B. Druck oder Temperatur). 
+	Die $\alpha$-Teilchen werden mit einer sehr charakteristischen Energie emittiert und die Halbwertszeiten sind sehr unterschiedlich, z.B.
+	\begin{align*}
+		~^{212}Po&: \tau_{\frac12} = \SI{3e-7}{\second}\\
+		~^{238}U&: \tau_{\frac12} = \SI{4.5 e9}{\year}
+	\end{align*}
+	\textbf{Geiger-Nutall-Gesetz}: $A$ ist die Massenzahl als Summe der Neutronen und Protonen und $E$ ist die Energie des $\alpha$-Teilchens. Nun gilt für die Halbwertszeit
+	$$\ln \tau_{\frac12} = A \frac{Z}{\sqrt{E}} + \dots$$
+	%$\leftarrow$ aus Modell für $\alpha$-Teilchen im Atomkern
+\end{beispiel*}
+
+\subsection{Ausblick: Kronig-Penney-Modell eines Festkörpers}
+Hier ist das Potential periodisch wie folgt angegeben
+$$V(x) = D \sum_{n = -\infty}^{\infty} \delta(x - n a)$$
+(Im wesentlichen nur viele gleich hohe Spikes auf der $x$-Achse mit Abstand 1.)\\
+Klassisch ist $x \neq n a$ erlaubt, dann haben wir quasi freie Teilchen und ebenen Wellen mit periodischen Randbedingungen. Wir nehmen wieder die beiden Typen von Bedingung an Wellenfunktion und verwenden sie.
+\begin{description}
+	\item[\textbf{I.} Stetig an dem Rand]
+	$$\psi(n a + \epsilon) \overset!= \psi(na - \epsilon) \equiv \psi(na)$$
+	Und damit die Schrödingergleichung (mit $\epsilon \to 0^+$)
+	\begin{align*}
+	&\int_{na-\epsilon}^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon} \delta(x - n) \psi(x) \d x\\
+	&= - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \xrightarrow{\text{weil $\psi$ stetig ist}} 0
+	\end{align*}
+	\item[\textbf{II.} Ableitung ist stetig am Rand]
+	$$\psi'(x +\epsilon) - \psi'(x -\epsilon) = \frac{2m}{\hbar^2} D \psi(n a)$$
+	Dies ist ein endlicher Sprung in $\psi'$ an verbotenen Stellen.
+\end{description}
+
+% % % % %
+
+%$$\Psi_n(x) = e_n e^{ik(x-na)} + b_n e^{-ik (x-na)}$$
+%(freie Wellenfunktion) $k = \sqrt{\frac{2m}{\hbar^2} E}$
+%$\Psi_n$ im Bereich $B_n = \{ x | na < x < (n+1)a\}$
+%\begin{enumerate}
+%	\item stetig: $\Psi(na + \epsilon) = \Psi(na -\epsilon) \equiv \Psi(na)$
+%	\item $\Psi'(na+\epsilon) - \Psi'(na -\epsilon) = \frac{2m}{\hbar^2} D \Psi(na)$
+%	zu Gleichung ($n \to \infty$)
+%	$V(x) = V(x + a)$
+%\end{enumerate}
+Man findet Translationssymmetrien, insbesondere
+\begin{align*}
+|\psi(x + a)|^2 &= |\psi(x)|^2
+\intertext{$\psi$ unterscheidet sich nur durch den Phasenfaktor $e^{iKa}$}
+\psi(x+a) &= e^{iKa}u(x)\\
+u(x+a) &= u(x)
+\end{align*}
+Diese Wellen heißen Bloch-Wellen.\\
+Mit der Stetigkeit folgern wir $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$, n = 1,2, sofern die Gleichung lösbar ist. Dies ist eine Bedingen an mögliche $K$, d.h. an mögliche Energien. Man sieht ein, dass die Determinante der Koeffizientenmatrix 0 sein muss.
+$$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$$
+Dies ist der Fall, wenn $$\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}\qquad m = 1, 2, \dots$$ 
+Da $K$ beliebig sein Darf, ist nur die rechte Seite der Gleichung $\leq 1$. Die rechte Seite kann wie folgt umgeschrieben werden
+$$\cos y + \alpha \frac{\sin y}{y}\qquad y = ka \sim \sqrt{E}$$
+
+Damit können wir \textbf{Energiebänder} als erlaubte Zustände darstellen. Zu diesem Thema passt auch gut, das \textbf{Pauli-prinzip}:\\
+Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"'} nur einmal besetzt werden. Aufgrund des Spins gibt es zwei "`Plätze"' pro Zustand, es gibt deswegen nur ganz oder halb gefüllte Bänder bei $T = 0$.
+\begin{enumerate}[a)]
+	\item ganz gefüllt \conseq keine freien Zustände sind leicht erreichbar. \textit{Isolator}
+	\item halb gefüllt \conseq die Zustände sind durch leichte Anregung erreichbar. \textit{Leiter}
+	\item "`Isolator mit sehr kleiner Bandlücke"'. \textit{Halbleiter}
+\end{enumerate}
+
+\section{Formale Grundlagen der Quantenmechanik}
+\begin{definition*}[Zustand]
+	Der Zustand eines Systems ist, analog zu $\pi(t) = \{\vec{q}, \vec{p}, t\}$, hier in Quantenmechanik abstrakter Vektor $\ket{\Psi}$ (nicht $\vec{\Psi}$) aus \textbf{Hilbertraum}. Meist wird abkürzend $\ket{\Psi} = \ket{\Psi(t)}$ gesetzt.
+\end{definition*}
+\begin{definition*}[Hilbertraum]
+	Wir betrachten im folgenden einen $\infty$-dimensionalen Vektorraum mit einem Skalarprodukt und einer abzählbaren Basis, dieser Vektorraum ist über den $\Co$ definiert. D.h. Elemente des Vektorraums können mit anderen Elementen des selben Vektorraums und komplexen Zahlen verknüpft werden. Oder formal
+	\begin{align*}
+		\ket{\psi} + \ket{\vp} &\in \mathcal{H}\\
+		c \ket{\psi} + d \ket{\vp} &= \ket{c \psi + d \vp}
+	\end{align*}
+
+	Da der Vektorraum nach Konstruktion abgeschlossen\footnote{Zumindest, wenn man keine Spezialfälle betrachtet.} ist und wir für ihn ein Skalarprodukt gefordert haben, kann man den Vektorraum auch als Hilbertraum $\mathcal{H}$ auffassen. Wir überprüfen nun einfach zum Spaß die Bedingungen an den Vektorraum (und dessen Skalarprodukt). Desweiteren schauen wir uns noch die Bedingungen für Orthogonalität, \dots an:\\
+	\textbf{Es gibt Nullelemente} $0, \ket{0}$ mit
+	\begin{align*}
+		\ket{\alpha} + \ket{0} &= \ket{\alpha}\\
+		0 \cdot \ket{\alpha} &= \ket{0}\\
+		c \cdot \ket{0} &= \ket{0}
+		\intertext{\textbf{Inverse}}
+		\ket{\alpha} - \ket{\alpha} &= \ket{\alpha} + \ket{-\alpha} = \ket{0}
+		\intertext{\textbf{Distributivgesetz}}
+		c (\ket{\alpha} + \ket{\beta}) &= c \ket{\alpha} + c \ket{\alpha}\\
+		(c+d) \ket{\alpha} &= c \ket{\alpha} + d \ket{\alpha}
+		\intertext{\textbf{Abzählbare Basis} $B = \{\ket{n}\} = \{\ket{1}, \ket{2}, \ket{3}, \dots\}$ ist genau dann eine Basis, wenn}
+		\sum_n c_n \ket{n} &= \ket{0} \Leftrightarrow \forall n: c_n = 0
+		\intertext{\textbf{Skalarprodukt}}
+		\braket{\alpha | \beta} &= c \in \Co\\
+		\braket{\alpha | \beta}^\ast &= \braket{\beta | \alpha}\\
+		\braket{\alpha | \beta + \gamma} &= \braket{\alpha | \beta} + \braket{\alpha | \gamma}\\
+		c \braket{\alpha | \beta} &= \braket{\alpha | c \beta} = \braket{c^\ast \alpha | \beta}\\
+		\braket{\alpha | \alpha} &\geq 0 \text{~für~} \ket{\alpha} \neq 0\\
+		\intertext{\textbf{Norm}}
+		\| \alpha \| &= \sqrt{\braket{\alpha | \alpha}}
+		\intertext{\textbf{Orthogonalität} Zwei beliebige Vektoren $\ket{\alpha}$ und $\ket{\beta}$ sind orthogonal, wenn}
+		\braket{\alpha | \beta} &= 0
+		\intertext{\textbf{Orthogonale Basis} Seien $\ket{n}$ und $\ket{m}$ beliebige Basisvektoren}
+		\braket{n | m} &= 0 \Leftrightarrow \ket{n} \neq \ket{m}
+		\intertext{\textbf{Orthonormale Basis} Sei $B$ eine orthogonale Basis}
+		\forall \ket{n} \in B: \| n \| &= 1
+	\end{align*}
+	Ein beliebiger Zustand $\ket{\psi}$ lässt sich desweiteren durch Basisvektoren darstellen. Hierbei kann $\braket{n | \psi}$ als die Projektion von $\ket{\psi}$ in Richtung $\ket{n}$ angesehen werden. Nach Konstruktion, und weil wir implizit eine orthogonale Basis annehmen, gilt außerdem $\sum_n \ket n \bra n = \mathds{1}$. Wobei mit $\mathds{1}$ hier die "`Einheitsmatrix"' gemeint ist.
+	\begin{align*}
+	\ket{\psi} &= \sum_n \underbrace{\ket{n}}_{\text{Basisvektor}\hspace{-2em}} \overbrace{\braket{n | \psi}}^{\hspace{-10em}\text{"`Länge"' von $\ket{\psi}$ in Richtung $\ket n$}\hspace{-10em}}
+	\end{align*}
+	$\ket{\psi}$ kann also wie folgt dargestellt werden
+	$$\ket{\psi} \to \begin{pmatrix}
+		\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots
+	\end{pmatrix}$$
+	Wir lassen jetzt zu, dass Index $n \in \Re$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade eber definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
+	Die abstrakten Zustände von $\ket{\psi}$ sind Komponenten des Vektors. In dem wir $\ket{\psi}$ als Wellenfunktion betrachten, kommen wir unter anderem auf eine Art "`\textbf{Ortsdarstellung}"':
+	$$\psi(x) = \braket{x | \psi} \text{~\textit{(1-dim.)}~~~ bzw.~~~} \psi(\vec{r}) = \braket{\vec{r} | \psi}$$
+	Jetzt sind offensichtlich die $\psi(\vec{r})$ die Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. Außerdem sind die $\ket{\vec{r}}$ damit die Eigenvektoren des Ortsoperators, da gilt $$\underbrace{\hat{\vec{r}}}_{\text{\hspace{-10em}Operator\hspace{-10em}}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$$
+	Das vorher definierte Skalarprodukt
+	\begin{align*}
+		\braket{\psi | \vp} &= \braket{\psi | \mathds{1} | \vp} = \sum_n \braket{\psi | n} \braket{n | \vp}\\
+		&= \sum_n \psi^\ast_n \vp_n
+		\intertext{müssen wir jetzt "`im kontinuierlichen"' ($n \to \vec{r}$) als Integral auffassen}
+		\braket{\psi | \vp} &= \int \d^3 \vec{r} \underbrace{\braket{\psi | \vec{r}}}_{\braket{\vec{r} | \psi}^\ast} \braket{\vec{r} | \vp} \text{\qquad mit $1 = \int \d^3 \vec{r} \ket{\vec{r}} \bra{\vec{r}}$}\\
+		&= \int \d^3 \vec{r} \psi^\ast(\vec{r}) \vp(\vec{r})
+	\end{align*}
+	Die Wellenfunktionen $\psi(x)$ bzw. $\psi(\vec{r})$ sind kongruente Darstellungen des abstrakten Zustandes $\ket\psi$.
+	
+	\paragraph{Operatoren} In der Regel werden lineare Operatoren betrachtet.\\
+	Für Operatoren gilt, dass deren Anwendung $A \ket{\alpha} = \ket{A \alpha}$ einen neuen Zustand $\ket{\beta}$ des selben Vektorraumes zur Folge hat. Zwei Operatoren sind identisch, falls, sie für alle Zustände $\ket{\alpha}$ dasselbe Ergebnis produzieren. Für zwei lineare Operatoren $A$ und $B$ und $a,b \in \Co$ definieren wir die Addition wie folgt
+	\begin{align*}
+		(a A + b B) \ket{\alpha} &= a A \ket{\alpha} + b B\ket{\alpha}\\
+		\intertext{Als Notation verwenden wir}
+		B A \ket{\alpha} &= B \ket{A \alpha} = B (A \ket{\alpha})
+	\end{align*}
+	
+	\paragraph{Adjungierter Operator} korrespondierend zum Operator $A$ ist $A^+ = A^{\top \ast}$, also der transponierte und komplex konjugierte Operator.
+	\paragraph{Selbstadjungierter Operator} \textit{auch als hermitescher\footnote{Hermitesch wird wie "`hermit'sch"' ausgesprochen} Operator bezeichnet}\\
+	Für muss gelten $A^+ = A$. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte:\\
+	Sei $\ket a$ ein Eigenvektor von $A$ zu Eigenwert $\alpha$, d.h. $A \ket{a} = \alpha a$ man rechnet nun $\braket{a | A | a}$ aus:
+	$$\alpha \braket{a | a} = \braket{a | \alpha | a} = \braket{a | (A a)} = \braket{a | A | a} \overset{\text{da $A^+ = A$}}{=} \braket{(A a) | a} = \alpha^\ast \braket{a | a}$$
+	Dies würde einen Widerspruch darstellen, wenn $\alpha \notin \Re$ wäre.
+\end{definition*}
+
+
+
+% % % % % % % % % % %
+$\braket{\alpha | \beta}$\\
+\textbf{Eigenvektoren} $\ket{n}, \ket{m}$ sind othogonal:
+$a_n^\ast \braket{m | n}^\ast \braket{m | A | n}^\ast = \braket{m | A^+ | n}^\ast = \braket{n | A | m} = a_m \braket{n | m}$
+\conseq $(a_m - a_n) \braket{n | m}$ = 0\conseq $\braket{n | m} = \delta_{nm}$ \conseq EV geeignet, um Basis zu konstruieren.
+
+\section{Postulate der Quantenmechanik}
+\begin{enumerate}[1)]
+\item \textbf{Zustandsraum} eines Systems ist ein Hilbertraum. Elemente sind die möglichen Zustände $\ket{\psi}$ des Systems.
+\item \textbf{Observable} sind lineare, selbstadjungierte (hermitesche) Operatoren im Zustandsraum. Die möglichen Messwerte einer Observable sind Eigenwerte.
+\item \textbf{Messprozess} Das System ist vor einer Messung im Zustand $\ket{\psi}$. Jetzt messen wir eine Observable $A = \sum_n a_n \ket{n} \bra{n}$ – Messung von $a_n$ mit Wahrscheinlichkeit
+$$W_n = |\braket{n | \psi}|^2$$
+Nach der Messung ist das System im Zustand $\sum_n | \braket{n | \psi}|^ = 1$ (weil als Wahrscheinlichkeit betrachtet).
+$$\ket{\psi} = \sum_n \ket{n}\braket{n | \psi}$$
+z.B. $\psi = \ket{1}\braket{1 | \psi} + \ket{2}\braket{2 | \psi}$
+$A = 3 \ket{1}\bra{1} + 42 \ket{2}\bra{2}$ Messe "`3"' \conseq $3 \ket{1}\braket{1 | \psi} = 3 \ket{1}\braket{1 | 1} \braket{1 | \psi} + 0$
+\item \textbf{Zeitentwicklung} mit der Schrödingergleichung
+$$ i\hbar \fpartial{t} \ket{\psi(t)} = H \ket{\psi(t)}$$
+\end{enumerate}
+
+\begin{bemerkung*}[zu 3)]
+	So nur gültig für nichtentartete\footnote{Entartet bedeutet, dass mehrere Zustände den gleichen Messwert liefern.} Observable. \conseq $\ket{\psi}$ reduziert sich auf Element des entsprechenden Unterraums.
+\end{bemerkung*}
+
+\begin{bemerkung*}[zu 4)]
+	"`Schrödingerbild"' = Zustände sind zeitabhängig, Operatoren nicht\\
+	vgl. "`Heisenbergbild"' = Zustände fix, Operatoren zeitabhängig
+\end{bemerkung*}
+
+\begin{beispiel*}[Eindimensionaler harmonischer Oszillator\footnote{vgl. \href{https://de.wikipedia.org/wiki/Harmonischer_Oszillator_\%28Quantenmechanik\%29}{Wikipedia}}]
+	$$H = \frac{p^2}{2m} + \frac12 m \omega^2 x^2$$
+	vgl. $\frac12 kx^2$,  k "`Federkonstante"', $\omega = \sqrt{\frac{k}{m}}$ im klassischen Fall\\
+	Wir erwarten gebundene Zustände. Wir suchen nun das Spektrum\footnote{Menge der Eigenwerte} von $H$. Suchen Eigenzustände von $H$. Können nicht Eigenzustände von $x$ oder $p$ sein, da $[H, x] \neq 0$, $[H, p] \neq 0$,	$[x, p] = i \hbar \neq 0$.\\
+	Versuche Linearkombination von $x$ und $p$ à la quadratische Ergänzung. Zwei neue Operatoren $a$, $a^+$:
+	$$a, a^+ = \frac{1}{\sqrt{2\hbar}} (\sqrt{m \omega} x \pm \frac{i}{\sqrt{m \omega}} p)$$
+	(da $x = x^+$ und $p = p^+$)
+	\begin{align*}
+	[a, a^+] &= \frac{1}{2 \hbar} [\sqrt{m \omega} + \frac{i}{\sqrt{m \omega}}, \sqrt{m \omega} + \frac{i}{\sqrt{m \omega}}]\\
+	&= \frac{1}{2 \hbar} ([\sqrt{m \omega} x, -\frac{i}{\sqrt{m \omega}} p ] + [\frac{i}{\sqrt{m \omega}} p, \sqrt{m \omega} x])
+	\intertext{$[a, b] = ab - ba, \alpha, \beta \in \Co \rightarrow [\alpha a, \beta b] = \alpha \beta - \alpha \beta b a = \alpha \beta [a, b]$}
+	&= \frac{1}{2 \hbar} (-i [x, p] + i \underbrace{[p, x]}_{- [x, p]})\\
+	&= \frac{-2i}{2 \hbar} \underbrace{[x, p]}_{i \hbar} = \mathds{1}
+	\intertext{$a$ und $a^+$ addieren und substrahieren, damit bekommen wir}
+	x &= \sqrt{\frac{\hbar}{2m \omega}} (a + a^+)\\
+	p &= i\sqrt{\frac{\hbar m \omega}{2}} (a - a^+)\\
+	H &= \underbrace{- \frac{1}{2m} \frac{h m \omega}{2}}_{- \frac{\hbar \omega}{4}} (a - a^+)^2 + \underbrace{\frac{m \omega^2}{2} \frac{\hbar}{2 m \omega}}_{\frac{\hbar \omega}{4}}\\
+	&= \frac{\hbar \omega}{4} ( (a + a^+)^2 - (a - a^+)^2)
+	\intertext{mit $a^2 = a a$}
+	&= \frac{\hbar \omega}{4} (a^2 + a a^+ + a^+ {a^+}^2 - a^2 + a a^+ + a^+ a - {a^+}^2)\\
+	&= \frac{\hbar \omega}{2} (\underbrace{a a^+}_{a a^+ = a^+ a + [a, a^+] = a^+ a + 1})\\
+	&= \frac{\hbar \omega}{2} (2 a^+ a + 1)\\
+	(a^+ a)^+ &= a^+ a \equiv N\\
+	H = \hbar \omega (N + \frac12)
+	\intertext{$N = a^+ a$ ist ein neuer hermitescher Operator}
+	[H, N] = [\hbar \omega N + \frac{\hbar \omega}{2}, N] = 0
+	\end{align*}
+	\conseq Eigenzustände von $H$ auch Eigenzustände von $N$.\\
+	Hilfsmittel: $[a, N]$, $[a^+, N]$.
+	\begin{align*}
+		a N &= a a^+ a = (a^+ a + [a, a^+]) a\\
+		&= (N + 1) a = Na + a = a N\\
+		[a, N] &= a
+		\intertext{ebenso}
+		a^+ N &= a^+ a^+ a = a^+ (a a^+ + [a^+, a])\\
+		&= a^+ (a a^+ - 1) = \underbrace{a^a}_N a^+ - a^+\\
+		[a^+, N] = - a^+
+		\intertext{Potenzen durchc rekursive Vorgehen:}
+		a^2 N = a^2 a^+ a &= a (a N) = a (Na + [a, N])\\
+		&= a (Na + a) = a N a + a^2\\
+		&= N a^2 + a^2 + a^2 = N a^2 + 2 a^2\\
+		[a^2, N] &= 2 a^2\\
+		[a, N] &= 1 \cdot a
+		\intertext{Allgemeiner (durch Induktion)}
+		[a^q, N] &= q a^q\\
+		[{a^+}^q] &= -q {a^+}^q
+	\end{align*}
+	Zurück zum Eigenwert-Problem von $N$ bzw. $H$.\\
+	\textbf{Annahme} Eigenwert $n$ zu Eigenzustand $\ket{n}$ von $N$
+	$$N \ket{n} = n \ket{n}$$
+	Was ist nun $n$? Und wie $n$s gibt es? Probiere
+	\begin{align*}
+		a^q N \ket{n} &= a^q n \ket{n} = n a^q \ket{n}\\
+		&= (Na^q + [a^q, N]) \ket{n} = (Na^q + qa^q) \ket{n}\\
+		N (q^a \ket{n}) &= (n - q)(a^q \ket{n})
+	\end{align*}
+	\dots neue Eigenwertgleichung von $N$ mit Eigenwert $(n - q)$ zum Eigenzustand $(a^q \ket{n})$ und $q = 0, 1, 2, \dots$\\
+	Annahme: $n$ beliebig ($\in \Re$)\\
+	\conseq $q$ unbeschränkt möglich \conseq auch negative Eigenwerte von N. Damit Eigenwerte $(n -q)$ für beliebige $q$ positiv bleiben (weil $n \sim $ Energie) \conseq Spektrum muss unten abbrechen, also $n$ auch ganzzahlig, $> 0$ \conseq insgesamt gilt irgendwann
+	$$N (a^q | \ket{n}) = 0 (a^q \ket{n}) = \ket{0}$$
+\end{beispiel*}
+
+
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % %
+
+$$N ({a^+}^q \ket{n}) = (n + q) ({a^+}^q \ket{n})$$
+$a$, $a^+$ Leiteroperatoren\\
+mit $n$ ganz, $\geq 0$,
+$$H \ket{n} = \hbar \omega (n +\frac12) \ket{n}$$
+$\ket{n}$ ist Energieeigenzustand.
+zu $E_n = \hbar \omega (n + \frac12)$\\
+$\ket{0}$ hat Energie $\frac{\hbar \omega}{2}$, sogenannte \textbf{Nullpunktsenergie}.
+Anregungen in \textbf{Quanten von $\hbar \omega$}.\\
+vgl. Modell von Planck.\\
+zu $a$, $a^+$: \textit{Normierung}
+\begin{align*}
+a \ket{n} &= c \ket{n - 1}\\
+1 &= \braket{n - 1 | n - 1} = \frac{1}{|c^2|} \braket{a n | a n}\\
+&= \frac{1}{c^2} \braket{n | \underbrace{a^+ a}_N | n} = \frac{1}{|c^2|} n \underbrace{\braket{n | n}}_{= 1}\\
+1 &= \frac{n}{|c|^2} \qquad \rightarrow \qquad c = \sqrt{n}
+\end{align*}
+also $a \ket{n} = \sqrt{n} \ket{n - 1}$\\
+analog für $a^+$: $a^+ \ket{n} = \sqrt{n + 1} \ket{n + 1}$\\
+können alle Zustände aus Grundzustand $\ket{0}$ erzeugen: \conseq $\frac{1}{\sqrt{n!}} (a^+)^n \ket{0} = \ket{n}$\\
+Hier algebraischer Weg zu den Energien $n$. Eigenzustände als abstrakte Anregungen.\\
+Alternativer Lösungsweg:
+$$x, p = - i \hbar \dd{x}$$
+\conseq Differentialgleichung des $H \ket{\psi} = E \ket{\psi}$ \conseq $H \psi(x) = E \psi(x)$\\
+Lösungen mit $E_n = \hbar \omega (n + \frac12)$ und Wellenfunktionen $\psi_n(x) = \braket{x | n}$
+
+
+\subsection{Wasserstoffatom}
+$$V(\vec{r}) = V(r) = V(|\vec{r}|) = \frac{1}{4\pi \epsilon_0} \frac{-e^2}{r}$$
+V hängt nur von $r$, nicht von Richtungen $\vartheta$, $\vp$ ab (in Kugelkoordinaten).
+$$H = - \frac{\hbar^2}{2m} \vec{\Delta}^2 + V(r)$$
+am besten in Kugelkoordinaten
+$$\vec{\Delta}^2 = \ffpartial{^2}{x^2} + \ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$$
+Komplizierter, aber hier hilfreich
+$$\vec{\Delta}^2 f(r, \vartheta, \vp) = \frac{1}{r} \ffpartial{^2}{r^2} (rf) + \frac{1}{r^2} (\frac{1}{\sin \vartheta} \fpartial{\vartheta} (\sin \vartheta \ffpartial{f}{\vartheta}) + \frac{1}{\sin^2 \vartheta \ffpartial{^2 f}{\vp^2}})$$
+Damit \textbf{Kugelsymmetrische Potentiale} bzw. Zentralpotentiale.\\
+z.B. Coulomb $\frac{q_1 q_2}{r}$ (H-Atom)
+(Modelle für Atomkerne)\\
+\begin{description}
+	\item[sphärischer Oszillator] $\sim \frac{m \omega^2}{2} r^2$
+	\item[sphärischer Potentialtopf] $\sim \begin{cases}
+	- V_0 & r < r_0\\
+	0 & r > r_0
+	\end{cases}$
+\end{description}
+Separate Betrachtung der radialen und der Winkelabhängigen Wellenfunktion.
+$$H = - \frac{\hbar^2}{2m} \vec{\Delta}^2 + V(r) = - \frac{\hbar^2}{2m} \frac{1}{r} \ffpartial{^2}{r^2} - \frac{\hbar^2}{2m} \frac{1}{r^2} (- \frac{\vec{L}^2}{\hbar^2}) + V(r)$$
+mit Drehimpulsoperator
+$$- \frac{\vec{L}^2}{\hbar^2} = \{\frac{1}{\sin \vartheta} \fpartial{\vartheta} (\sin \vartheta \fpartial{\vartheta} + \frac{1}{\sin^2 \vartheta} \ffpartial{^2}{\vp^2})$$
+Am Rande: der Drehimpuls ist $\vec{L} = \vec{r} \times \vec{p}$\\
+Damit (bei $V(\vec{r}) = V(r)$) beobachte, $[H, \vec{L}^2] = [H, \vec{L}] = 0, [\vec{L}, \vec{L}^2];$ aber $[L_i, L_j] = i \hbar L_k$ ist zyklisch.
+
+\begin{bemerkung*}[Symmetrien des Hamiltonoperators]
+$A$ Observable. Behauptung $[H, A] = 0$; $H, A$ besitzen gemeinsame Eigenzustände (vgl. $H, N$ bei harmonischen Oszillator.).
+Wenn $H \ket{\psi_n} = E_n \ket{\psi_n}$, $E_n$ = Eigenwert zu Eigenzustand $\ket{\psi_n}$ mit $[H, A] = 0$ \conseq $HA = AH$\\
+\conseq $A H \ket{\psi_n} = H A \ket{\psi_n} = A E_n \ket{\psi_n} = E_n A \ket{\psi_n}$\\
+also $H (A \ket{\psi_n}) = E_n (A \ket{\psi_n})$\\
+also $A \ket{\psi_n}$ = Eigenvektor zu $H$ zum gleichen Eigenwert $E_n$\\
+also $A \ket{\psi_n} = a e^{i \alpha} \ket{\psi_n}$\
+$\Rightarrow$ $\ket{\psi_n}$ ist Eigenvektor von $H$ und $A$.\\
+So auch für $H$, $\vec{L}^2$; D.h. Eigenzustände von $\vec{L}^2$ sind auch Energieeigenzustände von radialsymmetrischen Systemen.\\
+Lösung des Eigenwert-Problem von $H$
+$$H \psi(\vec{r}) = E \psi(\vec{r})$$
+Ansatz $\psi(\vec{r}) = R(r) W(\vartheta, \vp)$.\\
+$W(\vartheta, \vp)$ sund Eigenfunktionen vom  $\vec{L}^2$:
+$$\vec{L}^2 Y_l^m(\vartheta, \vp) = \hbar^2 l (l + 1) Y_l^m(\vartheta, \vp)$$
+$Y_l^m(\vartheta, \vp)$ = "`Kugelflächenfunktionen"', "`Spherical Harmonics"'\\
+$Y_l^m(\vartheta, \vp) \sim e^{im \vp} P_l^m(\cos \vartheta)$\\
+$P_l^m(x)$ = generalisierte Legendrepolynome\\
+$l = 0, 1, 2, 3, \dots$ Drehimpulsquantenzahl\\
+$m = -l -(l - 1), \dots, +l$ magnetische Quantenzahl.\\
+wegen $[H, \vec{L}^2] = 0$ haben Zustände zu festem $l$ und $m = \underbrace{- l, \dots, l}_{2 l + 1}$ die gleiche Energie.
+\end{bemerkung*}

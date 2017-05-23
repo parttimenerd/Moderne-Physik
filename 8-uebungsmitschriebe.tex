@@ -1,0 +1,279 @@
+\chapter{Übungsmitschriebe}
+
+\section{Blatt 0}
+\subsection{Aufgabe 12}
+Anfangsauslenkung $\phi(t = 0) = \phi_0$, $\phi_0$ klein und $\phi_0 \ll \frac{\pi}{2}$.
+
+Typisches Problem in der Physik \conseq auch in der \QM ("`harmonischer Oszillator"'.
+ 
+\textit{Mathematisches Pendel} mit der \Dgl
+$$ \frac{\d^2}{\d t^2} \phi(t) + \omega^2 \sin(\phi(t)) = 0$$
+Winkelgeschwindigkeit: $\omega(t) = \dot\phi(t)$. Hier ist $\omega^2 = \frac{g}{l}$, $g$ Schwerebeschleunigung der Erde, $l$ Seillänge.\\
+Kleine Winkel: $sin(\phi) \approxeq \phi$ \conseq $\sin(x) \approxeq x, x \ll 1$, $\ddot{\phi} + \omega^2 \phi = 0$
+
+Welche Funktion $\phi(t)$ gibt 2-mal abgeleitet sich selbst mit $-\omega^2$ als Faktor?\\
+Ansatz: $\phi_A(t) = c e^{\pm i \omega t}$\\
+Test: $\dot{\phi_A(t)} = c (\pm i \omega) e^{\pm i \omega t}$ und $\ddot{\phi_A(t)} = c (\pm i \omega)^2 e^{\pm i \omega t} = - \omega^2 \phi_A(t)$\\
+Allgemein: $\phi(t) = c_1 e^{i \omega t} + c_2 e^{- i \omega t}$. Was sind die Werte von $c_1$ und $c_2$?\\
+Man gewinnt sie aus den Anfangsbedingungen $\phi_0$ und $\dot{\phi(t = 0)}$: $\phi(t = 0) = c_1 + c_2 = \phi_0$ und $\dot{\phi(t = 0)} = i \omega (c_1 - c_2) = \dot{\phi_0} = \omega$\\
+Bemerkung: mit $\phi_a(t) = c e^{\pm i \omega t} = c (\cos(\omega t) \pm i \sin(\omega t))$ sieht man, dass die allgemeine Lösung eine Überlagerung zweier Lösungen ist, Kosinus und Sinus \dots
+
+\section{Blatt 1}
+
+\subsection{Aufgabe 1}
+Die Anzahl der Freiheitsgrade entspricht der Anzahl der "`freien, unabhängigen Koordinaten"'
+
+\paragraph{Allgemein} Ein Freiheitsrad ist ein Parameter, der dass physikalische System beschreibt und frei ist, also keiner Zwangsbedingung unterliegt. Oder, die frei wählbaren und voneinander unabhängigen Bewegungsmöglichkeiten (salopp gesagt).Jede Symmetrieachse schränkt dies weiter ein.\\
+
+Hat man $s$ Zwangsbedingungen und $N$ Freiheitsgrade pro Dimension, so hat man $f = d N - s$ Freiheitsgrade.
+
+\subsubsection{a}
+Ein Massepunkt in $d$ Dimensionen hat $d$ Freiheitsgrade.
+
+\subsubsection{b}
+Ein \href{https://de.wikipedia.org/wiki/Starrer_K\%C3\%B6rper}{starrer Körper}, z.B. eine Kugel, mit räumlicher Ausdehnung kann zusätzlich noch rotieren. Damit ist mit $d = 3$: $x(t)$, $y(t)$, $z(t)$ und Rotationsrichtungen $\phi(t), \theta(t), \psi(t)$ \conseq 6 Freiheitsgrade
+
+\subsubsection{c}
+\href{http://de.wikipedia.org/wiki/Sph\%C3\%A4risches_Pendel}{Sphärisches Pendel} im 3-Dimensionalen, mit Pendellänge $l$. Im 3-Dimensionalen:
+$$x^2 + y^2 + z^2 = l^2$$
+\conseq $f = 2$ \textit{Entweder ich wähle 2 Winkel oder angepasst an der Problem wählt man 2 Koordinaten im Koordinatensystem auf der Oberfläche.}
+
+\subsubsection{d}
+Gegeben zwei gekoppelte Pendel\footnote{dass eine hängt am anderen} im zweidimensionalen. Die Pendellängen sind konstant, damit hat man zwei Zwangsbedingungen und 2 Freiheitsgrade. Die Freiheitsgrade sind zum Beispiel die beiden Winkel. Der erste zwischen erstem Pendel und Senkrechter, der zweite zwischen dem ersten Pendel und dem zweiten.
+
+\subsection{Aufgabe 2}
+$\vec{r}(t) = \binom{a \cos(\omega t)}{b\sin(\omega t)}, a, b > 0$
+
+\subsubsection{a}
+\paragraph{i}
+$$\omega_2 = \omega_1, \vec{r}(t = 0) = \binom{a}{0}, \vec{r}(t = \frac{\pi}{2 \omega_1}) = \binom{0}{b}$$
+Ellipse.
+
+\paragraph{ii}
+"`\href{http://de.wikipedia.org/wiki/Lissajous-Figur}{Lissajous-Figur}"'
+$$\omega_2 = 2 \omega_1$$
+
+\subsubsection{b}
+$$\vec{r}(t) = \begin{pmatrix}
+a \cos(\omega t)\\ b \sin(\omega t) \\ c t
+\end{pmatrix}$$
+Die ersten beiden Teile sind die Rotation in $x$-$y$, lineare Bewegung in $z$ \conseq Schraubbewegung
+
+\paragraph{i}
+Zeichnung
+
+\paragraph{ii}
+
+Periodendauer $T = \frac{2 \pi}{\omega}$ \conseq $h = c T$\\
+$h = z_2 - z_1 = ?$ \conseq $h = c \frac{2 \pi}{\omega}$
+
+\subsubsection{c}
+$\vec{r}(t) = r\begin{pmatrix}\cos(\omega t) \\ \sin(\omega t) \\ 0\end{pmatrix} = x(t) \vec{e}_x + y(t)\vec{e}_y$ mit $x(t) = r \cos(\omega t)$, $y(t) = r \sin(\omega t)$ und $\vec{e}_x$, $\vec{e}_y$ sind die Einheitsvektoren.
+
+\paragraph{i}
+
+$$\vec{v}(t) = \dot{\vec{r}}(t) = \begin{pmatrix}\dot{x}(t)\\ \dot{y}(t)\\ \dot{z}(t)\end{pmatrix} =  \begin{pmatrix}- \omega \sin(\omega t) \\ \omega \cos(\omega t) \\ z(t)\end{pmatrix} = \begin{pmatrix}- \omega y(t) \\ \omega x(t) \\ z(t)\end{pmatrix}$$
+
+$$\vec{a}(t) = \dotvec v (t) = \ddotvec r (t) = - r \begin{pmatrix}\omega^2 \cos(\omega t) \\ \omega^2 sin(\omega t) \\ 0 \end{pmatrix} = - \omega^2 \vec{r}(t)$$
+
+\paragraph{ii}
+Beschleunigung senkrecht zu Bewegung und $\vec{r}$ entgegengesetzt. $\vec{F} \alpha \vec{a}$ Zentripetalkraft, $\vec{v} \bot \vec{r} \rightarrow \vec{r} \cdot \vec{v} = 0$, $\vec{a} \parallel - \vec{r} \rightarrow \vec{r} \cdot \vec{a} \neq 0$ $\vec{F} = m \vec{a}$
+
+\paragraph{iii}
+$M = M_E, m = m_S, |\vec{r}| = r_S$.\\
+Gegeben: $\vec{F}_G = - G m_S M_E \frac{\vec{r}}{r^3} = - G \frac{m_S M_E}{r^2} \frac{\vec{r}}{r}$, wobei $\frac{\vec{r}}{r}$ Länge 1 hat und in die Richtung $\vec{r}$ zeigt.\\
+Frage: Geschwindigkeit $v_S$\\
+Aus \textit{ii}: $a_S = | \vec{a}| = \omega^2 r_S$\\
+$|\vec{F}| = m |\vec{a}|$, $|\vec{F}_G| = G \frac{m_S M_E}{r_S^2} = m_S \omega^2 r_S$ \conseq $r_S \omega^2 = G \frac{M_E}{r_S^2} = \frac{r_s^2 \omega^2}{r_S} \overrightarrow{v_s = r_S \omega} v_S = \sqrt{G \frac{M_E}{r_S}}$
+
+\subsection{Aufgabe 3}
+\Dgl \conseq $\vec{r}(t)$?
+$$\vec{F} = - m g \vec{e}_z = m \ddotvec{r} (t) = \begin{pmatrix}0\\ 0\\ - mg \end{pmatrix}$$
+\conseq $\begin{pmatrix}x(t) \\ y(t) \\ z(t)\end{pmatrix} = $ ?\\
+x: 
+$$\ddot{x}(t) = 0 \rightarrow \dot{x}(t) = c_1 \rightarrow x(t) = c_1 t + c_2$$
+$$\vec{t = 0} = \vec{v}_0 = \begin{pmatrix}v \cos(\alpha) \\ 0 \\ v \sin(\alpha)\end{pmatrix}$$
+$$\rightarrow v_x(0) = v \cos(\alpha) \rightarrow c_1 = v \cos(\alpha), x(0) = 0 \rightarrow c_2 = 0$$
+-------------------------
+
+\subsubsection{a}
+Bild von Parabel...
+
+$\vec{r}(t =0) = \begin{pmatrix}0\\0\\0\end{pmatrix}$, $\vec{v}(t = 0)=v \tvector{\cos(\alpha) \\0 \\ \sin(\alpha)}$
+
+$$\vec{F} = - m g \vec{e}_z = m \ddotvec{r} (t) = \begin{pmatrix}0\\ 0\\ - mg \end{pmatrix}$$
+
+\paragraph{$x$?}
+$$\ddot{x}(t) = 0 \rightarrow \dot{x}(t) = c_1 \rightarrow x(t) = \int_0^t c_1 dt' = c_1 t + c_2$$
+Anfangsbedingungen $v_x(0) = v \cos(\alpha) \rightarrow c_1 = v \cos(\alpha)$ und $x(0) = 0 \rightarrow c_2 = 0$ damit folgt $x(t) = v t \cos(\alpha)$
+
+\paragraph{$y$?}
+$$\ddot{y}(t) = 0 \rightarrow \dot{y}(t) = c_3 \rightarrow y(t) = \int_0^t c_3 d t' = c_3 t + c_4$$
+Anfangsbedingungen: $v_y(0) = 0$ und $y(0) = 0$ \conseq $c_3 = c_4 = 0$ \conseq $y(t) = 0$
+
+\paragraph{$z$?}
+$$\ddot{z} = -g \rightarrow \dot{z}(t) = - gt + c_5 \rightarrow z(t) = \frac{1}{2} g t^2 GT^2 + c_5 t +c_6$$
+Anfangsbedingungen: $\dot{z}(0) v \sin(\alpha)$ und $z(0) = 0$ \conseq $c_5 = v \sin(\alpha)$, $c_6 = 0$ \conseq $z(t) = - \frac{1}{2} g t^2 + v t \sin(\alpha)$ \textit{Parabel in t}
+------
+$x(t) = v t \cos(\alpha)$ \conseq $t = \frac{x}{v \cos(\alpha)}$ \conseq $z(t(x)) = - \frac{1}{2} g \frac{x^2}{v^2 \cos^2(\alpha)} + v \frac{x}{v \cos(\alpha)} \sin(\alpha) = x\tan(\alpha) - 1 \frac{1}{2} \frac{g}{v^2 \cos^2(\alpha)} x^2$ \conseq $z(x)$ beschreibt Parabel in $x$
+
+\subsubsection{b}
+
+\paragraph{Maximale Distanz?}
+\begin{itemize}
+	\item $z(\tfin) = (v \sin(\alpha)) \tfin - \frac{1}{2} g \tfin^2 \overset{!}{=} 0$ \conseq $\tfin\pm = \frac{v \sin(\alpha)}{g} \pm \sqrt{(\frac{v \sin(\alpha)}{g})^2 - 0}$ \conseq $\tfin^- = 0$ und $\tfin+ = 2 \frac{v \sin(\alpha)}{g}$
+	\item $x(\tfin^+) = \frac{2 v^2}{g} \cos(\alpha) \sin(\alpha) = \frac{2v^2}{g} \frac{\sin(2\alpha)}{2} = \frac{v^2 \sin(2 \alpha)}{g} = x(\alpha)$ mit $\sin(x + y) = \sin(x)\cos(y) + \sin(y)\cos(x)$, $x(\alpha)$ hat ein Maximum $x_\text{max}$ für $\alpha = \frac{\pi}{4}$
+\end{itemize} 
+
+
+\subsection{4}
+
+\subsubsection{a}
+Geschwindigkeiten vor dem Stoß: $\vec{v}_2$ und $\vec{v}_2$ $(\vec{v} \parallel - \vec{2})$\\
+Mit "`Actio = Reactio"': $\vec{F}_1 = m_1 \ddotvec{r}_1$ \conseq $m_2 \ddotvec{r}_2 = \vec{F}_2 = - \vec{F}_1$ \conseq $\dd t (m_1 \dotvec{r}_1 + m_2 \dotvec{r}_2) = 0$ \conseq $m_1 \ddotvec{r}_1 + m_2 \ddotvec{r}_2 = 0$ \conseq $m_1 \ddotvec{r}_1 = -m_2 \ddotvec{r}_2$ \conseq $\vec{F}_1 = -\vec{F}_2$ \conseq $m_1 \vec{v}_1 + m_2 \vec{v}_2 = \vec{p}_1 + \vec{p}_2 = \vec{p} = \text{konstant}$ \conseq Gesamtimpulserhaltung. Absehen von Richtungen: $m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$, $v_1'$ und $v_2'$ Geschwindigkeiten nach dem Stoß
+
+\subsubsection{b}
+Gesamtenergieerhaltung: Nur kinetische Energie $E_\text{kin} = \frac12 m v^2$ \conseq $\underbrace{\frac12 m v^2 + \frac12 m_2 v_2^2}_\text{Energie vor dem Stoß} = \underbrace{\frac12 m_1 v_1'^2 + \frac{1}{2} m_2 v_2'^2}_\text{Energie nach dem Stoß}$ \dots
+
+\subsubsection{c}
+Nach dem Stoß $v'_1$ und $v'_2$.
+Impulserhaltung: $m_1v_1 +m_2v_2 = m_1v'_1+m_2v_2'$ \conseq $m_1(v_1 - v'_1) = m_2(v'_2 - v_2)$\\
+Energieerhaltung: $m_1v_1^2 + m_2v_2^2 = m_1{v'}_1^2 + m_2{v'}_2^2 \rightarrow m_1(v_1^2-{v'}_1^2) = m_2({v'}_2^2 - v_2^2)$\\
+\conseq $m_1(v_1-{v'}_1)(v_{21}+{v'}_1) = m_2 ({v'}_2 - v_2) ({v'}_2 + v_2)$
+\conseq $v_1 + {v'}_1 = {v'}_2 + v_2$
+\conseq $v_1 - v_2 = -({v'}_1 - {v'}_2)$ \conseq die Relativgeschwindigkeiten vor und nach dem Stoß ändern die Richtung\\
+$v_1 - v_2 = {v'}_2-{v'}_1$ und Impulserhaltung\\
+Für ${v'}_1$: ${v'}_1$ = ${v'}_2 + v_2 - v_1$ und ${v'}_1 = \frac{1}{m_1} (-m_2 {v'}_2 + m_2v_2 + m_1v_1)$ \conseq $\frac{m_2}{m_1} {v'}_1 + {v'}_1 = 2\frac{m_2}{m_1} v_2 + v_1 (1-\frac{m_2}{m_1})$\\
+\conseq ${v'}_1 = (m_1 - m_2)v_1 + 2m_2v_2 / (m_1 + m_2)$\\
+Analog: ${v'}_1 = 2m_1v_1 + \frac{(m_2 - m_1)v_2)}{(m_1 + m_2)}$
+Für $m_1 = m_2 = m$ folgt ${v'}_1 = v_2$ und ${v'}_2 = v_1$
+und gilt zu dem $v_2 = 0$ folgt ${v'}_1 = 0$ und ${v'}_2 = v_1$
+
+\section{Blatt 2}
+
+\subsection{4}
+\subsubsection{1}
+\paragraph{a}
+$$m \ddot{x} = -kx$$
+Ansatz $x(t) = c_\lambda e^{\lambda t}$ \conseq $\ddot{x}(t) = c_\lambda \lambda^2 e^{\lambda t} = \lambda^2 x(t)$\\
+$m \ddot{x}(t) = m \lambda^2 x(t)$ \conseq $\lambda^2 = - \frac{k}{m}$
+\conseq $\lambda_{\pm} = \pm \sqrt{- \frac{k}{m}} = \pm i \sqrt{\frac{k}{m}}$, $\lambda_{-} = - \lambda_{+}$
+Gesamt: $x(t) = c_+ e^{\lambda_+ t} + c_- e^{\lambda_- t} = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}$, $\lambda_1 = \lambda_+$, $\lambda_2 = \lambda_- = - \lambda_1$
+Anfangsbedingungen: $x(t = 0) = x_0 = c_1 + c_2$ und $\dot{x}(t = 0) = v_0 = c_1 \lambda_1 + c_2 \lambda_2 = \lambda_1 (c_1 - c_2) $
+\conseq $c_1+c_2 = x_0$ und $c_1 - c_2 = \frac{v_0}{\lambda_1}$
+\conseq $c_1 = \frac12 (x_0 + \frac{v_0}{\lambda_1})$ und $c_2 = \frac12 (x_0 - \frac{v_0}{\lambda_1})$, $\lambda_1 = i \sqrt\frac{k}{m} = i \omega$
+\conseq $x(t) = \frac{1}{2} (x_0 \frac{v_0}{\lambda_1})e^{\lambda_1 t} + \frac12 (x_0 - \frac{v_0}{\lambda_1})e^{-\lambda_1 t} = \frac{1}{2} x_0 (e^{i \omega t} + e^{-i\omega t}) + \frac12 \frac{v_0}{i\omega}(e^{i \omega t} - e^{-i\omega t})$
+mit $\cos(\omega t) = \frac{1}{2} (e^{i \omega t} + e^{i \omega t})$ und $\sin(\omega t) = \frac{1}{2i} (e^{i \omega t} - e^{i \omega t})$
+Energie $\dot{x}(t) = - x_0 \omega \sin(\omega t) + v_0 \cos(\omega t)$
+$E = T + V = \frac12 m\dot{x}^2 + \frac12 k x^2$ (letzter Term: Federpotential von harmonischem Oszillator)
+$ = \frac{1}{2} m (v_0 \cos(\omega t) - x_0 \omega \sin(\omega t)) = \frac{1}{2} m v_0^2 + \frac12 \underbrace{m \omega^2}_{k} x_0^2$ \conseq Energieerhaltung im Reibungsfreien Fall
+\paragraph{b}
+$m \ddot{x} = -kx + f_0 \cos(\omega_0 t) \rightarrow \ddot{x} + \omega^2 x = \frac{f_0}{m} \cos(\omega_0 t)$
+	Die Lösung ist eine Superposition aus der Lösung $x_0(t)$ der freien Gleichung aus \textit{a} und einer sogenannten Partikulärlösung $x_p$, mit dem Ansatz $x_p(t) = c_0 \cos(\omega_0 t - \phi)$
+	\\Setze $x_p(t)$ in  $c_1 + c_2 = x_0$ ein: $\dot{x}_p = - c_0 \omega_0 \sin(\omega_0 t - \phi)$, $\ddot{x}_p = - c_0 \omega_0^2 \cos(\omega_0 t - \phi)$
+	\conseq $\ddot{x}_p + \omega_2 x_p = - c_0 \cos(\omega_0 t - \phi) + \omega^2 c_0 \cos(\omega_0 t - \phi)$
+	mit $\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y)$
+	\conseq $\frac{f_0}{m} \cos(\omega t) = c_0 (\omega^2 - \omega_0^2) (\cos(\omega_0 t) \cos(\phi) - \sin(\omega_0 t)\sin(\phi))$
+	$0 = \cos(\omega_0 t)(c_0 (\omega^2 - \omega_0^2)\cos(\phi) - \frac{f_0}{m}) - \sin(\omega_0 t)(c_0 (\omega^2 - \omega_0^2) \sin(\phi))$
+	\\ Wenn das für alle $t$ gelten soll, so muss jeder Term, proportional zu $\cos(\omega_0 t)$ und $\sin(\omega_0 t)$, separat verschwinden \conseq $c_0 (\omega^2 - \omega_0^2) \cos(\phi) - \frac{f_0}{m} = 0 \text{(i)}$ und $c_0 (\omega^2 - \omega_0^2) \sin(\phi) = 0 \text{(ii)}$\\
+	Bestimme $c_0$ und $\phi$.
+	(i) \conseq (i*) $c_0 (\omega^2 - \omega_0^2) \cos(\phi) = \frac{f_0}{m}$\\
+	(i)/(i*) \conseq $\frac{\sin(\phi)}{\cos(\phi)} = 0 = \tan (\phi)$
+	\conseq Erlaubte Werte für $\phi$ sind $0, \pm \pi, \dots$.\\
+	$(i*)^2 + (ii)^2$ \conseq $c_0^2 (\omega^2 - \omega_0^2)^2 (\cos^2(\phi) + \sin^2(\phi)) = \frac{f_0^2}{m^2}$ \conseq $c_o = \frac{\frac{f_0}{m}}{\omega^2 - \omega_0^2}$ Resonanzkatastrophe für $\omega_0 = \omega$\\
+Gesamt: $x(t) = x_0(t) + x_p(t)$\\
+$x(t) = x_0 \cos(\omega t) + \frac{v_0}{\omega} \sin(\omega t) + \frac{\frac{f_0}{m}}{\omega^2 - \omega_0^2} \cos (\omega_0 t - \phi)$
+
+\subsection{2}
+\textit{Lagrange-Gleichung 2. Art entspricht Euler-Lagrange-Gleichung.}
+$L(\vec q, \dotvec{q}) = T(\dotvec{q}) - V(\vec{q})$\\
+$L(\vec{x}, \dotvec{x}) = \frac12 m \dotvec{x}^2 - V(\vec{x}) = \frac12 m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - V(\vec{x})$, drei generalisierte Koordinaten und Geschwindigkeiten und für jeden Satz $(x, \dot x)$, $(y, \dot y)$, $(z, \dot z)$ gibt es eine Euler-Lagrange-Gleichung\\
+Betrachte nur x: $L(x, \dot x) = \frac12 m \dot{x}^2 - V(x)$
+\conseq $\dd t \ffpartial{L}{\dot{x}} - \ffpartial{L}{x} = 0$ \conseq $\dd t (m \dot x) - (- \ffpartial{V}{x}) = 0$ \conseq $m \ddot x + \ffpartial{V}{x} = 0$ \conseq $m \ddot x = - \ffpartial{V}{x} = F_x$ \textit{Ein Teilchen der Masse $m$ erfährt im Potential $V(x)$ eine Kraft $F_x = -\ffpartial{V}{x}$}
+
+\subsection{3}
+Erinnerung $(q_i, \dot{q}_i:~ \dd t (\ffpartial{L(\vec{q}, \dotvec{q})}{\dot{q}_i}) = 0$\\
+$x = r \sin(\varphi)$, $y = - r \cos(\varphi)$, $z = 0$\\
+$v_x = \dot{x} = l \cos(\phi) \dot{\varphi}$, $v_y = l \sin(\varphi) \dot{\varphi}$ 
+\begin{itemize}
+	\item $x$ und $y$ sind nicht unabhängig: $x^2 + y^2 = r^2 = l^2$
+	\item Eine freie Koordinate $\varphi$ $L = T - V = \frac12 m\vec{v}^2 - mg y = \frac12 (v_x^2 + v_y^2 + v_z^2) - mgy = \frac12 m (l^2 \cos^2(\varphi) \dot{\varphi}^2 + l^2 \sin^2(\varphi)\dot{\varphi}^2) + mgl \cos(\varphi) = \frac12 m l^2 \dot{\varphi}^2  + mgl \cos(\varphi) = L(\varphi, \dot{\varphi})$
+\end{itemize}
+$L(\varphi, \dot{\varphi})$ is von $\dot{\varphi}$ und $\varphi$ abhängig \conseq $\varphi$ ist keine zyklische Koordinate \conseq Euler-Lagrange-Gleichung für $(\varphi, \dot{\varphi})$: $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t (ml^2 \dot{\varphi}) - (-mgl \sin(\varphi)) = 0$ \conseq $ml^2 \ddot{\varphi} + mgl\sin(\varphi) = 0$ \conseq $\ddot{\varphi} + \underbrace{\frac{g}{l} \sin(\varphi)}_\text{Pendel} = 0$\\
+\textbf{Bemerkung} Hätte $L$ nicht $V$ abgehängt, also $L = T = \frac12 m \vec{v}^2 = \frac12 m l^2 \dot{\varphi}^2$.\\
+Dann wäre $\varphi$ zyklisch und $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t \ffpartial{L}{\dot{\varphi}} = 0$ \conseq $\ffpartial{L}{\dot{\varphi}} = m l^2 \dot{\varphi}$ Erhaltungsgröße und Drehimpuls
+
+\section{Blatt 3}
+
+\subsection{Aufgabe 1}
+$$L = T_\text{ges} - V_\text{ges} = \frac12 ml^2 (\dot{\varphi}_1^2 + \dot{\varphi}_2^2) - (- mgl [\cos(\varphi_1) + \cos(\varphi_2)] + \frac12 k l^2 (\sin(\varphi_1) - \sin(\vp_2)^2)$$
+kleine Winkel: $\vp_1, \vp_2$: $\sin(\vp) \approx \vp$, $\cos(\vp) \approx 1 - \vp^2 \approx 1$
+$$ = \frac12 ml^2 (\dot{\vp}_1^2 + \dot{\vp}_2^2) + 2mgl - \frac12 kl^2 (\vp_1 - \vp_2)^2 + \frac12 mgl(-\vp_1^2 - \vp_2^2)$$
+Euler-Lagrange (Lagrange 2. Art)
+$$\dd t \ffpartial{L}{\dvp_1} - \ffpartial{L}{\vp_1} \overset{!}{=} 0 = ml^2 \ddvp_1 - (-kl^2 (\vp_1 - \vp_2) - mgl\vp_1)$$
+$$\dd t \ffpartial{L}{\dvp_2} - \ffpartial{L}{\vp_2} \overset{!}{=} 0 = ml^2 \ddvp_2 - (kl^2 (\vp_1 - \vp_2) - mgl\vp_2)$$
+\conseq $$\ddvp_1 + \frac{g}{l} \vp-1 + \frac{k}{m}(\vp_1 - \vp_2) = 0$$
+$$\ddvp_2 \frac{g}{l} \vp_2 - \frac{k}{m} (\vp_1 - \vp_2) = 0$$
+Entkopple die beiden Gleichungen: Definiere die Normalkoordinaten $\Psi_1 = \vp_1 - \vp_2$ und $\Psi_2 = \vp_1 + \vp_2$
+Durch Addieren bzw. Subtrahieren der beiden Gleichungen
+$$\ddot{\Psi_1} + \frac{g}{l} \Psi_1 + 2 \frac{k}{m} \Psi_1 = 0$$
+$$\ddot{\Psi}_2 + \frac{g}{l} \Psi_2 = 0$$
+\conseq 2 entkoppelte DGL
+$\ddot{\Phi}_1 = - (\frac{g}{l} + 2 \frac{k}{m}) \Psi_1$ mit $\omega_1^2 = \frac{g}{l} + 2 \frac{k}{m}$ und $\ddot{\Psi}_2 = - \frac{g}{l} \Psi_2$ mit $\omega_2^2 = \frac{g}{l}$, $\Psi_1$ und $\Psi_2$ unabhängige Oszillatoren, zu lösen wie gehabt.
+
+\paragraph{3 Fälle}
+Gleichschwingung ($\vp_1 = \vp_2$)\\
+\conseq $\Psi_1 = 0, \Psi_2 = 2 \vp_1 = 2 \vp_2$ \conseq $\ddvp_1 + \frac{g}{l} \vp_1 = 0$ und $\ddvp_2 + \frac{g}{l} \vp_2 = 0$ Beide Pendel schwingen mit gleicher Amplitude und gleicher Frequenz $\omega^2 = \frac{g}{l}$\\
+Gegenschwingung ($\vp_2 = -\vp_1$)\\
+\conseq $\Psi_2 = 0, \Psi_1 = 2 \vp_1 = - 2 \vp_2$ \conseq $\ddvp_1 + (\frac{g}{l} + 2 \frac{k}{m}) \vp_1 = 0$, $\ddvp_2 + (\frac{g}{l} + 2 \frac{k}{m}) \vp_2 = 0$. Gegenschwingung: Die Pendel schwingen mit der gleichen Amplitude, aber gegenteiliger Phase und mit einer Frequenz $\omega_1^2 = \omega_2^2 = \frac{g}{l} + \frac{2k}{m} > \frac{g}{l}$\\
+Schwebung ($\vp_2(t = 0) \neq 0, \vp_1(t=0) = 0$)\\
+\conseq $\Psi(t = 0) = - \vp_2(t=0), ~\Psi_2(t=0) = \vp_2(t=0)$\\
+Weiterhin: $\dvp_2(t=0) = \dvp_1(t = 0) = 0$
+\subparagraph{Allgemeiner Fall}
+In Normalkoordinaten im Allgemeinen Fall 2 Lösungen freier Pendel
+$$\Psi(t) = \Psi_1^0 \cos(\omega_1 t) + \frac{\dot{\Psi_1^0}}{\omega_1} \sin(\omega_1 t)$$
+$$\Psi(t) = \Psi_2^0 \cos(\omega_2 t) + \frac{\dot{\Psi_2^0}}{\omega_2} \sin(\omega_2 t)$$
+mit $\omega_1^2 = \frac{g}{l} + 2 \frac{k}{m} = \omega_2^2 + 2 \frac{k}{m}$, $\omega_2^2 = \frac{g}{l}$\\
+Ortskoordinaten: $\vp_1(t) = \frac{1}{2} (\Psi_1(t) + \Psi_2(t))$, $\vp_2(t) = \frac{1}{2} (-\Psi_1(t) + \Psi_2(t))$
+
+
+\conseq $\vp_1(t) = \frac12 [\Psi_1^0 \cos(\omega_1 t) + \frac{\dot{\Psi}_1^0}{\omega_1} \sin(\omega_1 t) + \Psi_2^0 \cos(\omega_2 t) + \frac{\dot{\Psi}_2^0}{\omega_2} \sin(\omega_2 t)]$ und
+$\vp_2(t) = \frac12 [- \Psi_1^0 \cos(\omega_1 t) + \frac{\dot{\Psi}_1^0}{\omega_1} \sin(\omega_1 t) + \Psi_2^0 \cos(\omega_2 t) + \frac{\dot{\Psi}_2^0}{\omega_2} \sin(\omega_2 t)]$
+
+Anfangsbedingungen: $\vp_2^0 \neq 0, \vp_1^0 = 0, \dvp_2^0 = \dvp_1^0 = 0$ \conseq $\Psi_1^0 = - \vp_2^0, \dot{\Psi}_1^0 = 0$, $\Psi_2^0 = \vp_2^0, \dot{\Psi}_2^0 = 0$
+\conseq $\vp_1(t) = \frac12 [- \vp_2^0 \cos(\omega_1 t) + \vp_2^0 \cos(\omega_2 t)]$ und $\vp_1(t) = \frac12 [\vp_2^0 \cos(\omega_2 t) + \vp_2^0 \cos(\omega_1 t)]$
+
+Einschub
+$\frac12 [\cos(x) + \cos(y)] = \cos(\frac{x + y}{2}) \cos(\frac{x-y}{2})$ und $\frac12 [\cos(x) - \cos(y)] = - \sin(\frac{x + y}{2}) \sin(\frac{x-y}{2})$
+
+\conseq $\vp_1(t) = \vp_2^0 \sin(\frac{\omega_2 + \omega_1}{2}) \sin(\frac{\omega_1 - \omega_2}{2})$ und $\vp_1(t) = \vp_2^0 \cos(\frac{\omega_2 + \omega_1}{2}) \cos(\frac{\omega_1 - \omega_2}{2})$
+
+
+\subsection{Aufgabe 2}
+Freie Koordinaten: $x$, $\phi$\\
+$$L = T - V = \frac12 m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - mgz$$
+$x$, $y$, $z$ sind nicht unabhängig: $y^2 + z^2 = l^2 = r^2$\\
+Koordinatenwechsel: $(x,y,z) \rightarrow (x,r,\vp)$
+\conseq $x = x$, $y = r \sin(\vp) = l \sin \vp$, $z = -r\cos(\vp) = -l \cos(\vp)$\\
+\conseq $\dot{x} = \dot{x}$, $\dot{y} = l \dvp \cos(\vp)$, $\dot{z} = l \dvp \sin(\vp)$
+\conseq $L = \frac12 m (\dot{x}^2 + \underbrace{l^2 \dvp^2 \cos^2(\vp) + l^2 \dvp^2 \sin^2(\vp)})_{l^2 \dvp^2} + mgl \cos(\vp)$\\
+$(x, \dot{x}) \xrightarrow[]{\text{x zyklisch}} \dd t (\ffpartial{L}{\dot{x}}) - \ffpartial{L}{x} = 0$
+\conseq $\dd t (\underbrace{m \dot{x}}_{p_x}) = m \ddot{x} = 0$\\
+Bewegungsgleichung mit konstanter Geschwindigkeit in $x$ und damit Impulserhaltung in $x$\\
+$(\vp, \dvp) \rightarrow \dd t (\ffpartial{L}{\dvp}) - \ffpartial{L}{\vp} = 0$ \conseq $\dd t (m l^2 \dvp) - (- mgl \sin(\vp)) = 0$ \conseq $\ddvp + \frac{g}{l} \sin(\vp) = 0$ \textit{Pendelgleichung}\\
+Zusammen: $m \ddot{x} = 0$ und $\ddvp \frac{g}{l} \sin(\vp) = 0$ sind zwei unabhängige Bewegungsgleichungen.\\
+Erhaltungssätze: $L$ ist nicht explizit von $\dot{x}$ abhängig \conseq $x$ zyklischen Koordinate \conseq $\ffpartial{L}{\dot{x}} = m \dot{x} = p_x$ erhalten
+
+\subsection{Aufgabe 3}
+$L = T_1 + T_2 - V_1 - V_2 = \frac12 m_1(\dot{x_1}^2 + \dots) + \frac12 m_2 (\dot{x}_2^2 + \dots) - (- m_1 g z_1) - (- m_2 g z_2)$\\
+Geschickter ist es, dem Problem angepasste Koordinaten zu verwenden: Da sich $m_1$ auf einem Kreis mit $r_1^2 = (l-r_2)^2$, da sich $m_2$ auf einer Sphäre mit $r_2^2 = x^2 + y^2 + z^2$ bewegt.\\
+\conseq $m_1$: Polarkoordinaten (Zylinderkoordinaten)\\
+$x_1 = r_1 \cos(\vp_1)$\\
+$y_1 = r_1 \sin(\vp_1)$\\
+$z_1 = z_1$\\
+$m_2$: Sphärische/Kugelkoordinaten\\
+$x_2 = r_2 \cos\vp_2 \sin \theta_2$\\
+$y_2 = r_2 \sin \vp_2 \sin \theta_2$\\
+$z_2 = r_2 \cos \theta_2$\\
+Zwangsbedingungen: $z_1 = \text{konstant} = 0$\\
+$r_1 + r_2 = l$ \conseq $r_2 = l r_1$

@@ -13,3 +13,6 @@
 *.loa
 *.pdfpc
 *.synctex.gz
+*.fdb_latexmk
+*.fls
+*.tdo
