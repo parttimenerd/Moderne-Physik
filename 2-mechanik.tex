@@ -184,11 +184,12 @@ dargestellt werden.
 
 \subsection{Das d'Alembertsche Prinzip}
 
-\subsubsection{Ziel} Das Ziel dieses Prinzips ist die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
+\subsubsection{Ziel} 
+Das Ziel dieses Prinzips ist die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
 
-%Vor Elimination der Zwangskräfte \conseq Definition. Dazu
-
-\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} 
+Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. 
+Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
 
 \begin{beispiel*}[Teilchen im Aufzug]
 Weil der zurückgelegte Weg auch als $\delta x = v_0 \cdot \Delta t$ dargestellt werden kann gilt
@@ -196,23 +197,23 @@ $$\d \vec{r} = \binom{\d x}{\d z} = \binom{\d x}{ v_0 \d t}$$
 da außerdem gilt $\delta t = 0$ gilt
 $$\delta \vec{r} = \binom{\delta x}{\delta z} = \binom{\delta x}{v_0 \delta t} = \binom{\delta x}{0}$$
 \end{beispiel*}
-Man kann die Kraft in zwei Teile zerlegen:
-$$m \ddotvec{r}_i = \vec{F}_i = \vec{K}_i + \vec{Z}_i$$
-die Kraft entlang der erlaubten Bewegung $\vec{K}_i$ und die Zwangskraft $\vec{Z}_i$. Damit kommt man zur virtuellen Arbeit ($\d W_i = - \vec{F}_i \d \vec{r}_i$)
-$$\delta W = - \vec{F} \delta \vec{r}$$
-Wenn man darin die obere Gleichung als $\vec{F}_i = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ einsetzt folgt
-$$\sum_i (\vec{K}_i - m \ddot{\vec{r}}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = \delta W$$
-Daraus kann man das Prinzip der virtuellen Arbeit folgern, wenn wir fordern, dass die Zwangskräfte keine Arbeit verrichten\footnote{Dies gilt "`erfahrungsgemäß"'.} und damit $\delta W = \sum_i \vec{K}_i \delta \rvec_i$ gilt.
 
-\paragraph{Prinzip der virtuellen Arbeit}
-$$\sum_i \vec{Z}_i \delta \vec{r}_i = 0$$
-"`Die gedachten Bewegungen, z.B. jene senkrecht zu einer durch die Zwangsbedingungen vorgegebenen Bahn, verrichten keine Arbeit."'
+\subsubsection{Ansatz}
+Aus der Bewegungsgleichung $m \ddotvec{r}_i = \vec{F}_i = \vec{K}_i + \vec{Z}_i$ erhalten wir die Gleichung $0 = \vec{K}_i - m \ddotvec{r}_i + \vec{Z}_i$ und damit
+\[
+	\sum_i (\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i + \sum_i \vec{Z}_i \delta \vec{r}_i = 0
+	\text{,}
+\]
+wobei die Summanden $(\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i$ beziehunsweise $\vec{Z}_i \delta \vec{r}_i$ als \textbf{virtuelle Arbeit $\delta W$} bezeichnet werden (vergleich: Arbeit $\d W = -\vec{F} \d \vec{r}$).
 
-\begin{bemerkung*}
-	Es muss natürlich nur die Summe den Wert 0 haben. Die einzelnen Summanden $\vec{Z}_i \delta \rvec_i$ können auch Werte ungleich 0 besitzen.
-\end{bemerkung*}
+Das \textbf{Prinzip der virtuellen Arbeit} fordert nun, dass $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$. Die virtuellen Kräfte dürfen also in der Summe keine Arbeit verrichten: "`Die gedachte Bewegung, z.B. jene senkrecht zu einer durch eine Zwangsbedingung vorgegebenen Bahn, verrichtet keine Arbeit"'.
 
-\subsubsection{Beispiele für Zwangskräfte}
+Mit diesem Prinzip folgt also die zentrale Gleichung
+\[
+	\sum_i (\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i = 0
+	\text{,}
+\]
+mit der wir im Folgenden Kapitel arbeiten werden.
 
 \begin{beispiel*}[Teilchen auf einer Kurve]
 $$\vec{Z} \bot \delta \vec{r} \qquad \Rightarrow \qquad \vec{Z} \delta \vec{r} = 0$$
@@ -311,9 +312,9 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 \begin{beispiel*}[Schwingende Hantel]
 	\textit{Hantel deren eine Masse $m_1$ auf einer Stange gelagert ist und deren andere Masse $m_2$ nach unten an der Hantel hängt (siehe Abbildung \ref{fig:ch1_schwingendehantel}).}
 	
-	\begin{figure}
+	\begin{figure}[h]
 		\centering
-		\includegraphics{figures/ch1/schwingendehantel}
+		\includegraphics[scale=1.5]{figures/ch1/schwingendehantel}
 		\caption{Schwingende Hantel, die an $x$-Achse aufgehängt ist. Massepunkt $m_1$ kann sich frei auf der $x$-Achse bewegen.}
 		\label{fig:ch1_schwingendehantel}	
 	\end{figure}
