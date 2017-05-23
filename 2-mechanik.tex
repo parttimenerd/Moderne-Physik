@@ -245,7 +245,10 @@ $$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i
 $Q_j$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
 
 \paragraph{Spezialfall konservative Systeme}
-Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ darstellen. Und damit gilt auch
+Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ 
+mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ 
+und $\vec{\nabla}_j = \left( \frac{\partial}{\partial x_j}, \frac{\partial}{\partial y_j}, \frac{\partial}{\partial z_j} \right)$ 
+darstellen. Und damit gilt auch
 $$Q_j = \sum_{i = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
 
 Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
@@ -294,19 +297,26 @@ Gegeben sei wieder ein konservatives System mit holonomen Zwangsbedingungen.
 $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, \dots, s$$
 
 \begin{bemerkung*}[Fazit]~\\
-	Mit den Lagrange-Gleichungen wurden die Zwangskräfte eliminiert. Man hat dafür $S$ gewöhnliche Differenzialgleichungen 2. Ordnung bekommen, für welche man $2S$ Anfangsbedingungen benötigt um sie zu lösen.
+	Mit den Lagrange-Gleichungen wurden die Zwangskräfte eliminiert. Man hat dafür $S$ gewöhnliche Differenzialgleichungen 2. Ordnung für die $q_j(t)$ bekommen, für welche man $2S$ Anfangsbedingungen benötigt um sie zu lösen.
 	Statt Impuls und Kraft, wie bei den Newtonschen Gesetzen, liegen hierbei Energie und Arbeit im Fokus.
 \end{bemerkung*}
 
 \begin{bemerkung*}[Ausblick]
 	$$L = L(\vardots{q}{s}, \vardots{\dot{q}}{s}, t)$$
-	Die Lagrange-Gleichungen sind invariant gegenüber Punkttransformationen \\
-	$(\vardots{q}{s}) \underset{\text{differenzierbar}}{\leftrightarrow} (\vardots{\bar{q}}{s})$ mit $\bar{q}_i = \bar{q}_i(\vardots{q}{s}, t)$, $q_i = q_i(\vardots{\bar{q}}{s}, t)$
+	Die Lagrange-Gleichungen sind invariant gegenüber Punkttransformationen: 
+	$(\vardots{q}{s}) \underset{\text{diff'bar}}{\leftrightarrow} (\vardots{\bar{q}}{s})$ mit $\bar{q}_i = \bar{q}_i(\vardots{q}{s}, t)$, $q_i = q_i(\vardots{\bar{q}}{s}, t)$.
 	Damit hat man bei der Wahl der generalisierten Koordinaten gewisse Freiheiten. Diese kann man zur Vereinfachung des Problems nutzen. Hierbei ist es sinnvoll weitere Symmetrien im Problem auszunutzen.
 \end{bemerkung*}
 
 \begin{beispiel*}[Schwingende Hantel]
-	\textit{Hantel deren eine Masse $m_1$ auf einer Stange gelagert ist und deren andere Masse $m_2$ nach unten an der Hantel hängt.}
+	\textit{Hantel deren eine Masse $m_1$ auf einer Stange gelagert ist und deren andere Masse $m_2$ nach unten an der Hantel hängt (siehe Abbildung \ref{fig:ch1_schwingendehantel}).}
+	
+	\begin{figure}
+		\centering
+		\includegraphics{figures/ch1/schwingendehantel}
+		\caption{Schwingende Hantel, die an $x$-Achse aufgehängt ist. Massepunkt $m_1$ kann sich frei auf der $x$-Achse bewegen.}
+		\label{fig:ch1_schwingendehantel}	
+	\end{figure}
 	
 	Die Masse $m_1$ ist frei in $x$-Richtung beweglich und an der Masse $m_2$ zieht die Gravitationskraft.
 	Es gibt die folgenden 4 holonom-skleronomen Zwangsbedingungen
@@ -314,8 +324,9 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	z_1 = z_2 &= 0\\
 	y_1 &= 0\\
 	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0
+	\text{.}
 	\end{align*}
-	womit es im System $s = 6 -4$ Freiheitsgrade gibt.
+	womit es im System $s = 6 - 4$ Freiheitsgrade gibt.
 	Als generalisierte Koordinaten kann man zum Beispiel $q_1 = x$ und $q_2 = \phi$ (der Winkel zwischen Lot und Hantelstange) wählen. Damit sind die Koordinaten und Geschwindigkeiten:
 	\begin{align*}
 	x_1 &= q_1 & x_2 &= q_1 + l \sin q_2\\
@@ -326,50 +337,63 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\end{align*}
 	Damit ist die Kinetische Energie
 	\begin{align*}
-	T & = \frac12 m_1 \vecdotnumsq{r}{1} + \frac12 m_2 \vecdotnumsq{r}{2}\\
-	&= \frac12 m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2)\\
-	&= \frac12 m_1 \dot{q}_1^2 + \frac12 m_2 ( (\dot{q}_1 + \dot{q}_2 l \cos q_2)^2 + l^2 \dot{q}_2^2 \sin^2 q_2)\\
-	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (2 \dot{q}_1 \dot{q}_2 l \cos q_2 + \dot{q}_2^2 l^2)\\
-	V &= 0 - m_2 g l \cos q_2\\
-	&\text{\textit{Konstanten können weggelassen werden, da die Kraft in der Ableitung steckt.}}\\
-	\rightarrow L &= T - V\\
-	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (l^2 \dot{q}_2^2 + 2 l \dot{q}_1 \dot{q}_2 \cos q_2) + m_2 g l \cos q_2
+	T & = \frac12 m_1 \vecdotnumsq{r}{1} + \frac12 m_2 \vecdotnumsq{r}{2} \\
+	&= \frac12 m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
+	&= \frac12 m_1 \dot{q}_1^2 + \frac12 m_2 ( (\dot{q}_1 + \dot{q}_2 l \cos q_2)^2 + l^2 \dot{q}_2^2 \sin^2 q_2) \\
+	&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (2 \dot{q}_1 \dot{q}_2 l \cos q_2 + \dot{q}_2^2 l^2) 
+	\text{.}
 	\end{align*}
-	\textbf{Interessante Beobachtung} L hängt nicht von $q_1$ ab (nur von $\dot{q}_1$).
+	
+	Mit dem Potential $V = 0 - m_2 g \cos(q_2)$ folgt die Lagrange-Funktion:
 	\begin{align*}
-	\dd t \ffpartial{L}{\dot{q}_1} - \underbrace{\ffpartial{L}{q_1}}_{= 0} = 0 \text{~und damit~} 	\ffpartial{L}{\dot{q}_1} = \text{konstant}
+		L &= T - V \\
+		&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (l^2 \dot{q}_2^2 + 2 l \dot{q}_1 \dot{q}_2 \cos q_2) + m_2 g l \cos q_2
+		\text{.}
 	\end{align*}
+	
+	\textbf{Interessante Beobachtung}: $L$ hängt nicht von $q_1$ ab (nur von $\dot{q}_1$):
+	\[
+		\dd t \ffpartial{L}{\dot{q}_1} - \underbrace{\ffpartial{L}{q_1}}_{= 0} = 0
+		\quad \text{und damit} \quad 	
+		\ffpartial{L}{\dot{q}_1} = \text{konstant}
+		\text{.}
+	\]
 \end{beispiel*}
 
 \begin{definition*}[Zyklische Koordinate]\label{zyklische_koordinate}
 	Ein Koordinate $q_j$ ist genau dann zyklisch falls gilt
-	$$\ffpartial{L}{q_j} = 0 \Leftrightarrow \ffpartial{L}{\dot{q}_j} = \text{konstant} \equiv p_j$$
+	\[
+		\ffpartial{L}{q_j} = 0 \Leftrightarrow \ffpartial{L}{\dot{q}_j} = \text{konstant} \equiv p_j
+	\]
 	mit dem verallgemeinerten Impuls 
-	$$p_j = \ffpartial{L}{\dot{q_j}}$$
+	\[
+		p_j = \ffpartial{L}{\dot{q_j}}
+		\text{.}
+	\]
 	Zyklische Koordinaten führen automatisch zu einem \textit{Erhaltungssatz}. Deswegen sollten möglichst viele generalisierte Koordinaten zyklisch sein.
 \end{definition*}
 
 \begin{beispiel*}[Schwingende Hantel \textendash~Fortsetzung]
 	\begin{align*}
-		p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 \cos q_2 = \const\\
-		\Rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos q_2 + c\\
-		\overset{\text{Integration}}{\Rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)
+		p_1 &= \ffpartial{L}{\dot{q}_1} = (m_1 + m_2)\dot{q}_1 + m_2 l \dot{q}_2 \cos(q_2) = \const = c'\\
+		\Rightarrow \dot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} \dot{q}_2 \cos(q_2) + c\\
+		\overset{\text{Integration}}{\Rightarrow} q_1(t) &= ct - \frac{m_2 l}{m_1 + m_2} \sin (q_2(t))
 	\end{align*}
 	Die Anfangsbedingungen:
 	\begin{align*}
-		q_1(t = 0) &= q_2(t = 0) = 0\\
-		\dot{q}_2(t=0) &= \omega_0\\
-		\dot{q}_1(t=0) &= - \frac{m_2 l}{m_1 + m_2} \omega_0\\
-		\Rightarrow c &= 0 \Rightarrow q_1(t) = - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)\\
-		\intertext{Damit erfolgt bereits die Rücktransformation}
-	x_1(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t)\\
-	y_1(t) &= 0\\
-	y_2(t) &= l \cos \phi(t)\\
-	x_2(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t) + l \sin \phi(t)\\ 
-	\intertext{Mit $l = \frac{m_1 + m_2}{m_1 + m_2} l$}
-	&= \frac{m_1}{m_1 + m_2} l \sin \phi(t)\\
+		q_1(t = 0) &= q_2(t = 0) = 0 \\
+		\dot{q}_2(t=0) &= \omega_0 \\
+		\dot{q}_1(t=0) &= - \frac{m_2 l}{m_1 + m_2} \omega_0 \\
 	\end{align*}
-	Nur verwendet man die 3. Zwangsbedingung vom Anfang
+	Mit $q_1(t)$ von oben folgt $c = 0$ und wir bekommen $q_1(t) = - \frac{m_2 l}{m_1 + m_2} \sin q_2(t)$. Nun führen wir die Rücktransformation durch:
+
+	\begin{align*}
+		x_1(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t), \\
+		y_1(t) &= 0, \\
+		x_2(t) &= - \frac{m_2 l}{m_1 + m_2} \sin \phi(t) + l \sin \phi(t) = \frac{m_1}{m_1 + m_2} l \sin \phi(t), \\
+		y_2(t) &= l \cos \phi(t), \\
+	\end{align*}
+	wobei wir bei $x_2(t)$ die Identität $l = \frac{m_1 + m_2}{m_1 + m_2} l$ genutzt haben. Nur verwendet man die 3. Zwangsbedingung vom Anfang
 	\begin{align*}
 	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0\\
 	\Leftrightarrow \frac{(x_1 - x_2)^2}{l^2} + \frac{y_2^2}{l^2} &= 1\\ 
@@ -386,11 +410,16 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\ddot{q}_1 &= - \frac{m_2 l}{m_1 + m_2} (\ddot{q}_2 \cos q_2 - \dot{q}_2^2 \sin q_2)
 	\end{align*}
 	Damit erhält man die $q_2$-Gleichung
-	$$l^2 \ddot{q}_2 - \frac{m_2 l^2}{m_1 + m_2}(\ddot{q_2} \cos q_2 - \dot{q}_2^2 \sin q_2) \cos q_2 + g l \sin q_2 = 0$$
-	und eine \Dgl~ 2. Ordnung für $q_2(t) = \phi(t)$.
-	
-	Im allgemeinen gibt es eine sehr kompliziere Lösung, das Lösen geht dann z.B. numerisch. Man kann das Lösen aber durch weitere Annahmen über das System vereinfachen. Zum Beispiel durch die Beschränkung auf kleine $\phi$:
-	$$\phi(t) = \frac{\omega_0}{\omega} \sin \omega t \text{~und~} \omega = \sqrt{\frac{g}{l} \frac{m_1 + m_2}{m_1}}$$
+	\[
+		l^2 \ddot{q}_2 - \frac{m_2 l^2}{m_1 + m_2}(\ddot{q_2} \cos q_2 - \dot{q}_2^2 \sin q_2) \cos q_2 + g l \sin q_2 = 0
+		\text{.}
+	\]
+	Das ist eine nichtlineare \Dgl{} 2. Ordnung für $q_2(t) = \phi(t)$, die man vermutlich nicht per Hand lösen kann (aber numerisch). 
+	Man kann das Lösen aber durch weitere Annahmen über das System vereinfachen, zum Beispiel durch die Beschränkung auf kleine $\phi$:
+	\[
+		\phi(t) = \frac{\omega_0}{\omega} \sin \omega t \text{~und~} \omega = \sqrt{\frac{g}{l} \frac{m_1 + m_2}{m_1}}
+		\text{.}
+	\]
 \end{beispiel*}
 
 
