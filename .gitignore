@@ -3,13 +3,16 @@
 \#*
 
 # *TeX files
+document.pdf
 *.aux
 *.log
 *.nav
 *.out
-*.pdf
 *.snm
 *.toc
 *.loa
 *.pdfpc
 *.synctex.gz
+*.fdb_latexmk
+*.fls
+*.tdo

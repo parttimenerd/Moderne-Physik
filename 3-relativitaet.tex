@@ -1,0 +1,406 @@
+\chapter{Relativität}
+%Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
+%Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
+
+\paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme? Und wie steht es um die Invarianz/Kovarianz physikalischer Observablen und Gesetze?
+
+Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{spezielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationskräfte werden als Eigenschaft von Raum und Zeit beschrieben.
+
+Im folgenden betrachten wir "`nur"' die spezielle Relativitätstheorie.
+Das wichtigste Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
+\begin{description}
+	\item[bei $v \ll c$] hat man den klassischen (also nicht relativistischen) Fall, den wir schon im 2. Kapitel näher betrachtet haben
+	\item[bei $v \lesssim c $] sind die relativistischen Effekte bedeutend und man verwendet die spezielle Relativitätstheorie
+\end{description}
+Man sieht, dass die Theorie so konstruiert ist, dass die Newtonsche Mechanik als Grenzfall $v \ll c$ in ihr enthalten ist.
+
+\section{Bezugssysteme / Inertialsysteme}
+\subsection{Klassische Mechanik}
+In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber scheinbar ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken, diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen \textit{absoluten Raum}\footnote{"`Der absolute Raum ist der von Isaac Newton postulierte, sowohl vom Beobachter als auch von den darin enthaltenen Objekten und darin stattfindenden physikalischen Vorgängen unabhängige physikalische Raum."' \href{https://de.wikipedia.org/wiki/Absoluter_Raum}{Wikipedia}}
+
+Sicher gibt es aber eine \textit{absolute Zeit}\footnote{
+	"`Die absolute, wahre und mathematische Zeit verfließt an sich und vermöge ihrer Natur gleichförmig und ohne Beziehung auf irgendeinen äußeren Gegenstand."'
+	– Isaac Newton: Mathematische Prinzipien der Naturlehre; London 1687}, gegen die in der klassischen Physik nichts spricht.
+
+Um nochmal auf die \textit{Inertialsysteme} zurückzukommen: Genauer gilt in ihnen das Newtonsche Gesetz $\vec{F} = m \ddotvec{r}$ ohne Hinzunahme von Schein- oder Trägheitskräften. Im folgenden ist der Ausgangspunkt das Inertialsystem $\Sigma$.
+Alle Systeme $\Sigma'$, die sich geradlinig und gleichförmig mit der Geschwindigkeit $\vec v$ relativ zu $\Sigma$ bewegen ($\vec{r}' = \vec{r} - \vec{v}t$), sind auch Inertialsysteme. Deswegen kann man in der klassischen Mechanik einfach die Galilei-Transformation (z.B. $\vec{v} \parallel \hat{z}$) verwenden.
+
+Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten ist nun folgende
+\begin{align*}
+	\Sigma& & \Sigma'& \text{~~~per Galilei Transformation}\\
+	\dotvec{r} &= c \hat{r}, \hat{r} = \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
+\end{align*}
+Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
+
+\subsubsection{Michelson-Morley-Experiment}
+Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA, mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (bzw. dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl. Morley bekam dafür aber als erster Amerikaner 1907 den Physik Nobelpreis.
+
+Mehr Informationen, wie auch eine Aufbauskizze, finden sich in der \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}.
+
+\paragraph{Idee} Wir betrachten die Bewegung der Erde um die Sonne, denn die Erde driftet mit immerhin $v = \SI{30}{\km\per\s}$ um die Sonne durch den Weltäther. Jetzt ist die Frage, ob sich das Licht zu unterschiedlichen Jahreszeiten unterschiedlich ausbreitet? Oder ob man generell die Geschwindigkeit des Äthers relativ zur Sonne messen kann?
+
+\paragraph{Aufbau}
+Grob zusammen gefasst, läuft das Licht, mit Wellenlänge $\lambda$, über zwei verschiedene Wege, welche senkrecht zu einander legen. Diese beiden Wege sind gleich lang. Für eine konstruktive Interferenz der beiden resultierenden Lichtstrahlen muss die Wegdifferenz $\delta S = (S_0 - S_1 - S_0) - (S_0 - S_2 - S_0) = m \lambda$ sein.
+
+Die Laufzeiten $\Delta_{ij}$ sind unter Berücksichtigung des Ätherwindes $S_0 \to S_1: \Delta_{01} = \frac{l_1}{c - v} \text{~(mit Äther)}$, $S_1 \to S_0: \Delta_{10} = \frac{l_1}{c + v}$ \conseq $S_0 - S_1 - S_0: \Delta_1 = \frac{l_1}{c-v} + \frac{l_1}{c+v} = 2 \frac{l_1}{c} \frac{1}{1 - \frac{v^2}{c^2}}$ (aus Zeichnung) $c\Delta_{20}^2 = l_2^2 + v^2 \Delta_{20}^2$, $c\Delta_{02}^2 = l_2^2 + v^2 \Delta_{02}^2$, $\Delta_{20} = \Delta_{02} = \Delta_{2} = 2 \frac{2l_2}{c} \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$ damit bekommt man den Laufzeitunterschied und damit wiederum die optische Wegdifferenz der zwei Teilstrahlen
+$$\delta = c (\Delta_2 - \Delta_1) = 2 \left(\frac{l_2}{\sqrt{1 - \frac{v^2}{c^2}}} - \frac{l_1}{1 - \frac{v^2}{c^2}}\right)$$ 
+Nun dreht man die Apparatur Apparatur um $90^\circ$. Wie ändert sich die Intensität? Die Rolle von $l_1$ und $l_2$ wird einfach vertauscht.
+$$\delta' = c (\Delta_2' - \Delta_1') = 2 \left(\frac{l_2}{1 - \frac{v^2}{c^2}} - \frac{l_1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
+Wie muss der Apparat verstellt werden, wenn er gedreht wurde?
+$$S = \delta' - \delta = 2(l_1 + l_2) \left(\frac{1}{1-\frac{v^2}{c^2}} - \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\right)$$
+Angenommen  $v \ll c$ und damit $\frac{v}{c} \ll 1$, dann gilt
+$$S \approxeq 2 (l_1 + l_2) \left(1 + \frac{v^2}{c^2} - (1 + \frac{1}{2} \frac{v^2}{c^2}) + \dots\right) = (l_1 + l_2) \frac{v^2}{c^2}$$
+Bei sichtbarem Licht mit $\lambda \approx \SI{500}{\nm}$ und der Lichtgeschwindigkeit $c = \SI{3e8}{\meter\per\second}$ müsste $l_1 + l_2 \approxeq \SI{50}{\m}$ gelten, um eine Verschiebung um 1 Interferenzmaximum messen zu können.
+Im Michelson-Morley-Experiment waren es ungefähr $\SI{10}{\m}$ mit Vielfachreflexionen, weswegen es sensitiv genug gewesen wäre. Aber es wurde trotzdem \textbf{kein Effekt gemessen!} Genauso wie in vielen nachfolgenden gleichartigen Experimenten.
+
+\begin{folgerung*}
+	Die Lichtgeschwindigkeit ist überall, d.h. in jedem Bezugssystem, gleich.
+\end{folgerung*}
+\begin{folgerung*}
+	Wenn es weiterhin Inertialsysteme geben soll (jetzt erst recht!) ist die Galileo-Transformation notwendigerweise falsch. Damit gibt es keine absolute Zeit und keinen absoluten Raum.
+\end{folgerung*}
+\begin{folgerung*}
+	Es gibt außerdem keinen unendlich schnellen Informationsaustausch. Da der Begriff der \textbf{Gleichzeitigkeit} an eine Synchronisation mittels Licht gebunden ist, ist jener Begriff nur in ruhenden Systemen klar, in ihnen ist eine Synchronisierung möglich, in bewegten Systemen ist das ganze viel schwieriger. Wir werden später auf diesen Begriff noch einmal zurückkommen.
+\end{folgerung*}
+
+\section{Einstein}
+Einstein hält mit seinen Theorien an der Gleichberechtigung aller Bezugssysteme fest, bzw. erfordert sie.
+
+\subsection{Einsteins Postulate}
+\begin{description}
+	\item[Äquivalenzprinzip] Die Physikalischen Gesetze und Experimente sind in gleichförmig und geradlinig zueinander bewegten Systemen gleich.
+	\item[Konstanz der Lichtgeschwindigkeit] Die Lichtgeschwindigkeit ist in allen Systemen gleich ($=c$), unabhängig von der Bewegung der Quelle. 
+\end{description}
+Daraus folgen neue Transformationsformeln für physikalische Größen, insbesondere für Raum und Zeit, in welchen als Grenzfall $v \ll c$ die Galilei-Transformation enthalten sein muss.
+
+\subsection{Lorentz-Transformation}
+Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$). Bei $t = 0$ sind beide Systeme identisch.
+
+Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma':$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
+$$c^2 t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
+Es findet offensichtlich eine Verknüpfung von Raum und Zeit statt.
+
+\subsubsection{Viervektoren}
+$$x = (x^0, x^1, x^2, x^3) = (ct, \vec{x}\in\Re^3)$$
+Diese Vektoren sind nicht euklidisch, sondern Elemente des Minkowski-Raums, weiter gilt damit
+$$x^2 = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 = (x^0)^2 - \vec{x}^2 = c^2t^2 - \vec{x}^2$$
+Die gleiche Ausbreitung der Kugelwelle in $\Sigma$ und $\Sigma'$ ist die Invarianz des Vierervektorquadrats im Minkowski-Raum.
+$$x^{~2} = x'^2 \text{~oder~} c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2$$
+Die gesuchte Transformation ist die sogenannte \textbf{Lorentztransformation}. Offenbar ist die Wahl der Koordinatenachsen willkürlich, womit wir die \textbf{spezielle Lorentztransformation} haben, welche zusammen mit einer Drehung, die allgemeine Lorentztransformation ergibt.
+
+
+Die Beziehung zwischen $x$ und $x'$ ist notwendig linear, weil wir nur gleichförmige und geradlinige Bewegungen betrachten.
+$$x'^{\mu} = L^\mu_\nu x^\nu$$
+$x^\mu$ ist in dieser Schreibweise die $\mu$-te Koordinate des Vierervektors $(x^0, x^1, x^2, x^3)$  
+
+\paragraph{Index-Notation}
+Ein kurzer Notationseinschub.
+\begin{align*}
+(\vec{F})_i &= (m \vec{a})_i &\rightarrow& & F_i &=ma_i\\
+S &= \vec{a}\cdot\vec{b} = \sum_{i=1}^{3}a_i b_i  &\rightarrow& & S&=a_ib_i\\
+(\vec{a})_i &= (M\vec{b})_i &\rightarrow& & a_i &= \sum_{j=1}^3 M_{ij} b_{j} = M_{ij}b_j\\
+\vec{a} &= L M \vec{b}  &\rightarrow& & a_i &=L_{ij}M_{jk}b_k
+\end{align*}
+Vierervektoren $x^\mu, x$, mit $x^\mu$ sind oft sowohl in der Indexschreibweise als auch als "`ganzer"' Vektor geschrieben. Weiterhin ist $x^\mu = (x^0, \vec{x})$ der kontravariante und $x_\mu = (x^0, -\vec{x})$ der kovariante Vierervektor. Das Skalarprodukt ist jetzt
+$$x_\mu y^\mu = \sum_{\mu=0}^{3} x_\mu y^\mu = x^0y^0 - \vec{x} \vec{y}$$
+Als Konvention gilt weiterhin $\mu, \nu, \rho, \sigma \in  \{0, 1, 2, 3\}$, Index 0 ist die Zeit, $i,j,k,l \in \{1,2,3\}$ und $\cos x y = \cos(x) y$\\
+\\
+Weiter mit der Lorentztransformation:
+\begin{align*}
+x'^\mu &= L^\mu_{~\nu} x^\nu \equiv \sum_{\nu=0}^{3} L^\mu_{~\nu} x^\nu\\
+&= L^\mu_{~0} x^0 + L^\mu_{~1}x^1 + L^\mu_{~2}x^2 + L^\mu_{~3}x^3\\
+&= L^{\mu 0}x^0 - L^{\mu 1}x^1 - L^{\mu 2}x^2 - L^{\mu 3}x^3\\
+x'^\mu &= L^\mu_{~\nu} x^\nu \text{~~Bewegung von Bezugssysteme in $z$-Richtung}
+\intertext{Die $x$- und $y$-Richtung sind invariant, da die Bewegung in z Richtung stattfindet und damit offensichtlich $x' = x$ und $y' = y$}
+\begin{pmatrix}
+ct' \\ x' \\ y' \\ z'
+\end{pmatrix} &= \begin{pmatrix}
+L_{00} & 0 & 0 & L_{03}\\
+0 & 1 & 0 & 0\\
+0 &0 & 1 & 0\\
+L_{30} & 0 & 0 & L_{33}
+\end{pmatrix}
+\begin{pmatrix}
+ct \\ x \\ y \\ z
+\end{pmatrix}
+\end{align*}
+\begin{align*}
+\intertext{Es findet nur ein Vermischen der $ct$- und $z$-Komponente statt, nicht aber der $x$- und $y$-Komponenten. Folgende beide Gleichungen müssen erfüllt sein, vgl. Anfang dieses Abschnitts.}
+(x')^2 &= (x)^2\\
+(x'^0)^2 - (x'^3)^2 &= (x^0)^2 - (x^3)^2\\
+\Rightarrow \qquad (L_{00}x^0 + L_{03}x^3)^2 - (L_{30} x^0 L_{33}x^3)^2 &= (x^0)^2 - (x^3)^2\\
+(L_{00}^2-L_{30}^2)(x^0)^2 + (L_{03}^2 - L_{33}^2)(x^3)^2 + 2(L_{00}L_{03} - L_{30} L_{33})x^0 x^3 &= (x^0)^2 - (x^3)^2\\
+\Rightarrow \qquad L_{00}^2 - L_{30}^2 &= 1\\
+L_{03}^2 - L_{33}^2 &= -1\\
+L_{00}L_{03} - L_{30}L_{33} &= 0
+\end{align*}
+Nun hat man 3 Gleichungen für 4 Unbekannte, es ist also 1 Parameter übrig. Im folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
+\begin{align*}
+\sin^2 \vp + \cos^2\vp &= 1 \rightarrow \cosh^2 y - \sinh^2 y = 1\\
+\rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{~Gl. 1}\\
+&= L_{33} &  &= L_{03} \text{~Gl. 2}\\
+\cosh y \sinh y - \sinh y \cosh y &= 0\\
+\text{Wähle  damit jetzt~}
+L &= \begin{pmatrix}
+\cosh y & 0 & 0 & - \sinh y\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+-\sinh y & 0 & 0 & \cosh y 
+\end{pmatrix}
+\end{align*}
+Was ist die Bedeutung von $y \in \Re$? Was ist der Zusammenhang zwischen $y$ und $v$? Und was hat $y$ mit der Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$ zu tun?
+\begin{align*}
+x^3 &= v t = \frac{v}{c} c t = \frac{v}{c} x^0\\
+x'^3 &= 0 = \cosh y \underbrace{x^3}_{\text{\hspace{-10em}}\frac{v}{c} x^0 = v t \text{~wegen der Bewegung des Ursprungs}\text{\hspace{-10em}}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
+&= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
+\frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
+\end{align*}
+$y$ ist die "`Rapidität"' oder auch "`verallgemeinerte Geschwindigkeit"'.
+\begin{align*}
+y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \Rightarrow y \approx \frac{v}{c}\\
+\cosh^2 y - \sinh^2 y &= 1\\
+\cosh^2 y (1 - \frac{\sinh^2 y}{\cosh^2 y}) &= 1\\
+\cosh^2 y (1 - \tanh^2 y) &= 1\\
+\cosh y &= \frac{1}{\sqrt{1 - \tanh^2 y}} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}}\\
+\sinh y &= \cosh y \tanh y = \frac{\frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{align*}
+Üblich sind folgende Abkürzungen: $\beta = \frac{v}{c}$; $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$ \conseq $\cosh y = \gamma$; $\sinh y = \gamma \beta$ und damit
+\begin{align*}
+L &= \begin{pmatrix}
+\gamma & 0 & 0 & - \gamma \beta\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+-\gamma \beta & 0 & 0 & \gamma
+\end{pmatrix}
+\intertext{$L$ ist die "`verallgemeinerte Drehung"'.}
+\intertext{Komponentenweise}
+x' &= x\\
+y'&=y\\
+z'&=\gamma (z - \beta c t)\\
+ct' &= \gamma (ct - \beta z)
+\end{align*}
+Dies sind die \textbf{Lorentz-Transformationsformeln}. Die Zeit wird offensichtlich mit transformiert, dies war bei der Galilei-Transformation nicht der Fall
+
+\begin{bemerkung*}
+	Der Grenzfall bei $v \ll c$ ist die Galilei-Transformation.
+\end{bemerkung*}
+\begin{bemerkung*}
+	 $c$ ist die Maximalgeschwindigkeit (sonst wäre $\gamma$ imaginär).
+\end{bemerkung*}
+\begin{bemerkung*}
+	Die Inverse Lorentztransformation ist $L^{-1} = L(v \to -v)$, was trivial ist, denn $\Sigma$ bewegt sich von $\Sigma'$ aus mit $-v$ entlang der $z$-Achse, oder genauer
+	\begin{align*}
+	\begin{pmatrix}
+	\gamma & -\gamma \beta\\
+	-\gamma \beta & \gamma
+	\end{pmatrix}
+	\begin{pmatrix}
+	\gamma & \gamma \beta\\
+	\gamma \beta & \gamma
+	\end{pmatrix}
+	&= 	\begin{pmatrix}
+	\gamma^2 - \gamma^2 \beta^2& \gamma^2 \beta -\gamma^2 \beta\\
+	-\gamma^2 \beta + \gamma^2 \beta & -\gamma^2 \beta^2 + \gamma^2
+	\end{pmatrix}\\
+	&= \begin{pmatrix}
+	\gamma^2(1 - \beta^2)& 0\\
+	0 & \gamma^2(1 - \beta^2)
+	\end{pmatrix}
+	= \begin{pmatrix}
+	1 & 0 \\ 0 & 1
+	\end{pmatrix}
+	\end{align*}
+\end{bemerkung*}
+\begin{bemerkung*} Es gilt $x^2 = x^0 x^0 - \vec{x} \vec{x} = (x^0)^2 - \vec{x}^2$. Neben $x^2$ sind \textbf{alle} Quadrate von Minkowski-Vierervektoren \textbf{invariant} unter Lorentztransformationen. Ebenso gilt dies auch für die Skalarprodukte $x_\mu y^\mu = y^0 y^0 - \vec{x}\cdot\vec{y} = L_{\mu}^{~\nu} x_\nu  L^{\mu}_{~\rho}y^\rho$, die sogenannten "`Lorentz-Skalare"'.
+\end{bemerkung*}
+
+\begin{folgerung*}[\textbf{(a) Gleichzeitigkeit}]
+	\begin{align*}
+		z'  &= \gamma (z - \beta c t)\\
+		ct' &= \gamma (ct - \beta z)
+	\end{align*}
+	In zwei Systemen $\Sigma$ und $\Sigma'$ vergeht die Zeit also unterschiedlich schnell. Was ist nun mit der Gleichzeitigkeit?\\
+	Im Bezugssystem $\Sigma$ finden zwei Ereignisse gleichzeitig bei $z_1$ bzw. $z_2$ statt.\\
+	Im Bezugssystem $\Sigma'$ gilt $ct_1' = \gamma (ct_1 - \beta z_1)$ und $ct_2' = \gamma (ct_2 - \beta z_2)$, damit ist $c \Delta t' = c(t_1'- t_2') = \gamma\beta (z_2 - z_1) \neq 0$.
+	Das Vorzeichen hängt vom Vorzeichen von $(z_2 - z_1)$ ab. Die Reihenfolge ist damit möglicherweise variabel. Findet damit eine	Vertauschung von Ursache und Wirkung statt?\\
+	\textbf{Sei $\Sigma$ $t_2 > t_1$}\\
+	~~$\Sigma'$: $c\underbrace{(t'_2 - t'_1)}_{> 0 \text{, wenn kausal}} = \gamma (c (t_2 - t_1) - \beta (z_2 - z_1))$\\
+	also $\gamma (c (t_2 - t_1) - \beta (z_2 - z_1)) > 0!$\\
+		$\gamma >~0$, als $c (t_2 - t_1) > \beta (z_2 - z_1)$ immer, wenn $c(t_2 - t_2) > (z_2 - z_1)$ (da $\beta < 1$) und damit gilt $c \Delta t > \Delta z$\\
+	Also $c \Delta t \geq \Delta z$.\\
+		Ein Lichtsignal kann Informationen zwischen $z_1$ und $z_2$ austauschen. Damit bleibt die Kausalität erhalten ($t'_2 > t_1$), andernfalls wäre $c \Delta t < \Delta z$ und deswegen keine Informationsübertragung möglich. Die Reihenfolge der Ereignisse kann dann zwar geändert werden, aber es ist nicht beobachtbar.
+\end{folgerung*}
+
+%\paragraph{Erinnerung}
+$c \Delta t \geq \Delta z$ Informationsübertragung möglich\\
+$<$ \dots nicht\\
+
+allgemein für Vierervektoren $x = (ct, \vec{x})$\\
+$c^2 t^2 > \vec{x}^2$ zeitartiger Vektor\\
+$c^2 t^2 < \vec{x}^2$ raumartiger Vektor\\
+$c^2 t^2 = \vec{x}^2$ lichtartiger Vektor\\
+~\\
+\textit{Im System $\Sigma$}: Lichtblitze werden am Ort $z$, zu den Zeiten $t_1$ und $t_2$ mit $\Delta t = t_2 - t_1$ ausgesendet.\\
+\textit{Im System $\Sigma'$}: Hier gilt für die selben Lichtblitze $\Delta t' = t'_2 - t'_1$, $c t'_1 = \gamma (c t_1 - \beta z)$ und $c t'_2 = \gamma (ct_2 - \beta z)$ und damit $\Delta t' = \gamma \Delta t = \frac{1}{\sqrt{1 - \beta^2}} \Delta t \geq \Delta t$\\
+\textit{Für $\gamma > 1$ ($v \neq 0$)} wird die Zeit in $\Sigma'$ gedehnt.\\
+\textit{Führt dies zu einem Paradox?} Nein, denn auch die (anderen) Koordinaten werden transformiert. Obwohl $z = z_1 = z_2$ in $\Sigma$ gilt $z'_1 = \gamma (z - \beta c t_1)$, $z'_2 = \gamma (z - \beta c t_2)$ und $z'_2 - z'_1 = \Delta z = - \gamma \beta c \Delta t = - c \beta \Delta t' \neq 0$ in $\Sigma'$.\\
+\textit{In $\Sigma$}: Die Ereignisse finden an einem Ort statt und die Zeit wird mit einer Uhr gemessen.\\
+\textit{In $\Sigma'$}: Zwei Uhren sind hier an den Orten $z'_1$ und $z'_2$ notwendig.\\
+$\Sigma$ ist also ein ausgezeichnetes System, an welchem die Zeit immer an einem Ort gemessen wird.
+
+\begin{beispiel*}[$\mu$-Zerfall]
+	Jedes Teilchen hat sein eigenes Ruhesystem, in dem es die Eigenzeit $\tau$ gibt. Ein Beispiel für die Bedeutung der Eigenzeit ist der $\mu$-Zerfall. Ein $\mu^pm$ zerfällt in ein $e^\pm$, $\nu_1$ und $\nu_2$ Teilchen. Sie entstehen in den oberen Schichten der Erdatmosphäre. Mit dem Zerfallsgesetz ist die erwartete Anzahl der $\mu$, nach der Zeit $t$: $N(t) = N(0) e^{\frac{t}{\tau_0}}$). Die Lebensdauer $\tau_0$ ist so kurz, dass die $\mu$ es nicht in großer von der oberen Atmosphäre bis zur Oberfläche schaffen würden, ohne vorher zu zerfallen. Man detektiert sie aber trotzdem, weil der $\gamma$-Faktor $\approxeq$ 9 ist (sie bewegen sich recht schnell) und das Zerfallsgesetz sich auf ihre Eigenzeit bezieht. 
+\end{beispiel*}
+
+\subsubsection{Längenkontraktion}
+Im Bezugssystem $\Sigma$ ist ein Stab der Länge $l$ in Ruhe. Die Länge kann als Differenz zweier Orte $l = z_2 - z_1$ angesehen werden. In $\Sigma'$ gilt offensichtlich $z'_1 = \gamma (z_1 - \beta c t_1)$ und $z'_2 = \gamma (z_2 - \beta c t_2)$. Damit ist $l' = z'_2 - z'_1 = \gamma (z_2 - z_1) - \gamma \beta c (t_2 - t_1)$.
+In $\Sigma'$ sollen $t'_1$ und $t'_2$ gleich sein, da die Länge des Stabes zu einem festen Zeitpunkt gemessen wird (und beide Enden gleichzeitig). Damit folgt
+$c t'_1 = \gamma (z_1 - \beta c t_1) \overset{!}{=} c t'_2 = \gamma (z_2 - \beta c t_2)$\\
+\conseq $c t_1 - \beta z_1 = c t_2 - \beta z_2$ \\ $c(t_2 - t_1) = \beta (z_2 - z_1)$\\
+\conseq $l' = \gamma (z_2 - z_1) - \gamma \beta \beta (z_2 - z_1) = \gamma \underbrace{(1 - \beta^2)}_{=\frac{1}{\gamma^2}} (z_2 - z_1)$
+\conseq $l' = \frac{1}{\gamma} (z_2 - z_1) = \frac{l}{\gamma} < l$
+Die im bewegten System gemessene Lösung ist also kürzer, was eine Konsequenz der Messvorschrift "`gleichzeitig"' ist.
+
+\subsubsection{Addition von Geschwindigkeiten}
+\begin{align*}
+L(\beta_3) &= L(\beta_2) L(\beta_1)\\
+&=\begin{pmatrix}
+\gamma_3 & 0 & 0 &- \gamma_3 \beta_3\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+- \gamma_3 \beta_3 & 0 & 0 & \gamma_3
+\end{pmatrix}\\
+&= \begin{pmatrix}
+	\gamma_2 & 0 & 0 &- \gamma_2 \beta_2\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 0 & 1\\
+	- \gamma_2 \beta_2 & 0 & 0 & \gamma_2
+\end{pmatrix}\\
+&= \begin{pmatrix}
+	\gamma_1 & 0 & 0 &- \gamma_1 \beta_1\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 0 & 1\\
+	- \gamma_1 \beta_1 & 0 & 0 & \gamma_1
+\end{pmatrix}
+\end{align*}
+Welche Geschwindigkeit $v_3$ ergibt sich, wenn eine Geschwindigkeit $v_1$ um $v_2$ geboosted wird?
+\begin{align*}
+&\begin{pmatrix}
+	\gamma_2 & -\gamma_2 \beta_2\\
+	- \gamma_2 \beta_2 & \gamma_2
+\end{pmatrix} \begin{pmatrix}
+\gamma_1 & - \gamma_1 \beta_1\\
+-\gamma_1 \beta_1 & \gamma_1
+\end{pmatrix}\\
+&= \begin{pmatrix}
+\gamma_1 \gamma_2 + \gamma_1 \gamma_2 \beta_1 \beta_2 & - \gamma_1 \gamma_2 \beta_1 - \gamma_1 \gamma_2 \beta_2\\
+- \gamma_1 \gamma_2 \beta_2 - \gamma_1 \gamma_2 \beta_1 & \gamma_1 \gamma_2 \beta_1 \beta_2 + \gamma_1 \gamma_2
+\end{pmatrix}\\
+&\overset{!}{=} \begin{pmatrix}
+\gamma_3 & -\gamma_3 \beta_3\\
+- \gamma_3 \beta_3 & \gamma_3
+\end{pmatrix}\\
+&= \begin{pmatrix}
+\gamma_1 \gamma_2 (1 + \beta_1 \beta_2) & - \gamma_1 \gamma_2 (\beta_1 + \beta_2)\\
+- \gamma_1 \gamma_2 (\beta_1 + \beta_2) & \gamma_1 \gamma_2 (1 + \beta_1 \beta_2)
+\end{pmatrix}
+\end{align*}
+Damit folgt $\gamma_3 = \gamma_1 \gamma_2 (1 + \beta_1 \beta_2)$ und $\gamma_3 \beta_3 = \gamma_1 \gamma_2 (\beta_1 + \beta_2)$ \conseq $\beta_3 = \frac{\gamma_3 \beta_3}{\gamma_3} = \frac{\beta_1 + \beta_2}{1 + \beta_1 \beta_2}$\\
+$c \beta_3$ ist die Geschwindigkeit in $\Sigma'$, wenn $c\beta_1$ die Geschwindigkeit in $\Sigma$ war und sich $\Sigma'$ mit $c\beta_2$ relativ zu $\Sigma$ bewegt.
+~\\
+z.B. \textit{a)} $v_1 = v_2 = \frac{c}{2}$ \conseq $\beta_1 = \beta_2 = \frac12$, $\beta_3 = \frac{1}{1 + \frac14} = \frac45 < 1$, $v_3 = \frac45 c < c$\\
+\textit{b)} $v_1 = c$, $\beta_1 = 1$, Boost mit $\beta_2$, $\beta_3 = \frac{1 + \beta_2}{1 + 1 \cdot \beta_2} = \frac{1 + \beta_2}{1 + \beta_2} = 1$ Damit ist egal, wie schnell sich $\Sigma'$ bewegt. Es gilt immer $\beta_3 = 1$, wenn $\beta_1 = 1$, auch wenn $\beta_2 = -1$.
+
+\paragraph{Rapiditäten (Erinnerung)} $\gamma_3 = \cosh y_3$ und $\gamma-3 \beta_3 = \sinh y_3$
+aber auch $\gamma_3 = \cosh y_3 = y_1 y_2 + \gamma_1 \beta_1 \gamma_2 \beta_2 = \cosh y_1 \cosh y_2 + \sinh y_1 \sinh y_2 = \frac12 (e^{y_1} + e^{-y_1}) \frac12 (e^{y_2} + e^{y_2}) + \frac14 (e^{y_1} - e^{- y_1}) (e^{y_2} - e^{-y_2}) = \frac14 (e^{y_1} e^{y_2} + e^{y_1} e^{-y_2} + e^{-y_1} e^{y_2} + e^{-y_1} e^{-y_2} + e^{y_1} e^{y_2} - e^{y_1} e^{-y_2} - e^{-y_1} e^{y_2} - e^{-y_1} e^{-y_2}) = \frac14 (2 e^{y_1} e^{y_2} + 2 e^{-y_1} e^{-y_2}) = \frac12 (e^{y_1 + y_2} + e^{-(y_1 + y_2)}) = \cosh (y_1 + y_2) = \cosh y_3$ (analog für $\sinh y_3$). Also werden die Rapiditäten einfach addiert.
+
+
+$\beta_3 = \frac{\beta_1 + \beta_2}{1 + \beta_1 \beta_2}$, $\gamma = \cosh y$ \conseq $\cosh y_3 = \cosh(y_1 + y_2)$ \conseq $y_3 = y_1 + y_2$\\
+Die Rapiditäten können also als verallgemeinerte Geschwindigkeiten angesehen werden.\\
+Der Vergleich von Ereignissen in zwei Systemen $\Sigma$ und $\Sigma'$ kann graphisch mithilfe sogenannter \textbf{Minkowski Diagrammen}\footnote{vgl. \href{https://de.wikipedia.org/wiki/Minkowski-Diagramm}{Wikipedia}} geschehen.\\
+Wie tragen wir Ereignisse in $\Sigma'$ hier ein?
+$ct'-Achse$: bei $z' = 0$\\
+
+$z' = 0 = \gamma (z - \beta c t)$ \conseq $ct = \frac{1}{\beta} z$ (in $\Sigma$)\\
+$0 < \beta < 1$, \conseq $\frac{1}{\beta} > 1$\\
+
+$z'$-Achse bei $ct' = 0$\\
+
+$c t' = \gamma (ct - \beta z) = 0$ \conseq $ct = \beta z$\\
+
+Achseneinteilung? (x,y = 0)\\
+$s^2 = c^2 t^2 - \vec{x}^2 = c^2 t^2 - z^2 = c^2 {t'}^2 - z'^2$ 
+z.B. $s^2 = 1$
+$c^2 t^2 - z^2 = 1^2 = c^2 t'2 - z'^2$\\
+Winkelhalbierende = Lichtkegel $\pm ct = \pm z$ und $\pm c t' = z'$
+
+
+\subsection{Zurück zur klassischen Mechanik}
+Suchen Begriffe Impuls, Kraft, Geschwindigkeit. Differentiale?
+$$\d x^\mu = (c \d t, \d x, \d y, \d z)$$
+Infinitesimale Verrückung.
+\conseq Invariante
+\begin{align*}
+ \d s^2  &= c^2 \d t^2 (\d \vec{x})^2\\
+ & = c^2 \d t^2 - \d x^2 - \d y^2 - \d z^2\\
+ & = c^2 \d t^2 (1 - \underbrace{\frac{\d x^2}{c^2 \d t^2} - \frac{\d y^2}{c^2 \d t^2} - \frac{\d z^2}{c^2 \d t^2}}_{- \frac{1}{c^2} (\ddd x t, \ddd y t, \ddd z t)^2 = - \frac{\vec{v}^2}{c^2}})\\
+ & = \d s^2 = c^2 \d t^2 (\underbrace{1 - \frac{v^2}{c^2}}_{\frac{1}{\gamma^2}})\\
+ & = \frac{1}{\gamma^2} c^2 \d t^2
+\end{align*}
+$\frac{1}{c} \d s = \d \tau$ \conseq Eigenzeit $\tau$ (Zeit, die im Ruhesystem vergeht).
+Vergleiche mit der Zeit im Beobachtungssystem $t$
+$$\d \tau = \frac{1}{\gamma} \d t (\equiv t = \gamma \tau)$$
+Eigenzeit als Kandidat für Zeitdifferential in mechanischen Gesetzen.
+\conseq \textbf{Vierergeschwindigkeit über Eigenzeit}
+\begin{align*}
+	u^\mu &= \ddd{x^\mu}{\tau} = \ddd{x^\mu}{t} \ddd t \tau = \gamma \ddd{x^\mu}{t}\\
+	&= \gamma \dd t (c t, x, y, z) = \gamma (c, \ddd{\vec{x}}{t})\\
+	&= \gamma (c, \vec{v})\\
+	u^\mu u_\mu &= u^2 = \gamma^2 (c^2 - \vec{v}^2) = c^2 \gamma^2 (\underbrace{1 - \frac{v^2}{c^2}}_{= \frac{1}{\gamma^2}})
+\end{align*}
+Ein Ansatz für die  \textbf{Kraftgleichung} ($\vec{F} = m \vec{a}$ und $m$ skalar) ist
+$$K^\mu = m \ddd{u^\mu}{\tau}$$
+Zunächst betrachten wir nur die räumlichen Komponenten
+\begin{align*}
+	K^i &= m \dd \tau u^i = m \gamma \dd t u^i = m \gamma \dd t \gamma v^i\\
+	&= \gamma \dd t \underbrace{m \gamma v^i}_{\text{\hspace{-10em}}= p^i \text{~räumliche Komponente des relativistischen Impulses}\text{\hspace{-10em}}}\\
+	p^i &= \gamma m v^i \xrightarrow{\gamma \to 1} m v^i\\
+	K^i &= \gamma F^i \xrightarrow{\gamma \to 1} F^i
+\end{align*}
+Was ist $K^0$? Wir betrachten hierfür
+\begin{align*}
+	K \cdot u &= K^\mu u_\mu = K^0 u^0 - \vec{K} \cdot \vec{u}\\
+	&= (m \dd \tau u^0) u^0 - (m \dd \tau \vec{u}) \cdot \vec{u}\\
+	&= \frac12 m \dd \tau (u^0 u^0 - \vec{u} \cdot \vec{u}) \text{\qquad (Produktegel rückwärts)}\\
+	&= \frac12 m \dd \tau u^2 = \frac12 m \dd \tau c^2 = 0\\
+	\Rightarrow K^0 u^0 &= \vec{K} \cdot \vec{u} = K^0 \gamma c = \gamma^2 \vec{F} \cdot \vec{v}\\
+	\Rightarrow K^0 &= \gamma \frac{\vec{F} \cdot \vec{v}}{c}
+	\intertext{Viererkraft}
+	K^\mu &= \gamma (\frac{\vec{F} \cdot \vec{v}}{c}, \vec{F})
+	\intertext{Was ist die nullte Komponente der Minkowski-Kraft $K^\mu$?}
+	\gamma \frac{\vec{F} \cdot \vec{v}}{c} & = m \dd \tau u^0 = m \gamma \dd t \gamma c\\
+	\vec{F} \cdot \vec{v} &= \dd t \frac{m c^2}{\sqrt{1 - \beta^2}} = \dd t T_v 
+\end{align*}
+$[\vec{F} \cdot \vec{v}] = $ Energie pro Zeit.\\
+$T_v = \frac{m c^2}{\sqrt{1 - \beta^2}} = \gamma m c^2$ relativistische kinetische Energie\\
+$v \ll c$: $\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = 1 + \frac{1}{2} \frac{v^2}{c^2} + \dots$ \conseq $T_v = m c^2 + \frac{1}{2} m v^2 + \dots$\\
+Damit ist die kinetische Energie $\frac12 m v^2$ + die \textbf{Ruheenergie} $m c^2$ (welche eine additive Konstante ist):
+$$E_0 = m c^2$$
+~\\
+Bleibt noch der Viererimpuls $p^\mu$ zu betrachten:
+\begin{align*}
+	p^\mu &= m u^\mu = m \gamma (c, \vec{v})\\
+	&= (\gamma m c, \gamma m \vec{v})\\
+	&= (\frac{T_v}{c}, p^i)
+\end{align*}
+
+\begin{bemerkung*}
+	Der Energie-Impuls-Vierervektor entspricht dem Zeit-Raum.
+\end{bemerkung*}
+
+\begin{align*}
+	p_\mu p^\mu = p^2 &= \gamma^2 m^2 c^2 - \gamma^2 \vec{p}^{~2}\\
+	&= \frac{T_v^2}{c^2} - \gamma^2 \vec{p}^2\\
+	&= m^2 u^2 = m^2 c^2 = \const
+\end{align*}
+Die Masse selbst ist ein Lorentzskalar. Sie ändert sich nicht.

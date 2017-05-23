@@ -1,0 +1,116 @@
+\chapter{Mathematische Grundlagen}
+
+\section{Mathematischer Merkzettel}
+
+\subsection{Funktionen}
+\begin{eqnarray*}
+\log_e \equiv \ln, \log_10 \equiv \lg, \log_2 \equiv \mathrm{ld}\\
+\log_x(x^a) = a, \log(xy) = \log(x) + \log(y), \log(\frac{x}{y}) = \log(x) - \log(y), \log_b(x^a) = a \log_b(x)\\
+x^a x^b = x^{a + b}, x^a y^a = (x y)^a, (z^a)^b, b^{\log_b x} = x\\
+\log_b \sqrt[n]{x} = \frac{1}{n} \log_b(x), \log_b(1) = 0, \log_b(x) = \frac{\log_a(x)}{\log_a(b)}\\
+\frac{\d}{\d x} \log_b (x) = \frac{1}{x \ln(b)}\\
+\sin^2x + \cos^2 x = 1, \sin(0) = \sin(\pi) = \dots = 0, \\ \cos(0) = 1 = - \cos(\pi), \sin(\frac{\pi}{2}) = 1 = - \sin(\frac{3 \pi}{2}), \cos(\frac{\pi}{2}) = \cos(\frac{3 \pi}{2}) = 0
+\end{eqnarray*}
+
+\subsection{Komplexe Zahlen}
+
+\paragraph{$z_k = a_k + i b_k$} Eine Zahl im Raum der komplexen Zahlen $\setC$. $a_k$ ist hierbei der Realteil, $\Re(z_k)$, und $b_k$ der Imaginärteil, $\Im(z_k)$, von $z_k$.
+\paragraph{Komplex konjugierte Zahl} zu $z_k$ ist $\bar{z_k} = a_k - i b_k$.
+\paragraph{Betragsquadrat} von $z_k$ in $\setC$ ist definiert durch $$|z_k|^2 = \bar{z_k} z_k = a_k^2 + b_k^2 \in \setR$$
+\paragraph{Multiplikation} Allgemein gilt für die Multiplikation von komplexen Zahlen mit einem Skalar $$c z_k = c a_k + i c b_k, c \in \setR$$. Für die Multiplikation zweier komplexer Zahlen $$z_1 z_2 = (a_1 a_2-b_1b_2) + i(a_1b_2+a_2b1) \in \setC$$
+\paragraph{Addition} $$z_1 + z_2 = (a_1 + a_2) + i(b_1 + b_2) \in \setC$$
+
+\paragraph{Polardarstellung}
+$$z_k = r_k e^{i \phi_k}, \bar z_k = r_k e^{-i\phi_k}$$
+wobei gilt \textit{Eulersche Formel}
+$$r e^{\pm i \phi} = r \cos\phi \pm i \sin\phi$$
+damit gilt für das Betragsquadrat offensichtlich
+$$|z_k|^2 = r_k^2$$
+und für die Multiplikation zweier komplexer Zahlen
+$$z_1 z_2 = r_1 r_2 e^{i (\phi_1 + \phi_2)}$$
+
+$z_k$ ist sozusagen ein "`Vektor"' in der komplexen Zahlenebene, also im zweidimensionalen Raum $\setC$. Die Multiplikation entspricht hierbei einer gemeinsamen Rotation um beide Winkel und einer kombinierten Streckung um beide Beträge.  
+
+\subsection{Matrizen}
+$spur(A) = $ Summe der Diagonaleinträge, weiteres (Addition, Multiplikation und Determinante): siehe Lineare Algebra.
+
+$$x_i = M_{ij} x_j \Leftrightarrow \sum_{j=1}^1 M_{ij} x_j$$
+
+\subsection{Ableitung}
+
+\paragraph{Mehrfache Ableitung}
+$$\dd x (\dd x f(x)) = \d x (\d x f(x)) = \frac{\d^2 f(x)}{\d x^2}$$
+n-te Ableitung: $\frac{\d^n}{\d x^2} f(x)$
+
+\paragraph{Grundlagen}
+$$\dd x f(x) \equiv f'(x) = \d x f(x)$$
+$$\dd x^a = a x^{a-1}, \text{für $a \neq 0$}$$
+
+\paragraph{Linearität}
+$$\dd x (a f(x) + b g(x)) = a \dd x f(x) + b \dd x g(x)$$
+
+\paragraph{Kettenregel}
+$$\dd x f(g(x)) = (\dd y f(y))(\dd x g(x))$$
+
+\paragraph{Quotientenregel}
+$$\dd x \frac{f(x)}{g(x)} = \frac{(\dd x f(x))g(x) - f(x)(\dd x g(x))}{g(x)^2}$$
+
+\paragraph{Eulersches}
+$$\dd x \ln(x) = \frac1x, \dd x e^{ax} = a e^{ax}$$
+
+\paragraph{Trigonometrisches}
+$$\dd x \sin(ax) = a \cos(ax), \dd x \cos(ax) = - a \sin(ax)$$
+$$\dd x \tan(x) = 1 + \tan^2(x) = \frac1{\cos^2(x)}$$
+$$\dd x \mathrm{arctan}(x) = - \dd x \mathrm{arccot}(x) = \frac{1}{1 + x^2}$$
+$$\dd x \arcsin(x) = - \dd x \arccos(x) = \frac1{\sqrt{1 - x^2}}$$
+
+\paragraph{Totale Ableitung}
+$$\d f(x_1, \dots, x_n) = \sum_{i = 1}^{n} \ffpartial{f}{x_i} \d x_i$$
+Im Speziellen
+$$\frac{\mathrm d}{\mathrm dt} f(t,g(t),h(t)) = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial x} \, \frac{\mathrm dx}{\mathrm dt} + \frac{\partial f}{\partial y} \,\frac{\mathrm dy}{\mathrm dt} $$
+
+\paragraph{Nabla}
+$$\vec{\nabla}_i = (\fpartial{x}, \fpartial{y}, \fpartial{z}) = \fpartial{\vec{r}}$$
+
+\subsection{Integration}
+$\int f(x) \d x = F_x(x)$ ist die Stammfunktion von $f(x)$ bezüglich der Integration in $x$ \conseq $dd x F_x(x) = f(x)$
+
+\paragraph{Konkret}
+$$ \int_a^b f(x) \d x = [ F_x(x) ]_a^b = F_x(x = b) - F_x(x = a)$$
+
+\paragraph{Linearität}
+$$ \int (a f(x) + b g(x)) \d x = a \int f(x) \d x + b \int g(x) \d x$$
+
+\paragraph{Partielle Integration}
+$$\int_a^b u'(x)v(x) \d x = [u(x) v(x)]_a^b - \int_a^b u(x) v'(x) \d x$$
+
+\paragraph{Variablensubstitution}
+$$\int_{x = a}^{x = b} \d x = \int_{y(x = a)}^{y(x = b)} ( f(y(x))\frac{\d x}{\d y} ) \d y$$
+
+\paragraph{Integration durch Parameterableitung}
+$$\int f(x, a) \d x = \int \dd a F_a(x,a) \d x = \dd a \int F_a(x,a) \d x$$
+wobei $F_a(x,a)$ die Stammfunktion von $f(x,a)$ bezüglich der Integration in $a$ ist.
+
+\paragraph{Bestimmtes Integral}
+$$\int_a^b x^c \d x = [ \frac1{c + 1} x^{c+1}]_a^b$$
+
+\paragraph{Unbestimmtes Integral}
+$$\int x^c \d x = \frac1{c+1} x^{c+1} + \mathrm{const}$$
+
+\paragraph{Konventionen}
+$$\int \d x f(x) = \int f(x) \d x$$
+
+\subsection{Vektoren}
+\paragraph{Spaltprodukt}
+$$\vec a \times (\vec b \times \vec c) = \vec b \times (\vec c \times \vec a) = \vec c \times (\vec a \times \vec b)$$
+
+\subsection{Totales Differential}
+$$\d f = f(\vec{x} + \d \vec{x}) - f(\vec{x}), f = f(\vec{x}) = f(x_1, \dots, x_n)$$
+$\d f$ Änderung unabhängig von den Koordinaten.
+partielle Ableitung (alle anderen Koordinaten fest)
+$$\ffpartial{f(\vec{x})}{x_i} \d x_i$$
+z.B. $n = 2$: $f (x, y)$
+$$\d f = \ffpartial{f(x,y)}{x} \d x + \ffpartial(f(x,y)){y} \d y$$
+allgemein
+$$\d f = \sum_{i=1}^n \ffpartial{f(\vec{x})}{x_i}$$
+$\d f$, $\d x$, $\d y$, \dots sind Variablen, "`$\partial f$"' nicht
