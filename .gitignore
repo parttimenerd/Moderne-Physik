@@ -17,3 +17,6 @@ summary.pdf
 *.fdb_latexmk
 *.fls
 *.tdo
+
+# Emacs folder 'auto'
+auto
