@@ -4,6 +4,7 @@
 
 # *TeX files
 document.pdf
+summary.pdf
 *.aux
 *.log
 *.nav
