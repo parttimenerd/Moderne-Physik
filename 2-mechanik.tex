@@ -183,13 +183,13 @@ dargestellt werden.
 
 
 \subsection{Das d'Alembertsche Prinzip}
+Das d'Alembertsche Prinzip überlegen wir uns aus den Newtonschen Gleichungen.
 
-\subsubsection{Ziel} 
+\subsubsection{Ziel}
 Das Ziel dieses Prinzips ist die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
 
-\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$} 
-Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. 
-Daraus folgt $\delta t = 0$. Im folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
+\subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$}
+Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im Folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
 
 \begin{beispiel*}[Teilchen im Aufzug]
 Weil der zurückgelegte Weg auch als $\delta x = v_0 \cdot \Delta t$ dargestellt werden kann gilt
@@ -320,14 +320,14 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\end{figure}
 	
 	Die Masse $m_1$ ist frei in $x$-Richtung beweglich und an der Masse $m_2$ zieht die Gravitationskraft.
-	Es gibt die folgenden 4 holonom-skleronomen Zwangsbedingungen
+	Es gibt die folgenden 4 holonom-skleronomen Zwangsbedingungen:
 	\begin{align*}
 	z_1 = z_2 &= 0\\
 	y_1 &= 0\\
 	(x_1 - x_2)^2 + y_2^2 - l^2 &= 0
 	\text{.}
 	\end{align*}
-	womit es im System $s = 6 - 4$ Freiheitsgrade gibt.
+	ALso gibt es im System $s = 6 - 4$ Freiheitsgrade.
 	Als generalisierte Koordinaten kann man zum Beispiel $q_1 = x$ und $q_2 = \phi$ (der Winkel zwischen Lot und Hantelstange) wählen. Damit sind die Koordinaten und Geschwindigkeiten:
 	\begin{align*}
 	x_1 &= q_1 & x_2 &= q_1 + l \sin q_2\\
@@ -336,7 +336,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\dot{x}_1 &= \dot{q}_1 & \dot{x}_2 &= \dot{q}_1 + \dot{q}_2 l \cos q_2\\
 	&&\dot{y}_2 &= - l \dot{q}_2 \sin q_2
 	\end{align*}
-	Damit ist die Kinetische Energie
+	Damit ist die kinetische Energie
 	\begin{align*}
 	T & = \frac12 m_1 \vecdotnumsq{r}{1} + \frac12 m_2 \vecdotnumsq{r}{2} \\
 	&= \frac12 m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
@@ -362,13 +362,16 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 \end{beispiel*}
 
 \begin{definition*}[Zyklische Koordinate]\label{zyklische_koordinate}
-	Ein Koordinate $q_j$ ist genau dann zyklisch falls gilt
+    Ein Koordinate $q_j$ heißt zyklisch, gdw.:
+    \[ \ffpartial{L}{q_j} = 0 \]
+
+    Es gilt
 	\[
-		\ffpartial{L}{q_j} = 0 \left( \Leftrightarrow \ffpartial{L}{\dot{q}_j} = \text{konstant} \equiv p_j \right)
+		\ffpartial{L}{q_j} = 0 \Leftrightarrow \ffpartial{L}{\dot{q}_j} = \text{konstant} \eqqcolon p_j
 	\]
 	mit dem verallgemeinerten Impuls 
 	\[
-		p_j = \ffpartial{L}{\dot{q_j}}
+		p_j \coloneqq \ffpartial{L}{\dot{q_j}}
 		\text{.}
 	\]
 	Zyklische Koordinaten führen automatisch zu einem \textit{Erhaltungssatz}. Deswegen sollten möglichst viele generalisierte Koordinaten zyklisch sein.
@@ -432,7 +435,7 @@ Für die häufigsten Fälle mit \textbf{holonomen} Zwangsbedingungen und \textbf
 \item Generalisierte Koordinaten festlegen
 \item Lagrange-Funktion hinschreiben (mit generalisierten Koordinaten und Geschwindigkeiten)
 \item Lagrange-Funktion ableiten und wenn möglich lösen
-\item Eventuell Rücktransformation auf gewöhnliche Koordinaten
+\item Eventuell Rücktransformation auf gewöhnliche (anschauliche) Koordinaten
 \end{enumerate}
 
 \subsubsection{Nicht-holonome Systeme}
@@ -440,47 +443,94 @@ Bei holonomen Systemen gibt es $S = 3N - p$ unabhängige generalisierte Koordina
 
 Falls die nicht-holonomen Zwangsbedingungen in differentieller Form vorliegen (also als Differentialgleichung) gibt es ein Lösungsverfahren über die Methode der sogenannten Lagrange-Multiplikatoren, welche im folgenden erläutert werden.
 
-Es gibt $\bar{p}$ nicht holonome Zwangsbedingungen und damit gilt $p \leq \bar{p}$: 
-$$i = 1, \dots, p:~~\sum_{m=1}^{3N} f_{im}(x_1, \dots, x_{3N}, t) \d x_m + f_{it}(x_1, \dots, x_{3m}, t) \d t = 0$$ 
+Es gibt $\bar{p}$ Zwangsbedingungen, davon $p \leq \bar{p}$ nicht-holonom: 
+\[
+	i = 1, \dots, p: 
+	\quad 
+	\left( \sum_{m=1}^{3N} f_{im}(x_1, \dots, x_{3N}, t) \d x_m \right) + f_{it}(x_1, \dots, x_{3N}, t) \d t = 0
+\]
 mit $j = 3N - (\bar{p} - p)$ generalisierten Koordinaten.
 
 Die konkreten Koordinaten hängen von den generalisierten ab: $q_1, \dots, q_j \rightarrow \vec{r}_i = \vec{r}_i(\vardots{q}{j}, t)$ aber nicht alle $q_j$ sind unabhängig voneinander, wie anfangs schon erwähnt.
 
-Damit gilt für nicht-holonome Bedingungen in $q_j$
-\begin{align*}
-\sum_{i=1}^j a_{im} \d q_m + b_{it} \d t &= 0, i = 1, \dots, p
-\intertext{für virtuelle Verrückungen, bei denen $\delta t = 0$ gilt, ist die Gleichung wie folgt}
-\sum_{m=1}^j a_{im} \delta q_m &= 0, i = 1, \dots, p
-\intertext{Nun werden die Lagrange-Multiplikatoren $\lambda_i = \lambda_i(t)$ eingeführt}
-\sum_{i=1}^{p} \lambda_i \sum_{m=1}^j a_{im} \delta q_m &= 0
-\intertext{bei konservativen Systemen (siehe oben) gilt mit dem Prinzip von d'Alembert}
-\sum_{m=1}^j (\ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m}) \delta q_m &= 0
-\intertext{Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht unabhängig sind. Zusammengefasst folgt damit}
-\sum_{m=1}^j { \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} } \delta q_m &= 0
-\intertext{Nur ein Teil der generalisierten Koordinaten ist, wie schon oft erwähnt, unabhängig voneinander: $m=1,\dots,j-p$ sind unabhängig und $m = j-p+1, \dots j$ sind abhängig, die Wahl der $q_m$ findet dementsprechend statt.}
-\intertext{Wähle für die letzten $p$ Gleichungen die bisher nicht bestimmten $\lambda_i$ so, dass}
-\ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} &= 0, m = j-p+1, \dots, j
-\intertext{Damit hat man nur noch Gleichungen mit unabhängigen $q_m$ \conseq jeder Summand ist 0. Woraus Lagrange-Gleichungen 1. Art entstehen}
-\dd t \ffpartial{L}{\dot{q}_m} - \ffpartial{L}{q_m} &= \sum_{i=1}^p \lambda_i a_{im}, m = 1, \dots, j
-\intertext{Hierbei gilt noch $\sum_{m=1}^j a_{im} \dot{q}_m + b_{it} = 0$. Damit hat man $j + p$ Gleichungen für $j$ generalisierte Koordinaten und $p$ Multiplikatoren $\lambda_i$.}
-\end{align*}
+Damit gilt für nicht-holonome Bedingungen in $q_j$, wobei im Folgenden immer $i = 1, \dots, p$ ist:
+\[
+	\sum_{i=1}^j a_{im}(q_1, \dots, q_j, t) \d q_m + b_{it}(q_t, \dots, q_j, t) \d t = 0
+	\text{.}
+\]
 
-Ein Vergleich mit den generalisierten Kräften zeigt $\bar{Q}_m = \sum_{i=1}^{p} \lambda_i a_{im}$
+Für virtuelle Verrückungen, bei denen $\delta t = 0$ gilt, ist die Gleichung wie folgt:
+\[
+	\sum_{m=1}^j a_{im} \delta q_m = 0
+	\text{.}
+\]
+
+Nun werden die Lagrange-Multiplikatoren $\lambda_i = \lambda_i(t)$ eingeführt (nicht von $q_i$ abhängig, sondern nur von der Zeit):
+\[
+	\sum_{i=1}^{p} \lambda_i \sum_{m=1}^j a_{im} \delta q_m = 0
+	\text{.}
+\]
+Bei konservativen Systemen (siehe oben) gilt mit dem Prinzip von d'Alembert:
+\[
+	\sum_{m=1}^j \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} \right) \delta q_m = 0
+\]
+
+Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht mehr unabhängig voneinander sind. Zusammengefasst folgt
+\[
+	\sum_{m=1}^j \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} \right) \delta q_m = 0
+	\text{.}
+\]
+
+Nur ein Teil der generalisierten Koordinaten ist, wie schon oft erwähnt, unabhängig voneinander: $m = 1, \dots, j - p$ sind unabhängig und $m = j - p + 1, \dots j$ (genau $p$ Bedingungen) sind abhängig, die Wahl der $q_m$ findet dementsprechend statt.
+
+Wähle für die letzten $p$ Gleichungen die bisher nicht bestimmten $\lambda_i$ so, dass
+\[
+	m = j-p+1, \dots, j: 
+	\quad 
+	\ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} = 0
+	\text{.}
+\]
+Das geht, da es $p$ Gleichungen und genauso viele $\lambda_i$'s gibt. Damit hat man nur noch Gleichungen mit unabhängigen $q_m$, also
+\[
+	\sum^{j - p}_{m = 1} \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum^p_{i = 1} \lambda_i a_{im} \right) \delta_{q_m} = 0
+	\text{.}
+\]
+Hier kann man die $\delta_{q_m}$ unabhängig variieren, also jeder Summand $=0$. Daraus entstehen Lagrange-Gleichungen 1. Art entstehen für alle $m$:
+\[
+	m = 1, \dots, j:
+	\quad
+	\dd t \ffpartial{L}{\dot{q}_m} - \ffpartial{L}{q_m} = \sum_{i=1}^p \lambda_i a_{im}
+	\text{.}
+\]
+Hierbei gilt noch $\sum_{m=1}^j a_{im} \dot{q}_m + b_{it} = 0$ für $i = 1, \dots, p$. Damit hat man $j + p$ Gleichungen für $j$ generalisierte Koordinaten und $p$ Multiplikatoren $\lambda_i$.
+
+Ein Vergleich mit den generalisierten Kräften zeigt $\bar{Q}_m = \sum_{i=1}^{p} \lambda_i a_{im}$.
 Nun hat man generalisierte Zwangskräfte ($\sum_{m=1}^j \bar{Q}_m \delta q_m = 0$) was den $\lambda_i$ entspricht.
 Dieses Wissen ist auch ein Gewinn für Systeme mit holonomen Zwangsbedingungen, denn die Kenntnis der Zwangskräfte ist nützlich für das Design des Systems.
 
 \textbf{Anwendung auf holonome Systeme}
 $f_i(\vardots{\vec{r}}{N}, t) = 0, i = 1, \dots, p$ in generalisierten Koordinaten $\bar{f}_i(\vardots{q}{j}, t) = 0$, daraus folgt das totale Differential 
-$$\d \bar{f}_i = \sum_{m=1}^j \ffpartial{\bar{f}_i}{q_m} \d q_m + \ffpartial{\bar{f}_i}{t} \d t$$
-und damit 
-\begin{align*}
-	a_{im} = \ffpartial{\bar{f}_i}{q_m}& &b_{it} = \ffpartial{\bar{f}_i}{t}
-\end{align*}
+\[
+	\d \bar{f}_i = \sum_{m=1}^j \ffpartial{\bar{f}_i}{q_m} \d q_m + \ffpartial{\bar{f}_i}{t} \d t
+\]
+und damit ($\d \bar{f}_i = 0$ für $i = 1, \dots, p$)
+\[
+	a_{im} = \ffpartial{\bar{f}_i}{q_m}
+	\quad \text{sowie} \quad
+	b_{it} = \ffpartial{\bar{f}_i}{t}
+	\text{.}
+\]
 Die Zwangskräfte in holonomen Systemen können nun mit Lagrange-Gleichungen 1. Art bestimmt werden.
 
 \begin{beispiel*}[holonome Zwangsbedingungen mit Zwangskräften]
-Es wird ein Pendel mit Winkel $\varphi$ zum Lot, der Länge $l$ und der Masse $m$ betrachtet.
-Zunächst wird $r=l$ variabel gewählt. Die verallgemeinerten Koordinaten sind deswegen offensichtlich $\varphi$ und $r$.
+Es wird ein Pendel mit Winkel $\varphi$ zum Lot, der Länge $l$ und der Masse $m$ betrachtet (siehe Abbildung \ref{fig:ch1_fadenpendel}).
+\begin{figure}
+	\centering
+	\includegraphics{figures/ch1/fadenpendel}
+	\caption{Ein Fadenpendel der Masse $m$.}
+	\label{fig:ch1_fadenpendel}
+\end{figure}
+Zunächst wird $r=l$ variabel gewählt. Die verallgemeinerten Koordinaten sind deswegen $\varphi$ und $r$.
 \begin{align*}
 x &= r \sin \varphi\\
 y &= l - r \cos \varphi\\
@@ -504,9 +554,9 @@ $\ffpartial{f}{r} = 1$ alle anderen partiellen Ableitungen $= 0$\\
 
 Daraus folgen 3 Gleichungen
 \begin{description}
-	\item[$r$-Gleichung] $$\lambda = m \ddot{r} + mg \cos \varphi - m r \dot{\varphi}^2$$
-	\item[$\varphi$-Gleichung] $$\ddot{\varphi} + \frac{2 \dot{r}}{r} \dot{\varphi} + \frac{g}{r} \sin \varphi = 0$$
-	\item[$l$-Gleichung] $$r = l \rightarrow \dot{r} = \ddot{r} = 0 $$
+	\item[$r$-Gleichung] $\lambda = m \ddot{r} + mg \cos \varphi - m r \dot{\varphi}^2$
+	\item[$\varphi$-Gleichung] $\ddot{\varphi} + \frac{2 \dot{r}}{r} \dot{\varphi} + \frac{g}{r} \sin \varphi = 0$
+	\item[$l$-Gleichung] $r = l \rightarrow \dot{r} = \ddot{r} = 0$
 \end{description}
 Randbemerkung: $\lambda = -m(l \dot{\varphi}^2 - g \cos \varphi)$ ist hier die Fadenspannung.
 
@@ -523,24 +573,30 @@ $$\vec{q}(t) = (q_1(t), \dots, q_s(t))$$
 ein $\vec{q}(t)$ beschreibt einen Zustand des gesamten Systems. Für gegebene $\vec{q}(t)$ und $\dot{\vec{q}}(t)$ wird die Lagrange-Funktion eine Funktion der Zeit 
 $$L(\vec{q}(t), \dotvec{q}(t), t) = \tilde{L}(t)$$
 
-\begin{definition*}[Wirkungsintegral]
+\begin{definition*}[Wirkungsfunktional]
 $$S\{\vec{q}(t)\} = \int_{t_1}^{t_2} \tilde{L}(t) \d t$$
-Die Dimension hiervon ist "`Wirkung"' \conseq Energie: Die Zahl
+Die Dimension hiervon ist "`Wirkung"' \conseq Energie:
 $S$ hängt von $\vec{q}(t)$ und $t_1, t_2$ ab. 
 Funktion $\vec{q}(t) \xrightarrow{\text{Abbildung}} S \{ \vec{q}(t) \}$ im allgemeinen Funktional.
 
-Wir betrachten Scharen $\vec{q}(t)$ mit den gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$.	
+Wir betrachten Scharen $\vec{q}(t)$ mit den gleichen Endpunkten $\vec{q}(t_1)$ und $\vec{q}(t_2)$. Virtuelle Verrückungen müssen verschwinden.	
 \end{definition*}
 
 
 Beim Hamiltonschen Prinzip wird nun die Bahn des Systems betrachtet und wir wollen eine extremale Bahn finden.
 
 ~\\
+\begin{definition*}[Hamiltonsches Prinzip]
 Die Systembewegung erfolgt so, dass $S\{\vec{q}(t)\}$ für die richtige Trajektorie extremal wird, d.h. dass die Variation bezüglich der tatsächlichen Bahn verschwindet.
 $$\delta S = \delta \int_{t_1}^{t_2} L(\vec{q}(t), \dotvec{q}(t), t) \d t \overset{!}{=} 0$$
+\end{definition*}
 
 \begin{bemerkung*}
 	Die Gleichung $\delta S = 0$ enthält auf elegante Weise die gesamte klassische Mechanik. Das Prinzip (der Minimierung der Trajektorie) wird auch jenseits der Mechanik verwendet\footnote{Zum Beispiel in der Teilchenphysik, der geometrischen Optik (Fermatsches Prinzip, dabei bewegt sich Licht auf einer Bahn, so dass die benötigte Zeit minimal ist. Damit können die Brechungsindizes gefunden werden.)}. Es ist natürlich koordinatenunabhängig.
+\end{bemerkung*}
+
+\begin{bemerkung*}
+	Das Hamiltonsche Prinzip wird auch jenseits der klassischen Mechanik verwendet. Beispielsweise in der Teilchenphysik (Quantenfeldtheorie) oder in der Optik.
 \end{bemerkung*}
 
 \subsubsection{Äquivalenz zum Prinzip von d'Alembert}
