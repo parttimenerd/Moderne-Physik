@@ -4,6 +4,7 @@
 
 # *TeX files
 document.pdf
+summary.pdf
 *.aux
 *.log
 *.nav
@@ -16,3 +17,6 @@ document.pdf
 *.fdb_latexmk
 *.fls
 *.tdo
+
+# Emacs folder 'auto'
+auto
