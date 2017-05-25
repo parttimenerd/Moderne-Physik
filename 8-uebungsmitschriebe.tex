@@ -23,7 +23,7 @@ Bemerkung: mit $\phi_a(t) = c e^{\pm i \omega t} = c (\cos(\omega t) \pm i \sin(
 \subsection{Aufgabe 1}
 Die Anzahl der Freiheitsgrade entspricht der Anzahl der "`freien, unabhängigen Koordinaten"'
 
-\paragraph{Allgemein} Ein Freiheitsrad ist ein Parameter, der dass physikalische System beschreibt und frei ist, also keiner Zwangsbedingung unterliegt. Oder, die frei wählbaren und voneinander unabhängigen Bewegungsmöglichkeiten (salopp gesagt).Jede Symmetrieachse schränkt dies weiter ein.\\
+\paragraph{Allgemein} Ein Freiheitsgrad ist ein Parameter, der dass physikalische System beschreibt und frei ist, also keiner Zwangsbedingung unterliegt. Oder, die frei wählbaren und voneinander unabhängigen Bewegungsmöglichkeiten (salopp gesagt).Jede Symmetrieachse schränkt dies weiter ein.\\
 
 Hat man $s$ Zwangsbedingungen und $N$ Freiheitsgrade pro Dimension, so hat man $f = d N - s$ Freiheitsgrade.
 
@@ -199,7 +199,7 @@ $v_x = \dot{x} = l \cos(\phi) \dot{\varphi}$, $v_y = l \sin(\varphi) \dot{\varph
 	\item $x$ und $y$ sind nicht unabhängig: $x^2 + y^2 = r^2 = l^2$
 	\item Eine freie Koordinate $\varphi$ $L = T - V = \frac12 m\vec{v}^2 - mg y = \frac12 (v_x^2 + v_y^2 + v_z^2) - mgy = \frac12 m (l^2 \cos^2(\varphi) \dot{\varphi}^2 + l^2 \sin^2(\varphi)\dot{\varphi}^2) + mgl \cos(\varphi) = \frac12 m l^2 \dot{\varphi}^2  + mgl \cos(\varphi) = L(\varphi, \dot{\varphi})$
 \end{itemize}
-$L(\varphi, \dot{\varphi})$ is von $\dot{\varphi}$ und $\varphi$ abhängig \conseq $\varphi$ ist keine zyklische Koordinate \conseq Euler-Lagrange-Gleichung für $(\varphi, \dot{\varphi})$: $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t (ml^2 \dot{\varphi}) - (-mgl \sin(\varphi)) = 0$ \conseq $ml^2 \ddot{\varphi} + mgl\sin(\varphi) = 0$ \conseq $\ddot{\varphi} + \underbrace{\frac{g}{l} \sin(\varphi)}_\text{Pendel} = 0$\\
+$L(\varphi, \dot{\varphi})$ ist von $\dot{\varphi}$ und $\varphi$ abhängig \conseq $\varphi$ ist keine zyklische Koordinate \conseq Euler-Lagrange-Gleichung für $(\varphi, \dot{\varphi})$: $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t (ml^2 \dot{\varphi}) - (-mgl \sin(\varphi)) = 0$ \conseq $ml^2 \ddot{\varphi} + mgl\sin(\varphi) = 0$ \conseq $\ddot{\varphi} + \underbrace{\frac{g}{l} \sin(\varphi)}_\text{Pendel} = 0$\\
 \textbf{Bemerkung} Hätte $L$ nicht $V$ abgehängt, also $L = T = \frac12 m \vec{v}^2 = \frac12 m l^2 \dot{\varphi}^2$.\\
 Dann wäre $\varphi$ zyklisch und $\dd t (\ffpartial{L}{\dot{\varphi}}) - \ffpartial{L}{\varphi} = 0$ \conseq $\dd t \ffpartial{L}{\dot{\varphi}} = 0$ \conseq $\ffpartial{L}{\dot{\varphi}} = m l^2 \dot{\varphi}$ Erhaltungsgröße und Drehimpuls
 
