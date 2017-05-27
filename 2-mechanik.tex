@@ -744,19 +744,18 @@ V(\vec{r}_1, \vec{r}_2) &= V(| \vec{r}_1 - \vec{r}_2|) = V(r)\\
 \text{Schwerpunkt~~~} R &= \frac{1}{M} (m_1 \vec{r}_1 + m_2 \vec{r}_2)\\
 \text{Relativkoordinate~~~} \vec{r} &= \vec{r}_1 - \vec{r}_2 = r (\sin \vartheta \cos \varphi, \sin \vartheta \sin \varphi, \cos \vartheta)
 \end{align*}~\\
-\emph{Wir Erwarten}
-\dots das sowohl die Bewegung des Schwerpunkts trivial, also gleichförmig, ist wie auch die Bewegung der reduzierten Masse $\mu$ im Schwerpunktsystem ist.\\~\\
-Die generalisierten Koordinaten sind in unserem Beispiel
+\emph{Wir erwarten}, dass sowohl die Bewegung des Schwerpunkts trivial (d.h. gleichförmig) ist, als auch, dass die Bewegung der reduzierten Masse $\mu$ im Schwerpunktsystem ist.\\~\\
+Die generalisierten Koordinaten sind in unserem Beispiel:
 \begin{align*}
 \vec{R} &= (q_1, q_2, q_3) \text{~mit~} r = q_4, \vartheta = q_5, \varphi = q_6
-\intertext{Damit ist die Lagrange-Funktion in den generalisierten Koordinaten}
+\intertext{Damit ist die Lagrange-Funktion in den generalisierten Koordinaten:}
 	L &= \frac{M}{2} (\dot{q}_1^2 + \dot{q}_2^2 + \dot{q}_3^2) \\~&- V(q_4) + \frac{\mu}{2} (\dot{q}_4^2 + q_4^2 \dot{q}_5^2 + q_4^2 \dot{q}_6^2 \sin^2 q_5)
 	\intertext{Offensichtlich sind die Koordinaten $q_1, q_2, q_3, q_6$ zyklisch und $p_i = \ffpartial{L}{\dot{q}_i} = M \dot{q}_i$ für ($i =1, 2, 3$), also bleibt der \textit{Schwerpunktimpuls} erhalten.}
 	\vec{p} &= M \dotvec{R} = \text{konstant}\\
 	p_6 &= \ffpartial{L}{\dot{q}_6} = \mu q_4^2 \dot{q}_6 \sin^2 q_5 = \mu \dot{\varphi} r^2 \sin^2 \vartheta = L_r^{(Z)} = \text{konstant}
 \end{align*}
 Die $z$-Komponente des Relativdrehimpulses ist offensichtlich konstant\footnote{Vergleiche: Geworfenes Frisbee, dessen Drehachse relativ gesehen sich nicht verändert.\footnote{Tipp: Dies mit einer Tafelkreide zu probieren ist aufgrund des vergleichsweise geringen Impulses schlecht möglich.}}.
-Wenn man nun versucht das Problem in den Kartesischen Koordinaten anzugehen, führt das zu folgender Lagrange-Funktion:
+Wenn man nun versucht, das Problem in den kartesischen Koordinaten anzugehen, führt das zu folgender Lagrange-Funktion:
 \begin{align*}
 	L =& \frac{m_1}{2} (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac12 m_2 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2) \\
 	&- V((x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2)
@@ -765,35 +764,35 @@ Wenn man nun versucht das Problem in den Kartesischen Koordinaten anzugehen, fü
 \end{beispiel*}
 
 \subsubsection{Homogenität in der Zeit}
-Das bedeutet die Invarianz der Bewegung gegenüber Zeittranslationen\footnote{Das gleiche zu einem späteren Zeitpunkt starten.}\footnote{Der Informatiker kennt das auch als seiteneffektfreie Funktion.} bei gleichen Anfangsbedingungen.
+Homogenität in der Zeit bedeutet die Invarianz der Bewegung unter Zeittranslationen\footnote{Das gleiche zu einem späteren Zeitpunkt starten.}\footnote{Der Informatiker kennt das auch als seiteneffektfreie Funktion.} bei gleichen Anfangsbedingungen. Sie wird auch {\bf Zeitinvarianz} genannt.
 \begin{align*}
 \vec{q}(t_1) &= \vec{q}_0\\
 \vec{q}(t_2) &= \vec{q}_0\\
 \Rightarrow \vec{q}(t_1 + t) &= \vec{q}(t_2 + t)
 \end{align*}
-Daraus folgt die zeitweise Homogenität. Sie ist offenbar erfüllt, da die Lagrange-Funktion L nicht explizit von der Zeit abhängt ($\ffpartial{L}{t} = 0$). Damit bekommen wir das totale Differential
+Daraus folgt die {\bf zeitweise Homogenität}. Sie ist offenbar erfüllt, da die Lagrange-Funktion L nicht explizit von der Zeit abhängt ($\ffpartial{L}{t} = 0$). Damit bekommen wir das totale Differential
 $$\ddd{L}{t} = \sum_{j=1}^{s} (\underbrace{\ffpartial{L}{q_j}}_{\dd t \ffpartial{L}{\dot{q}_j}} \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j) + \underbrace{\ffpartial{L}{t}}_{= 0} = \sum_{j = 1}^s [ (\dd t \ffpartial{L}{\dot{q}_j}) \dot{q}_j + \ffpartial{L}{\dot{q}_j} \ddot{q}_j] = \dd t \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j$$
-also gilt insgesamt
+also gilt insgesamt:
 $$\dd t (L - \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} \dot{q}_j) = 0$$
-mit dem generalisiertem Impuls $p_j = \ffpartial{L}{\dot{q}_j}$ folgt die Hamilton-Funktion
+Mit dem generalisiertem Impuls $p_j \coloneqq \ffpartial{L}{\dot{q}_j}$ folgt die Hamilton-Funktion
 $$H = \sum_{j=1}^s p_j \dot{q}_j - L$$
-für die nach Konstruktion gilt $\ddd{H}{t} = 0$, oder anders ausgedrückt, dass sie konstant ist.
+, für die nach Konstruktion $\ddd{H}{t} = 0$ gilt. Oder anders ausgedrückt, dass sie konstant ist.
 
 \subsubsection{Interpretation von $H$} \dots für konservative Systeme mit holonom-skleronomen Zwangsbedingungen.
 Dazu schreiben wir zuerst die kinetische Energie in den verallgemeinerten Koordinaten:
 $$T = \frac12 \sum_{i=1}^N m_i \dotvec{r}_i^2$$
-\textit{Zur Erinnerung $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$, also ist $\vec{r}_i$ unabhängig von den Geschwindigkeiten.} Es folgt weiterhin
+\textit{Zur Erinnerung: $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$. Also ist $\vec{r}_i$ unabhängig von den Geschwindigkeiten.} Es folgt weiterhin
 $$\dotvec{r}_i^2 = \left( (\sum_{j=1}^s \ffpartial{\vec{r}_i}{q_j} \dot{q}_j + \underbrace{\ffpartial{\vec{r}_i}{\dot{q}_i}}_{=0} \ddot{q}_i) + \underbrace{\ffpartial{\vec{r}_i}{t}}_{=0, \text{ skleronom}}\right)^2 $$
-Womit die Ortsvektoren $\vec{r}_i$ unabhängig von der Zeit sind. Nun bekommt man
+, womit die Ortsvektoren $\vec{r}_i$ unabhängig von der Zeit sind. Nun erhält man:
 $$T = \frac12 \sum_{i=1}^N m_i \sum_{j,l=1}^{s} \ffpartial{\vec{r}_i}{q_i} \ffpartial{\vec{r}_i}{q_l} \dot{q}_j \dot{q}_l = \frac12 \sum_{j,l = 1}^{} \dot{q_j} \dot{q_l} \underbrace{\sum_{i=1}^N m_i \ffpartial{\vec{r}_i}{q_j} \ffpartial{\vec{r}_i}{q_l}}_{\alpha_{jl}} = \sum_{j,l=1}^s \alpha_{jl} \dot{q}_j \dot{q}_l$$
 Das ist eine sogenannte "`homogene quadratische Form in $\dot{q}_j$"' von $T$.
-Durch skalieren von $T(\dot{q}_1, \dots, \dot{q}_s)$ mit dem Faktor $a$
+Durch Skalieren von $T(\dot{q}_1, \dots, \dot{q}_s)$ mit dem Faktor $a$
 $$T(a \dot{q}_1, \dots, a \dot{q}_s) = a^2 T(\dot{q}_1, \dots, \dot{q}_s)$$
-erkennt man, dass gilt
+erkennt man, dass
 $$\ffpartial{T}{a} = \sum_{j=1}^s \ffpartial{T}{(a \dot{q}_j)}\dot{q}_j = 2 a T$$
-womit für $a = 1$ schlussendlich  gilt
+gilt, womit für $a = 1$ schlussendlich  gilt:
 $$ 2 T = \sum_{j=1}^s \ffpartial{T}{\dot{q}_j} \dot{q}_j = \sum_{j=1}^s \ffpartial{L}{\dot{q}_j} = \sum_{j=1}^s p_j \dot{q}_j$$
-Mit dieser Erkenntnis kann man nun die Hamilton-Funktion umformen zu
+Mit dieser Erkenntnis kann man nun die Hamilton-Funktion umformen, zu:
 $$H = \sum_{j=1}^s p_j \dot{q}_j - L = 2T - L = 2 T - (T-V) = T + V = E$$
 Damit kann man die Hamilton-Funktion als Gesamtenergie des Systems interpretieren.
 
@@ -803,14 +802,14 @@ Damit kann man die Hamilton-Funktion als Gesamtenergie des Systems interpretiere
 
 
 \paragraph{Zusammengefasst}
-Aus der Homogenität in der Zeit folgt
+Aus der Homogenität in der Zeit folgt:
 \[H=\sum\limits_{j=1}^S p_j\dot q_j - L = \const\]
 Falls die Zwangsbedingungen skleronom sind, folgt daraus die \emph{Energieerhaltung}, denn die Hamilton-Funktion ist die Gesamtenergie.
 
 \subsubsection{Homogenität des Raums}
-Wenn etwas räumlich homogen ist, bedeutet das, dass es unabhängig vom Ort\footnote{Genauer gesagt der örtlichen Anfangsbedingungen} ist. Eine Verschiebung des Systems verändert nicht die Dynamik. Damit ist ein solches System in der Regel nur von den relativen Abständen abhängig.
+Wenn etwas räumlich homogen ist, bedeutet das, dass es unabhängig von den örtlichen Anfangsbedingungen ist. Eine Verschiebung des Systems verändert nicht die Dynamik. Damit ist ein solches System in der Regel nur von den relativen Abständen abhängig.
 
-Sei nun $\Delta q_j$ die Translation des Gesamtsystems. Bei Homogenität gilt $\frac{\partial L}{\partial q_j} = 0$ und damit, dass $q_j$ zyklisch und $p_j = \frac{\partial L}{\partial \dot q_j} = \const$ ist.
+Sei nun $\Delta q_j$ die Translation des Gesamtsystems. Bei Homogenität gilt $\frac{\partial L}{\partial q_j} = 0$ und damit, dass $q_j$ zyklisch und $p_j \coloneqq \frac{\partial L}{\partial \dot q_j} = \const$ ist.
 
 Bei konservativen Systemen gilt nun $\frac{\partial V}{\partial \dot q_j} = 0$
 \begin{align*}
