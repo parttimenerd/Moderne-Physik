@@ -855,34 +855,39 @@ Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabh
 &\text{$2S$ Anfangsbedingungen} &\to& &\text{$2S$ Anfangsbedingungen}
 \end{align*}
 Der Übergang von $q_j$ nach $p_j$ geschieht per Legendre-Transformation, die im folgenden kurz erklärt wird.
-\subsubsection{Legendre - Transformation} \textit{\dots als mathematisches Werkzeug}\\
+\subsubsection{Legendre-Transformation} \textit{\dots als mathematisches Werkzeug}\\
 Sei $f(x)$ eine Funktion mit $\md f = \frac{\md f}{\md x} \md x = u \md x$ und $g(x)$ eine weitere Funktion mit $\frac{\md g}{\md u} = \pm x$
+
+$u$ ist die Ableitung von $f$ nach der unabhängigen Variable $x$. $u$ soll nun eine neue unabhängige Variable sein. Suche $g(u)$ mit $\frac{\d g}{\d u} = \pm x$.
 \begin{align*}
 \md f &= u\md x = \md (ux) - x\md u\\
 \md (f-ux) &= - x \md u\\
 \Rightarrow \frac{\md}{\md u}(f-xu) &= -x\\
-g(u) &= f(x) - xu = f(x) - x\frac{\md f}{\md x}
+g(u) &= f(x) - ux = f(x) - x\frac{\md f(x)}{\md x}
 \end{align*}
-$g(u)$ ist jetzt die Legendre - Transformierte von $f(x)$.
+$g(u)$ ist jetzt die Legendre-Transformierte von $f(x)$.
 	
 	
 	
-\begin{beispiel*}[Transformieren von $f(x) = \alpha x^2$ und $\bar{f}(x) = \alpha(x+c)^2$]
+\begin{beispiel*} (Bzw. eigentlich {\bf Gegenbeispiel}.) [Transformieren von $f(x) = \alpha x^2$ und $\bar{f}(x) = \alpha(x+c)^2$]
 	Zuerst transformieren wir beide Funktionen jeweils durch Ersetzen, also ohne Anwendung der Legendre-Transformation.
 \begin{align*}
 u(x) &= \frac{\md f}{\md x} = 2 \alpha x \rightarrow x= \frac{u}{2\alpha} & \qquad   \bar u &= \frac{\md \bar f}{\md x} = 2\alpha(x+c) \rightarrow x=\frac{\bar u}{2\alpha} - c\\
-\rightarrow g(x) &= \frac{u^2}{4\alpha} & \qquad  \rightarrow \bar g(\bar u) &= \frac{\bar x^2}{4\alpha}
+\rightarrow \tilde f(u) &= \frac{u^2}{4\alpha} & \qquad  \rightarrow \bar \tilde f(\bar u) &= \frac{\bar u^2}{4\alpha}
 \end{align*}
 $f$ und $\bar f$ haben die gleichen Transformationen. Damit ist diese Art zu Transformieren offensichtlich nicht eindeutig und auch nicht umkehrbar.\\
+\end{beispiel*}
+
+\begin{beispiel*}
 Nun transformieren wir die beide Funktionen jeweils unter der Verwendung der Legendre-Transformation
 \begin{align*}
-\rightarrow u &= 2\alpha x \rightarrow x= \frac {u}{2\alpha}      &  \qquad \bar{u} &= 2\alpha (x+c) \rightarrow x= \frac {\bar{u}}{2\alpha} -c\\
-\rightarrow g(x) &= f(x) - x\frac{\md f}{\md x}  &  \qquad   \rightarrow \overline g(x) &= \overline f(x) - x\frac{\md \overline f}{\md x}\\
-&= \alpha x^2 - x2\alpha x = -\alpha x^2         &    \qquad    &= \alpha (x+c)^2 - x 2\alpha( x+c)\\
-&=-\alpha^3(\frac{u}{2\alpha})^2      &  \qquad    &= \alpha (\frac {\bar{u}}{2\alpha})^2 - (\frac {\bar u}{2\alpha} -c) 2\alpha( \frac {u}{2\alpha} )\\
+\rightarrow u &= 2\alpha x \rightarrow x= \frac {u}{2\alpha}      &  \qquad \bar{u} &= 2\alpha (x+c) \rightarrow \bar x= \frac {\bar{u}}{2\alpha} -c\\
+\rightarrow &f(x) - x\frac{\md f}{\md x}(x)  &  \qquad   \rightarrow &\overline f(\bar x) - \bar x\frac{\md \overline f}{\md \bar x}(\bar x)\\
+&= \alpha x^2 - x2\alpha x = -\alpha x^2         &    \qquad    &= \alpha (\bar x+c)^2 - \bar x 2\alpha(\bar x+c)\\
+&=-\alpha(\frac{u}{2\alpha})^2      &  \qquad    &= \alpha (\frac {\bar{u}}{2\alpha})^2 - (\frac {\bar u}{2\alpha} -c) 2\alpha( \frac {\bar u}{2\alpha} )\\
 &= -\frac{u^2}{4\alpha} = g(u)   &  \qquad    &= -\frac {\bar{u}^2}{4\alpha} +c\bar{u} = g(\bar{u}) \neq g(u)
 \end{align*}
-Es kann gezeigt werden, dass die Legendre-Transformation allgemein eindeutig und damit umkehrbar ist.\footnote{Dies zu zeigen würde aber den Rahmen dieser Vorlesung sprengen.}
+Es kann gezeigt werden, dass die Legendre-Transformation allgemein eindeutig und damit umkehrbar ist.\footnote{Dies zu zeigen, würde aber den Rahmen dieser Vorlesung sprengen.}
 \end{beispiel*}
 \subsubsection{Legendre-Transformation für mehrere Variablen}
 Zuerst betrachten wir den Fall der Funktion $f(x,y)$, bei der $y$ durch $v$ ersetzt werden soll. Hier gilt, dass
