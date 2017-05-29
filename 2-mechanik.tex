@@ -826,6 +826,8 @@ p_j &= \vec n_j \cdot \sum\limits_{i=1}^N m_i \dot {\vec r}_i = \vec n_j \dot {\
 Die Homogenität des Raums ist genau dann vorhanden, wenn es \emph{Impulserhaltung} gibt.
 
 \subsubsection{Isotropie des Raums}
+Isotropie bezeichnet die Unabhängigkeit einer Eigenschaft von der Richtung. Führt man z.B. ein Experiment mit Gravitation durch, so kann man den Experimentiertisch um die z-Achse rotieren (und damit das System, das man betrachtet), ohne, dass sich das Ergebnis verändert.
+
 Jetzt ist $q_j$ so gewählt, dass $\Delta q_j$ ein Drehwinkel ($\Delta q_j = \Delta \varphi$) und $\vec n_j$ eine Drehachse ist: $\vec n_j \Rightarrow \Delta \vec r_i = \Delta q_j (\vec n_j \times \vec r_i)$\\
 Die Rechnung für den Impuls funktioniert analog zur Rechnung oben. Für den Impuls gilt
 
@@ -844,11 +846,11 @@ Isotropie  $\Leftrightarrow$ Drehimpulserhaltung
 \end{bemerkung*}
 
 \section{Hamilton-Mechanik}
-Die Hamiltonsche Mechanik ist eine Weiterentwicklung der Lagrange-Mechanik. Sie ist ein a posteriori\footnote{"`Eine Theorie, die a posteriori gebildet wurde, erfüllt hinsichtlich ihrer Wissenschaftlichkeit zunächst nur das Kriterium der Erklärungskraft und muss sich in anderer Hinsicht (Nachvollziehbarkeit, Überprüfbarkeit, Falsifizierbarkeit, Voraussagekraft) noch bewähren."' \href{https://de.wikipedia.org/wiki/A_posteriori}{Wikipedia}} wichtiger Schritt auf dem Weg zur Quantenmechanik. Die Klassische Mechanik wird später zum "`Grenzfall"' der Übergeordneten Quantenmechanik. Eine, der Quantenmechanik ähnliche, mathematische Struktur lässt sich bereits hier entwickeln.
+Die Hamiltonsche Mechanik ist eine Weiterentwicklung der Lagrange-Mechanik. Sie ist ein a posteriori\footnote{"`Eine Theorie, die a posteriori gebildet wurde, erfüllt hinsichtlich ihrer Wissenschaftlichkeit zunächst nur das Kriterium der Erklärungskraft und muss sich in anderer Hinsicht (Nachvollziehbarkeit, Überprüfbarkeit, Falsifizierbarkeit, Voraussagekraft) noch bewähren."' \href{https://de.wikipedia.org/wiki/A_posteriori}{Wikipedia}} wichtiger Schritt auf dem Weg zur Quantenmechanik. Die Klassische Mechanik wird später zum "`Grenzfall"' der übergeordneten Quantenmechanik. Eine (der Quantenmechanik ähnliche) mathematische Struktur lässt sich bereits hier entwickeln.
 
 Der Ausgangspunkt ist offensichtlich die Lagrange-Mechanik. Jetzt wird $(\vec q, \dot {\vec q}, t)$ zu $(\vec q, \vec p, t)$ transformiert.
 
-Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse, sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
+Die $p_i$ sind die zu $q_i$ kanonisch konjugierten Impulse. Sie werden als unabhängige Funktion (von $\vec q$) aufgefasst.
 \begin{align*}
 &\text{Lagrange} &\to& &\text{Hamilton}\\
 &\text{$S$ Differentialgleichungen 2. Ordnung} &\to& &\text{$2S$ Differentialgleichungen 1. Ordnung}\\
@@ -938,19 +940,19 @@ $H$ ist nicht mehr von $q_j$, $p_j$ abhängig. Vergleiche hierbei $L$, welches i
 
 \subsubsection{Vorgehen im Hamiltonformalismus als Rezept}
 \begin{enumerate}
-	\item Generalisierte Koordinaten festlegen $\vec{q} = (q_1, \dots, q_s)$
-	\item Transformationsgleichungen aufstellen $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
+	\item Generalisierte Koordinaten festlegen. $\vec{q} = (q_1, \dots, q_s)$
+	\item Transformationsgleichungen aufstellen. $\vec{r}_i = \vec{r}_(q_1, \dots, q_s, t)$ und auch $\dotvec{r}_i = \dotvec{r}_i(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t)$
 	\item Kinetische und potentielle Energie in Teilchenkoordinaten und danach in generalisierten Koordinaten formulieren.
 	$$L(\vec{q}, \dotvec{q}, t) = T(\vec{q}, \dotvec q,t)  - V(\vec{q}, t)$$
-	\item Generalisierte Impulse berechnen
+	\item Generalisierte Impulse berechnen.
 		$$p_j = \ffpartial{L}{\dot{q}_j} \Rightarrow p_j = p_j(\vec{q}, \dotvec{q}, t)$$
-	\item Lösen für $\dot{q}_j$
+	\item Lösen für $\dot{q}_j$.
 	$$\dot{q}_j = \dot{q}_j (\vec{q}, \vec{p}, t)$$
 	\item Lagrange-Funktion
 	$$L(\vec{q}, \dotvec{q}(\vec{q}, \vec{p}, t), t) = \tilde{L}(\vec{q}, \vec{p}, t)$$
 	\item Legendre-Transformation
 	$$H(\vec{q}, \vec{p}, t) = \sum_{j=1}^s p_j \dot{q}_j(\vec{q}, \vec{p}, t) - \tilde{L}(\vec{q}, \vec{p}, t)$$
-	\item Kanonische (Hamiltonsche) Gleichungen aufstellen und lösen
+	\item Kanonische (Hamiltonsche) Gleichungen aufstellen und lösen.
 	\begin{align*}
 	\dot{p}_i &= -\ffpartial{H(\vec{q},\vec{p},t)}{q_i} & \dot{q}_i &= \ffpartial{H(\vec{q},\vec{p},t)}{p_i}
 	\end{align*}
