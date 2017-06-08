@@ -1053,19 +1053,19 @@ Die Hamilton-Funktion spielt eine fundamentale Rolle in der Quantenmechanik wie 
 \newcommand{\vpi}{\vec{\pi}}
 \newcommand{\poisson}[1]{\{#1\}_{\vec{p}, \vec{q}}}
 \subsection{Poisson-Klammern}
-Im folgenden eine Diskussion weiterer formaler Eigenschaften der klassischen Mechanik mit Hilfe der Poisson-Klammern. Jede Observable kann als Funktion eines Phasenraumpunktes $f(\vec{\pi}, t) = f (\vec{q}, \vec{p}, t)$ dargestellt werden. Woraus die folgende Bewegungsgleichung folgt
+Im Folgenden eine Diskussion weiterer formaler Eigenschaften der klassischen Mechanik mit Hilfe der Poisson-Klammern. Jede Observable kann als Funktion eines Phasenraumpunktes $f(\vec{\pi}, t) = f (\vec{q}, \vec{p}, t)$ dargestellt werden. Woraus die folgende Bewegungsgleichung folgt
 \begin{align*}
 	\ddd{f}{t} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \dot{q}_j + \ffpartial{f}{p_j} \dot{p}_j) + \ffpartial{f}{t}
-\intertext{nun setzt man die Hamiltonschen Gleichungen ein und erhält}
+\intertext{nun setzt man die Hamiltonschen Gleichungen ein und erhält:}
 \ddd{f}{t} &= \sum_{j=1}^s\underbrace{(\ffpartial{f}{q_j} \ffpartial{H}{p_j} - \ffpartial{f}{p_j} \ffpartial{H}{q_j})}_{\{f, H\}_{\vec{q}, \vec{p}}} + \ffpartial{f}{t}
 \intertext{Wenn nun $f(\vec{q}, \vec{p}, t)$ und $g(\vec{q}, \vec{p}, t)$ zwei skalare Funktionen sind, gilt allgemein, dass}
-\{f, g\}_{\vec{q}, \vec{p}} &= \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} - \ffpartial{f}{p_j} \ffpartial{g}{q_j})
+\{f, g\}_{\vec{q}, \vec{p}} &\coloneqq \sum_{j=1}^s (\ffpartial{f}{q_j} \ffpartial{g}{p_j} - \ffpartial{f}{p_j} \ffpartial{g}{q_j})
 \intertext{die Poisson-Klammer von $f$ und $g$ ist. \textit{Erinnerung: $\dot q_i = \frac{\partial H}{\partial p_i}$ und $\dot p_i = - \frac{\partial H}{\partial q_i}$.} Jetzt kann die Bewegungsgleichung auch wie folgt geschrieben werden}
 \ddd{f}{t} &= \{f, H\}_{\vec{q}, \vec{p}} + \ffpartial{f}{t}
-\intertext{Es gibt ein paar Spezialfälle}
+\intertext{Es gibt ein paar Spezialfälle:}
 \dot{q}_j &= \poisson{q_j, H}\\
 \dot{p}_j &= \poisson{p_j, H}
-\intertext{Interessant ist weiterhin}
+\intertext{Interessant ist weiterhin:}
 \poisson{q_i, q_j} &= \sum_{k=1}^s (\ffpartial{q_i}{q_k} \underbrace{\ffpartial{q_i}{p_k}}_{=0} - \underbrace{\ffpartial{q_i}{p_k}}_{=0} \ffpartial{q_j}{q_k}) = 0\\
 \poisson{p_i, p_k} &= \sum_{k=1}^s (\underbrace{\ffpartial{p_i}{q_k}}_{=0} \ffpartial{p_i}{p_k} - \ffpartial{p_i}{p_k} \underbrace{\ffpartial{p_i}{q_k}}_{=0}) = 0\\
 \poisson{q_i, p_j} &= \sum_{k=1}^s (\underbrace{\ffpartial{q_i}{q_k}}_{\delta_{ik}} \underbrace{\ffpartial{p_j}{p_k}}_{\delta_{jk}} - \underbrace{\ffpartial{q_i}{p_k}}_{=0} \underbrace{\ffpartial{p_j}{q_k}}_{=0})\\
@@ -1073,7 +1073,7 @@ Im folgenden eine Diskussion weiterer formaler Eigenschaften der klassischen Mec
 \end{align*}
 
 \begin{bemerkung*}[Kronecker-Delta]
-	$\delta_{ij}$ ist das sogenannte Kronecker-Delta, es gilt hierfür
+	$\delta_{ij}$ ist das sogenannte Kronecker-Delta, es gilt hierfür:
 	$$\delta_{ij} = \begin{cases}
 	1 & \quad i = j\\
 	0 & \quad \text{sonst}
@@ -1086,8 +1086,8 @@ Im folgenden eine Diskussion weiterer formaler Eigenschaften der klassischen Mec
 \poisson{q_i, p_j} &= \delta_{ij}
 \end{align*}
 Betrachte nun die Koordinaten $\vec{Q}$, $\vec{P}$ mit $\vec{Q} = \vec{Q}(\vec{q}, \vec{p})$, $\vec{P} = \vec{P}(\vec{q}, \vec{p})$ und $\tilde{H}(\vec{Q}, \vec{P})$ welche durch Einsetzen in $H(\vec{q}, \vec{p})$ entsteht.\\
-Nun beschäftigen wir und mit der Frage, ob die Wahl der $\vec{q}$, $\vec{p}$ ausgezeichnet ist.
-Untersuche hierfür
+Nun beschäftigen wir uns mit der Frage, ob die Wahl der $\vec{q}$, $\vec{p}$ ausgezeichnet ist.
+Untersuche hierfür:
 \begin{align*}
 \dot{Q}_i &= \dd t Q_i(\vec{q}, \vec{p}) = \sum_{k=1}^s (\ffpartial{Q_i}{q_k} \ffpartial{H}{p_k} - \ffpartial{Q_i}{p_k} \ffpartial{H}{q_k})
 \intertext{Da $\tilde{H}(\vec{Q}, \vec{P}) = H(\vec{q}, \vec{p})$ gilt, kann man die Kettenregel verwenden, um auf folgendes zu kommen}
@@ -1101,13 +1101,13 @@ Per Koeffizientenvergleich folgt mit den vorher angegebenen Gleichungen
 \end{align*}
 Ein ähnliche Rechnung für $\dot{P}_j$ führt zu $\poisson{P_i, P_l} = 0$. Damit gelten die fundamentalen Klammern auch für andere kanonisch konjugierte Variablen\footnote{Kanonisch konjugierte Variablen erfüllen die Hamiltonschen Gleichungen. Vgl. \href{http://www.chemgapedia.de/vsengine/glossary/de/kanonisch_00032konjugierte_00032variable.glos.html}{ChemgaPedia}}.
 Weiter mit dem Phasenraumfunktionen für unterschiedliche kanonisch konjugierte Variablen
-$F$, $G$; $\vec{q}$, $\vec{p}$ bzw. $\vec{Q}$, $\vec{P}$ wie oben
+$F$, $G$; $\vec{q}$, $\vec{p}$ bzw. $\vec{Q}$, $\vec{P}$ wie oben:
 \begin{align*}
 \poisson{F, G} &= \sum_{j=1}^{s} (\ffpartial{F}{q_j} \ffpartial{G}{p_i} - \ffpartial{F}{p_i} \ffpartial{G}{q_j})
 \intertext{Jetzt wird angenommen, dass $G = G(\vec{Q}, \vec{P})$ gilt. Also $G$ von $\vec{P}$ und $\vec{Q}$ abhängig ist.}
 &= \sum_{l,j=1}^{s} (\ffpartial{F}{q_i} (\ffpartial{G}{Q_l} \ffpartial{Q_l}{p_j} + \ffpartial{G}{P_l} \ffpartial{P_l}{p_j})  - \ffpartial{F}{p_j} (\ffpartial{G}{Q_l} \ffpartial{Q_l}{q_j} + \ffpartial{G}{P_l} \ffpartial{P_l}{q_j}))\\
 &= \sum_{l=1}^s (\ffpartial{G}{Q_l} \poisson{F, Q_l} + \ffpartial{G}{P_l} \poisson{F, P_l})      \qquad \text{\circled{$\ast$}}
-\intertext{Speziell für $F = Q_k$ oder $F = P_k$ gilt}
+\intertext{Speziell für $F = Q_k$ oder $F = P_k$ gilt:}
 	\poisson{Q_k, G} &= \sum_{l=1}^s (\ffpartial{G}{Q_l} \underbrace{\poisson{Q_k, Q_l}}_{=0} + \ffpartial{G}{P_l} \underbrace{\poisson{Q_k, P_l}}_{\delta_{kl}})\\
 	&= \ffpartial{G}{P_k} = - \poisson{G, Q_k}\\
 	\poisson{P_k, G} &= \sum_{j=1}^{s} \ffpartial{G}{Q_l} \underbrace{\poisson{P_k, Q_l}}_{= - \delta_{kl}} + \ffpartial{G}{P_l} \underbrace{\poisson{P_k, P_l}}_{=0} = - \ffpartial{G}{Q_k} = - \{G, P_k\}
@@ -1128,23 +1128,22 @@ Die Poisson-Klammer hängt also nicht von der Wahl der kanonisch konjugierten Va
 $$\{F, G\}_{\vec{q}, \vec{p}} = \{F, G\}_{\vec{Q}, \vec{P}} = \{F, G\}$$
 Die Poisson-Klammer kann auch als algebraisches Konstrukt mit den folgenden Eigenschaften betrachtet werden 
 \begin{description}
-	\item[Linearität] $\{c_1 f_1 + c_2 f_2, g\} = c_1 \{f_1, g\} + c_2 \{f_2, g\}$ ($c_1$, $c_2$ konstant)
-	\item[Antisymmetrie] $\{f, g\} = - \{g, f\}$ \conseq $\{f, f\} = 0$
-	\item[Nullelement] $\{c, f\} = 0$, $f=f(\vec{q}, \vec{p})$; $c = \const$
+	\item[Linearität] $\{c_1 f_1 + c_2 f_2, g\} = c_1 \{f_1, g\} + c_2 \{f_2, g\}$ ($c_1$, $c_2$ konstant, $c_1, c_2 \in \mathbb{C}$)
+	\item[Antisymmetrie] $\{f, g\} = - \{g, f\}$ und somit $\{f, f\} = 0$
+	\item[Nullelement] $\{c, f\} = 0$, $f=f(\vec{q}, \vec{p}, t)$; $c = \const$ (D.h. konstante Elemente sind Nullelemente.)
 	\item[Produktregel] $\{f, g h\} = g \{f, h\} + \{f, g\} h$
 	\item[Jacobi-Identität] $\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$
 \end{description}
 
-Bis hier wurde Poisson-Klammer nur als algebraische Vereinfachung betrachtet, mit eventuell der Einsicht der fundamentalen Klammern.\\
-Für physikalische Einsichten gehen wir zurück zu den Zustandsgrößen.
+Bis hier wurde die Poisson-Klammer nur als algebraische Vereinfachung betrachtet, mit eventuell der Einsicht der fundamentalen Klammern. Für physikalische Einsichten gehen wir zurück zu den Zustandsgrößen.
 
 % % %
 \paragraph{Physikalische Einsicht}~\\
 \textit{Observable}: 
 $$f = f(\vec{q}, \vec{p}, t) = f(\vec{\pi}, t) \qquad \ddd{f}{t} = \{f, H\} + \ffpartial{f}{t}$$
 D.h. für \textit{Integrale der Bewegung} gilt
-$$\ddd{f}{t} = 0 \Leftrightarrow \{H, f\} = \ffpartial{f}{t}$$
-insbesondere, wenn $f$ nicht explizit zeitabhängig. Die Kenntnis der Integrale der Bewegung ist wesentlich für die Lösung eines dynamischen Problems. Dafür finden wir hier ein einfaches Kriterium.\\
+$$\ddd{f}{t} = 0 \text{ und } \{H, f\} = \ffpartial{f}{t}$$
+insbesondere, wenn $f$ nicht explizit zeitabhängig ist. Die Kenntnis der Integrale der Bewegung ist wesentlich für die Lösung eines dynamischen Problems. Dafür finden wir hier ein einfaches Kriterium.\\
 \textit{Einfacher Test}: $f = H$: $\ddd{H}{t} = \{H, H\} + \ffpartial{H}{t} = \ffpartial{H}{t}$ schon bekannt (bei skleronomen Zwangsbedingungen = Energiesatz).\\
 Bis hierhin haben wir die Poisson-Klammer\footnote{Ob das Wort im Plural oder Singular geschrieben wird ist egal, es wird in der Regel das selbe gemeint.} ausführlich als mathematisches Werkzeug der klassischen Mechanik diskutiert.
 Jetzt werden die abstrakten Eigenschaften der Klammer werden verallgemeinert.
