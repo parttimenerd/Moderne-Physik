@@ -208,12 +208,12 @@ wobei die Summanden $(\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i$ beziehungsw
 
 Das \textbf{Prinzip der virtuellen Arbeit} fordert nun, dass $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$. Die virtuellen Kräfte dürfen also in der Summe keine Arbeit verrichten: "`Die gedachte Bewegung, z.B. jene senkrecht zu einer durch eine Zwangsbedingung vorgegebenen Bahn, verrichtet keine Arbeit"'.
 
-Mit diesem Prinzip folgt also die zentrale Gleichung
+Wenn man dieses Prinzip in obige Gleichung einsetzt, folgt die zentrale Gleichung
 \[
 	\sum_i (\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i = 0
 	\text{,}
 \]
-mit der wir im Folgenden Kapitel arbeiten werden.
+mit der wir im folgenden Kapitel arbeiten werden.
 
 \begin{beispiel*}[Teilchen auf einer Kurve]
 $$\vec{Z} \bot \delta \vec{r} \qquad \Rightarrow \qquad \vec{Z} \delta \vec{r} = 0$$
@@ -229,10 +229,11 @@ $$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delt
 \end{beispiel*}
 
 \subsection{Lagrange Formalismus}
-Wenn man $\vec{F}_i = m \ddotvec{r}_i = m \ddv{r} = \dot p$ wie vorher als $F_i = \vec{K}_i + \vec{Z}_i$ aufteilt kann man mit Hilfe des \textit{Prinzips der virtuellen Arbeit} folgern.
-$$\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} = 0$$
-Das heißt, das keine expliziten Zwangskräfte mehr gelten.
-Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von ihnen, also als generalisierte Koordinaten, zu formulieren. Damit soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
+Im vergangenen Abschnitt haben wir die Gleichung
+\[
+	\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} = 0
+\]
+hergeleitet. Wenngleich die Zwangskräfte hier nicht mehr explizit auftreten, werden die $\delta \vec{r}_i$ noch durch sie eingeschränkt. Das Ziel der folgenden Umformungsschritte ist daher, die $\delta \vec{r}_i$ mit den generalisierten Koordinaten $q_i$ und damit unabhängig von den Zwangsbedingungen zu formulieren. 
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
 $$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j$$
