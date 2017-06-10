@@ -239,12 +239,20 @@ $$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delt
 \subsection{Lagrange Formalismus}
 Im vergangenen Abschnitt haben wir die Gleichung
 \[
-	\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} = 0
+	\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i 
+	= \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} 
+	  - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} 
+	= 0
 \]
 hergeleitet. Wenngleich die Zwangskräfte hier nicht mehr explizit auftreten, werden die $\delta \vec{r}_i$ noch durch sie eingeschränkt. Das Ziel der folgenden Umformungsschritte ist daher, die $\delta \vec{r}_i$ mit den generalisierten Koordinaten $q_i$ und damit unabhängig von den Zwangsbedingungen zu formulieren. 
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
-$$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j$$
+\[
+	\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t 
+	\quad \text{ und } \quad
+	\delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
+	\text{.}
+\]
 
 Damit kann \circled{1}  wie folgt geschrieben werden
 $$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
