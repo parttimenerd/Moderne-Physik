@@ -189,7 +189,15 @@ Das d'Alembertsche Prinzip überlegen wir uns aus den Newtonschen Gleichungen.
 Das Ziel dieses Prinzips ist die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
 
 \subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$}
-Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im Folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
+Eine virtuelle Verrückung $\delta \vec{r}_i$ ist eine willkürliche virtuelle (gedankliche) Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Das heißt, dass $\delta t = 0$. Formell ist die virtuelle Änderung einer Funktion $f(q_1, \dots, q_n, t)$ also (im Vergleich zum totalen Differential der Funktion): 
+\[
+	\underset{\text{virtuelle Änderung}}{\delta f = \sum^n_{i = 1} \ffpartial{f}{q_i} \delta q_i}
+	\qquad \qquad 
+	\underset{\text{totales Differential}}{\d f = \sum^n_{i = 1} \ffpartial{f}{q_i} \d q_i + \ffpartial{f}{t} \d t}
+	\text{.}
+\]
+
+Im Folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche (reale) Koordinatenänderung.
 
 \begin{beispiel*}[Teilchen im Aufzug]
 Weil der zurückgelegte Weg auch als $\delta x = v_0 \cdot \Delta t$ dargestellt werden kann gilt
