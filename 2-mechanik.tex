@@ -254,13 +254,16 @@ Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die v
 	\text{.}
 \]
 
-Damit kann \circled{1}  wie folgt geschrieben werden
-$$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
-= \sum_{i=1}^N \sum_{j = 1}^S \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
-= \sum_{j=1}^S \left( \underbrace{\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_j} \right) \delta q_j
-= \sum_{j = 1}^S Q_j \delta q_j$$
+Damit kann \circled{1}  wie folgt geschrieben werden:
+\[
+	\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
+	= \sum_{i=1}^N \sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
+	= \sum_{j=1}^s \left( \underbrace{\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_j} \right) \delta q_j
+	= \sum_{j = 1}^s Q_j \delta q_j
+	\text{.}
+\]
 
-$Q_j$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
+Dabei sind $Q_j$ die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
 
 \paragraph{Spezialfall konservative Systeme}
 Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ 
