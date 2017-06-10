@@ -265,12 +265,16 @@ Damit kann \circled{1}  wie folgt geschrieben werden:
 
 Dabei sind $Q_j$ die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
 
-\paragraph{Spezialfall konservative Systeme}
-Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ 
-mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ 
-und $\vec{\nabla}_j = \left( \frac{\partial}{\partial x_j}, \frac{\partial}{\partial y_j}, \frac{\partial}{\partial z_j} \right)$ 
-darstellen. Und damit gilt auch
-$$Q_j = \sum_{i = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
+\begin{bemerkung*}[Spezialfall konservative Systeme]
+	Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ 
+	mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ 
+	und $\vec{\nabla}_j = \left( \frac{\partial}{\partial x_j}, \frac{\partial}{\partial y_j}, \frac{\partial}{\partial z_j} \right)$ 
+	darstellen. Damit kann man die generalisierten Kräfte wie folgt schreiben:
+	\[
+		Q_j = \sum_{i = 1}^N \left( - \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j} \right) = - \ffpartial{V}{q_j}
+		\text{.}
+	\]
+\end{bemerkung*}
 
 Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
 
