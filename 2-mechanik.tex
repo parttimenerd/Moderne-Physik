@@ -265,11 +265,11 @@ Damit kann \circled{1}  wie folgt geschrieben werden:
 
 Dabei sind $Q_j$ die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
 
-\begin{bemerkung*}[Spezialfall konservative Systeme]
-	Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ 
+\begin{bemerkung*}[Spezialfall: Konservative Systeme]
+	In einem konservativen System kann die Kraft als Potential $\vec{K}_i = - \vec\nabla_i V$ 
 	mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ 
 	und $\vec{\nabla}_i = \left( \frac{\partial}{\partial x_i}, \frac{\partial}{\partial y_i}, \frac{\partial}{\partial z_i} \right)$ 
-	darstellen. Damit kann man die generalisierten Kräfte wie folgt schreiben:
+	dargestellt werden. Damit kann man die generalisierten Kräfte wie folgt schreiben:
 	\[
 		Q_j = \sum_{i = 1}^N \left( - \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j} \right) = - \ffpartial{V}{q_j}
 		\text{.}
@@ -292,9 +292,9 @@ Außerdem gilt
 $$\ffpartial{\vec{r}_i}{q_j} = \fpartial{\dot q_j} \sum_{l = 1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l = \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j}$$
 Damit gilt zusammenfassend
 \begin{align*}
-\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^S m_i \left( \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \right) \delta q_j\\ 
-&= \sum_{i=1}^N\sum_{j=1}^S m_i \left(  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \right) \delta q_j \\
-&= \sum_{j = 1}^S \left( \dd{t} \ffpartial{T}{\dot{q}_j} - \ffpartial{T}{q_j} \right) \delta q_j
+\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^s m_i \left( \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \right) \delta q_j\\ 
+&= \sum_{i=1}^N\sum_{j=1}^s m_i \left(  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \right) \delta q_j \\
+&= \sum_{j = 1}^s \left( \dd{t} \ffpartial{T}{\dot{q}_j} - \ffpartial{T}{q_j} \right) \delta q_j
 \end{align*}
 Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2$ die "`Kinetische Energie"'
 und damit gilt mit dem d'Alembertsches Prinzip
@@ -314,6 +314,7 @@ $$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \left(  \dd{t} \
 Man kann die Gleichungen auch wie folgt schreiben, wenn man die Lagrange-Funktion $L$ einführt.
 $$L(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) = T(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) - V(q_1, \dots, q_s, t)$$
 
+% TODO ist das wirklich die Lagrange-Gleichung 1. Art? 
 \subsubsection{Lagrange-Gleichung \textit{1. Art}}
 $$\sum_{j = 1}^s  (  \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j}  ) \delta q_j = 0$$
 
