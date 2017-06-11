@@ -98,7 +98,7 @@ Im nächsten Kapitel wird die einfache Newtonsche Mechanik um die mathematischen
 
 \section{Lagrange-Mechanik}
 
-Die Lagrange-Mechanik, auch bekannt als Lagrange Formalismus, wurde im Jahre 1788 durch \href{http://de.wikipedia.org/wiki/Joseph-Louis_Lagrange}{Joseph-Louis de Lagrange} veröffentlicht, welcher hiermit die analytische Mechanik begründete. 
+Die Lagrange-Mechanik, auch bekannt als Lagrange-Formalismus, wurde im Jahre 1788 durch \href{http://de.wikipedia.org/wiki/Joseph-Louis_Lagrange}{Joseph-Louis de Lagrange} veröffentlicht, welcher hiermit die analytische Mechanik begründete. 
 
 \subsection{Einführung}
 Der Ausgangspunkt für die Lagrange-Mechanik ist die Newtonsche Mechanik. In welcher formal gilt
@@ -134,7 +134,7 @@ $$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
 Nicht holonome Zwangsbedingungen können nur als 
 \begin{itemize}
 	\item[\textit{B1}] Ungleichungen oder
-	\item[\textit{B2}] differentielle Einschränkungen
+	\item[\textit{B2}] differentielle Einschränkungen\footnote{Es werden also nicht nur die Positionen, sondern auch die Geschwindigkeiten eingeschränkt.}
 	$ \sum_{m = 1}^{3N} f_{im} \d x_m + f_{it} \d t = 0$
 \end{itemize}
 dargestellt werden, was die Arbeit mit ihnen, gegenüber den holonomen, erschwert. 
@@ -189,7 +189,15 @@ Das d'Alembertsche Prinzip überlegen wir uns aus den Newtonschen Gleichungen.
 Das Ziel dieses Prinzips ist die Elimination der Zwangskräfte aus den Bewegungsgleichungen, wie auch ein formalerer Einblick in die Materie, wobei nur ersteres für die Vorlesung interessant ist.
 
 \subsubsection{Virtuelle Verrückung $\delta \vec{r}_i$}
-Es ist eine willkürliche virtuelle/gedankliche Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Daraus folgt $\delta t = 0$. Im Folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche/reale Koordinatenänderung.
+Eine virtuelle Verrückung $\delta \vec{r}_i$ ist eine willkürliche virtuelle (gedankliche) Koordinatenänderung, die instantan\footnote{Direkt und ohne zeitliche Verzögerung.} durchgeführt wird und verträglich mit den Zwangsbedingungen ist. Das heißt, dass $\delta t = 0$. Formell ist die virtuelle Änderung einer Funktion $f(q_1, \dots, q_n, t)$ also (im Vergleich zum totalen Differential der Funktion): 
+\[
+	\underset{\text{virtuelle Änderung}}{\delta f = \sum^n_{i = 1} \ffpartial{f}{q_i} \delta q_i}
+	\qquad \qquad 
+	\underset{\text{totales Differential}}{\d f = \sum^n_{i = 1} \ffpartial{f}{q_i} \d q_i + \ffpartial{f}{t} \d t}
+	\text{.}
+\]
+
+Im Folgenden signalisiert $\delta$ das virtuelle und $\d$ das normale Differential, also die tatsächliche (reale) Koordinatenänderung.
 
 \begin{beispiel*}[Teilchen im Aufzug]
 Weil der zurückgelegte Weg auch als $\delta x = v_0 \cdot \Delta t$ dargestellt werden kann gilt
@@ -208,12 +216,12 @@ wobei die Summanden $(\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i$ beziehungsw
 
 Das \textbf{Prinzip der virtuellen Arbeit} fordert nun, dass $\sum_i \vec{Z}_i \delta \vec{r}_i = 0$. Die virtuellen Kräfte dürfen also in der Summe keine Arbeit verrichten: "`Die gedachte Bewegung, z.B. jene senkrecht zu einer durch eine Zwangsbedingung vorgegebenen Bahn, verrichtet keine Arbeit"'.
 
-Mit diesem Prinzip folgt also die zentrale Gleichung
+Wenn man dieses Prinzip in obige Gleichung einsetzt, folgt die zentrale Gleichung
 \[
 	\sum_i (\vec{K}_i - m \ddotvec{r}_i) \delta \vec{r}_i = 0
 	\text{,}
 \]
-mit der wir im Folgenden Kapitel arbeiten werden.
+mit der wir im folgenden Kapitel arbeiten werden.
 
 \begin{beispiel*}[Teilchen auf einer Kurve]
 $$\vec{Z} \bot \delta \vec{r} \qquad \Rightarrow \qquad \vec{Z} \delta \vec{r} = 0$$
@@ -228,29 +236,45 @@ $$\sum_i \vec Z_i \delta \vec{r}_i = \vec{Z}_1 \delta \vec{s} + \vec{Z}_2 (\delt
 = \underbrace{(\vec{Z}_1 + \vec{Z}_2)}_{\vec{Z}_1 = - \vec{Z}_2} \delta \vec{s} + \underbrace{\vec{Z}_2 \delta \vec{x}_R}_{= 0, \vec{Z}_2 \bot \delta \vec{x}_R} = 0$$
 \end{beispiel*}
 
-\subsection{Lagrange Formalismus}
-Wenn man $\vec{F}_i = m \ddotvec{r}_i = m \ddv{r} = \dot p$ wie vorher als $F_i = \vec{K}_i + \vec{Z}_i$ aufteilt kann man mit Hilfe des \textit{Prinzips der virtuellen Arbeit} folgern.
-$$\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i = \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} = 0$$
-Das heißt, das keine expliziten Zwangskräfte mehr gelten.
-Aber $\delta \vec{r}_i$ wird damit noch durch die Zwangsbedingungen eingeschränkt. Im folgenden ist das Ziel, $\delta \vec{r}_i$ unabhängig von ihnen, also als generalisierte Koordinaten, zu formulieren. Damit soll $\delta \vec{r}_i$ durch $q_i$ ausgedrückt werden.
+\subsection{Lagrange-Formalismus}
+Im vergangenen Abschnitt haben wir die Gleichung
+\[
+	\sum_i (\vec{K}_i - \dot{\vec{p}}_i) \delta \vec{r}_i 
+	= \underbrace{\sum_i \vec{K}_i \delta\vec{r}_i}_{\circled{1}} 
+	  - \underbrace{\sum_i \dot{\vec{p}}_i \delta\vec{r}_i}_{\circled{2}} 
+	= 0
+\]
+hergeleitet. Wenngleich die Zwangskräfte hier nicht mehr explizit auftreten, werden die $\delta \vec{r}_i$ noch durch sie eingeschränkt. Das Ziel der folgenden Umformungsschritte ist daher, die $\delta \vec{r}_i$ mit den generalisierten Koordinaten $q_i$ und damit unabhängig von den Zwangsbedingungen zu formulieren. 
 
 Die totale Ableitungen von $\vec{r}_i = \vec{r}_i(q_1, \dots, q_s, t)$ und die virtuelle Verrückungen $\delta \vec{r}_i$ mit $\delta t = 0$ sind
-$$\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t \text{~und~} \delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j$$
+\[
+	\d \vec{r}_i = \sum_{j = 1}^{s} \frac{\partial \vec{r}_i}{\partial q_j} \d q_j + \frac{\partial \vec{r}_i}{\partial t} \d t 
+	\quad \text{ und } \quad
+	\delta \vec{r}_i = \sum_{j = 1}^s \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
+	\text{.}
+\]
 
-Damit kann \circled{1}  wie folgt geschrieben werden
-$$\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
-= \sum_{i=1}^N \sum_{j = 1}^S \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
-= \sum_{j=1}^S \left( \underbrace{\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_j} \right) \delta q_j
-= \sum_{j = 1}^S Q_j \delta q_j$$
+Damit kann \circled{1}  wie folgt geschrieben werden:
+\[
+	\sum_{i = 1}^N \vec{K}_i \delta \vec{r}_i 
+	= \sum_{i=1}^N \sum_{j = 1}^s \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j} \delta q_j
+	= \sum_{j=1}^s \left( \underbrace{\sum_{i = 1}^N \vec{K}_i \frac{\partial \vec{r}_i}{\partial q_j}}_{Q_j} \right) \delta q_j
+	= \sum_{j = 1}^s Q_j \delta q_j
+	\text{.}
+\]
 
-$Q_j$ sind hierbei die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
+Dabei sind $Q_j$ die generalisierten Kräfte. Die Dimension der $Q_j$ ist nicht unbedingt Kraft, weil die Dimension von den $q_j$ selbst unklar ist. Jedoch ist die Einheit von $Q_j \cdot q_j$ natürlich die Energie.
 
-\paragraph{Spezialfall konservative Systeme}
-Die Kraft kann man hier als Potential $\vec{K}_i = - \vec\nabla_i V$ 
-mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ 
-und $\vec{\nabla}_j = \left( \frac{\partial}{\partial x_j}, \frac{\partial}{\partial y_j}, \frac{\partial}{\partial z_j} \right)$ 
-darstellen. Und damit gilt auch
-$$Q_j = \sum_{i = 1}^N (- \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j}) = - \ffpartial{V}{q_j}$$
+\begin{bemerkung*}[Spezialfall: Konservative Systeme]
+	In einem konservativen System kann die Kraft als Potential $\vec{K}_i = - \vec\nabla_i V$ 
+	mit $V = V(\vec{r}_1, \dots, \vec{r}_N)$ 
+	und $\vec{\nabla}_i = \left( \frac{\partial}{\partial x_i}, \frac{\partial}{\partial y_i}, \frac{\partial}{\partial z_i} \right)$ 
+	dargestellt werden. Damit kann man die generalisierten Kräfte wie folgt schreiben:
+	\[
+		Q_j = \sum_{i = 1}^N \left( - \frac{\partial V}{\partial \vec{r}_i} \ffpartial{\vec{r}_i}{q_j} \right) = - \ffpartial{V}{q_j}
+		\text{.}
+	\]
+\end{bemerkung*}
 
 Nun betrachten wir \circled{2}, was man auch wie folgt schreiben kann
 
@@ -268,9 +292,9 @@ Außerdem gilt
 $$\ffpartial{\vec{r}_i}{q_j} = \fpartial{\dot q_j} \sum_{l = 1}^s \ffpartial{\vec{r}_i}{q_l} \dot{q}_l = \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j}$$
 Damit gilt zusammenfassend
 \begin{align*}
-\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^S m_i \left( \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \right) \delta q_j\\ 
-&= \sum_{i=1}^N\sum_{j=1}^S m_i \left(  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \right) \delta q_j \\
-&= \sum_{j = 1}^S \left( \dd{t} \ffpartial{T}{\dot{q}_j} - \ffpartial{T}{q_j} \right) \delta q_j
+\sum_{i = 1}^N \dot{\vec{p}}_i \delta \vec{r}_i &= \sum_{i=1}^N \sum_{j = 1}^s m_i \left( \dd{t} (\dotvec{r}_i  \ffpartial{\dot{\vec{r}}_i}{\dot{q}_j})  -\dot{\vec{r}}_i \ffpartial{\dotvec r_i}{q_j} \right) \delta q_j\\ 
+&= \sum_{i=1}^N\sum_{j=1}^s m_i \left(  \dd{t} (\fpartial{\dot q_j} \frac12 \dotvec{r}_i^2) -\fpartial{q_j} (\frac12 \dot{\vec{r}}_i^2) \right) \delta q_j \\
+&= \sum_{j = 1}^s \left( \dd{t} \ffpartial{T}{\dot{q}_j} - \ffpartial{T}{q_j} \right) \delta q_j
 \end{align*}
 Hierbei ist $T = \sum_{i = 1}^{N} \frac12 m_i \dot{\vec{r}}_i^2$ die "`Kinetische Energie"'
 und damit gilt mit dem d'Alembertsches Prinzip
@@ -290,6 +314,7 @@ $$\ffpartial{V}{\dot q_j} = 0 \text{~ und damit ~} \sum_{j=1}^s \left(  \dd{t} \
 Man kann die Gleichungen auch wie folgt schreiben, wenn man die Lagrange-Funktion $L$ einführt.
 $$L(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) = T(q_1, \dots, q_s, \dot{q}_1, \dots, \dot{q}_s, t) - V(q_1, \dots, q_s, t)$$
 
+% TODO ist das wirklich die Lagrange-Gleichung 1. Art? 
 \subsubsection{Lagrange-Gleichung \textit{1. Art}}
 $$\sum_{j = 1}^s  (  \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j}  ) \delta q_j = 0$$
 
@@ -345,7 +370,7 @@ $$ \dd{t} \ffpartial{L}{\dot{q}_j} - \ffpartial{L}{q_j} = 0 \text{~für~} j= 1, 
 	\text{.}
 	\end{align*}
 	
-	Mit dem Potential $V = 0 - m_2 g \cos(q_2)$ folgt die Lagrange-Funktion:
+	Mit dem Potential $V = 0 - m_2 g l \cos(q_2)$ folgt die Lagrange-Funktion:
 	\begin{align*}
 		L &= T - V \\
 		&= \frac12 (m_1 + m_2) \dot{q}_1^2 + \frac12 m_2 (l^2 \dot{q}_2^2 + 2 l \dot{q}_1 \dot{q}_2 \cos q_2) + m_2 g l \cos q_2
@@ -441,7 +466,7 @@ Für die häufigsten Fälle mit \textbf{holonomen} Zwangsbedingungen und \textbf
 \subsubsection{Nicht-holonome Systeme}
 Bei holonomen Systemen gibt es $S = 3N - p$ unabhängige generalisierte Koordinaten. Diese sind bei nicht-holonomen Systemen nicht mehr unabhängig.
 
-Falls die nicht-holonomen Zwangsbedingungen in differentieller Form vorliegen (also als Differentialgleichung) gibt es ein Lösungsverfahren über die Methode der sogenannten Lagrange-Multiplikatoren, welche im folgenden erläutert werden.
+Falls die nicht-holonomen Zwangsbedingungen in differentieller Form vorliegen (also als Differentialgleichung), gibt es ein Lösungsverfahren über die Methode der sogenannten Lagrange-Multiplikatoren, welche im Folgenden erläutert werden.
 
 Es gibt $\bar{p}$ Zwangsbedingungen, davon $p \leq \bar{p}$ nicht-holonom: 
 \[
@@ -449,13 +474,12 @@ Es gibt $\bar{p}$ Zwangsbedingungen, davon $p \leq \bar{p}$ nicht-holonom:
 	\quad 
 	\left( \sum_{m=1}^{3N} f_{im}(x_1, \dots, x_{3N}, t) \d x_m \right) + f_{it}(x_1, \dots, x_{3N}, t) \d t = 0
 \]
-mit $j = 3N - (\bar{p} - p)$ generalisierten Koordinaten.
 
-Die konkreten Koordinaten hängen von den generalisierten ab: $q_1, \dots, q_j \rightarrow \vec{r}_i = \vec{r}_i(\vardots{q}{j}, t)$ aber nicht alle $q_j$ sind unabhängig voneinander, wie anfangs schon erwähnt.
+Es gibt $j = 3N - (\bar{p} - p)$ generalisierte Koordinaten (bei $\bar{p} - p$ holonomen Zwangsbedingungen). Die konkreten Koordinaten hängen von diesen ab: $\vec{r}_i = \vec{r}_i(\vardots{q}{j}, t)$. Wie bereits erwähnt, sind die $q_j$ aber nicht alle unabhängig voneinander.
 
-Damit gilt für nicht-holonome Bedingungen in $q_j$, wobei im Folgenden immer $i = 1, \dots, p$ ist:
+Damit gilt für nicht-holonome Bedingungen in $q_j$, wobei im Folgenden immer $i = 1, \dots, p$ ist\footnote{Die $a_{im}$ sind also $f_{im}$, aber durch $q_j$ ausgedrückt.}:
 \[
-	\sum_{i=1}^j a_{im}(q_1, \dots, q_j, t) \d q_m + b_{it}(q_t, \dots, q_j, t) \d t = 0
+	\sum_{m = 1}^j a_{im}(q_1, \dots, q_j, t) \d q_m + b_{it}(q_1, \dots, q_j, t) \d t = 0
 	\text{.}
 \]
 
@@ -475,7 +499,7 @@ Bei konservativen Systemen (siehe oben) gilt mit dem Prinzip von d'Alembert:
 	\sum_{m=1}^j \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} \right) \delta q_m = 0
 \]
 
-Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht mehr unabhängig voneinander sind. Zusammengefasst folgt
+Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht mehr unabhängig voneinander sind. Addiert man die beiden Gleichungen, folgt
 \[
 	\sum_{m=1}^j \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} \right) \delta q_m = 0
 	\text{.}
