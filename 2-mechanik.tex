@@ -134,8 +134,8 @@ $$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
 Nicht holonome Zwangsbedingungen können nur als 
 \begin{itemize}
 	\item[\textit{B1}] Ungleichungen oder
-	\item[\textit{B2}] differentielle Einschränkungen
-	$ \sum_{m = 1}^{3N} f_{im} \d x_m + f_{it} \d t = 0$
+	\item[\textit{B2}] differentielle Einschränkungen\footnote{Es werden also nicht nur die Positionen, sondern auch die Geschwindigkeiten eingeschränkt.}
+	$ \sum_{m = 1}^{3N} f_{im} \d x_m + f_{it} \d t = 0$\footnote{Wobei $f_{im} := \ffpartial{f_i}{x_m}$ und $f_{it} := \ffpartial{f_i}{t}$.}\footnote{Kurz: $\d f = 0$, wobei $\d f$ das totale Differential ist.}
 \end{itemize}
 dargestellt werden, was die Arbeit mit ihnen, gegenüber den holonomen, erschwert. 
 
@@ -473,13 +473,12 @@ Es gibt $\bar{p}$ Zwangsbedingungen, davon $p \leq \bar{p}$ nicht-holonom:
 	\quad 
 	\left( \sum_{m=1}^{3N} f_{im}(x_1, \dots, x_{3N}, t) \d x_m \right) + f_{it}(x_1, \dots, x_{3N}, t) \d t = 0
 \]
-mit $j = 3N - (\bar{p} - p)$ generalisierten Koordinaten.
 
-Die konkreten Koordinaten hängen von den generalisierten ab: $q_1, \dots, q_j \rightarrow \vec{r}_i = \vec{r}_i(\vardots{q}{j}, t)$ aber nicht alle $q_j$ sind unabhängig voneinander, wie anfangs schon erwähnt.
+Es gibt $j = 3N - (\bar{p} - p)$ generalisierten Koordinaten (bei $\bar{p} - p$ holonomen Zwangsbedingungen). Die konkreten Koordinaten hängen diesen ab: $\vec{r}_i = \vec{r}_i(\vardots{q}{j}, t)$. Wie bereits erwähnt, sind die $q_j$ aber nicht alle unabhängig voneinander.
 
-Damit gilt für nicht-holonome Bedingungen in $q_j$, wobei im Folgenden immer $i = 1, \dots, p$ ist:
+Damit gilt für nicht-holonome Bedingungen in $q_j$, wobei im Folgenden immer $i = 1, \dots, p$ ist\footnote{Wir setzen also $b_i = a_i = f_i \circ \vec{r}_i$, schreiben $f_i$ also in Abhängigkeit von $\vec{q}$ statt $\vec{r}$? Wieso dann im hinteren Teil ein $b_i$? Ich finde es verwirrend, woher auf einmal $a_i$ und $b_i$ herkommen.}:
 \[
-	\sum_{i=1}^j a_{im}(q_1, \dots, q_j, t) \d q_m + b_{it}(q_t, \dots, q_j, t) \d t = 0
+	\sum_{m = 1}^j a_{im}(q_1, \dots, q_j, t) \d q_m + b_{it}(q_1, \dots, q_j, t) \d t = 0
 	\text{.}
 \]
 
@@ -499,7 +498,7 @@ Bei konservativen Systemen (siehe oben) gilt mit dem Prinzip von d'Alembert:
 	\sum_{m=1}^j \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} \right) \delta q_m = 0
 \]
 
-Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht mehr unabhängig voneinander sind. Zusammengefasst folgt
+Wobei diese Gleichung nur als Summe gültig ist, da die $\delta q_m$ nicht mehr unabhängig voneinander sind. Addiert man die beiden Gleichungen, folgt
 \[
 	\sum_{m=1}^j \left( \ffpartial{L}{q_m} - \dd t \ffpartial{L}{\dot{q}_m} + \sum_{i=1}^p \lambda_i a_{im} \right) \delta q_m = 0
 	\text{.}
