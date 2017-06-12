@@ -2,38 +2,38 @@
 %Symmetrie von Raum und Zeit \conseq Spezielle Relativitätstheorie (etwas losgelöst von der Mechanik, vom Fach her).
 %Formale Entwicklung der Theorie führten zu radikalen Konsequenzen (eventuell etwas Allgemeine Relativitätstheorie)
 
-\paragraph{Begriff} Wie beobachtet man physikalische Phänomene \textbf{relativ} zueinander bewegter Bezugssysteme? Und wie steht es um die Invarianz/Kovarianz physikalischer Observablen und Gesetze?
+\paragraph{Begriff} Wie beobachtet man physikalische Phänomene in \textbf{relativ} zueinander bewegten Bezugssystemen? Und wie steht es um die Invarianz/Kovarianz\footnote{Bedeutet ``koordinatenforminvariant''. Wenn man die Koordinaten transformiert, erscheint, was man betrachtet, auf die gleiche Weise. Die Gleichungen behalten also ihre Form.} physikalischer Observablen und Gesetze?
 
-Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{spezielle} Relativitätstheorie angewendet, darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationskräfte werden als Eigenschaft von Raum und Zeit beschrieben.
+Bei gleichförmig geradlinig zueinander bewegten Systemen (Inertialsysteme) wird die \textbf{spezielle} Relativitätstheorie angewendet. Darüber hinaus gibt es für gegeneinander beschleunigt bewegte Bezugssysteme die \textbf{allgemeine} Relativitätstheorie: Aus den Beschleunigungen folgen Scheinkräfte und die Gravitationskräfte werden als Eigenschaft von Raum und Zeit beschrieben.
 
-Im folgenden betrachten wir "`nur"' die spezielle Relativitätstheorie.
-Das wichtigste Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten aller beteiligten Systeme:
-\begin{description}
-	\item[bei $v \ll c$] hat man den klassischen (also nicht relativistischen) Fall, den wir schon im 2. Kapitel näher betrachtet haben
-	\item[bei $v \lesssim c $] sind die relativistischen Effekte bedeutend und man verwendet die spezielle Relativitätstheorie
-\end{description}
+Im Folgenden betrachten wir "`nur"' die \textbf{spezielle} Relativitätstheorie.
+Das wichtigste Kriterium für sogenannte relativistische Phänomene sind die Geschwindigkeiten der beteiligten Systeme:
+\begin{itemize}
+	\item Bei $v \ll c$ hat man den klassischen (also nichtrelativistischen) Fall, den wir schon im 2. Kapitel näher betrachtet haben.
+	\item Bei $v \lesssim c $ sind die relativistischen Effekte bedeutend und man verwendet die spezielle Relativitätstheorie.
+\end{itemize}
 Man sieht, dass die Theorie so konstruiert ist, dass die Newtonsche Mechanik als Grenzfall $v \ll c$ in ihr enthalten ist.
 
 \section{Bezugssysteme / Inertialsysteme}
 \subsection{Klassische Mechanik}
-In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber scheinbar ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken, diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen \textit{absoluten Raum}\footnote{"`Der absolute Raum ist der von Isaac Newton postulierte, sowohl vom Beobachter als auch von den darin enthaltenen Objekten und darin stattfindenden physikalischen Vorgängen unabhängige physikalische Raum."' \href{https://de.wikipedia.org/wiki/Absoluter_Raum}{Wikipedia}}
+In der klassischen Mechanik gibt es Bezugssysteme, die anderen gegenüber scheinbar ausgezeichnet sind, da in ihnen keine Scheinkräfte wirken. Diese nennt man \textit{Inertialsysteme}. Möglicherweise gibt es hier einen einzigen \textit{absoluten Raum}.\footnote{"`Der absolute Raum ist der von Isaac Newton postulierte, sowohl vom Beobachter als auch von den darin enthaltenen Objekten und darin stattfindenden physikalischen Vorgängen unabhängige physikalische Raum."' \href{https://de.wikipedia.org/wiki/Absoluter_Raum}{Wikipedia}}
 
 Sicher gibt es aber eine \textit{absolute Zeit}\footnote{
 	"`Die absolute, wahre und mathematische Zeit verfließt an sich und vermöge ihrer Natur gleichförmig und ohne Beziehung auf irgendeinen äußeren Gegenstand."'
 	– Isaac Newton: Mathematische Prinzipien der Naturlehre; London 1687}, gegen die in der klassischen Physik nichts spricht.
 
-Um nochmal auf die \textit{Inertialsysteme} zurückzukommen: Genauer gilt in ihnen das Newtonsche Gesetz $\vec{F} = m \ddotvec{r}$ ohne Hinzunahme von Schein- oder Trägheitskräften. Im folgenden ist der Ausgangspunkt das Inertialsystem $\Sigma$.
+Um nochmal auf die \textit{Inertialsysteme} zurückzukommen: Genauer gilt in ihnen das Newtonsche Gesetz $\vec{F} = m \ddotvec{r}$ ohne Hinzunahme von Schein- oder Trägheitskräften. Im Folgenden ist der Ausgangspunkt das Inertialsystem $\Sigma$.
 Alle Systeme $\Sigma'$, die sich geradlinig und gleichförmig mit der Geschwindigkeit $\vec v$ relativ zu $\Sigma$ bewegen ($\vec{r}' = \vec{r} - \vec{v}t$), sind auch Inertialsysteme. Deswegen kann man in der klassischen Mechanik einfach die Galilei-Transformation (z.B. $\vec{v} \parallel \hat{z}$) verwenden.
 
-Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten ist nun folgende
+Die Konsequenz für Lichtwellen, die sich in einem System $\Sigma$ sphärisch ausbreiten, ist nun folgende:
 \begin{align*}
 	\Sigma& & \Sigma'& \text{~~~per Galilei Transformation}\\
-	\dotvec{r} &= c \hat{r}, \hat{r} = \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
+  \dotvec{r} &= \hat{r} \text{ mit } \hat{r} \coloneqq \frac{\vec{r}}{|\vec{r}|} & \dotvec{r}\,' &= \dotvec{r} - \vec{v} = c \hat{r} - \vec{v}   
 \end{align*}
-Dass heißt, dass sie sich nicht wirklich sphärisch ausbreiten in $\Sigma'$. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
+Dass heißt, dass sie sich nicht wirklich sphärisch in $\Sigma'$ ausbreiten. Offensichtlich scheint sich nach der klassischen Mechanik das Licht in einer Art "`Weltäther"' auszubreiten, welcher verknüpft ist, mit der Idee des absolutem Raumes. Und die Behauptung ist, dass es einen \textbf{absoluten Raum} gibt, in dem der Äther ruht. Hier breitet sich das Licht sphärisch aus.
 
 \subsubsection{Michelson-Morley-Experiment}
-Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA, mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (bzw. dessen "`Wind"' beim durchstreifen) nachweisen konnten, ihr Experiment schlug also fehl. Morley bekam dafür aber als erster Amerikaner 1907 den Physik Nobelpreis.
+Um die "`Äther-Behauptung"' zu verifizieren stellte der Physiker Albert A. Michelson 1881 in Potsdam und verfeinert 1887 in den USA, mit dem Chemiker Edward W. Morley das nach ihnen benannte Experiment auf. Die Ironie dahinter ist, dass sie keinen Äther (bzw. dessen "`Wind"' beim Durchstreifen) nachweisen konnten. Ihr Experiment schlug also fehl. Morley bekam dafür aber als erster Amerikaner 1907 den Physik Nobelpreis.
 
 Mehr Informationen, wie auch eine Aufbauskizze, finden sich in der \href{https://de.wikipedia.org/wiki/Michelson-Morley-Experiment}{Wikipedia}.
 
@@ -76,7 +76,7 @@ Daraus folgen neue Transformationsformeln für physikalische Größen, insbesond
 \subsection{Lorentz-Transformation}
 Wieder betrachten wir zwei Bezugssysteme $\Sigma$ und $\Sigma'$, wobei sich $\Sigma'$ mit der Geschwindigkeit $v$ gleichförmig und geradlinig gegenüber $\Sigma$ bewegt. Die ausgezeichnete Achse (auf welcher die Bewegung geschieht) ist hierbei o.B.d.A.\footnote{ohne Beschränkung der Allgemeinheit} $z$ bzw. $z'$ (d.h $\vec{v} \parallel \hat{z}$). Bei $t = 0$ sind beide Systeme identisch.
 
-Wir vergleichen im folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma':$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
+Wir vergleichen im Folgenden zwei Lichtblitze, die zum Zeitpunkt $t=0$ im Ursprung von $\Sigma$ und $\Sigma'$ ausgesandt werden, $\Sigma:$ $r = ct$, $\Sigma':$ $r' = c t'$ Sie bilden jeweils Kugelwellen bei welchen wegen der Konstanz der Lichtgeschwindigkeit gelten muss 
 $$c^2 t^2 = x^2 + y^2 + z^2 = r^2 \text{~bzw.~} c^2t'^2 = x'^2 + y'^2 + z'^2 = r'^2$$
 Es findet offensichtlich eine Verknüpfung von Raum und Zeit statt.
 
@@ -134,7 +134,7 @@ ct \\ x \\ y \\ z
 L_{03}^2 - L_{33}^2 &= -1\\
 L_{00}L_{03} - L_{30}L_{33} &= 0
 \end{align*}
-Nun hat man 3 Gleichungen für 4 Unbekannte, es ist also 1 Parameter übrig. Im folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
+Nun hat man 3 Gleichungen für 4 Unbekannte, es ist also 1 Parameter übrig. Im Folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
 \begin{align*}
 \sin^2 \vp + \cos^2\vp &= 1 \rightarrow \cosh^2 y - \sinh^2 y = 1\\
 \rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{~Gl. 1}\\

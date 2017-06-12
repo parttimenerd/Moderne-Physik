@@ -1177,22 +1177,21 @@ Das gibt uns eine andere Realisierung der Klammer, was uns (fast) die ganze Quan
 \newcommand{\fihbar}{\frac{1}{i \hbar}}
 
 \section{Ausblick auf die Quantenmechanik}
-Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakten Eigenschaften der Poisson-Klammer, wir verstehen diese als mathematische Struktur.
+Jetzt sei $\{,\}$ eine abstrakte Klammer mit den abstrakten Eigenschaften der Poisson-Klammer. Wir verstehen diese als mathematische Struktur.
 Eine Realisierung dieser Struktur ist die bekannte Poisson-Klammer in der klassischen Mechanik.
 
 \paragraph{Alternative Klammer in der Quantenmechanik}
-Hier sind Observablen lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewöhnlichen Vektoren. Man definiert die Klammer jetzt als Kommutator $[A,B] = AB - BA$, d.h.
-als die abstrakte mathematische Struktur. Konkret können Operatoren Matrizen sein. Hierbei ist die Nichtkommutativität z.B. von Drehungen bekannt. "`Reihenfolge der Operatoren ist relevant"'. Und damit ist natürlich $[A, B]$ nicht immer $0$.
-Eine konkrete Formulierung der Quantenmechanik auf Grund dieser mathematischen Struktur wäre folgendes
+Hier sind Observablen lineare Operatoren $A$, $B$, $C$, \dots auf Hilberträumen. Z.B. $A,B,C = $ Matrizen auf gewöhnlichen Vektoren. Man definiert die Klammer jetzt als Kommutator\footnote{Der Unterschied zwischen $AB$ und $BA$ beschreibt die Symmetrie.} $[A,B] = AB - BA$. Konkret können Operatoren Matrizen sein. Hierbei ist die Nichtkommutativität z.B. von Drehungen bekannt.\footnote{Es spielt eine Rolle, ob man ein Objekt erst um die x-Achse um $90\degree$ und dann um die z-Achse um $90\degree$ rotiert, oder andersrum.} "`Reihenfolge der Operatoren ist relevant"'. Und damit ist natürlich $[A, B]$ nicht immer $0$.
+Eine konkrete Formulierung der Quantenmechanik aufgrund dieser mathematischen Struktur ist:
 \begin{enumerate}
-	\item Physikalische Observable entsprechen hermitischer, lineare Operator $A$ auf einem Hilbertraum
-	\item Mögliche Messwerte von $A$ entsprechen den Eigenwerten von $A$
-	\item $\{\dots, \dots\}$ entspricht $\fihbar [A, B]$ mit $\hbar = \frac{h}{2 \pi}$
+	\item Physikalische Observable $A$ entspricht hermitischer, lineare Operator $A$ auf einem Hilbertraum.
+	\item Mögliche Messwerte von $A$ entsprechen den Eigenwerten von $A$.
+	\item $\{\dots, \dots\}$ entspricht $\fihbar [A, B]$ mit $\hbar = \frac{h}{2 \pi}$.
 	\item Die Fundamentalklammern sind
 	$[q_i, p_j] = i \hbar \delta_{ij}$ (analog zur Poisson-Klammer)\\
-	$[q_i, q_j] = [p_i, p_j] = 0$
-	\item Hamilton-Funktion $H(\vec{q}, \vec{p}, t)$ wird zum Hamiltonoperator $H$, dessen Eigenwerte sind die möglichen Energiezustände
-	\item Bewegungsgleichung\footnote{Auch als Heisenbergsche Bewegungsgleichung bekannt, vgl. \href{https://de.wikipedia.org/wiki/Heisenbergsche_Bewegungsgleichung}{Wikipedia}}
+	$[q_i, q_j] = [p_i, p_j] = 0$.
+	\item Hamilton-Funktion $H(\vec{q}, \vec{p}, t)$ wird zum Hamiltonoperator $H$, dessen Eigenwerte die möglichen Energiezustände sind.
+	\item Bewegungsgleichung:\footnote{Auch als Heisenbergsche Bewegungsgleichung bekannt, vgl. \href{https://de.wikipedia.org/wiki/Heisenbergsche_Bewegungsgleichung}{Wikipedia}}
 	$$\dd t A = \fihbar [A, H] + \ffpartial{A}{t}$$
 	Daraus folgen die Postulate der Quantenmechanik.
 \end{enumerate}
