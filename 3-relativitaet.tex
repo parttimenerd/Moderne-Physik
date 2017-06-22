@@ -111,7 +111,7 @@ x'^\mu &= L^\mu_{~\nu} x^\nu \equiv \sum_{\nu=0}^{3} L^\mu_{~\nu} x^\nu\\
 &= L^\mu_{~0} x^0 + L^\mu_{~1}x^1 + L^\mu_{~2}x^2 + L^\mu_{~3}x^3\\
 &= L^{\mu 0}x^0 - L^{\mu 1}x^1 - L^{\mu 2}x^2 - L^{\mu 3}x^3\\
 x'^\mu &= L^\mu_{~\nu} x^\nu \text{~~Bewegung von Bezugssysteme in $z$-Richtung}
-\intertext{Die $x$- und $y$-Richtung sind invariant, da die Bewegung in z Richtung stattfindet und damit offensichtlich $x' = x$ und $y' = y$}
+\intertext{Die $x$- und $y$-Richtung sind invariant, da die Bewegung in z-Richtung stattfindet und damit offensichtlich $x' = x$ und $y' = y$.}
 \begin{pmatrix}
 ct' \\ x' \\ y' \\ z'
 \end{pmatrix} &= \begin{pmatrix}
@@ -134,7 +134,7 @@ ct \\ x \\ y \\ z
 L_{03}^2 - L_{33}^2 &= -1\\
 L_{00}L_{03} - L_{30}L_{33} &= 0
 \end{align*}
-Nun hat man 3 Gleichungen für 4 Unbekannte, es ist also 1 Parameter übrig. Im Folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
+Nun hat man 3 Gleichungen für 4 Unbekannte. Es ist also 1 Parameter übrig. Im Folgenden verwenden wir zur Lösung $\sinh$ und $\cosh$.
 \begin{align*}
 \sin^2 \vp + \cos^2\vp &= 1 \rightarrow \cosh^2 y - \sinh^2 y = 1\\
 \rightarrow \cosh y &= L_{00}  & -\sinh y &= L_{30} \text{~Gl. 1}\\
@@ -151,11 +151,11 @@ L &= \begin{pmatrix}
 Was ist die Bedeutung von $y \in \Re$? Was ist der Zusammenhang zwischen $y$ und $v$? Und was hat $y$ mit der Bewegung des Ursprungs von $\Sigma'$ in $\Sigma$ zu tun?
 \begin{align*}
 x^3 &= v t = \frac{v}{c} c t = \frac{v}{c} x^0\\
-x'^3 &= 0 = \cosh y \underbrace{x^3}_{\text{\hspace{-10em}}\frac{v}{c} x^0 = v t \text{~wegen der Bewegung des Ursprungs}\text{\hspace{-10em}}} - \sinh y x^0 \text{~~~~Lorentz Transformation}\\
+x'^3 &= 0 = \cosh y \underbrace{x^3}_{\text{\hspace{-10em}}\frac{v}{c} x^0 = v t \text{~wegen der Bewegung des Ursprungs}\text{\hspace{-10em}}} - \sinh y x^0 \text{~~~~Lorentz-Transformation}\\
 &= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
 \frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
 \end{align*}
-$y$ ist die "`Rapidität"' oder auch "`verallgemeinerte Geschwindigkeit"'.
+$y$ ist die "`\textbf{Rapidität}"' oder auch "`verallgemeinerte Geschwindigkeit"'.
 \begin{align*}
 y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \Rightarrow y \approx \frac{v}{c}\\
 \cosh^2 y - \sinh^2 y &= 1\\
@@ -173,13 +173,13 @@ L &= \begin{pmatrix}
 -\gamma \beta & 0 & 0 & \gamma
 \end{pmatrix}
 \intertext{$L$ ist die "`verallgemeinerte Drehung"'.}
-\intertext{Komponentenweise}
+\intertext{Komponentenweise:}
 x' &= x\\
 y'&=y\\
 z'&=\gamma (z - \beta c t)\\
 ct' &= \gamma (ct - \beta z)
 \end{align*}
-Dies sind die \textbf{Lorentz-Transformationsformeln}. Die Zeit wird offensichtlich mit transformiert, dies war bei der Galilei-Transformation nicht der Fall
+Dies sind die \textbf{Lorentztransformations-Formeln}. Die Zeit wird offensichtlich mittransformiert. Das ist bei der Galilei-Transformation nicht der Fall.
 
 \begin{bemerkung*}
 	Der Grenzfall bei $v \ll c$ ist die Galilei-Transformation.
@@ -188,7 +188,7 @@ Dies sind die \textbf{Lorentz-Transformationsformeln}. Die Zeit wird offensichtl
 	 $c$ ist die Maximalgeschwindigkeit (sonst wäre $\gamma$ imaginär).
 \end{bemerkung*}
 \begin{bemerkung*}
-	Die Inverse Lorentztransformation ist $L^{-1} = L(v \to -v)$, was trivial ist, denn $\Sigma$ bewegt sich von $\Sigma'$ aus mit $-v$ entlang der $z$-Achse, oder genauer
+	Die Inverse Lorentztransformation ist $L^{-1} = L(v \to -v)$, was trivial ist, denn $\Sigma$ bewegt sich von $\Sigma'$ aus mit $-v$ entlang der $z$-Achse, oder genauer:
 	\begin{align*}
 	\begin{pmatrix}
 	\gamma & -\gamma \beta\\
