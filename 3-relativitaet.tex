@@ -155,14 +155,14 @@ x'^3 &= 0 = \cosh y \underbrace{x^3}_{\text{\hspace{-10em}}\frac{v}{c} x^0 = v t
 &= (\underbrace{\frac{v}{c} \cosh y - \sinh y}_{=0})x^0 = 0\\
 \frac{v}{c} &= \frac{\sinh y}{\cosh y} = \tanh y \rightarrow y = \text{artanh}\frac{v}{c} = \tanh^{-1} \frac{v}{c}
 \end{align*}
-$y$ ist die "`\textbf{Rapidität}"' oder auch "`verallgemeinerte Geschwindigkeit"'.
+$y$ ist die "`\textbf{Rapidität}"' oder auch "`verallgemeinerte Geschwindigkeit"'. Im Gegensatz zu normalen Geschwindigkeiten, kann man Rapiditäten auch in der Relativitätstheorie einfach addieren. Siehe auch \ref{Rapiditaeten Erinnerung}.
 \begin{align*}
 y \ll 1 \text{~und~} \frac{v}{c} \ll 1 \Rightarrow y \approx \frac{v}{c}\\
 \cosh^2 y - \sinh^2 y &= 1\\
 \cosh^2 y (1 - \frac{\sinh^2 y}{\cosh^2 y}) &= 1\\
 \cosh^2 y (1 - \tanh^2 y) &= 1\\
-\cosh y &= \frac{1}{\sqrt{1 - \tanh^2 y}} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}}\\
-\sinh y &= \cosh y \tanh y = \frac{\frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\cosh y &= \frac{1}{\sqrt{1 - \tanh^2 y}} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1}{\sqrt{1 - \beta^2}} = \gamma\\
+\sinh y &= \cosh y \tanh y = \frac{\frac{v}{c}}{\sqrt{1 - \frac{v^2}{c^2}}} = \beta \cdot \gamma
 \end{align*}
 Üblich sind folgende Abkürzungen: $\beta = \frac{v}{c}$; $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$ \conseq $\cosh y = \gamma$; $\sinh y = \gamma \beta$ und damit
 \begin{align*}
@@ -253,7 +253,7 @@ $\Sigma$ ist also ein ausgezeichnetes System, an welchem die Zeit immer an einem
 \end{definition*}
 
 \begin{beispiel*}[$\mu$-Zerfall]
-	Jedes Teilchen hat sein eigenes Ruhesystem, in dem es die Eigenzeit $\tau$ gibt. Ein Beispiel für die Bedeutung der Eigenzeit ist der $\mu$-Zerfall. Ein $\mu^pm$ zerfällt in ein $e^\pm$, $\nu_1$ und $\nu_2$ Teilchen. Sie entstehen in den oberen Schichten der Erdatmosphäre. Mit dem Zerfallsgesetz ist die erwartete Anzahl der $\mu$, nach der Zeit $t$: $N(t) = N(0) e^{\frac{t}{\tau_0}}$). Die Lebensdauer $\tau_0$ ist so kurz, dass die $\mu$ es nicht in großer von der oberen Atmosphäre bis zur Oberfläche schaffen würden, ohne vorher zu zerfallen. Man detektiert sie aber trotzdem, weil der $\gamma$-Faktor $\approxeq$ 9 ist (sie bewegen sich recht schnell) und das Zerfallsgesetz sich auf ihre Eigenzeit bezieht. 
+	Jedes Teilchen hat sein eigenes Ruhesystem, in dem es die Eigenzeit $\tau$ gibt. Ein Beispiel für die Bedeutung der Eigenzeit ist der Myonen-Zerfall ($\mu$-Zerfall). Ein $\mu^pm$ zerfällt in ein $e^\pm$, $\nu_1$ und $\nu_2$ Teilchen. Sie entstehen in den oberen Schichten der Erdatmosphäre. Mit dem Zerfallsgesetz ist die erwartete Anzahl der $\mu$, nach der Zeit $t$: $N(t) = N(0) e^{\frac{t}{\tau_0}}$). Die Lebensdauer $\tau_0$ ist so kurz, dass die $\mu$ es nicht in großer von der oberen Atmosphäre bis zur Oberfläche schaffen würden, ohne vorher zu zerfallen. Man detektiert sie aber trotzdem, weil der $\gamma$-Faktor $\approxeq$ 9 ist (sie bewegen sich recht schnell) und das Zerfallsgesetz sich auf ihre Eigenzeit bezieht. 
 \end{beispiel*}
 
 \subsubsection{Längenkontraktion}
@@ -315,13 +315,13 @@ $c \beta_3$ ist die Geschwindigkeit in $\Sigma'$, wenn $c\beta_1$ die Geschwindi
 z.B. \textit{a)} $v_1 = v_2 = \frac{c}{2}$ \conseq $\beta_1 = \beta_2 = \frac12$, $\beta_3 = \frac{1}{1 + \frac14} = \frac45 < 1$, $v_3 = \frac45 c < c$\\
 \textit{b)} $v_1 = c$, $\beta_1 = 1$, Boost mit $\beta_2$, $\beta_3 = \frac{1 + \beta_2}{1 + 1 \cdot \beta_2} = \frac{1 + \beta_2}{1 + \beta_2} = 1$ Damit ist egal, wie schnell sich $\Sigma'$ bewegt. Es gilt immer $\beta_3 = 1$, wenn $\beta_1 = 1$, auch wenn $\beta_2 = -1$.
 
-\paragraph{Rapiditäten (Erinnerung)} $\gamma_3 = \cosh y_3$ und $\gamma-3 \beta_3 = \sinh y_3$
+\paragraph{Rapiditäten (Erinnerung)} \label{Rapiditaeten Erinnerung} $\gamma_3 = \cosh y_3$ und $\gamma-3 \beta_3 = \sinh y_3$
 aber auch $\gamma_3 = \cosh y_3 = y_1 y_2 + \gamma_1 \beta_1 \gamma_2 \beta_2 = \cosh y_1 \cosh y_2 + \sinh y_1 \sinh y_2 = \frac12 (e^{y_1} + e^{-y_1}) \frac12 (e^{y_2} + e^{y_2}) + \frac14 (e^{y_1} - e^{- y_1}) (e^{y_2} - e^{-y_2}) = \frac14 (e^{y_1} e^{y_2} + e^{y_1} e^{-y_2} + e^{-y_1} e^{y_2} + e^{-y_1} e^{-y_2} + e^{y_1} e^{y_2} - e^{y_1} e^{-y_2} - e^{-y_1} e^{y_2} - e^{-y_1} e^{-y_2}) = \frac14 (2 e^{y_1} e^{y_2} + 2 e^{-y_1} e^{-y_2}) = \frac12 (e^{y_1 + y_2} + e^{-(y_1 + y_2)}) = \cosh (y_1 + y_2) = \cosh y_3$ (analog für $\sinh y_3$). Also werden die Rapiditäten einfach addiert.
 
 
 $\beta_3 = \frac{\beta_1 + \beta_2}{1 + \beta_1 \beta_2}$, $\gamma = \cosh y$ \conseq $\cosh y_3 = \cosh(y_1 + y_2)$ \conseq $y_3 = y_1 + y_2$\\
 Die Rapiditäten können also als verallgemeinerte Geschwindigkeiten angesehen werden.\\
-Der Vergleich von Ereignissen in zwei Systemen $\Sigma$ und $\Sigma'$ kann graphisch mithilfe sogenannter \textbf{Minkowski Diagrammen}\footnote{vgl. \href{https://de.wikipedia.org/wiki/Minkowski-Diagramm}{Wikipedia}} geschehen.\\
+Der Vergleich von Ereignissen in zwei Systemen $\Sigma$ und $\Sigma'$ kann graphisch mit Hilfe sogenannter \textbf{Minkowski Diagramme}\footnote{vgl. \href{https://de.wikipedia.org/wiki/Minkowski-Diagramm}{Wikipedia}} geschehen.\\
 Wie tragen wir Ereignisse in $\Sigma'$ hier ein?
 $ct'-Achse$: bei $z' = 0$\\
 
