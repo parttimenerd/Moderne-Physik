@@ -98,6 +98,10 @@
 \DeclareSIUnit\year{a}
 \DeclareSIUnit{\lightyear}{Lj}
 
+\title{Moderne Physik Mitschrieb}
+
+\author{Johannes Bechberger und \href{https://github.com/parttimenerd/Moderne-Physik/graphs/contributors}{andere}}
+
 \makeatletter
 %\@removefromreset{section}{chapter}
 \makeatother
@@ -117,16 +121,17 @@
 	\label{#1}\endgroup
 }
 
+\makeatletter
+
+\hypersetup{
+    pdftitle={\@title},
+    pdfauthor={\@author}
+}
 \makeatother
 
 % arguments: description, short name (without 
 
 \begin{document}
-
-\title{Moderne Physik Mitschrieb}
-
-\author{Johannes Bechberger und \href{https://github.com/parttimenerd/Moderne-Physik/graphs/contributors}{andere}}
-
 \maketitle
 
 \tableofcontents
