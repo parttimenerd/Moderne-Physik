@@ -70,9 +70,9 @@ Die letzte Zeile wird auch als \textbf{Rayleigh-Jeans-Gesetz} bezeichnet.
 	\end{tikzpicture}
 \end{center}
 \end{folgerung*}
-Ein alternatives phänomenologisches\footnote{Sprich: Wurde durch scharfes Hinsehen gefunden.} Gesetz (Wien)
+Ein alternatives phänomenologisches\footnote{Sprich: Wurde durch scharfes Hinsehen gefunden.} Gesetz (Wien):
 $$g(\frac{\nu}{T}) = a e^{- b \frac{\nu}{T}}$$
-Qualitativ, sieht die Formel wie folgt aus.
+Qualitativ sieht die Formel wie folgt aus:
 \begin{center}
 	\begin{tikzpicture}
 	\begin{axis}[xlabel=${\frac{\nu}{T}}$, ylabel=$e^{-\frac{\nu}{T}}$, xtick=\empty, ytick=\empty, ymin = 0, xmin=0]
@@ -81,7 +81,7 @@ Qualitativ, sieht die Formel wie folgt aus.
 	\end{tikzpicture}
 \end{center}~\\
 Wir suchen nun eine möglichst gute Interpolation der Daten.\\
-Da die Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ ist, kommt (mit dem Rayleigh-Jeans-Gesetz) zur sogenannten \textbf{Ultraviolett-Katastrophe}. Hierbei ist zu beachten, dass das Rayleigh-Jeans-Gesetz besser bei kürzeren Wellenlängen und Wiens Formel besser bei größeren Wellenlängen passt. Deswegen liegt die Ultraviolett-Katastrophe nur an ersterem.
+Da die Gesamtenergie $\int_0^\infty W_\nu \d \nu = \infty$ ist, kommt es mit dem Rayleigh-Jeans-Gesetz zur sogenannten \textbf{Ultraviolett-Katastrophe}. Hierbei ist zu beachten, dass das Rayleigh-Jeans-Gesetz besser bei kürzeren Wellenlängen und Wiens Formel besser bei größeren Wellenlängen passt. Deswegen liegt die Ultraviolett-Katastrophe nur an ersterem.
 
 \paragraph{Ausweg} Der Ausweg ist die Plancksche Strahlungsformel.
 
@@ -107,17 +107,17 @@ Als Konsequenz ersetzen wir $k_B T$ bei der Herleitung des R-J-Gesetzes durch $\
 $$W_\nu = \frac{8\pi\nu^2}{c^3} \frac{\epsilon_0}{e^{\beta \epsilon_0} - 1}$$
 Was wir nun in Wiens Formel vom Anfang einsetzen können:
 $$f(\nu, T) = \nu^2 g(\frac{\nu}{T})$$
-Des Weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksche Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als:
+Des Weiteren folgern wir mit de Broglie $\epsilon_0 = h \nu$, wobei  $h \sim 10^{37} Js$ das Plancksche Wirkungsquantum ist\footnote{Planck erhielt für die Entdeckung des nach ihm benannten Wirkungsquantums 1919 den Physik-Nobelpreis des Jahres 1918.}. Damit kann man $W_\nu$ auch schreiben als:
 $$W_\nu = \frac{8\pi}{c^3} \nu^2 \frac{h}{e^{\beta h \nu} - 1}$$
 Diese Formel ist auch als Plancksche Strahlungsformel bekannt. Sowohl Wiens Formel, als auch das Rayleigh-Jeans-Gesetz, sind in ihr als Grenzfälle enthalten (in ihrem jeweiligen Bereich):
 $$\frac{h \nu}{e^{\frac{h\nu}{k_B T}} - 1} \rightarrow \begin{cases}
 k_B T & h\nu \ll k_B T\\
 h \nu e^{- \frac{h\nu}{k_B T}} & h \nu \gg k_B T
 \end{cases}$$
-Die Integration über alle Frequenzen führt zu einer Neuformulierung diese Stefan-Boltzmann-Gesetzes vom Anfang dieses Kapitels
+Die Integration über alle Frequenzen führt zu einer Neuformulierung diese Stefan-Boltzmann-Gesetzes vom Anfang dieses Kapitels:
 \begin{align*}
 W(T) &= (\frac{8}{15} \pi^5 \frac{k_B^4}{c^3 h^3}) T^4\\
-\intertext{Außerdem gilt für die mittlere Energie}
+\intertext{Außerdem gilt für die mittlere Energie:}
 \hat{\epsilon} &= \frac{h \nu}{e^{\beta h \nu} - 1} 
 \end{align*}
 
@@ -146,14 +146,14 @@ $$n = \frac{2a \sin \alpha}{\lambda}$$
 	\item Falls $\nu > \nu_g$ ist, ist die Anzahl der Elektronen proportional zur Intensität des Lichtes.
 	\item Der Effekt tritt sofort auf. Also können die Elektronen keine Energie "`aufsammeln"'.
 \end{itemize}
-Aus diesen Beobachtungen folgerte Einstein 1905 seine \textbf{Lichtquantenhypothese}\footnote{"`Physicists use the wave theory on Mondays, Wednesdays and Fridays and the particle theory on Tuesdays, Thursdays and Saturdays"' – William Henry Bragg}: Licht wird darin als Ansammlung von Photonen mit der Energie $h \nu$ angesehen. Für den Photoeffekt bekam Einstein übrigens den Physik Nobelpreis. Etwas formaler kann man das ganze zusammenfassen, als:
+Aus diesen Beobachtungen folgerte Einstein 1905 seine \textbf{Lichtquantenhypothese}\footnote{"`Physicists use the wave theory on Mondays, Wednesdays and Fridays and the particle theory on Tuesdays, Thursdays and Saturdays"' – William Henry Bragg}: Licht wird darin als Ansammlung von Photonen mit der Energie $h \nu$ angesehen. Für den Photoeffekt bekam Einstein übrigens den Physik-Nobelpreis. Etwas formaler kann man das ganze zusammenfassen, als:
 \begin{align*}
 h \nu &= E_\text{kin} + W_\text{A}\\
 E_\text{Lichtquant} &= \frac12 m v^2 + \text{Austrittsarbeit}
 \end{align*}
 
 \subsubsection{Compton-Effekt}
-Um den Compton-Effekt\footnote{vgl. \href{https://de.wikipedia.org/wiki/Compton-Effekt}{Wikipedia}} zu messen, bestrahlt man  Elektronen, welche leicht in ihrem jeweiligen Atom gebunden sind, mit Röntgenlicht der Frequenz $\nu_0$ bzw. der Wellenlänge $\lambda_0$. Neben $\lambda_0$ wird weiteres Licht bei $\lambda = \lambda_0 + \Delta \lambda$ nach der Wechselwirkung beobachtet. (Viel Licht mit geringerer Energie). Man erklärt diese Beobachtung durch den \emph{Stoß} von $\gamma$-Quanten (Photonen) auf die $e^-$ (Elektronen) der Atomhülle.
+Um den Compton-Effekt\footnote{vgl. \href{https://de.wikipedia.org/wiki/Compton-Effekt}{Wikipedia}} zu messen, bestrahlt man  Elektronen, welche nur leicht in ihrem jeweiligen Atom gebunden sind, mit Röntgenlicht der Frequenz $\nu_0$ bzw. der Wellenlänge $\lambda_0$. Neben $\lambda_0$ wird weiteres Licht bei $\lambda = \lambda_0 + \Delta \lambda$ nach der Wechselwirkung beobachtet. (Viel Licht mit geringerer Energie). Man erklärt diese Beobachtung durch den \emph{Stoß} von $\gamma$-Quanten (Photonen) auf die $e^-$ (Elektronen) der Atomhülle.
 Der Photonimpuls ist $\frac{h \nu_0}{c}$ und damit gilt:
 $$\frac{h \nu}{c} < \frac{h \nu_0}{c} \qquad \Rightarrow \qquad \Delta \lambda = \lambda - \lambda_0 = \lambda_c = (1 - \cos \theta)$$
 Man muss dabei relativistische Energie-Impulserhaltung verwenden.\\
@@ -168,34 +168,34 @@ $$E_n = \SI{-13.6}{\electronvolt} - \frac{1}{n^2}$$
 Sie wird unterstützt durch den
 
 \subsubsection{Franck-Hertz-Versuch}
-Beim Franck-Hertz-Versuch\footnote{vgl. \href{https://de.wikipedia.org/wiki/Franck-Hertz-Versuch}{Wikipedia}} werden statt eines kontinuierlich ansteigenden Stromes starke Abfälle beobachtet (nach Schritten von jeweils $\SI{4.9}{\electronvolt}$). Die Elektronen können die Gegenspannung nicht mehr überwinden, da sie Energie an die Quecksilber-Atome abgeben. Damit gibt es nur diskrete Energien von $n \cdot \SI{4.9}{\electronvolt}$. Das Licht der entsprechenden Wellenlänge wird im Versuch nachgewiesen. Für diesen Versuch bekamen Frank und Hertz (nicht Heinrich) 1925 den Physik Nobelpreis.
+Beim Franck-Hertz-Versuch\footnote{vgl. \href{https://de.wikipedia.org/wiki/Franck-Hertz-Versuch}{Wikipedia}} werden statt eines kontinuierlich ansteigenden Stromes starke Abfälle beobachtet (nach Schritten von jeweils $\SI{4.9}{\electronvolt}$). Die Elektronen können die Gegenspannung nicht mehr überwinden, da sie Energie an die Quecksilber-Atome abgeben. Damit gibt es nur diskrete Energien von $n \cdot \SI{4.9}{\electronvolt}$. Das Licht der entsprechenden Wellenlänge wird im Versuch nachgewiesen. Für diesen Versuch bekamen Frank und Hertz (nicht Heinrich) 1925 den Physik-Nobelpreis.
 
 \subsection{Wellennatur der Teilchen}
-Beugungsexperimente (Davisson und Germer) von Elektron an Kristallen. Zeigen die \textbf{Interferenz} von Elektronen-Wellen, wie bei Röntgenstrahlen. Man sieht einen Gangunterschied und damit eine Interferenz. Die \textbf{De Broglie}-Wellenlänge von Teilchen ist
+Beugungsexperimente (Davisson und Germer) von Elektron an Kristallen. Zeigen die \textbf{Interferenz} von Elektronen-Wellen, wie bei Röntgenstrahlen. Man sieht einen Gangunterschied und damit eine Interferenz. Die \textbf{De Broglie}-Wellenlänge von Teilchen ist:
 $$\lambda = \frac{h}{p}$$
 
 \section{Schrödingergleichung}
 Der im Experiment beobachtete \textbf{Welle-Teilchen-Dualismus} kann teilweise in der klassischen Mechanik wiedergefunden\footnote{In der Hamilton-Jacobi-Theorie, welche im Kapitel über Analytische Mechanik in groben Zügen behandelt wurde.} werden. Man berechnet nun die Ausbreitung von Punktteilchen durch sogenannte \textbf{Wirkungswellen}. Unter Zuhilfenahme der Erfahrung formuliert man schließlich die \textbf{Schrödingergleichung}, die sich nicht aus weiteren (bekannten) Prinzipien herleiten lässt.
 $$i \hbar \fpartial{t} \Psi(\vec{r}, t) = H \Psi(\vec{r}, t)$$
-Hierbei ist $\hbar = \frac{h}{2 \pi}$ und $H$ der Hamiltonoperator\footnote{Der Hamiltonoperator, ist ganz analog zur Hamiltonfunktion in der analytischen Mechanik.}
+Hierbei ist $\hbar = \frac{h}{2 \pi}$ und $H$ der Hamiltonoperator\footnote{Der Hamiltonoperator ist ganz analog zur Hamiltonfunktion in der analytischen Mechanik.}
 $$H = \frac{\vec{p}^2}{2m} + V(\vec{r})$$
-Wir führen nun den wichtigen Impulsoperator (in der "`Ortsdarstellung"') ein
+Wir führen nun den wichtigen Impulsoperator (in der "`Ortsdarstellung"') ein:
 $$\vec{p} = - i \hbar \vec{\nabla}$$
-mit $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$ und können damit den Hamiltonoperator auch wie folgt schreiben
+mit $\vec{\nabla} = (\fpartial{x}, \fpartial{y}, \fpartial{z})$. Damit können wir den Hamiltonoperator auch wie folgt schreiben:
 $$H = - \frac{\hbar^2}{2m} \vec{\nabla}^2 + V(\vec{r})$$
-Wobei $\vec{\nabla}^2$ der Laplaceoperator ist, $\vec{\nabla}^2 = \ffpartial{^2}{x^2} +\ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$.
-$\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt per Definition die Schrödingergleichung\footnote{Sie bescherte ihrem Schöpfer den Physik Nobelpreis des Jahres 1933.} für ein gegebenes Potential. Sie beschreibt den Zustand eines Systems (z.B. eines oder mehrerer Teilchen in einem Potential) als Wahrscheinlichkeitsverteilung\footnote{"`I don't like it, and I'm sorry I ever had anything to do with it."' – Erwin Schrödinger"'}. \\
+$\vec{\nabla}^2$ ist der Laplaceoperator: $\vec{\nabla}^2 = \ffpartial{^2}{x^2} +\ffpartial{^2}{y^2} + \ffpartial{^2}{z^2}$.
+$\Psi(\vec{r}, t)$ ist die \textbf{Wellenfunktion}. Eine Wellenfunktion erfüllt per Definition die Schrödingergleichung\footnote{Sie bescherte ihrem Schöpfer den Physik-Nobelpreis des Jahres 1933.} für ein gegebenes Potential. Sie beschreibt den Zustand eines Systems (z.B. eines oder mehrerer Teilchen in einem Potential) als Wahrscheinlichkeitsverteilung\footnote{"`I don't like it, and I'm sorry I ever had anything to do with it."' – Erwin Schrödinger"'}. \\
 ~\\
 Der Hamiltonoperator ist meistens zeitunabhängig, was die Lösung vereinfacht. 
 
 \subsection{Lösung der Schrödingergleichung}
-Wir versuchen die Schrödingergleichung per Separationsansatz $\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t)$ zu lösen
+Wir versuchen, die Schrödingergleichung per Separationsansatz $\Psi(\vec{r}, t) = \psi(\vec{r}) \vp(t)$ zu lösen:
 \begin{align*}
 	i \hbar \fpartial{t} \psi(\vec{r}) \vp(t) &= H \psi(\vec{r}) \vp(t)\\
 	\Leftrightarrow \psi(\vec{r}) i \hbar \fpartial{t} \vp(t) &= \vp(t) H \psi(\vec{r})\\
 	\Leftrightarrow \frac{1}{\vp(t)} i \hbar \fpartial{t} \vp(t) &= \frac{1}{\psi(\vec{r})} H \psi(\vec{r})
 \end{align*}
-Die linke Seite hängt nur noch von der Zeit ab, die rechte nur noch vom Ort. Da beide Seiten gleich sind, müssen sie zwangsweise jeweils einen konstanten Wert haben. Wir folgern nun 
+Die linke Seite hängt nur noch von der Zeit ab, die rechte nur noch vom Ort. Da beide Seiten gleich sind, müssen sie zwangsweise jeweils einen konstanten Wert haben. Wir folgern nun:
 \begin{enumerate}[a)]
 	 \item $i \hbar \fpartial{t} \vp(t) = E \vp(t)$
 	 \item $H \psi(\vec{r}) = E \psi(\vec{r})$ \textit{Diese Gleichung wird auch als Zeitunabhängige Schrödingergleichung bezeichnet}
@@ -216,7 +216,7 @@ Die Hamiltonfunktion $H$ beschreibt die Energie eines Systems in der klassischen
 	Die Schrödingergleichung ist linear in der Zeit. Deswegen kann man aus dem Anfangszustand $\Psi(\vec{r}, t_0)$ (zum Zeitpunkt $t_0$) auf den weiteren zeitlichen Verlauf $\Psi(\vec{r}, t)$ per Schrödingergleichung schließen\footnote{Vergleiche dies mit der Hamiltonfunktion in der klassischen Mechanik.}. Das Problem ist meistens die Lösung der zeitunabhängigen Schrödingergleichung.
 \end{bemerkung*}
 \begin{bemerkung*}[Materiewelle und Wahrscheinlichkeitsinterpretation]~\\
-	Es stellt sich nun die Frage, ob $\Psi(\vec{r}, t)$ wirklich eine "`Materiewelle"' beschreibt. Deswegen betrachten wir das, schon im Einführungskapitel erwähnte, Doppelspaltexperiment für Elektronen. Hierbei ist entweder
+	Es stellt sich nun die Frage, ob $\Psi(\vec{r}, t)$ wirklich eine "`Materiewelle"' beschreibt. Deswegen betrachten wir das (schon im Einführungskapitel erwähnte) Doppelspaltexperiment für Elektronen. Hierbei ist entweder
 	\begin{enumerate}[a)]
 		\item jeweils ein Spalt abgedeckt oder
 		\item beide offen
@@ -271,26 +271,26 @@ E &= \hbar \omega = \frac{\hbar^2 k^2}{2m} & \Rightarrow \omega &= \omega(k) = \
 \end{align*}
 
 \subsubsection{Was ist eine ebene Welle?}
+Man bezeichnet allgemein alles, was die Form $f(\vec{k} \cdot \vec{r} \pm \omega t)$ erfüllt, als ebene Welle.\\
 Sie hat \dots
 \begin{description}
-	\item[an einem festen Ort] eine Schwingung 
+	\item[an einem festen Ort] eine Schwingung:
 	$$\Psi = \underbrace{e^{i\vec{k} \cdot \vec{r}}}_{\text{fest}} \underbrace{e^{-i\omega t}}_{\cos(\omega t) - i \sin(\omega t)}$$
-	\item[zu einem festen Zeitpunkt] $t = t_0$ eine Schwingung 
+	\item[zu einem festen Zeitpunkt] $t = t_0$ eine Schwingung:
 	$$e^{i (\vec{k} \cdot \vec{r} - \omega t_0)}$$
-	Orte mit gleichem Funktionswert sind
+	Orte mit gleichem Funktionswert sind:
 	\begin{align*}
 	\vec{k} \cdot \vec{r} = \omega t_0 \Rightarrow \hat{k} \cdot \vec{r} = \frac{\omega t_0}{k}
 	\end{align*}
-	Orte für die im speziellen gilt $\vec{k} \cdot \vec{r} = \omega t_0$ liegen auf einer Ebene, welche senkrecht zu $\vec{k}$ ist.
+	Orte, für die im speziellen $\vec{k} \cdot \vec{r} = \omega t_0$ gilt, liegen auf einer Ebene, welche senkrecht zu $\vec{k}$ ist.
 \end{description}
 \textbf{für $t > t_0$} "`wandert"' die Ebene unverändert in Richtung $\vec{k}$.
-Den gleichen Wert bekommen wir übrigens auch für 
+Den gleichen Wert bekommen wir übrigens auch für:
 $$e^{i(\vec{h} \cdot \vec{r} - \omega t - 2 \pi n)}$$
-Das sind viele Ebenen welche um
+Das sind viele Ebenen, welche um
 $$\lambda = \frac{2\pi}{k}$$
-verschoben wurden. $k$ wird hierbei auch als \textbf{Wellenvektor} bezeichnet.
-(gleiche Diskussion für $f(\vec{k} \cdot \vec{r} - \omega t)$vim allgemeine ebene Welle)
-Nun vergleichen wir dies mit der schon bekannten de Broglie-Wellenlänge und folgern
+verschoben sind. $k$ wird hierbei auch als \textbf{Wellenvektor} bezeichnet.\\
+Nun vergleichen wir dies mit der schon bekannten de Broglie-Wellenlänge und folgern:
 \begin{align*}
 p &= \frac{h}{\lambda} = \frac{hk}{2\pi} = \hbar k\\
 \Rightarrow E &= \frac{\hbar^2 k^2}{2m} = \underbrace{\frac{p^2}{2m}}_{\hspace{-10em}\text{Energie eines freien Punktteilchens.}\hspace{-10em}}
