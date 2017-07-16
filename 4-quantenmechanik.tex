@@ -623,7 +623,7 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 	$$\ket{\psi} \to \begin{pmatrix}
 		\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots
 	\end{pmatrix}$$
-	Wir lassen jetzt zu, dass Index $n \in \Re$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade aber definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
+	Wir lassen jetzt zu, dass Index $n \in \Re$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade eben definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
 	Die abstrakten Zustände von $\ket{\psi}$ sind Komponenten des Vektors. In dem wir $\ket{\psi}$ als Wellenfunktion betrachten, kommen wir unter anderem auf eine Art "`\textbf{Ortsdarstellung}"':
 	$$\psi(x) = \braket{x | \psi} \text{~\textit{(1-dim.)}~~~ bzw.~~~} \psi(\vec{r}) = \braket{\vec{r} | \psi}$$
 	Jetzt sind offensichtlich die $\psi(\vec{r})$ die Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. Außerdem sind die $\ket{\vec{r}}$ damit die Eigenvektoren des Ortsoperators, da gilt $$\underbrace{\hat{\vec{r}}}_{\text{\hspace{-10em}Operator\hspace{-10em}}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$$
@@ -645,10 +645,10 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 		B A \ket{\alpha} &= B \ket{A \alpha} = B (A \ket{\alpha})
 	\end{align*}
 	
-	\paragraph{Adjungierter Operator} korrespondierend zum Operator $A$ ist $A^+ = A^{\top \ast}$, also der transponierte und komplex konjugierte Operator.
+	\paragraph{Adjungierter Operator} Korrespondierend zum Operator $A$ ist $A^+ \coloneqq A^{\top \ast}$. $A^+$ ist also der transponierte und komplex konjugierte Operator.
 	\paragraph{Selbstadjungierter Operator} \textit{auch als hermitescher\footnote{Hermitesch wird wie "`hermit'sch"' ausgesprochen} Operator bezeichnet}\\
-	Für muss gelten $A^+ = A$. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte:\\
-	Sei $\ket a$ ein Eigenvektor von $A$ zu Eigenwert $\alpha$, d.h. $A \ket{a} = \alpha a$ man rechnet nun $\braket{a | A | a}$ aus:
+	Für ihn muss $A^+ = A$ gelten. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte:\\
+	Sei $\ket a$ ein Eigenvektor von $A$ zu Eigenwert $\alpha$, d.h. $A \ket{a} = \alpha a$. Man rechnet nun $\braket{a | A | a}$ aus:
 	$$\alpha \braket{a | a} = \braket{a | \alpha | a} = \braket{a | (A a)} = \braket{a | A | a} \overset{\text{da $A^+ = A$}}{=} \braket{(A a) | a} = \alpha^\ast \braket{a | a}$$
 	Dies würde einen Widerspruch darstellen, wenn $\alpha \notin \Re$ wäre.
 \end{definition*}
