@@ -23,3 +23,6 @@ summary.pdf
 
 # Emacs folder 'auto'
 auto
+
+upload.sh
+Makefile
