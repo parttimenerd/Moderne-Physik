@@ -314,9 +314,9 @@ Erinnerung: Wenn die Wellenfunktion die Aufenthaltswahrscheinlichkeit beschreibe
 Wegen $|\Psi_0|^2 V$ muss $\Psi_0 = \frac{1}{\sqrt V} = \const$ sein. Damit das gilt, hat man zwei Möglichkeiten:
 \paragraph{a) V endlich} (z.B. weil $V(\text{Universum})$ \text{??? und warum ist die Wahrscheinlichkeit dann überall gleich???}) damit ist die Wahrscheinlichkeit ein Teilchen vorzufinden überall gleich. Aber es hat einen festen Impuls, welcher exakt gemessen werden kann.
 \paragraph{b) \textbf{Wellenpaket}}
-In diesem Fall nutzen wir das Superpositionsprinzip aus
+In diesem Fall nutzen wir das Superpositionsprinzip aus:
 $$\Psi(\vec{r}, t) = \sum_{\vec{k}} a (\vec{k}) \sum_{\omega} b(\omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$
-Diese Reihe, auch Fourierreihe genannt, ist damit auch eine Lösung der Schrödingergleichung. Für kontinuierliche $\vec{k}, \omega$ gilt
+Diese Reihe, auch Fourierreihe genannt, ist damit auch eine Lösung der Schrödingergleichung. Für kontinuierliche $\vec{k}, \omega$ gilt:
 $$\Psi(\vec{r}, t) = \int \d^3 \vec{k} \d \omega \tilde\Psi (\vec{k}, \omega) e^{i(\vec{k}\cdot \vec{r} - \omega t)}$$ Dieses Integral wird auch Fourierintegral genannt. Wir setzen es nun in die (etwas umgeformte) Schrödingergleichung ein:
 \begin{align*}
 	(i \hbar \fpartial{t} - H) \Psi(\vec{r}, t) &= 0\\
@@ -333,7 +333,7 @@ $\tilde \Psi(\vec{k})$ ist hierbei Amplitudenfunktion eines Wellenpakets.
 
 % % % % % % % % % %
 
-\subsection{Einfaches Beispiel im eindimensionalen}
+\subsection{Einfaches Beispiel im Eindimensionalen}
 Die Amplitudenfunktion ist wie folgt gegeben:
 \begin{align*}
 \tilde{\Psi} = \begin{cases}
@@ -503,37 +503,45 @@ $$\psi(x) = Ae^{ikx} + Be^{-ikx} \qquad \text{mit~} k=\sqrt{\frac{2m}{\hbar^2}(E
 	\begin{align*}
 	\psi_0(x) &\sim e^{ik_0x} & k_0^2 &= \frac{2m}{\hbar^2} E
 	\end{align*}
-	Interessant ist der Fall $E < V_0$, denn klassisch kann das Teilchen / die Welle den Wall nicht überwinden. Wir teilen die Wellenfunktion in die 3 Bereiche auf
+	Interessant ist der Fall $E < V_0$, denn klassisch kann das Teilchen / die Welle den Wall nicht überwinden. Wir teilen die Wellenfunktion in die 3 Bereiche auf:
 	$$\psi(x) = \begin{cases}
 	Ae^{ik_0x} + Be^{-ik_0 x} & \text{links vor dem Wall}\\
 	Ce^{-\kappa x} & \text{im Wall}\\
 	De^{ik_0 x} & \text{hinter dem Wall}
 	\end{cases}$$
-	Die einlaufende Wellenfunktion besteht aus einer einlaufenden und einer reflektierten Welle. Rechnungen führen zum sogenannten \textbf{Gamow-Faktor}, welcher die Transmissionswahrscheinlichkeit an gibt.
+	Die einlaufende Wellenfunktion besteht aus einer einlaufenden und einer reflektierten Welle. Rechnungen führen zum sogenannten \textbf{Gamow-Faktor}, welcher die Transmissionswahrscheinlichkeit angibt:
 	$$T (E) = e^{- \frac4\hbar \sqrt{2m (v - E)} x_0}$$
-	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch Tunneleffekt.\\
-	\textbf{Gamow}. Man kann jede beliebige Potentialbarrieren durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
+	Ein Teilchen landet mit Wahrscheinlichkeit $> 0$ auf der anderen Seite der Barriere, obwohl klassisch die Energie nicht ausreicht, diese zu überwinden. Diesen Effekt nennt man auch \textbf{Tunneleffekt}.\\
+	\textbf{Gamow}. Man kann jede beliebige Potentialbarriere durch Rechteckbarrieren, wie wir sie schon verwendet haben, als Treppenbarrieren approximieren.
 	$$T(E) = e^{-\frac{2}{\hbar} \int_{0}^{\infty} \sqrt{2m (V(x') - E)}~ \d x'}$$
-	Wir können jetzt damit den $\alpha$-Zerfall von Atomkernen erklären. Der $\alpha$-Zerfall ist eine spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n), sieht geschieht ohne Beeinflussung von außen (z.B. Druck oder Temperatur). 
-	Die $\alpha$-Teilchen werden mit einer sehr charakteristischen Energie emittiert und die Halbwertszeiten sind sehr unterschiedlich, z.B.
+	Wir können jetzt damit den $\alpha$-Zerfall von Atomkernen erklären. Der $\alpha$-Zerfall ist eine spontane Aussendung von $\alpha$-Teilchen (Helium-Kerne = 2p + 2n). Er geschieht ohne Beeinflussung von außen (z.B. Druck oder Temperatur). 
+	Die $\alpha$-Teilchen werden mit einer sehr charakteristischen Energie emittiert und die Halbwertszeiten sind sehr unterschiedlich, z.B.:
 	\begin{align*}
 		~^{212}Po&: \tau_{\frac12} = \SI{3e-7}{\second}\\
 		~^{238}U&: \tau_{\frac12} = \SI{4.5 e9}{\year}
 	\end{align*}
-	\textbf{Geiger-Nutall-Gesetz}: $A$ ist die Massenzahl als Summe der Neutronen und Protonen und $E$ ist die Energie des $\alpha$-Teilchens. Nun gilt für die Halbwertszeit
-	$$\ln \tau_{\frac12} = A \frac{Z}{\sqrt{E}} + \dots$$
+	\textbf{Geiger-Nutall-Gesetz}: $A$ ist die Massenzahl als Summe der Neutronen und Protonen, und $E$ ist die Energie des $\alpha$-Teilchens. Nun gilt für die Halbwertszeit:
+        \[
+            \ln (\tau_{\frac12}) = A \frac{Z}{\sqrt{E}} - B \cdot Z^{2/3} + \ln(t_0)
+        \]
+
+Wichtig zu erklären ist dabei vor allem der erste Teil:
+        \[
+            \ln (\tau_{\frac12}) = A \frac{Z}{\sqrt{E}} + \dots
+        \]        
+        
 	%$\leftarrow$ aus Modell für $\alpha$-Teilchen im Atomkern
 \end{beispiel*}
 
 \subsection{Ausblick: Kronig-Penney-Modell eines Festkörpers}
-Hier ist das Potential periodisch wie folgt angegeben
+Hier ist das Potential periodisch wie folgt angegeben:
 $$V(x) = D \sum_{n = -\infty}^{\infty} \delta(x - n a)$$
-(Im wesentlichen nur viele gleich hohe Spikes auf der $x$-Achse mit Abstand 1.)\\
-Klassisch ist $x \neq n a$ erlaubt, dann haben wir quasi freie Teilchen und ebenen Wellen mit periodischen Randbedingungen. Wir nehmen wieder die beiden Typen von Bedingung an Wellenfunktion und verwenden sie.
+(Im Wesentlichen nur viele gleich hohe Spikes auf der $x$-Achse mit Abstand 1.)\\
+Klassisch ist $x \neq n a$ erlaubt. Dann haben wir quasi freie Teilchen und ebene Wellen mit periodischen Randbedingungen. Wir nehmen wieder die beiden Typen von Bedingung an Wellenfunktion und verwenden sie.
 \begin{description}
 	\item[\textbf{I.} Stetig an dem Rand]
 	$$\psi(n a + \epsilon) \overset!= \psi(na - \epsilon) \equiv \psi(na)$$
-	Und damit die Schrödingergleichung (mit $\epsilon \to 0^+$)
+	Und damit die Schrödingergleichung (mit $\epsilon \to 0^+$).
 	\begin{align*}
 	&\int_{na-\epsilon}^{na + \epsilon} \psi''(x) \d y - \frac{2m}{\hbar^2} D \int_{na - \epsilon}^{na + \epsilon} \delta(x - n) \psi(x) \d x\\
 	&= - \frac{2m}{\hbar^2} E \int_{na - \epsilon}^{na + \epsilon} \psi(x) \d x \xrightarrow{\text{weil $\psi$ stetig ist}} 0
@@ -554,10 +562,10 @@ Klassisch ist $x \neq n a$ erlaubt, dann haben wir quasi freie Teilchen und eben
 %	zu Gleichung ($n \to \infty$)
 %	$V(x) = V(x + a)$
 %\end{enumerate}
-Man findet Translationssymmetrien, insbesondere
+Man findet Translationssymmetrien. Insbesondere:
 \begin{align*}
 |\psi(x + a)|^2 &= |\psi(x)|^2
-\intertext{$\psi$ unterscheidet sich nur durch den Phasenfaktor $e^{iKa}$}
+\intertext{$\psi$ unterscheidet sich nur durch den Phasenfaktor $e^{iKa}$:}
 \psi(x+a) &= e^{iKa}u(x)\\
 u(x+a) &= u(x)
 \end{align*}
@@ -565,26 +573,27 @@ Diese Wellen heißen Bloch-Wellen.\\
 Mit der Stetigkeit folgern wir $a_n = e^{iKan}a_0$, $b_n = e^{iKna} b_0$, n = 1,2, sofern die Gleichung lösbar ist. Dies ist eine Bedingen an mögliche $K$, d.h. an mögliche Energien. Man sieht ein, dass die Determinante der Koeffizientenmatrix 0 sein muss.
 $$\Delta = 2 i e^{iKa} (2k \cos K a - 2k \cosh a - \frac{2m}{\hbar^2} D \sin k a) \overset!= 0$$
 Dies ist der Fall, wenn $$\cos K a = \cos ka + \frac{mDa}{\hbar^2} \frac{\sin ka}{ka}\qquad m = 1, 2, \dots$$ 
-Da $K$ beliebig sein Darf, ist nur die rechte Seite der Gleichung $\leq 1$. Die rechte Seite kann wie folgt umgeschrieben werden
+Da $K$ beliebig sein darf, ist nur die rechte Seite der Gleichung $\leq 1$. Die rechte Seite kann wie folgt umgeschrieben werden:
 $$\cos y + \alpha \frac{\sin y}{y}\qquad y = ka \sim \sqrt{E}$$
 
 Damit können wir \textbf{Energiebänder} als erlaubte Zustände darstellen. Zu diesem Thema passt auch gut, das \textbf{Pauli-Prinzip}:\\
 Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin = "`innere Quantenzahl"'} nur einmal besetzt werden. Aufgrund des Spins gibt es zwei "`Plätze"' pro Zustand, es gibt deswegen nur ganz oder halb gefüllte Bänder bei $T = 0$.
 \begin{enumerate}[a)]
-	\item ganz gefüllt \conseq keine freien Zustände sind leicht erreichbar. \textit{Isolator}
-	\item halb gefüllt \conseq die Zustände sind durch leichte Anregung erreichbar. \textit{Leiter}
+	\item ganz gefüllt \conseq Keine freien Zustände sind leicht erreichbar. \textit{Isolator}
+	\item halb gefüllt \conseq Die Zustände sind durch leichte Anregung erreichbar. \textit{Leiter}
 	\item "`Isolator mit sehr kleiner Bandlücke"'. \textit{Halbleiter}
 \end{enumerate}
 
 \section{Formale Grundlagen der Quantenmechanik}
 \begin{definition*}[Zustand]
-	Der Zustand eines Systems ist, analog zu $\pi(t) = \{\vec{q}, \vec{p}, t\}$, hier in Quantenmechanik abstrakter Vektor $\ket{\Psi}$ (nicht $\vec{\Psi}$) aus \textbf{Hilbertraum}. Meist wird abkürzend $\ket{\Psi} = \ket{\Psi(t)}$ gesetzt.
+	Der Zustand eines Systems ist, analog zu $\pi(t) = \{\vec{q}, \vec{p}, t\}$, hier in Quantenmechanik ein abstrakter Vektor $\ket{\Psi}$ (nicht $\vec{\Psi}$) aus dem \textbf{Hilbertraum}. Meist wird abkürzend $\ket{\Psi} = \ket{\Psi(t)}$ gesetzt.
 \end{definition*}
 \begin{definition*}[Hilbertraum]
-	Wir betrachten im Folgenden einen $\infty$-dimensionalen Vektorraum mit einem Skalarprodukt und einer abzählbaren Basis, dieser Vektorraum ist über den $\Co$ definiert. D.h. Elemente des Vektorraums können mit anderen Elementen des selben Vektorraums und komplexen Zahlen verknüpft werden. Oder formal
+	Wir betrachten im Folgenden einen \textbf{$\infty$-dimensionalen Vektorraum} mit einem \textbf{Skalarprodukt} und einer abzählbaren \textbf{Basis} (es muss eine solche Basis definierbar sein), dieser Vektorraum ist über den $\Co$ definiert. D.h. Elemente des Vektorraums können mit anderen Elementen des selben Vektorraums und komplexen Zahlen verknüpft werden. Oder formal:
 	\begin{align*}
+          \ket{\psi}, \ket{\phi} &\in \mathcal{H}\\
 		\ket{\psi} + \ket{\vp} &\in \mathcal{H}\\
-		c \ket{\psi} + d \ket{\vp} &= \ket{c \psi + d \vp}
+		c \ket{\psi} + d \ket{\vp} = \ket{c \psi + d \vp} &\in \mathcal{H}
 	\end{align*}
 
 	Da der Vektorraum nach Konstruktion abgeschlossen\footnote{Zumindest, wenn man keine Spezialfälle betrachtet.} ist und wir für ihn ein Skalarprodukt gefordert haben, kann man den Vektorraum auch als Hilbertraum $\mathcal{H}$ auffassen. Wir überprüfen nun einfach zum Spaß die Bedingungen an den Vektorraum (und dessen Skalarprodukt). Des Weiteren schauen wir uns noch die Bedingungen für Orthogonalität, \dots an:\\
@@ -598,56 +607,57 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 		\intertext{\textbf{Distributivgesetz}}
 		c (\ket{\alpha} + \ket{\beta}) &= c \ket{\alpha} + c \ket{\alpha}\\
 		(c+d) \ket{\alpha} &= c \ket{\alpha} + d \ket{\alpha}
-		\intertext{\textbf{Abzählbare Basis} $B = \{\ket{n}\} = \{\ket{1}, \ket{2}, \ket{3}, \dots\}$ ist genau dann eine Basis, wenn}
+		\intertext{\textbf{Abzählbare Basis} $B = \{\ket{n}\} = \{\ket{1}, \ket{2}, \ket{3}, \dots\}$ ist eine Basis, gdw.:}
 		\sum_n c_n \ket{n} &= \ket{0} \Leftrightarrow \forall n: c_n = 0
-		\intertext{\textbf{Skalarprodukt}}
-		\braket{\alpha | \beta} &= c \in \Co\\
+                                     \intertext{\textbf{Skalarprodukt}}
+                                     \intertext{$\Braket{\alpha | \beta}$ ist eine Abbildung von $\ket{\alpha}$ und $\ket{\beta}$ auf eine komplexe Zahl.}
+		\Braket{\alpha | \beta} &= c \in \Co\\
 		\braket{\alpha | \beta}^\ast &= \braket{\beta | \alpha}\\
 		\braket{\alpha | \beta + \gamma} &= \braket{\alpha | \beta} + \braket{\alpha | \gamma}\\
 		c \braket{\alpha | \beta} &= \braket{\alpha | c \beta} = \braket{c^\ast \alpha | \beta}\\
 		\braket{\alpha | \alpha} &\geq 0 \text{~für~} \ket{\alpha} \neq 0\\
 		\intertext{\textbf{Norm}}
 		\| \alpha \| &= \sqrt{\braket{\alpha | \alpha}}
-		\intertext{\textbf{Orthogonalität} Zwei beliebige Vektoren $\ket{\alpha}$ und $\ket{\beta}$ sind orthogonal, wenn}
+		\intertext{\textbf{Orthogonalität} Zwei beliebige Vektoren $\ket{\alpha}$ und $\ket{\beta}$ sind orthogonal, gdw.:}
 		\braket{\alpha | \beta} &= 0
-		\intertext{\textbf{Orthogonale Basis} Seien $\ket{n}$ und $\ket{m}$ beliebige Basisvektoren}
+		\intertext{\textbf{Orthogonale Basis} Seien $\ket{n}$ und $\ket{m}$ beliebige Basisvektoren.}
 		\braket{n | m} &= 0 \Leftrightarrow \ket{n} \neq \ket{m}
-		\intertext{\textbf{Orthonormale Basis} Sei $B$ eine orthogonale Basis}
+		\intertext{\textbf{Orthonormale Basis} Sei $B$ eine orthogonale Basis.}
 		\forall \ket{n} \in B: \| n \| &= 1
 	\end{align*}
 	Ein beliebiger Zustand $\ket{\psi}$ lässt sich des Weiteren durch Basisvektoren darstellen. Hierbei kann $\braket{n | \psi}$ als die Projektion von $\ket{\psi}$ in Richtung $\ket{n}$ angesehen werden. Nach Konstruktion, und weil wir implizit eine orthogonale Basis annehmen, gilt außerdem $\sum_n \ket n \bra n = \mathds{1}$. Wobei mit $\mathds{1}$ hier die "`Einheitsmatrix"' gemeint ist.
 	\begin{align*}
 	\ket{\psi} &= \sum_n \underbrace{\ket{n}}_{\text{Basisvektor}\hspace{-2em}} \overbrace{\braket{n | \psi}}^{\hspace{-10em}\text{"`Länge"' von $\ket{\psi}$ in Richtung $\ket n$}\hspace{-10em}}
 	\end{align*}
-	$\ket{\psi}$ kann also wie folgt dargestellt werden
+	$\ket{\psi}$ kann also wie folgt dargestellt werden:
 	$$\ket{\psi} \to \begin{pmatrix}
 		\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots
 	\end{pmatrix}$$
 	Wir lassen jetzt zu, dass Index $n \in \Re$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade eben definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
 	Die abstrakten Zustände von $\ket{\psi}$ sind Komponenten des Vektors. In dem wir $\ket{\psi}$ als Wellenfunktion betrachten, kommen wir unter anderem auf eine Art "`\textbf{Ortsdarstellung}"':
 	$$\psi(x) = \braket{x | \psi} \text{~\textit{(1-dim.)}~~~ bzw.~~~} \psi(\vec{r}) = \braket{\vec{r} | \psi}$$
-	Jetzt sind offensichtlich die $\psi(\vec{r})$ die Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. Außerdem sind die $\ket{\vec{r}}$ damit die Eigenvektoren des Ortsoperators, da gilt $$\underbrace{\hat{\vec{r}}}_{\text{\hspace{-10em}Operator\hspace{-10em}}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$$
+	Jetzt sind offensichtlich die $\psi(\vec{r})$ die Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. Außerdem sind die $\ket{\vec{r}}$ damit die Eigenvektoren des Ortsoperators, da gilt: $$\underbrace{\hat{\vec{r}}}_{\text{\hspace{-10em}Operator\hspace{-10em}}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$$
 	Das vorher definierte Skalarprodukt
 	\begin{align*}
 		\braket{\psi | \vp} &= \braket{\psi | \mathds{1} | \vp} = \sum_n \braket{\psi | n} \braket{n | \vp}\\
 		&= \sum_n \psi^\ast_n \vp_n
-		\intertext{müssen wir jetzt "`im kontinuierlichen"' ($n \to \vec{r}$) als Integral auffassen}
+		\intertext{müssen wir jetzt "`im kontinuierlichen"' ($n \to \vec{r}$) als Integral auffassen:}
 		\braket{\psi | \vp} &= \int \d^3 \vec{r} \underbrace{\braket{\psi | \vec{r}}}_{\braket{\vec{r} | \psi}^\ast} \braket{\vec{r} | \vp} \text{\qquad mit $1 = \int \d^3 \vec{r} \ket{\vec{r}} \bra{\vec{r}}$}\\
 		&= \int \d^3 \vec{r} \psi^\ast(\vec{r}) \vp(\vec{r})
 	\end{align*}
 	Die Wellenfunktionen $\psi(x)$ bzw. $\psi(\vec{r})$ sind kongruente Darstellungen des abstrakten Zustandes $\ket\psi$.
 	
 	\paragraph{Operatoren} In der Regel werden lineare Operatoren betrachtet.\\
-	Für Operatoren gilt, dass deren Anwendung $A \ket{\alpha} = \ket{A \alpha}$ einen neuen Zustand $\ket{\beta}$ des selben Vektorraumes zur Folge hat. Zwei Operatoren sind identisch, falls, sie für alle Zustände $\ket{\alpha}$ dasselbe Ergebnis produzieren. Für zwei lineare Operatoren $A$ und $B$ und $a,b \in \Co$ definieren wir die Addition wie folgt
+	Für Operatoren gilt, dass deren Anwendung $A \ket{\alpha} = \ket{A \alpha}$ einen neuen Zustand $\ket{\beta}$ des selben Vektorraumes zur Folge hat. Zwei Operatoren sind identisch, falls, sie für alle Zustände $\ket{\alpha}$ das gleiche Ergebnis produzieren. Für zwei lineare Operatoren $A$ und $B$ und $a,b \in \Co$ definieren wir die Addition wie folgt:
 	\begin{align*}
 		(a A + b B) \ket{\alpha} &= a A \ket{\alpha} + b B\ket{\alpha}\\
-		\intertext{Als Notation verwenden wir}
+		\intertext{Als Notation verwenden wir:}
 		B A \ket{\alpha} &= B \ket{A \alpha} = B (A \ket{\alpha})
 	\end{align*}
 	
 	\paragraph{Adjungierter Operator} Korrespondierend zum Operator $A$ ist $A^+ \coloneqq A^{\top \ast}$. $A^+$ ist also der transponierte und komplex konjugierte Operator.
 	\paragraph{Selbstadjungierter Operator} \textit{auch als hermitescher\footnote{Hermitesch wird wie "`hermit'sch"' ausgesprochen} Operator bezeichnet}\\
-	Für ihn muss $A^+ = A$ gelten. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte:\\
+	Für ihn muss $A^+ = A$ gelten. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte.\\
 	Sei $\ket a$ ein Eigenvektor von $A$ zu Eigenwert $\alpha$, d.h. $A \ket{a} = \alpha a$. Man rechnet nun $\braket{a | A | a}$ aus:
 	$$\alpha \braket{a | a} = \braket{a | \alpha | a} = \braket{a | (A a)} = \braket{a | A | a} \overset{\text{da $A^+ = A$}}{=} \braket{(A a) | a} = \alpha^\ast \braket{a | a}$$
 	Dies würde einen Widerspruch darstellen, wenn $\alpha \notin \Re$ wäre.
