@@ -459,7 +459,7 @@ $$\psi(x) = Ae^{ikx} + Be^{-ikx} \qquad \text{mit~} k=\sqrt{\frac{2m}{\hbar^2}(E
 	\begin{align*}
 	\psi(x) &= A e^{ikx} + Be^{-ikx} & k^2 &= \frac{2mE}{\hbar^2}
 	\end{align*}
-	Da die Wellenfunktion stetig sein muss, verschwindet sie am Rand des mittleren Bereiches. In dem wir zusätzlich verlangen, dass die Ableitung der Wellenfunktion stetig sein muss, kommen wir wie folgt auf die Wellenfunktion im mittleren Bereich
+	Da die Wellenfunktion stetig sein muss, verschwindet sie am Rand des mittleren Bereiches. Indem wir zusätzlich verlangen, dass die Ableitung der Wellenfunktion stetig sein muss, kommen wir wie folgt auf die Wellenfunktion im mittleren Bereich
 	\begin{align*}
 		\psi(0) &=\psi(a) = 0\\
 		\psi(0) &= A + B = 0 \qquad \Rightarrow B = -A\\
@@ -633,8 +633,8 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 	$$\ket{\psi} \to \begin{pmatrix}
 		\braket{1 | \psi}\\ \braket{2 | \psi}\\ \vdots
 	\end{pmatrix}$$
-	Wir lassen jetzt zu, dass Index $n \in \Re$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade eben definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
-	Die abstrakten Zustände von $\ket{\psi}$ sind Komponenten des Vektors. In dem wir $\ket{\psi}$ als Wellenfunktion betrachten, kommen wir unter anderem auf eine Art "`\textbf{Ortsdarstellung}"':
+	Wir lassen jetzt zu, dass Index $n \in \mathbb{N}$ gelten kann\footnote{Wir konstruieren uns hier einen Vektorraum der Funktionen, welcher die gleichen Eigenschaften wie unser gerade eben definierter Vektorraum haben sollte. Deswegen ändert sich die Notation auch nicht. Generell ist die Notation mit Bra und Ket abstrakt und versteckt die wahre mathematische Natur.} (und nach Konvention $\braket{n | \psi} = \psi_n$ ist), womit wir mit $\psi(n)$ eine komplexe Funktion definieren.\\
+	Die abstrakten Zustände von $\ket{\psi}$ sind Komponenten des Vektors. Indem wir $\ket{\psi}$ als Wellenfunktion betrachten, kommen wir unter anderem auf eine Art "`\textbf{Ortsdarstellung}"':
 	$$\psi(x) = \braket{x | \psi} \text{~\textit{(1-dim.)}~~~ bzw.~~~} \psi(\vec{r}) = \braket{\vec{r} | \psi}$$
 	Jetzt sind offensichtlich die $\psi(\vec{r})$ die Komponenten des $\ket{\psi}$ in der Basis $\ket{\vec{r}}$. Außerdem sind die $\ket{\vec{r}}$ damit die Eigenvektoren des Ortsoperators, da gilt: $$\underbrace{\hat{\vec{r}}}_{\text{\hspace{-10em}Operator\hspace{-10em}}} \ket{\vec{r}} = \vec{r} \ket{\vec{r}}$$
 	Das vorher definierte Skalarprodukt
@@ -656,7 +656,7 @@ Jeder Zustand darf von Fermionen\footnote{Teilchen mit halbzahligem Spin; Spin =
 	\end{align*}
 	
 	\paragraph{Adjungierter Operator} Korrespondierend zum Operator $A$ ist $A^+ \coloneqq A^{\top \ast}$. $A^+$ ist also der transponierte und komplex konjugierte Operator.
-	\paragraph{Selbstadjungierter Operator} \textit{auch als hermitescher\footnote{Hermitesch wird wie "`hermit'sch"' ausgesprochen} Operator bezeichnet}\\
+	\paragraph{Selbstadjungierter Operator} \textit{auch als hermitescher\footnote{Hermitesch wird wie "`hermit'sch"' ausgesprochen.} Operator bezeichnet}\\
 	Für ihn muss $A^+ = A$ gelten. Außerdem haben hermitesche Operatoren nur reelle Eigenwerte.\\
 	Sei $\ket a$ ein Eigenvektor von $A$ zu Eigenwert $\alpha$, d.h. $A \ket{a} = \alpha a$. Man rechnet nun $\braket{a | A | a}$ aus:
 	$$\alpha \braket{a | a} = \braket{a | \alpha | a} = \braket{a | (A a)} = \braket{a | A | a} \overset{\text{da $A^+ = A$}}{=} \braket{(A a) | a} = \alpha^\ast \braket{a | a}$$
@@ -729,9 +729,9 @@ $$ i\hbar \fpartial{t} \ket{\psi(t)} = H \ket{\psi(t)}$$
 		[a, N] &= a
 		\intertext{ebenso}
 		a^+ N &= a^+ a^+ a = a^+ (a a^+ + [a^+, a])\\
-		&= a^+ (a a^+ - 1) = \underbrace{a^a}_N a^+ - a^+\\
+		&= a^+ (a a^+ - 1) = \underbrace{a^2}_N a^+ - a^+\\
 		[a^+, N] = - a^+
-		\intertext{Potenzen durchc rekursive Vorgehen:}
+		\intertext{Potenzen durch rekursives Vorgehen:}
 		a^2 N = a^2 a^+ a &= a (a N) = a (Na + [a, N])\\
 		&= a (Na + a) = a N a + a^2\\
 		&= N a^2 + a^2 + a^2 = N a^2 + 2 a^2\\
@@ -744,14 +744,14 @@ $$ i\hbar \fpartial{t} \ket{\psi(t)} = H \ket{\psi(t)}$$
 	Zurück zum Eigenwert-Problem von $N$ bzw. $H$.\\
 	\textbf{Annahme} Eigenwert $n$ zu Eigenzustand $\ket{n}$ von $N$
 	$$N \ket{n} = n \ket{n}$$
-	Was ist nun $n$? Und wie $n$s gibt es? Probiere
+	Was ist nun $n$? Und wie viele $n$s gibt es? Probiere
 	\begin{align*}
 		a^q N \ket{n} &= a^q n \ket{n} = n a^q \ket{n}\\
 		&= (Na^q + [a^q, N]) \ket{n} = (Na^q + qa^q) \ket{n}\\
 		N (q^a \ket{n}) &= (n - q)(a^q \ket{n})
 	\end{align*}
 	\dots neue Eigenwertgleichung von $N$ mit Eigenwert $(n - q)$ zum Eigenzustand $(a^q \ket{n})$ und $q = 0, 1, 2, \dots$\\
-	Annahme: $n$ beliebig ($\in \Re$)\\
+	Annahme: $n$ beliebig ($\in \mathbb{N}$)\\
 	\conseq $q$ unbeschränkt möglich \conseq auch negative Eigenwerte von N. Damit Eigenwerte $(n -q)$ für beliebige $q$ positiv bleiben (weil $n \sim $ Energie) \conseq Spektrum muss unten abbrechen, also $n$ auch ganzzahlig, $> 0$ \conseq insgesamt gilt irgendwann
 	$$N (a^q | \ket{n}) = 0 (a^q \ket{n}) = \ket{0}$$
 \end{beispiel*}
