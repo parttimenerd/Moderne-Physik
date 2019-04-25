@@ -25,7 +25,11 @@ Es gibt \textbf{Inertialsysteme} in welchen ein kräftefreier Körper ruht oder 
 
 \begin{definition*}[2. Gesetz \textit{Newtonsches Bewegungsgesetz}]
 \begin{equation*}
-	\dot{\vec{p}} = \vec{F}, \dot{\vec{v}} = \vec{a} \rightarrow \vec{F} = m \vec{a}
+	\vec{F} = \dot{\vec{p}}
+\end{equation*}
+Falls $m = const.$ folgt mit $\dot{\vec{v}} = \vec{a}$
+\begin{equation*}
+	\vec{F} = m \vec{a}
 \end{equation*}
 \end{definition*}
 
@@ -41,7 +45,7 @@ Die Definition der trägen Masse ist damit unabhängig von der Kraft. Hierfür e
 \begin{beispiel*}[Gravitationskraft]
 Die Anziehung zwischen zwei Körpern der Masse $M$ und $m$ ist 
 $$\vec{F}_G = \gamma \frac{M m}{r^2} \hat{r}$$
- wobei $\hat{r} = \frac{\vec{r}}{|\vec{r}|}$ und $\gamma$ die Newtonsche Gravitationskonstante sind. Sofern der Abstand und eine der Massen, ohne Beschränkung der Allgemeinheit $M$, konstant ist, kann man die Formel zu $F = m g$ vereinfachen. $g$ ist auf der Erde $\approx \SI{9.81}{\meter\per\second\squared}$.
+ wobei $\hat{r} = \frac{\vec{r}}{|\vec{r}|}$ und $\gamma$ die Newtonsche Gravitationskonstante sind. Sofern der Abstand und eine der Massen, ohne Beschränkung der Allgemeinheit $M$, konstant ist, kann man die Formel zu $F = m g$ vereinfachen.Auf der Erde gilt $g \approx \SI{9.81}{\meter\per\second\squared}$.
  Als Folge daraus sind die träge und die schwere Masse eines Teilchens identisch.
 \end{beispiel*}
 
@@ -50,6 +54,7 @@ Die Coulomb-Kraft ist die Kraft zwischen zwei elektrischen Ladungen $Q_1$ und $Q
 \begin{equation*}
 	\vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{Q_1 Q_2}{r^2} \hat{r}
 \end{equation*}
+Hierbei ist $\epsilon_0$ die elektrische Feldkonstante.
 \end{beispiel*}
 
 \begin{beispiel*}[Lorentzkraft]
@@ -66,6 +71,48 @@ $$F = \alpha |x| < 0$$
 Daraus ergibt sich ein (perfekter) harmonischer Oszillator, welcher ein wichtiges mathematisches Beispiel für gebundene Systeme ist.
 \end{beispiel*}
 
+\subsubsection{Konservative Kräfte}
+Im Allgemeinen gilt für die Arbeit
+\begin{equation*}
+	W = \int_{\vec{r}} \vec{F} d\vec{r}
+\end{equation*}
+und die kinetische Energie
+\begin{align*}
+ 	T &= \frac{1}{2} m \vec{v}^2\\
+ 	\dd{t}T &= \left(\dd{\vec{v}} T\right) \dd{t}\vec{v}\\
+ 	&= m\vec{v}\vec{a}\\
+ 	&= \vec{F}\vec{v}
+\end{align*}
+\begin{beispiel*}
+	Wir betrachten einen Körper der auf einer beliebigen Bahn von Punkt A zu Punkt B und dann auf einer weiteren beliebigen Bahn von B zurück zu A bewegt wird.
+	Dann gilt mit dem Gradienten 
+	\begin{equation*}
+		\vec{\nabla} = \left(
+		\begin{matrix}
+			\fpartial{x}\\\fpartial{y}\\\fpartial{z}
+		\end{matrix}
+		\right)
+	\end{equation*}
+	und  dem Potential $V$
+	\begin{equation*}
+		\vec{F} = - \vec{\nabla}V
+	\end{equation*}
+	Damit folgt für die Arbeit
+	\begin{align*}
+		W &= \oint\vec{F}d\rvec\\
+		&= \int_A^B -\vec{\nabla}Vd\rvec + \int_B^A -\vec{\nabla}Vd\rvec\\
+		&=-V(B) + V(A) - V(A) + V(B)\\
+		&= 0
+	\end{align*}
+	Für konservative Kräfte gilt also: Die verrichtete Arbeit ist unabhängig vom Integrationsweg.\\
+	Es folgt für die Gesamtenergie $E = T + V$
+	\begin{align*}
+		\dd{t} E &= \dd{t}T + \dd{t}V\\
+		&=\vec{F}\vec{v}+ (\vec{\nabla}V)\dot{\rvec}\\
+		&=\vec{F}\vec{v}+ (-\vec{F})\vec{v}\\
+		&=0
+	\end{align*}
+\end{beispiel*}
 
 \subsubsection{Inertialsysteme}
 \begin{definition*}[Inertialsystem]
@@ -116,17 +163,17 @@ Denn meist haben die Probleme eine durch Zwangsbedingungen eingeschränkte Geome
 Zwangsbedingungen sind Bedingungen, welche die Bewegung von Massepunkten in einem (allgemeineren) System auf das vorgegebene System einschränken. Es gibt verschiedene Arten von Zwangsbedingungen:
 
 \paragraph{\textit{A} holonome Zwangsbedingungen} Sie sind Verknüpfungen der Teilchenkoordinaten und eventuell der
-Zeit in folgender Form: $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0, i = 1, \dots, p$$ 
+Zeit in folgender Form: $$f_i(\vec{r}_1, \dots, \vec{r}_N, t) = 0\hspace{1cm} i = 1, \dots, p$$ 
 \emph{Beispiel}: Kreisbahn mit $f(\vec{r}, t) = x^2 + y^2 - R^2 = 0, z = 0$ und $\vec{r} = (x,y,z)^\top$ im dreidimensionalen.
 
 Holonome Zwangsbedingungen können weiter in skleronome (starre) und rheonome (fließende) Zwangsbedingungen unterteilt werden:
 
 \subparagraph{\textit{A1} holonom-skleronome Zwangsbedingungen} Sie sind \textbf{nicht} explizit von der Zeit abhängig, d.h.
-$$ \frac{\partial f_i}{\partial t} = 0, i = 1, \dots, p$$
+$$ \frac{\partial f_i}{\partial t} = 0\hspace{1cm}i = 1, \dots, p$$
 \emph{Beispiel}: Ein Teilchen welches sich auf einer Kugeloberfläche bewegt: $x^2 + y^2 + z^2 - R^2 = 0$, Hantel: $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 + z_2)^2 = l^2$ \textit{der Abstand der beiden Massepunkte ist konstant.}
 
 \subparagraph{\textit{A2} holonom-rheonome Zwangsbedingungen} Sie sind explizit von der Zeit abhängig, d.h.
-$$ \frac{\partial f_i}{\partial t} \neq 0, i = 1, \dots, p$$
+$$ \frac{\partial f_i}{\partial t} \neq 0\hspace{1cm} i = 1, \dots, p$$
 \emph{Beispiel}: Ein Teilchen, welches sich auf einer Ebene mit veränderlichem Winkel $\phi$ befindet: $\frac{z}{x} - \tan{\phi(t)} = 0$
 
 
